@@ -22,10 +22,15 @@ Each subject bank has **100 questions** per class. Pupils can sit 10, 20, 50 or 
 
 ## Features
 
-- Instant marking and a short explanation after every answer
-- Champion Mix drawn from every subject
-- Printable 80-question exam paper (5 per subject) with a teacher answer key
-- Certificate of achievement
+- **Practice, Exam and Timed** modes (30–45s per question)
+- **Daily Challenge** (10 mixed questions, new set each day)
+- **XP, day streaks and 10 badges** saved on the device
+- Mastery stars per subject, retry missed questions
+- 50/50 and Skip lifelines, optional read-aloud
+- Dark mode, larger text, sound toggle
+- **Works offline** (installable PWA) after the first visit
+- Printable 80-question exam paper with a teacher answer key
+- Certificate: print or download as PNG
 - Keyboard: `A`–`D` or `1`–`4` to answer, `Enter` for next
 
 Questions follow typical NERDC primary topics and get harder from Primary 1 to Primary 6.
