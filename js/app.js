@@ -39,13 +39,15 @@
     newBadges: [],
     examPaper: null,
     user: null,
-    pendingDaily: false
+    pendingDaily: false,
+    react: null
   };
 
   let audioCtx = null;
   let confettiTimer = null;
   let tickTimer = null;
   let toastTimer = null;
+  let reactTimer = null;
   let gsiInited = false;
 
   applyChrome();
@@ -449,6 +451,44 @@
   function toastEl() {
     return `<div class="toast" id="toast" ${state.toast ? "" : "hidden"}>${esc(state.toast)}</div>`;
   }
+
+  const YES_LINES = ["Yes!", "Brilliant!", "You got it!", "Well done!", "Champion!", "Super star!"];
+  const NO_LINES = ["Oops!", "Almost!", "Keep going!", "Nice try!", "Next one!"];
+
+  function showReact(ok, timedOut) {
+    const title = timedOut
+      ? "Time’s up!"
+      : (ok ? YES_LINES[Math.floor(Math.random() * YES_LINES.length)]
+            : NO_LINES[Math.floor(Math.random() * NO_LINES.length)]);
+    state.react = {
+      ok: !!ok,
+      title: title,
+      sub: ok ? "That’s the right answer." : (timedOut ? "Try the next question." : "Look at the green answer.")
+    };
+    clearTimeout(reactTimer);
+    reactTimer = setTimeout(hideReact, ok ? 1700 : 1900);
+  }
+  function hideReact() {
+    clearTimeout(reactTimer);
+    if (!state.react) return;
+    state.react = null;
+    const el = document.getElementById("react-pop");
+    if (el) el.remove();
+  }
+  function reactPopup() {
+    const r = state.react;
+    if (!r) return "";
+    const img = r.ok ? "images/owl-yes.jpg" : "images/owl-no.jpg";
+    return `
+      <div class="react-pop ${r.ok ? "yes" : "no"}" id="react-pop" data-action="dismiss-react" role="dialog" aria-live="polite">
+        <div class="react-card">
+          <img src="${img}" alt="">
+          <h3>${esc(r.title)}</h3>
+          <p>${esc(r.sub)}</p>
+          <span>Tap to continue</span>
+        </div>
+      </div>`;
+  }
   function siteFooter() {
     return `<p class="site-foot">© merebari web 2026</p>`;
   }
@@ -660,6 +700,7 @@
             <button class="btn btn-ghost" data-go="subject">Quit</button>
           </div>
         </div>
+        ${reactPopup()}
         ${toastEl()}
       </div>`;
   }
@@ -920,7 +961,9 @@
           state.combo = 0;
           playWrong();
           if (state.mode === "timed") {
-            goNext(true);
+            showReact(false, true);
+            render();
+            reactTimer = setTimeout(function () { goNext(true); }, 1400);
             return;
           }
         }
@@ -1021,6 +1064,7 @@
 
   function finishQuiz() {
     stopTick();
+    hideReact();
     recordResult();
     state.screen = "result";
     render();
@@ -1033,6 +1077,7 @@
     }
     state.index += 1;
     state.revealed = false;
+    hideReact();
     saveResume();
     render();
   }
@@ -1055,6 +1100,7 @@
       state.combo = 0;
       playWrong();
     }
+    showReact(ok, false);
     saveResume();
     render();
   }
@@ -1241,6 +1287,7 @@
       toast("Paste your Google Client ID here, then return home to sign in.");
       render();
     }
+    if (action === "dismiss-react") { hideReact(); return; }
     if (action === "save-cid") {
       const box = document.getElementById("cid");
       const val = box ? box.value.trim() : "";
@@ -1272,6 +1319,9 @@
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js").catch(function () {});
   }
+  ["images/owl-yes.jpg", "images/owl-no.jpg"].forEach(function (src) {
+    const im = new Image(); im.src = src;
+  });
 
   render();
 })();

@@ -1,4 +1,4 @@
-const VERSION = "psq-v5";
+const VERSION = "psq-v6";
 const SHELL = [
   "./",
   "./index.html",
@@ -10,7 +10,9 @@ const SHELL = [
   "./images/hero-kids.jpg",
   "./images/trophy.png",
   "./images/stars.png",
-  "./images/icon-192.png"
+  "./images/icon-192.png",
+  "./images/owl-yes.jpg",
+  "./images/owl-no.jpg"
 ];
 
 self.addEventListener("install", function (e) {
