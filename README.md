@@ -32,6 +32,21 @@ Each subject bank has **100 questions** per class. Pupils can sit 10, 20, 50 or 
 - Printable 80-question exam paper with a teacher answer key
 - Certificate: print or download as PNG
 - Keyboard: `A`–`D` or `1`–`4` to answer, `Enter` for next
+- **Optional Google Sign-In** (guest play still works for younger pupils)
+
+## Google Sign-In (optional)
+
+Pupils can always type a name and play as a guest. To let teachers or older pupils sign in with Google:
+
+1. Open [Google Cloud Console → Credentials](https://console.cloud.google.com/apis/credentials).
+2. Create an **OAuth client ID** of type **Web application**.
+3. Under **Authorized JavaScript origins** add:
+   - `https://merebari7-web.github.io`
+   - `http://localhost:8080` (for local testing)
+4. Copy the Client ID (`….apps.googleusercontent.com`).
+5. Either paste it into **Settings → Google Client ID** on the live quiz, or set `window.GOOGLE_CLIENT_ID` in `js/config.js` and redeploy.
+
+Progress is stored on the device, keyed by Google account (`sub`). Signing out returns to guest progress. This does **not** send scores to a server.
 
 Questions follow typical NERDC primary topics and get harder from Primary 1 to Primary 6.
 

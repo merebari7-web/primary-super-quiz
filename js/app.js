@@ -4,14 +4,13 @@
   const LETTERS = ["A", "B", "C", "D"];
   const bankCache = {};
   const SK = "psq-settings-v3";
-  const PK = "psq-progress-v3";
-  const RK = "psq-resume-v3";
-
-  const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false });
-  const progress = loadJSON(PK, {
+  const EMPTY_PROGRESS = {
     xp: 0, streak: 0, lastDay: "", quizzes: 0, badges: [],
     best: {}, history: [], missed: {}, dailyDate: "", dailyBest: 0
-  });
+  };
+
+  const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false });
+  let progress = EMPTY_PROGRESS;
 
   const state = {
     screen: "home",
@@ -38,13 +37,16 @@
     timer: 0,
     xpGained: 0,
     newBadges: [],
-    examPaper: null
+    examPaper: null,
+    user: null,
+    pendingDaily: false
   };
 
   let audioCtx = null;
   let confettiTimer = null;
   let tickTimer = null;
   let toastTimer = null;
+  let gsiInited = false;
 
   applyChrome();
 
@@ -60,7 +62,124 @@
     } catch (e) { return fallback; }
   }
   function saveSettings() { localStorage.setItem(SK, JSON.stringify(settings)); }
-  function saveProgress() { localStorage.setItem(PK, JSON.stringify(progress)); }
+  function currentUser() {
+    try {
+      const u = JSON.parse(localStorage.getItem("psq-user") || "null");
+      return u && u.sub ? u : null;
+    } catch (e) { return null; }
+  }
+  function uid() {
+    const u = currentUser();
+    return u ? u.sub : "guest";
+  }
+  function progressKey() { return "psq-progress-v3-" + uid(); }
+  function resumeKey() { return "psq-resume-v3-" + uid(); }
+  function saveProgress() { localStorage.setItem(progressKey(), JSON.stringify(progress)); }
+  function loadProgress() {
+    let p = loadJSON(progressKey(), null);
+    if (!p && uid() === "guest") p = loadJSON("psq-progress-v3", null);
+    progress = Object.assign({}, EMPTY_PROGRESS, p || {});
+    if (!progress.missed) progress.missed = {};
+    if (!progress.best) progress.best = {};
+    if (!progress.history) progress.history = [];
+    if (!progress.badges) progress.badges = [];
+  }
+  function googleClientId() {
+    return (localStorage.getItem("psq-google-client-id") || window.GOOGLE_CLIENT_ID || "").trim();
+  }
+  function parseJwt(token) {
+    const part = token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
+    const pad = part + "===".slice((part.length + 3) % 4);
+    return JSON.parse(atob(pad));
+  }
+  function applyUser(user) {
+    state.user = user;
+    if (user) {
+      localStorage.setItem("psq-user", JSON.stringify(user));
+      state.name = user.name || state.name;
+      localStorage.setItem("psq-name", state.name);
+    } else {
+      localStorage.removeItem("psq-user");
+    }
+    loadProgress();
+  }
+  function onGoogleCredential(resp) {
+    try {
+      const p = parseJwt(resp.credential);
+      applyUser({
+        sub: p.sub,
+        name: p.name || p.given_name || "Pupil",
+        email: p.email || "",
+        picture: p.picture || "",
+        exp: p.exp || 0
+      });
+      toast("Signed in as " + state.user.name);
+      render();
+    } catch (err) {
+      toast("Google sign-in failed. Try again.");
+    }
+  }
+  function loadGsi(cb) {
+    if (window.google && google.accounts && google.accounts.id) { cb(); return; }
+    const existing = document.getElementById("gsi-script");
+    if (existing) {
+      existing.addEventListener("load", cb);
+      return;
+    }
+    const s = document.createElement("script");
+    s.id = "gsi-script";
+    s.src = "https://accounts.google.com/gsi/client";
+    s.async = true;
+    s.onload = cb;
+    s.onerror = function () { toast("Could not reach Google. Check your internet."); };
+    document.head.appendChild(s);
+  }
+  function mountGoogleButton() {
+    const slot = document.getElementById("google-btn");
+    if (!slot) return;
+    const cid = googleClientId();
+    if (!cid) return;
+    loadGsi(function () {
+      if (!window.google || !google.accounts || !google.accounts.id) return;
+      const el = document.getElementById("google-btn");
+      if (!el) return;
+      if (!gsiInited) {
+        google.accounts.id.initialize({
+          client_id: cid,
+          callback: onGoogleCredential,
+          auto_select: false,
+          cancel_on_tap_outside: true,
+          ux_mode: "popup",
+          context: "signin"
+        });
+        gsiInited = true;
+      }
+      el.innerHTML = "";
+      google.accounts.id.renderButton(el, {
+        type: "standard",
+        theme: settings.dark ? "filled_black" : "outline",
+        size: "large",
+        text: "signin_with",
+        shape: "pill",
+        logo_alignment: "left",
+        width: Math.min(320, el.clientWidth || 280)
+      });
+    });
+  }
+  function signOutGoogle() {
+    const cid = googleClientId();
+    if (window.google && google.accounts && google.accounts.id && cid) {
+      try { google.accounts.id.disableAutoSelect(); } catch (e) {}
+    }
+    applyUser(null);
+    state.name = localStorage.getItem("psq-name") || "";
+    toast("Signed out. Guest progress is separate.");
+    state.screen = "home";
+    render();
+  }
+  loadProgress();
+  state.user = currentUser();
+  if (state.user && state.user.name) state.name = state.user.name;
 
   function applyChrome() {
     document.documentElement.dataset.theme = settings.dark ? "dark" : "light";
@@ -296,12 +415,12 @@
     if (progress.xp >= 1500) awardBadge("champion");
     state.xpGained = xp;
     saveProgress();
-    localStorage.removeItem(RK);
+    localStorage.removeItem(resumeKey());
   }
 
   function saveResume() {
     if (state.screen !== "quiz" || !state.questions.length) return;
-    localStorage.setItem(RK, JSON.stringify({
+    localStorage.setItem(resumeKey(), JSON.stringify({
       name: state.name, grade: state.grade, subject: state.subject, length: state.length,
       mode: state.mode, questions: state.questions, index: state.index, picked: state.picked,
       combo: state.combo, maxCombo: state.maxCombo, used5050: state.used5050,
@@ -317,6 +436,9 @@
       <div class="topbar no-print">
         ${left}
         <div class="ghost-row">
+          ${state.user && state.user.picture
+            ? `<button class="avatar-btn" data-go="account" title="${esc(state.user.name)}" aria-label="Account"><img referrerpolicy="no-referrer" src="${esc(state.user.picture)}" alt=""></button>`
+            : `<button class="icon-btn" data-go="account" title="Sign in" aria-label="Account">👤</button>`}
           <button class="icon-btn" data-go="dashboard" title="Progress" aria-label="Progress">📊</button>
           <button class="icon-btn" data-go="settings" title="Settings" aria-label="Settings">⚙️</button>
           <button class="icon-btn" data-action="toggle-sound" aria-label="Sound">${settings.sound ? "🔊" : "🔇"}</button>
@@ -329,7 +451,7 @@
   }
 
   function renderHome() {
-    const resume = loadJSON(RK, null);
+    const resume = loadJSON(resumeKey(), null);
     const nSub = Object.keys(window.SUBJECTS).length;
     const cont = resume && resume.questions && resume.questions.length
       ? `<div class="continue-banner">
@@ -669,10 +791,39 @@
       </div>`;
   }
 
+  function renderAccount() {
+    const u = state.user;
+    return `
+      <div class="wrap">
+        ${topbar("home")}
+        <h2 class="section-title">Account</h2>
+        ${u ? `
+          <div class="signed-box" style="margin:16px 0">
+            <img class="signed-pic" referrerpolicy="no-referrer" src="${esc(u.picture || "images/icon-192.png")}" alt="">
+            <div>
+              <strong>${esc(u.name)}</strong>
+              <p class="sub" style="margin:0">${esc(u.email)}</p>
+            </div>
+          </div>
+          <p class="sub">Your XP, badges and missed questions are saved for this Google account on this device.</p>
+          <button class="btn btn-coral" data-action="signout">Sign out</button>
+        ` : `
+          <p class="sub">Sign in with Google to keep your name and progress on this device. Younger pupils can skip this and play as a guest.</p>
+          <div id="google-btn" class="google-slot"></div>
+          ${googleClientId() ? "" : `<button class="google-fake" data-action="need-google" type="button">
+            <span class="g-icon" aria-hidden="true"></span> Sign in with Google
+          </button>`}
+          <p class="sub" style="margin-top:16px">No Google account? Go back and type a name.</p>
+        `}
+        ${toastEl()}
+      </div>`;
+  }
+
   function renderSettings() {
     function row(key, label) {
       return `<div class="set-row"><span>${label}</span><button class="toggle ${settings[key] ? "on" : ""}" data-toggle="${key}" aria-pressed="${settings[key]}"><i></i></button></div>`;
     }
+    const cid = googleClientId();
     return `
       <div class="wrap">
         ${topbar("home")}
@@ -684,6 +835,11 @@
           ${row("dark", "Dark mode")}
           ${row("large", "Larger text")}
         </div>
+        <h3 class="section-title" style="font-size:24px;margin-top:28px">Google Sign-In</h3>
+        <p class="sub">Teachers: create an OAuth Client ID, then paste it here. Origins to allow: <code>https://merebari7-web.github.io</code> and <code>http://localhost:8080</code>.</p>
+        <label class="field" for="cid">Google Client ID</label>
+        <input id="cid" class="search" type="text" placeholder="123456789-abc.apps.googleusercontent.com" value="${esc(cid)}">
+        <button class="btn btn-primary" data-action="save-cid" style="margin-top:8px">Save Client ID</button>
         <p class="sub" style="margin-top:22px">Install this quiz on your phone from the browser menu → Add to Home Screen. It works offline after the first visit.</p>
         <button class="btn btn-ghost" data-action="reset-progress">Reset progress</button>
         ${toastEl()}
@@ -768,9 +924,10 @@
     const map = {
       home: renderHome, grade: renderGrades, subject: renderSubjects, length: renderLength,
       quiz: renderQuiz, result: renderResult, review: renderReview, certificate: renderCertificate,
-      exam: renderExam, dashboard: renderDashboard, settings: renderSettings
+      exam: renderExam, dashboard: renderDashboard, settings: renderSettings, account: renderAccount
     };
     app.innerHTML = (map[state.screen] || renderHome)();
+    if (state.screen === "home" || state.screen === "account") mountGoogleButton();
     if (state.screen === "home") {
       const input = document.getElementById("pupil-name");
       if (input) {
@@ -809,7 +966,11 @@
 
   function startFromHome() {
     const input = document.getElementById("pupil-name");
-    state.name = (input ? input.value : state.name).trim();
+    if (state.user && state.user.name) {
+      state.name = state.user.name;
+    } else {
+      state.name = (input ? input.value : state.name).trim();
+    }
     if (!state.name) {
       if (input) { input.focus(); input.style.borderColor = "#d4573e"; }
       return;
@@ -1026,7 +1187,7 @@
       render();
     }
     if (action === "resume") {
-      const r = loadJSON(RK, null);
+      const r = loadJSON(resumeKey(), null);
       if (r && r.questions) {
         Object.assign(state, r);
         state.screen = "quiz";
@@ -1060,9 +1221,27 @@
     }
     if (action === "reset-progress") {
       if (confirm("Erase XP, badges and history on this device?")) {
-        localStorage.removeItem(PK); localStorage.removeItem(RK);
+        localStorage.removeItem(progressKey());
+        localStorage.removeItem(resumeKey());
         location.reload();
       }
+    }
+    if (action === "signout") signOutGoogle();
+    if (action === "need-google") {
+      state.screen = "settings";
+      toast("Paste your Google Client ID here, then return home to sign in.");
+      render();
+    }
+    if (action === "save-cid") {
+      const box = document.getElementById("cid");
+      const val = box ? box.value.trim() : "";
+      if (!val || val.indexOf(".apps.googleusercontent.com") < 0) {
+        toast("That does not look like a Google Client ID.");
+        return;
+      }
+      localStorage.setItem("psq-google-client-id", val);
+      gsiInited = false;
+      toast("Saved. Go home and tap Sign in with Google.");
     }
   });
 

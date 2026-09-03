@@ -26,6 +26,14 @@ window.SUBJECTS = {
   irs:           { name: "Islamic Religious Studies",  short: "IRS",         icon: "☪️", hue: 155, group: "religion" }
 };
 
+/* Paste a Google Cloud OAuth Client ID to enable Sign in with Google.
+   Create one at https://console.cloud.google.com/apis/credentials
+   Authorized JavaScript origins:
+     https://merebari7-web.github.io
+     http://localhost:8080
+*/
+window.GOOGLE_CLIENT_ID = "";
+
 window.QUIZ_LENGTHS = [10, 20, 50, 100];
 window.QUESTIONS_PER_SUBJECT = 100;
 
