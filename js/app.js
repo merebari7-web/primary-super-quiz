@@ -3,24 +3,69 @@
   const canvas = document.getElementById("confetti");
   const LETTERS = ["A", "B", "C", "D"];
   const bankCache = {};
+  const SK = "psq-settings-v3";
+  const PK = "psq-progress-v3";
+  const RK = "psq-resume-v3";
+
+  const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false });
+  const progress = loadJSON(PK, {
+    xp: 0, streak: 0, lastDay: "", quizzes: 0, badges: [],
+    best: {}, history: [], missed: {}, dailyDate: "", dailyBest: 0
+  });
 
   const state = {
     screen: "home",
     name: localStorage.getItem("psq-name") || "",
     grade: null,
     subject: null,
+    group: "all",
+    query: "",
     length: 20,
+    mode: "practice",
     questions: [],
     index: 0,
     picked: [],
     revealed: false,
-    sound: localStorage.getItem("psq-sound") !== "off",
+    hidden: {},
+    used5050: false,
+    usedSkip: false,
+    combo: 0,
+    maxCombo: 0,
     loading: false,
-    error: ""
+    error: "",
+    toast: "",
+    daily: false,
+    timer: 0,
+    xpGained: 0,
+    newBadges: [],
+    examPaper: null
   };
 
   let audioCtx = null;
   let confettiTimer = null;
+  let tickTimer = null;
+  let toastTimer = null;
+
+  applyChrome();
+
+  function loadJSON(key, fallback) {
+    try {
+      const raw = localStorage.getItem(key);
+      if (!raw) return fallback;
+      const data = JSON.parse(raw);
+      if (fallback && typeof fallback === "object" && !Array.isArray(fallback)) {
+        return Object.assign({}, fallback, data);
+      }
+      return data;
+    } catch (e) { return fallback; }
+  }
+  function saveSettings() { localStorage.setItem(SK, JSON.stringify(settings)); }
+  function saveProgress() { localStorage.setItem(PK, JSON.stringify(progress)); }
+
+  function applyChrome() {
+    document.documentElement.dataset.theme = settings.dark ? "dark" : "light";
+    document.documentElement.classList.toggle("large", !!settings.large);
+  }
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"'`]/g, function (c) {
@@ -32,22 +77,31 @@
     const a = arr.slice();
     for (let i = a.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      const t = a[i];
-      a[i] = a[j];
-      a[j] = t;
+      const t = a[i]; a[i] = a[j]; a[j] = t;
     }
     return a;
+  }
+
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      let t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+
+  function todayKey() {
+    const d = new Date();
+    return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
   }
 
   function prepareQuestion(q, subject) {
     const answerText = q.options[q.answer];
     const options = shuffle(q.options);
     return {
-      q: q.q,
-      options: options,
-      answer: options.indexOf(answerText),
-      explain: q.explain,
-      subject: subject
+      q: q.q, options: options, answer: options.indexOf(answerText),
+      explain: q.explain, subject: subject
     };
   }
 
@@ -55,28 +109,41 @@
     const key = grade + "/" + subject;
     if (!bankCache[key]) {
       const res = await fetch("data/p" + grade + "/" + subject + ".json");
-      if (!res.ok) throw new Error("Could not load " + subject + " for Primary " + grade);
+      if (!res.ok) throw new Error("Could not load " + subject);
       bankCache[key] = await res.json();
     }
     return bankCache[key];
   }
 
-  async function loadQuiz(grade, subject, length) {
-    if (subject === "mix") {
+  async function loadQuiz(grade, subject, length, seeded) {
+    const rng = seeded ? mulberry32(seeded) : Math.random;
+    function shuf(arr) {
+      const a = arr.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(rng() * (i + 1));
+        const t = a[i]; a[i] = a[j]; a[j] = t;
+      }
+      return a;
+    }
+    if (subject === "mix" || subject === "daily") {
       const keys = Object.keys(window.SUBJECTS);
       const picked = [];
       const per = Math.max(1, Math.ceil(length / keys.length));
       for (let i = 0; i < keys.length; i++) {
-        const k = keys[i];
-        const bank = await fetchBank(grade, k);
-        shuffle(bank).slice(0, per).forEach(function (q) {
-          picked.push(prepareQuestion(q, k));
-        });
+        const bank = shuf(await fetchBank(grade, keys[i]));
+        bank.slice(0, per).forEach(function (q) { picked.push(prepareQuestion(q, keys[i])); });
       }
-      return shuffle(picked).slice(0, length);
+      return shuf(picked).slice(0, length);
     }
-    const bank = await fetchBank(grade, subject);
-    return shuffle(bank).slice(0, Math.min(length, bank.length)).map(function (q) {
+    if (subject === "missed") {
+      const bag = progress.missed[grade] || [];
+      if (!bag.length) throw new Error("No missed questions yet for this class. Play a quiz first.");
+      return shuf(bag).slice(0, Math.min(length, bag.length)).map(function (q) {
+        return prepareQuestion(q, q.subject || "mix");
+      });
+    }
+    const bank = shuf(await fetchBank(grade, subject));
+    return bank.slice(0, Math.min(length, bank.length)).map(function (q) {
       return prepareQuestion(q, subject);
     });
   }
@@ -88,29 +155,30 @@
     }
     if (audioCtx && audioCtx.state === "suspended") audioCtx.resume();
   }
-
   function tone(freq, dur, type, gain) {
-    if (!state.sound || !audioCtx) return;
+    if (!settings.sound || !audioCtx) return;
     const o = audioCtx.createOscillator();
     const g = audioCtx.createGain();
     o.type = type || "sine";
     o.frequency.value = freq;
     g.gain.setValueAtTime(gain || 0.07, audioCtx.currentTime);
     g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
-    o.connect(g);
-    g.connect(audioCtx.destination);
-    o.start();
-    o.stop(audioCtx.currentTime + dur);
+    o.connect(g); g.connect(audioCtx.destination);
+    o.start(); o.stop(audioCtx.currentTime + dur);
   }
-
   function playCorrect() {
     tone(523.25, 0.12, "triangle", 0.06);
     setTimeout(function () { tone(659.25, 0.12, "triangle", 0.06); }, 90);
     setTimeout(function () { tone(783.99, 0.18, "triangle", 0.07); }, 180);
   }
+  function playWrong() { tone(196, 0.22, "square", 0.04); }
 
-  function playWrong() {
-    tone(196, 0.22, "square", 0.04);
+  function speak(text) {
+    if (!settings.tts || !window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.rate = 0.95; u.lang = "en-NG";
+    window.speechSynthesis.speak(u);
   }
 
   function score() {
@@ -120,15 +188,125 @@
     });
     return n;
   }
-
   function subjectName(key) {
     if (key === "mix") return "Champion Mix";
+    if (key === "daily") return "Daily Challenge";
+    if (key === "missed") return "Missed questions";
     return window.SUBJECTS[key] ? window.SUBJECTS[key].name : key;
   }
-
   function iconFor(key) {
-    if (key === "mix") return "🏆";
+    if (key === "mix" || key === "daily") return "🏆";
+    if (key === "missed") return "🎯";
     return window.SUBJECTS[key] ? window.SUBJECTS[key].icon : "⭐";
+  }
+  function starsFor(pct) {
+    if (pct >= 85) return 3;
+    if (pct >= 60) return 2;
+    if (pct >= 40) return 1;
+    return 0;
+  }
+  function messageFor(pct) {
+    if (pct === 100) return "Perfect score! You are a quiz champion.";
+    if (pct >= 85) return "Outstanding work. Keep it up!";
+    if (pct >= 70) return "Very good. A little extra practice and you will be unbeatable.";
+    if (pct >= 50) return "Nice try. Review the ones you missed and have another go.";
+    return "Keep going — every champion started as a learner. Try again!";
+  }
+  function secondsFor() {
+    return state.grade && state.grade <= 2 ? 45 : 30;
+  }
+
+  function toast(msg) {
+    state.toast = msg;
+    const el = document.getElementById("toast");
+    if (el) {
+      el.textContent = msg;
+      el.hidden = false;
+    } else {
+      render();
+    }
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () {
+      state.toast = "";
+      const t = document.getElementById("toast");
+      if (t) t.hidden = true;
+    }, 2800);
+  }
+
+  function awardBadge(id) {
+    if (progress.badges.indexOf(id) >= 0) return;
+    progress.badges.push(id);
+    const b = window.BADGES.find(function (x) { return x.id === id; });
+    state.newBadges.push(id);
+    if (b) toast(b.icon + " Badge unlocked: " + b.name);
+  }
+
+  function updateStreak() {
+    const day = todayKey();
+    if (progress.lastDay === day) return;
+    const y = new Date();
+    y.setDate(y.getDate() - 1);
+    const yk = y.getFullYear() + "-" + (y.getMonth() + 1) + "-" + y.getDate();
+    progress.streak = progress.lastDay === yk ? progress.streak + 1 : 1;
+    progress.lastDay = day;
+    if (progress.streak >= 3) awardBadge("streak3");
+    if (progress.streak >= 7) awardBadge("streak7");
+  }
+
+  function recordResult() {
+    const total = state.questions.length;
+    const n = score();
+    const pct = Math.round((n / total) * 100);
+    let xp = n * 10 + state.maxCombo * 2;
+    if (pct === 100) xp += 40;
+    if (state.daily) xp += 25;
+    if (state.mode === "timed") xp += 10;
+    if (state.mode === "exam") xp += 15;
+    progress.xp += xp;
+    progress.quizzes += 1;
+    updateStreak();
+    const key = state.grade + "/" + state.subject;
+    const prev = progress.best[key];
+    if (!prev || pct > prev.pct) progress.best[key] = { pct: pct, score: n, total: total };
+    progress.history.unshift({
+      date: todayKey(), grade: state.grade, subject: state.subject,
+      score: n, total: total, mode: state.mode, pct: pct
+    });
+    progress.history = progress.history.slice(0, 40);
+
+    const missed = progress.missed[state.grade] || [];
+    state.questions.forEach(function (q, i) {
+      if (state.picked[i] !== q.answer) {
+        missed.push({ q: q.q, options: q.options, answer: q.answer, explain: q.explain, subject: q.subject });
+      }
+    });
+    progress.missed[state.grade] = missed.slice(-80);
+
+    awardBadge("first");
+    if (pct === 100) awardBadge("perfect");
+    if (total >= 100) awardBadge("hundred");
+    if (state.mode === "exam") awardBadge("exam");
+    if (state.mode === "timed" && pct >= 70) awardBadge("speed");
+    if (state.daily && n >= 8) {
+      awardBadge("daily");
+      progress.dailyDate = todayKey();
+      progress.dailyBest = Math.max(progress.dailyBest || 0, n);
+    }
+    if (progress.xp >= 500) awardBadge("scholar");
+    if (progress.xp >= 1500) awardBadge("champion");
+    state.xpGained = xp;
+    saveProgress();
+    localStorage.removeItem(RK);
+  }
+
+  function saveResume() {
+    if (state.screen !== "quiz" || !state.questions.length) return;
+    localStorage.setItem(RK, JSON.stringify({
+      name: state.name, grade: state.grade, subject: state.subject, length: state.length,
+      mode: state.mode, questions: state.questions, index: state.index, picked: state.picked,
+      combo: state.combo, maxCombo: state.maxCombo, used5050: state.used5050,
+      usedSkip: state.usedSkip, daily: state.daily, hidden: state.hidden
+    }));
   }
 
   function topbar(backScreen) {
@@ -139,39 +317,59 @@
       <div class="topbar no-print">
         ${left}
         <div class="ghost-row">
-          <button class="icon-btn" data-action="toggle-sound" aria-label="Sound">${state.sound ? "🔊" : "🔇"}</button>
+          <button class="icon-btn" data-go="dashboard" title="Progress" aria-label="Progress">📊</button>
+          <button class="icon-btn" data-go="settings" title="Settings" aria-label="Settings">⚙️</button>
+          <button class="icon-btn" data-action="toggle-sound" aria-label="Sound">${settings.sound ? "🔊" : "🔇"}</button>
         </div>
       </div>`;
   }
 
+  function toastEl() {
+    return `<div class="toast" id="toast" ${state.toast ? "" : "hidden"}>${esc(state.toast)}</div>`;
+  }
+
   function renderHome() {
+    const resume = loadJSON(RK, null);
     const nSub = Object.keys(window.SUBJECTS).length;
+    const cont = resume && resume.questions && resume.questions.length
+      ? `<div class="continue-banner">
+           <div><strong>Continue quiz</strong><p>${esc(subjectName(resume.subject))} · Q${(resume.index || 0) + 1}/${resume.questions.length}</p></div>
+           <button class="btn btn-sun" data-action="resume">Resume</button>
+         </div>` : "";
     return `
       <div class="wrap">
         ${topbar(null)}
+        ${cont}
         <section class="hero">
           <div>
-            <div class="kicker">Primary 1 – 6 · Nigeria · NERDC-style</div>
+            <div class="kicker">Primary 1 – 6 · Nigeria · Offline ready</div>
             <h1>Primary Super Quiz</h1>
-            <p class="lead">Every class, every subject — 100 questions each. English, Maths, Science, Civic, Computer, Agric, Arts, PHE, History, Reasoning, CRS, IRS and more.</p>
+            <p class="lead">Every class, every subject — 100 questions each. Practice, sit a timed paper, or take the Daily Challenge.</p>
             <div class="stats">
               <span class="chip">${nSub} subjects</span>
               <span class="chip">9,600 questions</span>
-              <span class="chip">Printable papers</span>
-              <span class="chip">Certificates</span>
+              <span class="chip">Exam · Timed · Daily</span>
+              <span class="chip">Installable app</span>
             </div>
           </div>
-          <div class="hero-art"><img src="images/hero-kids.png" alt="Children taking a quiz together"></div>
+          <div class="hero-art"><img src="images/hero-kids.jpg" alt="Children taking a quiz together"></div>
         </section>
-        <div class="home-panel panel-rel" style="margin-top:22px;background:var(--card);border:3px solid var(--line);border-radius:28px;padding:22px;box-shadow:var(--shadow);">
+        <div class="home-stats">
+          <div class="stat-tile"><b>${progress.xp}</b><span>XP</span></div>
+          <div class="stat-tile"><b>${progress.streak}🔥</b><span>Day streak</span></div>
+          <div class="stat-tile"><b>${progress.quizzes}</b><span>Quizzes</span></div>
+        </div>
+        <div class="home-panel panel-rel" style="margin-top:18px;background:var(--card);border:3px solid var(--line);border-radius:28px;padding:22px;box-shadow:var(--shadow);">
           <img class="mascot-float" src="images/mascot.png" alt="">
           <label class="field" for="pupil-name">What is your name?</label>
-          <input id="pupil-name" type="text" maxlength="40" placeholder="Type your name" value="${esc(state.name)}">
-          <div style="margin-top:14px">
+          <input id="pupil-name" type="text" maxlength="40" placeholder="Type your name" value="${esc(state.name)}" autocomplete="name">
+          <div class="home-actions">
             <button class="btn btn-primary" data-action="start">Let’s go! →</button>
+            <button class="btn btn-sun" data-action="daily">Daily Challenge ☀️</button>
+            <button class="btn btn-ghost" data-go="dashboard">My progress</button>
           </div>
-          <p class="sub" style="margin-top:12px;margin-bottom:0">Teachers can print an exam paper after choosing a class.</p>
         </div>
+        ${toastEl()}
       </div>`;
   }
 
@@ -188,47 +386,62 @@
     return `
       <div class="wrap">
         ${topbar("home")}
-        <p class="kicker">Hello, ${esc(state.name || "friend")}</p>
+        <p class="kicker">Hello, ${esc(state.name || "friend")} · ${progress.xp} XP</p>
         <h2 class="section-title">Which class are you in?</h2>
         <p class="sub">Pick your class. Questions get harder from Primary 1 to Primary 6.</p>
         <div class="grid-grades">${cards}</div>
+        ${toastEl()}
       </div>`;
   }
 
   function renderSubjects() {
     const g = state.grade;
-    const cards = Object.keys(window.SUBJECTS).map(function (k) {
+    const q = (state.query || "").toLowerCase();
+    const chips = window.SUBJECT_GROUPS.map(function (gr) {
+      return `<button class="filter-chip ${state.group === gr.id ? "on" : ""}" data-group="${gr.id}">${gr.label}</button>`;
+    }).join("");
+    const cards = Object.keys(window.SUBJECTS).filter(function (k) {
       const s = window.SUBJECTS[k];
+      if (state.group !== "all" && s.group !== state.group) return false;
+      if (q && (s.name + s.short).toLowerCase().indexOf(q) < 0) return false;
+      return true;
+    }).map(function (k) {
+      const s = window.SUBJECTS[k];
+      const best = progress.best[g + "/" + k];
+      const star = best ? "★".repeat(starsFor(best.pct)) + "☆".repeat(3 - starsFor(best.pct)) : "☆☆☆";
       return `
         <button class="card-btn subject-card" style="--accent:hsl(${s.hue},55%,38%)" data-pick-subject="${k}">
           <div class="subj-icon">${s.icon}</div>
           <h3>${s.name}</h3>
-          <p>100 questions in the bank</p>
+          <p>100 questions · <span class="stars-mini">${star}</span>${best ? " " + best.pct + "%" : ""}</p>
         </button>`;
     }).join("");
+    const missedN = (progress.missed[g] || []).length;
     return `
       <div class="wrap">
         ${topbar("grade")}
         <p class="kicker">${window.GRADE_INFO[g].label}</p>
         <h2 class="section-title">Choose a subject</h2>
-        <p class="sub">16 subjects · 100 questions each. Then pick how many you want to try.</p>
+        <input class="search" id="subj-search" type="search" placeholder="Search subjects…" value="${esc(state.query)}">
+        <div class="filter-row">${chips}</div>
         <div class="grid-subjects">
-          ${cards}
+          ${cards || "<p class='sub'>No subjects match.</p>"}
           <button class="card-btn mix-card" data-pick-subject="mix">
-            <div>
-              <h3>Champion Mix 🏆</h3>
-              <p>A mixed paper drawn from every subject in this class.</p>
-            </div>
+            <div><h3>Champion Mix 🏆</h3><p>A mixed paper from every subject in this class.</p></div>
             <span class="btn btn-sun" style="pointer-events:none">Play mix</span>
           </button>
         </div>
         <div class="teacher-row no-print">
           <div>
-            <strong>For teachers</strong>
-            <p class="sub" style="margin:0">Print an exam paper (5 questions × 16 subjects = 80) with an answer key.</p>
+            <strong>Practice missed · Teachers</strong>
+            <p class="sub" style="margin:0">${missedN} saved mistakes for this class. Print an 80-question paper with answers.</p>
           </div>
-          <button class="btn btn-ghost" data-action="print-exam">Print exam paper</button>
+          <div class="ghost-row">
+            <button class="btn btn-ghost" data-pick-subject="missed" ${missedN ? "" : "disabled"}>Retry missed</button>
+            <button class="btn btn-ghost" data-action="print-exam">Print exam</button>
+          </div>
         </div>
+        ${toastEl()}
       </div>`;
   }
 
@@ -236,83 +449,93 @@
     const name = subjectName(state.subject);
     const buttons = window.QUIZ_LENGTHS.map(function (n) {
       const label = n === 10 ? "Quick" : n === 20 ? "Standard" : n === 50 ? "Long" : "Full paper";
-      const cls = n === 100 ? "btn btn-sun" : n === 20 ? "btn btn-primary" : "btn btn-ghost";
-      return `<button class="${cls} length-btn" data-length="${n}"><strong>${n}</strong><span>${label}</span></button>`;
+      const cls = "btn length-btn " + (state.length === n ? "btn-primary" : "btn-ghost");
+      return `<button class="${cls}" data-length="${n}"><strong>${n}</strong><span>${label}</span></button>`;
+    }).join("");
+    const modes = [
+      { id: "practice", title: "Practice", desc: "Instant marking and a short explanation." },
+      { id: "exam", title: "Exam", desc: "No hints until the end. Like a real test." },
+      { id: "timed", title: "Timed", desc: secondsFor() + " seconds per question. Think fast." }
+    ].map(function (m) {
+      return `<button class="mode-card ${state.mode === m.id ? "on" : ""}" data-mode="${m.id}"><h4>${m.title}</h4><p>${m.desc}</p></button>`;
     }).join("");
     return `
       <div class="wrap">
         ${topbar("subject")}
         <p class="kicker">${window.GRADE_INFO[state.grade].label} · ${esc(name)}</p>
-        <h2 class="section-title">How many questions?</h2>
-        <p class="sub">Each subject has 100 questions. Primary pupils often start with 10 or 20.</p>
+        <h2 class="section-title">Set up your quiz</h2>
+        <p class="sub">Choose a mode, then how many questions.</p>
+        <div class="mode-grid">${modes}</div>
         <div class="length-grid">${buttons}</div>
-        ${state.loading ? '<p class="sub">Loading questions…</p>' : ""}
-        ${state.error ? `<p class="feedback no">${esc(state.error)}</p>` : ""}
+        <div style="margin-top:16px">
+          <button class="btn btn-primary" data-action="begin">${state.loading ? "Loading…" : "Start quiz →"}</button>
+        </div>
+        ${state.error ? `<p class="feedback no" style="margin-top:12px">${esc(state.error)}</p>` : ""}
+        ${toastEl()}
       </div>`;
   }
 
   function renderQuiz() {
     const q = state.questions[state.index];
+    if (!q) return `<div class="wrap">${topbar("length")}<p>No questions.</p></div>`;
     const total = state.questions.length;
     const pct = Math.round((state.index / total) * 100);
-    const subj = q.subject ? window.SUBJECTS[q.subject] : window.SUBJECTS[state.subject];
+    const subj = window.SUBJECTS[q.subject] || window.SUBJECTS[state.subject];
+    const hide = state.hidden[state.index] || [];
+    const exam = state.mode === "exam";
+    const showMark = state.revealed && !exam;
     const options = q.options.map(function (opt, i) {
+      if (hide.indexOf(i) >= 0) return "";
       let cls = "opt";
-      if (state.revealed) {
+      if (showMark) {
         if (i === q.answer) cls += " correct";
         else if (i === state.picked[state.index]) cls += " wrong";
         else cls += " dim";
-      }
+      } else if (exam && state.picked[state.index] === i) cls += " correct";
       return `
-        <button class="${cls}" data-opt="${i}" ${state.revealed ? "disabled" : ""}>
+        <button class="${cls}" data-opt="${i}" ${state.revealed && !exam ? "disabled" : ""}>
           <span class="badge">${LETTERS[i]}</span>
           <span>${esc(opt)}</span>
         </button>`;
     }).join("");
     let feedback = "";
-    if (state.revealed) {
+    if (showMark) {
       const ok = state.picked[state.index] === q.answer;
-      feedback = `
-        <div class="feedback ${ok ? "ok" : "no"}">
-          ${ok ? "Yes! " : "Not quite. The answer is <strong>" + esc(q.options[q.answer]) + "</strong>. "}
-          ${esc(q.explain)}
-        </div>`;
+      feedback = `<div class="feedback ${ok ? "ok" : "no"}">${ok ? "Yes! " : "Not quite. The answer is <strong>" + esc(q.options[q.answer]) + "</strong>. "}${esc(q.explain)}</div>`;
     }
-    const nextLabel = state.index === total - 1 ? "See my score" : "Next question →";
+    const canNext = exam ? state.picked[state.index] != null || state.revealed : state.revealed;
+    const nextLabel = state.index === total - 1 ? "See my score" : "Next →";
+    const timer = state.mode === "timed"
+      ? `<div class="timer-wrap ${state.timer <= 8 ? "warn" : ""}">⏱ ${state.timer}s</div>` : "";
     return `
       <div class="wrap">
         ${topbar("length")}
         <div class="quiz-head">
-          <div class="progress-meta">${iconFor(q.subject || state.subject)} ${esc(subj ? subj.name : "Champion Mix")} · Primary ${state.grade}</div>
-          <div class="progress-meta">${state.index + 1} / ${total}</div>
+          <div class="progress-meta">${iconFor(q.subject || state.subject)} ${esc(subj ? subj.name : subjectName(state.subject))} · P${state.grade}</div>
+          <div class="ghost-row">
+            ${state.combo >= 2 ? `<span class="combo">🔥 x${state.combo}</span>` : ""}
+            ${timer}
+            <div class="progress-meta">${state.index + 1} / ${total}</div>
+          </div>
         </div>
         <div class="bar" aria-hidden="true"><span style="width:${pct}%"></span></div>
         <div class="q-card">
-          <div class="q-label">Question ${state.index + 1}</div>
+          <div class="q-label">Question ${state.index + 1} · ${state.mode}</div>
           <h2 class="question">${esc(q.q)}</h2>
           <div class="options">${options}</div>
           ${feedback}
+          <div class="lifelines">
+            ${settings.tts ? `<button class="life" data-action="speak">🔊 Read aloud</button>` : ""}
+            <button class="life" data-action="fifty" ${state.used5050 || exam ? "disabled" : ""}>50 / 50</button>
+            <button class="life" data-action="skip" ${state.usedSkip ? "disabled" : ""}>Skip</button>
+          </div>
           <div class="quiz-actions">
-            ${state.revealed ? `<button class="btn btn-primary" data-action="next">${nextLabel}</button>` : ""}
+            ${canNext ? `<button class="btn btn-primary" data-action="next">${nextLabel}</button>` : ""}
             <button class="btn btn-ghost" data-go="subject">Quit</button>
           </div>
         </div>
+        ${toastEl()}
       </div>`;
-  }
-
-  function starsFor(pct) {
-    if (pct >= 85) return 3;
-    if (pct >= 60) return 2;
-    if (pct >= 40) return 1;
-    return 0;
-  }
-
-  function messageFor(pct) {
-    if (pct === 100) return "Perfect score! You are a quiz champion.";
-    if (pct >= 85) return "Outstanding work. Keep it up!";
-    if (pct >= 70) return "Very good. A little extra practice and you will be unbeatable.";
-    if (pct >= 50) return "Nice try. Review the ones you missed and have another go.";
-    return "Keep going — every champion started as a learner. Try again!";
   }
 
   function renderResult() {
@@ -323,24 +546,31 @@
     const img = pct >= 70
       ? '<img class="trophy" src="images/trophy.png" alt="Trophy">'
       : '<img class="stars" src="images/stars.png" alt="Stars">';
-    const starWord = stars === 1 ? "star" : "stars";
+    const badges = state.newBadges.map(function (id) {
+      const b = window.BADGES.find(function (x) { return x.id === id; });
+      return b ? `<span class="chip">${b.icon} ${b.name}</span>` : "";
+    }).join("");
     return `
       <div class="wrap">
         ${topbar("subject")}
         <div class="result">
           ${img}
-          <p class="kicker">${window.GRADE_INFO[state.grade].label} · ${esc(subjectName(state.subject))}</p>
+          <p class="kicker">${window.GRADE_INFO[state.grade].label} · ${esc(subjectName(state.subject))} · ${state.mode}</p>
           <h2 class="section-title">${esc(state.name || "Well done")}</h2>
           <div class="score-num">${n}<span style="font-size:.45em;color:var(--muted)"> / ${total}</span></div>
-          <p style="font-weight:800;margin-top:4px">${pct}% · ${stars} ${starWord}</p>
+          <p style="font-weight:800;margin-top:4px">${pct}% · ${stars} star${stars === 1 ? "" : "s"} · Best combo x${state.maxCombo}</p>
+          <p class="xp-pop">+${state.xpGained} XP · Total ${progress.xp}</p>
           <p class="score-msg">${messageFor(pct)}</p>
+          ${badges ? `<div class="stats" style="justify-content:center">${badges}</div>` : ""}
           <div class="actions">
             <button class="btn btn-primary" data-action="review">Review answers</button>
             <button class="btn btn-sun" data-action="certificate">Certificate</button>
+            <button class="btn btn-ghost" data-action="share">Share</button>
             <button class="btn btn-ghost" data-action="again">Play again</button>
             <button class="btn btn-ghost" data-go="subject">New subject</button>
           </div>
         </div>
+        ${toastEl()}
       </div>`;
   }
 
@@ -348,13 +578,12 @@
     const items = state.questions.map(function (q, i) {
       const ok = state.picked[i] === q.answer;
       const chosen = state.picked[i] == null ? "—" : q.options[state.picked[i]];
-      const missed = ok ? "" : `<p>Correct answer: <strong>${esc(q.options[q.answer])}</strong></p>`;
       return `
         <article class="review-item">
           <span class="tag ${ok ? "ok" : "no"}">${ok ? "Correct" : "Missed"}</span>
           <h4>${i + 1}. ${esc(q.q)}</h4>
           <p>Your answer: <strong>${esc(chosen)}</strong></p>
-          ${missed}
+          ${ok ? "" : `<p>Correct answer: <strong>${esc(q.options[q.answer])}</strong></p>`}
           <p style="color:var(--muted);margin-top:6px">${esc(q.explain)}</p>
         </article>`;
     }).join("");
@@ -362,7 +591,7 @@
       <div class="wrap">
         ${topbar("result")}
         <h2 class="section-title">Answer review</h2>
-        <p class="sub">Read why each answer is right, then try the quiz again.</p>
+        <p class="sub">Read why each answer is right, then try again.</p>
         ${items}
         <div class="actions" style="margin-top:8px">
           <button class="btn btn-primary" data-go="result">Back to score</button>
@@ -373,9 +602,7 @@
   function todayPretty() {
     try {
       return new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
-    } catch (e) {
-      return "3 September 2026";
-    }
+    } catch (e) { return "3 September 2026"; }
   }
 
   function renderCertificate() {
@@ -386,7 +613,10 @@
       <div class="wrap">
         <div class="topbar no-print">
           <button class="icon-btn" data-go="result" aria-label="Back">←</button>
-          <button class="btn btn-primary" data-action="print">Print certificate</button>
+          <div class="ghost-row">
+            <button class="btn btn-ghost" data-action="save-cert">Download PNG</button>
+            <button class="btn btn-primary" data-action="print">Print</button>
+          </div>
         </div>
         <div class="certificate" id="certificate">
           <div class="cert-inner">
@@ -397,26 +627,76 @@
             <p class="script-name">${esc(state.name || "A brilliant pupil")}</p>
             <p>has completed the <strong>${esc(subjectName(state.subject))}</strong> quiz<br>for <strong>${window.GRADE_INFO[state.grade].label}</strong></p>
             <p style="margin:14px 0;font-weight:800;font-size:22px">Score: ${n} / ${total} (${pct}%)</p>
-            <p>${todayPretty()}</p>
+            <p>${todayPretty()} · ${state.xpGained} XP earned</p>
             <p style="margin-top:18px;font-weight:800;color:var(--teal)">Well done — keep learning.</p>
           </div>
         </div>
       </div>`;
   }
 
+  function renderDashboard() {
+    const g = state.grade || 1;
+    const cells = Object.keys(window.SUBJECTS).map(function (k) {
+      const s = window.SUBJECTS[k];
+      const best = progress.best[g + "/" + k];
+      const st = best ? starsFor(best.pct) : 0;
+      return `<div class="dash-cell" title="${s.name}"><span class="ico">${s.icon}</span>${s.short}<div class="stars-mini">${"★".repeat(st)}${"☆".repeat(3 - st)}</div></div>`;
+    }).join("");
+    const badges = window.BADGES.map(function (b) {
+      const on = progress.badges.indexOf(b.id) >= 0;
+      return `<div class="badge-card ${on ? "" : "off"}"><div class="bi">${b.icon}</div><h4>${b.name}</h4><p>${b.desc}</p></div>`;
+    }).join("");
+    const recent = (progress.history || []).slice(0, 8).map(function (h) {
+      return `<li>${h.date} · P${h.grade} ${esc(subjectName(h.subject))} · ${h.score}/${h.total} (${h.pct}%)</li>`;
+    }).join("") || "<li>No quizzes yet.</li>";
+    return `
+      <div class="wrap">
+        ${topbar("home")}
+        <p class="kicker">${esc(state.name || "Pupil")}</p>
+        <h2 class="section-title">My progress</h2>
+        <div class="home-stats">
+          <div class="stat-tile"><b>${progress.xp}</b><span>XP</span></div>
+          <div class="stat-tile"><b>${progress.streak}</b><span>Streak</span></div>
+          <div class="stat-tile"><b>${progress.badges.length}/${window.BADGES.length}</b><span>Badges</span></div>
+        </div>
+        <p class="sub" style="margin-top:18px">Mastery for Primary ${g} (pick a class first for other years).</p>
+        <div class="dash-grid">${cells}</div>
+        <h3 class="section-title" style="font-size:24px;margin-top:28px">Badges</h3>
+        <div class="badge-grid">${badges}</div>
+        <h3 class="section-title" style="font-size:24px;margin-top:28px">Recent</h3>
+        <ul class="sub">${recent}</ul>
+        ${toastEl()}
+      </div>`;
+  }
+
+  function renderSettings() {
+    function row(key, label) {
+      return `<div class="set-row"><span>${label}</span><button class="toggle ${settings[key] ? "on" : ""}" data-toggle="${key}" aria-pressed="${settings[key]}"><i></i></button></div>`;
+    }
+    return `
+      <div class="wrap">
+        ${topbar("home")}
+        <h2 class="section-title">Settings</h2>
+        <p class="sub">These stay on this device.</p>
+        <div class="settings-list">
+          ${row("sound", "Sound effects")}
+          ${row("tts", "Read questions aloud")}
+          ${row("dark", "Dark mode")}
+          ${row("large", "Larger text")}
+        </div>
+        <p class="sub" style="margin-top:22px">Install this quiz on your phone from the browser menu → Add to Home Screen. It works offline after the first visit.</p>
+        <button class="btn btn-ghost" data-action="reset-progress">Reset progress</button>
+        ${toastEl()}
+      </div>`;
+  }
+
   function renderExam() {
     const paper = state.examPaper;
     if (!paper) {
-      return `
-        <div class="wrap">
-          ${topbar("subject")}
-          <p class="sub">${state.loading ? "Preparing the exam paper…" : esc(state.error || "No paper loaded.")}</p>
-        </div>`;
+      return `<div class="wrap">${topbar("subject")}<p class="sub">${state.loading ? "Preparing the exam paper…" : esc(state.error || "No paper loaded.")}</p></div>`;
     }
     const g = state.grade;
-    let body = "";
-    let key = "";
-    let total = 0;
+    let body = "", key = "", total = 0;
     paper.forEach(function (block) {
       body += `<h3 style="margin:18px 0 10px;border-bottom:1px solid #ccc;padding-bottom:4px">${esc(block.name)}</h3>`;
       key += `<h3 style="margin-top:14px">${esc(block.name)}</h3><div class="key-grid">`;
@@ -430,7 +710,6 @@
       });
       key += "</div>";
     });
-    const names = Object.keys(window.SUBJECTS).map(function (k) { return window.SUBJECTS[k].short; }).join(" · ");
     return `
       <div class="wrap exam">
         <div class="topbar no-print">
@@ -439,7 +718,7 @@
         </div>
         <header class="exam-head">
           <h2>Primary Super Quiz — Examination Paper</h2>
-          <p>${window.GRADE_INFO[g].label} · ${esc(names)}</p>
+          <p>${window.GRADE_INFO[g].label}</p>
           <p>Time: 1½ hours · Answer all questions. Circle A, B, C or D.</p>
         </header>
         <div class="exam-meta">
@@ -455,47 +734,84 @@
       </div>`;
   }
 
+  function stopTick() { clearInterval(tickTimer); tickTimer = null; }
+
+  function startTick() {
+    stopTick();
+    if (state.mode !== "timed" || state.screen !== "quiz") return;
+    state.timer = secondsFor();
+    tickTimer = setInterval(function () {
+      state.timer -= 1;
+      const el = document.querySelector(".timer-wrap");
+      if (el) {
+        el.textContent = "⏱ " + state.timer + "s";
+        el.classList.toggle("warn", state.timer <= 8);
+      }
+      if (state.timer <= 0) {
+        stopTick();
+        if (!state.revealed) {
+          if (state.picked[state.index] == null) state.picked[state.index] = -1;
+          state.revealed = true;
+          state.combo = 0;
+          playWrong();
+          if (state.mode === "timed") {
+            goNext(true);
+            return;
+          }
+        }
+        render();
+      }
+    }, 1000);
+  }
+
   function render() {
     const map = {
-      home: renderHome,
-      grade: renderGrades,
-      subject: renderSubjects,
-      length: renderLength,
-      quiz: renderQuiz,
-      result: renderResult,
-      review: renderReview,
-      certificate: renderCertificate,
-      exam: renderExam
+      home: renderHome, grade: renderGrades, subject: renderSubjects, length: renderLength,
+      quiz: renderQuiz, result: renderResult, review: renderReview, certificate: renderCertificate,
+      exam: renderExam, dashboard: renderDashboard, settings: renderSettings
     };
-    app.innerHTML = map[state.screen]();
+    app.innerHTML = (map[state.screen] || renderHome)();
     if (state.screen === "home") {
       const input = document.getElementById("pupil-name");
       if (input) {
-        input.addEventListener("input", function () {
-          state.name = input.value;
-        });
-        input.addEventListener("keydown", function (e) {
-          if (e.key === "Enter") startFromHome();
+        input.addEventListener("input", function () { state.name = input.value; });
+        input.addEventListener("keydown", function (e) { if (e.key === "Enter") startFromHome(); });
+      }
+    }
+    if (state.screen === "subject") {
+      const s = document.getElementById("subj-search");
+      if (s) {
+        s.addEventListener("input", function () {
+          state.query = s.value;
+          const sel = s.selectionStart;
+          render();
+          const n = document.getElementById("subj-search");
+          if (n) { n.focus(); n.setSelectionRange(sel, sel); }
         });
       }
     }
-    if (state.screen === "result") {
-      const pct = Math.round((score() / state.questions.length) * 100);
-      if (pct >= 70) launchConfetti();
+    if (state.screen === "quiz") {
+      startTick();
+      if (settings.tts) {
+        const q = state.questions[state.index];
+        if (q && !state.revealed) speak(q.q);
+      }
     } else {
-      stopConfetti();
+      stopTick();
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
     }
-    window.scrollTo(0, 0);
+    if (state.screen === "result") {
+      const pct = Math.round((score() / Math.max(1, state.questions.length)) * 100);
+      if (pct >= 70) launchConfetti();
+    } else stopConfetti();
+    if (state.screen !== "subject") window.scrollTo(0, 0);
   }
 
   function startFromHome() {
     const input = document.getElementById("pupil-name");
     state.name = (input ? input.value : state.name).trim();
     if (!state.name) {
-      if (input) {
-        input.focus();
-        input.style.borderColor = "#d4573e";
-      }
+      if (input) { input.focus(); input.style.borderColor = "#d4573e"; }
       return;
     }
     localStorage.setItem("psq-name", state.name);
@@ -503,173 +819,271 @@
     render();
   }
 
-  async function beginQuiz() {
+  async function beginQuiz(opts) {
+    opts = opts || {};
     state.loading = true;
     state.error = "";
     render();
     try {
-      state.questions = await loadQuiz(state.grade, state.subject, state.length);
+      const seed = opts.daily
+        ? (state.grade * 100000 + Number(todayKey().replace(/-/g, "")))
+        : 0;
+      state.questions = await loadQuiz(state.grade, state.subject, state.length, seed || null);
       state.index = 0;
       state.picked = [];
       state.revealed = false;
+      state.hidden = {};
+      state.used5050 = false;
+      state.usedSkip = false;
+      state.combo = 0;
+      state.maxCombo = 0;
+      state.newBadges = [];
+      state.daily = !!opts.daily;
       state.screen = "quiz";
+      saveResume();
     } catch (err) {
       state.error = err.message || "Could not load the quiz.";
-      state.screen = "length";
+      state.screen = state.subject ? "length" : "grade";
     }
     state.loading = false;
     render();
   }
 
-  async function buildExam() {
-    state.loading = true;
-    state.error = "";
-    state.examPaper = null;
-    state.screen = "exam";
+  function finishQuiz() {
+    stopTick();
+    recordResult();
+    state.screen = "result";
     render();
+  }
+
+  function goNext(fromTimer) {
+    if (state.index >= state.questions.length - 1) {
+      finishQuiz();
+      return;
+    }
+    state.index += 1;
+    state.revealed = false;
+    saveResume();
+    render();
+  }
+
+  function pickOption(i) {
+    if (state.mode === "exam") {
+      state.picked[state.index] = i;
+      render();
+      return;
+    }
+    if (state.revealed) return;
+    state.picked[state.index] = i;
+    state.revealed = true;
+    const ok = i === state.questions[state.index].answer;
+    if (ok) {
+      state.combo += 1;
+      if (state.combo > state.maxCombo) state.maxCombo = state.combo;
+      playCorrect();
+    } else {
+      state.combo = 0;
+      playWrong();
+    }
+    saveResume();
+    render();
+  }
+
+  async function buildExam() {
+    state.loading = true; state.error = ""; state.examPaper = null; state.screen = "exam"; render();
     try {
       const keys = Object.keys(window.SUBJECTS);
       const paper = [];
       for (let i = 0; i < keys.length; i++) {
-        const k = keys[i];
-        const bank = await fetchBank(state.grade, k);
-        paper.push({
-          key: k,
-          name: window.SUBJECTS[k].name,
-          questions: shuffle(bank).slice(0, 5)
-        });
+        const bank = await fetchBank(state.grade, keys[i]);
+        paper.push({ key: keys[i], name: window.SUBJECTS[keys[i]].name, questions: shuffle(bank).slice(0, 5) });
       }
       state.examPaper = paper;
-    } catch (err) {
-      state.error = err.message || "Could not build the paper.";
-    }
-    state.loading = false;
-    render();
+    } catch (err) { state.error = err.message || "Could not build the paper."; }
+    state.loading = false; render();
   }
 
   function launchConfetti() {
     if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
     const colors = ["#0e7c76", "#e9a825", "#e07a5f", "#3d8b6e", "#fff"];
     const bits = [];
     for (let i = 0; i < 90; i++) {
       bits.push({
-        x: Math.random() * canvas.width,
-        y: -20 - Math.random() * canvas.height * 0.4,
-        r: 4 + Math.random() * 6,
-        c: colors[i % colors.length],
-        vy: 2 + Math.random() * 3.5,
-        vx: -1.5 + Math.random() * 3,
-        a: Math.random() * Math.PI
+        x: Math.random() * canvas.width, y: -20 - Math.random() * canvas.height * 0.4,
+        r: 4 + Math.random() * 6, c: colors[i % colors.length],
+        vy: 2 + Math.random() * 3.5, vx: -1.5 + Math.random() * 3, a: Math.random() * Math.PI
       });
     }
     cancelAnimationFrame(confettiTimer);
     (function tick() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       bits.forEach(function (b) {
-        b.x += b.vx;
-        b.y += b.vy;
-        b.a += 0.08;
-        ctx.save();
-        ctx.translate(b.x, b.y);
-        ctx.rotate(b.a);
-        ctx.fillStyle = b.c;
-        ctx.fillRect(-b.r, -b.r / 2, b.r * 2, b.r);
-        ctx.restore();
+        b.x += b.vx; b.y += b.vy; b.a += 0.08;
+        ctx.save(); ctx.translate(b.x, b.y); ctx.rotate(b.a);
+        ctx.fillStyle = b.c; ctx.fillRect(-b.r, -b.r / 2, b.r * 2, b.r); ctx.restore();
       });
       confettiTimer = requestAnimationFrame(tick);
     })();
     setTimeout(stopConfetti, 2800);
   }
-
   function stopConfetti() {
     cancelAnimationFrame(confettiTimer);
     const ctx = canvas.getContext("2d");
     if (ctx) ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
 
+  async function saveCertPng() {
+    const c = document.createElement("canvas");
+    c.width = 1400; c.height = 990;
+    const ctx = c.getContext("2d");
+    ctx.fillStyle = "#fffdf6"; ctx.fillRect(0, 0, c.width, c.height);
+    ctx.strokeStyle = "#0e7c76"; ctx.lineWidth = 18; ctx.strokeRect(40, 40, c.width - 80, c.height - 80);
+    ctx.lineWidth = 4; ctx.strokeRect(70, 70, c.width - 140, c.height - 140);
+    ctx.fillStyle = "#0e7c76"; ctx.font = "700 22px sans-serif"; ctx.textAlign = "center";
+    ctx.fillText("PRIMARY SUPER QUIZ", c.width / 2, 160);
+    ctx.fillStyle = "#1c2834"; ctx.font = "700 54px serif";
+    ctx.fillText("Certificate of Achievement", c.width / 2, 240);
+    ctx.font = "28px sans-serif"; ctx.fillText("This is to certify that", c.width / 2, 330);
+    ctx.fillStyle = "#e07a5f"; ctx.font = "italic 64px serif";
+    ctx.fillText(state.name || "A brilliant pupil", c.width / 2, 430);
+    ctx.fillStyle = "#1c2834"; ctx.font = "28px sans-serif";
+    const n = score(); const total = state.questions.length;
+    const pct = Math.round((n / total) * 100);
+    ctx.fillText("completed " + subjectName(state.subject) + " · " + window.GRADE_INFO[state.grade].label, c.width / 2, 510);
+    ctx.font = "700 40px sans-serif";
+    ctx.fillText("Score " + n + " / " + total + "  (" + pct + "%)", c.width / 2, 600);
+    ctx.font = "24px sans-serif"; ctx.fillText(todayPretty(), c.width / 2, 680);
+    ctx.fillStyle = "#0e7c76"; ctx.font = "700 26px sans-serif";
+    ctx.fillText("Well done — keep learning.", c.width / 2, 780);
+    c.toBlob(function (blob) {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "certificate-" + (state.name || "pupil") + ".png";
+      a.click();
+    });
+  }
+
+  async function shareResult() {
+    const n = score(); const total = state.questions.length;
+    const text = (state.name || "I") + " scored " + n + "/" + total + " in " + subjectName(state.subject) +
+      " (Primary " + state.grade + ") on Primary Super Quiz!";
+    const url = location.href.split("#")[0];
+    if (navigator.share) {
+      try { await navigator.share({ title: "Primary Super Quiz", text: text, url: url }); return; } catch (e) {}
+    }
+    try {
+      await navigator.clipboard.writeText(text + " " + url);
+      toast("Copied your result. Paste it anywhere.");
+    } catch (e) { toast(text); }
+  }
+
   app.addEventListener("click", function (e) {
-    const t = e.target.closest("[data-go], [data-action], [data-grade], [data-pick-subject], [data-length], [data-opt]");
+    const t = e.target.closest("[data-go], [data-action], [data-grade], [data-pick-subject], [data-length], [data-opt], [data-mode], [data-group], [data-toggle]");
     if (!t) return;
     ensureAudio();
 
-    if (t.dataset.go) {
-      state.screen = t.dataset.go;
-      render();
-      return;
-    }
+    if (t.dataset.go) { state.screen = t.dataset.go; render(); return; }
     if (t.dataset.grade) {
       state.grade = Number(t.dataset.grade);
+      if (state.pendingDaily) {
+        state.pendingDaily = false;
+        state.subject = "daily";
+        state.length = 10;
+        state.mode = "practice";
+        beginQuiz({ daily: true });
+        return;
+      }
       state.screen = "subject";
       render();
       return;
     }
+    if (t.dataset.group) { state.group = t.dataset.group; render(); return; }
     if (t.dataset.pickSubject) {
       state.subject = t.dataset.pickSubject;
       state.screen = "length";
       state.error = "";
-      render();
-      return;
+      if (state.subject === "daily") { state.length = 10; state.mode = "practice"; }
+      render(); return;
     }
-    if (t.dataset.length) {
-      state.length = Number(t.dataset.length);
-      beginQuiz();
-      return;
+    if (t.dataset.length) { state.length = Number(t.dataset.length); render(); return; }
+    if (t.dataset.mode) { state.mode = t.dataset.mode; render(); return; }
+    if (t.dataset.opt != null) { pickOption(Number(t.dataset.opt)); return; }
+    if (t.dataset.toggle) {
+      settings[t.dataset.toggle] = !settings[t.dataset.toggle];
+      saveSettings(); applyChrome(); render(); return;
     }
-    if (t.dataset.opt != null && !state.revealed) {
-      const i = Number(t.dataset.opt);
-      state.picked[state.index] = i;
-      state.revealed = true;
-      if (i === state.questions[state.index].answer) playCorrect();
-      else playWrong();
-      render();
-      return;
-    }
+
     const action = t.dataset.action;
     if (action === "start") startFromHome();
-    if (action === "toggle-sound") {
-      state.sound = !state.sound;
-      localStorage.setItem("psq-sound", state.sound ? "on" : "off");
+    if (action === "toggle-sound") { settings.sound = !settings.sound; saveSettings(); render(); }
+    if (action === "begin") beginQuiz({ daily: state.subject === "daily" });
+    if (action === "daily") {
+      if (!state.name) { startFromHome(); if (!state.name) return; }
+      state.screen = "grade";
+      state.pendingDaily = true;
       render();
     }
-    if (action === "next") {
-      if (state.index >= state.questions.length - 1) {
-        state.screen = "result";
-      } else {
-        state.index += 1;
+    if (action === "resume") {
+      const r = loadJSON(RK, null);
+      if (r && r.questions) {
+        Object.assign(state, r);
+        state.screen = "quiz";
         state.revealed = false;
+        render();
       }
-      render();
     }
-    if (action === "review") {
-      state.screen = "review";
-      render();
-    }
-    if (action === "certificate") {
-      state.screen = "certificate";
-      render();
-    }
-    if (action === "again") beginQuiz();
+    if (action === "next") goNext();
+    if (action === "review") { state.screen = "review"; render(); }
+    if (action === "certificate") { state.screen = "certificate"; render(); }
+    if (action === "again") beginQuiz({ daily: state.daily });
     if (action === "print-exam") buildExam();
     if (action === "print") window.print();
+    if (action === "save-cert") saveCertPng();
+    if (action === "share") shareResult();
+    if (action === "speak") {
+      const q = state.questions[state.index];
+      if (q) speak(q.q + ". " + q.options.map(function (o, i) { return LETTERS[i] + ". " + o; }).join(". "));
+    }
+    if (action === "fifty" && !state.used5050 && state.mode !== "exam") {
+      const q = state.questions[state.index];
+      const wrong = [0, 1, 2, 3].filter(function (i) { return i !== q.answer; });
+      state.hidden[state.index] = shuffle(wrong).slice(0, 2);
+      state.used5050 = true;
+      render();
+    }
+    if (action === "skip" && !state.usedSkip) {
+      state.usedSkip = true;
+      state.picked[state.index] = state.picked[state.index] == null ? -1 : state.picked[state.index];
+      goNext();
+    }
+    if (action === "reset-progress") {
+      if (confirm("Erase XP, badges and history on this device?")) {
+        localStorage.removeItem(PK); localStorage.removeItem(RK);
+        location.reload();
+      }
+    }
   });
 
   document.addEventListener("keydown", function (e) {
-    if (state.screen === "quiz" && state.revealed && (e.key === "Enter" || e.key === " ")) {
+    if (state.screen !== "quiz") return;
+    if (state.revealed && state.mode !== "exam" && (e.key === "Enter" || e.key === " ")) {
       e.preventDefault();
       const btn = app.querySelector('[data-action="next"]');
       if (btn) btn.click();
       return;
     }
-    if (state.screen !== "quiz" || state.revealed) return;
     const map = { "1": 0, "2": 1, "3": 2, "4": 3, a: 0, b: 1, c: 2, d: 3, A: 0, B: 1, C: 2, D: 3 };
     if (map[e.key] != null) {
       const btn = app.querySelector('[data-opt="' + map[e.key] + '"]');
       if (btn) btn.click();
     }
   });
+
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js").catch(function () {});
+  }
 
   render();
 })();

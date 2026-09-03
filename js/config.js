@@ -28,3 +28,26 @@ window.SUBJECTS = {
 
 window.QUIZ_LENGTHS = [10, 20, 50, 100];
 window.QUESTIONS_PER_SUBJECT = 100;
+
+window.SUBJECT_GROUPS = [
+  { id: "all", label: "All" },
+  { id: "core", label: "Core" },
+  { id: "practical", label: "Practical" },
+  { id: "reasoning", label: "Reasoning" },
+  { id: "humanities", label: "Humanities" },
+  { id: "civic", label: "Civic" },
+  { id: "religion", label: "Religion" }
+];
+
+window.BADGES = [
+  { id: "first", name: "First Star", desc: "Finish your first quiz", icon: "⭐" },
+  { id: "perfect", name: "Perfect Paper", desc: "Score 100% on a quiz", icon: "💯" },
+  { id: "streak3", name: "On a Roll", desc: "Play 3 days in a row", icon: "🔥" },
+  { id: "streak7", name: "Week Warrior", desc: "Play 7 days in a row", icon: "🗓️" },
+  { id: "hundred", name: "Century", desc: "Sit a full 100-question paper", icon: "📜" },
+  { id: "daily", name: "Daily Hero", desc: "Score 8/10 or better on the Daily Challenge", icon: "☀️" },
+  { id: "scholar", name: "Scholar", desc: "Reach 500 XP", icon: "📚" },
+  { id: "champion", name: "Champion", desc: "Reach 1,500 XP", icon: "🏆" },
+  { id: "exam", name: "Exam Ready", desc: "Finish an exam-mode quiz", icon: "📝" },
+  { id: "speed", name: "Quick Thinker", desc: "Finish a timed quiz at 70%+", icon: "⚡" }
+];
