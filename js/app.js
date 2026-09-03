@@ -9,7 +9,7 @@
     best: {}, history: [], missed: {}, dailyDate: "", dailyBest: 0
   };
 
-  const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false });
+  const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false, music: true });
   let progress = EMPTY_PROGRESS;
 
   const state = {
@@ -44,6 +44,7 @@
   };
 
   let audioCtx = null;
+  let music = null;
   let confettiTimer = null;
   let tickTimer = null;
   let toastTimer = null;
@@ -269,13 +270,122 @@
     });
   }
 
+  const MUSIC_VOL = 0.04;
+
   function ensureAudio() {
     if (!audioCtx) {
       const AC = window.AudioContext || window.webkitAudioContext;
       if (AC) audioCtx = new AC();
     }
     if (audioCtx && audioCtx.state === "suspended") audioCtx.resume();
+    if (settings.music) startMusic();
   }
+  function setMusicGain(v, t) {
+    if (!music || !audioCtx) return;
+    music.master.gain.cancelScheduledValues(audioCtx.currentTime);
+    music.master.gain.setTargetAtTime(v, audioCtx.currentTime, t || 0.25);
+  }
+  function duckMusic(on) {
+    if (!settings.music || !music) return;
+    setMusicGain(on ? 0.01 : (document.hidden ? 0 : MUSIC_VOL), 0.18);
+  }
+  function startMusic() {
+    if (!settings.music || !audioCtx) return;
+    if (music) {
+      if (!document.hidden) setMusicGain(MUSIC_VOL, 0.5);
+      return;
+    }
+    const master = audioCtx.createGain();
+    master.gain.value = 0;
+    const filter = audioCtx.createBiquadFilter();
+    filter.type = "lowpass";
+    filter.frequency.value = 1550;
+    filter.Q.value = 0.65;
+    const delay = audioCtx.createDelay();
+    delay.delayTime.value = 0.32;
+    const fb = audioCtx.createGain();
+    fb.gain.value = 0.2;
+    filter.connect(delay);
+    delay.connect(fb);
+    fb.connect(delay);
+    delay.connect(master);
+    filter.connect(master);
+    master.connect(audioCtx.destination);
+
+    function padOsc(freq, type, gain) {
+      const o = audioCtx.createOscillator();
+      o.type = type;
+      o.frequency.value = freq;
+      const g = audioCtx.createGain();
+      g.gain.value = gain;
+      o.connect(g); g.connect(filter);
+      o.start();
+      return o;
+    }
+    const pads = [
+      padOsc(130.81, "sine", 0.2),
+      padOsc(196.00, "sine", 0.11),
+      padOsc(164.81, "triangle", 0.05)
+    ];
+
+    const melody = [
+      261.63, 329.63, 392.00, 329.63,
+      440.00, 392.00, 329.63, 293.66,
+      261.63, 293.66, 329.63, 392.00,
+      329.63, 293.66, 261.63, 0,
+      392.00, 440.00, 523.25, 440.00,
+      392.00, 329.63, 349.23, 329.63,
+      261.63, 329.63, 293.66, 246.94,
+      261.63, 0, 196.00, 261.63
+    ];
+    let step = 0;
+    let nextT = audioCtx.currentTime + 0.08;
+    const beat = 0.48;
+
+    function pluck(time, freq) {
+      if (!freq) return;
+      const o = audioCtx.createOscillator();
+      o.type = "triangle";
+      o.frequency.setValueAtTime(freq, time);
+      o.frequency.exponentialRampToValueAtTime(Math.max(80, freq * 0.985), time + 0.45);
+      const g = audioCtx.createGain();
+      g.gain.setValueAtTime(0.0001, time);
+      g.gain.exponentialRampToValueAtTime(0.16, time + 0.025);
+      g.gain.exponentialRampToValueAtTime(0.0001, time + 0.75);
+      o.connect(g); g.connect(filter);
+      o.start(time);
+      o.stop(time + 0.78);
+    }
+
+    function schedule() {
+      if (!music) return;
+      const horizon = audioCtx.currentTime + 1.5;
+      while (nextT < horizon) {
+        pluck(nextT, melody[step % melody.length]);
+        if (step % 8 === 0) pluck(nextT, 196.00);
+        nextT += beat;
+        step += 1;
+      }
+      music.timer = setTimeout(schedule, 380);
+    }
+
+    music = { master: master, pads: pads, timer: null };
+    master.gain.linearRampToValueAtTime(MUSIC_VOL, audioCtx.currentTime + 2.4);
+    schedule();
+  }
+  function stopMusic() {
+    if (!music) return;
+    clearTimeout(music.timer);
+    const m = music;
+    music = null;
+    if (!audioCtx) return;
+    m.master.gain.setTargetAtTime(0.0001, audioCtx.currentTime, 0.18);
+    setTimeout(function () {
+      m.pads.forEach(function (p) { try { p.stop(); } catch (e) {} });
+      try { m.master.disconnect(); } catch (e) {}
+    }, 700);
+  }
+
   function tone(freq, dur, type, gain) {
     if (!settings.sound || !audioCtx) return;
     const o = audioCtx.createOscillator();
@@ -299,6 +409,9 @@
     window.speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
     u.rate = 0.95; u.lang = "en-NG";
+    duckMusic(true);
+    u.onend = function () { duckMusic(false); };
+    u.onerror = function () { duckMusic(false); };
     window.speechSynthesis.speak(u);
   }
 
@@ -443,6 +556,7 @@
             : `<button class="icon-btn" data-go="account" title="Sign in" aria-label="Account">👤</button>`}
           <button class="icon-btn" data-go="dashboard" title="Progress" aria-label="Progress">📊</button>
           <button class="icon-btn" data-go="settings" title="Settings" aria-label="Settings">⚙️</button>
+          <button class="icon-btn ${settings.music ? "" : "off"}" data-action="toggle-music" title="Music" aria-label="Music" aria-pressed="${settings.music}">🎵</button>
           <button class="icon-btn" data-action="toggle-sound" aria-label="Sound">${settings.sound ? "🔊" : "🔇"}</button>
         </div>
       </div>`;
@@ -879,6 +993,7 @@
         <p class="sub">These stay on this device.</p>
         <div class="settings-list">
           ${row("sound", "Sound effects")}
+          ${row("music", "Soft background music")}
           ${row("tts", "Read questions aloud")}
           ${row("dark", "Dark mode")}
           ${row("large", "Larger text")}
@@ -1314,6 +1429,15 @@
       const btn = app.querySelector('[data-opt="' + map[e.key] + '"]');
       if (btn) btn.click();
     }
+  });
+
+  document.addEventListener("visibilitychange", function () {
+    if (!settings.music || !music) return;
+    setMusicGain(document.hidden ? 0 : MUSIC_VOL, 0.2);
+  });
+  window.addEventListener("beforeprint", function () { if (music) setMusicGain(0, 0.05); });
+  window.addEventListener("afterprint", function () {
+    if (settings.music && music && !document.hidden) setMusicGain(MUSIC_VOL, 0.3);
   });
 
   if ("serviceWorker" in navigator) {

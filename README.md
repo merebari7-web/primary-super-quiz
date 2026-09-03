@@ -32,6 +32,7 @@ Each subject bank has **100 questions** per class. Pupils can sit 10, 20, 50 or 
 - Printable 80-question exam paper with a teacher answer key
 - Certificate: print or download as PNG
 - Cartoon owl pops up when an answer is right or wrong
+- Soft looping background music (tap 🎵 to mute)
 - Keyboard: `A`–`D` or `1`–`4` to answer, `Enter` for next
 - **Optional Google Sign-In** (guest play still works for younger pupils)
 
