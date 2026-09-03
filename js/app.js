@@ -49,6 +49,8 @@
   let tickTimer = null;
   let toastTimer = null;
   let reactTimer = null;
+  let speakTimer = null;
+  let ttsWatch = null;
   let gsiInited = false;
 
   applyChrome();
@@ -279,6 +281,7 @@
     }
     if (audioCtx && audioCtx.state === "suspended") audioCtx.resume();
     if (settings.music) startMusic();
+    unlockSpeech();
   }
   function setMusicGain(v, t) {
     if (!music || !audioCtx) return;
@@ -404,15 +407,83 @@
   }
   function playWrong() { tone(196, 0.22, "square", 0.04); }
 
-  function speak(text) {
-    if (!settings.tts || !window.speechSynthesis) return;
-    window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.rate = 0.95; u.lang = "en-NG";
-    duckMusic(true);
-    u.onend = function () { duckMusic(false); };
-    u.onerror = function () { duckMusic(false); };
-    window.speechSynthesis.speak(u);
+  function ttsVoices() {
+    try { return window.speechSynthesis.getVoices() || []; } catch (e) { return []; }
+  }
+  function pickVoice() {
+    const voices = ttsVoices();
+    if (!voices.length) return null;
+    let best = null, score = -1;
+    voices.forEach(function (v) {
+      const lang = (v.lang || "").toLowerCase();
+      const name = (v.name || "").toLowerCase();
+      let n = 0;
+      if (lang.indexOf("en-ng") === 0) n = 100;
+      else if (lang.indexOf("en-gb") === 0 || name.indexOf("uk ") >= 0 || name.indexOf("british") >= 0) n = 90;
+      else if (lang.indexOf("en-au") === 0) n = 80;
+      else if (lang.indexOf("en-us") === 0) n = 70;
+      else if (lang.indexOf("en") === 0) n = 50;
+      if (name.indexOf("female") >= 0 || name.indexOf("samantha") >= 0 || name.indexOf("zira") >= 0) n += 3;
+      if (n > score) { score = n; best = v; }
+    });
+    return score > 0 ? best : voices[0];
+  }
+  function unlockSpeech() {
+    if (!window.speechSynthesis) return;
+    try {
+      ttsVoices();
+      if (speechSynthesis.paused) speechSynthesis.resume();
+    } catch (e) {}
+  }
+  function stopTtsWatch() {
+    clearInterval(ttsWatch);
+    ttsWatch = null;
+  }
+  function startTtsWatch() {
+    stopTtsWatch();
+    ttsWatch = setInterval(function () {
+      if (!window.speechSynthesis) { stopTtsWatch(); return; }
+      if (speechSynthesis.speaking && speechSynthesis.paused) speechSynthesis.resume();
+      if (!speechSynthesis.speaking && !speechSynthesis.pending) stopTtsWatch();
+    }, 3500);
+  }
+  function speak(text, force) {
+    if (!force && !settings.tts) return;
+    const str = String(text || "").replace(/\s+/g, " ").trim();
+    if (!str) return;
+    if (!window.speechSynthesis) {
+      if (force) toast("This browser cannot read aloud. Try Chrome, Edge or Safari.");
+      return;
+    }
+    unlockSpeech();
+    const go = function () {
+      try { if (speechSynthesis.paused) speechSynthesis.resume(); } catch (e) {}
+      const u = new SpeechSynthesisUtterance(str);
+      const v = pickVoice();
+      if (v) {
+        u.voice = v;
+        u.lang = v.lang || "en-GB";
+      } else {
+        u.lang = "en-GB";
+      }
+      u.rate = 0.92;
+      u.pitch = 1.04;
+      u.volume = 1;
+      duckMusic(true);
+      u.onend = function () { duckMusic(false); stopTtsWatch(); };
+      u.onerror = function () { duckMusic(false); stopTtsWatch(); };
+      try {
+        speechSynthesis.speak(u);
+        startTtsWatch();
+      } catch (err) {
+        duckMusic(false);
+        if (force) toast("Could not start read aloud. Tap 🔊 again.");
+      }
+    };
+    clearTimeout(speakTimer);
+    try { speechSynthesis.cancel(); } catch (e) {}
+    if (force) go();
+    else speakTimer = setTimeout(go, 80);
   }
 
   function score() {
@@ -805,7 +876,7 @@
           <div class="options">${options}</div>
           ${feedback}
           <div class="lifelines">
-            ${settings.tts ? `<button class="life" data-action="speak">🔊 Read aloud</button>` : ""}
+            <button class="life life-speak" data-action="speak">🔊 Read aloud</button>
             <button class="life" data-action="fifty" ${state.used5050 || exam ? "disabled" : ""}>50 / 50</button>
             <button class="life" data-action="skip" ${state.usedSkip ? "disabled" : ""}>Skip</button>
           </div>
@@ -994,7 +1065,7 @@
         <div class="settings-list">
           ${row("sound", "Sound effects")}
           ${row("music", "Soft background music")}
-          ${row("tts", "Read questions aloud")}
+          ${row("tts", "Auto-read each question")}
           ${row("dark", "Dark mode")}
           ${row("large", "Larger text")}
         </div>
@@ -1122,7 +1193,8 @@
       }
     } else {
       stopTick();
-      if (window.speechSynthesis) window.speechSynthesis.cancel();
+      stopTtsWatch();
+      try { if (window.speechSynthesis) window.speechSynthesis.cancel(); } catch (e) {}
     }
     if (state.screen === "result") {
       const pct = Math.round((score() / Math.max(1, state.questions.length)) * 100);
@@ -1349,7 +1421,7 @@
     const action = t.dataset.action;
     if (action === "start") startFromHome();
     if (action === "toggle-sound") { settings.sound = !settings.sound; saveSettings(); render(); }
-    if (action === "begin") beginQuiz({ daily: state.subject === "daily" });
+    if (action === "begin") { unlockSpeech(); beginQuiz({ daily: state.subject === "daily" }); }
     if (action === "daily") {
       if (!state.name) { startFromHome(); if (!state.name) return; }
       state.screen = "grade";
@@ -1375,7 +1447,17 @@
     if (action === "share") shareResult();
     if (action === "speak") {
       const q = state.questions[state.index];
-      if (q) speak(q.q + ". " + q.options.map(function (o, i) { return LETTERS[i] + ". " + o; }).join(". "));
+      if (!q) return;
+      const hide = state.hidden[state.index] || [];
+      const parts = [q.q];
+      q.options.forEach(function (o, i) {
+        if (hide.indexOf(i) < 0) parts.push(LETTERS[i] + ". " + o);
+      });
+      if (state.revealed && state.mode !== "exam") {
+        const ok = state.picked[state.index] === q.answer;
+        parts.push(ok ? "That is correct. " + q.explain : "The answer is " + q.options[q.answer] + ". " + q.explain);
+      }
+      speak(parts.join(". "), true);
     }
     if (action === "fifty" && !state.used5050 && state.mode !== "exam") {
       const q = state.questions[state.index];

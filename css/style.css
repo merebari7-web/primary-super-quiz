@@ -754,6 +754,11 @@ html.large { font-size: 22px; }
   font-size: 14px;
 }
 .life:disabled { opacity: .4; }
+.life-speak {
+  background: var(--teal-soft);
+  border-color: var(--teal);
+  color: var(--teal-dark);
+}
 
 .dash-grid {
   display: grid;
