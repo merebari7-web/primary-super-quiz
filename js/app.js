@@ -6,7 +6,8 @@
   const SK = "psq-settings-v3";
   const EMPTY_PROGRESS = {
     xp: 0, streak: 0, lastDay: "", quizzes: 0, badges: [],
-    best: {}, history: [], missed: {}, dailyDate: "", dailyBest: 0
+    best: {}, history: [], missed: {}, dailyDate: "", dailyBest: 0,
+    weekKey: "", weekQuizzes: 0, lastRank: "hatchling", days: {}
   };
 
   const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false, music: true });
@@ -219,6 +220,59 @@
     const d = new Date();
     return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
   }
+  function weekKey() {
+    const d = new Date();
+    const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    const day = t.getUTCDay() || 7;
+    t.setUTCDate(t.getUTCDate() + 4 - day);
+    const ys = new Date(Date.UTC(t.getUTCFullYear(), 0, 1));
+    const w = Math.ceil((((t - ys) / 86400000) + 1) / 7);
+    return t.getUTCFullYear() + "-W" + w;
+  }
+  function ensureWeek() {
+    const k = weekKey();
+    if (progress.weekKey !== k) {
+      progress.weekKey = k;
+      progress.weekQuizzes = 0;
+    }
+  }
+  function rankFor(xp) {
+    const ranks = window.RANKS || [];
+    let r = ranks[0] || { id: "hatchling", name: "Hatchling", min: 0, icon: "🐣" };
+    for (let i = 0; i < ranks.length; i++) if (xp >= ranks[i].min) r = ranks[i];
+    return r;
+  }
+  function nextRank(xp) {
+    const ranks = window.RANKS || [];
+    for (let i = 0; i < ranks.length; i++) if (xp < ranks[i].min) return ranks[i];
+    return null;
+  }
+  function weakestList(grade) {
+    return Object.keys(window.SUBJECTS).map(function (k) {
+      const b = progress.best[grade + "/" + k];
+      return { k: k, pct: b ? b.pct : 35 };
+    }).sort(function (a, b) { return a.pct - b.pct; }).map(function (x) { return x.k; });
+  }
+  function weakestSubject(grade) {
+    return weakestList(grade)[0] || "maths";
+  }
+  function prefetchGrade(g) {
+    ["english", "maths", "science", "civic"].forEach(function (s) {
+      fetchBank(g, s).catch(function () {});
+    });
+  }
+  function streakDots() {
+    const days = progress.days || {};
+    const items = [];
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date();
+      d.setDate(d.getDate() - i);
+      const k = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+      const label = ["S", "M", "T", "W", "T", "F", "S"][d.getDay()];
+      items.push(`<span class="dot ${days[k] ? "on" : ""}" title="${k}">${label}</span>`);
+    }
+    return `<div class="streak-dots" aria-label="Last 7 days">${items.join("")}</div>`;
+  }
 
   function prepareQuestion(q, subject) {
     const answerText = q.options[q.answer];
@@ -265,6 +319,22 @@
       return shuf(bag).slice(0, Math.min(length, bag.length)).map(function (q) {
         return prepareQuestion(q, q.subject || "mix");
       });
+    }
+    if (subject === "smart") {
+      const picked = [];
+      const bag = shuf(progress.missed[grade] || []);
+      bag.slice(0, Math.ceil(length / 2)).forEach(function (q) {
+        picked.push(prepareQuestion(q, q.subject || "mix"));
+      });
+      const keys = weakestList(grade).slice(0, 3);
+      const use = keys.length ? keys : Object.keys(window.SUBJECTS).slice(0, 3);
+      const per = Math.max(2, Math.ceil((length - picked.length) / use.length));
+      for (let i = 0; i < use.length; i++) {
+        const bank = shuf(await fetchBank(grade, use[i]));
+        bank.slice(0, per).forEach(function (q) { picked.push(prepareQuestion(q, use[i])); });
+      }
+      if (!picked.length) throw new Error("Play a quiz first so the coach can pick your weak spots.");
+      return shuf(picked).slice(0, length);
     }
     const bank = shuf(await fetchBank(grade, subject));
     return bank.slice(0, Math.min(length, bank.length)).map(function (q) {
@@ -497,6 +567,7 @@
     if (key === "mix") return "Champion Mix";
     if (key === "daily") return "Daily Challenge";
     if (key === "missed") return "Missed questions";
+    if (key === "smart") return "Smart Practice";
     return window.SUBJECTS[key] ? window.SUBJECTS[key].name : key;
   }
   function iconFor(key) {
@@ -554,6 +625,8 @@
     const yk = y.getFullYear() + "-" + (y.getMonth() + 1) + "-" + y.getDate();
     progress.streak = progress.lastDay === yk ? progress.streak + 1 : 1;
     progress.lastDay = day;
+    if (!progress.days) progress.days = {};
+    progress.days[day] = 1;
     if (progress.streak >= 3) awardBadge("streak3");
     if (progress.streak >= 7) awardBadge("streak7");
   }
@@ -567,9 +640,16 @@
     if (state.daily) xp += 25;
     if (state.mode === "timed") xp += 10;
     if (state.mode === "exam") xp += 15;
+    if (state.subject === "smart") xp += 20;
+    const prevRank = rankFor(progress.xp);
     progress.xp += xp;
     progress.quizzes += 1;
+    ensureWeek();
+    progress.weekQuizzes = (progress.weekQuizzes || 0) + 1;
     updateStreak();
+    const newRank = rankFor(progress.xp);
+    state.rankedUp = newRank.id !== prevRank.id ? newRank : null;
+    if (state.rankedUp) progress.lastRank = newRank.id;
     const key = state.grade + "/" + state.subject;
     const prev = progress.best[key];
     if (!prev || pct > prev.pct) progress.best[key] = { pct: pct, score: n, total: total };
@@ -577,7 +657,7 @@
       date: todayKey(), grade: state.grade, subject: state.subject,
       score: n, total: total, mode: state.mode, pct: pct
     });
-    progress.history = progress.history.slice(0, 40);
+    progress.history = progress.history.slice(0, 80);
 
     const missed = progress.missed[state.grade] || [];
     state.questions.forEach(function (q, i) {
@@ -677,6 +757,62 @@
   function siteFooter() {
     return `<p class="site-foot">© merebari web 2026</p>`;
   }
+  function rankCard() {
+    ensureWeek();
+    const r = rankFor(progress.xp);
+    const nxt = nextRank(progress.xp);
+    const span = nxt ? Math.max(1, nxt.min - r.min) : 1;
+    const pct = nxt ? Math.min(100, Math.round(((progress.xp - r.min) / span) * 100)) : 100;
+    return `
+      <div class="rank-card">
+        <div class="rank-ico" aria-hidden="true">${r.icon}</div>
+        <div>
+          <p class="kicker" style="margin:0">${esc(r.name)}</p>
+          <strong>${progress.xp} XP</strong>
+          <p class="sub" style="margin:4px 0 8px">${nxt ? (nxt.min - progress.xp) + " XP to " + nxt.name : "Max rank unlocked."}</p>
+          <div class="xp-track" aria-label="Rank progress"><i style="width:${pct}%"></i></div>
+        </div>
+      </div>`;
+  }
+  function weekCard() {
+    ensureWeek();
+    const goal = window.WEEK_GOAL || 5;
+    const n = progress.weekQuizzes || 0;
+    const pct = Math.min(100, Math.round((n / goal) * 100));
+    return `
+      <div class="week-card">
+        <div class="week-top">
+          <strong>This week</strong>
+          <span>${n} / ${goal} quizzes</span>
+        </div>
+        <div class="xp-track week"><i style="width:${pct}%"></i></div>
+      </div>`;
+  }
+  function onboardEl() {
+    if (localStorage.getItem("psq-onboard-v1")) return "";
+    const steps = [
+      { title: "Hello, champion!", body: "9,600 questions for Nigerian Primary 1–6. Earn XP, climb ranks and collect badges.", img: "images/mascot.png" },
+      { title: "How to play", body: "Practice for instant help. Exam is like a real test. Timed makes you think fast. Tap 🔊 Read aloud any time.", img: "images/owl-yes.jpg" },
+      { title: "You’re ready", body: "Type your name to start. Teachers can print papers and a progress report. Younger pupils can play as guests.", img: "images/trophy.png" }
+    ];
+    const i = state.onboardStep || 0;
+    const s = steps[i];
+    return `
+      <div class="onboard" role="dialog" aria-modal="true" aria-label="Welcome">
+        <div class="onboard-card">
+          <img src="${s.img}" alt="">
+          <h2>${s.title}</h2>
+          <p>${s.body}</p>
+          <div class="onboard-dots">${steps.map(function (_, n) { return `<i class="${n === i ? "on" : ""}"></i>`; }).join("")}</div>
+          <div class="home-actions">
+            ${i < steps.length - 1
+              ? `<button class="btn btn-primary" data-action="onboard-next">Next</button>
+                 <button class="btn btn-ghost" data-action="onboard-skip">Skip</button>`
+              : `<button class="btn btn-primary" data-action="onboard-skip">Let’s learn!</button>`}
+          </div>
+        </div>
+      </div>`;
+  }
 
   function renderHome() {
     const resume = loadJSON(resumeKey(), null);
@@ -689,6 +825,7 @@
     return `
       <div class="wrap">
         ${topbar(null)}
+        ${onboardEl()}
         ${cont}
         <section class="hero">
           <div>
@@ -704,10 +841,27 @@
           </div>
           <div class="hero-art"><img src="images/hero-kids.jpg" alt="Children taking a quiz together"></div>
         </section>
+        <div class="home-grid">
+          ${rankCard()}
+          ${weekCard()}
+        </div>
         <div class="home-stats">
           <div class="stat-tile"><b>${progress.xp}</b><span>XP</span></div>
           <div class="stat-tile"><b>${progress.streak}🔥</b><span>Day streak</span></div>
           <div class="stat-tile"><b>${progress.quizzes}</b><span>Quizzes</span></div>
+        </div>
+        ${streakDots()}
+        <div class="play-row">
+          <button class="play-tile daily" data-action="daily">
+            <span>☀️</span>
+            <strong>Daily Challenge</strong>
+            <p>${progress.dailyDate === todayKey() ? "Done today — play again?" : "10 fresh mixed questions"}</p>
+          </button>
+          <button class="play-tile smart" data-action="smart">
+            <span>🧠</span>
+            <strong>Smart Practice</strong>
+            <p>Coach picks your weak spots</p>
+          </button>
         </div>
         <div class="home-panel panel-rel" style="margin-top:18px;background:var(--card);border:3px solid var(--line);border-radius:28px;padding:22px;box-shadow:var(--shadow);">
           <img class="mascot-float" src="images/mascot.png" alt="">
@@ -715,7 +869,6 @@
           <input id="pupil-name" type="text" maxlength="40" placeholder="Type your name" value="${esc(state.name)}" autocomplete="name">
           <div class="home-actions">
             <button class="btn btn-primary" data-action="start">Let’s go! →</button>
-            <button class="btn btn-sun" data-action="daily">Daily Challenge ☀️</button>
             <button class="btn btn-ghost" data-go="dashboard">My progress</button>
           </div>
         </div>
@@ -780,6 +933,10 @@
           <button class="card-btn mix-card" data-pick-subject="mix">
             <div><h3>Champion Mix 🏆</h3><p>A mixed paper from every subject in this class.</p></div>
             <span class="btn btn-sun" style="pointer-events:none">Play mix</span>
+          </button>
+          <button class="card-btn smart-card" data-pick-subject="smart">
+            <div><h3>Smart Practice 🧠</h3><p>Missed questions plus your weakest subjects.</p></div>
+            <span class="btn btn-primary" style="pointer-events:none">Coach pick</span>
           </button>
         </div>
         <div class="teacher-row no-print">
@@ -884,6 +1041,7 @@
             ${canNext ? `<button class="btn btn-primary" data-action="next">${nextLabel}</button>` : ""}
             <button class="btn btn-ghost" data-go="subject">Quit</button>
           </div>
+          <p class="key-hint no-print">Tip: press A, B, C or D · 🔊 reads the question</p>
         </div>
         ${reactPopup()}
         ${toastEl()}
@@ -912,6 +1070,7 @@
           <div class="score-num">${n}<span style="font-size:.45em;color:var(--muted)"> / ${total}</span></div>
           <p style="font-weight:800;margin-top:4px">${pct}% · ${stars} star${stars === 1 ? "" : "s"} · Best combo x${state.maxCombo}</p>
           <p class="xp-pop">+${state.xpGained} XP · Total ${progress.xp}</p>
+          ${state.rankedUp ? `<div class="rank-up">${state.rankedUp.icon} New rank: <strong>${esc(state.rankedUp.name)}</strong></div>` : ""}
           <p class="score-msg">${messageFor(pct)}</p>
           ${badges ? `<div class="stats" style="justify-content:center">${badges}</div>` : ""}
           <div class="actions">
@@ -1020,6 +1179,52 @@
         <ul class="sub">${recent}</ul>
         ${siteFooter()}
         ${toastEl()}
+      </div>`;
+  }
+
+  function renderReport() {
+    ensureWeek();
+    const r = rankFor(progress.xp);
+    const g = state.grade || 1;
+    const weak = weakestList(g).slice(0, 4).map(function (k) {
+      const b = progress.best[g + "/" + k];
+      const s = window.SUBJECTS[k];
+      return `<tr><td>${s ? s.icon + " " + s.name : k}</td><td>${b ? b.pct + "%" : "Not yet"}</td><td>${b ? b.score + "/" + b.total : "—"}</td></tr>`;
+    }).join("");
+    const rows = (progress.history || []).slice(0, 20).map(function (h) {
+      return `<tr><td>${esc(h.date)}</td><td>P${h.grade}</td><td>${esc(subjectName(h.subject))}</td><td>${h.mode}</td><td>${h.score}/${h.total}</td><td>${h.pct}%</td></tr>`;
+    }).join("") || `<tr><td colspan="6">No quizzes yet.</td></tr>`;
+    const avg = (progress.history || []).length
+      ? Math.round((progress.history.reduce(function (s, h) { return s + (h.pct || 0); }, 0) / progress.history.length))
+      : 0;
+    return `
+      <div class="wrap report">
+        <div class="topbar no-print">
+          <button class="icon-btn" data-go="dashboard" aria-label="Back">←</button>
+          <button class="btn btn-primary" data-action="print">Print report</button>
+        </div>
+        <header class="exam-head">
+          <h2>Primary Super Quiz — Progress report</h2>
+          <p>${esc(state.name || "Pupil")} · ${esc(r.icon + " " + r.name)} · ${progress.xp} XP</p>
+          <p>${todayPretty()} · © merebari web 2026</p>
+        </header>
+        <div class="exam-meta">
+          <span>Quizzes: ${progress.quizzes}</span>
+          <span>Streak: ${progress.streak} days</span>
+          <span>Average: ${avg}%</span>
+          <span>This week: ${progress.weekQuizzes || 0}/${window.WEEK_GOAL || 5}</span>
+        </div>
+        <h3 style="margin:16px 0 8px">Focus subjects (Primary ${g})</h3>
+        <table class="report-table">
+          <thead><tr><th>Subject</th><th>Best</th><th>Score</th></tr></thead>
+          <tbody>${weak}</tbody>
+        </table>
+        <h3 style="margin:18px 0 8px">Recent quizzes</h3>
+        <table class="report-table">
+          <thead><tr><th>Date</th><th>Class</th><th>Subject</th><th>Mode</th><th>Score</th><th>%</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+        <p class="sub" style="margin-top:18px">Badges: ${progress.badges.length}/${window.BADGES.length} · Keep practising a little every day.</p>
       </div>`;
   }
 
@@ -1162,7 +1367,7 @@
     const map = {
       home: renderHome, grade: renderGrades, subject: renderSubjects, length: renderLength,
       quiz: renderQuiz, result: renderResult, review: renderReview, certificate: renderCertificate,
-      exam: renderExam, dashboard: renderDashboard, settings: renderSettings, account: renderAccount
+      exam: renderExam, dashboard: renderDashboard, settings: renderSettings, account: renderAccount, report: renderReport
     };
     app.innerHTML = (map[state.screen] || renderHome)();
     if (state.screen === "home" || state.screen === "account") mountGoogleButton();
@@ -1198,7 +1403,7 @@
     }
     if (state.screen === "result") {
       const pct = Math.round((score() / Math.max(1, state.questions.length)) * 100);
-      if (pct >= 70) launchConfetti();
+      if (pct >= 70 || state.rankedUp) launchConfetti();
     } else stopConfetti();
     if (state.screen !== "subject") window.scrollTo(0, 0);
   }
@@ -1390,12 +1595,21 @@
     if (t.dataset.go) { state.screen = t.dataset.go; render(); return; }
     if (t.dataset.grade) {
       state.grade = Number(t.dataset.grade);
+      prefetchGrade(state.grade);
       if (state.pendingDaily) {
         state.pendingDaily = false;
         state.subject = "daily";
         state.length = 10;
         state.mode = "practice";
         beginQuiz({ daily: true });
+        return;
+      }
+      if (state.pendingSmart) {
+        state.pendingSmart = false;
+        state.subject = "smart";
+        state.length = 20;
+        state.mode = "practice";
+        beginQuiz({});
         return;
       }
       state.screen = "subject";
@@ -1408,6 +1622,7 @@
       state.screen = "length";
       state.error = "";
       if (state.subject === "daily") { state.length = 10; state.mode = "practice"; }
+      if (state.subject === "smart") { state.length = 20; state.mode = "practice"; }
       render(); return;
     }
     if (t.dataset.length) { state.length = Number(t.dataset.length); render(); return; }
@@ -1415,17 +1630,41 @@
     if (t.dataset.opt != null) { pickOption(Number(t.dataset.opt)); return; }
     if (t.dataset.toggle) {
       settings[t.dataset.toggle] = !settings[t.dataset.toggle];
-      saveSettings(); applyChrome(); render(); return;
+      saveSettings(); applyChrome();
+      if (t.dataset.toggle === "music") {
+        if (settings.music) startMusic(); else stopMusic();
+      }
+      render(); return;
     }
 
     const action = t.dataset.action;
     if (action === "start") startFromHome();
     if (action === "toggle-sound") { settings.sound = !settings.sound; saveSettings(); render(); }
+    if (action === "toggle-music") {
+      settings.music = !settings.music;
+      saveSettings();
+      if (settings.music) startMusic(); else stopMusic();
+      render();
+    }
     if (action === "begin") { unlockSpeech(); beginQuiz({ daily: state.subject === "daily" }); }
     if (action === "daily") {
       if (!state.name) { startFromHome(); if (!state.name) return; }
       state.screen = "grade";
       state.pendingDaily = true;
+      render();
+    }
+    if (action === "smart") {
+      if (!state.name) { startFromHome(); if (!state.name) return; }
+      state.screen = "grade";
+      state.pendingSmart = true;
+      render();
+    }
+    if (action === "onboard-next") {
+      state.onboardStep = (state.onboardStep || 0) + 1;
+      render();
+    }
+    if (action === "onboard-skip") {
+      localStorage.setItem("psq-onboard-v1", "1");
       render();
     }
     if (action === "resume") {
@@ -1513,7 +1752,17 @@
     }
   });
 
+  if (window.speechSynthesis && speechSynthesis.addEventListener) {
+    speechSynthesis.addEventListener("voiceschanged", function () { ttsVoices(); });
+    try { ttsVoices(); } catch (e) {}
+  }
+
   document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      try { if (window.speechSynthesis) speechSynthesis.pause(); } catch (e) {}
+    } else {
+      try { if (window.speechSynthesis && speechSynthesis.paused) speechSynthesis.resume(); } catch (e) {}
+    }
     if (!settings.music || !music) return;
     setMusicGain(document.hidden ? 0 : MUSIC_VOL, 0.2);
   });

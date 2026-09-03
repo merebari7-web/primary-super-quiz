@@ -36,6 +36,17 @@ window.GOOGLE_CLIENT_ID = "";
 
 window.QUIZ_LENGTHS = [10, 20, 50, 100];
 window.QUESTIONS_PER_SUBJECT = 100;
+window.WEEK_GOAL = 5;
+
+window.RANKS = [
+  { id: "hatchling", name: "Hatchling", min: 0, icon: "🐣", blurb: "Every champion starts here." },
+  { id: "spark", name: "Spark", min: 80, icon: "✨", blurb: "You’re warming up nicely." },
+  { id: "explorer", name: "Explorer", min: 250, icon: "🧭", blurb: "Trying every subject." },
+  { id: "scholar", name: "Junior Scholar", min: 500, icon: "📗", blurb: "A serious learner." },
+  { id: "star", name: "Class Star", min: 1000, icon: "🌟", blurb: "Others look up to you." },
+  { id: "champion", name: "Champion", min: 1800, icon: "🏆", blurb: "Exam-ready and proud." },
+  { id: "legend", name: "Super Legend", min: 3000, icon: "👑", blurb: "Primary Super Quiz royalty." }
+];
 
 window.SUBJECT_GROUPS = [
   { id: "all", label: "All" },
@@ -57,5 +68,8 @@ window.BADGES = [
   { id: "scholar", name: "Scholar", desc: "Reach 500 XP", icon: "📚" },
   { id: "champion", name: "Champion", desc: "Reach 1,500 XP", icon: "🏆" },
   { id: "exam", name: "Exam Ready", desc: "Finish an exam-mode quiz", icon: "📝" },
-  { id: "speed", name: "Quick Thinker", desc: "Finish a timed quiz at 70%+", icon: "⚡" }
+  { id: "speed", name: "Quick Thinker", desc: "Finish a timed quiz at 70%+", icon: "⚡" },
+  { id: "week", name: "Goal Getter", desc: "Finish 5 quizzes in one week", icon: "🎯" },
+  { id: "smart", name: "Coach’s Pick", desc: "Finish a Smart Practice", icon: "🧠" },
+  { id: "mix", name: "All-Rounder", desc: "Finish a Champion Mix", icon: "🌈" }
 ];
