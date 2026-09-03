@@ -170,6 +170,7 @@
         logo_alignment: "left",
         width: Math.min(320, el.clientWidth || 280)
       });
+      try { google.accounts.id.prompt(); } catch (e) {}
     });
   }
   function signOutGoogle() {
@@ -757,6 +758,27 @@
   function siteFooter() {
     return `<p class="site-foot">© merebari web 2026</p>`;
   }
+  function googleAuthBlock() {
+    if (state.user) {
+      return `
+        <div class="signed-box">
+          <img class="signed-pic" referrerpolicy="no-referrer" src="${esc(state.user.picture || "images/icon-192.png")}" alt="">
+          <div>
+            <strong>Hi, ${esc(state.user.name)}</strong>
+            <p class="sub" style="margin:0">${esc(state.user.email || "Signed in with Google")}</p>
+          </div>
+          <button class="btn btn-ghost" data-action="signout">Sign out</button>
+        </div>`;
+    }
+    return `
+      <p class="field">Sign in with Google</p>
+      <div id="google-btn" class="google-slot"></div>
+      ${googleClientId() ? "" : `<button class="google-fake" data-action="need-google" type="button">
+        <span class="g-icon" aria-hidden="true"></span> Sign in with Google
+      </button>
+      <p class="sub" style="margin:8px 0 0">A teacher pastes a Google Client ID in Settings once. Younger pupils can skip this.</p>`}
+      <div class="or-line"><span>or play as guest</span></div>`;
+  }
   function rankCard() {
     ensureWeek();
     const r = rankFor(progress.xp);
@@ -865,8 +887,11 @@
         </div>
         <div class="home-panel panel-rel" style="margin-top:18px;background:var(--card);border:3px solid var(--line);border-radius:28px;padding:22px;box-shadow:var(--shadow);">
           <img class="mascot-float" src="images/mascot.png" alt="">
-          <label class="field" for="pupil-name">What is your name?</label>
-          <input id="pupil-name" type="text" maxlength="40" placeholder="Type your name" value="${esc(state.name)}" autocomplete="name">
+          ${googleAuthBlock()}
+          ${state.user ? "" : `
+            <label class="field" for="pupil-name">What is your name?</label>
+            <input id="pupil-name" type="text" maxlength="40" placeholder="Type your name" value="${esc(state.name)}" autocomplete="name">
+          `}
           <div class="home-actions">
             <button class="btn btn-primary" data-action="start">Let’s go! →</button>
             <button class="btn btn-ghost" data-go="dashboard">My progress</button>
