@@ -4,7 +4,9 @@ A free, offline-friendly quiz for **Nigerian primary schools (Primary 1–6)**.
 
 **16 subjects × 6 classes × 100 questions = 9,600 multiple-choice items.**
 
-Open [index.html](index.html) or use GitHub Pages after you publish this folder.
+**Live site:** [https://merebari7-web.github.io/primary-super-quiz/](https://merebari7-web.github.io/primary-super-quiz/)
+
+Open [index.html](index.html) to run it on your computer, or use the live GitHub Pages link above.
 
 ## Subjects
 
