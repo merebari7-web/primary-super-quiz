@@ -32,7 +32,7 @@ window.SUBJECTS = {
      https://merebari7-web.github.io
      http://localhost:8080
 */
-window.GOOGLE_CLIENT_ID = "";
+window.GOOGLE_CLIENT_ID = "648029341991-33dnroul54f7kvam3nd5gbd8l8lmvc45.apps.googleusercontent.com";
 
 window.QUIZ_LENGTHS = [10, 20, 50, 100];
 window.QUESTIONS_PER_SUBJECT = 100;
