@@ -853,6 +853,23 @@ html[data-theme="dark"] .search { background: #121820; }
 .mastery-bar { height: 8px; background: var(--line); border-radius: 99px; overflow: hidden; margin-top: 8px; }
 .mastery-bar > i { display: block; height: 100%; background: var(--teal); }
 
+.site-foot {
+  text-align: center;
+  margin: 28px 0 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.cert-copy {
+  margin-top: 22px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #6b7c86;
+  text-transform: uppercase;
+}
+
 @media (max-width: 700px) {
   .mode-grid { grid-template-columns: 1fr; }
   .home-stats { grid-template-columns: 1fr 1fr 1fr; }

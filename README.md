@@ -85,4 +85,4 @@ Files are written to `data/p1` … `data/p6`.
 
 ## Licence
 
-MIT — see [LICENSE](LICENSE).
+© merebari web 2026. MIT — see [LICENSE](LICENSE).

@@ -449,6 +449,9 @@
   function toastEl() {
     return `<div class="toast" id="toast" ${state.toast ? "" : "hidden"}>${esc(state.toast)}</div>`;
   }
+  function siteFooter() {
+    return `<p class="site-foot">© merebari web 2026</p>`;
+  }
 
   function renderHome() {
     const resume = loadJSON(resumeKey(), null);
@@ -491,6 +494,7 @@
             <button class="btn btn-ghost" data-go="dashboard">My progress</button>
           </div>
         </div>
+        ${siteFooter()}
         ${toastEl()}
       </div>`;
   }
@@ -751,6 +755,7 @@
             <p style="margin:14px 0;font-weight:800;font-size:22px">Score: ${n} / ${total} (${pct}%)</p>
             <p>${todayPretty()} · ${state.xpGained} XP earned</p>
             <p style="margin-top:18px;font-weight:800;color:var(--teal)">Well done — keep learning.</p>
+            <p class="cert-copy">© merebari web 2026</p>
           </div>
         </div>
       </div>`;
@@ -787,6 +792,7 @@
         <div class="badge-grid">${badges}</div>
         <h3 class="section-title" style="font-size:24px;margin-top:28px">Recent</h3>
         <ul class="sub">${recent}</ul>
+        ${siteFooter()}
         ${toastEl()}
       </div>`;
   }
@@ -815,6 +821,7 @@
           </button>`}
           <p class="sub" style="margin-top:16px">No Google account? Go back and type a name.</p>
         `}
+        ${siteFooter()}
         ${toastEl()}
       </div>`;
   }
@@ -842,6 +849,7 @@
         <button class="btn btn-primary" data-action="save-cid" style="margin-top:8px">Save Client ID</button>
         <p class="sub" style="margin-top:22px">Install this quiz on your phone from the browser menu → Add to Home Screen. It works offline after the first visit.</p>
         <button class="btn btn-ghost" data-action="reset-progress">Reset progress</button>
+        ${siteFooter()}
         ${toastEl()}
       </div>`;
   }
@@ -887,6 +895,7 @@
           <h2>Answer key — for the teacher only</h2>
           ${key}
         </section>
+        <p class="site-foot">© merebari web 2026</p>
       </div>`;
   }
 
