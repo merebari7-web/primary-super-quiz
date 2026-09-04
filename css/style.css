@@ -930,6 +930,44 @@ html[data-theme="dark"] .react-card img { mix-blend-mode: normal; }
   to { opacity: 1; }
 }
 
+.net-banner, .pause-banner {
+  background: #3d4f8b;
+  color: #fff;
+  font-weight: 800;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+.pause-banner { background: var(--sun); color: #3b2a08; }
+.split-bar {
+  height: 12px;
+  background: #fde8e4;
+  border-radius: 99px;
+  overflow: hidden;
+  margin: 12px auto 0;
+  max-width: 280px;
+}
+.split-bar > i {
+  display: block; height: 100%;
+  background: linear-gradient(90deg, #2f9e68, #49c2a5);
+}
+html.contrast {
+  --cream: #fff;
+  --paper: #fff;
+  --card: #fff;
+  --ink: #000;
+  --muted: #222;
+  --line: #000;
+  --teal: #005555;
+}
+html.contrast, html.contrast body { background: #fff; color: #000; }
+html.contrast .opt, html.contrast .card-btn, html.contrast .btn {
+  border-width: 3px;
+  border-color: #000;
+}
+
 .site-foot {
   text-align: center;
   margin: 28px 0 8px;

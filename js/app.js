@@ -10,7 +10,7 @@
     weekKey: "", weekQuizzes: 0, lastRank: "hatchling", days: {}
   };
 
-  const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false, music: true });
+  const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false, music: true, contrast: false });
   let progress = EMPTY_PROGRESS;
 
   const state = {
@@ -41,7 +41,9 @@
     examPaper: null,
     user: null,
     pendingDaily: false,
-    react: null
+    react: null,
+    paused: false,
+    reviewFilter: "all"
   };
 
   let audioCtx = null;
@@ -191,6 +193,7 @@
   function applyChrome() {
     document.documentElement.dataset.theme = settings.dark ? "dark" : "light";
     document.documentElement.classList.toggle("large", !!settings.large);
+    document.documentElement.classList.toggle("contrast", !!settings.contrast);
   }
 
   function esc(s) {
@@ -842,6 +845,10 @@
   function toastEl() {
     return `<div class="toast" id="toast" ${state.toast ? "" : "hidden"}>${esc(state.toast)}</div>`;
   }
+  function netBanner() {
+    if (navigator.onLine) return "";
+    return `<div class="net-banner">You’re offline. Saved questions still work.</div>`;
+  }
 
   const YES_LINES = ["Yes!", "Brilliant!", "You got it!", "Well done!", "Champion!", "Super star!"];
   const NO_LINES = ["Oops!", "Almost!", "Keep going!", "Nice try!", "Next one!"];
@@ -971,6 +978,7 @@
          </div>` : "";
     return `
       <div class="wrap">
+        ${netBanner()}
         ${topbar(null)}
         ${onboardEl()}
         ${cont}
@@ -1164,9 +1172,11 @@
     const canNext = exam ? state.picked[state.index] != null || state.revealed : state.revealed;
     const nextLabel = state.index === total - 1 ? "See my score" : "Next →";
     const timer = state.mode === "timed"
-      ? `<div class="timer-wrap ${state.timer <= 8 ? "warn" : ""}">⏱ ${state.timer}s</div>` : "";
+      ? `<div class="timer-wrap ${state.timer <= 8 ? "warn" : ""}">⏱ ${state.paused ? "Paused" : state.timer + "s"}</div>
+         <button class="life" data-action="${state.paused ? "resume-quiz" : "pause-quiz"}">${state.paused ? "▶ Resume" : "⏸ Pause"}</button>` : "";
     return `
       <div class="wrap">
+        ${netBanner()}
         ${topbar("length")}
         <div class="quiz-head">
           <div class="progress-meta">${iconFor(q.subject || state.subject)} ${esc(subj ? subj.name : subjectName(state.subject))} · P${state.grade}</div>
@@ -1176,6 +1186,7 @@
             <div class="progress-meta">${state.index + 1} / ${total}</div>
           </div>
         </div>
+        ${state.paused ? `<div class="pause-banner">Quiz paused. Timer is stopped.</div>` : ""}
         <div class="bar" aria-hidden="true"><span style="width:${pct}%"></span></div>
         <div class="q-card">
           <div class="q-label">Question ${state.index + 1} · ${state.mode}</div>
@@ -1222,11 +1233,15 @@
           <p class="xp-pop">+${state.xpGained} XP · Total ${progress.xp}</p>
           ${state.rankedUp ? `<div class="rank-up">${state.rankedUp.icon} New rank: <strong>${esc(state.rankedUp.name)}</strong></div>` : ""}
           <p class="score-msg">${messageFor(pct)}</p>
+          <div class="split-bar" aria-hidden="true"><i style="width:${pct}%"></i></div>
+          <p class="sub" style="margin:8px 0 0">${n} correct · ${total - n} to review</p>
           ${badges ? `<div class="stats" style="justify-content:center">${badges}</div>` : ""}
           <div class="actions">
             <button class="btn btn-primary" data-action="review">Review answers</button>
+            ${total - n ? `<button class="btn btn-sun" data-action="practice-missed">Practice missed</button>` : ""}
             <button class="btn btn-ghost" data-action="speak">🔊 Read score</button>
-            <button class="btn btn-sun" data-action="certificate">Certificate</button>
+            <button class="btn btn-sun" data-action="whatsapp">WhatsApp</button>
+            <button class="btn btn-ghost" data-action="certificate">Certificate</button>
             <button class="btn btn-ghost" data-action="share">Share</button>
             <button class="btn btn-ghost" data-action="again">Play again</button>
             <button class="btn btn-ghost" data-go="subject">New subject</button>
@@ -1424,6 +1439,7 @@
           ${row("tts", "Auto-read each question")}
           ${row("dark", "Dark mode")}
           ${row("large", "Larger text")}
+          ${row("contrast", "High contrast")}
         </div>
         <h3 class="section-title" style="font-size:24px;margin-top:28px">Google Sign-In</h3>
         <p class="sub">Teachers: create an OAuth Client ID, then paste it here. Origins to allow: <code>https://merebari7-web.github.io</code> and <code>http://localhost:8080</code>.</p>
@@ -1485,9 +1501,9 @@
   function stopTick() { clearInterval(tickTimer); tickTimer = null; }
 
   function startTick() {
-    stopTick();
-    if (state.mode !== "timed" || state.screen !== "quiz") return;
-    state.timer = secondsFor();
+    if (state.mode !== "timed" || state.screen !== "quiz" || state.paused) return;
+    if (tickTimer) return;
+    if (!state.timer || state.timer < 0) state.timer = secondsFor();
     tickTimer = setInterval(function () {
       state.timer -= 1;
       const el = document.querySelector(".timer-wrap");
@@ -1598,6 +1614,9 @@
       state.maxCombo = 0;
       state.newBadges = [];
       state.daily = !!opts.daily;
+      state.paused = false;
+      state.timer = secondsFor();
+      state.reviewFilter = "all";
       state.screen = "quiz";
       saveResume();
     } catch (err) {
@@ -1623,12 +1642,16 @@
     }
     state.index += 1;
     state.revealed = false;
+    state.paused = false;
+    state.timer = secondsFor();
+    stopTick();
     hideReact();
     saveResume();
     render();
   }
 
   function pickOption(i) {
+    if (state.paused) return;
     if (state.mode === "exam") {
       state.picked[state.index] = i;
       render();
@@ -1727,10 +1750,13 @@
     });
   }
 
-  async function shareResult() {
+  function resultShareText() {
     const n = score(); const total = state.questions.length;
-    const text = (state.name || "I") + " scored " + n + "/" + total + " in " + subjectName(state.subject) +
-      " (Primary " + state.grade + ") on Primary Super Quiz!";
+    return (state.name || "I") + " scored " + n + "/" + total + " (" + Math.round((n / Math.max(1, total)) * 100) +
+      "%) in " + subjectName(state.subject) + " · Primary " + state.grade + " on Primary Super Quiz!";
+  }
+  async function shareResult() {
+    const text = resultShareText();
     const url = location.href.split("#")[0];
     if (navigator.share) {
       try { await navigator.share({ title: "Primary Super Quiz", text: text, url: url }); return; } catch (e) {}
@@ -1740,9 +1766,13 @@
       toast("Copied your result. Paste it anywhere.");
     } catch (e) { toast(text); }
   }
+  function shareWhatsApp() {
+    const url = location.href.split("#")[0];
+    window.open("https://wa.me/?text=" + encodeURIComponent(resultShareText() + " " + url), "_blank");
+  }
 
   app.addEventListener("click", function (e) {
-    const t = e.target.closest("[data-go], [data-action], [data-grade], [data-pick-subject], [data-length], [data-opt], [data-mode], [data-group], [data-toggle]");
+    const t = e.target.closest("[data-go], [data-action], [data-grade], [data-pick-subject], [data-length], [data-opt], [data-mode], [data-group], [data-toggle], [data-filter]");
     if (!t) return;
     ensureAudio();
 
@@ -1771,6 +1801,7 @@
       return;
     }
     if (t.dataset.group) { state.group = t.dataset.group; render(); return; }
+    if (t.dataset.filter) { state.reviewFilter = t.dataset.filter; render(); return; }
     if (t.dataset.pickSubject) {
       state.subject = t.dataset.pickSubject;
       state.screen = "length";
@@ -1838,6 +1869,16 @@
     if (action === "print") window.print();
     if (action === "save-cert") saveCertPng();
     if (action === "share") shareResult();
+    if (action === "whatsapp") shareWhatsApp();
+    if (action === "pause-quiz") { state.paused = true; stopTick(); render(); }
+    if (action === "resume-quiz") { state.paused = false; startTick(); render(); }
+    if (action === "practice-missed") {
+      if (!state.grade) { state.screen = "grade"; render(); return; }
+      state.subject = "missed";
+      state.length = 20;
+      state.mode = "practice";
+      beginQuiz({});
+    }
     if (action === "speak") speakScreen(true);
     if (action === "fifty" && !state.used5050 && state.mode !== "exam") {
       const q = state.questions[state.index];
@@ -1907,6 +1948,8 @@
     if (!settings.music || !music) return;
     setMusicGain(document.hidden ? 0 : MUSIC_VOL, 0.2);
   });
+  window.addEventListener("online", function () { toast("Back online."); });
+  window.addEventListener("offline", function () { toast("You’re offline. You can keep playing."); render(); });
   window.addEventListener("beforeprint", function () { if (music) setMusicGain(0, 0.05); });
   window.addEventListener("afterprint", function () {
     if (settings.music && music && !document.hidden) setMusicGain(MUSIC_VOL, 0.3);
