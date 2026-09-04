@@ -1912,6 +1912,20 @@
     if (settings.music && music && !document.hidden) setMusicGain(MUSIC_VOL, 0.3);
   });
 
+  function blockImageCopy(e) {
+    const t = e.target;
+    if (!t) return;
+    const tag = t.tagName;
+    if (tag === "IMG" || tag === "CANVAS" || (t.closest && t.closest("img, .hero-art, .react-pop, .certificate, .brand, .mascot-float, .signed-pic, .q-card img"))) {
+      e.preventDefault();
+    }
+  }
+  document.addEventListener("contextmenu", blockImageCopy);
+  document.addEventListener("dragstart", blockImageCopy);
+  document.addEventListener("selectstart", function (e) {
+    if (e.target && e.target.tagName === "IMG") e.preventDefault();
+  });
+
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js").catch(function () {});
   }
