@@ -371,24 +371,42 @@
     }
     const master = audioCtx.createGain();
     master.gain.value = 0;
+
     const filter = audioCtx.createBiquadFilter();
     filter.type = "lowpass";
-    filter.frequency.value = 1550;
-    filter.Q.value = 0.65;
-    const delay = audioCtx.createDelay();
-    delay.delayTime.value = 0.32;
-    const fb = audioCtx.createGain();
-    fb.gain.value = 0.2;
-    filter.connect(delay);
-    delay.connect(fb);
-    fb.connect(delay);
-    delay.connect(master);
+    filter.frequency.value = 1080;
+    filter.Q.value = 0.45;
+
+    const delay1 = audioCtx.createDelay();
+    delay1.delayTime.value = 0.46;
+    const fb1 = audioCtx.createGain();
+    fb1.gain.value = 0.16;
+    const delay2 = audioCtx.createDelay();
+    delay2.delayTime.value = 0.78;
+    const fb2 = audioCtx.createGain();
+    fb2.gain.value = 0.1;
+
     filter.connect(master);
+    filter.connect(delay1);
+    delay1.connect(fb1); fb1.connect(delay1);
+    delay1.connect(master);
+    filter.connect(delay2);
+    delay2.connect(fb2); fb2.connect(delay2);
+    delay2.connect(master);
     master.connect(audioCtx.destination);
 
-    function padOsc(freq, type, gain) {
+    const lfo = audioCtx.createOscillator();
+    lfo.type = "sine";
+    lfo.frequency.value = 0.06;
+    const lfoG = audioCtx.createGain();
+    lfoG.gain.value = 220;
+    lfo.connect(lfoG);
+    lfoG.connect(filter.frequency);
+    lfo.start();
+
+    function padOsc(freq, gain) {
       const o = audioCtx.createOscillator();
-      o.type = type;
+      o.type = "sine";
       o.frequency.value = freq;
       const g = audioCtx.createGain();
       g.gain.value = gain;
@@ -397,54 +415,70 @@
       return o;
     }
     const pads = [
-      padOsc(130.81, "sine", 0.2),
-      padOsc(196.00, "sine", 0.11),
-      padOsc(164.81, "triangle", 0.05)
+      padOsc(98.00, 0.14),
+      padOsc(146.83, 0.08),
+      padOsc(196.00, 0.05),
+      padOsc(246.94, 0.035)
     ];
 
+    const G3 = 196.00, A3 = 220.00, B3 = 246.94, D4 = 293.66, E4 = 329.63;
+    const G4 = 392.00, A4 = 440.00, B4 = 493.88;
     const melody = [
-      261.63, 329.63, 392.00, 329.63,
-      440.00, 392.00, 329.63, 293.66,
-      261.63, 293.66, 329.63, 392.00,
-      329.63, 293.66, 261.63, 0,
-      392.00, 440.00, 523.25, 440.00,
-      392.00, 329.63, 349.23, 329.63,
-      261.63, 329.63, 293.66, 246.94,
-      261.63, 0, 196.00, 261.63
+      E4, D4, B3, D4, E4, G4, E4, D4, B3, A3, G3, A3, B3, D4, E4, 0,
+      G4, E4, D4, E4, G4, A4, G4, E4, D4, B3, D4, E4, D4, B3, G3, 0,
+      B4, A4, G4, E4, D4, E4, G4, A4, G4, E4, D4, B3, A3, G3, 0, 0,
+      E4, G4, A4, G4, E4, D4, B3, D4, E4, D4, B3, A3, G3, 0, G3, 0
     ];
-    let step = 0;
-    let nextT = audioCtx.currentTime + 0.08;
-    const beat = 0.48;
+    const bass = [
+      G3, 0, D4, 0, E4, 0, D4, 0,
+      G3, 0, B3, 0, A3, 0, G3, 0
+    ];
 
-    function pluck(time, freq) {
+    let step = 0;
+    let nextT = audioCtx.currentTime + 0.25;
+    const beat = 0.56;
+
+    function bell(time, freq, dur, peak) {
       if (!freq) return;
       const o = audioCtx.createOscillator();
-      o.type = "triangle";
+      o.type = "sine";
       o.frequency.setValueAtTime(freq, time);
-      o.frequency.exponentialRampToValueAtTime(Math.max(80, freq * 0.985), time + 0.45);
       const g = audioCtx.createGain();
       g.gain.setValueAtTime(0.0001, time);
-      g.gain.exponentialRampToValueAtTime(0.16, time + 0.025);
-      g.gain.exponentialRampToValueAtTime(0.0001, time + 0.75);
+      g.gain.exponentialRampToValueAtTime(peak, time + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, time + dur);
       o.connect(g); g.connect(filter);
       o.start(time);
-      o.stop(time + 0.78);
+      o.stop(time + dur + 0.02);
+      const o2 = audioCtx.createOscillator();
+      o2.type = "sine";
+      o2.frequency.setValueAtTime(freq * 2.005, time);
+      const g2 = audioCtx.createGain();
+      g2.gain.setValueAtTime(0.0001, time);
+      g2.gain.exponentialRampToValueAtTime(peak * 0.16, time + 0.012);
+      g2.gain.exponentialRampToValueAtTime(0.0001, time + dur * 0.5);
+      o2.connect(g2); g2.connect(filter);
+      o2.start(time);
+      o2.stop(time + dur * 0.55);
     }
 
     function schedule() {
       if (!music) return;
-      const horizon = audioCtx.currentTime + 1.5;
+      const horizon = audioCtx.currentTime + 1.7;
       while (nextT < horizon) {
-        pluck(nextT, melody[step % melody.length]);
-        if (step % 8 === 0) pluck(nextT, 196.00);
+        const n = melody[step % melody.length];
+        const accent = step % 8 === 0 ? 0.022 : 0;
+        bell(nextT, n, 1.25, 0.068 + accent);
+        const b = bass[step % bass.length];
+        if (b) bell(nextT, b / 2, 1.55, 0.045);
         nextT += beat;
         step += 1;
       }
-      music.timer = setTimeout(schedule, 380);
+      music.timer = setTimeout(schedule, 420);
     }
 
-    music = { master: master, pads: pads, timer: null };
-    master.gain.linearRampToValueAtTime(MUSIC_VOL, audioCtx.currentTime + 2.4);
+    music = { master: master, pads: pads, extra: [lfo], timer: null };
+    master.gain.linearRampToValueAtTime(MUSIC_VOL, audioCtx.currentTime + 3.2);
     schedule();
   }
   function stopMusic() {
@@ -453,11 +487,12 @@
     const m = music;
     music = null;
     if (!audioCtx) return;
-    m.master.gain.setTargetAtTime(0.0001, audioCtx.currentTime, 0.18);
+    m.master.gain.setTargetAtTime(0.0001, audioCtx.currentTime, 0.28);
     setTimeout(function () {
       m.pads.forEach(function (p) { try { p.stop(); } catch (e) {} });
+      (m.extra || []).forEach(function (p) { try { p.stop(); } catch (e) {} });
       try { m.master.disconnect(); } catch (e) {}
-    }, 700);
+    }, 900);
   }
 
   function tone(freq, dur, type, gain) {
