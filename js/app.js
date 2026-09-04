@@ -518,18 +518,105 @@
       if (!speechSynthesis.speaking && !speechSynthesis.pending) stopTtsWatch();
     }, 3500);
   }
+  function cleanSpeech(s) {
+    return String(s || "")
+      .replace(/&amp;/g, " and ")
+      .replace(/[–—]/g, ", ")
+      .replace(/×|✕|⋅/g, " times ")
+      .replace(/÷/g, " divided by ")
+      .replace(/−/g, " minus ")
+      .replace(/(^|[\s(])\+(?=\s|\d)/g, "$1 plus ")
+      .replace(/=/g, " equals ")
+      .replace(/%/g, " percent ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+  function quizSpeechParts(full) {
+    const q = state.questions[state.index];
+    if (!q) return [];
+    const total = state.questions.length;
+    const hide = state.hidden[state.index] || [];
+    const exam = state.mode === "exam";
+    const parts = [];
+    parts.push("Question " + (state.index + 1) + " of " + total + ".");
+    parts.push(subjectName(q.subject || state.subject) + ".");
+    if (state.mode === "timed" && state.timer) parts.push(state.timer + " seconds left.");
+    const stem = cleanSpeech(q.q);
+    parts.push(/[?!.]$/.test(stem) ? stem : stem + "?");
+    const shown = [];
+    q.options.forEach(function (o, i) {
+      if (hide.indexOf(i) < 0) shown.push({ i: i, t: cleanSpeech(o) });
+    });
+    if (shown.length) {
+      parts.push("The choices on the screen are.");
+      shown.forEach(function (o) {
+        parts.push("Option " + LETTERS[o.i] + ": " + o.t + ".");
+      });
+    }
+    if (exam && state.picked[state.index] != null && state.picked[state.index] >= 0) {
+      parts.push("You have selected option " + LETTERS[state.picked[state.index]] + ".");
+    }
+    if (state.revealed && !exam) {
+      const pick = state.picked[state.index];
+      const ok = pick === q.answer;
+      if (ok) parts.push("Yes, that is correct.");
+      else {
+        if (pick == null || pick < 0) parts.push("Not quite. No answer was chosen.");
+        else parts.push("Not quite. You chose option " + LETTERS[pick] + ", " + cleanSpeech(q.options[pick]) + ".");
+        parts.push("The correct answer is option " + LETTERS[q.answer] + ", " + cleanSpeech(q.options[q.answer]) + ".");
+      }
+      if (q.explain) parts.push(cleanSpeech(q.explain));
+      if (full) {
+        parts.push(state.index < total - 1 ? "Tap next for the next question." : "Tap see my score.");
+      }
+    } else if (full && !exam) {
+      parts.push("Tap A, B, C or D to answer.");
+    }
+    return parts.filter(function (p) { return p && p.length > 1; });
+  }
+  function resultSpeechParts() {
+    const total = state.questions.length;
+    const n = score();
+    const pct = Math.round((n / Math.max(1, total)) * 100);
+    const parts = [
+      (state.name || "Well done") + ".",
+      window.GRADE_INFO[state.grade] ? window.GRADE_INFO[state.grade].label + "." : "",
+      subjectName(state.subject) + ".",
+      "You scored " + n + " out of " + total + ", " + pct + " percent.",
+      starsFor(pct) + " star" + (starsFor(pct) === 1 ? "" : "s") + ".",
+      "You earned " + state.xpGained + " XP. Total " + progress.xp + " XP.",
+      messageFor(pct)
+    ];
+    if (state.rankedUp) parts.push("New rank: " + state.rankedUp.name + ".");
+    return parts.filter(Boolean);
+  }
   function speak(text, force) {
+    speakParts([cleanSpeech(text)], force);
+  }
+  function speakParts(parts, force) {
     if (!force && !settings.tts) return;
-    const str = String(text || "").replace(/\s+/g, " ").trim();
-    if (!str) return;
+    const list = (parts || []).map(function (p) { return cleanSpeech(p); }).filter(Boolean);
+    if (!list.length) return;
     if (!window.speechSynthesis) {
       if (force) toast("This browser cannot read aloud. Try Chrome, Edge or Safari.");
       return;
     }
     unlockSpeech();
+    speakGen += 1;
+    const gen = speakGen;
+    clearTimeout(speakTimer);
+    try { speechSynthesis.cancel(); } catch (e) {}
+    let i = 0;
     const go = function () {
+      if (gen !== speakGen) return;
+      if (i >= list.length) {
+        duckMusic(false);
+        stopTtsWatch();
+        return;
+      }
       try { if (speechSynthesis.paused) speechSynthesis.resume(); } catch (e) {}
-      const u = new SpeechSynthesisUtterance(str);
+      const u = new SpeechSynthesisUtterance(list[i]);
+      i += 1;
       const v = pickVoice();
       if (v) {
         u.voice = v;
@@ -537,13 +624,13 @@
       } else {
         u.lang = "en-GB";
       }
-      u.rate = 0.92;
-      u.pitch = 1.04;
+      u.rate = 0.88;
+      u.pitch = 1.02;
       u.volume = 1;
-      duckMusic(true);
-      u.onend = function () { duckMusic(false); stopTtsWatch(); };
-      u.onerror = function () { duckMusic(false); stopTtsWatch(); };
+      u.onend = function () { go(); };
+      u.onerror = function () { if (gen === speakGen) go(); };
       try {
+        if (i === 1) duckMusic(true);
         speechSynthesis.speak(u);
         startTtsWatch();
       } catch (err) {
@@ -551,10 +638,13 @@
         if (force) toast("Could not start read aloud. Tap 🔊 again.");
       }
     };
-    clearTimeout(speakTimer);
-    try { speechSynthesis.cancel(); } catch (e) {}
     if (force) go();
     else speakTimer = setTimeout(go, 80);
+  }
+  function speakScreen(force) {
+    if (state.screen === "quiz") speakParts(quizSpeechParts(!!force), force);
+    else if (state.screen === "result") speakParts(resultSpeechParts(), true);
+    else if (force) toast("Open a question, then tap Read aloud.");
   }
 
   function score() {
@@ -1100,6 +1190,7 @@
           ${badges ? `<div class="stats" style="justify-content:center">${badges}</div>` : ""}
           <div class="actions">
             <button class="btn btn-primary" data-action="review">Review answers</button>
+            <button class="btn btn-ghost" data-action="speak">🔊 Read score</button>
             <button class="btn btn-sun" data-action="certificate">Certificate</button>
             <button class="btn btn-ghost" data-action="share">Share</button>
             <button class="btn btn-ghost" data-action="again">Play again</button>
@@ -1419,7 +1510,10 @@
       startTick();
       if (settings.tts) {
         const q = state.questions[state.index];
-        if (q && !state.revealed) speak(q.q);
+        if (q && !state.revealed && state.spokenFor !== state.index) {
+          state.spokenFor = state.index;
+          speakParts(quizSpeechParts(false), false);
+        }
       }
     } else {
       stopTick();
@@ -1709,20 +1803,7 @@
     if (action === "print") window.print();
     if (action === "save-cert") saveCertPng();
     if (action === "share") shareResult();
-    if (action === "speak") {
-      const q = state.questions[state.index];
-      if (!q) return;
-      const hide = state.hidden[state.index] || [];
-      const parts = [q.q];
-      q.options.forEach(function (o, i) {
-        if (hide.indexOf(i) < 0) parts.push(LETTERS[i] + ". " + o);
-      });
-      if (state.revealed && state.mode !== "exam") {
-        const ok = state.picked[state.index] === q.answer;
-        parts.push(ok ? "That is correct. " + q.explain : "The answer is " + q.options[q.answer] + ". " + q.explain);
-      }
-      speak(parts.join(". "), true);
-    }
+    if (action === "speak") speakScreen(true);
     if (action === "fifty" && !state.used5050 && state.mode !== "exam") {
       const q = state.questions[state.index];
       const wrong = [0, 1, 2, 3].filter(function (i) { return i !== q.answer; });
