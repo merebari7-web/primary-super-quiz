@@ -377,111 +377,138 @@
 
     const filter = audioCtx.createBiquadFilter();
     filter.type = "lowpass";
-    filter.frequency.value = 1080;
-    filter.Q.value = 0.45;
+    filter.frequency.value = 920;
+    filter.Q.value = 0.55;
 
-    const delay1 = audioCtx.createDelay();
-    delay1.delayTime.value = 0.46;
+    const delay1 = audioCtx.createDelay(2);
+    delay1.delayTime.value = 0.52;
     const fb1 = audioCtx.createGain();
-    fb1.gain.value = 0.16;
-    const delay2 = audioCtx.createDelay();
-    delay2.delayTime.value = 0.78;
+    fb1.gain.value = 0.18;
+    const wet1 = audioCtx.createGain();
+    wet1.gain.value = 0.22;
+    const delay2 = audioCtx.createDelay(2);
+    delay2.delayTime.value = 1.04;
     const fb2 = audioCtx.createGain();
-    fb2.gain.value = 0.1;
+    fb2.gain.value = 0.12;
+    const wet2 = audioCtx.createGain();
+    wet2.gain.value = 0.14;
 
     filter.connect(master);
     filter.connect(delay1);
     delay1.connect(fb1); fb1.connect(delay1);
-    delay1.connect(master);
+    delay1.connect(wet1); wet1.connect(master);
     filter.connect(delay2);
     delay2.connect(fb2); fb2.connect(delay2);
-    delay2.connect(master);
+    delay2.connect(wet2); wet2.connect(master);
     master.connect(audioCtx.destination);
 
     const lfo = audioCtx.createOscillator();
     lfo.type = "sine";
-    lfo.frequency.value = 0.06;
+    lfo.frequency.value = 0.045;
     const lfoG = audioCtx.createGain();
-    lfoG.gain.value = 220;
+    lfoG.gain.value = 260;
     lfo.connect(lfoG);
     lfoG.connect(filter.frequency);
     lfo.start();
 
-    function padOsc(freq, gain) {
+    function makePad(type, gain) {
       const o = audioCtx.createOscillator();
-      o.type = "sine";
-      o.frequency.value = freq;
+      o.type = type;
+      o.frequency.value = 196;
       const g = audioCtx.createGain();
       g.gain.value = gain;
       o.connect(g); g.connect(filter);
       o.start();
       return o;
     }
-    const pads = [
-      padOsc(98.00, 0.14),
-      padOsc(146.83, 0.08),
-      padOsc(196.00, 0.05),
-      padOsc(246.94, 0.035)
-    ];
+    const padA = makePad("sine", 0.11);
+    const padB = makePad("sine", 0.07);
+    const padC = makePad("triangle", 0.035);
+    const sub = makePad("sine", 0.09);
+    const pads = [padA, padB, padC, sub];
 
-    const G3 = 196.00, A3 = 220.00, B3 = 246.94, D4 = 293.66, E4 = 329.63;
-    const G4 = 392.00, A4 = 440.00, B4 = 493.88;
-    const melody = [
-      E4, D4, B3, D4, E4, G4, E4, D4, B3, A3, G3, A3, B3, D4, E4, 0,
-      G4, E4, D4, E4, G4, A4, G4, E4, D4, B3, D4, E4, D4, B3, G3, 0,
-      B4, A4, G4, E4, D4, E4, G4, A4, G4, E4, D4, B3, A3, G3, 0, 0,
-      E4, G4, A4, G4, E4, D4, B3, D4, E4, D4, B3, A3, G3, 0, G3, 0
+    function hz(m) { return 440 * Math.pow(2, (m - 69) / 12); }
+    const chords = [
+      [55, 59, 62, 43],
+      [52, 55, 59, 40],
+      [48, 52, 55, 36],
+      [50, 54, 57, 38]
     ];
-    const bass = [
-      G3, 0, D4, 0, E4, 0, D4, 0,
-      G3, 0, B3, 0, A3, 0, G3, 0
+    const melody = [
+      64,62,59,62, 64,67,64,0, 62,59,57,55, 59,62,64,0,
+      67,64,62,64, 67,69,67,0, 64,62,59,57, 55,57,59,0,
+      72,71,67,64, 62,64,67,0, 69,67,64,62, 60,62,64,0,
+      66,69,67,64, 62,64,66,0, 67,64,62,59, 57,62,55,0,
+      64,0,62,59, 64,67,0,64, 62,0,59,57, 59,62,0,0,
+      67,64,0,64, 67,0,69,67, 64,62,59,0, 55,0,59,0,
+      72,0,71,67, 64,67,0,0, 69,67,64,0, 60,64,0,0,
+      66,69,0,67, 64,62,66,0, 67,0,64,62, 59,57,55,0
+    ];
+    const bassPat = [
+      55,0,59,0,62,0,55,0,
+      52,0,55,0,59,0,52,0,
+      48,0,52,0,55,0,48,0,
+      50,0,54,0,57,0,50,0
     ];
 
     let step = 0;
-    let nextT = audioCtx.currentTime + 0.25;
-    const beat = 0.56;
+    let nextT = audioCtx.currentTime + 0.4;
+    const beat = 0.64;
 
-    function bell(time, freq, dur, peak) {
-      if (!freq) return;
+    function toneAt(time, midi, dur, peak, type) {
+      if (!midi) return;
+      const f = hz(midi);
       const o = audioCtx.createOscillator();
-      o.type = "sine";
-      o.frequency.setValueAtTime(freq, time);
+      o.type = type || "sine";
+      o.frequency.setValueAtTime(f, time);
       const g = audioCtx.createGain();
       g.gain.setValueAtTime(0.0001, time);
-      g.gain.exponentialRampToValueAtTime(peak, time + 0.02);
+      g.gain.exponentialRampToValueAtTime(peak, time + 0.03);
       g.gain.exponentialRampToValueAtTime(0.0001, time + dur);
       o.connect(g); g.connect(filter);
       o.start(time);
-      o.stop(time + dur + 0.02);
-      const o2 = audioCtx.createOscillator();
-      o2.type = "sine";
-      o2.frequency.setValueAtTime(freq * 2.005, time);
-      const g2 = audioCtx.createGain();
-      g2.gain.setValueAtTime(0.0001, time);
-      g2.gain.exponentialRampToValueAtTime(peak * 0.16, time + 0.012);
-      g2.gain.exponentialRampToValueAtTime(0.0001, time + dur * 0.5);
-      o2.connect(g2); g2.connect(filter);
-      o2.start(time);
-      o2.stop(time + dur * 0.55);
+      o.stop(time + dur + 0.04);
+      const h = audioCtx.createOscillator();
+      h.type = "sine";
+      h.frequency.setValueAtTime(f * 2.003, time);
+      const hg = audioCtx.createGain();
+      hg.gain.setValueAtTime(0.0001, time);
+      hg.gain.exponentialRampToValueAtTime(peak * 0.18, time + 0.018);
+      hg.gain.exponentialRampToValueAtTime(0.0001, time + dur * 0.45);
+      h.connect(hg); hg.connect(filter);
+      h.start(time);
+      h.stop(time + dur * 0.5);
+    }
+
+    function setChord(time, idx) {
+      const c = chords[idx];
+      padA.frequency.setTargetAtTime(hz(c[0]), time, 0.4);
+      padB.frequency.setTargetAtTime(hz(c[1]), time, 0.45);
+      padC.frequency.setTargetAtTime(hz(c[2]), time, 0.5);
+      sub.frequency.setTargetAtTime(hz(c[3]), time, 0.55);
     }
 
     function schedule() {
       if (!music) return;
-      const horizon = audioCtx.currentTime + 1.7;
+      const horizon = audioCtx.currentTime + 2.1;
       while (nextT < horizon) {
+        const chord = Math.floor(step / 16) % 4;
+        if (step % 16 === 0) setChord(nextT, chord);
         const n = melody[step % melody.length];
-        const accent = step % 8 === 0 ? 0.022 : 0;
-        bell(nextT, n, 1.25, 0.068 + accent);
-        const b = bass[step % bass.length];
-        if (b) bell(nextT, b / 2, 1.55, 0.045);
+        const long = n && melody[(step + 1) % melody.length] === 0;
+        const peak = (step % 8 === 0 ? 0.072 : 0.055);
+        toneAt(nextT, n, long ? 1.7 : 1.15, peak, "sine");
+        const b = bassPat[step % bassPat.length];
+        if (b) toneAt(nextT, b, 1.7, 0.04, "sine");
+        if (step % 32 === 24) toneAt(nextT, 79, 2.2, 0.018, "sine");
         nextT += beat;
         step += 1;
       }
-      music.timer = setTimeout(schedule, 420);
+      music.timer = setTimeout(schedule, 480);
     }
 
     music = { master: master, pads: pads, extra: [lfo], timer: null };
-    master.gain.linearRampToValueAtTime(MUSIC_VOL, audioCtx.currentTime + 3.2);
+    master.gain.linearRampToValueAtTime(MUSIC_VOL, audioCtx.currentTime + 4.2);
     schedule();
   }
   function stopMusic() {
@@ -490,12 +517,12 @@
     const m = music;
     music = null;
     if (!audioCtx) return;
-    m.master.gain.setTargetAtTime(0.0001, audioCtx.currentTime, 0.28);
+    m.master.gain.setTargetAtTime(0.0001, audioCtx.currentTime, 0.32);
     setTimeout(function () {
       m.pads.forEach(function (p) { try { p.stop(); } catch (e) {} });
       (m.extra || []).forEach(function (p) { try { p.stop(); } catch (e) {} });
       try { m.master.disconnect(); } catch (e) {}
-    }, 900);
+    }, 1000);
   }
 
   function tone(freq, dur, type, gain) {
