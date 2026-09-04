@@ -89,7 +89,66 @@
   }
   function uid() {
     const u = currentUser();
-    return u ? u.sub : "guest";
+    if (u && u.sub) return u.sub;
+    ensureProfiles();
+    return localStorage.getItem("psq-profile-id") || "p1";
+  }
+  function listProfiles() { return loadJSON("psq-profiles-v1", []); }
+  function saveProfiles(list) { localStorage.setItem("psq-profiles-v1", JSON.stringify(list)); }
+  function ensureProfiles() {
+    let list = loadJSON("psq-profiles-v1", null);
+    if (list && list.length) {
+      const id = localStorage.getItem("psq-profile-id");
+      if (!id || !list.some(function (p) { return p.id === id; })) {
+        localStorage.setItem("psq-profile-id", list[0].id);
+      }
+      return list;
+    }
+    const id = "p1";
+    list = [{
+      id: id,
+      name: localStorage.getItem("psq-name") || "Pupil",
+      grade: Number(localStorage.getItem("psq-grade") || "") || null
+    }];
+    saveProfiles(list);
+    localStorage.setItem("psq-profile-id", id);
+    const oldP = localStorage.getItem("psq-progress-v3-guest");
+    if (oldP && !localStorage.getItem("psq-progress-v3-" + id)) {
+      localStorage.setItem("psq-progress-v3-" + id, oldP);
+    }
+    const oldR = localStorage.getItem("psq-resume-v3-guest");
+    if (oldR && !localStorage.getItem("psq-resume-v3-" + id)) {
+      localStorage.setItem("psq-resume-v3-" + id, oldR);
+    }
+    return list;
+  }
+  function touchProfile() {
+    if (currentUser()) return;
+    const id = localStorage.getItem("psq-profile-id");
+    saveProfiles(ensureProfiles().map(function (p) {
+      if (p.id === id) {
+        p.name = state.name || p.name;
+        p.grade = state.grade || p.grade;
+      }
+      return p;
+    }));
+  }
+  function switchProfile(id) {
+    if (currentUser()) { toast("Sign out first to switch sibling profiles."); return; }
+    touchProfile();
+    const next = ensureProfiles().find(function (p) { return p.id === id; });
+    if (!next) return;
+    localStorage.setItem("psq-profile-id", id);
+    state.name = next.name || "";
+    state.grade = next.grade || null;
+    localStorage.setItem("psq-name", state.name);
+    if (state.grade) localStorage.setItem("psq-grade", String(state.grade));
+    else localStorage.removeItem("psq-grade");
+    loadProgress();
+    toast("Now playing as " + (state.name || "pupil"));
+  }
+  function schoolName() {
+    return (localStorage.getItem("psq-school") || "").trim();
   }
   function progressKey() { return "psq-progress-v3-" + uid(); }
   function resumeKey() { return "psq-resume-v3-" + uid(); }
@@ -202,7 +261,11 @@
   if (state.user && state.user.name) state.name = state.user.name;
 
   function applyChrome() {
-    document.documentElement.dataset.theme = settings.dark ? "dark" : "light";
+    let dark = !!settings.dark;
+    if (settings.autoDark && window.matchMedia) {
+      dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+    document.documentElement.dataset.theme = dark ? "dark" : "light";
     document.documentElement.classList.toggle("large", !!settings.large);
     document.documentElement.classList.toggle("contrast", !!settings.contrast);
   }
@@ -1061,6 +1124,20 @@
         ${siteFooter()}${toastEl()}
       </div>`;
   }
+  function profileRow() {
+    if (currentUser()) return "";
+    const list = ensureProfiles();
+    const cur = localStorage.getItem("psq-profile-id");
+    const chips = list.map(function (p) {
+      return `<button type="button" class="profile-chip ${p.id === cur ? "on" : ""}" data-profile="${esc(p.id)}">${esc(p.name || "Pupil")}</button>`;
+    }).join("");
+    return `
+      <div class="profile-row" aria-label="Pupils on this device">
+        ${chips}
+        ${list.length < 6 ? `<button type="button" class="profile-chip add" data-action="add-profile">+ Sibling</button>` : ""}
+        ${state.addingProfile ? `<span class="profile-add"><input id="new-pupil" type="text" maxlength="24" placeholder="Sibling’s name"><button class="btn btn-sun" data-action="save-profile">Add</button></span>` : ""}
+      </div>`;
+  }
   function coachCard() {
     if (!state.grade || !progress.quizzes) return "";
     const k = weakestSubject(state.grade);
@@ -1288,6 +1365,7 @@
            <div><strong>Back to class</strong><p>${esc(window.GRADE_INFO[state.grade].label)} · ${esc(state.name)}</p></div>
            <button class="btn btn-primary" data-action="jump-class">Open</button>
          </div>` : ""}
+        ${profileRow()}
         <section class="hero">
           <div>
             <div class="kicker">${esc(greeting())} · Nigeria · Offline ready</div>
@@ -1602,11 +1680,13 @@
 
   function renderReview() {
     const filter = state.reviewFilter || "all";
+    const qy = (state.reviewQuery || "").toLowerCase();
     const missedN = state.questions.filter(function (q, i) { return state.picked[i] !== q.answer; }).length;
     const items = state.questions.map(function (q, i) {
       const ok = state.picked[i] === q.answer;
       if (filter === "missed" && ok) return "";
       if (filter === "correct" && !ok) return "";
+      if (qy && (q.q + " " + q.options.join(" ") + " " + (q.explain || "")).toLowerCase().indexOf(qy) < 0) return "";
       const chosen = state.picked[i] == null || state.picked[i] < 0 ? "—" : q.options[state.picked[i]];
       return `
         <article class="review-item">
@@ -1622,6 +1702,7 @@
         ${topbar("result")}
         <h2 class="section-title">Answer review</h2>
         <p class="sub">Read why each answer is right, then try again.</p>
+        <input class="search" id="review-search" type="search" placeholder="Search this paper…" value="${esc(state.reviewQuery || "")}">
         <div class="filter-row">
           <button class="filter-chip ${filter === "all" ? "on" : ""}" data-filter="all">All ${state.questions.length}</button>
           <button class="filter-chip ${filter === "missed" ? "on" : ""}" data-filter="missed">Missed ${missedN}</button>
@@ -1661,6 +1742,7 @@
             <h2>Certificate of Achievement</h2>
             <p>This is to certify that</p>
             <p class="script-name">${esc(state.name || "A brilliant pupil")}</p>
+            ${schoolName() ? `<p>${esc(schoolName())}</p>` : ""}
             <p>has completed the <strong>${esc(subjectName(state.subject))}</strong> quiz<br>for <strong>${window.GRADE_INFO[state.grade].label}</strong></p>
             <p style="margin:14px 0;font-weight:800;font-size:22px">Score: ${n} / ${total} (${pct}%)</p>
             <p>${todayPretty()} · ${state.xpGained} XP earned</p>
@@ -1817,6 +1899,9 @@
         <label class="field" for="cid">Google Client ID</label>
         <input id="cid" class="search" type="text" placeholder="123456789-abc.apps.googleusercontent.com" value="${esc(cid)}">
         <button class="btn btn-primary" data-action="save-cid" style="margin-top:8px">Save Client ID</button>
+        <label class="field" for="school">School name (optional, on certificates)</label>
+        <input id="school" class="search" type="text" maxlength="80" placeholder="e.g. St Mary’s Primary School" value="${esc(schoolName())}">
+        <button class="btn btn-ghost" data-action="save-school" style="margin-top:8px">Save school</button>
         <p class="sub" style="margin-top:22px">Install this quiz on your phone from the browser menu → Add to Home Screen. It works offline after the first visit.</p>
         <button class="btn btn-ghost" data-action="reset-progress">Reset progress</button>
         ${siteFooter()}
@@ -1953,6 +2038,30 @@
         input.addEventListener("keydown", function (e) { if (e.key === "Enter") startFromHome(); });
       }
     }
+    if (state.screen === "home") {
+      const np = document.getElementById("new-pupil");
+      if (np) {
+        np.focus();
+        np.addEventListener("keydown", function (e) {
+          if (e.key === "Enter") {
+            const btn = app.querySelector('[data-action="save-profile"]');
+            if (btn) btn.click();
+          }
+        });
+      }
+    }
+    if (state.screen === "review") {
+      const rs = document.getElementById("review-search");
+      if (rs) {
+        rs.addEventListener("input", function () {
+          state.reviewQuery = rs.value;
+          const sel = rs.selectionStart;
+          render();
+          const n = document.getElementById("review-search");
+          if (n) { n.focus(); n.setSelectionRange(sel, sel); }
+        });
+      }
+    }
     if (state.screen === "subject") {
       const s = document.getElementById("subj-search");
       if (s) {
@@ -1998,6 +2107,7 @@
       return;
     }
     localStorage.setItem("psq-name", state.name);
+    touchProfile();
     if (state.grade >= 1 && state.grade <= 6) {
       state.screen = "subject";
       prefetchGrade(state.grade);
@@ -2200,7 +2310,18 @@
     if (!t) return;
     ensureAudio();
 
-    if (t.dataset.go) { state.screen = t.dataset.go; render(); return; }
+    if (t.dataset.go) {
+      if (state.screen === "quiz" && t.dataset.go !== "quiz") {
+        if (!confirm("Leave this quiz? You can resume from home.")) return;
+      }
+      state.screen = t.dataset.go; render(); return;
+    }
+    if (t.dataset.profile) {
+      switchProfile(t.dataset.profile);
+      state.screen = "home";
+      render();
+      return;
+    }
     if (t.dataset.grade) {
       state.grade = Number(t.dataset.grade);
       localStorage.setItem("psq-grade", String(state.grade));
@@ -2384,6 +2505,27 @@
       render();
     }
     if (action === "dismiss-react") { hideReact(); return; }
+    if (action === "add-profile") { state.addingProfile = true; render(); }
+    if (action === "save-profile") {
+      const box = document.getElementById("new-pupil");
+      const name = (box ? box.value : "").trim();
+      if (!name) { toast("Type the sibling’s name."); return; }
+      const list = ensureProfiles();
+      if (list.length >= 6) { toast("This phone already has 6 pupils."); return; }
+      touchProfile();
+      const id = "p" + Date.now().toString(36);
+      list.push({ id: id, name: name, grade: null });
+      saveProfiles(list);
+      state.addingProfile = false;
+      switchProfile(id);
+      state.screen = "home";
+      render();
+    }
+    if (action === "save-school") {
+      const box = document.getElementById("school");
+      localStorage.setItem("psq-school", box ? box.value.trim() : "");
+      toast("School name saved for certificates.");
+    }
     if (action === "save-cid") {
       const box = document.getElementById("cid");
       const val = box ? box.value.trim() : "";
