@@ -1071,7 +1071,30 @@ code { font-size: 12px; background: var(--line); padding: 2px 6px; border-radius
 .play-tile p { color: var(--muted); font-size: 13px; font-weight: 700; margin-top: 4px; }
 .play-tile.daily { border-color: #e9a825; box-shadow: 0 8px 0 #c48912; }
 .play-tile.smart { border-color: var(--teal); box-shadow: 0 8px 0 var(--teal-dark); }
+.play-tile.bolt { border-color: #7c5cbf; box-shadow: 0 8px 0 #5a3f96; }
 .play-tile:hover { transform: translateY(-2px); }
+.hint-box {
+  margin-top: 12px;
+  background: #fff6d8;
+  border: 2px dashed #e0b83a;
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-weight: 800;
+  color: #5a4308;
+  font-size: 15px;
+}
+.install-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--teal-soft);
+  border: 2px solid var(--teal);
+  border-radius: 16px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
 
 .streak-dots {
   display: flex; gap: 6px; justify-content: center; margin: 10px 0 4px;

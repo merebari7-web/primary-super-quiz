@@ -1,4 +1,4 @@
-const VERSION = "psq-v19";
+const VERSION = "psq-v20";
 const SHELL = [
   "./",
   "./index.html",
