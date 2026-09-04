@@ -23,6 +23,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+html { scroll-behavior: smooth; }
 html, body {
   min-height: 100%;
   background: var(--cream);
@@ -31,6 +32,23 @@ html, body {
   font-size: 18px;
   line-height: 1.45;
 }
+::selection { background: var(--teal-soft); color: var(--teal-dark); }
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+}
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  z-index: 200;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+.skip-link:focus { top: 12px; }
 
 body {
   background-image:
@@ -75,9 +93,9 @@ img, canvas#confetti {
 }
 
 .wrap {
-  width: min(1080px, calc(100% - 32px));
+  width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 28px 0 64px;
+  padding: max(20px, env(safe-area-inset-top)) 0 max(64px, env(safe-area-inset-bottom));
 }
 
 .topbar {
@@ -86,6 +104,12 @@ img, canvas#confetti {
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 22px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding: 10px 0;
+  background: color-mix(in srgb, var(--cream) 88%, transparent);
+  backdrop-filter: blur(12px);
 }
 
 .brand {

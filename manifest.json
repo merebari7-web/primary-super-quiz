@@ -1,15 +1,29 @@
 {
+  "id": "https://merebari7-web.github.io/primary-super-quiz/",
   "name": "Primary Super Quiz",
   "short_name": "Super Quiz",
-  "description": "Nigerian Primary 1–6 quiz. 16 subjects, 9,600 questions.",
+  "description": "Nigerian Primary 1–6 quiz. 16 subjects, 9,600 questions. Works offline.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
+  "display_override": ["standalone", "browser"],
+  "orientation": "any",
   "background_color": "#f7efe0",
   "theme_color": "#0e7c76",
   "lang": "en-NG",
+  "dir": "ltr",
+  "categories": ["education", "kids"],
   "icons": [
     { "src": "images/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
     { "src": "images/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Daily Challenge",
+      "short_name": "Daily",
+      "description": "10 mixed questions for today",
+      "url": "./index.html#home",
+      "icons": [{ "src": "images/icon-192.png", "sizes": "192x192" }]
+    }
   ]
 }

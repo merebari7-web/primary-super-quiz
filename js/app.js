@@ -981,7 +981,86 @@
       </div>`;
   }
   function siteFooter() {
-    return `<p class="site-foot">© merebari web 2026</p>`;
+    return `
+      <footer class="site-footer">
+        <div class="foot-brand">
+          <img src="images/mascot.png" alt="">
+          <div>
+            <strong>Primary Super Quiz</strong>
+            <p>Practice for Nigerian Primary 1–6. Free for pupils and teachers.</p>
+          </div>
+        </div>
+        <nav class="foot-nav" aria-label="About this site">
+          <button type="button" data-go="how">How it works</button>
+          <button type="button" data-go="about">About</button>
+          <button type="button" data-go="privacy">Privacy</button>
+          <button type="button" data-go="dashboard">Progress</button>
+          <button type="button" data-go="settings">Settings</button>
+        </nav>
+        <p class="site-foot">© merebari web 2026. All rights reserved. Practice only — not an official exam paper.</p>
+      </footer>`;
+  }
+  function renderHow() {
+    return `
+      <div class="wrap">
+        ${topbar("home")}
+        <article class="prose">
+          <p class="kicker">Guide</p>
+          <h2 class="section-title">How it works</h2>
+          <h3>1. Pick your class</h3>
+          <p>Primary 1 to Primary 6. Questions get harder as you go up.</p>
+          <h3>2. Choose a subject</h3>
+          <p>English, Mathematics, Basic Science and 13 more — 100 questions in each class.</p>
+          <h3>3. Pick a mode</h3>
+          <p><strong>Practice</strong> marks at once. <strong>Exam</strong> waits until the end. <strong>Timed</strong> gives you a clock. <strong>Lightning 5</strong> is a 12-second sprint.</p>
+          <h3>4. Grow</h3>
+          <p>Earn XP, climb ranks, keep a streak and print a teacher report. Missed questions are saved so you can try them again.</p>
+          <div class="home-actions">
+            <button class="btn btn-primary" data-go="home">Back to home</button>
+          </div>
+        </article>
+        ${siteFooter()}${toastEl()}
+      </div>`;
+  }
+  function renderAbout() {
+    return `
+      <div class="wrap">
+        ${topbar("home")}
+        <article class="prose">
+          <p class="kicker">merebari web</p>
+          <h2 class="section-title">About Primary Super Quiz</h2>
+          <p>A free practice site for Nigerian primary pupils and their teachers. It covers Primary 1–6 across 16 subjects, with 100 questions in each class — 9,600 in total.</p>
+          <p>Play in the browser, install it on a phone, and keep going offline after the first visit. Progress, badges and missed questions stay on this device (or with your Google account on this device).</p>
+          <p>This is independent practice. It is not an official NERDC, ministry or common-entrance paper.</p>
+          <p>© merebari web 2026. All rights reserved. Teachers and pupils may use the live quiz. Please do not copy, edit or republish the questions or artwork without permission.</p>
+          <div class="home-actions">
+            <button class="btn btn-primary" data-go="home">Start practising</button>
+          </div>
+        </article>
+        ${siteFooter()}${toastEl()}
+      </div>`;
+  }
+  function renderPrivacy() {
+    return `
+      <div class="wrap">
+        ${topbar("home")}
+        <article class="prose">
+          <p class="kicker">Privacy</p>
+          <h2 class="section-title">How we handle data</h2>
+          <p>Primary Super Quiz is built to work in your browser. We do not run a pupil database on a server.</p>
+          <ul>
+            <li>Your name, XP, badges, streak and missed questions are saved in this browser (local storage).</li>
+            <li>Google Sign-In is optional. If you use it, Google shares your name, email and photo with this page so progress can be labelled on this device.</li>
+            <li>We do not sell information. There are no ad trackers in this app.</li>
+            <li>Reset progress in Settings clears the saved quiz data on this device.</li>
+          </ul>
+          <p>Questions and pictures are © merebari web 2026. All rights reserved.</p>
+          <div class="home-actions">
+            <button class="btn btn-primary" data-go="home">Back to home</button>
+          </div>
+        </article>
+        ${siteFooter()}${toastEl()}
+      </div>`;
   }
   function googleAuthBlock() {
     if (state.user) {
@@ -1080,15 +1159,22 @@
           <div>
             <div class="kicker">${esc(greeting())} · Nigeria · Offline ready</div>
             <h1>Primary Super Quiz</h1>
-            <p class="lead">Every class, every subject — 100 questions each. Practice, sit a timed paper, or take the Daily Challenge.</p>
+            <p class="lead">The calm, complete practice room for Nigerian Primary 1–6 — every class, every subject, with instant help and teacher reports.</p>
             <div class="stats">
               <span class="chip">${nSub} subjects</span>
               <span class="chip">9,600 questions</span>
               <span class="chip">Exam · Timed · Daily</span>
-              <span class="chip">Installable app</span>
+              <span class="chip">Works offline</span>
+            </div>
+            <div class="hero-cta">
+              <button class="btn btn-primary" data-action="start">Start practising →</button>
+              <button class="btn btn-ghost" data-go="how">How it works</button>
             </div>
           </div>
-          <div class="hero-art"><img src="images/hero-kids.jpg" alt="Children taking a quiz together"></div>
+          <div class="hero-art">
+            <img src="images/hero-kids.jpg" alt="Children taking a quiz together">
+            <span class="art-badge">Primary 1–6</span>
+          </div>
         </section>
         <div class="home-grid">
           ${rankCard()}
@@ -1098,6 +1184,8 @@
           <div class="stat-tile"><b>${progress.xp}</b><span>XP</span></div>
           <div class="stat-tile"><b>${progress.streak}🔥</b><span>Day streak</span></div>
           <div class="stat-tile"><b>${progress.quizzes}</b><span>Quizzes</span></div>
+          <div class="stat-tile"><b>${accuracyPct() == null ? "—" : accuracyPct() + "%"}</b><span>Accuracy</span></div>
+          <div class="stat-tile"><b>${fmtDur(todayStudy())}</b><span>Today</span></div>
         </div>
         ${streakDots()}
         <div class="play-row">
@@ -1127,6 +1215,28 @@
           <div class="home-actions">
             <button class="btn btn-primary" data-action="start">Let’s go! →</button>
             <button class="btn btn-ghost" data-go="dashboard">My progress</button>
+          </div>
+        </div>
+        <section class="trust-row" aria-label="Highlights">
+          <div><b>16</b><span>subjects</span></div>
+          <div><b>9,600</b><span>questions</span></div>
+          <div><b>P1–P6</b><span>every class</span></div>
+          <div><b>Offline</b><span>after first visit</span></div>
+        </section>
+        <h2 class="section-title" style="margin-top:28px">How it works</h2>
+        <div class="how-grid">
+          <article><span>1</span><h3>Pick your class</h3><p>Primary 1 to 6. The questions match the year.</p></article>
+          <article><span>2</span><h3>Choose a subject</h3><p>English, Maths, Science and 13 more — 100 each.</p></article>
+          <article><span>3</span><h3>Play and rise</h3><p>Earn XP, badges and a printable report for school.</p></article>
+        </div>
+        <div class="audience">
+          <div class="aud-card">
+            <h3>For pupils</h3>
+            <p>Practice with hints, Daily Challenge, Lightning 5 and Read aloud. Keep a streak on this device.</p>
+          </div>
+          <div class="aud-card">
+            <h3>For teachers</h3>
+            <p>Print an exam paper with an answer key, and a progress report you can show a parent.</p>
           </div>
         </div>
         ${siteFooter()}
@@ -1555,6 +1665,7 @@
           ${row("large", "Larger text")}
           ${row("contrast", "High contrast")}
         </div>
+        <p class="sub" style="margin-top:16px"><button type="button" data-go="privacy">Privacy</button> · <button type="button" data-go="about">About</button></p>
         <h3 class="section-title" style="font-size:24px;margin-top:28px">Google Sign-In</h3>
         <p class="sub">Teachers: create an OAuth Client ID, then paste it here. Origins to allow: <code>https://merebari7-web.github.io</code> and <code>http://localhost:8080</code>.</p>
         <label class="field" for="cid">Google Client ID</label>
@@ -1648,9 +1759,38 @@
     const map = {
       home: renderHome, grade: renderGrades, subject: renderSubjects, length: renderLength,
       quiz: renderQuiz, result: renderResult, review: renderReview, certificate: renderCertificate,
-      exam: renderExam, dashboard: renderDashboard, settings: renderSettings, account: renderAccount, report: renderReport
+      exam: renderExam, dashboard: renderDashboard, settings: renderSettings, account: renderAccount, report: renderReport,
+      about: renderAbout, privacy: renderPrivacy, how: renderHow
     };
     app.innerHTML = (map[state.screen] || renderHome)();
+    const titles = {
+      home: "Primary Super Quiz · Nigerian Primary 1–6 practice",
+      about: "About · Primary Super Quiz",
+      privacy: "Privacy · Primary Super Quiz",
+      how: "How it works · Primary Super Quiz",
+      dashboard: "My progress · Primary Super Quiz",
+      settings: "Settings · Primary Super Quiz",
+      account: "Account · Primary Super Quiz",
+      quiz: "Quiz · Primary Super Quiz",
+      result: "Results · Primary Super Quiz",
+      report: "Teacher report · Primary Super Quiz"
+    };
+    document.title = titles[state.screen] || "Primary Super Quiz";
+    const hashScreens = { home: 1, about: 1, privacy: 1, how: 1, settings: 1, dashboard: 1, account: 1 };
+    if (hashScreens[state.screen]) {
+      const h = "#" + state.screen;
+      if (location.hash !== h) try { history.replaceState(null, "", h); } catch (e) {}
+    }
+    app.classList.remove("enter");
+    try { void app.offsetWidth; } catch (e) {}
+    app.classList.add("enter");
+    if (state.loading) {
+      const ov = document.createElement("div");
+      ov.className = "loading-overlay";
+      ov.setAttribute("role", "status");
+      ov.innerHTML = "<div class=\"spinner\"></div><p>Loading questions…</p>";
+      app.appendChild(ov);
+    }
     if (state.screen === "home" || state.screen === "account") mountGoogleButton();
     if (state.screen === "home") {
       const input = document.getElementById("pupil-name");
@@ -2142,6 +2282,13 @@
     const im = new Image(); im.src = src;
   });
 
+  var HASH_OK = { home: 1, about: 1, privacy: 1, how: 1, settings: 1, dashboard: 1, account: 1 };
+  window.addEventListener("hashchange", function () {
+    const s = (location.hash || "").replace("#", "");
+    if (HASH_OK[s] && state.screen !== s) { state.screen = s; render(); }
+  });
+  var boot = (location.hash || "").replace("#", "");
+  if (HASH_OK[boot]) state.screen = boot;
+
   render();
 })();
-

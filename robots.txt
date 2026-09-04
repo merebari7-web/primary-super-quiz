@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://merebari7-web.github.io/primary-super-quiz/sitemap.xml
