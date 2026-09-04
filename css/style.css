@@ -1279,3 +1279,22 @@ html[data-theme="dark"] .onboard-card img { mix-blend-mode: normal; }
   padding: 10px 12px;
   font-weight: 700;
 }
+
+.profile-chip { display: inline-flex; align-items: center; gap: 2px; padding: 0; }
+.profile-chip > button { padding: 8px 12px; font-weight: 800; }
+.chip-x {
+  width: 28px; height: 28px; border-radius: 50%;
+  font-size: 18px; line-height: 1; color: var(--muted);
+}
+.profile-chip.on .chip-x { color: #fff; }
+.coach-card.plan { border-color: var(--teal); box-shadow: 0 8px 0 var(--teal-dark); }
+html.focus-ui .focus-quiz .key-hint,
+html.focus-ui .focus-quiz .topbar .ghost-row { opacity: 0.35; }
+html.calm, html.calm * {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+@media print {
+  .answer-key { page-break-before: always; }
+}

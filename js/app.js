@@ -11,7 +11,7 @@
     studySec: 0, studyByDay: {}
   };
 
-  const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false, music: true, contrast: false, autoDark: false });
+  const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false, music: true, contrast: false, autoDark: false, focus: false, calm: false });
   let progress = EMPTY_PROGRESS;
 
   const state = {
@@ -268,6 +268,8 @@
     document.documentElement.dataset.theme = dark ? "dark" : "light";
     document.documentElement.classList.toggle("large", !!settings.large);
     document.documentElement.classList.toggle("contrast", !!settings.contrast);
+    document.documentElement.classList.toggle("focus-ui", !!settings.focus);
+    document.documentElement.classList.toggle("calm", !!settings.calm);
   }
 
   function esc(s) {
@@ -1129,13 +1131,28 @@
     const list = ensureProfiles();
     const cur = localStorage.getItem("psq-profile-id");
     const chips = list.map(function (p) {
-      return `<button type="button" class="profile-chip ${p.id === cur ? "on" : ""}" data-profile="${esc(p.id)}">${esc(p.name || "Pupil")}</button>`;
+      return `<span class="profile-chip ${p.id === cur ? "on" : ""}">
+        <button type="button" data-profile="${esc(p.id)}">${esc(p.name || "Pupil")}</button>
+        ${list.length > 1 ? `<button type="button" class="chip-x" data-del-profile="${esc(p.id)}" aria-label="Remove ${esc(p.name)}">×</button>` : ""}
+      </span>`;
     }).join("");
     return `
       <div class="profile-row" aria-label="Pupils on this device">
         ${chips}
         ${list.length < 6 ? `<button type="button" class="profile-chip add" data-action="add-profile">+ Sibling</button>` : ""}
         ${state.addingProfile ? `<span class="profile-add"><input id="new-pupil" type="text" maxlength="24" placeholder="Sibling’s name"><button class="btn btn-sun" data-action="save-profile">Add</button></span>` : ""}
+      </div>`;
+  }
+  function planCard() {
+    if (!state.grade) return "";
+    return `
+      <div class="coach-card plan">
+        <div>
+          <p class="kicker" style="margin:0">Today’s plan</p>
+          <strong>10 quiet questions</strong>
+          <p>About eight minutes. Starts with your weaker subject.</p>
+        </div>
+        <button class="btn btn-primary" data-action="plan-play">Start</button>
       </div>`;
   }
   function coachCard() {
@@ -1259,6 +1276,7 @@
             <li>Reset progress in Settings clears the saved quiz data on this device.</li>
           </ul>
           <p>Questions and pictures are © merebari web 2026. All rights reserved.</p>
+          <p>Sibling profiles stay on this phone only. A downloaded backup is a file you keep.</p>
           <div class="home-actions">
             <button class="btn btn-primary" data-go="home">Back to home</button>
           </div>
@@ -1526,6 +1544,7 @@
           </div>
           <div class="ghost-row">
             <button class="btn btn-ghost" data-pick-subject="missed" ${missedN ? "" : "disabled"}>Retry missed</button>
+            <button class="btn btn-ghost" data-action="print-homework" ${missedN ? "" : "disabled"}>Print homework</button>
             <button class="btn btn-ghost" data-action="print-exam">Print exam</button>
           </div>
         </div>
@@ -1598,7 +1617,7 @@
       ? `<div class="timer-wrap ${state.timer <= 8 ? "warn" : ""}">⏱ ${state.paused ? "Paused" : state.timer + "s"}</div>
          <button class="life" data-action="${state.paused ? "resume-quiz" : "pause-quiz"}">${state.paused ? "▶ Resume" : "⏸ Pause"}</button>` : "";
     return `
-      <div class="wrap">
+      <div class="wrap${settings.focus ? " focus-quiz" : ""}">
         ${netBanner()}
         ${topbar("length")}
         ${crumbs([{ label: "Home", go: "home" }, { label: subjectName(state.subject) }, { label: "Q" + (state.index + 1) }])}
@@ -1892,6 +1911,8 @@
           ${row("autoDark", "Match phone light / dark")}
           ${row("large", "Larger text")}
           ${row("contrast", "High contrast")}
+          ${row("focus", "Focus mode in quizzes")}
+          ${row("calm", "Reduce motion")}
         </div>
         <p class="sub" style="margin-top:16px"><button type="button" data-go="privacy">Privacy</button> · <button type="button" data-go="about">About</button></p>
         <h3 class="section-title" style="font-size:24px;margin-top:28px">Google Sign-In</h3>
@@ -1902,6 +1923,13 @@
         <label class="field" for="school">School name (optional, on certificates)</label>
         <input id="school" class="search" type="text" maxlength="80" placeholder="e.g. St Mary’s Primary School" value="${esc(schoolName())}">
         <button class="btn btn-ghost" data-action="save-school" style="margin-top:8px">Save school</button>
+        <h3 class="section-title" style="font-size:24px;margin-top:28px">Backup</h3>
+        <p class="sub">Save a copy before you change phones. Import restores this pupil’s scores on this device.</p>
+        <div class="ghost-row" style="flex-wrap:wrap;margin-bottom:12px">
+          <button class="btn btn-ghost" data-action="export-backup">Download backup</button>
+          <label class="btn btn-ghost" for="backup-file">Import backup</label>
+          <input id="backup-file" type="file" accept="application/json" hidden>
+        </div>
         <p class="sub" style="margin-top:22px">Install this quiz on your phone from the browser menu → Add to Home Screen. It works offline after the first visit.</p>
         <button class="btn btn-ghost" data-action="reset-progress">Reset progress</button>
         ${siteFooter()}
@@ -1909,6 +1937,41 @@
       </div>`;
   }
 
+  function renderHomework() {
+    const g = state.grade || 1;
+    const missed = (progress.missed[g] || []).slice(-20);
+    if (!missed.length) {
+      return `<div class="wrap">${topbar("subject")}<p class="sub">No missed questions saved for this class yet.</p></div>`;
+    }
+    const body = missed.map(function (q, i) {
+      const opts = (q.options || []).map(function (o, n) {
+        return `<div class="exam-opt">${LETTERS[n]}. ${esc(o)}</div>`;
+      }).join("");
+      return `<article class="exam-q"><p>${i + 1}. ${esc(q.q)}</p>${opts}</article>`;
+    }).join("");
+    const key = missed.map(function (q, i) {
+      const letter = LETTERS[q.answer] || "?";
+      return `<div>${i + 1}. ${letter}</div>`;
+    }).join("");
+    return `
+      <div class="wrap">
+        <div class="topbar no-print">
+          <button class="icon-btn" data-go="subject" aria-label="Back">←</button>
+          <button class="btn btn-primary" data-action="print">Print homework</button>
+        </div>
+        <header class="exam-head">
+          <h2>Primary Super Quiz — Homework</h2>
+          <p>${esc(state.name || "Pupil")}${schoolName() ? " · " + esc(schoolName()) : ""} · ${window.GRADE_INFO[g].label}</p>
+          <p>Retry these missed questions. Circle A, B, C or D.</p>
+        </header>
+        ${body}
+        <section class="answer-key">
+          <h2>Answer key — for the teacher only</h2>
+          <div class="key-grid">${key}</div>
+        </section>
+        <p class="site-foot">© merebari web 2026</p>
+      </div>`;
+  }
   function renderExam() {
     const paper = state.examPaper;
     if (!paper) {
@@ -1993,7 +2056,7 @@
     const map = {
       home: renderHome, grade: renderGrades, subject: renderSubjects, length: renderLength,
       quiz: renderQuiz, result: renderResult, review: renderReview, certificate: renderCertificate,
-      exam: renderExam, dashboard: renderDashboard, settings: renderSettings, account: renderAccount, report: renderReport,
+      exam: renderExam, homework: renderHomework, dashboard: renderDashboard, settings: renderSettings, account: renderAccount, report: renderReport,
       about: renderAbout, privacy: renderPrivacy, how: renderHow, faq: renderFaq, news: renderNews
     };
     app.innerHTML = (map[state.screen] || renderHome)();
@@ -2059,6 +2122,30 @@
           render();
           const n = document.getElementById("review-search");
           if (n) { n.focus(); n.setSelectionRange(sel, sel); }
+        });
+      }
+    }
+    if (state.screen === "settings") {
+      const bf = document.getElementById("backup-file");
+      if (bf) {
+        bf.addEventListener("change", function () {
+          const file = bf.files && bf.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = function () {
+            try {
+              const data = JSON.parse(String(reader.result || "{}"));
+              if (!data || !data.progress) { toast("That file is not a Super Quiz backup."); return; }
+              progress = Object.assign({}, EMPTY_PROGRESS, data.progress);
+              saveProgress();
+              if (data.name) { state.name = data.name; localStorage.setItem("psq-name", data.name); }
+              if (data.grade) { state.grade = Number(data.grade); localStorage.setItem("psq-grade", String(data.grade)); }
+              if (data.school) localStorage.setItem("psq-school", data.school);
+              toast("Backup restored.");
+              render();
+            } catch (err) { toast("Could not read that backup."); }
+          };
+          reader.readAsText(file);
         });
       }
     }
@@ -2306,7 +2393,7 @@
   }
 
   app.addEventListener("click", function (e) {
-    const t = e.target.closest("[data-go], [data-action], [data-grade], [data-pick-subject], [data-length], [data-opt], [data-mode], [data-group], [data-toggle], [data-filter]");
+    const t = e.target.closest("[data-go], [data-action], [data-grade], [data-pick-subject], [data-length], [data-opt], [data-mode], [data-group], [data-toggle], [data-filter], [data-profile], [data-del-profile]");
     if (!t) return;
     ensureAudio();
 
@@ -2319,6 +2406,21 @@
     if (t.dataset.profile) {
       switchProfile(t.dataset.profile);
       state.screen = "home";
+      render();
+      return;
+    }
+    if (t.dataset.delProfile) {
+      const id = t.dataset.delProfile;
+      const list = ensureProfiles();
+      if (list.length < 2) { toast("Keep at least one pupil on this phone."); return; }
+      if (!confirm("Remove this pupil’s scores from this phone?")) return;
+      const next = list.filter(function (p) { return p.id !== id; });
+      saveProfiles(next);
+      try {
+        localStorage.removeItem("psq-progress-v3-" + id);
+        localStorage.removeItem("psq-resume-v3-" + id);
+      } catch (err) {}
+      if (localStorage.getItem("psq-profile-id") === id) switchProfile(next[0].id);
       render();
       return;
     }
@@ -2434,6 +2536,35 @@
       saveResume();
       state.screen = "subject";
       render();
+    }
+    if (action === "plan-play") {
+      if (!state.grade) { state.screen = "grade"; render(); return; }
+      state.subject = weakestSubject(state.grade);
+      state.length = 10;
+      state.mode = "practice";
+      beginQuiz({});
+    }
+    if (action === "print-homework") {
+      if (!state.grade) { state.screen = "grade"; render(); return; }
+      state.screen = "homework";
+      render();
+    }
+    if (action === "export-backup") {
+      try {
+        const blob = new Blob([JSON.stringify({
+          v: 1,
+          saved: new Date().toISOString(),
+          name: state.name,
+          grade: state.grade,
+          school: schoolName(),
+          progress: progress
+        }, null, 2)], { type: "application/json" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "primary-super-quiz-backup.json";
+        a.click();
+        toast("Backup downloaded.");
+      } catch (err) { toast("Could not download a backup."); }
     }
     if (action === "coach-play") {
       if (!state.grade) { state.screen = "grade"; render(); return; }
