@@ -36,6 +36,7 @@ Each subject bank has **100 questions** per class. Pupils can sit 10, 20, 50 or 
 - **Read aloud** on every question (tap 🔊). Turn on auto-read in Settings.
 - Ranks from Hatchling to Super Legend, weekly quiz goal, 7-day streak
 - **Smart Practice** (weak subjects + missed questions) and a printable teacher report
+- WhatsApp share, timed-quiz pause, review filters, high contrast, offline banner
 - Keyboard: `A`–`D` or `1`–`4` to answer, `Enter` for next
 - **Optional Google Sign-In** (guest play still works for younger pupils)
 

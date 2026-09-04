@@ -71,5 +71,8 @@ window.BADGES = [
   { id: "speed", name: "Quick Thinker", desc: "Finish a timed quiz at 70%+", icon: "⚡" },
   { id: "week", name: "Goal Getter", desc: "Finish 5 quizzes in one week", icon: "🎯" },
   { id: "smart", name: "Coach’s Pick", desc: "Finish a Smart Practice", icon: "🧠" },
-  { id: "mix", name: "All-Rounder", desc: "Finish a Champion Mix", icon: "🌈" }
+  { id: "mix", name: "All-Rounder", desc: "Finish a Champion Mix", icon: "🌈" },
+  { id: "bolt", name: "Lightning", desc: "Score 60% or more on Lightning 5", icon: "⚡" },
+  { id: "independent", name: "Independent", desc: "Score 80%+ on 10+ questions with no hint", icon: "🦉" },
+  { id: "bookworm", name: "Bookworm", desc: "Study for 30 minutes in total", icon: "📖" }
 ];

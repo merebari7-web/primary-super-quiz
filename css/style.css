@@ -678,7 +678,7 @@ html.large { font-size: 22px; }
 
 .home-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   margin: 16px 0 4px;
 }
@@ -987,7 +987,7 @@ html.contrast .opt, html.contrast .card-btn, html.contrast .btn {
 
 @media (max-width: 700px) {
   .mode-grid { grid-template-columns: 1fr; }
-  .home-stats { grid-template-columns: 1fr 1fr 1fr; }
+  .home-stats { grid-template-columns: 1fr 1fr; }
 }
 
 .avatar-btn {
@@ -1054,7 +1054,7 @@ code { font-size: 12px; background: var(--line); padding: 2px 6px; border-radius
 
 .play-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
   margin: 12px 0 4px;
 }

@@ -7,7 +7,8 @@
   const EMPTY_PROGRESS = {
     xp: 0, streak: 0, lastDay: "", quizzes: 0, badges: [],
     best: {}, history: [], missed: {}, dailyDate: "", dailyBest: 0,
-    weekKey: "", weekQuizzes: 0, lastRank: "hatchling", days: {}
+    weekKey: "", weekQuizzes: 0, lastRank: "hatchling", days: {},
+    studySec: 0, studyByDay: {}
   };
 
   const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false, music: true, contrast: false });
@@ -41,9 +42,15 @@
     examPaper: null,
     user: null,
     pendingDaily: false,
+    pendingLightning: false,
     react: null,
     paused: false,
-    reviewFilter: "all"
+    reviewFilter: "all",
+    usedHint: false,
+    hintText: "",
+    lightning: false,
+    quizStartedAt: 0,
+    elapsedSec: 0
   };
 
   let audioCtx = null;
@@ -55,6 +62,7 @@
   let speakTimer = null;
   let ttsWatch = null;
   let gsiInited = false;
+  let deferredInstall = null;
 
   applyChrome();
 
@@ -745,7 +753,55 @@
     return "Keep going — every champion started as a learner. Try again!";
   }
   function secondsFor() {
+    if (state.lightning) return 12;
     return state.grade && state.grade <= 2 ? 45 : 30;
+  }
+  function greeting() {
+    const h = new Date().getHours();
+    const hi = h < 12 ? "Good morning" : h < 16 ? "Good afternoon" : "Good evening";
+    const n = state.name || (state.user && state.user.given_name) || "friend";
+    return hi + ", " + n;
+  }
+  function fmtDur(sec) {
+    sec = Math.max(0, Math.round(Number(sec) || 0));
+    const m = Math.floor(sec / 60);
+    const s = sec % 60;
+    if (m >= 60) return Math.floor(m / 60) + "h " + (m % 60) + "m";
+    if (m) return m + " min";
+    return s + "s";
+  }
+  function accuracyPct() {
+    const h = progress.history || [];
+    if (!h.length) return null;
+    const tot = h.reduce(function (s, x) { return s + (x.total || 0); }, 0);
+    const sc = h.reduce(function (s, x) { return s + (x.score || 0); }, 0);
+    return tot ? Math.round((sc / tot) * 100) : null;
+  }
+  function todayStudy() {
+    return (progress.studyByDay && progress.studyByDay[todayKey()]) || 0;
+  }
+  function hintFor(q) {
+    if (!q) return "Look for the choice that matches what you learnt in class.";
+    let e = String(q.explain || "");
+    const ans = q.options && q.options[q.answer] != null ? String(q.options[q.answer]) : "";
+    if (ans) {
+      try {
+        e = e.replace(new RegExp(ans.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi"), "___");
+      } catch (err) {}
+    }
+    e = e.replace(/the (correct )?answer is[^.]*\.?/ig, "").replace(/\s+/g, " ").trim();
+    if (e.length > 120) e = e.slice(0, 118) + "…";
+    return e || "Cross out the option that cannot be right. Then choose.";
+  }
+  function isStandalone() {
+    return window.matchMedia("(display-mode: standalone)").matches || !!window.navigator.standalone;
+  }
+  function installBanner() {
+    if (!deferredInstall || isStandalone()) return "";
+    return `<div class="install-bar no-print">
+      <span>Add Super Quiz to your home screen</span>
+      <button class="btn btn-sun" data-action="install">Install</button>
+    </div>`;
   }
 
   function toast(msg) {
@@ -797,6 +853,7 @@
     if (state.mode === "timed") xp += 10;
     if (state.mode === "exam") xp += 15;
     if (state.subject === "smart") xp += 20;
+    if (state.lightning) xp += 15;
     const prevRank = rankFor(progress.xp);
     progress.xp += xp;
     progress.quizzes += 1;
@@ -835,6 +892,14 @@
     }
     if (progress.xp >= 500) awardBadge("scholar");
     if (progress.xp >= 1500) awardBadge("champion");
+    const sec = Math.max(0, Math.round((Date.now() - (state.quizStartedAt || Date.now())) / 1000));
+    state.elapsedSec = sec;
+    progress.studySec = (progress.studySec || 0) + sec;
+    if (!progress.studyByDay) progress.studyByDay = {};
+    progress.studyByDay[todayKey()] = (progress.studyByDay[todayKey()] || 0) + sec;
+    if (state.lightning && pct >= 60) awardBadge("bolt");
+    if (!state.usedHint && pct >= 80 && total >= 10) awardBadge("independent");
+    if (progress.studySec >= 1800) awardBadge("bookworm");
     state.xpGained = xp;
     saveProgress();
     localStorage.removeItem(resumeKey());
@@ -846,7 +911,8 @@
       name: state.name, grade: state.grade, subject: state.subject, length: state.length,
       mode: state.mode, questions: state.questions, index: state.index, picked: state.picked,
       combo: state.combo, maxCombo: state.maxCombo, used5050: state.used5050,
-      usedSkip: state.usedSkip, daily: state.daily, hidden: state.hidden
+      usedSkip: state.usedSkip, usedHint: state.usedHint, daily: state.daily,
+      lightning: state.lightning, hidden: state.hidden, quizStartedAt: state.quizStartedAt
     }));
   }
 
@@ -1006,12 +1072,13 @@
     return `
       <div class="wrap">
         ${netBanner()}
+        ${installBanner()}
         ${topbar(null)}
         ${onboardEl()}
         ${cont}
         <section class="hero">
           <div>
-            <div class="kicker">Primary 1 – 6 · Nigeria · Offline ready</div>
+            <div class="kicker">${esc(greeting())} · Nigeria · Offline ready</div>
             <h1>Primary Super Quiz</h1>
             <p class="lead">Every class, every subject — 100 questions each. Practice, sit a timed paper, or take the Daily Challenge.</p>
             <div class="stats">
@@ -1043,6 +1110,11 @@
             <span>🧠</span>
             <strong>Smart Practice</strong>
             <p>Coach picks your weak spots</p>
+          </button>
+          <button class="play-tile bolt" data-action="lightning">
+            <span>⚡</span>
+            <strong>Lightning 5</strong>
+            <p>Five questions · 12 seconds each</p>
           </button>
         </div>
         <div class="home-panel panel-rel" style="margin-top:18px;background:var(--card);border:3px solid var(--line);border-radius:28px;padding:22px;box-shadow:var(--shadow);">
@@ -1216,12 +1288,14 @@
         ${state.paused ? `<div class="pause-banner">Quiz paused. Timer is stopped.</div>` : ""}
         <div class="bar" aria-hidden="true"><span style="width:${pct}%"></span></div>
         <div class="q-card">
-          <div class="q-label">Question ${state.index + 1} · ${state.mode}</div>
+          <div class="q-label">Question ${state.index + 1} · ${state.lightning ? "lightning" : state.mode}</div>
           <h2 class="question">${esc(q.q)}</h2>
           <div class="options">${options}</div>
+          ${state.hintText && !showMark ? `<div class="hint-box">💡 ${esc(state.hintText)}</div>` : ""}
           ${feedback}
           <div class="lifelines">
             <button class="life life-speak" data-action="speak">🔊 Read aloud</button>
+            <button class="life" data-action="hint" ${state.usedHint || exam || showMark ? "disabled" : ""}>Hint</button>
             <button class="life" data-action="fifty" ${state.used5050 || exam ? "disabled" : ""}>50 / 50</button>
             <button class="life" data-action="skip" ${state.usedSkip ? "disabled" : ""}>Skip</button>
           </div>
@@ -1229,7 +1303,7 @@
             ${canNext ? `<button class="btn btn-primary" data-action="next">${nextLabel}</button>` : ""}
             <button class="btn btn-ghost" data-go="subject">Quit</button>
           </div>
-          <p class="key-hint no-print">Tip: press A, B, C or D · 🔊 reads the question</p>
+          <p class="key-hint no-print">Tip: A–D to answer · H hint · P pause · 🔊 reads the question</p>
         </div>
         ${reactPopup()}
         ${toastEl()}
@@ -1279,9 +1353,13 @@
   }
 
   function renderReview() {
+    const filter = state.reviewFilter || "all";
+    const missedN = state.questions.filter(function (q, i) { return state.picked[i] !== q.answer; }).length;
     const items = state.questions.map(function (q, i) {
       const ok = state.picked[i] === q.answer;
-      const chosen = state.picked[i] == null ? "—" : q.options[state.picked[i]];
+      if (filter === "missed" && ok) return "";
+      if (filter === "correct" && !ok) return "";
+      const chosen = state.picked[i] == null || state.picked[i] < 0 ? "—" : q.options[state.picked[i]];
       return `
         <article class="review-item">
           <span class="tag ${ok ? "ok" : "no"}">${ok ? "Correct" : "Missed"}</span>
@@ -1290,15 +1368,21 @@
           ${ok ? "" : `<p>Correct answer: <strong>${esc(q.options[q.answer])}</strong></p>`}
           <p style="color:var(--muted);margin-top:6px">${esc(q.explain)}</p>
         </article>`;
-    }).join("");
+    }).join("") || "<p class='sub'>Nothing in this filter.</p>";
     return `
       <div class="wrap">
         ${topbar("result")}
         <h2 class="section-title">Answer review</h2>
         <p class="sub">Read why each answer is right, then try again.</p>
+        <div class="filter-row">
+          <button class="filter-chip ${filter === "all" ? "on" : ""}" data-filter="all">All ${state.questions.length}</button>
+          <button class="filter-chip ${filter === "missed" ? "on" : ""}" data-filter="missed">Missed ${missedN}</button>
+          <button class="filter-chip ${filter === "correct" ? "on" : ""}" data-filter="correct">Correct ${state.questions.length - missedN}</button>
+        </div>
         ${items}
         <div class="actions" style="margin-top:8px">
           <button class="btn btn-primary" data-go="result">Back to score</button>
+          ${missedN ? `<button class="btn btn-sun" data-action="practice-missed">Practice missed</button>` : ""}
         </div>
       </div>`;
   }
@@ -1363,6 +1447,8 @@
           <div class="stat-tile"><b>${progress.xp}</b><span>XP</span></div>
           <div class="stat-tile"><b>${progress.streak}</b><span>Streak</span></div>
           <div class="stat-tile"><b>${progress.badges.length}/${window.BADGES.length}</b><span>Badges</span></div>
+          <div class="stat-tile"><b>${accuracyPct() == null ? "—" : accuracyPct() + "%"}</b><span>Accuracy</span></div>
+          <div class="stat-tile"><b>${fmtDur(progress.studySec || 0)}</b><span>Study time</span></div>
         </div>
         <p class="sub" style="margin-top:18px">Mastery for Primary ${g} (pick a class first for other years).</p>
         <div class="dash-grid">${cells}</div>
@@ -1406,6 +1492,7 @@
           <span>Streak: ${progress.streak} days</span>
           <span>Average: ${avg}%</span>
           <span>This week: ${progress.weekQuizzes || 0}/${window.WEEK_GOAL || 5}</span>
+          <span>Study time: ${fmtDur(progress.studySec || 0)}</span>
         </div>
         <h3 style="margin:16px 0 8px">Focus subjects (Primary ${g})</h3>
         <table class="report-table">
@@ -1637,13 +1724,23 @@
       state.hidden = {};
       state.used5050 = false;
       state.usedSkip = false;
+      state.usedHint = false;
+      state.hintText = "";
       state.combo = 0;
       state.maxCombo = 0;
       state.newBadges = [];
       state.daily = !!opts.daily;
+      state.lightning = !!opts.lightning;
+      if (state.lightning) {
+        state.length = 5;
+        state.mode = "timed";
+        if (!state.subject || state.subject === "daily") state.subject = "mix";
+      }
       state.paused = false;
       state.timer = secondsFor();
       state.reviewFilter = "all";
+      state.quizStartedAt = Date.now();
+      state.elapsedSec = 0;
       state.screen = "quiz";
       saveResume();
     } catch (err) {
@@ -1670,6 +1767,7 @@
     state.index += 1;
     state.revealed = false;
     state.paused = false;
+    state.hintText = "";
     state.timer = secondsFor();
     stopTick();
     hideReact();
@@ -1823,6 +1921,14 @@
         beginQuiz({});
         return;
       }
+      if (state.pendingLightning) {
+        state.pendingLightning = false;
+        state.subject = "mix";
+        state.length = 5;
+        state.mode = "timed";
+        beginQuiz({ lightning: true });
+        return;
+      }
       state.screen = "subject";
       render();
       return;
@@ -1871,6 +1977,22 @@
       state.pendingSmart = true;
       render();
     }
+    if (action === "lightning") {
+      if (!state.name) { startFromHome(); if (!state.name) return; }
+      state.screen = "grade";
+      state.pendingLightning = true;
+      render();
+    }
+    if (action === "hint" && !state.usedHint && state.mode !== "exam" && !state.revealed) {
+      const qh = state.questions[state.index];
+      state.usedHint = true;
+      state.hintText = hintFor(qh);
+      render();
+    }
+    if (action === "install" && deferredInstall) {
+      deferredInstall.prompt();
+      deferredInstall.userChoice.then(function () { deferredInstall = null; render(); }).catch(function () {});
+    }
     if (action === "onboard-next") {
       state.onboardStep = (state.onboardStep || 0) + 1;
       render();
@@ -1891,7 +2013,7 @@
     if (action === "next") goNext();
     if (action === "review") { state.screen = "review"; render(); }
     if (action === "certificate") { state.screen = "certificate"; render(); }
-    if (action === "again") beginQuiz({ daily: state.daily });
+    if (action === "again") beginQuiz({ daily: state.daily, lightning: state.lightning });
     if (action === "print-exam") buildExam();
     if (action === "print") window.print();
     if (action === "save-cert") saveCertPng();
@@ -1969,11 +2091,28 @@
   document.addEventListener("visibilitychange", function () {
     if (document.hidden) {
       try { if (window.speechSynthesis) speechSynthesis.pause(); } catch (e) {}
+      if (state.screen === "quiz" && state.mode === "timed" && !state.paused) {
+        state.paused = true;
+        state.autoPaused = true;
+        stopTick();
+      }
     } else {
       try { if (window.speechSynthesis && speechSynthesis.paused) speechSynthesis.resume(); } catch (e) {}
+      if (state.autoPaused) {
+        state.autoPaused = false;
+        if (state.screen === "quiz") render();
+      }
     }
     if (!settings.music || !music) return;
     setMusicGain(document.hidden ? 0 : MUSIC_VOL, 0.2);
+  });
+  window.addEventListener("beforeinstallprompt", function (e) {
+    e.preventDefault();
+    deferredInstall = e;
+    if (state.screen === "home") render();
+  });
+  window.addEventListener("appinstalled", function () {
+    deferredInstall = null;
   });
   window.addEventListener("online", function () { toast("Back online."); });
   window.addEventListener("offline", function () { toast("You’re offline. You can keep playing."); render(); });
@@ -2005,3 +2144,4 @@
 
   render();
 })();
+
