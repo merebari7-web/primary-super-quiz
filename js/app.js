@@ -10,12 +10,7 @@
     weekKey: "", weekQuizzes: 0, lastRank: "hatchling", days: {}
   };
 
-  const settings = loadJSON(SK, { sound: true, tts: true, dark: false, large: false, music: true });
-  if (!localStorage.getItem("psq-tts-on-v2")) {
-    settings.tts = true;
-    localStorage.setItem("psq-tts-on-v2", "1");
-    try { localStorage.setItem(SK, JSON.stringify(settings)); } catch (e) {}
-  }
+  const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false, music: true });
   let progress = EMPTY_PROGRESS;
 
   const state = {
@@ -546,16 +541,13 @@
       u.pitch = 1.04;
       u.volume = 1;
       duckMusic(true);
-      u.onstart = function () { setSpeakUi(true); };
-      u.onend = function () { duckMusic(false); stopTtsWatch(); setSpeakUi(false); };
-      u.onerror = function () { duckMusic(false); stopTtsWatch(); setSpeakUi(false); };
+      u.onend = function () { duckMusic(false); stopTtsWatch(); };
+      u.onerror = function () { duckMusic(false); stopTtsWatch(); };
       try {
         speechSynthesis.speak(u);
         startTtsWatch();
-        setSpeakUi(true);
       } catch (err) {
         duckMusic(false);
-        setSpeakUi(false);
         if (force) toast("Could not start read aloud. Tap 🔊 again.");
       }
     };
@@ -563,21 +555,6 @@
     try { speechSynthesis.cancel(); } catch (e) {}
     if (force) go();
     else speakTimer = setTimeout(go, 80);
-  }
-  function stopSpeak() {
-    clearTimeout(speakTimer);
-    stopTtsWatch();
-    try { if (window.speechSynthesis) speechSynthesis.cancel(); } catch (e) {}
-    duckMusic(false);
-    setSpeakUi(false);
-  }
-  function setSpeakUi(on) {
-    state.speaking = !!on;
-    const buttons = app.querySelectorAll("[data-action='speak']");
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].textContent = on ? "⏹ Stop reading" : "🔊 Read aloud";
-      buttons[i].classList.toggle("speaking", on);
-    }
   }
 
   function score() {
@@ -1077,11 +1054,11 @@
         <div class="bar" aria-hidden="true"><span style="width:${pct}%"></span></div>
         <div class="q-card">
           <div class="q-label">Question ${state.index + 1} · ${state.mode}</div>
-          <h2 class="question" data-action="speak">${esc(q.q)}</h2>
-          <button class="btn btn-speak ${state.speaking ? "speaking" : ""}" data-action="speak">${state.speaking ? "⏹ Stop reading" : "🔊 Read aloud"}</button>
+          <h2 class="question">${esc(q.q)}</h2>
           <div class="options">${options}</div>
           ${feedback}
           <div class="lifelines">
+            <button class="life life-speak" data-action="speak">🔊 Read aloud</button>
             <button class="life" data-action="fifty" ${state.used5050 || exam ? "disabled" : ""}>50 / 50</button>
             <button class="life" data-action="skip" ${state.usedSkip ? "disabled" : ""}>Skip</button>
           </div>
@@ -1733,7 +1710,6 @@
     if (action === "save-cert") saveCertPng();
     if (action === "share") shareResult();
     if (action === "speak") {
-      if (state.speaking) { stopSpeak(); return; }
       const q = state.questions[state.index];
       if (!q) return;
       const hide = state.hidden[state.index] || [];

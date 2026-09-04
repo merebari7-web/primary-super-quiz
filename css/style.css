@@ -1078,22 +1078,6 @@ html[data-theme="dark"] .onboard-card img { mix-blend-mode: normal; }
 .smart-card h3 { font-size: 24px; }
 
 .key-hint { margin-top: 12px; font-size: 12px; font-weight: 800; color: var(--muted); }
-.question[data-action="speak"] { cursor: pointer; }
-.btn-speak {
-  width: 100%;
-  margin: 0 0 16px;
-  background: var(--teal-soft);
-  color: var(--teal-dark);
-  border: 3px solid var(--teal);
-  box-shadow: 0 5px 0 var(--teal-dark);
-  font-size: 18px;
-}
-.btn-speak.speaking, .life-speak.speaking {
-  background: var(--coral-soft);
-  color: #8a2f1f;
-  border-color: var(--coral);
-  box-shadow: 0 5px 0 #c45d45;
-}
 
 .report-table {
   width: 100%; border-collapse: collapse; font-size: 14px;
