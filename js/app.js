@@ -1029,6 +1029,7 @@
         <nav class="foot-nav" aria-label="About this site">
           <button type="button" data-go="how">How it works</button>
           <button type="button" data-go="faq">FAQ</button>
+          <button type="button" data-go="news">What’s new</button>
           <button type="button" data-go="about">About</button>
           <button type="button" data-go="privacy">Privacy</button>
           <button type="button" data-action="open-help">Help</button>
@@ -1037,6 +1038,69 @@
         </nav>
         <p class="site-foot">© merebari web 2026. All rights reserved. Practice only — not an official exam paper.</p>
       </footer>`;
+  }
+  function renderNews() {
+    return `
+      <div class="wrap">
+        ${topbar("home")}
+        <article class="prose">
+          <p class="kicker">Updates</p>
+          <h2 class="section-title">What’s new</h2>
+          <h3>September 2026</h3>
+          <ul>
+            <li>Lightning 5, Hint, pause, WhatsApp share and parent recap.</li>
+            <li>Ranks, Smart Practice, teacher report and study time.</li>
+            <li>About, Privacy, FAQ, How it works, and Add to Home Screen.</li>
+            <li>The site remembers your class and can match your phone’s dark mode.</li>
+          </ul>
+          <p>Hard-refresh (Ctrl+Shift+R) if a button looks old.</p>
+          <div class="home-actions">
+            <button class="btn btn-primary" data-go="home">Back to home</button>
+          </div>
+        </article>
+        ${siteFooter()}${toastEl()}
+      </div>`;
+  }
+  function coachCard() {
+    if (!state.grade || !progress.quizzes) return "";
+    const k = weakestSubject(state.grade);
+    const s = window.SUBJECTS[k];
+    const missedN = (progress.missed[state.grade] || []).length;
+    return `
+      <div class="coach-card">
+        <div>
+          <p class="kicker" style="margin:0">Coach</p>
+          <strong>Practise ${esc(s ? s.name : k)}</strong>
+          <p>${missedN ? missedN + " missed questions are waiting." : "Your lowest score in this class."}</p>
+        </div>
+        <button class="btn btn-sun" data-action="coach-play">Start</button>
+      </div>`;
+  }
+  function dailyEta() {
+    if (progress.dailyDate !== todayKey()) return "10 fresh mixed questions";
+    const n = new Date();
+    const t = new Date(n.getFullYear(), n.getMonth(), n.getDate() + 1);
+    const min = Math.max(1, Math.round((t - n) / 60000));
+    const h = Math.floor(min / 60);
+    const m = min % 60;
+    return "Done today · new in " + (h ? h + "h " : "") + m + "m";
+  }
+  function weekActivity() {
+    const days = progress.studyByDay || {};
+    const vals = [];
+    let max = 1;
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date();
+      d.setDate(d.getDate() - i);
+      const k = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+      const v = days[k] || 0;
+      if (v > max) max = v;
+      vals.push({ k: k, v: v, label: ["S", "M", "T", "W", "T", "F", "S"][d.getDay()] });
+    }
+    return `<div class="week-act" aria-label="Study time this week">${vals.map(function (x) {
+      const h = Math.max(6, Math.round((x.v / max) * 46));
+      return `<span title="${x.k}: ${fmtDur(x.v)}"><i style="height:${h}px"></i>${x.label}</span>`;
+    }).join("")}</div>`;
   }
   function renderFaq() {
     return `
@@ -1261,7 +1325,7 @@
           <button class="play-tile daily" data-action="daily">
             <span>☀️</span>
             <strong>Daily Challenge</strong>
-            <p>${progress.dailyDate === todayKey() ? "Done today — play again?" : "10 fresh mixed questions"}</p>
+            <p>${dailyEta()}</p>
           </button>
           <button class="play-tile smart" data-action="smart">
             <span>🧠</span>
@@ -1274,6 +1338,7 @@
             <p>Five questions · 12 seconds each</p>
           </button>
         </div>
+        ${coachCard()}
         <div class="home-panel panel-rel" style="margin-top:18px;background:var(--card);border:3px solid var(--line);border-radius:28px;padding:22px;box-shadow:var(--shadow);">
           <img class="mascot-float" src="images/mascot.png" alt="">
           ${googleAuthBlock()}
@@ -1469,7 +1534,7 @@
           </div>
         </div>
         ${state.paused ? `<div class="pause-banner">Quiz paused. Timer is stopped.</div>` : ""}
-        <div class="bar" aria-hidden="true"><span style="width:${pct}%"></span></div>
+        <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-label="Quiz progress"><span style="width:${pct}%"></span></div>
         <div class="q-card">
           <div class="q-label">Question ${state.index + 1} · ${state.lightning ? "lightning" : state.mode}</div>
           <h2 class="question">${esc(q.q)}</h2>
@@ -1484,7 +1549,7 @@
           </div>
           <div class="quiz-actions">
             ${canNext ? `<button class="btn btn-primary" data-action="next">${nextLabel}</button>` : ""}
-            <button class="btn btn-ghost" data-go="subject">Quit</button>
+            <button class="btn btn-ghost" data-action="quit-quiz">Quit</button>
           </div>
           <p class="key-hint no-print">Tip: A–D to answer · H hint · P pause · 🔊 reads the question</p>
         </div>
@@ -1637,6 +1702,8 @@
         <div class="dash-grid">${cells}</div>
         <h3 class="section-title" style="font-size:24px;margin-top:28px">Badges</h3>
         <div class="badge-grid">${badges}</div>
+        <h3 class="section-title" style="font-size:24px;margin-top:28px">This week</h3>
+        ${weekActivity()}
         <h3 class="section-title" style="font-size:24px;margin-top:28px">Recent</h3>
         <ul class="sub">${recent}</ul>
         <div class="actions" style="margin-top:16px">
@@ -1815,6 +1882,9 @@
         el.textContent = "⏱ " + state.timer + "s";
         el.classList.toggle("warn", state.timer <= 8);
       }
+      if (settings.sound && (state.timer === 8 || state.timer === 5 || (state.timer <= 3 && state.timer > 0))) {
+        tone(state.timer <= 3 ? 920 : 740, 0.05, "sine", 0.028);
+      }
       if (state.timer <= 0) {
         stopTick();
         if (!state.revealed) {
@@ -1839,7 +1909,7 @@
       home: renderHome, grade: renderGrades, subject: renderSubjects, length: renderLength,
       quiz: renderQuiz, result: renderResult, review: renderReview, certificate: renderCertificate,
       exam: renderExam, dashboard: renderDashboard, settings: renderSettings, account: renderAccount, report: renderReport,
-      about: renderAbout, privacy: renderPrivacy, how: renderHow, faq: renderFaq
+      about: renderAbout, privacy: renderPrivacy, how: renderHow, faq: renderFaq, news: renderNews
     };
     app.innerHTML = (map[state.screen] || renderHome)();
     const titles = {
@@ -1848,6 +1918,7 @@
       privacy: "Privacy · Primary Super Quiz",
       how: "How it works · Primary Super Quiz",
       faq: "FAQ · Primary Super Quiz",
+      news: "What’s new · Primary Super Quiz",
       dashboard: "My progress · Primary Super Quiz",
       settings: "Settings · Primary Super Quiz",
       account: "Account · Primary Super Quiz",
@@ -1856,7 +1927,7 @@
       report: "Teacher report · Primary Super Quiz"
     };
     document.title = titles[state.screen] || "Primary Super Quiz";
-    const hashScreens = { home: 1, about: 1, privacy: 1, how: 1, faq: 1, settings: 1, dashboard: 1, account: 1 };
+    const hashScreens = { home: 1, about: 1, privacy: 1, how: 1, faq: 1, news: 1, settings: 1, dashboard: 1, account: 1 };
     if (hashScreens[state.screen]) {
       const h = "#" + state.screen;
       if (location.hash !== h) try { history.replaceState(null, "", h); } catch (e) {}
@@ -2166,6 +2237,7 @@
     if (t.dataset.filter) { state.reviewFilter = t.dataset.filter; render(); return; }
     if (t.dataset.pickSubject) {
       state.subject = t.dataset.pickSubject;
+      if (state.subject && state.subject !== "daily") localStorage.setItem("psq-subject", state.subject);
       state.screen = "length";
       state.error = "";
       if (state.subject === "daily") { state.length = 10; state.mode = "practice"; }
@@ -2234,6 +2306,21 @@
     if (action === "parent-recap") {
       const msg = parentRecapText();
       window.open("https://wa.me/?text=" + encodeURIComponent(msg), "_blank");
+    }
+    if (action === "quit-quiz") {
+      if (!confirm("Leave this quiz? You can resume from home.")) return;
+      stopTick();
+      saveResume();
+      state.screen = "subject";
+      render();
+    }
+    if (action === "coach-play") {
+      if (!state.grade) { state.screen = "grade"; render(); return; }
+      const missedN = (progress.missed[state.grade] || []).length;
+      state.subject = missedN ? "missed" : weakestSubject(state.grade);
+      state.length = 20;
+      state.mode = "practice";
+      beginQuiz({});
     }
     if (action === "onboard-next") {
       state.onboardStep = (state.onboardStep || 0) + 1;
@@ -2401,7 +2488,7 @@
       if (settings.autoDark) applyChrome();
     });
   } catch (e) {}
-  var HASH_OK = { home: 1, about: 1, privacy: 1, how: 1, faq: 1, settings: 1, dashboard: 1, account: 1 };
+  var HASH_OK = { home: 1, about: 1, privacy: 1, how: 1, faq: 1, news: 1, settings: 1, dashboard: 1, account: 1 };
   window.addEventListener("hashchange", function () {
     const s = (location.hash || "").replace("#", "");
     if (HASH_OK[s] && state.screen !== s) { state.screen = s; render(); }

@@ -38,7 +38,8 @@ Each subject bank has **100 questions** per class. Pupils can sit 10, 20, 50 or 
 - **Smart Practice** (weak subjects + missed questions) and a printable teacher report
 - WhatsApp share, timed-quiz pause, review filters, high contrast, offline banner
 - Lightning 5, Hint lifeline, study-time tracking, and Add to Home Screen
-- First-class site shell: About, Privacy, How it works, SEO, PWA shortcuts and offline-ready install
+- First-class site shell: About, Privacy, How it works, FAQ, SEO, PWA shortcuts and offline-ready install
+- Remembers last class, parent WhatsApp recap, keyboard help (?), and “new version” refresh
 - Keyboard: `A`–`D` or `1`–`4` to answer, `Enter` for next
 - **Optional Google Sign-In** (guest play still works for younger pupils)
 
