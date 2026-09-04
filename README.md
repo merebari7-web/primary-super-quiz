@@ -90,4 +90,7 @@ Files are written to `data/p1` … `data/p6`.
 
 ## Licence
 
-© merebari web 2026. MIT — see [LICENSE](LICENSE).
+© merebari web 2026. **All rights reserved.** See [LICENSE](LICENSE).
+
+The questions, artwork and code may not be copied, edited or republished
+without permission. Teachers and pupils may use the live quiz for learning.
