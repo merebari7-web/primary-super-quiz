@@ -11,13 +11,16 @@
     studySec: 0, studyByDay: {}
   };
 
-  const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false, music: true, contrast: false });
+  const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false, music: true, contrast: false, autoDark: false });
   let progress = EMPTY_PROGRESS;
 
   const state = {
     screen: "home",
     name: localStorage.getItem("psq-name") || "",
-    grade: null,
+    grade: (function () {
+      const n = Number(localStorage.getItem("psq-grade") || "");
+      return n >= 1 && n <= 6 ? n : null;
+    })(),
     subject: null,
     group: "all",
     query: "",
@@ -980,6 +983,39 @@
         </div>
       </div>`;
   }
+  function crumbs(parts) {
+    return `<nav class="crumbs" aria-label="Breadcrumb">${parts.map(function (p, i) {
+      const last = i === parts.length - 1;
+      if (!last && p.go) return `<button type="button" data-go="${p.go}">${esc(p.label)}</button><span aria-hidden="true">/</span>`;
+      return `<span>${esc(p.label)}</span>`;
+    }).join("")}</nav>`;
+  }
+  function updateBanner() {
+    if (!state.updateReady) return "";
+    return `<div class="install-bar no-print"><span>A new version is ready</span><button class="btn btn-sun" data-action="reload">Refresh</button></div>`;
+  }
+  function parentRecapText() {
+    const r = rankFor(progress.xp);
+    const acc = accuracyPct();
+    return (state.name || "Your child") + " practised on Primary Super Quiz. " +
+      r.icon + " " + r.name + " · " + progress.xp + " XP · streak " + progress.streak +
+      " days · " + progress.quizzes + " quizzes" +
+      (acc != null ? " · " + acc + "% accuracy" : "") +
+      " · " + fmtDur(progress.studySec || 0) + " study time. " +
+      location.href.split("#")[0];
+  }
+  function helpEl() {
+    if (!state.helpOpen) return "";
+    return `
+      <div class="onboard" role="dialog" aria-modal="true" aria-label="Help" data-action="close-help">
+        <div class="onboard-card">
+          <h2>Quick help</h2>
+          <p>A B C D — choose an answer<br>H — hint · P — pause · N or Enter — next<br>? — this help</p>
+          <p>Teachers: print an exam paper from the subject screen, and a progress report from My progress.</p>
+          <button class="btn btn-primary" data-action="close-help">Close</button>
+        </div>
+      </div>`;
+  }
   function siteFooter() {
     return `
       <footer class="site-footer">
@@ -992,13 +1028,40 @@
         </div>
         <nav class="foot-nav" aria-label="About this site">
           <button type="button" data-go="how">How it works</button>
+          <button type="button" data-go="faq">FAQ</button>
           <button type="button" data-go="about">About</button>
           <button type="button" data-go="privacy">Privacy</button>
+          <button type="button" data-action="open-help">Help</button>
           <button type="button" data-go="dashboard">Progress</button>
           <button type="button" data-go="settings">Settings</button>
         </nav>
         <p class="site-foot">© merebari web 2026. All rights reserved. Practice only — not an official exam paper.</p>
       </footer>`;
+  }
+  function renderFaq() {
+    return `
+      <div class="wrap">
+        ${topbar("home")}
+        <article class="prose">
+          <p class="kicker">FAQ</p>
+          <h2 class="section-title">Common questions</h2>
+          <h3>Is this free?</h3>
+          <p>Yes. Pupils and teachers may use the live quiz. Please do not copy or republish the questions or pictures.</p>
+          <h3>Does it work without internet?</h3>
+          <p>After the first visit, the app and saved questions stay on the device. Open it once online so it can install.</p>
+          <h3>Where is my score saved?</h3>
+          <p>On this device, in the browser. Sign in with Google if you want the name on this phone to stay labelled.</p>
+          <h3>Is this an official exam?</h3>
+          <p>No. It is practice only — not an NERDC, ministry or common-entrance paper.</p>
+          <h3>How do teachers print a paper?</h3>
+          <p>Pick a class, then Print exam. You get an 80-question paper and an answer key. My progress has a printable report.</p>
+          <div class="home-actions">
+            <button class="btn btn-primary" data-go="home">Back to home</button>
+            <button class="btn btn-ghost" data-action="open-help">Keyboard help</button>
+          </div>
+        </article>
+        ${siteFooter()}${toastEl()}
+      </div>`;
   }
   function renderHow() {
     return `
@@ -1151,10 +1214,16 @@
     return `
       <div class="wrap">
         ${netBanner()}
+        ${updateBanner()}
         ${installBanner()}
         ${topbar(null)}
         ${onboardEl()}
+        ${helpEl()}
         ${cont}
+        ${state.name && state.grade ? `<div class="continue-banner">
+           <div><strong>Back to class</strong><p>${esc(window.GRADE_INFO[state.grade].label)} · ${esc(state.name)}</p></div>
+           <button class="btn btn-primary" data-action="jump-class">Open</button>
+         </div>` : ""}
         <section class="hero">
           <div>
             <div class="kicker">${esc(greeting())} · Nigeria · Offline ready</div>
@@ -1248,7 +1317,7 @@
     const cards = [1, 2, 3, 4, 5, 6].map(function (g) {
       const info = window.GRADE_INFO[g];
       return `
-        <button class="card-btn g${g}" data-grade="${g}">
+        <button class="card-btn g${g}${state.grade === g ? " on" : ""}" data-grade="${g}">
           <div class="grade-no">${g}</div>
           <h3>${info.label}</h3>
           <p>${info.ages} · ${info.blurb}</p>
@@ -1257,6 +1326,7 @@
     return `
       <div class="wrap">
         ${topbar("home")}
+        ${crumbs([{ label: "Home", go: "home" }, { label: "Class" }])}
         <p class="kicker">Hello, ${esc(state.name || "friend")} · ${progress.xp} XP</p>
         <h2 class="section-title">Which class are you in?</h2>
         <p class="sub">Pick your class. Questions get harder from Primary 1 to Primary 6.</p>
@@ -1337,6 +1407,7 @@
     return `
       <div class="wrap">
         ${topbar("subject")}
+        ${crumbs([{ label: "Home", go: "home" }, { label: "Class", go: "grade" }, { label: "Subjects", go: "subject" }, { label: name }])}
         <p class="kicker">${window.GRADE_INFO[state.grade].label} · ${esc(name)}</p>
         <h2 class="section-title">Set up your quiz</h2>
         <p class="sub">Choose a mode, then how many questions.</p>
@@ -1387,6 +1458,8 @@
       <div class="wrap">
         ${netBanner()}
         ${topbar("length")}
+        ${crumbs([{ label: "Home", go: "home" }, { label: subjectName(state.subject) }, { label: "Q" + (state.index + 1) }])}
+        ${helpEl()}
         <div class="quiz-head">
           <div class="progress-meta">${iconFor(q.subject || state.subject)} ${esc(subj ? subj.name : subjectName(state.subject))} · P${state.grade}</div>
           <div class="ghost-row">
@@ -1566,6 +1639,11 @@
         <div class="badge-grid">${badges}</div>
         <h3 class="section-title" style="font-size:24px;margin-top:28px">Recent</h3>
         <ul class="sub">${recent}</ul>
+        <div class="actions" style="margin-top:16px">
+          <button class="btn btn-primary" data-go="report">Teacher report</button>
+          <button class="btn btn-sun" data-action="parent-recap">WhatsApp parent</button>
+          ${!progress.quizzes ? `<button class="btn btn-ghost" data-action="start">Start a quiz</button>` : ""}
+        </div>
         ${siteFooter()}
         ${toastEl()}
       </div>`;
@@ -1662,6 +1740,7 @@
           ${row("music", "Soft background music")}
           ${row("tts", "Auto-read each question")}
           ${row("dark", "Dark mode")}
+          ${row("autoDark", "Match phone light / dark")}
           ${row("large", "Larger text")}
           ${row("contrast", "High contrast")}
         </div>
@@ -1760,7 +1839,7 @@
       home: renderHome, grade: renderGrades, subject: renderSubjects, length: renderLength,
       quiz: renderQuiz, result: renderResult, review: renderReview, certificate: renderCertificate,
       exam: renderExam, dashboard: renderDashboard, settings: renderSettings, account: renderAccount, report: renderReport,
-      about: renderAbout, privacy: renderPrivacy, how: renderHow
+      about: renderAbout, privacy: renderPrivacy, how: renderHow, faq: renderFaq
     };
     app.innerHTML = (map[state.screen] || renderHome)();
     const titles = {
@@ -1768,6 +1847,7 @@
       about: "About · Primary Super Quiz",
       privacy: "Privacy · Primary Super Quiz",
       how: "How it works · Primary Super Quiz",
+      faq: "FAQ · Primary Super Quiz",
       dashboard: "My progress · Primary Super Quiz",
       settings: "Settings · Primary Super Quiz",
       account: "Account · Primary Super Quiz",
@@ -1776,7 +1856,7 @@
       report: "Teacher report · Primary Super Quiz"
     };
     document.title = titles[state.screen] || "Primary Super Quiz";
-    const hashScreens = { home: 1, about: 1, privacy: 1, how: 1, settings: 1, dashboard: 1, account: 1 };
+    const hashScreens = { home: 1, about: 1, privacy: 1, how: 1, faq: 1, settings: 1, dashboard: 1, account: 1 };
     if (hashScreens[state.screen]) {
       const h = "#" + state.screen;
       if (location.hash !== h) try { history.replaceState(null, "", h); } catch (e) {}
@@ -1790,6 +1870,9 @@
       ov.setAttribute("role", "status");
       ov.innerHTML = "<div class=\"spinner\"></div><p>Loading questions…</p>";
       app.appendChild(ov);
+    }
+    if (state.helpOpen && !app.querySelector('[aria-label="Help"]')) {
+      app.insertAdjacentHTML("beforeend", helpEl());
     }
     if (state.screen === "home" || state.screen === "account") mountGoogleButton();
     if (state.screen === "home") {
@@ -1844,7 +1927,12 @@
       return;
     }
     localStorage.setItem("psq-name", state.name);
-    state.screen = "grade";
+    if (state.grade >= 1 && state.grade <= 6) {
+      state.screen = "subject";
+      prefetchGrade(state.grade);
+    } else {
+      state.screen = "grade";
+    }
     render();
   }
 
@@ -2044,6 +2132,7 @@
     if (t.dataset.go) { state.screen = t.dataset.go; render(); return; }
     if (t.dataset.grade) {
       state.grade = Number(t.dataset.grade);
+      localStorage.setItem("psq-grade", String(state.grade));
       prefetchGrade(state.grade);
       if (state.pendingDaily) {
         state.pendingDaily = false;
@@ -2132,6 +2221,19 @@
     if (action === "install" && deferredInstall) {
       deferredInstall.prompt();
       deferredInstall.userChoice.then(function () { deferredInstall = null; render(); }).catch(function () {});
+    }
+    if (action === "reload") { location.reload(); return; }
+    if (action === "open-help") { state.helpOpen = true; render(); return; }
+    if (action === "close-help") { state.helpOpen = false; render(); return; }
+    if (action === "jump-class") {
+      if (!state.grade) { state.screen = "grade"; render(); return; }
+      prefetchGrade(state.grade);
+      state.screen = "subject";
+      render();
+    }
+    if (action === "parent-recap") {
+      const msg = parentRecapText();
+      window.open("https://wa.me/?text=" + encodeURIComponent(msg), "_blank");
     }
     if (action === "onboard-next") {
       state.onboardStep = (state.onboardStep || 0) + 1;
@@ -2276,13 +2378,30 @@
   });
 
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js").catch(function () {});
+    navigator.serviceWorker.register("sw.js").then(function (reg) {
+      if (reg.waiting && navigator.serviceWorker.controller) state.updateReady = true;
+      reg.addEventListener("updatefound", function () {
+        const w = reg.installing;
+        if (!w) return;
+        w.addEventListener("statechange", function () {
+          if (w.state === "installed" && navigator.serviceWorker.controller) {
+            state.updateReady = true;
+            if (state.screen === "home") render();
+          }
+        });
+      });
+    }).catch(function () {});
   }
   ["images/owl-yes.jpg", "images/owl-no.jpg"].forEach(function (src) {
     const im = new Image(); im.src = src;
   });
 
-  var HASH_OK = { home: 1, about: 1, privacy: 1, how: 1, settings: 1, dashboard: 1, account: 1 };
+  try {
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
+      if (settings.autoDark) applyChrome();
+    });
+  } catch (e) {}
+  var HASH_OK = { home: 1, about: 1, privacy: 1, how: 1, faq: 1, settings: 1, dashboard: 1, account: 1 };
   window.addEventListener("hashchange", function () {
     const s = (location.hash || "").replace("#", "");
     if (HASH_OK[s] && state.screen !== s) { state.screen = s; render(); }

@@ -1189,3 +1189,23 @@ html[data-theme="dark"] .onboard-card img { mix-blend-mode: normal; }
 @media (max-width: 700px) {
   .home-grid, .play-row { grid-template-columns: 1fr; }
 }
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+.crumbs button {
+  color: var(--teal-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.card-btn.on {
+  border-color: var(--teal);
+  box-shadow: 0 10px 0 var(--teal-dark);
+}
