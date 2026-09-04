@@ -343,7 +343,7 @@
     });
   }
 
-  const MUSIC_VOL = 0.04;
+  const MUSIC_VOL = 0.038;
 
   function ensureAudio() {
     if (!audioCtx) {
