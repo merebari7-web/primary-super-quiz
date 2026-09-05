@@ -5,7 +5,7 @@
   const canvas = document.getElementById("confetti");
   const LETTERS = ["A", "B", "C", "D"];
   const bankCache = {};
-  const SK = "psq-settings-v5";
+  const SK = "psq-settings-v6";
 
   const EMPTY_PROGRESS = {
     xp: 0, streak: 0, lastDay: "", quizzes: 0, badges: [],
@@ -39,7 +39,7 @@
     group: "all",
     query: "",
     length: 20,
-    mode: "practice", // "practice", "exam", "timed", "flashcard"
+    mode: "practice", // "practice", "exam", "timed"
     questions: [],
     index: 0,
     picked: [],
@@ -77,8 +77,9 @@
     flashcardIndex: 0,
     flashcardFlipped: false,
     selectedPupilId: "c1",
+    curriculumTab: "nerdc",
     editModalOpen: false,
-    editingQIndex: null, // null = new question, number = existing question index
+    editingQIndex: null,
     editQData: { q: "", options: ["", "", "", ""], answer: 0, topic: "General", bloom: "Understand", explain: "" },
     classRoster: loadJSON("psq-class-roster-v2", [
       { id: "c1", name: "Chinedu Okafor", grade: 5, arm: "5 Gold", ca1: 18, ca2: 17, exam: 52 },
@@ -95,7 +96,7 @@
     availableTopics: [],
 
     // ==========================================
-    // NIGERIAN EXAM SETTER ENGINE STATE
+    // NIGERIAN EXAM SETTER STATE
     // ==========================================
     examSetter: {
       schoolName: localStorage.getItem("psq-school-name") || "FEDERAL STAFF PRIMARY SCHOOL",
@@ -107,7 +108,7 @@
       subject: "maths",
       nceeBundle: "none",
       count: 40,
-      layout: "2col", // "2col" or "1col"
+      layout: "2col",
       timeAllowed: "1 Hour 30 Mins",
       marksSecA: 40,
       marksSecB: 20,
@@ -116,12 +117,12 @@
       instructions: "Answer ALL questions in Section A by choosing the correct option. For Section B, answer any THREE (3) questions. Show all your workings clearly.",
       questions: [],
       theoryQuestions: [],
-      paperType: "A", // Type A, Type B, Type C
+      paperType: "A",
       savedPapers: loadJSON("psq-saved-exams-v1", [])
     },
 
     // ==========================================
-    // CBT (COMPUTER-BASED TESTING) EXAM ROOM STATE
+    // CBT EXAM ROOM STATE
     // ==========================================
     cbt: {
       active: false,
@@ -190,7 +191,7 @@
     return localStorage.getItem("psq-profile-id") || "p1";
   }
 
-  function progressKey() { return "psq-progress-v5-" + uid(); }
+  function progressKey() { return "psq-progress-v6-" + uid(); }
 
   function loadCurrentProgress() {
     progress = loadJSON(progressKey(), Object.assign({}, EMPTY_PROGRESS));
@@ -230,8 +231,6 @@
   }
 
   function schoolName() { return state.examSetter.schoolName; }
-  function schoolAddr() { return state.examSetter.schoolAddress; }
-  function schoolMotto() { return state.examSetter.schoolMotto; }
 
   function applyChrome() {
     let theme = settings.theme || "light";
@@ -263,7 +262,7 @@
   }
 
   /* ==========================================================================
-     AUDIO SYNTHESIS & SOUND EFFECTS (Web Audio API)
+     AUDIO SYNTHESIS & SOUND EFFECTS (Pure Web Audio API)
      ========================================================================== */
 
   function initAudio() {
@@ -1107,7 +1106,395 @@
   }
 
   /* ==========================================================================
-     UI RENDERING ENGINE
+     SCRATCHPAD WHITEBOARD ENGINE (HTML5 CANVAS)
+     ========================================================================== */
+
+  function initScratchpadCanvas() {
+    const cvs = document.getElementById("scratchpad-canvas");
+    if (!cvs) return;
+    scratchpadCtx = cvs.getContext("2d");
+    cvs.width = cvs.parentElement.clientWidth || 320;
+    cvs.height = cvs.parentElement.clientHeight || 280;
+
+    cvs.addEventListener("mousedown", startScratchDraw);
+    cvs.addEventListener("mousemove", drawScratch);
+    cvs.addEventListener("mouseup", stopScratchDraw);
+    cvs.addEventListener("mouseleave", stopScratchDraw);
+
+    cvs.addEventListener("touchstart", function (e) {
+      e.preventDefault();
+      const t = e.touches[0];
+      const rect = cvs.getBoundingClientRect();
+      lastX = t.clientX - rect.left;
+      lastY = t.clientY - rect.top;
+      isDrawing = true;
+    }, { passive: false });
+
+    cvs.addEventListener("touchmove", function (e) {
+      e.preventDefault();
+      if (!isDrawing) return;
+      const t = e.touches[0];
+      const rect = cvs.getBoundingClientRect();
+      const x = t.clientX - rect.left;
+      const y = t.clientY - rect.top;
+      drawOnCanvas(x, y);
+      lastX = x;
+      lastY = y;
+    }, { passive: false });
+
+    cvs.addEventListener("touchend", function (e) {
+      e.preventDefault();
+      isDrawing = false;
+    });
+  }
+
+  function startScratchDraw(e) {
+    const cvs = document.getElementById("scratchpad-canvas");
+    if (!cvs) return;
+    const rect = cvs.getBoundingClientRect();
+    lastX = e.clientX - rect.left;
+    lastY = e.clientY - rect.top;
+    isDrawing = true;
+  }
+
+  function drawScratch(e) {
+    if (!isDrawing) return;
+    const cvs = document.getElementById("scratchpad-canvas");
+    if (!cvs) return;
+    const rect = cvs.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    drawOnCanvas(x, y);
+    lastX = x;
+    lastY = y;
+  }
+
+  function stopScratchDraw() { isDrawing = false; }
+
+  function drawOnCanvas(x, y) {
+    if (!scratchpadCtx) return;
+    scratchpadCtx.beginPath();
+    scratchpadCtx.moveTo(lastX, lastY);
+    scratchpadCtx.lineTo(x, y);
+    if (state.scratchpadTool === "eraser") {
+      scratchpadCtx.strokeStyle = "#ffffff";
+      scratchpadCtx.lineWidth = 18;
+    } else {
+      scratchpadCtx.strokeStyle = state.scratchpadColor || "#0e7c76";
+      scratchpadCtx.lineWidth = state.scratchpadSize || 4;
+    }
+    scratchpadCtx.lineCap = "round";
+    scratchpadCtx.lineJoin = "round";
+    scratchpadCtx.stroke();
+  }
+
+  /* ==========================================================================
+     QUIZ ENGINE RENDERER (RETRIEVAL PRACTICE VIEW)
+     ========================================================================== */
+
+  function renderQuiz() {
+    const total = state.questions.length;
+    const q = state.questions[state.index];
+    if (!q) return `<div class="wrap">${renderTopBar("subject")}<p>Loading question...</p></div>`;
+
+    const s = window.SUBJECTS[q.subject || state.subject] || { name: "Subject", icon: "📘" };
+    const pctProg = Math.round(((state.index + 1) / total) * 100);
+    const hiddenOpts = state.hidden[state.index] || [];
+    const chosenOpt = state.picked[state.index];
+    const isRev = state.revealed;
+    const isExam = state.mode === "exam";
+
+    return `
+      <div class="wrap">
+        <div class="topbar no-print">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <button class="btn btn-ghost btn-sm" data-action="quit-quiz">✕ Quit</button>
+            <span class="chip">Q ${state.index + 1} / ${total}</span>
+            <span class="chip" id="sess-clock">⏱ ${fmtDur(state.elapsedSec)}</span>
+            ${state.mode === "timed" ? `<span class="chip on timer-wrap">⏱ ${state.timer}s</span>` : ""}
+            ${state.combo >= 2 ? `<span class="chip on" style="background:#fef3c7;color:#92400e;border-color:#f59e0b;">🔥 ${state.combo} Streak!</span>` : ""}
+          </div>
+          <div class="top-actions">
+            <button class="icon-btn" data-action="speak-q" title="Read Aloud (R)">🔊</button>
+            <button class="icon-btn" data-action="use-5050" title="50/50 Lifeline (Eliminate 2)" ${state.used5050 || isRev ? "disabled" : ""}>✂️</button>
+            <button class="icon-btn" data-action="use-skip" title="Skip Question" ${state.usedSkip || isRev ? "disabled" : ""}>⏩</button>
+            <button class="icon-btn" data-action="use-hint" title="Show Hint (H)" ${state.usedHint || isRev ? "disabled" : ""}>💡</button>
+            <button class="icon-btn" data-action="toggle-flag" title="Flag Question (F)">${state.flagged[state.index] ? "🚩" : "🏳️"}</button>
+            <button class="icon-btn" data-action="toggle-scratchpad" title="Working Scratchpad (S)">📝</button>
+          </div>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:${pctProg}%;"></div>
+        </div>
+
+        <div class="q-card" style="margin-top:16px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px;">
+            <div style="display:flex;gap:6px;align-items:center;">
+              <span class="badge-tag">${s.icon} ${s.name}</span>
+              <span class="chip" style="font-size:0.75rem;">${esc(q.topic || "Core")}</span>
+            </div>
+            <span class="chip" style="font-size:0.75rem;background:#f1f5f9;">Bloom: <strong>${esc(q.bloom || "Understand")}</strong></span>
+          </div>
+
+          <h2 class="question">${esc(q.q)}</h2>
+
+          ${state.usedHint && state.hintText ? `<div class="hint-box">💡 <strong>Pedagogical Hint:</strong> ${esc(state.hintText)}</div>` : ""}
+
+          <!-- Metacognitive Confidence Selector -->
+          ${settings.confidenceMode && !isRev && chosenOpt == null ? `
+            <div style="margin:14px 0 10px;padding:8px 12px;background:var(--card-alt);border-radius:8px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:0.85rem;">
+              <span><strong>Metacognitive Calibration:</strong> How sure are you?</span>
+              <div style="display:flex;gap:6px;">
+                <button class="chip ${state.confidence[state.index] === "sure" ? "on" : ""}" data-set-conf="sure">🌟 Confident</button>
+                <button class="chip ${state.confidence[state.index] === "thinking" ? "on" : ""}" data-set-conf="thinking">🤔 Thinking</button>
+                <button class="chip ${state.confidence[state.index] === "guess" ? "on" : ""}" data-set-conf="guess">🎲 Guessing</button>
+              </div>
+            </div>
+          ` : ""}
+
+          <div class="options">
+            ${q.options.map(function (opt, oi) {
+              if (hiddenOpts.indexOf(oi) >= 0) return "";
+              let cls = "opt";
+              if (isRev) {
+                if (oi === q.answer) cls += " correct";
+                else if (oi === chosenOpt) cls += " wrong";
+              } else if (isExam && chosenOpt === oi) {
+                cls += " correct";
+              }
+
+              return `
+                <button class="${cls}" data-opt="${oi}">
+                  <span class="badge">${LETTERS[oi]}</span>
+                  <span>${esc(opt)}</span>
+                </button>`;
+            }).join("")}
+          </div>
+
+          ${isRev ? `
+            <div class="feedback ${chosenOpt === q.answer ? "ok" : "err"}">
+              <strong>${chosenOpt === q.answer ? "🎉 Correct!" : "⚠️ Incorrect!"}</strong>
+              <p style="margin-top:6px;line-height:1.5;">${esc(q.explain)}</p>
+            </div>
+          ` : ""}
+
+          <div class="quiz-actions" style="margin-top:20px;">
+            ${(isRev || (isExam && chosenOpt != null)) ? `
+              <button class="btn btn-primary" data-action="quiz-next" style="width:100%;justify-content:center;font-size:1.05rem;">
+                ${state.index < total - 1 ? "Next Question →" : "Finish & View Results 🏆"}
+              </button>
+            ` : ""}
+          </div>
+        </div>
+
+        <!-- Scratchpad Whiteboard Drawer -->
+        ${state.scratchpadOpen ? `
+          <div class="scratchpad-drawer no-print">
+            <div class="scratchpad-header">
+              <strong>📝 Rough Work Scratchpad</strong>
+              <div style="display:flex;gap:6px;">
+                <button class="chip ${state.scratchpadTool === "pen" ? "on" : ""}" data-set-stool="pen">✏️ Pen</button>
+                <button class="chip ${state.scratchpadTool === "eraser" ? "on" : ""}" data-set-stool="eraser">🧹 Eraser</button>
+                <button class="chip" data-set-scolor="#0e7c76" style="background:#0e7c76;color:#fff;">●</button>
+                <button class="chip" data-set-scolor="#e11d48" style="background:#e11d48;color:#fff;">●</button>
+                <button class="chip" data-set-scolor="#0284c7" style="background:#0284c7;color:#fff;">●</button>
+                <button class="btn btn-ghost btn-sm" data-action="clear-scratchpad">Clear</button>
+                <button class="btn btn-ghost btn-sm" data-action="close-scratchpad">✕</button>
+              </div>
+            </div>
+            <div class="scratchpad-canvas-wrap">
+              <canvas id="scratchpad-canvas"></canvas>
+            </div>
+          </div>
+        ` : ""}
+      </div>`;
+  }
+
+  /* ==========================================================================
+     QUIZ RESULT & PEDAGOGICAL EVALUATION VIEW
+     ========================================================================== */
+
+  function renderResult() {
+    const total = state.questions.length;
+    let correctCount = 0;
+    for (let i = 0; i < total; i++) {
+      if (state.picked[i] === state.questions[i].answer) correctCount += 1;
+    }
+    const pct = Math.round((correctCount / total) * 100);
+    const gl = gradeLetter(pct);
+    const r = rankFor(progress.xp);
+
+    return `
+      <div class="wrap">
+        <div class="result">
+          <div class="letter-mark">${gl.mark}</div>
+          <div class="kicker">Formative Evaluation · Primary ${state.grade || 5}</div>
+          <h2 class="section-title">${esc(scorePedagogicalMessage(pct))}</h2>
+          <p class="sub">${gl.label} · ${progress.xp} Total XP · ${r.name}</p>
+
+          <div class="metric-grid">
+            <div><b>${correctCount} / ${total}</b><span>Score</span></div>
+            <div><b>${pct}%</b><span>Accuracy</span></div>
+            <div><b>+${state.xpGained} XP</b><span>Points Earned</span></div>
+            <div><b>${fmtDur(state.elapsedSec)}</b><span>Duration</span></div>
+          </div>
+
+          ${state.newBadges && state.newBadges.length ? `
+            <div class="q-card" style="margin:24px 0;background:#fef3c7;border-color:#f59e0b;">
+              <h3 style="color:#92400e;">🎖️ New Academic Badges Unlocked!</h3>
+              <div style="display:flex;gap:12px;justify-content:center;margin-top:10px;flex-wrap:wrap;">
+                ${state.newBadges.map(function (bid) {
+                  const b = (window.BADGES || []).find(x => x.id === bid) || { icon: "⭐", name: "Badge" };
+                  return `<div class="chip on" style="font-size:0.95rem;">${b.icon} ${esc(b.name)}</div>`;
+                }).join("")}
+              </div>
+            </div>
+          ` : ""}
+
+          <div class="top-actions" style="justify-content:center;gap:12px;margin-top:28px;flex-wrap:wrap;">
+            <button class="btn btn-primary" data-go="review">Detailed Item Review 🔍</button>
+            <button class="btn btn-sun" data-action="launch-quiz">Practice Again 🔄</button>
+            <button class="btn btn-ghost" data-go="flashcards">Spaced Recall Flashcards 🗂️</button>
+            <button class="btn btn-ghost" data-go="report">Diagnostic Dossier 📊</button>
+            <button class="btn btn-ghost" data-go="certificate">Print Certificate 📜</button>
+            <button class="btn btn-ghost" data-go="home">Home 🏠</button>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  /* ==========================================================================
+     DETAILED POST-TEST QUESTION REVIEW VIEW
+     ========================================================================== */
+
+  function renderReview() {
+    const total = state.questions.length;
+    const filter = state.reviewFilter || "all";
+
+    const filtered = state.questions.map(function (q, i) {
+      return { q, index: i, userAns: state.picked[i], isCorrect: state.picked[i] === q.answer, isFlagged: !!state.flagged[i] };
+    }).filter(function (item) {
+      if (filter === "missed") return !item.isCorrect;
+      if (filter === "correct") return item.isCorrect;
+      if (filter === "flagged") return item.isFlagged;
+      return true;
+    });
+
+    return `
+      <div class="wrap">
+        <div class="topbar no-print">
+          <button class="icon-btn" data-go="result">←</button>
+          <div class="chip-group">
+            <button class="chip ${filter === "all" ? "on" : ""}" data-set-rfilter="all">All (${total})</button>
+            <button class="chip ${filter === "missed" ? "on" : ""}" data-set-rfilter="missed">Missed</button>
+            <button class="chip ${filter === "correct" ? "on" : ""}" data-set-rfilter="correct">Correct</button>
+            <button class="chip ${filter === "flagged" ? "on" : ""}" data-set-rfilter="flagged">Flagged</button>
+          </div>
+          <button class="btn btn-primary btn-sm" data-action="print-page">🖨️ Print Review</button>
+        </div>
+
+        <h2 class="section-title">Item-by-Item Formative Review</h2>
+        <p class="sub">Examine step-by-step solutions, cognitive domains, and curriculum competencies.</p>
+
+        <div style="display:flex;flex-direction:column;gap:18px;margin-top:20px;">
+          ${filtered.map(function (item) {
+            const q = item.q;
+            const ok = item.isCorrect;
+            return `
+              <div class="q-card" style="border-left:6px solid ${ok ? "var(--teal)" : "var(--coral)"};">
+                <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+                  <span class="badge-tag">Question ${item.index + 1} · ${esc(q.topic || "General")}</span>
+                  <span class="chip ${ok ? "on" : ""}" style="${ok ? "" : "background:#fee2e2;color:#991b1b;border-color:#f87171;"}">${ok ? "✅ Correct" : "❌ Missed"}</span>
+                </div>
+                <h3 style="font-size:1.15rem;margin-bottom:12px;">${esc(q.q)}</h3>
+                <div class="options">
+                  ${q.options.map(function (opt, oi) {
+                    let cls = "opt";
+                    if (oi === q.answer) cls += " correct";
+                    else if (oi === item.userAns) cls += " wrong";
+                    return `
+                      <div class="${cls}" style="cursor:default;">
+                        <span class="badge">${LETTERS[oi]}</span>
+                        <span>${esc(opt)} ${oi === q.answer ? " (Correct Key)" : oi === item.userAns ? " (Your Selection)" : ""}</span>
+                      </div>`;
+                  }).join("")}
+                </div>
+                <div class="feedback ok" style="margin-top:12px;">
+                  <strong>Pedagogical Solution &amp; Working Steps:</strong>
+                  <p style="margin-top:4px;line-height:1.5;">${esc(q.explain)}</p>
+                </div>
+              </div>`;
+          }).join("")}
+        </div>
+      </div>`;
+  }
+
+  /* ==========================================================================
+     SPACED REPETITION FLASHCARDS (LEITNER 3-BOX SYSTEM)
+     ========================================================================== */
+
+  function renderFlashcards() {
+    const g = state.grade || 5;
+    const list = progress.missed[g] || [];
+    const total = list.length;
+    const cur = list[state.flashcardIndex] || list[0];
+    const isFlipped = state.flashcardFlipped;
+
+    return `
+      <div class="wrap">
+        ${renderTopBar("home")}
+        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Spaced Recall Flashcards" }])}
+        <div class="kicker">Leitner 3-Box Active Recall System</div>
+        <h2 class="section-title">Spaced Retrieval Flashcards</h2>
+        <p class="sub">Review previous misconceptions at scientifically spaced intervals to lock facts into permanent memory.</p>
+
+        <div class="home-stats" style="margin:20px 0;">
+          <div class="stat-tile"><b>${progress.flashcards.box1.length}</b><span>Box 1 (Daily)</span></div>
+          <div class="stat-tile"><b>${progress.flashcards.box2.length}</b><span>Box 2 (3 Days)</span></div>
+          <div class="stat-tile"><b>${progress.flashcards.box3.length}</b><span>Box 3 (Mastered)</span></div>
+          <div class="stat-tile"><b>${total}</b><span>Total Missed Items</span></div>
+        </div>
+
+        ${cur ? `
+          <div class="flashcard-scene" data-action="flip-flashcard" style="perspective:1000px;margin:24px auto;max-width:600px;cursor:pointer;">
+            <div class="flashcard ${isFlipped ? "flipped" : ""}" style="background:var(--card);border:2px solid var(--teal);border-radius:16px;padding:36px;min-height:260px;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:var(--shadow-md);">
+              ${!isFlipped ? `
+                <div class="kicker" style="color:var(--teal);">Curriculum Question · Tap Card to Flip 🔄</div>
+                <h3 style="font-size:1.35rem;margin:16px 0;line-height:1.5;">${esc(cur.q)}</h3>
+                <span class="chip" style="margin:0 auto;font-size:0.8rem;">${esc(cur.topic || "Subject Item")}</span>
+              ` : `
+                <div class="kicker" style="color:var(--coral);">Correct Answer &amp; Explanation</div>
+                <h2 style="color:var(--teal);font-size:1.45rem;margin:12px 0;">${esc(cur.options[cur.answer])}</h2>
+                <p style="font-size:0.95rem;line-height:1.5;color:var(--ink);">${esc(cur.explain)}</p>
+              `}
+            </div>
+          </div>
+
+          ${isFlipped ? `
+            <div style="display:flex;justify-content:center;gap:12px;margin-top:16px;flex-wrap:wrap;">
+              <button class="btn btn-coral" data-rate-card="1">🔴 Hard (Repeat Daily)</button>
+              <button class="btn btn-sun" data-rate-card="2">🟡 Good (Review in 3 Days)</button>
+              <button class="btn btn-primary" data-rate-card="3">🟢 Easy (Mastered to Box 3)</button>
+            </div>
+          ` : `
+            <div style="text-align:center;margin-top:12px;">
+              <button class="btn btn-primary" data-action="flip-flashcard">Flip Card to Reveal Answer 🔄</button>
+            </div>
+          `}
+        ` : `
+          <div class="q-card" style="text-align:center;padding:48px 24px;margin-top:24px;">
+            <div style="font-size:3rem;margin-bottom:12px;">🎉</div>
+            <h3>Zero Misconceptions Pending!</h3>
+            <p class="sub">You have mastered all attempted questions. Start a new quiz to discover new challenge items.</p>
+            <button class="btn btn-primary" data-go="subject" style="margin-top:16px;">Start Practice Quiz →</button>
+          </div>
+        `}
+      </div>`;
+  }
+
+  /* ==========================================================================
+     MAIN ROUTING RENDERER & ENTRY POINT
      ========================================================================== */
 
   function renderTopBar(backTarget) {
@@ -1141,22 +1528,11 @@
   }
 
   function renderHome() {
-    const resume = loadJSON("psq-resume-quiz", null);
-    const contBanner = resume && resume.questions && resume.questions.length
-      ? `<div class="continue-banner">
-           <div>
-             <strong>Resume Incomplete Quiz</strong>
-             <p>${esc(subjectName(resume.subject))} · Q${(resume.index || 0) + 1}/${resume.questions.length}</p>
-           </div>
-           <button class="btn btn-sun btn-sm" data-action="resume-quiz-saved">Resume</button>
-         </div>` : "";
-
     const r = rankFor(progress.xp);
 
     return `
       <div class="wrap">
         ${renderTopBar(null)}
-        ${contBanner}
         <section class="hero">
           <div>
             <div class="kicker">Universal Basic Education · NERDC Aligned · 100% Offline</div>
@@ -1745,7 +2121,6 @@
     const es = state.examSetter;
     const totalQ = es.questions.length || 1;
 
-    // Calculate Table of Specifications cognitive distribution
     let recallCnt = 0, underCnt = 0, applyCnt = 0, analCnt = 0;
     const topicMap = {};
 
@@ -2195,415 +2570,157 @@
   }
 
   /* ==========================================================================
-     PRACTICE QUIZ VIEW
-     ========================================================================== */
-
-  function renderQuiz() {
-    const q = state.questions[state.index];
-    if (!q) return `<div class="wrap">${renderTopBar("subject")}<p>Loading questions...</p></div>`;
-
-    const total = state.questions.length;
-    const pct = Math.round(((state.index + 1) / total) * 100);
-    const s = window.SUBJECTS[q.subject] || window.SUBJECTS[state.subject] || { name: "Quiz", icon: "📘" };
-    const exam = state.mode === "exam";
-    const showFeedback = state.revealed && !exam;
-    const hide = state.hidden[state.index] || [];
-
-    const optionsHtml = q.options.map(function (opt, i) {
-      if (hide.indexOf(i) >= 0) return "";
-      let cls = "opt";
-      if (showFeedback) {
-        if (i === q.answer) cls += " correct";
-        else if (i === state.picked[state.index]) cls += " wrong";
-        else cls += " dim";
-      } else if (exam && state.picked[state.index] === i) {
-        cls += " correct";
-      }
-      return `
-        <button class="${cls}" data-opt="${i}" ${showFeedback ? "disabled" : ""}>
-          <span class="badge">${LETTERS[i]}</span>
-          <span>${esc(opt)}</span>
-        </button>`;
-    }).join("");
-
-    let feedbackHtml = "";
-    if (showFeedback) {
-      const ok = state.picked[state.index] === q.answer;
-      feedbackHtml = `
-        <div class="feedback ${ok ? "ok" : "no"}" role="status">
-          <strong>${ok ? "✅ Correct! " : "❌ Not quite. The correct answer is: " + esc(q.options[q.answer]) + ". "}</strong>
-          <p style="margin-top:6px;">${esc(q.explain)}</p>
-        </div>`;
-    }
-
-    const confVal = state.confidence[state.index];
-    const confidenceHtml = settings.confidenceMode && !exam && !state.revealed ? `
-      <div class="confidence-box">
-        <p>Rate your confidence before picking:</p>
-        <div class="conf-options">
-          <button class="conf-btn ${confVal === "sure" ? "selected" : ""}" data-set-conf="sure">🌟 I'm Sure</button>
-          <button class="conf-btn ${confVal === "think" ? "selected" : ""}" data-set-conf="think">🤔 Thinking</button>
-          <button class="conf-btn ${confVal === "guess" ? "selected" : ""}" data-set-conf="guess">🎲 Just Guessing</button>
-        </div>
-      </div>` : "";
-
-    const canAdvance = exam ? (state.picked[state.index] != null) : state.revealed;
-
-    return `
-      <div class="wrap ${settings.focus ? "focus-quiz" : ""}">
-        ${renderTopBar(null)}
-        <div class="quiz-head">
-          <div class="progress-meta">${s.icon} ${esc(s.name)} · Primary ${state.grade || 5}</div>
-          <div style="display:flex;align-items:center;gap:10px;">
-            ${state.combo >= 2 ? `<span class="chip on">🔥 x${state.combo}</span>` : ""}
-            ${state.mode === "timed" ? `<span class="chip on timer-wrap">⏱ ${state.timer}s</span>` : ""}
-            <span class="progress-meta" id="sess-clock">⏱ 0:00</span>
-            <span class="progress-meta">Q ${state.index + 1} / ${total}</span>
-          </div>
-        </div>
-
-        <div class="bar"><span style="width:${pct}%;"></span></div>
-
-        <div class="q-card">
-          <div class="q-meta-badges">
-            <span class="badge-tag">${esc(q.topic || "General")}</span>
-            <span class="badge-tag bloom">Bloom: ${esc(q.bloom || "Understand")}</span>
-            <span class="badge-tag">${esc(q.difficulty || "Standard")}</span>
-          </div>
-
-          <h2 class="question">${esc(q.q)}</h2>
-
-          ${confidenceHtml}
-          <div class="options">${optionsHtml}</div>
-
-          ${state.hintText && !showFeedback ? `<div class="hint-box">💡 Scaffolding Hint: ${esc(state.hintText)}</div>` : ""}
-          ${feedbackHtml}
-
-          <div class="lifelines">
-            <button class="life" data-action="speak-q">🔊 Read Aloud</button>
-            <button class="life" data-action="use-hint" ${state.usedHint || exam || showFeedback ? "disabled" : ""}>💡 Hint</button>
-            <button class="life" data-action="use-5050" ${state.used5050 || exam || showFeedback ? "disabled" : ""}>✂️ 50 / 50</button>
-            <button class="life" data-action="use-skip" ${state.usedSkip ? "disabled" : ""}>⏭️ Skip</button>
-            <button class="life" data-action="toggle-scratchpad">✏️ Scratchpad</button>
-            <button class="life ${state.flagged[state.index] ? "on" : ""}" data-action="toggle-flag">${state.flagged[state.index] ? "🚩 Flagged" : "🏳️ Flag"}</button>
-          </div>
-
-          <div class="quiz-actions">
-            ${canAdvance ? `<button class="btn btn-primary" data-action="quiz-next">${state.index === total - 1 ? "See Results →" : "Next Question →"}</button>` : "<div></div>"}
-            <button class="btn btn-ghost" data-action="quit-quiz">Exit Quiz</button>
-          </div>
-        </div>
-
-        ${state.scratchpadOpen ? renderScratchpadModal() : ""}
-      </div>`;
-  }
-
-  function renderScratchpadModal() {
-    return `
-      <div class="scratchpad-modal no-print">
-        <div class="scratchpad-card">
-          <div class="scratchpad-head">
-            <strong>✏️ Interactive Whiteboard &amp; Scratchpad</strong>
-            <button class="btn btn-ghost btn-sm" data-action="close-scratchpad">✕ Close</button>
-          </div>
-          <canvas id="scratchpad-canvas" class="scratchpad-canvas"></canvas>
-          <div class="scratchpad-tools">
-            <button class="btn ${state.scratchpadTool === "pen" ? "btn-primary" : "btn-ghost"} btn-sm" data-set-stool="pen">✏️ Pen</button>
-            <button class="btn ${state.scratchpadTool === "eraser" ? "btn-primary" : "btn-ghost"} btn-sm" data-set-stool="eraser">🧹 Eraser</button>
-            <button class="btn btn-ghost btn-sm" data-action="clear-scratchpad">🗑️ Clear</button>
-            <div style="display:flex;gap:6px;align-items:center;margin-left:auto;">
-              ${["#0e7c76", "#1c2834", "#e07a5f", "#0284c7"].map(c => `
-                <div class="color-dot ${state.scratchpadColor === c ? "active" : ""}" style="background:${c};" data-set-scolor="${c}"></div>
-              `).join("")}
-            </div>
-          </div>
-        </div>
-      </div>`;
-  }
-
-  function initScratchpadCanvas() {
-    const c = document.getElementById("scratchpad-canvas");
-    if (!c) return;
-    scratchpadCtx = c.getContext("2d");
-    c.width = c.clientWidth;
-    c.height = c.clientHeight;
-
-    function getPos(e) {
-      const rect = c.getBoundingClientRect();
-      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-      return { x: clientX - rect.left, y: clientY - rect.top };
-    }
-
-    function startDraw(e) {
-      isDrawing = true;
-      const pos = getPos(e);
-      lastX = pos.x; lastY = pos.y;
-    }
-    function draw(e) {
-      if (!isDrawing || !scratchpadCtx) return;
-      e.preventDefault();
-      const pos = getPos(e);
-      scratchpadCtx.beginPath();
-      scratchpadCtx.moveTo(lastX, lastY);
-      scratchpadCtx.lineTo(pos.x, pos.y);
-      scratchpadCtx.strokeStyle = (state.scratchpadTool === "eraser") ? "#ffffff" : state.scratchpadColor;
-      scratchpadCtx.lineWidth = (state.scratchpadTool === "eraser") ? 18 : 3;
-      scratchpadCtx.lineCap = "round";
-      scratchpadCtx.stroke();
-      lastX = pos.x; lastY = pos.y;
-    }
-    function stopDraw() { isDrawing = false; }
-
-    c.onmousedown = startDraw;
-    c.onmousemove = draw;
-    c.onmouseup = stopDraw;
-    c.ontouchstart = startDraw;
-    c.ontouchmove = draw;
-    c.ontouchend = stopDraw;
-  }
-
-  /* ==========================================================================
-     PRACTICE RESULTS & DETAILED REVIEW
-     ========================================================================== */
-
-  function renderResult() {
-    const total = state.questions.length;
-    let correct = 0;
-    for (let i = 0; i < total; i++) {
-      if (state.picked[i] === state.questions[i].answer) correct += 1;
-    }
-    const pct = Math.round((correct / total) * 100);
-    const gl = gradeLetter(pct);
-
-    const masteredCount = state.questions.filter((q, i) => state.picked[i] === q.answer && (state.confidence[i] === "sure" || state.confidence[i] === "think")).length;
-    const misconceptionCount = state.questions.filter((q, i) => state.picked[i] !== q.answer && state.confidence[i] === "sure").length;
-
-    return `
-      <div class="wrap">
-        ${renderTopBar("subject")}
-        <div class="result">
-          <div class="letter-mark">${gl.mark}</div>
-          <div class="kicker">Formative Evaluation · ${gl.label}</div>
-          <h2 class="section-title">${correct} out of ${total} (${pct}%)</h2>
-          <p class="sub">${scorePedagogicalMessage(pct)}</p>
-
-          <div class="metric-grid">
-            <div><b>${pct}%</b><span>Score</span></div>
-            <div><b>+${state.xpGained}</b><span>XP Earned</span></div>
-            <div><b>x${state.maxCombo || 0}</b><span>Max Combo</span></div>
-            <div><b>${fmtDur(state.elapsedSec || 0)}</b><span>Time</span></div>
-          </div>
-
-          <h3 style="margin-top:28px;text-align:left;font-size:1.15rem;">🧠 Metacognitive Calibration Matrix</h3>
-          <div class="calibration-matrix">
-            <div class="calib-cell mastered">
-              <strong>🌟 Mastered Concepts (${masteredCount})</strong>
-              <p>High confidence with correct response. Solid conceptual grasp.</p>
-            </div>
-            <div class="calib-cell misconception">
-              <strong>⚠️ Misconception Alerts (${misconceptionCount})</strong>
-              <p>High confidence but incorrect response. Key area for conceptual review.</p>
-            </div>
-          </div>
-
-          <div class="top-actions" style="justify-content:center;gap:12px;margin-top:24px;">
-            ${(total - correct > 0) ? `<button class="btn btn-primary" data-action="practice-missed-now">🔄 Retake Missed Items (${total - correct})</button>` : ""}
-            <button class="btn btn-ghost" data-go="review">🔍 Review All Explanations</button>
-            <button class="btn btn-ghost" data-go="report">📊 Full Diagnostic Report</button>
-            <button class="btn btn-ghost" data-go="certificate">📜 Print Certificate</button>
-            <button class="btn btn-ghost" data-go="subject">New Quiz →</button>
-          </div>
-        </div>
-      </div>`;
-  }
-
-  function renderReview() {
-    const qy = (state.reviewQuery || "").toLowerCase();
-    const filter = state.reviewFilter || "all";
-
-    const itemsHtml = state.questions.map(function (q, i) {
-      const isCorrect = state.picked[i] === q.answer;
-      if (filter === "missed" && isCorrect) return "";
-      if (filter === "correct" && !isCorrect) return "";
-      if (filter === "flagged" && !state.flagged[i]) return "";
-      if (qy && q.q.toLowerCase().indexOf(qy) < 0 && q.explain.toLowerCase().indexOf(qy) < 0) return "";
-
-      const options = q.options.map(function (opt, oi) {
-        let cls = "opt";
-        if (oi === q.answer) cls += " correct";
-        else if (oi === state.picked[i]) cls += " wrong";
-        return `<div class="${cls}"><span class="badge">${LETTERS[oi]}</span><span>${esc(opt)}</span></div>`;
-      }).join("");
-
-      return `
-        <article class="q-card" style="margin-bottom:18px;">
-          <div class="q-meta-badges">
-            <span class="badge-tag ${isCorrect ? "" : "bloom"}">${isCorrect ? "✅ Correct" : "❌ Missed"}</span>
-            <span class="badge-tag">${esc(q.topic || "General")}</span>
-            <span class="badge-tag bloom">${esc(q.bloom || "Understand")}</span>
-          </div>
-          <h4>${i + 1}. ${esc(q.q)}</h4>
-          <div class="options" style="margin:12px 0;">${options}</div>
-          <div class="feedback ${isCorrect ? "ok" : "no"}">
-            <strong>Explanation:</strong> ${esc(q.explain)}
-          </div>
-        </article>`;
-    }).join("");
-
-    return `
-      <div class="wrap">
-        ${renderTopBar("result")}
-        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Results", go: "result" }, { label: "Detailed Review" }])}
-        <h2 class="section-title">Detailed Question Review</h2>
-        <p class="sub">Review step-by-step solutions, Bloom's cognitive domain, and learning explanations.</p>
-        <div class="chip-group">
-          <button class="chip ${filter === "all" ? "on" : ""}" data-set-rfilter="all">All (${state.questions.length})</button>
-          <button class="chip ${filter === "missed" ? "on" : ""}" data-set-rfilter="missed">Missed Only</button>
-          <button class="chip ${filter === "correct" ? "on" : ""}" data-set-rfilter="correct">Correct Only</button>
-        </div>
-        ${itemsHtml}
-      </div>`;
-  }
-
-  /* ==========================================================================
-     SPACED REPETITION FLASHCARDS (LEITNER 3-BOX)
-     ========================================================================== */
-
-  function renderFlashcards() {
-    const deckType = state.flashcardDeck || "missed";
-    const g = state.grade || 5;
-    let deck = [];
-
-    if (deckType === "missed") deck = progress.missed[g] || [];
-    else if (deckType === "box1") deck = progress.flashcards.box1 || [];
-    else if (deckType === "box2") deck = progress.flashcards.box2 || [];
-    else deck = progress.flashcards.box3 || [];
-
-    const card = deck[state.flashcardIndex] || null;
-
-    return `
-      <div class="wrap">
-        ${renderTopBar("home")}
-        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Spaced Repetition" }])}
-        <div class="kicker">Leitner 3-Box Active Recall System</div>
-        <h2 class="section-title">Spaced Memory Flashcards</h2>
-        <p class="sub">Active recall strengthening long-term memory through structured spacing intervals.</p>
-
-        <div class="leitner-boxes">
-          <div class="leitner-box" data-set-deck="box1">
-            <b>${progress.flashcards.box1.length}</b>
-            <span>Box 1 · Daily Practice</span>
-          </div>
-          <div class="leitner-box" data-set-deck="box2">
-            <b>${progress.flashcards.box2.length}</b>
-            <span>Box 2 · Every 3 Days</span>
-          </div>
-          <div class="leitner-box" data-set-deck="box3">
-            <b>${progress.flashcards.box3.length}</b>
-            <span>Box 3 · Mastered Memory</span>
-          </div>
-        </div>
-
-        ${card ? `
-          <div class="flashcard-wrap" data-action="flip-flashcard">
-            <div class="flashcard-card ${state.flashcardFlipped ? "flipped" : ""}">
-              <div class="flashcard-face flashcard-front">
-                <div>
-                  <div class="q-meta-badges">
-                    <span class="badge-tag">${esc(card.topic || "Core")}</span>
-                    <span class="badge-tag bloom">${esc(card.bloom || "Recall")}</span>
-                  </div>
-                  <h3 style="font-size:1.4rem;line-height:1.4;margin-top:16px;">${esc(card.q)}</h3>
-                </div>
-                <p style="color:var(--muted);font-weight:700;">👆 Tap card to reveal answer &amp; solution</p>
-              </div>
-              <div class="flashcard-face flashcard-back">
-                <div>
-                  <div class="kicker">Correct Answer</div>
-                  <h3 style="color:var(--teal);font-size:1.3rem;margin-bottom:12px;">✅ ${esc(card.options[card.answer])}</h3>
-                  <p style="font-size:0.95rem;color:var(--ink);">${esc(card.explain)}</p>
-                </div>
-                <div style="display:flex;gap:8px;justify-content:center;margin-top:16px;">
-                  <button class="btn btn-coral btn-sm" data-rate-card="1">❌ Box 1 (Review Daily)</button>
-                  <button class="btn btn-sun btn-sm" data-rate-card="2">👍 Box 2 (3 Days)</button>
-                  <button class="btn btn-leaf btn-sm" data-rate-card="3">⭐ Box 3 (Mastered)</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        ` : `
-          <div class="q-card" style="text-align:center;padding:40px;">
-            <h3>🎉 No Flashcards in this Box!</h3>
-            <p class="sub">Complete a practice quiz to automatically add missed concepts to your Leitner deck.</p>
-            <button class="btn btn-primary" data-action="start">Start a Quiz →</button>
-          </div>
-        `}
-      </div>`;
-  }
-
-  /* ==========================================================================
-     CURRICULUM, WHY, PRIVACY, ACCOUNT & SETTINGS
+     GLOBAL CURRICULUM STANDARDS MATRIX EXPLORER
      ========================================================================== */
 
   function renderCurriculum() {
+    const tab = state.curriculumTab || "nerdc";
+
     return `
       <div class="wrap">
         ${renderTopBar("home")}
-        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Curriculum Standards" }])}
-        <div class="kicker">International Educational Alignment</div>
-        <h2 class="section-title">Global &amp; Nigerian Curriculum Map</h2>
-        <p class="sub">How Primary Super Quiz aligns with NERDC, Cambridge Primary, UK National Curriculum, and US NGSS.</p>
+        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Global Curriculum Matrix" }])}
+        <div class="kicker">International Educational Standards &amp; Equivalence</div>
+        <h2 class="section-title">Global Curriculum &amp; Standards Matrix</h2>
+        <p class="sub">Explore how Primary Super Quiz aligns with international education ministries, testing boards, and primary frameworks worldwide.</p>
+
+        <div class="chip-group" style="margin-bottom:24px;">
+          <button class="chip ${tab === "nerdc" ? "on" : ""}" data-set-cur-tab="nerdc">🇳🇬 Nigeria (NERDC / SUBEB / NCEE)</button>
+          <button class="chip ${tab === "cambridge" ? "on" : ""}" data-set-cur-tab="cambridge">🇬🇧 Cambridge Primary (Stages 1–6)</button>
+          <button class="chip ${tab === "uk" ? "on" : ""}" data-set-cur-tab="uk">🇬🇧 UK National Curriculum (KS1 &amp; KS2)</button>
+          <button class="chip ${tab === "us" ? "on" : ""}" data-set-cur-tab="us">🇺🇸 US Common Core &amp; NGSS (Grades 1–6)</button>
+          <button class="chip ${tab === "ib" ? "on" : ""}" data-set-cur-tab="ib">🌐 IB Primary Years Programme (PYP)</button>
+        </div>
+
+        <div class="q-card" style="margin-bottom:28px;">
+          ${tab === "nerdc" ? `
+            <h3>🇳🇬 Nigerian Universal Basic Education (NERDC) Framework</h3>
+            <p style="margin-top:6px;line-height:1.6;">Aligned with the 9-Year Basic Education Curriculum established by the Nigerian Educational Research and Development Council (NERDC). Covers Core Foundation (English, Maths, Basic Science &amp; Tech), National Values (Social Studies, Civic, Security), Pre-Vocational Studies (Agric, Home Econ), and Religions &amp; Creative Arts for Primary 1–6 and National Common Entrance Examination (NCEE).</p>
+          ` : tab === "cambridge" ? `
+            <h3>🇬🇧 Cambridge Assessment International Primary Framework</h3>
+            <p style="margin-top:6px;line-height:1.6;">Aligned with Cambridge Primary Stages 1 through 6 in English as a First/Second Language, Primary Mathematics, and Primary Science. Prepares learners for the Cambridge Primary Checkpoint assessments with rigorous analytical and problem-solving standards.</p>
+          ` : tab === "uk" ? `
+            <h3>🇬🇧 UK National Curriculum (Key Stages 1 &amp; 2)</h3>
+            <p style="margin-top:6px;line-height:1.6;">Aligned with the UK Department for Education statutory frameworks for Key Stage 1 (Years 1–2) and Key Stage 2 (Years 3–6), including Year 6 SATs and 11+ Grammar / Independent School Common Entrance reasoning examinations.</p>
+          ` : tab === "us" ? `
+            <h3>🇺🇸 US Common Core State Standards &amp; NGSS</h3>
+            <p style="margin-top:6px;line-height:1.6;">Mapped to Common Core State Standards (CCSS.MATH and CCSS.ELA-LITERACY) for Grades 1–6, Next Generation Science Standards (NGSS Elementary Disciplinary Core Ideas), and C3 Framework for Social Studies State Standards.</p>
+          ` : `
+            <h3>🌐 International Baccalaureate Primary Years Programme (IB PYP)</h3>
+            <p style="margin-top:6px;line-height:1.6;">Aligned with the IB PYP transdisciplinary inquiry model across 6 core themes: Who we are, Where we are in place and time, How we express ourselves, How the world works, How we organize ourselves, and Sharing the planet.</p>
+          `}
+        </div>
 
         <div class="table-scroll">
           <table class="report-table">
             <thead>
-              <tr>
-                <th>Level</th>
+              <tr style="background:#f1f5f9;">
+                <th>Learner Age</th>
                 <th>Nigeria (NERDC)</th>
                 <th>Cambridge Primary</th>
                 <th>UK National Curriculum</th>
                 <th>US Common Core / NGSS</th>
+                <th>Practice Action</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Primary 1 (Age 6–7)</td><td>Primary 1 (Basic 1)</td><td>Stage 1</td><td>Year 2 (KS1)</td><td>Grade 1</td></tr>
-              <tr><td>Primary 2 (Age 7–8)</td><td>Primary 2 (Basic 2)</td><td>Stage 2</td><td>Year 3 (KS2)</td><td>Grade 2</td></tr>
-              <tr><td>Primary 3 (Age 8–9)</td><td>Primary 3 (Basic 3)</td><td>Stage 3</td><td>Year 4 (KS2)</td><td>Grade 3</td></tr>
-              <tr><td>Primary 4 (Age 9–10)</td><td>Primary 4 (Basic 4)</td><td>Stage 4</td><td>Year 5 (KS2)</td><td>Grade 4</td></tr>
-              <tr><td>Primary 5 (Age 10–11)</td><td>Primary 5 (Basic 5)</td><td>Stage 5</td><td>Year 6 (KS2)</td><td>Grade 5</td></tr>
-              <tr><td>Primary 6 (Age 11–12)</td><td>Primary 6 (Basic 6 / NCEE)</td><td>Stage 6 (Checkpoint)</td><td>Year 7 (KS3 Prep)</td><td>Grade 6</td></tr>
+              <tr>
+                <td><strong>Ages 6–7</strong></td>
+                <td>Primary 1 (Basic 1)</td>
+                <td>Stage 1</td>
+                <td>Year 2 (KS1)</td>
+                <td>Grade 1</td>
+                <td><button class="btn btn-primary btn-sm" data-set-grade="1">Practice P1 →</button></td>
+              </tr>
+              <tr>
+                <td><strong>Ages 7–8</strong></td>
+                <td>Primary 2 (Basic 2)</td>
+                <td>Stage 2</td>
+                <td>Year 3 (KS2)</td>
+                <td>Grade 2</td>
+                <td><button class="btn btn-primary btn-sm" data-set-grade="2">Practice P2 →</button></td>
+              </tr>
+              <tr>
+                <td><strong>Ages 8–9</strong></td>
+                <td>Primary 3 (Basic 3)</td>
+                <td>Stage 3</td>
+                <td>Year 4 (KS2)</td>
+                <td>Grade 3</td>
+                <td><button class="btn btn-primary btn-sm" data-set-grade="3">Practice P3 →</button></td>
+              </tr>
+              <tr>
+                <td><strong>Ages 9–10</strong></td>
+                <td>Primary 4 (Basic 4)</td>
+                <td>Stage 4</td>
+                <td>Year 5 (KS2)</td>
+                <td>Grade 4</td>
+                <td><button class="btn btn-primary btn-sm" data-set-grade="4">Practice P4 →</button></td>
+              </tr>
+              <tr>
+                <td><strong>Ages 10–11</strong></td>
+                <td>Primary 5 (Basic 5)</td>
+                <td>Stage 5</td>
+                <td>Year 6 (KS2)</td>
+                <td>Grade 5</td>
+                <td><button class="btn btn-primary btn-sm" data-set-grade="5">Practice P5 →</button></td>
+              </tr>
+              <tr>
+                <td><strong>Ages 11–12</strong></td>
+                <td>Primary 6 (Basic 6 / NCEE)</td>
+                <td>Stage 6 Checkpoint</td>
+                <td>Year 7 (KS3 Prep / 11+)</td>
+                <td>Grade 6</td>
+                <td><button class="btn btn-primary btn-sm" data-set-grade="6">Practice P6 →</button></td>
+              </tr>
             </tbody>
           </table>
         </div>
       </div>`;
   }
 
+  /* ==========================================================================
+     LEARNING SCIENCE & COGNITIVE PSYCHOLOGY WHITE PAPER
+     ========================================================================== */
+
   function renderWhy() {
     return `
       <div class="wrap">
         ${renderTopBar("home")}
-        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Learning Science" }])}
-        <div class="kicker">Cognitive Psychology &amp; Educational Evidence</div>
-        <h2 class="section-title">The Science of Active Retrieval</h2>
-        <p class="sub">Why professors and educators worldwide recommend retrieval practice over passive re-reading.</p>
+        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Cognitive Learning Sciences White Paper" }])}
+        <div class="kicker">Peer-Reviewed Evidence in Primary Pedagogy</div>
+        <h2 class="section-title">The Cognitive Science of Retrieval Practice</h2>
+        <p class="sub">Why professors of education and learning scientists worldwide advocate for structured retrieval over passive study.</p>
 
-        <div class="home-grid">
+        <div class="home-grid" style="margin-bottom:28px;">
           <div class="card-btn">
-            <h3>🧠 1. The Testing Effect</h3>
-            <p>Direct experimental evidence shows that actively retrieving a fact creates far more durable memory pathways than passive study.</p>
+            <h3>🧠 1. The Testing Effect &amp; Active Retrieval</h3>
+            <p style="color:var(--muted);font-size:0.85rem;margin-bottom:6px;"><em>Roediger &amp; Karpicke (2006); Karpicke &amp; Blunt (2011, Science)</em></p>
+            <p>Empirical cognitive psychology shows that the mental act of retrieving a memory trace fundamentally alters that memory, rendering it far more resistant to decay than equal time spent re-reading notes.</p>
           </div>
           <div class="card-btn">
-            <h3>⏳ 2. Spaced Repetition</h3>
-            <p>Our Leitner 3-Box Flashcard system interrupts forgetting curves, transferring facts into permanent storage.</p>
+            <h3>⏳ 2. Spaced Retrieval (The Leitner System)</h3>
+            <p style="color:var(--muted);font-size:0.85rem;margin-bottom:6px;"><em>Bjork (1994); Cepeda, Vul, Rohrer, Wixted &amp; Pashler (2008)</em></p>
+            <p>Our 3-Box Leitner system introduces "desirable difficulties". Reviewing missed facts at spaced intervals forces deeper cognitive re-encoding right before memory decay occurs.</p>
           </div>
           <div class="card-btn">
-            <h3>🌈 3. Interleaving Practice</h3>
-            <p>The Champion Mix trains children's brains to categorize problems and select the correct formula dynamically.</p>
+            <h3>🌈 3. Interleaving Practice (Champion Mix)</h3>
+            <p style="color:var(--muted);font-size:0.85rem;margin-bottom:6px;"><em>Rohrer &amp; Taylor (2007); Dunlosky et al. (2013, Psychological Science)</em></p>
+            <p>Blocking one topic at a time creates illusions of fluency. Interleaving multiple domains trains children to identify problem types and select the correct strategy dynamically.</p>
           </div>
           <div class="card-btn">
-            <h3>🎯 4. Metacognitive Calibration</h3>
-            <p>Rating confidence before answering uncovers illusions of competence and focuses study on real growth areas.</p>
+            <h3>🎯 4. Metacognitive Calibration &amp; Monitoring</h3>
+            <p style="color:var(--muted);font-size:0.85rem;margin-bottom:6px;"><em>Dunlosky &amp; Metcalfe (2009); Kruger &amp; Dunning (1999)</em></p>
+            <p>Rating confidence before selecting an answer uncovers illusions of competence. Our Metacognitive Matrix isolates confident misconceptions from genuine mastery.</p>
+          </div>
+          <div class="card-btn">
+            <h3>🧩 5. Cognitive Load Theory &amp; Worked Solutions</h3>
+            <p style="color:var(--muted);font-size:0.85rem;margin-bottom:6px;"><em>Sweller (1988); Paas &amp; van Merriënboer (1994)</em></p>
+            <p>Extraneous load is eliminated through a clean, distraction-free interface. Step-by-step explanations provide immediate scaffolding to reduce cognitive anxiety.</p>
+          </div>
+          <div class="card-btn">
+            <h3>🌱 6. Formative Scaffolding &amp; Growth Mindset</h3>
+            <p style="color:var(--muted);font-size:0.85rem;margin-bottom:6px;"><em>Black &amp; Wiliam (1998); Dweck (2006); Vygotsky (1978, ZPD)</em></p>
+            <p>Instant feedback reframes errors as high-value learning opportunities, reinforcing self-efficacy, persistence, and continuous academic growth.</p>
           </div>
         </div>
       </div>`;
@@ -2729,7 +2846,7 @@
       let cls = "projector-opt";
       if (isRev && i === q.answer) cls += " correct";
       return `<div class="${cls}"><strong>(${LETTERS[i]})</strong> ${esc(opt)}</div>`;
-    }).join("");
+    }).join("") ;
 
     return `
       <div class="wrap">
@@ -2753,37 +2870,63 @@
       </div>`;
   }
 
+  /* ==========================================================================
+     PROFESSOR-GRADE PSYCHOMETRIC DIAGNOSTIC DOSSIER
+     ========================================================================== */
+
   function renderReport() {
     const g = state.grade || 5;
     const r = rankFor(progress.xp);
+    const avgScore = accuracyPct();
+    const conf = progress.confidenceStats;
+    const totalConf = (conf.mastered + conf.misconceptions + conf.lucky + conf.growth) || 1;
+    const masteredPct = Math.round((conf.mastered / totalConf) * 100);
+    const miscPct = Math.round((conf.misconceptions / totalConf) * 100);
 
     return `
       <div class="wrap report">
         <div class="topbar no-print">
           <button class="icon-btn" data-go="home">←</button>
-          <button class="btn btn-primary" data-action="print-page">🖨️ Print Diagnostic Portfolio</button>
+          <button class="btn btn-primary" data-action="print-page">🖨️ Print Academic Diagnostic Dossier</button>
         </div>
 
         <header style="border-bottom:3px solid var(--teal);padding-bottom:16px;margin-bottom:24px;">
-          <h2 style="font-family:var(--font-display);font-size:2rem;color:var(--teal);">Primary Super Quiz · Diagnostic Assessment</h2>
-          <p style="font-size:1.1rem;color:var(--ink);margin-top:4px;"><strong>Student:</strong> ${esc(state.name || "Pupil")} ${schoolName() ? " · " + esc(schoolName()) : ""} · <strong>Level:</strong> Primary ${g}</p>
+          <h2 style="font-family:var(--font-display);font-size:2rem;color:var(--teal);">Primary Super Quiz · Psychometric Diagnostic Portfolio</h2>
+          <p style="font-size:1.1rem;color:var(--ink);margin-top:4px;"><strong>Student:</strong> ${esc(state.name || "Pupil")} ${schoolName() ? " · " + esc(schoolName()) : ""} · <strong>Level:</strong> Primary ${g} (Basic ${g})</p>
+          <p style="color:var(--muted);font-size:0.88rem;">Academic Rank: ${r.icon} ${r.name} (${progress.xp} Total XP) · Evaluation Date: ${new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</p>
         </header>
 
         <div class="home-stats" style="margin-bottom:24px;">
-          <div class="stat-tile"><b>${accuracyPct()}%</b><span>Accuracy</span></div>
-          <div class="stat-tile"><b>${progress.quizzes}</b><span>Papers</span></div>
-          <div class="stat-tile"><b>${progress.streak} days</b><span>Streak</span></div>
-          <div class="stat-tile"><b>${fmtDur(progress.studySec || 0)}</b><span>Study Time</span></div>
+          <div class="stat-tile"><b>${avgScore}%</b><span>Overall Accuracy</span></div>
+          <div class="stat-tile"><b>${progress.quizzes}</b><span>Papers Completed</span></div>
+          <div class="stat-tile"><b>${progress.streak} days</b><span>Retrieval Habit</span></div>
+          <div class="stat-tile"><b>${fmtDur(progress.studySec || 0)}</b><span>Time on Task</span></div>
         </div>
 
-        <h3>Curriculum Mastery by Subject Domain (Primary ${g})</h3>
+        <div class="q-card" style="margin-bottom:24px;">
+          <h3 style="margin-bottom:8px;">🧠 Metacognitive Calibration Analysis (Kruger-Dunning / Brier Matrix)</h3>
+          <p style="font-size:0.9rem;color:var(--muted);margin-bottom:14px;">Evaluates student judgment accuracy and cognitive self-monitoring.</p>
+          <div class="calibration-matrix" style="margin:0;">
+            <div class="calib-cell mastered">
+              <strong>🌟 Mastered Knowledge (${masteredPct}%)</strong>
+              <p>High confidence paired with correct response. Demonstrated long-term schema consolidation.</p>
+            </div>
+            <div class="calib-cell misconception">
+              <strong>⚠️ Confident Misconceptions (${miscPct}%)</strong>
+              <p>High confidence but incorrect response. Illusions of competence requiring targeted schema unlearning.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>Curriculum Domain Proficiency Breakdown (Primary ${g})</h3>
         <div class="table-scroll" style="margin-top:12px;">
           <table class="report-table">
             <thead>
-              <tr>
+              <tr style="background:#f1f5f9;">
                 <th>Subject Domain</th>
                 <th>Best Score</th>
                 <th>Evaluation</th>
+                <th>Pedagogical Recommendation</th>
               </tr>
             </thead>
             <tbody>
@@ -2792,11 +2935,13 @@
                 const b = progress.best[`${g}/${k}`];
                 const pct = b ? b.pct : null;
                 const gl = pct != null ? gradeLetter(pct) : { mark: "—", label: "Pending" };
+                const act = pct == null ? "Sit diagnostic 10-question paper" : pct >= 80 ? "Advance to higher-order problem solving" : "Consolidate via Leitner Spaced Recall";
                 return `
                   <tr>
                     <td>${s.icon} ${s.name}</td>
                     <td>${pct != null ? pct + "%" : "Not yet sat"}</td>
                     <td><strong>Grade ${gl.mark}</strong> (${gl.label})</td>
+                    <td style="font-size:0.85rem;">${act}</td>
                   </tr>`;
               }).join("")}
             </tbody>
@@ -2842,7 +2987,7 @@
       <div class="wrap">
         ${renderTopBar("home")}
         ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Settings" }])}
-        <h2 class="section-title">Settings &amp; Accessibility</h2>
+        <h2 class="section-title">Settings &amp; Universal Accessibility (UDL)</h2>
         <p class="sub">Personalize your learning environment. All settings are preserved locally on this device.</p>
 
         <div class="q-card" style="margin-bottom:20px;">
@@ -3015,7 +3160,7 @@
      ========================================================================== */
 
   document.addEventListener("click", function (e) {
-    const target = e.target.closest("[data-action], [data-go], [data-set-grade], [data-pick-subj], [data-drill-subj], [data-start-topic-quiz], [data-set-group], [data-set-len], [data-set-mode], [data-opt], [data-set-conf], [data-set-stool], [data-set-scolor], [data-rate-card], [data-set-theme], [data-set-font], [data-set-fsize], [data-switch-profile], [data-set-rfilter]");
+    const target = e.target.closest("[data-action], [data-go], [data-set-grade], [data-pick-subj], [data-drill-subj], [data-start-topic-quiz], [data-set-group], [data-set-len], [data-set-mode], [data-opt], [data-set-conf], [data-set-stool], [data-set-scolor], [data-rate-card], [data-set-theme], [data-set-font], [data-set-cur-tab], [data-switch-profile], [data-set-rfilter]");
     if (!target) return;
 
     if (target.dataset.go) {
@@ -3068,6 +3213,12 @@
 
     if (target.dataset.setMode) {
       state.mode = target.dataset.setMode;
+      render();
+      return;
+    }
+
+    if (target.dataset.setCurTab) {
+      state.curriculumTab = target.dataset.setCurTab;
       render();
       return;
     }
