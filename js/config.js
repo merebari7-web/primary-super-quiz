@@ -80,83 +80,134 @@ window.NIGERIAN_THEORY_BANK = {
       { q: "3a. Calculate: 5 × 6 = _____ and 24 ÷ 4 = _____ (2 marks)\n3b. How many sides and corners does a rectangle have? (3 marks)", answer: "3a. 30 and 6 (2 marks)\n3b. 4 straight sides and 4 square corners (right angles) (3 marks)" }
     ],
     3: [
-      { q: "1a. Write 1,456 in expanded form (Thousands, Hundreds, Tens, Units). (2 marks)\n1b. Find the difference between 800 and 467. Show your vertical working. (3 marks)", answer: "1a. 1,000 + 400 + 50 + 6 (2 marks)\n1b. 800 - 467 = 333 (Working: 3 marks)" },
-      { q: "2a. Simplify the fraction: 2/7 + 3/7 = _____ (2 marks)\n2b. If one exercise book costs ₦250, how much will 6 exercise books cost? Show your working. (3 marks)", answer: "2a. 5/7 (2 marks)\n2b. ₦250 × 6 = ₦1,500 (3 marks)" },
-      { q: "3a. Convert 3 metres to centimetres (1m = 100cm). (2 marks)\n3b. Find the perimeter of a square garden whose side length is 7 metres. (Perimeter = 4 × Length). (3 marks)", answer: "3a. 3 × 100cm = 300cm (2 marks)\n3b. P = 4 × 7m = 28 metres (3 marks)" }
+      { q: "1a. Write 1,456 in expanded form (Thousands, Hundreds, Tens, Units). (2 marks)\n1b. Find the difference between 800 and 467. Show your vertical working. (3 marks)", answer: "1a. 1000 + 400 + 50 + 6 (2 marks)\n1b. 800 - 467 = 333 (Working shown with borrowing: 3 marks)" },
+      { q: "2a. Multiply 34 by 6. Show all steps. (2 marks)\n2b. A school bus carries 42 pupils. How many pupils will 5 identical school buses carry? (3 marks)", answer: "2a. 34 × 6 = (30 × 6) + (4 × 6) = 180 + 24 = 204 (2 marks)\n2b. 42 × 5 = 210 pupils (3 marks)" },
+      { q: "3a. Simplify the fraction: 12/16 to its lowest terms. (2 marks)\n3b. Calculate the perimeter of a rectangle with length 14 cm and width 8 cm. (3 marks)", answer: "3a. Divide numerator and denominator by 4: 12/16 = 3/4 (2 marks)\n3b. Perimeter = 2 × (L + W) = 2 × (14 + 8) = 2 × 22 = 44 cm (3 marks)" }
     ],
     4: [
-      { q: "1a. Write in Roman Numerals: (i) 49 (ii) 94 (2 marks)\n1b. Find the Highest Common Factor (H.C.F.) and Lowest Common Multiple (L.C.M.) of 12 and 18. (3 marks)", answer: "1a. (i) XLIX (ii) XCIV (2 marks)\n1b. Factors of 12: 1,2,3,4,6,12; Factors of 18: 1,2,3,6,9,18 => HCF = 6; LCM = 36 (3 marks)" },
-      { q: "2a. Convert 3/5 into a decimal number. (2 marks)\n2b. A rectangular classroom floor has a length of 12m and a width of 8m. Calculate (i) its perimeter, (ii) its area. (3 marks)", answer: "2a. 3 ÷ 5 = 0.6 (2 marks)\n2b. (i) Perimeter = 2(12 + 8) = 40m; (ii) Area = 12 × 8 = 96 m² (3 marks)" },
-      { q: "3a. If 8 identical textbooks cost ₦12,000, find the cost of 5 textbooks. (3 marks)\n3b. Calculate the sum of 4.35 and 18.79. (2 marks)", answer: "3a. 1 textbook = 12000 ÷ 8 = ₦1,500. 5 textbooks = 1500 × 5 = ₦7,500 (3 marks)\n3b. 4.35 + 18.79 = 23.14 (2 marks)" }
+      { q: "1a. Find the Highest Common Factor (HCF) of 24 and 36. (3 marks)\n1b. Find the Least Common Multiple (LCM) of 6, 8, and 12. (2 marks)", answer: "1a. Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24; Factors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36. HCF = 12 (3 marks)\n1b. Multiples: 24 (2 marks)" },
+      { q: "2a. Add the fractions: 3/5 + 1/4. (2 marks)\n2b. A trader bought a bag of rice for ₦32,000 and sold it for ₦38,500. Calculate the profit made. (3 marks)", answer: "2a. LCM of 5 and 4 = 20. (12 + 5)/20 = 17/20 (2 marks)\n2b. Profit = Selling Price - Cost Price = ₦38,500 - ₦32,000 = ₦6,500 (3 marks)" },
+      { q: "3a. Convert 0.75 to a common fraction in its lowest term. (2 marks)\n3b. The area of a square field is 64 m². Find the length of one side and its perimeter. (3 marks)", answer: "3a. 75/100 = 3/4 (2 marks)\n3b. Side = √64 = 8 m. Perimeter = 4 × 8 = 32 m (3 marks)" }
     ],
     5: [
-      { q: "1a. Simplify: 2 1/2 + 3 1/4 - 1 1/8. Show all working steps clearly. (3 marks)\n1b. Express 45% as a fraction in its lowest terms and as a decimal. (2 marks)", answer: "1a. Common denom = 8: 2 4/8 + 3 2/8 - 1 1/8 = (2+3-1) + (4+2-1)/8 = 4 5/8 (3 marks)\n1b. 45/100 = 9/20; Decimal = 0.45 (2 marks)" },
-      { q: "2a. A trader bought a bag of onions for ₦30,000 and sold it for ₦37,500. Calculate (i) his profit, (ii) his percentage profit. (3 marks)\n2b. Calculate the simple interest on ₦50,000 borrowed for 2 years at 6% per annum. (Formula: I = PRT / 100). (2 marks)", answer: "2a. (i) Profit = 37,500 - 30,000 = ₦7,500; (ii) % Profit = (7500/30000) × 100% = 25% (3 marks)\n2b. I = (50000 × 6 × 2) / 100 = ₦6,000 (2 marks)" },
-      { q: "3a. The angles in a triangle are 55°, 65°, and x°. Calculate the value of x°. (2 marks)\n3b. A car travels a distance of 240 kilometres in 3 hours. Calculate its average speed in km/h. (3 marks)", answer: "3a. Sum of angles in triangle = 180°. x = 180 - (55 + 65) = 180 - 120 = 60° (2 marks)\n3b. Speed = Distance ÷ Time = 240 km ÷ 3 h = 80 km/h (3 marks)" }
+      { q: "1a. Calculate 35% of ₦12,000. Show clear working. (2 marks)\n1b. Simplify: 2 1/3 + 3 1/2 - 1 1/4. (3 marks)", answer: "1a. (35/100) × ₦12,000 = 35 × 120 = ₦4,200 (2 marks)\n1b. LCM = 12. (7/3 + 7/2 - 5/4) = (28 + 42 - 15)/12 = 55/12 = 4 7/12 (3 marks)" },
+      { q: "2a. Find the simple interest on ₦50,000 for 3 years at 5% per annum. (Formula: I = (P × R × T)/100). (3 marks)\n2b. If 8 exercise books cost ₦2,400, find the cost of 15 exercise books. (2 marks)", answer: "2a. I = (50,000 × 5 × 3)/100 = ₦7,500 (3 marks)\n2b. 1 book = ₦2,400 / 8 = ₦300. 15 books = 15 × ₦300 = ₦4,500 (2 marks)" },
+      { q: "3a. Find the volume of a rectangular cuboid with length 10 cm, width 6 cm, and height 4 cm. (2 marks)\n3b. The mean of five numbers (12, 18, x, 24, 16) is 18. Find the value of x. (3 marks)", answer: "3a. Volume = L × W × H = 10 × 6 × 4 = 240 cm³ (2 marks)\n3b. Sum = 18 × 5 = 90. (12 + 18 + 24 + 16) = 70. x = 90 - 70 = 20 (3 marks)" }
     ],
     6: [
-      { q: "1a. Solve the simple algebraic equation: 4x + 15 = 39. (2 marks)\n1b. If 6 workers can complete a farm project in 10 days, how many days will 15 workers take working at the same rate? (3 marks)", answer: "1a. 4x = 39 - 15 = 24 => x = 24 ÷ 4 = 6 (2 marks)\n1b. Total man-days = 6 × 10 = 60 man-days. Days for 15 workers = 60 ÷ 15 = 4 days (3 marks)" },
-      { q: "2a. Calculate the volume of a rectangular water tank of length 5m, breadth 3m, and height 2m. (2 marks)\n2b. The radius of a circular plate is 14 cm. Calculate (i) its circumference, (ii) its area. (Take π = 22/7). (3 marks)", answer: "2a. Volume = L × B × H = 5 × 3 × 2 = 30 m³ (2 marks)\n2b. (i) Circumference = 2πr = 2 × 22/7 × 14 = 88 cm; (ii) Area = πr² = 22/7 × 14 × 14 = 616 cm² (3 marks)" },
-      { q: "3a. The test scores of 5 pupils in a Common Entrance mock are: 72, 85, 90, 68, and 85. Find: (i) the Mode, (ii) the Mean (average) score. (3 marks)\n3b. A shirt marked at ₦8,000 was sold at a 15% discount during a school promotion. How much did the customer pay? (2 marks)", answer: "3a. (i) Mode = 85 (appears twice); (ii) Mean = (72+85+90+68+85)/5 = 400/5 = 80 (3 marks)\n3b. Discount = 15% of 8000 = ₦1,200. Price paid = 8000 - 1200 = ₦6,800 (2 marks)" }
+      { q: "1a. Solve the linear equation: 4x - 7 = 2x + 13. (3 marks)\n1b. Express the ratio 45 minutes to 2 hours in its simplest form. (2 marks)", answer: "1a. 4x - 2x = 13 + 7 => 2x = 20 => x = 10 (3 marks)\n1b. 2 hours = 120 mins. 45:120 = divide by 15 = 3:8 (2 marks)" },
+      { q: "2a. A cylindrical water tank has a base radius of 7 cm and a height of 20 cm. Calculate its total volume (Use π = 22/7, V = πr²h). (3 marks)\n2b. A car travels a distance of 280 km in 3 hours 30 minutes. Calculate its average speed in km/h. (2 marks)", answer: "2a. V = (22/7) × 7 × 7 × 20 = 22 × 7 × 20 = 3,080 cm³ (3 marks)\n2b. Time = 3.5 hours. Speed = Distance / Time = 280 / 3.5 = 80 km/h (2 marks)" },
+      { q: "3a. In a class of 40 pupils, 60% are girls. How many boys are in the class? (2 marks)\n3b. The scores of 8 pupils in a mathematics test are: 14, 18, 15, 12, 18, 19, 16, 18. Find: (i) The Mode, (ii) The Median. (3 marks)", answer: "3a. Girls = 60% of 40 = 24 girls. Boys = 40 - 24 = 16 boys (2 marks)\n3b. (i) Mode = 18 (appears 3 times); (ii) Ordered: 12, 14, 15, 16, 18, 18, 18, 19. Median = (16 + 18)/2 = 17 (3 marks)" }
     ]
   },
   english: {
-    1: [
-      { q: "1a. Fill in the blank with 'a' or 'an': (i) _____ apple, (ii) _____ book, (iii) _____ umbrella. (3 marks)\n1b. Write the plural form of: (i) boy (ii) cat. (2 marks)", answer: "1a. (i) an (ii) a (iii) an (3 marks)\n1b. (i) boys (ii) cats (2 marks)" },
-      { q: "2. Write three simple sentences about 'My School'. (5 marks)", answer: "Student writes 3 coherent sentences about school name, teacher, playground or learning (5 marks)" }
+    3: [
+      { q: "1a. Write out five nouns in the following sentence: 'The clever pupil took his book, pencil, and bag to the classroom.' (2.5 marks)\n1b. Give the plural forms of: (i) Child, (ii) Tooth, (iii) Box, (iv) Loaf, (v) City. (2.5 marks)", answer: "1a. pupil, book, pencil, bag, classroom (2.5 marks)\n1b. (i) Children, (ii) Teeth, (iii) Boxes, (iv) Loaves, (v) Cities (2.5 marks)" }
     ],
-    4: [
-      { q: "1a. Change the following sentences to the Simple Past Tense:\n(i) She eats rice every Sunday.\n(ii) The pupils go to school by bus. (2 marks)\n1b. Identify the parts of speech of the underlined words:\n(i) Ngozi ran *quickly* to catch the bus.\n(ii) The *brave* soldier protected the village. (3 marks)", answer: "1a. (i) She ate rice every Sunday. (ii) The pupils went to school by bus. (2 marks)\n1b. (i) quickly = Adverb (ii) brave = Adjective (3 marks)" },
-      { q: "2. Write a short composition of at least 80 words on the topic: 'My Best Friend'. Include their name, appearance, and why you like them. (5 marks)", answer: "Well-structured essay with paragraphing, punctuation, and appropriate adjectives (5 marks)" }
-    ],
-    6: [
-      { q: "1a. Rewrite the following active sentence in the Passive Voice: 'The headmaster punished the latecomers.' (2 marks)\n1b. Give the antonyms (opposites) of: (i) diligent, (ii) permanent, (iii) ancient. (3 marks)", answer: "1a. 'The latecomers were punished by the headmaster.' (2 marks)\n1b. (i) lazy/indolent, (ii) temporary, (iii) modern/recent (3 marks)" },
-      { q: "2. Write a formal letter to your School Headteacher requesting permission to be absent from school for two days due to a family engagement. (5 marks)", answer: "Formal letter format: Two addresses, formal salutation, heading, polite body, and formal closing 'Yours faithfully' with signature (5 marks)" }
+    5: [
+      { q: "1a. Change the following sentences from Active Voice to Passive Voice: (3 marks)\n(i) Musa kicked the football.\n(ii) The headmaster praised the punctual pupils.\n(iii) The chef cooked delicious jollof rice.\n1b. Give the antonyms (opposites) of: (i) Ancient, (ii) Expand, (iii) Humble. (2 marks)", answer: "1a. (i) The football was kicked by Musa. (ii) The punctual pupils were praised by the headmaster. (iii) Delicious jollof rice was cooked by the chef. (3 marks)\n1b. (i) Modern, (ii) Contract/Shrink, (iii) Proud/Arrogant (2 marks)" },
+      { q: "2. Composition Writing (10 marks):\nWrite a descriptive composition of not less than 120 words on the topic: 'My Favorite Teacher'. Include their name, appearance, subject taught, and why you admire them.", answer: "Marking criteria: Content & relevance (3 marks), Organization & paragraphing (2 marks), Vocabulary & sentence structure (3 marks), Grammar, spelling & punctuation (2 marks)." }
     ]
   },
   science: {
-    2: [
-      { q: "1a. State two living things and two non-living things found in your school compound. (2 marks)\n1b. Mention three parts of the human body and state the function of any one part. (3 marks)", answer: "1a. Living: Tree, Bird/Dog; Non-living: Desk, Stone/Chalkboard (2 marks)\n1b. Head, Eyes, Hands, Legs. Eyes for seeing, Legs for walking (3 marks)" }
-    ],
     4: [
-      { q: "1a. Define pollution. Name two types of pollution. (2 marks)\n1b. List three characteristics of living organisms (MR NIGER D). (3 marks)", answer: "1a. Pollution is the release of harmful substances into the environment. Air and water pollution (2 marks)\n1b. Movement, Respiration, Nutrition, Irritability, Growth, Excretion, Reproduction (3 marks)" },
-      { q: "2a. What is a simple machine? Give two examples found in the home. (2 marks)\n2b. Explain why we must wash our hands before eating. (3 marks)", answer: "2a. A simple machine makes work easier (e.g. lever, wheelbarrow, scissors, knife) (2 marks)\n2b. To kill and wash away disease-causing germs/bacteria (3 marks)" }
+      { q: "1a. State the three states of matter and give two everyday examples of each. (3 marks)\n1b. What are living things? List four characteristics of living things (MR NIGER D). (2 marks)", answer: "1a. Solid (wood, stone), Liquid (water, milk), Gas (oxygen, steam) (3 marks)\n1b. Movement, Respiration, Nutrition, Irritability, Growth, Excretion, Reproduction (2 marks)" }
     ],
     6: [
-      { q: "1a. Differentiate between renewable and non-renewable energy sources with one Nigerian example each. (3 marks)\n1b. State the major function of: (i) Red blood cells, (ii) The lungs. (2 marks)", answer: "1a. Renewable energy naturally replenishes (solar/hydro); Non-renewable is exhaustible (crude oil/petroleum) (3 marks)\n1b. (i) Carry oxygen to body tissues; (ii) Gaseous exchange/oxygenating blood (2 marks)" },
-      { q: "2a. List four planets in the solar system starting from the closest to the Sun. (2 marks)\n2b. Describe two practical ways of conserving water and electricity in our school. (3 marks)", answer: "2a. Mercury, Venus, Earth, Mars (2 marks)\n2b. Turning off taps when not in use; switching off lights and appliances when leaving classrooms (3 marks)" }
-    ]
-  },
-  social: {
-    3: [
-      { q: "1a. What is a family? Differentiate between a nuclear family and an extended family. (3 marks)\n1b. Mention two qualities of a good leader in our community. (2 marks)", answer: "1a. Family is a group of people related by blood, marriage or adoption. Nuclear = father, mother, children; Extended includes grandparents, uncles, aunts (3 marks)\n1b. Honesty, fairness, courage, humility (2 marks)" }
-    ],
-    5: [
-      { q: "1a. How many States and Local Government Areas (LGAs) are there in Nigeria? Name the Federal Capital Territory. (3 marks)\n1b. Mention two major mineral resources in Nigeria and the states where they are found. (2 marks)", answer: "1a. 36 States, 774 Local Government Areas, Abuja FCT (3 marks)\n1b. Crude oil (Delta/Rivers), Limestone (Kogi/Ogun), Coal (Enugu) (2 marks)" },
-      { q: "2a. State three functions of the Nigerian Police Force. (3 marks)\n2b. Define culture and name two ethnic groups in Nigeria. (2 marks)", answer: "2a. Maintaining law and order, protecting lives and property, preventing crime (3 marks)\n2b. Culture is the total way of life of a people. Hausa, Yoruba, Igbo, Nupe, Fulani, etc. (2 marks)" }
-    ]
-  },
-  civic: {
-    4: [
-      { q: "1a. What is Civic Education? State two reasons why we study Civic Education. (3 marks)\n1b. Mention three national symbols of Nigeria. (2 marks)", answer: "1a. Civic education teaches rights and duties of citizens. Fosters patriotism and good leadership (3 marks)\n1b. National Flag, National Anthem, Coat of Arms, National Pledge (2 marks)" }
-    ],
-    6: [
-      { q: "1a. Explain the three arms of government in Nigeria and state the main duty of each arm. (3 marks)\n1b. Mention three fundamental human rights guaranteed by the Nigerian Constitution. (2 marks)", answer: "1a. (i) Legislature (makes laws), (ii) Executive (implements/enforces laws), (iii) Judiciary (interprets laws/punishes lawbreakers) (3 marks)\n1b. Right to life, right to education, right to personal liberty, freedom of expression (2 marks)" }
-    ]
-  },
-  agric: {
-    5: [
-      { q: "1a. Differentiate between subsistence agriculture and commercial agriculture. (3 marks)\n1b. Name two cereal crops and two tuber crops grown in Nigeria. (2 marks)", answer: "1a. Subsistence is farming mainly for family food; Commercial is large-scale farming for profit/sale (3 marks)\n1b. Cereals: Maize, Rice, Guinea corn; Tubers: Yam, Cassava, Sweet potato (2 marks)" },
-      { q: "2a. What are farm weeds? State two damages caused by weeds to crops. (3 marks)\n2b. Mention two farm tools used for clearing bush and digging soil. (2 marks)", answer: "2a. Unwanted plants on a farm. Compete with crops for nutrients/sunlight; harbor crop pests (3 marks)\n2b. Cutlass/machete, Hoe, Spade, Pickaxe (2 marks)" }
-    ]
-  },
-  history: {
-    5: [
-      { q: "1a. In what year was Northern and Southern Nigeria amalgamated, and who was the British Governor-General that carried it out? (2 marks)\n1b. Mention three ancient Nigerian civilizations renowned for traditional art and sculpture. (3 marks)", answer: "1a. 1914 by Lord Frederick Lugard (2 marks)\n1b. Nok Culture, Benin Kingdom (bronzes), Igbo-Ukwu, Ife Kingdom (terracotta) (3 marks)" },
-      { q: "2a. Name three Nigerian nationalist leaders who fought for Nigeria's independence in 1960. (3 marks)\n2b. On what exact date did Nigeria gain independence from British colonial rule? (2 marks)", answer: "2a. Dr. Nnamdi Azikiwe, Sir Abubakar Tafawa Balewa, Chief Obafemi Awolowo, Sir Ahmadu Bello, Herbert Macaulay (3 marks)\n2b. October 1, 1960 (2 marks)" }
+      { q: "1a. Differentiate between renewable and non-renewable energy sources with one Nigerian example each. (3 marks)\n1b. State the major function of: (i) Red blood cells, (ii) The lungs. (2 marks)", answer: "1a. Renewable naturally replenishes (solar, hydro); Non-renewable is exhaustible (crude oil, coal) (3 marks)\n1b. (i) Transport oxygen to body tissues; (ii) Gaseous exchange / oxygenating blood (2 marks)" }
     ]
   }
 };
+
+/* ==========================================================================
+   NIGERIAN 36 STATES & FCT GEOPOLITICAL DIRECTORY & RESOURCES
+   ========================================================================== */
+
+window.NIGERIAN_STATES = [
+  { state: "Abia", capital: "Umuahia", zone: "South East", slogan: "God's Own State", resources: "Crude oil, Palm oil, Cassava, Limestone", landmark: "National War Museum, Umuahia" },
+  { state: "Adamawa", capital: "Yola", zone: "North East", slogan: "Land of Beauty", resources: "Cattle, Cotton, Maize, Groundnut", landmark: "Sukur Cultural Landscape (UNESCO)" },
+  { state: "Akwa Ibom", capital: "Uyo", zone: "South South", slogan: "Land of Promise", resources: "Petroleum, Natural gas, Palm oil, Seafood", landmark: "Ibom Tropicana, Godswill Akpabio Stadium" },
+  { state: "Anambra", capital: "Awka", zone: "South East", slogan: "Light of the Nation", resources: "Natural gas, Palm oil, Cassava, Rice", landmark: "Ogbunike Caves, Onitsha Main Market" },
+  { state: "Bauchi", capital: "Bauchi", zone: "North East", slogan: "Pearl of Tourism", resources: "Livestock, Sorghum, Millet, Gypsum", landmark: "Yankari National Park & Wikki Warm Springs" },
+  { state: "Bayelsa", capital: "Yenagoa", zone: "South South", slogan: "Glory of All Lands", resources: "Petroleum, Natural gas, Palm oil, Fish", landmark: "Oloibiri First Oil Well Museum" },
+  { state: "Benue", capital: "Makurdi", zone: "North Central", slogan: "Food Basket of the Nation", resources: "Yam, Soya beans, Cassava, Citrus, Limestone", landmark: "River Benue, Ikwe Holiday Resort" },
+  { state: "Borno", capital: "Maiduguri", zone: "North East", slogan: "Home of Peace", resources: "Gum Arabic, Groundnuts, Fish, Cattle", landmark: "Lake Chad Basin, Shehu's Palace" },
+  { state: "Cross River", capital: "Calabar", zone: "South South", slogan: "The People's Paradise", resources: "Cocoa, Rubber, Oil palm, Limestone", landmark: "Obudu Mountain Resort, Calabar Slave History Museum" },
+  { state: "Delta", capital: "Asaba", zone: "South South", slogan: "The Big Heart", resources: "Crude oil, Natural gas, Rubber, Timber", landmark: "River Niger Bridge Asaba, Nana Palace Koko" },
+  { state: "Ebonyi", capital: "Abakaliki", zone: "South East", slogan: "Salt of the Nation", resources: "Lead, Zinc, Salt, Rice, Yam", landmark: "Abakaliki Green Lake, Amanchor Cave" },
+  { state: "Edo", capital: "Benin City", zone: "South South", slogan: "Heart Beat of the Nation", resources: "Crude oil, Rubber, Timber, Limestone", landmark: "Benin Moat, Oba's Palace, National Museum" },
+  { state: "Ekiti", capital: "Ado-Ekiti", zone: "South West", slogan: "Land of Honour and Integrity", resources: "Cocoa, Timber, Kolanut, Granite", landmark: "Ikogosi Warm and Cold Springs" },
+  { state: "Enugu", capital: "Enugu", zone: "South East", slogan: "Coal City State", resources: "Coal, Limestone, Iron ore, Cashew", landmark: "Awhum Waterfall, Ngwo Pine Forest & Caves" },
+  { state: "FCT Abuja", capital: "Abuja", zone: "North Central", slogan: "Centre of Unity", resources: "Marble, Clay, Tantalite, Horticulture", landmark: "Zuma Rock, Aso Rock, National Mosque & Christian Centre" },
+  { state: "Gombe", capital: "Gombe", zone: "North East", slogan: "Jewel in the Savannah", resources: "Cotton, Maize, Groundnut, Gypsum", landmark: "Tomb of Bubayero, Ashaka Cement Works" },
+  { state: "Imo", capital: "Owerri", zone: "South East", slogan: "Eastern Heartland", resources: "Crude oil, Palm oil, Rubber, Natural gas", landmark: "Oguta Lake Holiday Resort, Nekede Zoo" },
+  { state: "Jigawa", capital: "Dutse", zone: "North West", slogan: "The New World", resources: "Groundnut, Sorghum, Sesame, Cattle", landmark: "Dutse Rock Formations, Baturiya Bird Sanctuary" },
+  { state: "Kaduna", capital: "Kaduna", zone: "North West", slogan: "Centre of Learning", resources: "Cotton, Ginger, Maize, Clay, Gold", landmark: "Nok Village Terra Cotta, Kajuru Castle" },
+  { state: "Kano", capital: "Kano", zone: "North West", slogan: "Centre of Commerce", resources: "Groundnuts, Leather, Textiles, Sorghum", landmark: "Ancient Kano City Walls, Kurmi Market, Emir Palace" },
+  { state: "Katsina", capital: "Katsina", zone: "North West", slogan: "Home of Hospitality", resources: "Cotton, Groundnuts, Millet, Kaolin", landmark: "Gobarau Minaret, Kusugu Well Daura" },
+  { state: "Kebbi", capital: "Birnin Kebbi", zone: "North West", slogan: "Land of Equity", resources: "Rice, Fish, Wheat, Gold, Livestock", landmark: "Argungu International Fishing Festival" },
+  { state: "Kogi", capital: "Lokoja", zone: "North Central", slogan: "The Confluence State", resources: "Iron ore, Limestone, Coal, Cashew, Yam", landmark: "Confluence of Rivers Niger and Benue, Lord Lugard Rest House" },
+  { state: "Kwara", capital: "Ilorin", zone: "North Central", slogan: "State of Harmony", resources: "Cashew, Cocoa, Shea butter, Marble", landmark: "Esie Soapstone Museum, Owu Waterfalls" },
+  { state: "Lagos", capital: "Ikeja", zone: "South West", slogan: "Centre of Excellence", resources: "Fish, Coconut, Commerce, Crude oil", landmark: "National Theatre Iganmu, Lekki Conservation Centre, Badagry Slave Route" },
+  { state: "Nasarawa", capital: "Lafia", zone: "North Central", slogan: "Home of Solid Minerals", resources: "Barytes, Salt, Columbite, Cassava", landmark: "Farin Ruwa Waterfalls, Eggon Hills" },
+  { state: "Niger", capital: "Minna", zone: "North Central", slogan: "The Power State", resources: "Hydro-electric power (Kainji, Shiroro, Jebba), Rice, Yam, Gold", landmark: "Zuma Rock, Gurara Waterfalls, Kainji National Park" },
+  { state: "Ogun", capital: "Abeokuta", zone: "South West", slogan: "Gateway State", resources: "Limestone, Cocoa, Kolanut, Rubber", landmark: "Olumo Rock, Bilikisu Sungbo Shrine" },
+  { state: "Ondo", capital: "Akure", zone: "South West", slogan: "Sunshine State", resources: "Cocoa, Bitumen, Crude oil, Timber", landmark: "Idanre Hills (UNESCO Tentative), Owo Museum of Antiquities" },
+  { state: "Osun", capital: "Osogbo", zone: "South West", slogan: "State of the Living Spring", resources: "Cocoa, Gold, Cassava, Kolanut", landmark: "Osun-Osogbo Sacred Grove (UNESCO), Erin-Ijesha Waterfalls" },
+  { state: "Oyo", capital: "Ibadan", zone: "South West", slogan: "Pace Setter State", resources: "Cocoa, Cassava, Maize, Marble", landmark: "Cocoa House (First skyscraper in West Africa), Bower's Tower, UI Zoo" },
+  { state: "Plateau", capital: "Jos", zone: "North Central", slogan: "Home of Peace and Tourism", resources: "Tin, Columbite, Irish potato, Vegetables", landmark: "Shere Hills, Kurra Falls, Jos Wildlife Park" },
+  { state: "Rivers", capital: "Port Harcourt", zone: "South South", slogan: "Treasure Base of the Nation", resources: "Crude oil, Natural gas, Palm oil, Seafood", landmark: "Isaac Boro Garden, Port Harcourt Tourist Beach" },
+  { state: "Sokoto", capital: "Sokoto", zone: "North West", slogan: "Seat of the Caliphate", resources: "Livestock, Leather, Phosphate, Millet", landmark: "Sultan's Palace, Hubbare (Usman dan Fodio Tomb)" },
+  { state: "Taraba", capital: "Jalingo", zone: "North East", slogan: "Nature's Gift to the Nation", resources: "Tea, Timber, Cattle, Coffee, Rice", landmark: "Mambilla Plateau, Gashaka-Gumti National Park" },
+  { state: "Yobe", capital: "Damaturu", zone: "North East", slogan: "Pride of the Sahel", resources: "Gum Arabic, Groundnut, Potash, Livestock", landmark: "Dufuna Canoe (Oldest boat in Africa ~8,000 years old)" },
+  { state: "Zamfara", capital: "Gusau", zone: "North West", slogan: "Farming is Our Pride", resources: "Gold, Lead, Cotton, Groundnut, Livestock", landmark: "Kiyawa City Walls, Namu Wood Carving" }
+];
+
+/* ==========================================================================
+   NIGERIAN NAIRA BANKNOTES & NATIONAL HEROES GUIDE
+   ========================================================================== */
+
+window.NAIRA_CURRENCY_BANK = [
+  { note: "₦5", color: "Mauve", portrait: "Sir Abubakar Tafawa Balewa", role: "First and only Prime Minister of Independent Nigeria (1960–1966)", reverse: "Nkpokiti Traditional Dancers of South-East Nigeria" },
+  { note: "₦10", color: "Red-Brown", portrait: "Dr. Alvan Ikoku", role: "Pioneering educationist, activist, and champion of teachers' welfare", reverse: "Fulani Milk Maids carrying calabashes (North Nigeria)" },
+  { note: "₦20", color: "Green", portrait: "General Murtala Ramat Muhammed", role: "Head of State who championed national discipline and civil service reform", reverse: "Ladi Kwali, famous Nigerian master potter from Abuja" },
+  { note: "₦50", color: "Blue", portrait: "People of Nigeria (National Diversity)", role: "Portraits representing various Nigerian ethnic cultures", reverse: "Local Fishermen at Argungu Fishing Festival" },
+  { note: "₦100", color: "Brown & Green", portrait: "Chief Obafemi Awolowo", role: "Premier of Western Nigeria who introduced Free Universal Primary Education in 1955", reverse: "Zuma Rock in Niger State & Traditional Dancers" },
+  { note: "₦200", color: "Brown & Pink", portrait: "Sir Ahmadu Bello (Sardauna of Sokoto)", role: "Premier of Northern Nigeria and champion of education & agriculture", reverse: "Agricultural pyramids of Groundnuts, Cattle, and Cotton" },
+  { note: "₦500", color: "Blue & Cyan", portrait: "Dr. Nnamdi Azikiwe (Zik of Africa)", role: "First President of Nigeria (1963) and foremost nationalist leader", reverse: "Offshore Oil Rig producing crude petroleum" },
+  { note: "₦1000", color: "Dark Blue & Gold", portrait: "Alhaji Aliyu Mai-Bornu & Dr. Clement Isong", role: "First and second indigenous Governors of the Central Bank of Nigeria (CBN)", reverse: "Central Bank of Nigeria (CBN) National Headquarters, Abuja" }
+];
+
+/* ==========================================================================
+   SOLAR SYSTEM ASTRONOMICAL DATA
+   ========================================================================== */
+
+window.SOLAR_SYSTEM_DATA = [
+  { name: "Mercury", order: 1, type: "Terrestrial", distance: "57.9M km", diameter: "4,879 km", moons: 0, temp: "-180°C to 430°C", fact: "Smallest planet and closest to the Sun; has no atmosphere." },
+  { name: "Venus", order: 2, type: "Terrestrial", distance: "108.2M km", diameter: "12,104 km", moons: 0, temp: "465°C (Hottest)", fact: "Has a runaway greenhouse effect; rotates backwards (East to West)." },
+  { name: "Earth", order: 3, type: "Terrestrial", distance: "149.6M km", diameter: "12,742 km", moons: 1, temp: "-88°C to 58°C", fact: "Only known planet with liquid oceans and thriving living organisms." },
+  { name: "Mars", order: 4, type: "Terrestrial", distance: "227.9M km", diameter: "6,779 km", moons: 2, temp: "-140°C to 20°C", fact: "Known as the Red Planet due to iron oxide (rust) on its surface." },
+  { name: "Jupiter", order: 5, type: "Gas Giant", distance: "778.6M km", diameter: "139,820 km", moons: 95, temp: "-110°C", fact: "Largest planet in solar system; Great Red Spot is a giant spinning storm." },
+  { name: "Saturn", order: 6, type: "Gas Giant", distance: "1.43B km", diameter: "116,460 km", moons: 146, temp: "-140°C", fact: "Famous for spectacular rings made of billions of ice chunks and dust." },
+  { name: "Uranus", order: 7, type: "Ice Giant", distance: "2.87B km", diameter: "50,724 km", moons: 28, temp: "-195°C", fact: "Rotates completely on its side; pale cyan color from methane gas." },
+  { name: "Neptune", order: 8, type: "Ice Giant", distance: "4.50B km", diameter: "49,244 km", moons: 16, temp: "-200°C", fact: "Farthest planet from the Sun; has supersonic winds exceeding 2,000 km/h." }
+];
+
+/* ==========================================================================
+   HUMAN BODY SYSTEMS EXPLORER
+   ========================================================================== */
+
+window.HUMAN_BODY_SYSTEMS = [
+  { name: "Skeletal System", icon: "🦴", organs: "206 Bones, Cartilage, Joints, Ligaments", function: "Supports the body structure, protects delicate internal organs (e.g. ribcage protects heart/lungs), and allows movement.", healthTip: "Consume calcium-rich foods like milk, fish, and beans for strong bone density." },
+  { name: "Circulatory System", icon: "❤️", organs: "Heart, Arteries, Veins, Capillaries, Blood", function: "Pumps oxygen and nutrients through blood vessels to all body cells and removes carbon dioxide waste.", healthTip: "Exercise regularly (aerobic running/skipping) to keep your cardiac heart muscle fit." },
+  { name: "Respiratory System", icon: "🫁", organs: "Nose, Trachea (Windpipe), Bronchi, Lungs, Alveoli", function: "Inhales fresh oxygen into the bloodstream and exhales carbon dioxide waste gas.", healthTip: "Avoid breathing smoke, dust, and toxic fumes; practice deep breathing in fresh air." },
+  { name: "Digestive System", icon: "🍏", organs: "Mouth (Teeth/Saliva), Oesophagus, Stomach, Small & Large Intestine, Liver", function: "Breaks down ingested food into simple soluble nutrients that body cells can absorb for energy.", healthTip: "Chew food thoroughly before swallowing and drink plenty of clean water daily." },
+  { name: "Nervous System", icon: "🧠", organs: "Brain, Spinal Cord, Peripheral Nerves", function: "Controls all conscious thought, memory, reflexes, motor movements, and receives 5-sense sensory signals.", healthTip: "Get 8 to 10 hours of sound sleep each night for neural brain repair and memory consolidation." }
+];
+
+/* ==========================================================================
+   RANKS, BADGES, AND GROUPS
+   ========================================================================== */
 
 window.RANKS = [
   { id: "hatchling", name: "Hatchling", min: 0, icon: "🐣", blurb: "Every champion starts with a single step." },
@@ -204,13 +255,3 @@ window.BADGES = [
   { id: "scratchpad", name: "Problem Solver", desc: "Use the interactive Whiteboard / Scratchpad during a quiz", icon: "✏️", category: "tool" },
   { id: "growth_mindset", name: "Growth Mindset", desc: "Successfully correct 5 previously missed questions in Review", icon: "🌱", category: "growth" }
 ];
-
-window.CURRICULUM_STANDARDS = {
-  frameworks: [
-    { id: "nerdc", name: "NERDC (Nigeria UBE Curriculum)", desc: "Universal Basic Education Curriculum Standards for Primary 1–6." },
-    { id: "cambridge", name: "Cambridge Primary (Stages 1–6)", desc: "International primary frameworks in English, Mathematics, and Science." },
-    { id: "uk_nc", name: "UK National Curriculum (KS1 & KS2)", desc: "Key Stage 1 (Years 1-2) and Key Stage 2 (Years 3-6) standards." },
-    { id: "us_ccss", name: "US Common Core & NGSS", desc: "Elementary Math, ELA, and Next Generation Science Standards (Grades 1-6)." },
-    { id: "ib_pyp", name: "IB Primary Years Programme (PYP)", desc: "Transdisciplinary inquiry-based themes for primary global learners." }
-  ]
-};

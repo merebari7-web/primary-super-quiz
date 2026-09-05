@@ -5,7 +5,7 @@
   const canvas = document.getElementById("confetti");
   const LETTERS = ["A", "B", "C", "D"];
   const bankCache = {};
-  const SK = "psq-settings-v6";
+  const SK = "psq-settings-v7";
 
   const EMPTY_PROGRESS = {
     xp: 0, streak: 0, lastDay: "", quizzes: 0, badges: [],
@@ -28,7 +28,7 @@
 
   // Global Application State
   const state = {
-    screen: "home",
+    screen: "home", // "home", "grade", "subject", "topics", "length", "quiz", "result", "review", "flashcards", "curriculum", "why", "privacy", "account", "teachers", "exam_setter", "exam_preview", "omr_sheet", "marking_scheme", "pupil_report", "cbt_hall", "broadsheet", "exam_library", "projector", "report", "certificate", "settings", "lab", "duel", "teams", "worksheet_gen", "analytics"
     name: localStorage.getItem("psq-name") || "",
     grade: (function () {
       const n = Number(localStorage.getItem("psq-grade") || "");
@@ -81,7 +81,7 @@
     editModalOpen: false,
     editingQIndex: null,
     editQData: { q: "", options: ["", "", "", ""], answer: 0, topic: "General", bloom: "Understand", explain: "" },
-    classRoster: loadJSON("psq-class-roster-v2", [
+    classRoster: loadJSON("psq-class-roster-v3", [
       { id: "c1", name: "Chinedu Okafor", grade: 5, arm: "5 Gold", ca1: 18, ca2: 17, exam: 52 },
       { id: "c2", name: "Amina Bello", grade: 5, arm: "5 Gold", ca1: 19, ca2: 18, exam: 56 },
       { id: "c3", name: "Tunde Bakare", grade: 5, arm: "5 Gold", ca1: 15, ca2: 14, exam: 46 },
@@ -94,6 +94,78 @@
     projectorIndex: 0,
     projectorRevealed: false,
     availableTopics: [],
+
+    // ==========================================
+    // LEARNING LAB & MANIPULATIVES STATE
+    // ==========================================
+    lab: {
+      tab: "frac", // "frac", "abacus", "times", "sieve", "clock", "unit", "states", "naira", "solar", "body"
+      fracNum: 3,
+      fracDen: 4,
+      abacusTh: 2,
+      abacusH: 4,
+      abacusT: 5,
+      abacusU: 8,
+      timesRow: 6,
+      timesCol: 7,
+      sieveFilter: "all",
+      clockHour: 3,
+      clockMinute: 30,
+      unitCat: "length",
+      unitVal: 100,
+      unitFrom: "m",
+      unitTo: "cm",
+      stateZone: "all",
+      selectedState: null,
+      selectedNote: "₦100",
+      selectedPlanet: "Earth",
+      selectedBodySys: "Circulatory System"
+    },
+
+    // ==========================================
+    // 2-PLAYER SPEED DUEL STATE
+    // ==========================================
+    duel: {
+      active: false,
+      p1Name: "Player 1 (Blue)",
+      p2Name: "Player 2 (Red)",
+      p1Score: 0,
+      p2Score: 0,
+      p1Streak: 0,
+      p2Streak: 0,
+      questions: [],
+      index: 0,
+      winner: null,
+      p1Choice: null,
+      p2Choice: null,
+      roundOver: false
+    },
+
+    // ==========================================
+    // CLASSROOM SMARTBOARD TEAM STATE
+    // ==========================================
+    teams: {
+      teamEmerald: { name: "Team Emerald", score: 0, color: "#10b981" },
+      teamSapphire: { name: "Team Sapphire", score: 0, color: "#0284c7" },
+      teamRuby: { name: "Team Ruby", score: 0, color: "#e11d48" },
+      teamAmber: { name: "Team Amber", score: 0, color: "#f59e0b" },
+      timer: 30,
+      timerRunning: false,
+      currentQ: null
+    },
+
+    // ==========================================
+    // WORKSHEET GENERATOR STATE
+    // ==========================================
+    worksheet: {
+      grade: 5,
+      subject: "maths",
+      count: 20,
+      includeKey: true,
+      includeSpace: true,
+      title: "Classroom Practice Worksheet",
+      questions: []
+    },
 
     // ==========================================
     // NIGERIAN EXAM SETTER STATE
@@ -151,6 +223,7 @@
   let clockTimer = null;
   let cbtTimer = null;
   let toastTimer = null;
+  let teamTimerInterval = null;
   let ttsUtterance = null;
   let scratchpadCtx = null;
   let isDrawing = false;
@@ -191,7 +264,7 @@
     return localStorage.getItem("psq-profile-id") || "p1";
   }
 
-  function progressKey() { return "psq-progress-v6-" + uid(); }
+  function progressKey() { return "psq-progress-v7-" + uid(); }
 
   function loadCurrentProgress() {
     progress = loadJSON(progressKey(), Object.assign({}, EMPTY_PROGRESS));
@@ -309,6 +382,7 @@
   }
 
   function playTick() { playTone(800, 0.03, "sine", 0.03); }
+  function playBuzzer() { playTone(150, 0.4, "sawtooth", 0.12); }
 
   /* ==========================================================================
      TEXT TO SPEECH (Web Speech API)
@@ -608,6 +682,7 @@
   function stopTickTimer() { clearInterval(tickTimer); tickTimer = null; }
   function stopClockTimer() { clearInterval(clockTimer); clockTimer = null; }
   function stopCbtTimer() { clearInterval(cbtTimer); cbtTimer = null; }
+  function stopTeamTimer() { clearInterval(teamTimerInterval); teamTimerInterval = null; }
 
   function startClockTimer() {
     if (clockTimer) return;
@@ -1090,7 +1165,7 @@
         exam: examMarks
       };
       state.classRoster.unshift(newPupil);
-      localStorage.setItem("psq-class-roster-v2", JSON.stringify(state.classRoster));
+      localStorage.setItem("psq-class-roster-v3", JSON.stringify(state.classRoster));
     }
 
     render();
@@ -1186,6 +1261,841 @@
     scratchpadCtx.lineCap = "round";
     scratchpadCtx.lineJoin = "round";
     scratchpadCtx.stroke();
+  }
+
+  /* ==========================================================================
+     LEARNING LAB & MANIPULATIVES CANVAS RENDERERS
+     ========================================================================== */
+
+  function renderFractionCanvas() {
+    const cvs = document.getElementById("frac-canvas");
+    if (!cvs) return;
+    const ctx = cvs.getContext("2d");
+    const num = Math.min(state.lab.fracNum, state.lab.fracDen);
+    const den = state.lab.fracDen;
+
+    ctx.clearRect(0, 0, cvs.width, cvs.height);
+
+    // Draw Fraction Pie (Left)
+    const centerX = 120, centerY = 120, radius = 90;
+    const sliceAngle = (2 * Math.PI) / den;
+
+    for (let i = 0; i < den; i++) {
+      const start = i * sliceAngle - Math.PI / 2;
+      const end = (i + 1) * sliceAngle - Math.PI / 2;
+      ctx.beginPath();
+      ctx.moveTo(centerX, centerY);
+      ctx.arc(centerX, centerY, radius, start, end);
+      ctx.closePath();
+      ctx.fillStyle = i < num ? "#0e7c76" : "#f1f5f9";
+      ctx.fill();
+      ctx.lineWidth = 2.5;
+      ctx.strokeStyle = "#0f172a";
+      ctx.stroke();
+    }
+
+    // Draw Fraction Bar Strip (Right)
+    const barX = 260, barY = 70, barW = 280, barH = 100;
+    const segmentW = barW / den;
+
+    for (let i = 0; i < den; i++) {
+      ctx.beginPath();
+      ctx.rect(barX + (i * segmentW), barY, segmentW, barH);
+      ctx.fillStyle = i < num ? "#e9a825" : "#f1f5f9";
+      ctx.fill();
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "#0f172a";
+      ctx.stroke();
+
+      ctx.fillStyle = "#0f172a";
+      ctx.font = "bold 14px Nunito, sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText(`1/${den}`, barX + (i * segmentW) + (segmentW / 2), barY + (barH / 2) + 5);
+    }
+  }
+
+  function renderClockCanvas() {
+    const cvs = document.getElementById("clock-canvas");
+    if (!cvs) return;
+    const ctx = cvs.getContext("2d");
+    const cx = 150, cy = 150, r = 120;
+    const h = state.lab.clockHour % 12;
+    const m = state.lab.clockMinute;
+
+    ctx.clearRect(0, 0, cvs.width, cvs.height);
+
+    // Clock Face Dial
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, 2 * Math.PI);
+    ctx.fillStyle = "#ffffff";
+    ctx.fill();
+    ctx.lineWidth = 6;
+    ctx.strokeStyle = "#0e7c76";
+    ctx.stroke();
+
+    // Hour Markers & Numbers
+    for (let i = 1; i <= 12; i++) {
+      const angle = (i * Math.PI) / 6 - Math.PI / 2;
+      const nx = cx + (r - 24) * Math.cos(angle);
+      const ny = cy + (r - 24) * Math.sin(angle) + 6;
+      ctx.font = "bold 18px Fredoka, Nunito, sans-serif";
+      ctx.fillStyle = "#0f172a";
+      ctx.textAlign = "center";
+      ctx.fillText(String(i), nx, ny);
+    }
+
+    // Hour Hand (Short & Thick)
+    const hourAngle = ((h + m / 60) * Math.PI) / 6 - Math.PI / 2;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(cx + (r - 55) * Math.cos(hourAngle), cy + (r - 55) * Math.sin(hourAngle));
+    ctx.lineWidth = 7;
+    ctx.lineCap = "round";
+    ctx.strokeStyle = "#e07a5f";
+    ctx.stroke();
+
+    // Minute Hand (Long & Lean)
+    const minAngle = (m * Math.PI) / 30 - Math.PI / 2;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(cx + (r - 28) * Math.cos(minAngle), cy + (r - 28) * Math.sin(minAngle));
+    ctx.lineWidth = 4;
+    ctx.lineCap = "round";
+    ctx.strokeStyle = "#0e7c76";
+    ctx.stroke();
+
+    // Center Pin
+    ctx.beginPath();
+    ctx.arc(cx, cy, 7, 0, 2 * Math.PI);
+    ctx.fillStyle = "#0f172a";
+    ctx.fill();
+  }
+
+  function renderRadarCanvas() {
+    const cvs = document.getElementById("radar-canvas");
+    if (!cvs) return;
+    const ctx = cvs.getContext("2d");
+    const cx = 180, cy = 180, r = 130;
+    const labels = ["Remember", "Understand", "Apply", "Analyze", "Evaluate", "Create"];
+    const values = [0.85, 0.90, 0.75, 0.70, 0.65, 0.80]; // Normalized Mastery [0.0 - 1.0]
+
+    ctx.clearRect(0, 0, cvs.width, cvs.height);
+
+    // Concentric Web Rings
+    for (let ring = 1; ring <= 4; ring++) {
+      const ringR = (r / 4) * ring;
+      ctx.beginPath();
+      for (let i = 0; i < 6; i++) {
+        const a = (i * Math.PI) / 3 - Math.PI / 2;
+        const x = cx + ringR * Math.cos(a);
+        const y = cy + ringR * Math.sin(a);
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+      ctx.strokeStyle = "#e2e8f0";
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    }
+
+    // Axes & Labels
+    for (let i = 0; i < 6; i++) {
+      const a = (i * Math.PI) / 3 - Math.PI / 2;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(cx + r * Math.cos(a), cy + r * Math.sin(a));
+      ctx.strokeStyle = "#cbd5e1";
+      ctx.stroke();
+
+      const lx = cx + (r + 28) * Math.cos(a);
+      const ly = cy + (r + 28) * Math.sin(a) + 4;
+      ctx.font = "bold 12px Nunito, sans-serif";
+      ctx.fillStyle = "#0f172a";
+      ctx.textAlign = "center";
+      ctx.fillText(labels[i], lx, ly);
+    }
+
+    // Data Polygon Fill
+    ctx.beginPath();
+    for (let i = 0; i < 6; i++) {
+      const a = (i * Math.PI) / 3 - Math.PI / 2;
+      const dataR = r * values[i];
+      const x = cx + dataR * Math.cos(a);
+      const y = cy + dataR * Math.sin(a);
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+    ctx.fillStyle = "rgba(14, 124, 118, 0.35)";
+    ctx.fill();
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = "#0e7c76";
+    ctx.stroke();
+  }
+
+  /* ==========================================================================
+     LEARNING LAB & MANIPULATIVES VIEW
+     ========================================================================== */
+
+  function renderLab() {
+    const tab = state.lab.tab || "frac";
+
+    return `
+      <div class="wrap">
+        ${renderTopBar("home")}
+        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Interactive Learning Lab & Manipulatives" }])}
+        <div class="kicker">Primary STEM &amp; Humanities Manipulatives</div>
+        <h2 class="section-title">Interactive Learning Lab</h2>
+        <p class="sub">Hands-on visual tools to develop conceptual understanding across Mathematics, Science, and Social Studies.</p>
+
+        <div class="chip-group" style="margin-bottom:20px;">
+          <button class="chip ${tab === "frac" ? "on" : ""}" data-set-lab-tab="frac">🍰 Fraction Visualizer</button>
+          <button class="chip ${tab === "abacus" ? "on" : ""}" data-set-lab-tab="abacus">🧮 Place Value Abacus</button>
+          <button class="chip ${tab === "times" ? "on" : ""}" data-set-lab-tab="times">✖️ Times Table Matrix</button>
+          <button class="chip ${tab === "sieve" ? "on" : ""}" data-set-lab-tab="sieve">🔢 Prime Sieve</button>
+          <button class="chip ${tab === "clock" ? "on" : ""}" data-set-lab-tab="clock">🕒 Telling Time Clock</button>
+          <button class="chip ${tab === "unit" ? "on" : ""}" data-set-lab-tab="unit">💱 Unit &amp; Currency Converter</button>
+          <button class="chip ${tab === "states" ? "on" : ""}" data-set-lab-tab="states">🌍 36 States &amp; FCT</button>
+          <button class="chip ${tab === "naira" ? "on" : ""}" data-set-lab-tab="naira">🇳🇬 Banknotes &amp; Heroes</button>
+          <button class="chip ${tab === "solar" ? "on" : ""}" data-set-lab-tab="solar">☀️ Solar System</button>
+          <button class="chip ${tab === "body" ? "on" : ""}" data-set-lab-tab="body">🫁 Organ Systems</button>
+        </div>
+
+        ${tab === "frac" ? renderLabFraction() :
+          tab === "abacus" ? renderLabAbacus() :
+          tab === "times" ? renderLabTimesTable() :
+          tab === "sieve" ? renderLabSieve() :
+          tab === "clock" ? renderLabClock() :
+          tab === "unit" ? renderLabUnit() :
+          tab === "states" ? renderLabStates() :
+          tab === "naira" ? renderLabNaira() :
+          tab === "solar" ? renderLabSolar() :
+          renderLabBody()}
+      </div>`;
+  }
+
+  function renderLabFraction() {
+    const num = Math.min(state.lab.fracNum, state.lab.fracDen);
+    const den = state.lab.fracDen;
+    const decimal = (num / den).toFixed(2);
+    const pct = Math.round((num / den) * 100);
+
+    return `
+      <div class="lab-panel">
+        <h3>🍰 Fraction Visualizer &amp; Equal Parts Cutter</h3>
+        <p class="sub">Adjust the numerator and denominator to see the fraction circle pie, fraction bar, and equivalent percentage.</p>
+
+        <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin:16px 0;">
+          <div>
+            <label><strong>Numerator (Parts Chosen): ${num}</strong></label>
+            <input type="range" id="frac-num-range" min="1" max="${den}" value="${num}" style="width:100%;max-width:240px;display:block;">
+          </div>
+          <div>
+            <label><strong>Denominator (Total Equal Parts): ${den}</strong></label>
+            <input type="range" id="frac-den-range" min="2" max="12" value="${den}" style="width:100%;max-width:240px;display:block;">
+          </div>
+        </div>
+
+        <div class="lab-canvas-container">
+          <canvas id="frac-canvas" width="580" height="240"></canvas>
+        </div>
+
+        <div class="metric-grid" style="margin-top:16px;">
+          <div><b>${num} / ${den}</b><span>Common Fraction</span></div>
+          <div><b>${decimal}</b><span>Decimal Value</span></div>
+          <div><b>${pct}%</b><span>Percentage</span></div>
+          <div><b>${num > 1 && den % num === 0 ? `1 / ${den / num}` : `${num}/${den}`}</b><span>Simplified Form</span></div>
+        </div>
+      </div>`;
+  }
+
+  function renderLabAbacus() {
+    const { abacusTh, abacusH, abacusT, abacusU } = state.lab;
+    const totalVal = (abacusTh * 1000) + (abacusH * 100) + (abacusT * 10) + abacusU;
+
+    return `
+      <div class="lab-panel">
+        <h3>🧮 Interactive Place Value Abacus &amp; Base-10 Blocks</h3>
+        <p class="sub">Click '+' and '-' on each column to build place value quantities up to Thousands.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:16px;text-align:center;margin:24px 0;">
+          <div class="stat-tile" style="border-top:6px solid #0e7c76;">
+            <strong>Thousands (Th)</strong>
+            <div style="font-size:2.4rem;font-weight:900;color:var(--teal);margin:8px 0;">${abacusTh}</div>
+            <div style="display:flex;gap:6px;justify-content:center;">
+              <button class="btn btn-ghost btn-sm" data-action="abacus-adj" data-col="Th" data-val="-1">-</button>
+              <button class="btn btn-primary btn-sm" data-action="abacus-adj" data-col="Th" data-val="1">+</button>
+            </div>
+          </div>
+          <div class="stat-tile" style="border-top:6px solid #0284c7;">
+            <strong>Hundreds (H)</strong>
+            <div style="font-size:2.4rem;font-weight:900;color:#0284c7;margin:8px 0;">${abacusH}</div>
+            <div style="display:flex;gap:6px;justify-content:center;">
+              <button class="btn btn-ghost btn-sm" data-action="abacus-adj" data-col="H" data-val="-1">-</button>
+              <button class="btn btn-primary btn-sm" data-action="abacus-adj" data-col="H" data-val="1">+</button>
+            </div>
+          </div>
+          <div class="stat-tile" style="border-top:6px solid #e9a825;">
+            <strong>Tens (T)</strong>
+            <div style="font-size:2.4rem;font-weight:900;color:#d97706;margin:8px 0;">${abacusT}</div>
+            <div style="display:flex;gap:6px;justify-content:center;">
+              <button class="btn btn-ghost btn-sm" data-action="abacus-adj" data-col="T" data-val="-1">-</button>
+              <button class="btn btn-sun btn-sm" data-action="abacus-adj" data-col="T" data-val="1">+</button>
+            </div>
+          </div>
+          <div class="stat-tile" style="border-top:6px solid #e07a5f;">
+            <strong>Units (U)</strong>
+            <div style="font-size:2.4rem;font-weight:900;color:#e07a5f;margin:8px 0;">${abacusU}</div>
+            <div style="display:flex;gap:6px;justify-content:center;">
+              <button class="btn btn-ghost btn-sm" data-action="abacus-adj" data-col="U" data-val="-1">-</button>
+              <button class="btn btn-coral btn-sm" data-action="abacus-adj" data-col="U" data-val="1">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="q-card" style="background:var(--card-alt);margin-top:16px;">
+          <h4>Standard Notation: <span style="font-size:1.6rem;color:var(--teal);">${totalVal.toLocaleString()}</span></h4>
+          <p style="font-size:1.05rem;margin-top:6px;"><strong>Expanded Form:</strong> ${abacusTh * 1000} + ${abacusH * 100} + ${abacusT * 10} + ${abacusU}</p>
+        </div>
+      </div>`;
+  }
+
+  function renderLabTimesTable() {
+    const curR = state.lab.timesRow;
+    const curC = state.lab.timesCol;
+    const prod = curR * curC;
+
+    let tableHtml = "<tr><th>×</th>";
+    for (let c = 1; c <= 12; c++) tableHtml += `<th>${c}</th>`;
+    tableHtml += "</tr>";
+
+    for (let r = 1; r <= 12; r++) {
+      tableHtml += `<tr><th>${r}</th>`;
+      for (let c = 1; c <= 12; c++) {
+        const val = r * c;
+        let cls = "";
+        if (r === curR && c === curC) cls = "highlight-active";
+        else if (r === curR || c === curC) cls = "highlight-factor";
+        else if (r === c) cls = "square-num";
+        tableHtml += `<td class="${cls}" data-action="set-times-cell" data-r="${r}" data-c="${c}">${val}</td>`;
+      }
+      tableHtml += "</tr>";
+    }
+
+    return `
+      <div class="lab-panel">
+        <h3>✖️ Interactive 12×12 Multiplication Times Table Matrix</h3>
+        <p class="sub">Click any cell to highlight the factor intersection, visual array, and square numbers.</p>
+
+        <div class="hint-box" style="font-size:1.1rem;margin-bottom:12px;">
+          🎯 <strong>${curR} × ${curC} = ${prod}</strong> (${curR === curC ? "Perfect Square Number!" : `${curR} groups of ${curC}`})
+        </div>
+
+        <div class="times-grid-wrapper">
+          <table class="times-table">${tableHtml}</table>
+        </div>
+      </div>`;
+  }
+
+  function renderLabSieve() {
+    const filter = state.lab.sieveFilter;
+    const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
+
+    let cellsHtml = "";
+    for (let i = 1; i <= 100; i++) {
+      let cls = "sieve-cell";
+      if (i === 1) cls += " one";
+      else if (primes.indexOf(i) >= 0) cls += " prime";
+      else cls += " composite";
+      cellsHtml += `<div class="${cls}">${i}</div>`;
+    }
+
+    return `
+      <div class="lab-panel">
+        <h3>🔢 Sieve of Eratosthenes (Prime Numbers 1–100)</h3>
+        <p class="sub">Prime numbers (highlighted green) have exactly two factors: 1 and itself.</p>
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
+          <span class="chip on" style="background:#10b981;border-color:#059669;">25 Prime Numbers (Green)</span>
+          <span class="chip" style="background:var(--card-alt);">74 Composite Numbers (Grey)</span>
+          <span class="chip" style="background:#fef08a;color:#854d0e;">1 (Neither Prime nor Composite)</span>
+        </div>
+
+        <div class="sieve-grid">${cellsHtml}</div>
+      </div>`;
+  }
+
+  function renderLabClock() {
+    const h = state.lab.clockHour;
+    const m = state.lab.clockMinute;
+    const ampm = h >= 12 ? "PM" : "AM";
+    const dispH = h % 12 === 0 ? 12 : h % 12;
+    const dispM = m < 10 ? "0" + m : m;
+
+    let timeInWords = "";
+    if (m === 0) timeInWords = `${dispH} o'clock`;
+    else if (m === 15) timeInWords = `Quarter past ${dispH}`;
+    else if (m === 30) timeInWords = `Half past ${dispH}`;
+    else if (m === 45) timeInWords = `Quarter to ${(dispH % 12) + 1}`;
+    else if (m < 30) timeInWords = `${m} minutes past ${dispH}`;
+    else timeInWords = `${60 - m} minutes to ${(dispH % 12) + 1}`;
+
+    return `
+      <div class="lab-panel">
+        <h3>🕒 Telling Time &amp; Analog Clock Trainer</h3>
+        <p class="sub">Adjust the hands to practice reading 12-hour analog and digital time.</p>
+
+        <div class="lab-canvas-container">
+          <canvas id="clock-canvas" width="300" height="300"></canvas>
+        </div>
+
+        <div class="q-card" style="text-align:center;background:var(--card-alt);margin:16px 0;">
+          <div style="font-size:2.2rem;font-weight:900;color:var(--teal);">${dispH}:${dispM} ${ampm}</div>
+          <p style="font-size:1.15rem;font-weight:700;color:var(--ink);margin-top:4px;">"${timeInWords}"</p>
+        </div>
+
+        <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+          <button class="btn btn-ghost btn-sm" data-action="adj-clock" data-type="h" data-val="-1">-1 Hour</button>
+          <button class="btn btn-primary btn-sm" data-action="adj-clock" data-type="h" data-val="1">+1 Hour</button>
+          <button class="btn btn-ghost btn-sm" data-action="adj-clock" data-type="m" data-val="-15">-15 Mins</button>
+          <button class="btn btn-sun btn-sm" data-action="adj-clock" data-type="m" data-val="15">+15 Mins</button>
+          <button class="btn btn-ghost btn-sm" data-action="adj-clock" data-type="m" data-val="-5">-5 Mins</button>
+          <button class="btn btn-ghost btn-sm" data-action="adj-clock" data-type="m" data-val="5">+5 Mins</button>
+        </div>
+      </div>`;
+  }
+
+  function renderLabUnit() {
+    const val = state.lab.unitVal || 100;
+    const cat = state.lab.unitCat || "length";
+
+    let resultTxt = "";
+    if (cat === "length") {
+      resultTxt = `${val} meters (m) = ${val * 100} centimeters (cm) = ${val * 1000} millimeters (mm) = ${(val / 1000).toFixed(3)} kilometers (km)`;
+    } else if (cat === "mass") {
+      resultTxt = `${val} kilograms (kg) = ${val * 1000} grams (g) = ${(val / 1000).toFixed(3)} metric tonnes`;
+    } else if (cat === "currency") {
+      resultTxt = `₦${val.toLocaleString()} Nigerian Naira = ${(val / 1500).toFixed(2)} US Dollars ($) = ${(val / 1950).toFixed(2)} British Pounds (£) = ${val * 100} Kobo`;
+    } else {
+      resultTxt = `${val} Litres (L) = ${val * 1000} Millilitres (ml) = ${val * 100} Centilitres (cl)`;
+    }
+
+    return `
+      <div class="lab-panel">
+        <h3>💱 Universal Primary Unit &amp; Currency Converter</h3>
+        <p class="sub">Convert standard metric units of measurement and Nigerian currency.</p>
+
+        <div style="display:flex;gap:12px;margin:16px 0;flex-wrap:wrap;">
+          <button class="chip ${cat === "length" ? "on" : ""}" data-set-unit-cat="length">📏 Length (m, cm, km)</button>
+          <button class="chip ${cat === "mass" ? "on" : ""}" data-set-unit-cat="mass">⚖️ Mass (g, kg, tonnes)</button>
+          <button class="chip ${cat === "capacity" ? "on" : ""}" data-set-unit-cat="capacity">🧪 Capacity (L, ml, cl)</button>
+          <button class="chip ${cat === "currency" ? "on" : ""}" data-set-unit-cat="currency">💵 Currency (₦ Naira, $, £)</button>
+        </div>
+
+        <div style="margin:16px 0;">
+          <label><strong>Input Value:</strong></label>
+          <input type="number" id="lab-unit-input" class="edit-input" style="max-width:240px;display:block;" value="${val}">
+        </div>
+
+        <div class="feedback ok" style="font-size:1.15rem;font-weight:700;">
+          ${esc(resultTxt)}
+        </div>
+      </div>`;
+  }
+
+  function renderLabStates() {
+    const zone = state.lab.stateZone || "all";
+    const allStates = window.NIGERIAN_STATES || [];
+    const filtered = zone === "all" ? allStates : allStates.filter(s => s.zone === zone);
+
+    return `
+      <div class="lab-panel">
+        <h3>🌍 36 Nigerian States &amp; FCT Geopolitical Explorer</h3>
+        <p class="sub">Explore capitals, state slogans, natural mineral/agricultural resources, and historical landmarks.</p>
+
+        <div class="chip-group" style="margin-bottom:16px;">
+          <button class="chip ${zone === "all" ? "on" : ""}" data-set-state-zone="all">All States (36 + FCT)</button>
+          <button class="chip ${zone === "North Central" ? "on" : ""}" data-set-state-zone="North Central">North Central</button>
+          <button class="chip ${zone === "North East" ? "on" : ""}" data-set-state-zone="North East">North East</button>
+          <button class="chip ${zone === "North West" ? "on" : ""}" data-set-state-zone="North West">North West</button>
+          <button class="chip ${zone === "South East" ? "on" : ""}" data-set-state-zone="South East">South East</button>
+          <button class="chip ${zone === "South South" ? "on" : ""}" data-set-state-zone="South South">South South</button>
+          <button class="chip ${zone === "South West" ? "on" : ""}" data-set-state-zone="South West">South West</button>
+        </div>
+
+        <div class="states-grid">
+          ${filtered.map(function (s) {
+            return `
+              <div class="state-card">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                  <strong style="font-size:1.15rem;color:var(--teal);">${esc(s.state)}</strong>
+                  <span class="chip" style="font-size:0.75rem;">${esc(s.zone)}</span>
+                </div>
+                <p><strong>Capital:</strong> ${esc(s.capital)}</p>
+                <p style="font-style:italic;color:var(--muted);margin:4px 0;">"${esc(s.slogan)}"</p>
+                <p style="font-size:0.85rem;margin-top:6px;"><strong>Resources:</strong> ${esc(s.resources)}</p>
+                <p style="font-size:0.85rem;margin-top:4px;"><strong>Landmark:</strong> ${esc(s.landmark)}</p>
+              </div>`;
+          }).join("")}
+        </div>
+      </div>`;
+  }
+
+  function renderLabNaira() {
+    const list = window.NAIRA_CURRENCY_BANK || [];
+
+    return `
+      <div class="lab-panel">
+        <h3>🇳🇬 Nigerian Banknotes &amp; National Heroes Guide</h3>
+        <p class="sub">Discover the historical nationalist heroes, cultural heritage icons, and reverse artwork on Nigerian currency.</p>
+
+        <div class="currency-grid">
+          ${list.map(function (n) {
+            return `
+              <div class="currency-card">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                  <span style="font-size:1.8rem;font-weight:900;color:var(--teal);">${esc(n.note)}</span>
+                  <span class="chip">${esc(n.color)}</span>
+                </div>
+                <h4 style="font-size:1.1rem;margin-bottom:4px;">Portrait: ${esc(n.portrait)}</h4>
+                <p style="font-size:0.85rem;color:var(--muted);margin-bottom:8px;">${esc(n.role)}</p>
+                <div style="background:var(--card-alt);padding:8px;border-radius:6px;font-size:0.82rem;">
+                  <strong>Reverse Artwork:</strong> ${esc(n.reverse)}
+                </div>
+              </div>`;
+          }).join("")}
+        </div>
+      </div>`;
+  }
+
+  function renderLabSolar() {
+    const list = window.SOLAR_SYSTEM_DATA || [];
+
+    return `
+      <div class="lab-panel">
+        <h3>☀️ Solar System &amp; Planetary Science Explorer</h3>
+        <p class="sub">Order from the Sun, diameters, surface temperatures, moons, and astronomical facts.</p>
+
+        <div class="grid-grades" style="margin-top:16px;">
+          ${list.map(function (p) {
+            return `
+              <div class="card-btn">
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <h4>#${p.order} ${esc(p.name)}</h4>
+                  <span class="chip">${esc(p.type)}</span>
+                </div>
+                <p style="font-size:0.88rem;margin:8px 0;"><strong>Distance from Sun:</strong> ${esc(p.distance)}</p>
+                <p style="font-size:0.88rem;margin-bottom:4px;"><strong>Diameter:</strong> ${esc(p.diameter)} · <strong>Moons:</strong> ${p.moons}</p>
+                <p style="font-size:0.88rem;color:var(--coral);margin-bottom:8px;"><strong>Avg Temperature:</strong> ${esc(p.temp)}</p>
+                <p style="font-size:0.85rem;background:var(--card-alt);padding:8px;border-radius:6px;">${esc(p.fact)}</p>
+              </div>`;
+          }).join("")}
+        </div>
+      </div>`;
+  }
+
+  function renderLabBody() {
+    const list = window.HUMAN_BODY_SYSTEMS || [];
+
+    return `
+      <div class="lab-panel">
+        <h3>🫁 Human Body Systems &amp; Health Habits</h3>
+        <p class="sub">Major biological organ systems, physiological functions, and primary health advice.</p>
+
+        <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px;">
+          ${list.map(function (sys) {
+            return `
+              <div class="q-card" style="border-left:6px solid var(--teal);">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+                  <span style="font-size:2rem;">${sys.icon}</span>
+                  <h3 style="font-size:1.3rem;">${esc(sys.name)}</h3>
+                </div>
+                <p style="font-size:0.95rem;"><strong>Major Organs:</strong> ${esc(sys.organs)}</p>
+                <p style="font-size:0.95rem;margin:6px 0;"><strong>Function:</strong> ${esc(sys.function)}</p>
+                <div class="feedback ok" style="margin-top:8px;font-size:0.88rem;">
+                  <strong>💡 Health &amp; Hygiene Tip:</strong> ${esc(sys.healthTip)}
+                </div>
+              </div>`;
+          }).join("")}
+        </div>
+      </div>`;
+  }
+
+  /* ==========================================================================
+     2-PLAYER HEAD-TO-HEAD SPEED DUEL
+     ========================================================================== */
+
+  async function startDuelMatch() {
+    const g = state.grade || 5;
+    const subjs = ["maths", "english", "science", "social", "quantitative"];
+    const s = shuffle(subjs)[0];
+
+    try {
+      const bank = await loadBank(g, s);
+      state.duel.questions = shuffle(bank).slice(0, 10);
+      state.duel.index = 0;
+      state.duel.p1Score = 0;
+      state.duel.p2Score = 0;
+      state.duel.p1Streak = 0;
+      state.duel.p2Streak = 0;
+      state.duel.winner = null;
+      state.duel.p1Choice = null;
+      state.duel.p2Choice = null;
+      state.duel.roundOver = false;
+      state.duel.active = true;
+      state.screen = "duel";
+      render();
+    } catch (e) { toast("Could not initialize Duel."); }
+  }
+
+  function submitDuelAnswer(player, optIdx) {
+    const d = state.duel;
+    if (d.roundOver) return;
+
+    const curQ = d.questions[d.index];
+    const isCorrect = (optIdx === curQ.answer);
+
+    if (player === 1 && d.p1Choice == null) {
+      d.p1Choice = optIdx;
+      if (isCorrect) {
+        d.p1Score += 10 + (d.p1Streak * 2);
+        d.p1Streak += 1;
+        playCorrect();
+      } else {
+        d.p1Streak = 0;
+        playWrong();
+      }
+    } else if (player === 2 && d.p2Choice == null) {
+      d.p2Choice = optIdx;
+      if (isCorrect) {
+        d.p2Score += 10 + (d.p2Streak * 2);
+        d.p2Streak += 1;
+        playCorrect();
+      } else {
+        d.p2Streak = 0;
+        playWrong();
+      }
+    }
+
+    if (d.p1Choice != null && d.p2Choice != null) {
+      d.roundOver = true;
+    }
+
+    render();
+  }
+
+  function nextDuelRound() {
+    const d = state.duel;
+    d.p1Choice = null;
+    d.p2Choice = null;
+    d.roundOver = false;
+
+    if (d.index < d.questions.length - 1) {
+      d.index += 1;
+      render();
+    } else {
+      if (d.p1Score > d.p2Score) d.winner = d.p1Name;
+      else if (d.p2Score > d.p1Score) d.winner = d.p2Name;
+      else d.winner = "It's a Tie!";
+      playBadgeFanfare();
+      render();
+      launchConfetti();
+    }
+  }
+
+  function renderDuel() {
+    const d = state.duel;
+    if (!d.active || !d.questions.length) {
+      return `
+        <div class="wrap">
+          ${renderTopBar("home")}
+          ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "2-Player Speed Duel" }])}
+          <div class="hero">
+            <div>
+              <div class="kicker">Head-to-Head Pass &amp; Play</div>
+              <h1>2-Player Classroom Speed Duel</h1>
+              <p class="lead">Compete with a classmate or sibling on the same screen! Answer 10 rapid-fire questions to see who has the fastest retrieval speed and streak accuracy.</p>
+              <button class="btn btn-primary btn-sm" data-action="launch-duel" style="margin-top:16px;">Begin Speed Duel ⚔️</button>
+            </div>
+            <div class="hero-art"><img src="images/hero-kids.jpg" alt="Students competing"></div>
+          </div>
+        </div>`;
+    }
+
+    if (d.winner) {
+      return `
+        <div class="wrap">
+          <div class="result">
+            <div class="letter-mark">🏆</div>
+            <div class="kicker">Match Concluded</div>
+            <h2 class="section-title">Winner: ${esc(d.winner)}</h2>
+            <div class="metric-grid" style="margin:24px 0;">
+              <div><b>${d.p1Score} pts</b><span>${esc(d.p1Name)}</span></div>
+              <div><b>${d.p2Score} pts</b><span>${esc(d.p2Name)}</span></div>
+            </div>
+            <div style="display:flex;gap:12px;justify-content:center;">
+              <button class="btn btn-primary" data-action="launch-duel">Rematch ⚔️</button>
+              <button class="btn btn-ghost" data-go="home">Home 🏠</button>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    const q = d.questions[d.index];
+
+    return `
+      <div class="wrap">
+        <div class="topbar no-print">
+          <div><strong>Duel Round ${d.index + 1} of ${d.questions.length}</strong></div>
+          <button class="btn btn-ghost btn-sm" data-action="quit-duel">✕ Exit Match</button>
+        </div>
+
+        <div class="q-card" style="text-align:center;">
+          <span class="badge-tag">${esc(q.topic || "Speed Item")}</span>
+          <h2 style="font-size:1.6rem;margin:12px 0;">${esc(q.q)}</h2>
+        </div>
+
+        <div class="duel-container">
+          <!-- Player 1 Side -->
+          <div class="duel-player-p1">
+            <div class="duel-score-banner">
+              <strong style="color:var(--sky);font-size:1.2rem;">${esc(d.p1Name)}</strong>
+              <span class="chip on" style="background:var(--sky);">${d.p1Score} Pts (🔥 ${d.p1Streak})</span>
+            </div>
+            <div class="options">
+              ${q.options.map((opt, oi) => {
+                let cls = "opt";
+                if (d.p1Choice === oi) cls += (oi === q.answer ? " correct" : " wrong");
+                return `<button class="${cls}" data-action="duel-p1-pick" data-opt="${oi}" ${d.p1Choice != null ? "disabled" : ""}><span class="badge">${LETTERS[oi]}</span><span>${esc(opt)}</span></button>`;
+              }).join("")}
+            </div>
+          </div>
+
+          <!-- Player 2 Side -->
+          <div class="duel-player-p2">
+            <div class="duel-score-banner">
+              <strong style="color:var(--coral);font-size:1.2rem;">${esc(d.p2Name)}</strong>
+              <span class="chip on" style="background:var(--coral);">${d.p2Score} Pts (🔥 ${d.p2Streak})</span>
+            </div>
+            <div class="options">
+              ${q.options.map((opt, oi) => {
+                let cls = "opt";
+                if (d.p2Choice === oi) cls += (oi === q.answer ? " correct" : " wrong");
+                return `<button class="${cls}" data-action="duel-p2-pick" data-opt="${oi}" ${d.p2Choice != null ? "disabled" : ""}><span class="badge">${LETTERS[oi]}</span><span>${esc(opt)}</span></button>`;
+              }).join("")}
+            </div>
+          </div>
+        </div>
+
+        ${d.roundOver ? `
+          <div style="text-align:center;margin-top:24px;">
+            <button class="btn btn-primary" data-action="duel-next" style="font-size:1.1rem;padding:12px 32px;">Next Round →</button>
+          </div>
+        ` : ""}
+      </div>`;
+  }
+
+  /* ==========================================================================
+     CLASSROOM SMARTBOARD TEAM SCOREBOARD & BUZZER VIEW
+     ========================================================================== */
+
+  function renderTeams() {
+    const tm = state.teams;
+
+    return `
+      <div class="wrap">
+        ${renderTopBar("teachers")}
+        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Teacher Hub", go: "teachers" }, { label: "Smartboard Team Buzzer" }])}
+        <div class="kicker">Interactive Classroom Gamification</div>
+        <h2 class="section-title">Smartboard Team Scoreboard &amp; Live Buzzer</h2>
+        <p class="sub">Organize your classroom into 4 competing houses/teams with live score adjusters and buzzer sound effects.</p>
+
+        <div class="team-scoreboard">
+          <div class="team-card emerald">
+            <h4 style="color:#10b981;">🟢 Emerald House</h4>
+            <div class="team-score-val" style="color:#10b981;">${tm.teamEmerald.score}</div>
+            <div style="display:flex;gap:4px;justify-content:center;">
+              <button class="btn btn-ghost btn-sm" data-action="adj-team" data-t="Emerald" data-v="-5">-5</button>
+              <button class="btn btn-primary btn-sm" data-action="adj-team" data-t="Emerald" data-v="10">+10</button>
+            </div>
+          </div>
+          <div class="team-card sapphire">
+            <h4 style="color:#0284c7;">🔵 Sapphire House</h4>
+            <div class="team-score-val" style="color:#0284c7;">${tm.teamSapphire.score}</div>
+            <div style="display:flex;gap:4px;justify-content:center;">
+              <button class="btn btn-ghost btn-sm" data-action="adj-team" data-t="Sapphire" data-v="-5">-5</button>
+              <button class="btn btn-primary btn-sm" data-action="adj-team" data-t="Sapphire" data-v="10">+10</button>
+            </div>
+          </div>
+          <div class="team-card ruby">
+            <h4 style="color:#e11d48;">🔴 Ruby House</h4>
+            <div class="team-score-val" style="color:#e11d48;">${tm.teamRuby.score}</div>
+            <div style="display:flex;gap:4px;justify-content:center;">
+              <button class="btn btn-ghost btn-sm" data-action="adj-team" data-t="Ruby" data-v="-5">-5</button>
+              <button class="btn btn-coral btn-sm" data-action="adj-team" data-t="Ruby" data-v="10">+10</button>
+            </div>
+          </div>
+          <div class="team-card amber">
+            <h4 style="color:#d97706;">🟡 Amber House</h4>
+            <div class="team-score-val" style="color:#d97706;">${tm.teamAmber.score}</div>
+            <div style="display:flex;gap:4px;justify-content:center;">
+              <button class="btn btn-ghost btn-sm" data-action="adj-team" data-t="Amber" data-v="-5">-5</button>
+              <button class="btn btn-sun btn-sm" data-action="adj-team" data-t="Amber" data-v="10">+10</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="q-card" style="text-align:center;padding:32px;">
+          <button class="btn btn-coral btn-sm" data-action="sound-buzzer" style="font-size:1.3rem;padding:16px 36px;border-radius:9999px;">🚨 SOUND BUZZER</button>
+          <button class="btn btn-sun btn-sm" data-action="sound-fanfare" style="font-size:1.3rem;padding:16px 36px;border-radius:9999px;margin-left:12px;">🎺 TEAM CHEER</button>
+        </div>
+      </div>`;
+  }
+
+  /* ==========================================================================
+     ADVANCED PSYCHOMETRIC & LEARNING ANALYTICS VIEW
+     ========================================================================== */
+
+  function renderAnalytics() {
+    const g = state.grade || 5;
+    const days30 = Array.from({ length: 30 }).map((_, i) => {
+      const d = new Date(Date.now() - (29 - i) * 86400000).toISOString().slice(0, 10);
+      return { date: d, count: progress.studyByDay[d] ? Math.round(progress.studyByDay[d] / 60) : 0 };
+    });
+
+    return `
+      <div class="wrap">
+        ${renderTopBar("home")}
+        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Advanced Psychometric Analytics" }])}
+        <div class="kicker">Psychometrics &amp; Item Response Profiling</div>
+        <h2 class="section-title">Cognitive Domain Mastery Radar &amp; Velocity</h2>
+        <p class="sub">In-depth psychometric analysis of cognitive taxonomy performance and 30-day retrieval habit consistency.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;">
+          <div class="q-card" style="text-align:center;">
+            <h3>📊 Bloom's Taxonomy Cognitive Radar</h3>
+            <p class="sub">Visual distribution across lower-order and higher-order thinking skills.</p>
+            <div class="lab-canvas-container">
+              <canvas id="radar-canvas" width="360" height="360"></canvas>
+            </div>
+          </div>
+
+          <div class="q-card">
+            <h3>🗓️ 30-Day Learning Velocity Heatmap</h3>
+            <p class="sub">Daily study minutes logged on this device.</p>
+            <div style="display:grid;grid-template-columns:repeat(6, 1fr);gap:8px;margin-top:16px;">
+              ${days30.map(d => {
+                const bg = d.count > 15 ? "#0e7c76" : d.count > 5 ? "#10b981" : d.count > 0 ? "#a7f3d0" : "var(--line)";
+                const col = d.count > 5 ? "#ffffff" : "#0f172a";
+                return `
+                  <div style="background:${bg};color:${col};padding:8px 4px;border-radius:6px;text-align:center;font-size:0.75rem;">
+                    <strong>${d.date.slice(5)}</strong><br>${d.count}m
+                  </div>`;
+              }).join("")}
+            </div>
+          </div>
+        </div>
+      </div>`;
   }
 
   /* ==========================================================================
@@ -1312,7 +2222,7 @@
   }
 
   /* ==========================================================================
-     QUIZ RESULT & PEDAGOGICAL EVALUATION VIEW
+     QUIZ RESULT VIEW
      ========================================================================== */
 
   function renderResult() {
@@ -1488,1082 +2398,6 @@
             <h3>Zero Misconceptions Pending!</h3>
             <p class="sub">You have mastered all attempted questions. Start a new quiz to discover new challenge items.</p>
             <button class="btn btn-primary" data-go="subject" style="margin-top:16px;">Start Practice Quiz →</button>
-          </div>
-        `}
-      </div>`;
-  }
-
-  /* ==========================================================================
-     MAIN ROUTING RENDERER & ENTRY POINT
-     ========================================================================== */
-
-  function renderTopBar(backTarget) {
-    const backBtn = backTarget
-      ? `<button class="icon-btn" data-go="${backTarget}" aria-label="Go back">←</button>`
-      : `<div class="brand" data-go="home"><img src="images/favicon.png" alt=""><span>Super Quiz</span></div>`;
-
-    return `
-      <header class="topbar no-print">
-        <div style="display:flex;align-items:center;gap:12px;">
-          ${backBtn}
-          <span class="chip" data-go="account" style="cursor:pointer;">👤 ${esc(state.name || "Scholar")} · P${state.grade || 5}</span>
-        </div>
-        <div class="top-actions">
-          <button class="btn btn-sun btn-sm" data-go="exam_setter">🇳🇬 Set Exam Paper</button>
-          <button class="icon-btn" data-action="toggle-sound" title="Toggle sound FX">${settings.sound ? "🔊" : "🔇"}</button>
-          <button class="icon-btn" data-go="teachers" title="Teacher Hub & Class Broadsheet">👨‍🏫</button>
-          <button class="icon-btn" data-go="flashcards" title="Spaced Recall Flashcards">🗂️</button>
-          <button class="icon-btn" data-go="account" title="Trophy Showcase & Badges">🏆</button>
-          <button class="icon-btn" data-go="settings" title="Settings">⚙️</button>
-        </div>
-      </header>`;
-  }
-
-  function renderBreadcrumbs(crumbs) {
-    const list = crumbs.map(function (c, i) {
-      if (i === crumbs.length - 1) return `<span>${esc(c.label)}</span>`;
-      return `<button data-go="${c.go}">${esc(c.label)}</button> &gt; `;
-    }).join("");
-    return `<nav class="crumbs no-print" aria-label="Breadcrumb">${list}</nav>`;
-  }
-
-  function renderHome() {
-    const r = rankFor(progress.xp);
-
-    return `
-      <div class="wrap">
-        ${renderTopBar(null)}
-        <section class="hero">
-          <div>
-            <div class="kicker">Universal Basic Education · NERDC Aligned · 100% Offline</div>
-            <h1>Primary Super Quiz</h1>
-            <p class="lead">World-class retrieval practice and official Nigerian Examination Setter for Primary 1–6 (Basic 1–6). 16 subjects, 9,600 unique curriculum questions, 2-column printable exam papers, OMR shading sheets, and CBT exam hall.</p>
-            <div class="top-actions" style="margin-top:16px;">
-              <button class="btn btn-primary" data-action="start">Start Practising →</button>
-              <button class="btn btn-sun" data-go="exam_setter">🇳🇬 Set Nigerian Exam Paper</button>
-              <button class="btn btn-ghost" data-go="broadsheet">Teacher Broadsheet 📊</button>
-            </div>
-          </div>
-          <div class="hero-art">
-            <img src="images/hero-kids.jpg" alt="Students engaging in learning">
-            <span class="art-badge">16 Subjects · 9,600 MCQs</span>
-          </div>
-        </section>
-
-        <div class="home-stats">
-          <div class="stat-tile"><b>${progress.xp}</b><span>Total XP</span></div>
-          <div class="stat-tile"><b>${progress.streak}🔥</b><span>Day Streak</span></div>
-          <div class="stat-tile"><b>${progress.quizzes}</b><span>Quizzes</span></div>
-          <div class="stat-tile"><b>${accuracyPct()}%</b><span>Accuracy</span></div>
-          <div class="stat-tile"><b>${r.icon}</b><span>${r.name}</span></div>
-          <div class="stat-tile"><b>${fmtDur(progress.studySec || 0)}</b><span>Study Time</span></div>
-        </div>
-
-        <h2 class="section-title" style="margin-top:28px;">Learning &amp; Assessment Modes</h2>
-        <p class="sub">Choose an active learning path designed by cognitive scientists and primary educators.</p>
-
-        <div class="play-row">
-          <div class="play-tile" style="border-top:5px solid #0e7c76;background:#f0fdfa;" data-go="exam_setter">
-            <span class="ico">🇳🇬</span>
-            <strong>Nigerian Exam Center</strong>
-            <p>Set formal 1st/2nd/3rd term exams, NCEE mocks, printable OMR bubble sheets & Section B theory.</p>
-          </div>
-          <div class="play-tile daily" data-action="launch-daily">
-            <span class="ico">☀️</span>
-            <strong>Daily Challenge</strong>
-            <p>10 multidisciplinary questions to build continuous daily learning habit.</p>
-          </div>
-          <div class="play-tile smart" data-action="launch-smart">
-            <span class="ico">🧠</span>
-            <strong>Smart Practice</strong>
-            <p>Adaptive retrieval targeting previous error patterns and weak areas.</p>
-          </div>
-          <div class="play-tile flash" data-go="flashcards">
-            <span class="ico">🗂️</span>
-            <strong>Spaced Recall</strong>
-            <p>Leitner 3-box active flashcard revision for long-term memory mastery.</p>
-          </div>
-          <div class="play-tile bolt" data-action="launch-lightning">
-            <span class="ico">⚡</span>
-            <strong>Lightning 5</strong>
-            <p>Rapid-fire 12-second speed challenge to develop retrieval fluency.</p>
-          </div>
-          <div class="play-tile mix" data-action="launch-mix">
-            <span class="ico">🌈</span>
-            <strong>Champion Mix</strong>
-            <p>Interleaved cross-subject paper proven to enhance memory retention.</p>
-          </div>
-        </div>
-
-        <section class="trust-row" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:16px;margin:32px 0;">
-          <div class="stat-tile"><b>16</b><span>NERDC Subjects</span></div>
-          <div class="stat-tile"><b>9,600</b><span>100% Unique Questions</span></div>
-          <div class="stat-tile"><b>P1–P6</b><span>Basic 1 to Basic 6</span></div>
-          <div class="stat-tile"><b>NCEE</b><span>Common Entrance Ready</span></div>
-        </section>
-
-        ${renderFooter()}
-      </div>`;
-  }
-
-  function renderGrades() {
-    const cards = [1, 2, 3, 4, 5, 6].map(function (g) {
-      const info = window.GRADE_INFO[g];
-      const isCurrent = state.grade === g;
-      return `
-        <button class="card-btn ${isCurrent ? "on" : ""}" data-set-grade="${g}">
-          <div class="grade-no">${g}</div>
-          <h3>${info.label}</h3>
-          <p style="font-weight:700;color:var(--teal);margin-bottom:4px;">${info.international}</p>
-          <p>${info.ages} · ${info.blurb}</p>
-        </button>`;
-    }).join("");
-
-    return `
-      <div class="wrap">
-        ${renderTopBar("home")}
-        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Select Class Level" }])}
-        <div class="kicker">Universal Basic Education Standards</div>
-        <h2 class="section-title">Select Your Class Grade (Basic 1–6)</h2>
-        <p class="sub">Questions and cognitive difficulty are developmentally calibrated from Primary 1 to Primary 6.</p>
-        <div class="grid-grades">${cards}</div>
-      </div>`;
-  }
-
-  function renderSubjects() {
-    const g = state.grade || 5;
-    const group = state.group || "all";
-    const qy = (state.query || "").toLowerCase().trim();
-
-    const groupBtns = window.SUBJECT_GROUPS.map(function (grp) {
-      return `<button class="chip ${group === grp.id ? "on" : ""}" data-set-group="${grp.id}">${grp.label}</button>`;
-    }).join("");
-
-    const subjCards = Object.keys(window.SUBJECTS).map(function (k) {
-      const s = window.SUBJECTS[k];
-      if (group !== "all" && s.group !== group) return "";
-      if (qy && s.name.toLowerCase().indexOf(qy) < 0 && s.desc.toLowerCase().indexOf(qy) < 0) return "";
-
-      const best = progress.best[`${g}/${k}`];
-      const bestTxt = best ? `Best: ${best.pct}% (${best.score}/${best.total})` : "Not attempted yet";
-
-      return `
-        <div class="subject-card" data-pick-subj="${k}">
-          <div class="sub-head">
-            <span class="sub-icon">${s.icon}</span>
-            <span class="chip">${s.short}</span>
-          </div>
-          <h3>${s.name}</h3>
-          <p>${s.desc}</p>
-          <div style="font-size:0.8rem;font-weight:700;color:var(--teal);margin-bottom:12px;">${bestTxt}</div>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;">
-            <button class="btn btn-primary btn-sm" data-pick-subj="${k}">Practice →</button>
-            <button class="btn btn-ghost btn-sm" data-drill-subj="${k}">Subtopics</button>
-          </div>
-        </div>`;
-    }).join("");
-
-    return `
-      <div class="wrap">
-        ${renderTopBar("grade")}
-        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: window.GRADE_INFO[g].label, go: "grade" }, { label: "Subjects" }])}
-        <div class="kicker">${window.GRADE_INFO[g].label} · ${window.GRADE_INFO[g].international}</div>
-        <h2 class="section-title">Select a Subject Domain</h2>
-        <p class="sub">16 comprehensive subjects aligned with NERDC and international primary frameworks.</p>
-        <div class="chip-group">${groupBtns}</div>
-        <div style="margin-bottom:20px;">
-          <input type="text" id="subj-search" class="btn btn-ghost" style="width:100%;max-width:400px;text-align:left;" placeholder="🔍 Search subjects or topics..." value="${esc(state.query)}">
-        </div>
-        <div class="grid-subjects">${subjCards || `<div class="empty-state">No subjects matched your filter.</div>`}</div>
-      </div>`;
-  }
-
-  function renderTopicDrill() {
-    const s = window.SUBJECTS[state.subject] || { name: "Subject Topics", icon: "📘" };
-    const g = state.grade || 5;
-
-    return `
-      <div class="wrap">
-        ${renderTopBar("subject")}
-        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: window.GRADE_INFO[g].label, go: "grade" }, { label: s.name, go: "subject" }, { label: "Subtopics" }])}
-        <div class="kicker">${s.icon} ${s.name} · Primary ${g}</div>
-        <h2 class="section-title">Focused Subtopic Mastery</h2>
-        <p class="sub">Select a targeted curriculum subtopic to practice specific learning objectives and skills.</p>
-
-        <div class="grid-grades" style="margin-top:20px;">
-          ${state.availableTopics.map(function (top) {
-            return `
-              <div class="card-btn">
-                <h4>🎯 ${esc(top.name)}</h4>
-                <p style="color:var(--muted);font-size:0.88rem;margin:8px 0 14px;">${top.count} questions available in bank</p>
-                <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                  <button class="btn btn-primary btn-sm" data-start-topic-quiz="${esc(top.name)}" data-topic-len="10">10 Questions</button>
-                  <button class="btn btn-ghost btn-sm" data-start-topic-quiz="${esc(top.name)}" data-topic-len="20">20 Questions</button>
-                </div>
-              </div>`;
-          }).join("")}
-        </div>
-      </div>`;
-  }
-
-  function renderLengthSetup() {
-    const s = window.SUBJECTS[state.subject] || { name: "Subject", icon: "📘" };
-    const g = state.grade || 5;
-
-    const lengthBtns = window.QUIZ_LENGTHS.map(function (n) {
-      const isSel = state.length === n;
-      return `<button class="btn ${isSel ? "btn-primary" : "btn-ghost"}" data-set-len="${n}">${n} Questions</button>`;
-    }).join("");
-
-    const modes = [
-      { id: "practice", title: "Practice Mode", desc: "Formative: Instant feedback, hints, 50/50, and step-by-step explanations." },
-      { id: "exam", title: "Exam Mode", desc: "Summative: Simulates real exam conditions with no hints until final score." },
-      { id: "timed", title: "Timed Challenge", desc: "Fluency: 20 seconds per question to build cognitive automaticity." }
-    ].map(function (m) {
-      return `
-        <button class="card-btn ${state.mode === m.id ? "on" : ""}" data-set-mode="${m.id}">
-          <h4>${m.title}</h4>
-          <p>${m.desc}</p>
-        </button>`;
-    }).join("");
-
-    return `
-      <div class="wrap">
-        ${renderTopBar("subject")}
-        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: window.GRADE_INFO[g].label, go: "grade" }, { label: s.name, go: "subject" }, { label: "Setup" }])}
-        <div class="kicker">${window.GRADE_INFO[g].label} · ${s.icon} ${s.name}</div>
-        <h2 class="section-title">Configure Practice Session</h2>
-        ${state.selectedTopic ? `<div class="hint-box">🎯 Topic Filter: <strong>${esc(state.selectedTopic)}</strong> <button class="btn btn-ghost btn-sm" data-clear-topic style="margin-left:8px;">Clear Filter</button></div>` : ""}
-        <div class="grid-grades" style="margin-bottom:24px;">${modes}</div>
-        <h3 style="margin-bottom:12px;font-size:1.1rem;">Number of Questions</h3>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;">${lengthBtns}</div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <button class="btn btn-primary" data-action="launch-quiz">${state.loading ? "Loading..." : "Begin Quiz →"}</button>
-          <button class="btn btn-ghost" data-go="subject">Change Subject</button>
-        </div>
-      </div>`;
-  }
-
-  /* ==========================================================================
-     NIGERIAN EXAM SETTER SCREEN (BUILDER & TABLE OF SPECIFICATIONS)
-     ========================================================================== */
-
-  function renderExamSetter() {
-    const es = state.examSetter;
-    return `
-      <div class="wrap">
-        ${renderTopBar("home")}
-        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Nigerian Exam Setter Suite" }])}
-        <div class="kicker">NERDC &amp; Universal Basic Education Standards</div>
-        <h2 class="section-title">🇳🇬 Nigerian School Examination Setter</h2>
-        <p class="sub">Set standard termly exams, Continuous Assessment tests, NCEE mocks, 2-column print papers, OMR shading sheets, and CBT exam halls.</p>
-
-        <div class="q-card" style="margin-bottom:28px;">
-          <h3 style="margin-bottom:16px;">🏫 1. School Header &amp; Institutional Details</h3>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:16px;">
-            <div>
-              <label class="kicker">School Name</label>
-              <input type="text" id="es-school-name" class="btn btn-ghost" style="width:100%;text-align:left;font-weight:700;" value="${esc(es.schoolName)}" placeholder="e.g. COMMAND CHILDREN'S SCHOOL">
-            </div>
-            <div>
-              <label class="kicker">School Motto</label>
-              <input type="text" id="es-school-motto" class="btn btn-ghost" style="width:100%;text-align:left;" value="${esc(es.schoolMotto)}" placeholder="e.g. Motto: Knowledge & Excellence">
-            </div>
-            <div>
-              <label class="kicker">Address / Town / State</label>
-              <input type="text" id="es-school-addr" class="btn btn-ghost" style="width:100%;text-align:left;" value="${esc(es.schoolAddress)}" placeholder="e.g. P.M.B. 1024, Minna, Niger State">
-            </div>
-          </div>
-        </div>
-
-        <div class="q-card" style="margin-bottom:28px;">
-          <h3 style="margin-bottom:16px;">📝 2. Examination Classification &amp; Subject</h3>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:16px;">
-            <div>
-              <label class="kicker">Examination Type</label>
-              <select id="es-exam-type" class="btn btn-ghost" style="width:100%;text-align:left;">
-                ${window.NIGERIAN_EXAM_TYPES.map(t => `<option value="${t.id}" ${es.examType === t.id ? "selected" : ""}>${t.name}</option>`).join("")}
-              </select>
-            </div>
-            <div>
-              <label class="kicker">Academic Session</label>
-              <select id="es-session" class="btn btn-ghost" style="width:100%;text-align:left;">
-                ${window.NIGERIAN_SESSIONS.map(s => `<option value="${s}" ${es.session === s ? "selected" : ""}>${s} Session</option>`).join("")}
-              </select>
-            </div>
-            <div>
-              <label class="kicker">Class Level</label>
-              <select id="es-grade" class="btn btn-ghost" style="width:100%;text-align:left;">
-                ${[1, 2, 3, 4, 5, 6].map(g => `<option value="${g}" ${es.grade === g ? "selected" : ""}>Primary ${g} (Basic ${g})</option>`).join("")}
-              </select>
-            </div>
-            <div>
-              <label class="kicker">Subject Domain</label>
-              <select id="es-subject" class="btn btn-ghost" style="width:100%;text-align:left;">
-                <option value="maths" ${es.subject === "maths" ? "selected" : ""}>Mathematics</option>
-                <option value="english" ${es.subject === "english" ? "selected" : ""}>English Studies</option>
-                <option value="science" ${es.subject === "science" ? "selected" : ""}>Basic Science</option>
-                <option value="social" ${es.subject === "social" ? "selected" : ""}>Social Studies</option>
-                <option value="civic" ${es.subject === "civic" ? "selected" : ""}>Civic Education</option>
-                <option value="computer" ${es.subject === "computer" ? "selected" : ""}>Computer Studies (ICT)</option>
-                <option value="agric" ${es.subject === "agric" ? "selected" : ""}>Agricultural Science</option>
-                <option value="home" ${es.subject === "home" ? "selected" : ""}>Home Economics</option>
-                <option value="cca" ${es.subject === "cca" ? "selected" : ""}>Cultural &amp; Creative Arts</option>
-                <option value="phe" ${es.subject === "phe" ? "selected" : ""}>Physical &amp; Health Education</option>
-                <option value="history" ${es.subject === "history" ? "selected" : ""}>History</option>
-                <option value="verbal" ${es.subject === "verbal" ? "selected" : ""}>Verbal Reasoning</option>
-                <option value="quantitative" ${es.subject === "quantitative" ? "selected" : ""}>Quantitative Reasoning</option>
-                <option value="security" ${es.subject === "security" ? "selected" : ""}>Security Education</option>
-                <option value="crs" ${es.subject === "crs" ? "selected" : ""}>Christian Religious Studies</option>
-                <option value="irs" ${es.subject === "irs" ? "selected" : ""}>Islamic Religious Studies</option>
-              </select>
-            </div>
-          </div>
-
-          <div style="margin-top:16px;">
-            <label class="kicker">Or Select NCEE / Common Entrance Multi-Subject Bundle:</label>
-            <select id="es-ncee-bundle" class="btn btn-ghost" style="width:100%;text-align:left;">
-              <option value="none" ${es.nceeBundle === "none" ? "selected" : ""}>None (Use Single Subject Selected Above)</option>
-              ${window.NIGERIAN_NCEE_BUNDLES.map(b => `<option value="${b.id}" ${es.nceeBundle === b.id ? "selected" : ""}>${b.name}</option>`).join("")}
-            </select>
-          </div>
-        </div>
-
-        <div class="q-card" style="margin-bottom:28px;">
-          <h3 style="margin-bottom:16px;">⚙️ 3. Paper Configuration &amp; Marks Breakdown</h3>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:16px;">
-            <div>
-              <label class="kicker">Section A (MCQ Count)</label>
-              <select id="es-count" class="btn btn-ghost" style="width:100%;text-align:left;">
-                <option value="15" ${es.count === 15 ? "selected" : ""}>15 Questions (C.A. Test)</option>
-                <option value="20" ${es.count === 20 ? "selected" : ""}>20 Questions (Standard C.A.)</option>
-                <option value="30" ${es.count === 30 ? "selected" : ""}>30 Questions</option>
-                <option value="40" ${es.count === 40 ? "selected" : ""}>40 Questions (Standard Terminal)</option>
-                <option value="50" ${es.count === 50 ? "selected" : ""}>50 Questions</option>
-                <option value="60" ${es.count === 60 ? "selected" : ""}>60 Questions (Full NCEE Mock)</option>
-                <option value="80" ${es.count === 80 ? "selected" : ""}>80 Questions (Marathon Mock)</option>
-              </select>
-            </div>
-            <div>
-              <label class="kicker">Time Allowed</label>
-              <input type="text" id="es-time-allowed" class="btn btn-ghost" style="width:100%;text-align:left;" value="${esc(es.timeAllowed)}" placeholder="e.g. 1 Hour 30 Mins">
-            </div>
-            <div>
-              <label class="kicker">Print Layout Format</label>
-              <select id="es-layout" class="btn btn-ghost" style="width:100%;text-align:left;">
-                <option value="2col" ${es.layout === "2col" ? "selected" : ""}>2 Columns (Compact / Low Photocopy Cost)</option>
-                <option value="1col" ${es.layout === "1col" ? "selected" : ""}>1 Column (Standard Spaced)</option>
-              </select>
-            </div>
-            <div>
-              <label class="kicker">Include Section B (Theory / Essay)</label>
-              <select id="es-include-secb" class="btn btn-ghost" style="width:100%;text-align:left;">
-                <option value="yes" ${es.includeSecB ? "selected" : ""}>Yes (Objective + Theory)</option>
-                <option value="no" ${!es.includeSecB ? "selected" : ""}>No (Objective Only / NCEE Style)</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px;">
-          <button class="btn btn-primary" data-action="generate-exam-btn">${state.loading ? "Generating..." : "Generate Complete Exam Paper →"}</button>
-          <button class="btn btn-sun" data-go="exam_library">📂 My Saved Exam Papers (${es.savedPapers.length})</button>
-          <button class="btn btn-ghost" data-go="broadsheet">📊 Class C.A. Broadsheet</button>
-        </div>
-      </div>`;
-  }
-
-  /* ==========================================================================
-     EXAM PAPER PREVIEW & LIVE QUESTION SWAPPER SCREEN
-     ========================================================================== */
-
-  function renderExamPreview() {
-    const es = state.examSetter;
-    const typeObj = window.NIGERIAN_EXAM_TYPES.find(t => t.id === es.examType) || { name: "Term Examination" };
-    const sName = (es.nceeBundle !== "none")
-      ? "NATIONAL COMMON ENTRANCE MULTI-SUBJECT BUNDLE"
-      : (window.SUBJECTS[es.subject] ? window.SUBJECTS[es.subject].name.toUpperCase() : "EXAMINATION");
-
-    return `
-      <div class="wrap">
-        <div class="topbar no-print">
-          <button class="btn btn-ghost btn-sm" data-go="exam_setter">← Back to Exam Setter</button>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;">
-            <button class="btn btn-sun btn-sm" data-action="save-exam-paper">💾 Save Paper</button>
-            <button class="btn btn-ghost btn-sm" data-action="shuffle-type" data-type="B">🔀 Type B</button>
-            <button class="btn btn-ghost btn-sm" data-action="open-add-q-modal">➕ Add Custom Q</button>
-            <button class="btn btn-ghost btn-sm" data-action="export-word-doc">📄 Export MS Word (.doc)</button>
-            <button class="btn btn-ghost btn-sm" data-go="omr_sheet">📄 OMR Shading Sheet</button>
-            <button class="btn btn-ghost btn-sm" data-go="marking_scheme">🔑 Marking Scheme &amp; TOS</button>
-            <button class="btn btn-ghost btn-sm" data-action="launch-cbt-exam">💻 Launch CBT Exam</button>
-            <button class="btn btn-primary" data-action="print-page">🖨️ Print Exam Paper</button>
-          </div>
-        </div>
-
-        <!-- OFFICIAL NIGERIAN EXAM QUESTION PAPER -->
-        <div class="exam-paper-container">
-          <header class="ng-exam-header">
-            <h1 class="ng-school-title">${esc(es.schoolName)}</h1>
-            <p class="ng-school-address">${esc(es.schoolAddress)}</p>
-            <p style="font-size:0.85rem;font-weight:700;color:#333;">${esc(es.schoolMotto)}</p>
-            <div class="ng-exam-session-banner">
-              ${esc(typeObj.name.toUpperCase())} — ${esc(es.session)} ACADEMIC SESSION
-            </div>
-            <div style="font-size:1.15rem;font-weight:800;margin-top:6px;text-transform:uppercase;">
-              SUBJECT: ${esc(sName)} · CLASS: PRIMARY ${es.grade} (BASIC ${es.grade}) ${es.paperType ? `· TYPE ${es.paperType}` : ""}
-            </div>
-
-            <table class="ng-exam-details-table">
-              <tr>
-                <td style="width:65%;"><strong>CANDIDATE'S NAME:</strong> ____________________________________________________</td>
-                <td style="width:35%;"><strong>CLASS / ARM:</strong> __________________</td>
-              </tr>
-              <tr>
-                <td><strong>EXAM NUMBER:</strong> ________________________</td>
-                <td><strong>TIME ALLOWED:</strong> ${esc(es.timeAllowed)}</td>
-              </tr>
-            </table>
-
-            <div class="ng-instructions-box">
-              <strong>INSTRUCTIONS TO CANDIDATES:</strong> ${esc(es.instructions)}
-            </div>
-          </header>
-
-          <!-- SECTION A BANNER -->
-          <div class="ng-section-banner">
-            SECTION A: OBJECTIVE QUESTIONS (${es.questions.length} MARKS)
-          </div>
-
-          <!-- SECTION A QUESTIONS -->
-          <main class="${es.layout === "2col" ? "exam-2col-layout" : ""}">
-            ${es.questions.map(function (q, i) {
-              return `
-                <article class="ng-q-item">
-                  <div class="ng-q-stem">${i + 1}. ${esc(q.q)}</div>
-                  <div class="ng-opts-grid">
-                    ${q.options.map(function (opt, oi) {
-                      return `<div><strong>(${LETTERS[oi].toLowerCase()})</strong> ${esc(opt)}</div>`;
-                    }).join("")}
-                  </div>
-                  <div class="no-print" style="margin-top:4px;display:flex;gap:6px;">
-                    <button class="chip" data-action="swap-q" data-idx="${i}" style="cursor:pointer;font-size:0.75rem;">🔄 Swap</button>
-                    <button class="chip" data-action="edit-q-modal" data-idx="${i}" style="cursor:pointer;font-size:0.75rem;">✏️ Edit</button>
-                    <button class="chip" data-action="delete-q" data-idx="${i}" style="cursor:pointer;font-size:0.75rem;color:#b91c1c;">🗑️</button>
-                  </div>
-                </article>`;
-            }).join("")}
-          </main>
-
-          <!-- SECTION B: THEORY / ESSAY QUESTIONS -->
-          ${es.includeSecB && es.theoryQuestions && es.theoryQuestions.length ? `
-            <div class="ng-section-banner" style="margin-top:32px;">
-              SECTION B: THEORY &amp; ESSAY QUESTIONS (ANSWER ANY THREE · 20 MARKS)
-            </div>
-            <section style="margin-top:16px;">
-              ${es.theoryQuestions.map(function (t, ti) {
-                return `
-                  <div class="ng-theory-item">
-                    <div style="font-weight:700;white-space:pre-line;">${esc(t.q)}</div>
-                  </div>`;
-              }).join("")}
-            </section>
-          ` : ""}
-        </div>
-
-        ${state.editModalOpen ? renderEditQuestionModal() : ""}
-      </div>`;
-  }
-
-  /* ==========================================================================
-     INTERACTIVE QUESTION EDITOR & ADD CUSTOM QUESTION MODAL
-     ========================================================================== */
-
-  function renderEditQuestionModal() {
-    const d = state.editQData;
-    const isNew = state.editingQIndex === null;
-
-    return `
-      <div class="edit-modal no-print">
-        <div class="edit-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--line);padding-bottom:10px;margin-bottom:12px;">
-            <h3>${isNew ? "➕ Add Custom School Question" : `✏️ Edit Question ${state.editingQIndex + 1}`}</h3>
-            <button class="btn btn-ghost btn-sm" data-action="close-edit-modal">✕ Close</button>
-          </div>
-
-          <label>Question Stem / Problem Text:</label>
-          <textarea id="edit-q-text" class="edit-textarea" placeholder="Type question text here...">${esc(d.q)}</textarea>
-
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;">
-            <div>
-              <label>Option A:</label>
-              <input type="text" id="edit-opt-0" class="edit-input" value="${esc(d.options[0])}">
-            </div>
-            <div>
-              <label>Option B:</label>
-              <input type="text" id="edit-opt-1" class="edit-input" value="${esc(d.options[1])}">
-            </div>
-            <div>
-              <label>Option C:</label>
-              <input type="text" id="edit-opt-2" class="edit-input" value="${esc(d.options[2])}">
-            </div>
-            <div>
-              <label>Option D:</label>
-              <input type="text" id="edit-opt-3" class="edit-input" value="${esc(d.options[3])}">
-            </div>
-          </div>
-
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;">
-            <div>
-              <label>Correct Answer Option:</label>
-              <select id="edit-ans-idx" class="edit-input">
-                <option value="0" ${d.answer === 0 ? "selected" : ""}>Option A</option>
-                <option value="1" ${d.answer === 1 ? "selected" : ""}>Option B</option>
-                <option value="2" ${d.answer === 2 ? "selected" : ""}>Option C</option>
-                <option value="3" ${d.answer === 3 ? "selected" : ""}>Option D</option>
-              </select>
-            </div>
-            <div>
-              <label>Bloom's Taxonomy Domain:</label>
-              <select id="edit-bloom" class="edit-input">
-                <option value="Remember" ${d.bloom === "Remember" ? "selected" : ""}>Remember (Recall/Knowledge)</option>
-                <option value="Understand" ${d.bloom === "Understand" ? "selected" : ""}>Understand (Comprehension)</option>
-                <option value="Apply" ${d.bloom === "Apply" ? "selected" : ""}>Apply (Problem Solving)</option>
-                <option value="Analyze" ${d.bloom === "Analyze" ? "selected" : ""}>Analyze (Critical Analysis)</option>
-              </select>
-            </div>
-          </div>
-
-          <label>Curriculum Subtopic:</label>
-          <input type="text" id="edit-topic" class="edit-input" value="${esc(d.topic || "Core Curriculum")}">
-
-          <label>Explanation &amp; Working Steps (for Teacher Marking Key):</label>
-          <textarea id="edit-explain" class="edit-textarea" placeholder="Step-by-step solution...">${esc(d.explain || "")}</textarea>
-
-          <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:16px;">
-            <button class="btn btn-ghost btn-sm" data-action="close-edit-modal">Cancel</button>
-            <button class="btn btn-primary btn-sm" data-action="save-edit-q-data">Save to Exam Paper →</button>
-          </div>
-        </div>
-      </div>`;
-  }
-
-  /* ==========================================================================
-     OFFICIAL OMR BUBBLE SHADING SHEET (NCEE / NECO / SUBEB STANDARD)
-     ========================================================================== */
-
-  function renderOMRSheet() {
-    const es = state.examSetter;
-    const count = es.questions.length || 40;
-    const colSize = 10;
-    const numCols = Math.ceil(count / colSize);
-
-    return `
-      <div class="wrap">
-        <div class="topbar no-print">
-          <button class="btn btn-ghost btn-sm" data-go="exam_preview">← Back to Exam Paper</button>
-          <button class="btn btn-primary" data-action="print-page">🖨️ Print OMR Shading Sheets</button>
-        </div>
-
-        <div class="omr-sheet-paper">
-          <header class="omr-header">
-            <h2 style="font-size:1.5rem;text-transform:uppercase;">${esc(es.schoolName)}</h2>
-            <h3 style="font-size:1.15rem;color:#333;">OFFICIAL CANDIDATE OMR SHADING / ANSWER SHEET</h3>
-            <p style="font-size:0.85rem;color:#555;">National Common Entrance &amp; Terminal Assessment Standard</p>
-          </header>
-
-          <div class="omr-candidate-grid">
-            <div><strong>CANDIDATE NAME:</strong> _______________________________</div>
-            <div><strong>EXAM NO:</strong> __________________</div>
-            <div><strong>CLASS:</strong> Primary ${es.grade}</div>
-            <div><strong>SUBJECT:</strong> ${esc(es.subject.toUpperCase())}</div>
-            <div><strong>DATE:</strong> ________________________</div>
-            <div><strong>PAPER TYPE:</strong> [ A ] [ B ] [ C ]</div>
-          </div>
-
-          <div style="font-size:0.85rem;margin-bottom:14px;border-left:4px solid #000;padding-left:10px;">
-            <strong>SHADING INSTRUCTIONS:</strong> Use HB pencil only. Shade completely inside the circle like this: <span class="omr-bubble" style="background:#000;color:#fff;">●</span>. Do not tick <span style="text-decoration:line-through;">✓</span> or cross <span style="text-decoration:line-through;">✕</span>. Erase completely to change an answer.
-          </div>
-
-          <div class="omr-columns" style="grid-template-columns: repeat(${numCols}, 1fr);">
-            ${Array.from({ length: numCols }).map(function (_, colIdx) {
-              const start = colIdx * colSize;
-              const end = Math.min(start + colSize, count);
-              let rowsHtml = "";
-              for (let i = start; i < end; i++) {
-                rowsHtml += `
-                  <div class="omr-row">
-                    <span style="width:24px;">${i + 1}.</span>
-                    <div style="display:flex;gap:6px;">
-                      <span class="omr-bubble">A</span>
-                      <span class="omr-bubble">B</span>
-                      <span class="omr-bubble">C</span>
-                      <span class="omr-bubble">D</span>
-                    </div>
-                  </div>`;
-              }
-              return `<div class="omr-col-block">${rowsHtml}</div>`;
-            }).join("")}
-          </div>
-
-          <div style="display:flex;justify-content:space-between;margin-top:36px;border-top:1px solid #000;padding-top:12px;font-size:0.85rem;">
-            <div><strong>INVIGILATOR'S SIGNATURE:</strong> ___________________________</div>
-            <div><strong>TOTAL SCORE:</strong> ________ / ${count}</div>
-          </div>
-        </div>
-      </div>`;
-  }
-
-  /* ==========================================================================
-     CONFIDENTIAL TEACHER MARKING SCHEME & TABLE OF SPECIFICATIONS (TOS)
-     ========================================================================== */
-
-  function renderMarkingScheme() {
-    const es = state.examSetter;
-    const totalQ = es.questions.length || 1;
-
-    let recallCnt = 0, underCnt = 0, applyCnt = 0, analCnt = 0;
-    const topicMap = {};
-
-    es.questions.forEach(q => {
-      const b = (q.bloom || "Understand").toLowerCase();
-      if (b.indexOf("rem") >= 0 || b.indexOf("rec") >= 0) recallCnt += 1;
-      else if (b.indexOf("app") >= 0) applyCnt += 1;
-      else if (b.indexOf("ana") >= 0) analCnt += 1;
-      else underCnt += 1;
-
-      const t = q.topic || "Core Foundations";
-      topicMap[t] = (topicMap[t] || 0) + 1;
-    });
-
-    return `
-      <div class="wrap">
-        <div class="topbar no-print">
-          <button class="btn btn-ghost btn-sm" data-go="exam_preview">← Back to Exam Paper</button>
-          <button class="btn btn-primary" data-action="print-page">🖨️ Print Marking Scheme &amp; TOS</button>
-        </div>
-
-        <div class="worksheet-paper">
-          <header style="text-align:center;border-bottom:3px double #000;padding-bottom:14px;margin-bottom:20px;">
-            <div class="kicker" style="color:#000;font-size:0.9rem;">CONFIDENTIAL · FOR TEACHERS &amp; EXAMINERS ONLY</div>
-            <h2 style="font-size:1.6rem;text-transform:uppercase;">${esc(es.schoolName)}</h2>
-            <h3 style="font-size:1.25rem;">TEACHER MARKING GUIDE &amp; TABLE OF SPECIFICATIONS</h3>
-            <p><strong>Primary ${es.grade} ${esc(es.subject.toUpperCase())} · ${esc(es.session)} Academic Session</strong></p>
-          </header>
-
-          <h3 style="margin-bottom:8px;">📊 TABLE OF SPECIFICATIONS (TEST BLUEPRINT &amp; COGNITIVE GRID)</h3>
-          <p style="font-size:0.85rem;color:#444;margin-bottom:10px;">Curriculum topic coverage vs. Bloom's Taxonomy cognitive domain distribution.</p>
-
-          <div class="table-scroll" style="margin-bottom:24px;">
-            <table class="report-table" style="border:1px solid #000;font-size:0.88rem;text-align:center;">
-              <thead>
-                <tr style="background:#f1f5f9;border-bottom:2px solid #000;">
-                  <th style="text-align:left;">Curriculum Domain</th>
-                  <th>Recall (LOTS)</th>
-                  <th>Understanding</th>
-                  <th>Application (HOTS)</th>
-                  <th>Analysis</th>
-                  <th>Total Questions</th>
-                  <th>Weighting (%)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="text-align:left;"><strong>Overall Exam Distribution</strong></td>
-                  <td>${recallCnt} (${Math.round((recallCnt / totalQ) * 100)}%)</td>
-                  <td>${underCnt} (${Math.round((underCnt / totalQ) * 100)}%)</td>
-                  <td>${applyCnt} (${Math.round((applyCnt / totalQ) * 100)}%)</td>
-                  <td>${analCnt} (${Math.round((analCnt / totalQ) * 100)}%)</td>
-                  <td><strong>${totalQ}</strong></td>
-                  <td><strong>100%</strong></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h3 style="margin-bottom:10px;">SECTION A: OBJECTIVE ANSWER KEY &amp; PEDAGOGICAL SOLUTIONS</h3>
-          <div class="table-scroll">
-            <table class="report-table" style="border:1px solid #000;font-size:0.88rem;">
-              <thead>
-                <tr style="border-bottom:2px solid #000;">
-                  <th style="width:40px;">Q#</th>
-                  <th style="width:55px;">Key</th>
-                  <th>Correct Answer</th>
-                  <th>Subtopic &amp; Bloom's Domain</th>
-                  <th>Step-by-Step Explanation &amp; Working</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${es.questions.map(function (q, i) {
-                  return `
-                    <tr style="border-bottom:1px solid #ddd;">
-                      <td><strong>${i + 1}</strong></td>
-                      <td><strong style="color:var(--teal);">${LETTERS[q.answer]}</strong></td>
-                      <td>${esc(q.options[q.answer])}</td>
-                      <td>${esc(q.topic || "Core")} · <em>${esc(q.bloom || "Understand")}</em></td>
-                      <td>${esc(q.explain)}</td>
-                    </tr>`;
-                }).join("")}
-              </tbody>
-            </table>
-          </div>
-
-          ${es.includeSecB && es.theoryQuestions && es.theoryQuestions.length ? `
-            <h3 style="margin:28px 0 10px;">SECTION B: THEORY MARKING SCHEME &amp; STEP MARKS ALLOCATION</h3>
-            <div class="table-scroll">
-              <table class="report-table" style="border:1px solid #000;font-size:0.88rem;">
-                <thead>
-                  <tr style="border-bottom:2px solid #000;">
-                    <th style="width:45px;">Item</th>
-                    <th>Model Solution &amp; Step-by-Step Marking Breakdown</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  ${es.theoryQuestions.map(function (t, ti) {
-                    return `
-                      <tr style="border-bottom:1px solid #ddd;">
-                        <td><strong>Q${ti + 1}</strong></td>
-                        <td style="white-space:pre-line;">${esc(t.answer)}</td>
-                      </tr>`;
-                  }).join("")}
-                </tbody>
-              </table>
-            </div>
-          ` : ""}
-        </div>
-      </div>`;
-  }
-
-  /* ==========================================================================
-     INDIVIDUAL PUPIL TERMLY CONTINUOUS ASSESSMENT REPORT SHEET
-     ========================================================================== */
-
-  function renderPupilReportCard() {
-    const es = state.examSetter;
-    const roster = state.classRoster || [];
-    const p = roster.find(x => x.id === state.selectedPupilId) || roster[0] || { name: "Chinedu Okafor", arm: "5 Gold", ca1: 18, ca2: 17, exam: 52 };
-
-    const ca1 = p.ca1 || 18;
-    const ca2 = p.ca2 || 17;
-    const exam = p.exam || 52;
-    const total = ca1 + ca2 + exam;
-    const ng = getNigerianGrade(total);
-
-    const subjectsList = [
-      { name: "English Studies", ca1: ca1, ca2: ca2, exam: exam },
-      { name: "Mathematics", ca1: Math.min(20, ca1 + 1), ca2: Math.min(20, ca2 - 1), exam: Math.min(60, exam + 2) },
-      { name: "Basic Science", ca1: ca1, ca2: ca2, exam: exam },
-      { name: "Social Studies", ca1: ca1, ca2: ca2, exam: exam },
-      { name: "Civic Education", ca1: ca1, ca2: ca2, exam: exam },
-      { name: "Computer Studies (ICT)", ca1: ca1, ca2: ca2, exam: exam },
-      { name: "Agricultural Science", ca1: ca1, ca2: ca2, exam: exam },
-      { name: "Cultural & Creative Arts (CCA)", ca1: ca1, ca2: ca2, exam: exam },
-      { name: "Physical & Health Education", ca1: ca1, ca2: ca2, exam: exam },
-      { name: "Home Economics", ca1: ca1, ca2: ca2, exam: exam },
-      { name: "Verbal Reasoning", ca1: ca1, ca2: ca2, exam: exam },
-      { name: "Quantitative Reasoning", ca1: ca1, ca2: ca2, exam: exam }
-    ];
-
-    return `
-      <div class="wrap">
-        <div class="topbar no-print">
-          <button class="btn btn-ghost btn-sm" data-go="broadsheet">← Back to Master Broadsheet</button>
-          <button class="btn btn-primary" data-action="print-page">🖨️ Print Pupil Terminal Report Card</button>
-        </div>
-
-        <div class="report-card-paper">
-          <header style="text-align:center;border-bottom:3px double #000;padding-bottom:12px;margin-bottom:16px;">
-            <h1 style="font-size:1.7rem;text-transform:uppercase;">${esc(es.schoolName)}</h1>
-            <p style="font-style:italic;font-size:0.95rem;">${esc(es.schoolAddress)}</p>
-            <p style="font-weight:bold;font-size:0.85rem;">${esc(es.schoolMotto)}</p>
-            <h2 style="font-size:1.25rem;border-top:1px solid #000;border-bottom:1px solid #000;padding:4px 0;margin-top:8px;">
-              CONTINUOUS ASSESSMENT TERMINAL REPORT SHEET — ${esc(es.session)} SESSION
-            </h2>
-          </header>
-
-          <div class="pupil-info-grid">
-            <div><strong>PUPIL'S FULL NAME:</strong> ${esc(p.name)}</div>
-            <div><strong>CLASS / ARM:</strong> ${esc(p.arm || "Primary 5 Gold")}</div>
-            <div><strong>GENDER:</strong> M / F</div>
-            <div><strong>TIMES SCHOOL OPENED:</strong> 120</div>
-            <div><strong>TIMES PRESENT:</strong> 118</div>
-            <div><strong>TERM:</strong> 2nd Term</div>
-          </div>
-
-          <h3 style="font-size:1.05rem;margin-bottom:6px;">ACADEMIC PERFORMANCE BY SUBJECT (COGNITIVE DOMAIN)</h3>
-          <div class="table-scroll">
-            <table class="report-table" style="border:1px solid #000;font-size:0.86rem;">
-              <thead>
-                <tr style="background:#f1f5f9;border-bottom:2px solid #000;">
-                  <th style="text-align:left;">Subjects</th>
-                  <th style="width:65px;">1st CA (20)</th>
-                  <th style="width:65px;">2nd CA (20)</th>
-                  <th style="width:65px;">Exam (60)</th>
-                  <th style="width:75px;">Total (100)</th>
-                  <th style="width:55px;">Grade</th>
-                  <th>Teacher's Subject Remark</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${subjectsList.map(function (s) {
-                  const sTot = s.ca1 + s.ca2 + s.exam;
-                  const sG = getNigerianGrade(sTot);
-                  return `
-                    <tr style="border-bottom:1px solid #ddd;">
-                      <td style="text-align:left;"><strong>${esc(s.name)}</strong></td>
-                      <td>${s.ca1}</td>
-                      <td>${s.ca2}</td>
-                      <td>${s.exam}</td>
-                      <td><strong>${sTot}</strong></td>
-                      <td><span class="grade-badge-${sG.grade.toLowerCase()}">${sG.grade}</span></td>
-                      <td style="font-size:0.8rem;">${esc(sG.remark)}</td>
-                    </tr>`;
-                }).join("")}
-              </tbody>
-            </table>
-          </div>
-
-          <div class="behavior-rating-grid">
-            <div style="border:1px solid #000;padding:10px;">
-              <strong>AFFECTIVE DOMAIN (BEHAVIOR)</strong>
-              <div style="margin-top:6px;display:grid;grid-template-columns:1fr 1fr;gap:4px;">
-                <div>Punctuality: 5/5</div>
-                <div>Neatness: 5/5</div>
-                <div>Politeness: 4/5</div>
-                <div>Honesty: 5/5</div>
-                <div>Relationship with Peers: 5/5</div>
-              </div>
-            </div>
-            <div style="border:1px solid #000;padding:10px;">
-              <strong>PSYCHOMOTOR SKILLS (PRACTICAL)</strong>
-              <div style="margin-top:6px;display:grid;grid-template-columns:1fr 1fr;gap:4px;">
-                <div>Handwriting: 4/5</div>
-                <div>Sports &amp; Athletics: 4/5</div>
-                <div>Verbal Fluency: 5/5</div>
-                <div>Drawing &amp; Crafts: 4/5</div>
-                <div>Musical Rhythm: 4/5</div>
-              </div>
-            </div>
-          </div>
-
-          <div style="border:1px solid #000;padding:10px;margin-top:10px;font-size:0.9rem;">
-            <div><strong>FORM TEACHER'S GENERAL REMARK:</strong> ${esc(ng.remark)} An attentive and hardworking scholar.</div>
-            <div style="margin-top:6px;"><strong>HEADTEACHER'S ENDORSEMENT:</strong> A very commendable result. Keep up the high standard!</div>
-            <div style="margin-top:8px;display:flex;justify-content:space-between;border-top:1px dashed #000;padding-top:6px;">
-              <span><strong>NEXT TERM RESUMPTION DATE:</strong> 4th May, 2026</span>
-              <span><strong>HEADTEACHER'S SIGNATURE &amp; STAMP:</strong> _____________________</span>
-            </div>
-          </div>
-        </div>
-      </div>`;
-  }
-
-  /* ==========================================================================
-     NIGERIAN CBT EXAM HALL VIEW
-     ========================================================================== */
-
-  function renderCBTHall() {
-    const cbt = state.cbt;
-    const total = cbt.questions.length;
-
-    if (cbt.submitted) {
-      return `
-        <div class="wrap">
-          <div class="result">
-            <div class="letter-mark">${cbt.gradeLetter}</div>
-            <div class="kicker">CBT Examination Completed</div>
-            <h2 class="section-title">${esc(cbt.candidateName || "Candidate")} — Result Slip</h2>
-            <p class="sub">${esc(cbt.remark)}</p>
-
-            <div class="metric-grid">
-              <div><b>${cbt.score} / ${cbt.total}</b><span>Raw Score</span></div>
-              <div><b>${cbt.percentage}%</b><span>Percentage</span></div>
-              <div><b>Grade ${cbt.gradeLetter}</b><span>Nigerian Grade</span></div>
-              <div><b>${Math.round((cbt.percentage / 100) * 60)} / 60</b><span>Terminal Exam Mark</span></div>
-            </div>
-
-            <div class="top-actions" style="justify-content:center;gap:12px;margin-top:24px;">
-              <button class="btn btn-primary" data-go="broadsheet">📊 View Class Master Broadsheet</button>
-              <button class="btn btn-ghost" data-go="exam_preview">← Back to Exam Paper</button>
-            </div>
-          </div>
-        </div>`;
-    }
-
-    const q = cbt.questions[cbt.index];
-    if (!q) return `<div class="wrap"><p>No question loaded.</p></div>`;
-
-    return `
-      <div class="wrap">
-        <div class="topbar no-print">
-          <div>
-            <strong>Candidate: ${esc(cbt.candidateName || "Student")}</strong> · ${esc(cbt.candidateArm || "Primary 5")}
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <span class="chip on" style="font-size:1.1rem;background:#fee2e2;color:#991b1b;border-color:#f87171;">
-              ⏱ Time Left: <strong id="cbt-timer-disp">${fmtCbtTime(cbt.timeLeft)}</strong>
-            </span>
-          </div>
-        </div>
-
-        <div class="cbt-hall-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-            <span class="badge-tag">${esc(q.topic || "General")}</span>
-            <span style="font-weight:800;color:var(--muted);">Question ${cbt.index + 1} of ${total}</span>
-          </div>
-
-          <h2 class="question" style="font-size:1.5rem;margin-bottom:20px;">${cbt.index + 1}. ${esc(q.q)}</h2>
-
-          <div class="options">
-            ${q.options.map(function (opt, oi) {
-              const isSelected = cbt.answers[cbt.index] === oi;
-              return `
-                <button class="opt ${isSelected ? "correct" : ""}" data-action="cbt-pick-opt" data-opt="${oi}">
-                  <span class="badge">${LETTERS[oi]}</span>
-                  <span>${esc(opt)}</span>
-                </button>`;
-            }).join("")}
-          </div>
-
-          <div class="cbt-nav-palette">
-            ${cbt.questions.map(function (_, pi) {
-              let cls = "cbt-palette-btn";
-              if (pi === cbt.index) cls += " current";
-              if (cbt.answers[pi] != null) cls += " answered";
-              if (cbt.flagged[pi]) cls += " flagged";
-              return `<button class="${cls}" data-action="cbt-jump" data-idx="${pi}">${pi + 1}</button>`;
-            }).join("")}
-          </div>
-
-          <div class="quiz-actions" style="margin-top:24px;">
-            <button class="btn btn-ghost" data-action="cbt-prev" ${cbt.index === 0 ? "disabled" : ""}>← Previous</button>
-            <button class="btn btn-ghost" data-action="cbt-flag">${cbt.flagged[cbt.index] ? "🚩 Unflag" : "🏳️ Flag for Review"}</button>
-            ${cbt.index < total - 1
-              ? `<button class="btn btn-primary" data-action="cbt-next">Next Question →</button>`
-              : `<button class="btn btn-sun" data-action="cbt-submit-confirm">Submit Exam Paper 📤</button>`}
-          </div>
-        </div>
-      </div>`;
-  }
-
-  /* ==========================================================================
-     CLASS CONTINUOUS ASSESSMENT (C.A.) MASTER SCORE SHEET & BROADSHEET
-     ========================================================================== */
-
-  function renderBroadsheet() {
-    const roster = state.classRoster || [];
-    const es = state.examSetter;
-
-    const computedList = roster.map(function (p) {
-      const ca1 = p.ca1 || 0;
-      const ca2 = p.ca2 || 0;
-      const exam = p.exam || 0;
-      const total = ca1 + ca2 + exam;
-      const ng = getNigerianGrade(total);
-      return Object.assign({}, p, { total, gradeLetter: ng.grade, remark: ng.remark });
-    }).sort((a, b) => b.total - a.total);
-
-    return `
-      <div class="wrap">
-        <div class="topbar no-print">
-          <button class="icon-btn" data-go="exam_setter">←</button>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;">
-            <button class="btn btn-sun btn-sm" data-action="add-roster-pupil">+ Add Pupil Record</button>
-            <button class="btn btn-ghost btn-sm" data-action="export-class-csv">📊 Export CSV</button>
-            <button class="btn btn-primary btn-sm" data-action="print-page">🖨️ Print Master Broadsheet</button>
-          </div>
-        </div>
-
-        <div class="worksheet-paper">
-          <header style="text-align:center;border-bottom:3px double #000;padding-bottom:14px;margin-bottom:20px;">
-            <h2 style="font-size:1.6rem;text-transform:uppercase;">${esc(es.schoolName)}</h2>
-            <h3 style="font-size:1.25rem;">CONTINUOUS ASSESSMENT MASTER SCORE SHEET (BROADSHEET)</h3>
-            <p><strong>Primary ${es.grade} · ${esc(es.subject.toUpperCase())} · ${esc(es.session)} Academic Session</strong></p>
-          </header>
-
-          <div class="table-scroll">
-            <table class="report-table" style="border:1px solid #000;font-size:0.9rem;">
-              <thead>
-                <tr style="border-bottom:2px solid #000;background:#f1f5f9;">
-                  <th style="width:40px;">Pos</th>
-                  <th>Candidate Name</th>
-                  <th>Class / Arm</th>
-                  <th style="width:75px;">1st C.A. (20)</th>
-                  <th style="width:75px;">2nd C.A. (20)</th>
-                  <th style="width:75px;">Exam (60)</th>
-                  <th style="width:85px;">Total (100)</th>
-                  <th style="width:65px;">Grade</th>
-                  <th>Teacher's Remark</th>
-                  <th class="no-print">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${computedList.map(function (p, idx) {
-                  return `
-                    <tr style="border-bottom:1px solid #ddd;">
-                      <td><strong>${idx + 1}</strong></td>
-                      <td><strong>${esc(p.name)}</strong></td>
-                      <td>${esc(p.arm || "P5")}</td>
-                      <td>${p.ca1}</td>
-                      <td>${p.ca2}</td>
-                      <td>${p.exam}</td>
-                      <td><strong style="color:var(--teal);">${p.total}</strong></td>
-                      <td><span class="grade-badge-${p.gradeLetter.toLowerCase()}">${p.gradeLetter}</span></td>
-                      <td style="font-size:0.82rem;">${esc(p.remark)}</td>
-                      <td class="no-print">
-                        <button class="btn btn-ghost btn-sm" data-action="view-pupil-report" data-pid="${p.id}">Report Card 📜</button>
-                      </td>
-                    </tr>`;
-                }).join("")}
-              </tbody>
-            </table>
-          </div>
-
-          <div style="display:flex;justify-content:space-around;margin-top:40px;border-top:1px solid #000;padding-top:16px;">
-            <div>
-              <p>______________________________________</p>
-              <strong style="font-size:0.85rem;">FORM TEACHER'S SIGNATURE &amp; DATE</strong>
-            </div>
-            <div>
-              <p>______________________________________</p>
-              <strong style="font-size:0.85rem;">HEADTEACHER / PRINCIPAL'S STAMP</strong>
-            </div>
-          </div>
-        </div>
-      </div>`;
-  }
-
-  /* ==========================================================================
-     SAVED EXAM PAPERS ARCHIVE & LIBRARY
-     ========================================================================== */
-
-  function renderExamLibrary() {
-    const list = state.examSetter.savedPapers || [];
-    return `
-      <div class="wrap">
-        ${renderTopBar("exam_setter")}
-        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Exam Setter", go: "exam_setter" }, { label: "My Exam Papers Library" }])}
-        <h2 class="section-title">📂 Saved Examination Papers Library</h2>
-        <p class="sub">Reopen, re-print, or export previous examination papers created for your school.</p>
-
-        ${list.length ? `
-          <div class="grid-grades" style="margin-top:20px;">
-            ${list.map(function (paper, idx) {
-              return `
-                <div class="card-btn">
-                  <h4>📄 ${esc(paper.title)}</h4>
-                  <p style="font-size:0.85rem;color:var(--muted);margin:6px 0 14px;">Saved on ${paper.savedAt} · ${paper.config.questions ? paper.config.questions.length : 40} Questions</p>
-                  <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                    <button class="btn btn-primary btn-sm" data-action="load-saved-paper" data-idx="${idx}">Open &amp; Print →</button>
-                    <button class="btn btn-coral btn-sm" data-action="delete-saved-paper" data-idx="${idx}">Delete</button>
-                  </div>
-                </div>`;
-            }).join("")}
-          </div>
-        ` : `
-          <div class="q-card" style="text-align:center;padding:40px;">
-            <h3>📭 No Saved Exam Papers Yet</h3>
-            <p class="sub">Generate an exam paper in the Exam Setter and click "Save Paper" to build your school archive.</p>
-            <button class="btn btn-primary" data-go="exam_setter">Go to Exam Setter →</button>
           </div>
         `}
       </div>`;
@@ -2821,12 +2655,20 @@
             <h3>📊 2. Class Master Broadsheet</h3>
             <p>Record 1st C.A., 2nd C.A., and Exam scores. Automatic Nigerian grading (A-F), positions, and remarks.</p>
           </div>
+          <div class="card-btn" data-go="teams">
+            <h3>🏫 3. Smartboard Team Scoreboard &amp; Buzzer</h3>
+            <p>Gamify whole-class review with 4 House Teams, timer, sound buzzer, and scoreboards.</p>
+          </div>
           <div class="card-btn" data-go="projector">
-            <h3>📽️ 3. Smartboard Projector Mode</h3>
+            <h3>📽️ 4. Smartboard Inquiry Projector</h3>
             <p>High-visibility classroom projection mode for smartboards and live class polling.</p>
           </div>
+          <div class="card-btn" data-go="analytics">
+            <h3>📊 5. Psychometric Radar &amp; Velocity</h3>
+            <p>Cognitive domain radar charts, 30-day learning velocity heatmap, and calibration curves.</p>
+          </div>
           <div class="card-btn" data-action="export-class-csv">
-            <h3>📥 4. Export Class CSV Gradebook</h3>
+            <h3>📥 6. Export Class CSV Gradebook</h3>
             <p>Download complete student performance metrics and study hours for school records.</p>
           </div>
         </div>
@@ -2846,7 +2688,7 @@
       let cls = "projector-opt";
       if (isRev && i === q.answer) cls += " correct";
       return `<div class="${cls}"><strong>(${LETTERS[i]})</strong> ${esc(opt)}</div>`;
-    }).join("") ;
+    }).join("");
 
     return `
       <div class="wrap">
@@ -2869,10 +2711,6 @@
         </div>
       </div>`;
   }
-
-  /* ==========================================================================
-     PROFESSOR-GRADE PSYCHOMETRIC DIAGNOSTIC DOSSIER
-     ========================================================================== */
 
   function renderReport() {
     const g = state.grade || 5;
@@ -3032,6 +2870,257 @@
       </div>`;
   }
 
+  function renderTopBar(backTarget) {
+    const backBtn = backTarget
+      ? `<button class="icon-btn" data-go="${backTarget}" aria-label="Go back">←</button>`
+      : `<div class="brand" data-go="home"><img src="images/favicon.png" alt=""><span>Super Quiz</span></div>`;
+
+    return `
+      <header class="topbar no-print">
+        <div style="display:flex;align-items:center;gap:12px;">
+          ${backBtn}
+          <span class="chip" data-go="account" style="cursor:pointer;">👤 ${esc(state.name || "Scholar")} · P${state.grade || 5}</span>
+        </div>
+        <div class="top-actions">
+          <button class="btn btn-sun btn-sm" data-go="exam_setter">🇳🇬 Set Exam Paper</button>
+          <button class="icon-btn" data-go="lab" title="Interactive Manipulatives & STEM Lab">🧪 Lab</button>
+          <button class="icon-btn" data-go="duel" title="2-Player Speed Duel">⚔️ Duel</button>
+          <button class="icon-btn" data-action="toggle-sound" title="Toggle sound FX">${settings.sound ? "🔊" : "🔇"}</button>
+          <button class="icon-btn" data-go="teachers" title="Teacher Hub & Class Broadsheet">👨‍🏫</button>
+          <button class="icon-btn" data-go="flashcards" title="Spaced Recall Flashcards">🗂️</button>
+          <button class="icon-btn" data-go="account" title="Trophy Showcase & Badges">🏆</button>
+          <button class="icon-btn" data-go="settings" title="Settings">⚙️</button>
+        </div>
+      </header>`;
+  }
+
+  function renderBreadcrumbs(crumbs) {
+    const list = crumbs.map(function (c, i) {
+      if (i === crumbs.length - 1) return `<span>${esc(c.label)}</span>`;
+      return `<button data-go="${c.go}">${esc(c.label)}</button> &gt; `;
+    }).join("");
+    return `<nav class="crumbs no-print" aria-label="Breadcrumb">${list}</nav>`;
+  }
+
+  function renderHome() {
+    const r = rankFor(progress.xp);
+
+    return `
+      <div class="wrap">
+        ${renderTopBar(null)}
+        <section class="hero">
+          <div>
+            <div class="kicker">Universal Basic Education · NERDC Aligned · 100% Offline</div>
+            <h1>Primary Super Quiz</h1>
+            <p class="lead">World-class retrieval practice and official Nigerian Examination Setter for Primary 1–6 (Basic 1–6). 16 subjects, 9,600 unique curriculum questions, 2-column printable exam papers, OMR shading sheets, and CBT exam hall.</p>
+            <div class="top-actions" style="margin-top:16px;">
+              <button class="btn btn-primary" data-action="start">Start Practising →</button>
+              <button class="btn btn-sun" data-go="exam_setter">🇳🇬 Set Nigerian Exam Paper</button>
+              <button class="btn btn-ghost" data-go="lab">🧪 Learning Lab</button>
+              <button class="btn btn-ghost" data-go="duel">⚔️ 2-Player Duel</button>
+              <button class="btn btn-ghost" data-go="broadsheet">Teacher Broadsheet 📊</button>
+            </div>
+          </div>
+          <div class="hero-art">
+            <img src="images/hero-kids.jpg" alt="Students engaging in learning">
+            <span class="art-badge">16 Subjects · 9,600 MCQs</span>
+          </div>
+        </section>
+
+        <div class="home-stats">
+          <div class="stat-tile"><b>${progress.xp}</b><span>Total XP</span></div>
+          <div class="stat-tile"><b>${progress.streak}🔥</b><span>Day Streak</span></div>
+          <div class="stat-tile"><b>${progress.quizzes}</b><span>Quizzes</span></div>
+          <div class="stat-tile"><b>${accuracyPct()}%</b><span>Accuracy</span></div>
+          <div class="stat-tile"><b>${r.icon}</b><span>${r.name}</span></div>
+          <div class="stat-tile"><b>${fmtDur(progress.studySec || 0)}</b><span>Study Time</span></div>
+        </div>
+
+        <h2 class="section-title" style="margin-top:28px;">Learning &amp; Assessment Modes</h2>
+        <p class="sub">Choose an active learning path designed by cognitive scientists and primary educators.</p>
+
+        <div class="play-row">
+          <div class="play-tile" style="border-top:5px solid #0e7c76;background:#f0fdfa;" data-go="exam_setter">
+            <span class="ico">🇳🇬</span>
+            <strong>Nigerian Exam Center</strong>
+            <p>Set formal 1st/2nd/3rd term exams, NCEE mocks, printable OMR bubble sheets & Section B theory.</p>
+          </div>
+          <div class="play-tile" style="border-top:5px solid #8b5cf6;background:#f5f3ff;" data-go="lab">
+            <span class="ico">🧪</span>
+            <strong>STEM Learning Lab</strong>
+            <p>Interactive fraction visualizers, place value abacus, clock trainer, and 36 states explorer.</p>
+          </div>
+          <div class="play-tile" style="border-top:5px solid #e07a5f;background:#fff1f2;" data-go="duel">
+            <span class="ico">⚔️</span>
+            <strong>2-Player Speed Duel</strong>
+            <p>Pass-and-play split-screen race between two pupils on the same tablet or desktop.</p>
+          </div>
+          <div class="play-tile daily" data-action="launch-daily">
+            <span class="ico">☀️</span>
+            <strong>Daily Challenge</strong>
+            <p>10 multidisciplinary questions to build continuous daily learning habit.</p>
+          </div>
+          <div class="play-tile smart" data-action="launch-smart">
+            <span class="ico">🧠</span>
+            <strong>Smart Practice</strong>
+            <p>Adaptive retrieval targeting previous error patterns and weak areas.</p>
+          </div>
+          <div class="play-tile flash" data-go="flashcards">
+            <span class="ico">🗂️</span>
+            <strong>Spaced Recall</strong>
+            <p>Leitner 3-box active flashcard revision for long-term memory mastery.</p>
+          </div>
+        </div>
+
+        <section class="trust-row" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:16px;margin:32px 0;">
+          <div class="stat-tile"><b>16</b><span>NERDC Subjects</span></div>
+          <div class="stat-tile"><b>9,600</b><span>100% Unique Questions</span></div>
+          <div class="stat-tile"><b>P1–P6</b><span>Basic 1 to Basic 6</span></div>
+          <div class="stat-tile"><b>NCEE</b><span>Common Entrance Ready</span></div>
+        </section>
+
+        ${renderFooter()}
+      </div>`;
+  }
+
+  function renderGrades() {
+    const cards = [1, 2, 3, 4, 5, 6].map(function (g) {
+      const info = window.GRADE_INFO[g];
+      const isCurrent = state.grade === g;
+      return `
+        <button class="card-btn ${isCurrent ? "on" : ""}" data-set-grade="${g}">
+          <div class="grade-no">${g}</div>
+          <h3>${info.label}</h3>
+          <p style="font-weight:700;color:var(--teal);margin-bottom:4px;">${info.international}</p>
+          <p>${info.ages} · ${info.blurb}</p>
+        </button>`;
+    }).join("");
+
+    return `
+      <div class="wrap">
+        ${renderTopBar("home")}
+        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Select Class Level" }])}
+        <div class="kicker">Universal Basic Education Standards</div>
+        <h2 class="section-title">Select Your Class Grade (Basic 1–6)</h2>
+        <p class="sub">Questions and cognitive difficulty are developmentally calibrated from Primary 1 to Primary 6.</p>
+        <div class="grid-grades">${cards}</div>
+      </div>`;
+  }
+
+  function renderSubjects() {
+    const g = state.grade || 5;
+    const group = state.group || "all";
+    const qy = (state.query || "").toLowerCase().trim();
+
+    const groupBtns = window.SUBJECT_GROUPS.map(function (grp) {
+      return `<button class="chip ${group === grp.id ? "on" : ""}" data-set-group="${grp.id}">${grp.label}</button>`;
+    }).join("");
+
+    const subjCards = Object.keys(window.SUBJECTS).map(function (k) {
+      const s = window.SUBJECTS[k];
+      if (group !== "all" && s.group !== group) return "";
+      if (qy && s.name.toLowerCase().indexOf(qy) < 0 && s.desc.toLowerCase().indexOf(qy) < 0) return "";
+
+      const best = progress.best[`${g}/${k}`];
+      const bestTxt = best ? `Best: ${best.pct}% (${best.score}/${best.total})` : "Not attempted yet";
+
+      return `
+        <div class="subject-card" data-pick-subj="${k}">
+          <div class="sub-head">
+            <span class="sub-icon">${s.icon}</span>
+            <span class="chip">${s.short}</span>
+          </div>
+          <h3>${s.name}</h3>
+          <p>${s.desc}</p>
+          <div style="font-size:0.8rem;font-weight:700;color:var(--teal);margin-bottom:12px;">${bestTxt}</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;">
+            <button class="btn btn-primary btn-sm" data-pick-subj="${k}">Practice →</button>
+            <button class="btn btn-ghost btn-sm" data-drill-subj="${k}">Subtopics</button>
+          </div>
+        </div>`;
+    }).join("");
+
+    return `
+      <div class="wrap">
+        ${renderTopBar("grade")}
+        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: window.GRADE_INFO[g].label, go: "grade" }, { label: "Subjects" }])}
+        <div class="kicker">${window.GRADE_INFO[g].label} · ${window.GRADE_INFO[g].international}</div>
+        <h2 class="section-title">Select a Subject Domain</h2>
+        <p class="sub">16 comprehensive subjects aligned with NERDC and international primary frameworks.</p>
+        <div class="chip-group">${groupBtns}</div>
+        <div style="margin-bottom:20px;">
+          <input type="text" id="subj-search" class="btn btn-ghost" style="width:100%;max-width:400px;text-align:left;" placeholder="🔍 Search subjects or topics..." value="${esc(state.query)}">
+        </div>
+        <div class="grid-subjects">${subjCards || `<div class="empty-state">No subjects matched your filter.</div>`}</div>
+      </div>`;
+  }
+
+  function renderTopicDrill() {
+    const s = window.SUBJECTS[state.subject] || { name: "Subject Topics", icon: "📘" };
+    const g = state.grade || 5;
+
+    return `
+      <div class="wrap">
+        ${renderTopBar("subject")}
+        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: window.GRADE_INFO[g].label, go: "grade" }, { label: s.name, go: "subject" }, { label: "Subtopics" }])}
+        <div class="kicker">${s.icon} ${s.name} · Primary ${g}</div>
+        <h2 class="section-title">Focused Subtopic Mastery</h2>
+        <p class="sub">Select a targeted curriculum subtopic to practice specific learning objectives and skills.</p>
+
+        <div class="grid-grades" style="margin-top:20px;">
+          ${state.availableTopics.map(function (top) {
+            return `
+              <div class="card-btn">
+                <h4>🎯 ${esc(top.name)}</h4>
+                <p style="color:var(--muted);font-size:0.88rem;margin:8px 0 14px;">${top.count} questions available in bank</p>
+                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                  <button class="btn btn-primary btn-sm" data-start-topic-quiz="${esc(top.name)}" data-topic-len="10">10 Questions</button>
+                  <button class="btn btn-ghost btn-sm" data-start-topic-quiz="${esc(top.name)}" data-topic-len="20">20 Questions</button>
+                </div>
+              </div>`;
+          }).join("")}
+        </div>
+      </div>`;
+  }
+
+  function renderLengthSetup() {
+    const s = window.SUBJECTS[state.subject] || { name: "Subject", icon: "📘" };
+    const g = state.grade || 5;
+
+    const lengthBtns = window.QUIZ_LENGTHS.map(function (n) {
+      const isSel = state.length === n;
+      return `<button class="btn ${isSel ? "btn-primary" : "btn-ghost"}" data-set-len="${n}">${n} Questions</button>`;
+    }).join("");
+
+    const modes = [
+      { id: "practice", title: "Practice Mode", desc: "Formative: Instant feedback, hints, 50/50, and step-by-step explanations." },
+      { id: "exam", title: "Exam Mode", desc: "Summative: Simulates real exam conditions with no hints until final score." },
+      { id: "timed", title: "Timed Challenge", desc: "Fluency: 20 seconds per question to build cognitive automaticity." }
+    ].map(function (m) {
+      return `
+        <button class="card-btn ${state.mode === m.id ? "on" : ""}" data-set-mode="${m.id}">
+          <h4>${m.title}</h4>
+          <p>${m.desc}</p>
+        </button>`;
+    }).join("");
+
+    return `
+      <div class="wrap">
+        ${renderTopBar("subject")}
+        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: window.GRADE_INFO[g].label, go: "grade" }, { label: s.name, go: "subject" }, { label: "Setup" }])}
+        <div class="kicker">${window.GRADE_INFO[g].label} · ${s.icon} ${s.name}</div>
+        <h2 class="section-title">Configure Practice Session</h2>
+        ${state.selectedTopic ? `<div class="hint-box">🎯 Topic Filter: <strong>${esc(state.selectedTopic)}</strong> <button class="btn btn-ghost btn-sm" data-clear-topic style="margin-left:8px;">Clear Filter</button></div>` : ""}
+        <div class="grid-grades" style="margin-bottom:24px;">${modes}</div>
+        <h3 style="margin-bottom:12px;font-size:1.1rem;">Number of Questions</h3>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;">${lengthBtns}</div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <button class="btn btn-primary" data-action="launch-quiz">${state.loading ? "Loading..." : "Begin Quiz →"}</button>
+          <button class="btn btn-ghost" data-go="subject">Change Subject</button>
+        </div>
+      </div>`;
+  }
+
   function renderFooter() {
     return `
       <footer class="site-footer no-print" style="border-top:2px solid var(--line);margin-top:48px;padding-top:24px;text-align:center;color:var(--muted);font-size:0.9rem;">
@@ -3039,6 +3128,8 @@
         <p style="margin-top:6px;">16 Subjects · 9,600 Unique Questions · Official Nigerian Exam Setter · Free &amp; Offline PWA</p>
         <div style="display:flex;gap:14px;justify-content:center;margin-top:12px;flex-wrap:wrap;">
           <button class="crumbs button" data-go="exam_setter">Set Nigerian Exam</button> ·
+          <button class="crumbs button" data-go="lab">Learning Lab</button> ·
+          <button class="crumbs button" data-go="duel">2-Player Duel</button> ·
           <button class="crumbs button" data-go="broadsheet">Class Broadsheet</button> ·
           <button class="crumbs button" data-go="why">Learning Science</button> ·
           <button class="crumbs button" data-go="curriculum">Curriculum Map</button> ·
@@ -3145,6 +3236,10 @@
       case "report": html = renderReport(); break;
       case "certificate": html = renderCertificate(); break;
       case "settings": html = renderSettings(); break;
+      case "lab": html = renderLab(); break;
+      case "duel": html = renderDuel(); break;
+      case "teams": html = renderTeams(); break;
+      case "analytics": html = renderAnalytics(); break;
       default: html = renderHome();
     }
     app.innerHTML = html;
@@ -3153,6 +3248,13 @@
     if (state.screen === "quiz" && state.scratchpadOpen) {
       setTimeout(initScratchpadCanvas, 100);
     }
+    if (state.screen === "lab") {
+      if (state.lab.tab === "frac") setTimeout(renderFractionCanvas, 50);
+      else if (state.lab.tab === "clock") setTimeout(renderClockCanvas, 50);
+    }
+    if (state.screen === "analytics") {
+      setTimeout(renderRadarCanvas, 50);
+    }
   }
 
   /* ==========================================================================
@@ -3160,7 +3262,7 @@
      ========================================================================== */
 
   document.addEventListener("click", function (e) {
-    const target = e.target.closest("[data-action], [data-go], [data-set-grade], [data-pick-subj], [data-drill-subj], [data-start-topic-quiz], [data-set-group], [data-set-len], [data-set-mode], [data-opt], [data-set-conf], [data-set-stool], [data-set-scolor], [data-rate-card], [data-set-theme], [data-set-font], [data-set-cur-tab], [data-switch-profile], [data-set-rfilter]");
+    const target = e.target.closest("[data-action], [data-go], [data-set-grade], [data-pick-subj], [data-drill-subj], [data-start-topic-quiz], [data-set-group], [data-set-len], [data-set-mode], [data-opt], [data-set-conf], [data-set-stool], [data-set-scolor], [data-rate-card], [data-set-theme], [data-set-font], [data-set-cur-tab], [data-switch-profile], [data-set-rfilter], [data-set-lab-tab], [data-set-unit-cat], [data-set-state-zone]");
     if (!target) return;
 
     if (target.dataset.go) {
@@ -3219,6 +3321,24 @@
 
     if (target.dataset.setCurTab) {
       state.curriculumTab = target.dataset.setCurTab;
+      render();
+      return;
+    }
+
+    if (target.dataset.setLabTab) {
+      state.lab.tab = target.dataset.setLabTab;
+      render();
+      return;
+    }
+
+    if (target.dataset.setUnitCat) {
+      state.lab.unitCat = target.dataset.setUnitCat;
+      render();
+      return;
+    }
+
+    if (target.dataset.setStateZone) {
+      state.lab.stateZone = target.dataset.setStateZone;
       render();
       return;
     }
@@ -3392,6 +3512,90 @@
         break;
       case "print-page":
         window.print();
+        break;
+
+      // ==========================================
+      // LAB MANIPULATIVES ACTIONS
+      // ==========================================
+      case "abacus-adj":
+        const col = target.dataset.col;
+        const v = Number(target.dataset.val);
+        if (col === "Th") state.lab.abacusTh = Math.max(0, Math.min(9, state.lab.abacusTh + v));
+        else if (col === "H") state.lab.abacusH = Math.max(0, Math.min(9, state.lab.abacusH + v));
+        else if (col === "T") state.lab.abacusT = Math.max(0, Math.min(9, state.lab.abacusT + v));
+        else if (col === "U") state.lab.abacusU = Math.max(0, Math.min(9, state.lab.abacusU + v));
+        render();
+        break;
+
+      case "set-times-cell":
+        state.lab.timesRow = Number(target.dataset.r);
+        state.lab.timesCol = Number(target.dataset.c);
+        render();
+        break;
+
+      case "adj-clock":
+        const cType = target.dataset.type;
+        const cVal = Number(target.dataset.val);
+        if (cType === "h") {
+          state.lab.clockHour = (state.lab.clockHour + cVal + 24) % 24;
+        } else if (cType === "m") {
+          let newM = state.lab.clockMinute + cVal;
+          if (newM >= 60) {
+            newM %= 60;
+            state.lab.clockHour = (state.lab.clockHour + 1) % 24;
+          } else if (newM < 0) {
+            newM = (newM + 60) % 60;
+            state.lab.clockHour = (state.lab.clockHour + 23) % 24;
+          }
+          state.lab.clockMinute = newM;
+        }
+        render();
+        break;
+
+      // ==========================================
+      // 2-PLAYER DUEL ACTIONS
+      // ==========================================
+      case "launch-duel":
+        startDuelMatch();
+        break;
+
+      case "duel-p1-pick":
+        submitDuelAnswer(1, Number(target.dataset.opt));
+        break;
+
+      case "duel-p2-pick":
+        submitDuelAnswer(2, Number(target.dataset.opt));
+        break;
+
+      case "duel-next":
+        nextDuelRound();
+        break;
+
+      case "quit-duel":
+        state.duel.active = false;
+        state.screen = "home";
+        render();
+        break;
+
+      // ==========================================
+      // CLASSROOM TEAMS ACTIONS
+      // ==========================================
+      case "adj-team":
+        const tmKey = "team" + target.dataset.t;
+        const tmV = Number(target.dataset.v);
+        if (state.teams[tmKey]) {
+          state.teams[tmKey].score = Math.max(0, state.teams[tmKey].score + tmV);
+          if (tmV > 0) playCorrect();
+          render();
+        }
+        break;
+
+      case "sound-buzzer":
+        playBuzzer();
+        break;
+
+      case "sound-fanfare":
+        playBadgeFanfare();
         break;
 
       // ==========================================
@@ -3622,7 +3826,7 @@
             ca2: Math.min(20, c2),
             exam: Math.min(60, ex)
           });
-          localStorage.setItem("psq-class-roster-v2", JSON.stringify(state.classRoster));
+          localStorage.setItem("psq-class-roster-v3", JSON.stringify(state.classRoster));
           toast("Pupil record added to broadsheet.");
           render();
         }
@@ -3716,6 +3920,21 @@
         el.setSelectionRange(el.value.length, el.value.length);
       }
     }
+    if (e.target.id === "frac-num-range") {
+      state.lab.fracNum = Number(e.target.value);
+      renderFractionCanvas();
+    }
+    if (e.target.id === "frac-den-range") {
+      state.lab.fracDen = Number(e.target.value);
+      if (state.lab.fracNum > state.lab.fracDen) state.lab.fracNum = state.lab.fracDen;
+      render();
+    }
+    if (e.target.id === "lab-unit-input") {
+      state.lab.unitVal = Number(e.target.value) || 0;
+      render();
+      const el = document.getElementById("lab-unit-input");
+      if (el) el.focus();
+    }
   });
 
   document.addEventListener("change", function (e) {
@@ -3736,7 +3955,7 @@
     }
   });
 
-  // Keyboard Shortcuts (Universal Accessibility)
+  // Keyboard Shortcuts (Universal Accessibility & 2-Player Duel)
   document.addEventListener("keydown", function (e) {
     if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT" || e.target.tagName === "TEXTAREA") return;
     const key = e.key.toUpperCase();
@@ -3775,6 +3994,17 @@
           render();
         }
       }
+    } else if (state.screen === "duel" && !state.duel.roundOver) {
+      // Player 1 Keys: Q, W, E, R
+      if (key === "Q") submitDuelAnswer(1, 0);
+      else if (key === "W") submitDuelAnswer(1, 1);
+      else if (key === "E") submitDuelAnswer(1, 2);
+      else if (key === "R") submitDuelAnswer(1, 3);
+      // Player 2 Keys: U, I, O, P
+      else if (key === "U") submitDuelAnswer(2, 0);
+      else if (key === "I") submitDuelAnswer(2, 1);
+      else if (key === "O") submitDuelAnswer(2, 2);
+      else if (key === "P") submitDuelAnswer(2, 3);
     }
   });
 
