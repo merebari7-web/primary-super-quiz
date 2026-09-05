@@ -1050,123 +1050,231 @@ body {
 }
 
 /* ==========================================================================
-   CLASSROOM PROJECTOR VIEW
+   NIGERIAN EXAM SETTER, 2-COLUMN EXAM PAPER & PRINT STYLING
    ========================================================================== */
 
-.projector-view {
-  background: var(--paper);
-  border: 3px solid var(--teal);
+.exam-paper-container {
+  background: #ffffff;
+  color: #000000;
+  padding: 36px 40px;
+  border: 2px solid var(--line);
   border-radius: var(--radius);
-  padding: 48px;
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   box-shadow: var(--shadow-lg);
+  font-family: "Times New Roman", Georgia, serif;
 }
-.projector-q {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-  line-height: 1.3;
-  color: var(--ink);
-  margin-bottom: 32px;
+
+.ng-exam-header {
+  text-align: center;
+  border-bottom: 3px double #000000;
+  padding-bottom: 14px;
+  margin-bottom: 20px;
 }
-.projector-opts {
+.ng-school-title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+.ng-school-address {
+  font-size: 0.95rem;
+  font-style: italic;
+  margin: 3px 0;
+  color: #111;
+}
+.ng-exam-session-banner {
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 6px 0;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 4px 0;
+  letter-spacing: 0.05em;
+}
+
+.ng-exam-details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 16px;
+  font-size: 0.95rem;
+}
+.ng-exam-details-table td {
+  padding: 4px 6px;
+  vertical-align: top;
+}
+.ng-instructions-box {
+  background: #fdfdfd;
+  border: 1.5px solid #000000;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.ng-section-banner {
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.05rem;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 20px 0 16px;
+  page-break-after: avoid;
+}
+
+.exam-2col-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 32px;
+  column-gap: 24px;
+  row-gap: 14px;
 }
-.projector-opt {
-  padding: 24px;
-  font-size: 1.4rem;
+
+.ng-q-item {
+  page-break-inside: avoid;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+.ng-q-stem {
   font-weight: 700;
-  border: 3px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--cream);
+  margin-bottom: 4px;
 }
-.projector-opt.correct {
-  background: var(--leaf-soft);
-  border-color: var(--leaf);
-  color: #064e3b;
+.ng-opts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  font-size: 0.9rem;
+  padding-left: 8px;
+}
+
+.ng-theory-item {
+  page-break-inside: avoid;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #bbb;
+  font-size: 0.98rem;
+  line-height: 1.5;
 }
 
 /* ==========================================================================
-   WORKSHEET PAPER & PRINTABLE EXAM STYLES
+   OMR BUBBLE SHADING SHEET STYLES (NCEE / SUBEB STANDARD)
    ========================================================================== */
 
-.worksheet-paper {
+.omr-sheet-paper {
   background: #ffffff;
   color: #000000;
-  padding: 32px;
+  padding: 36px;
   border: 2px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-.worksheet-header {
-  border-bottom: 3px double #000000;
-  padding-bottom: 16px;
-  margin-bottom: 24px;
+.omr-header {
+  text-align: center;
+  border-bottom: 2px solid #000;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
 }
-
-.worksheet-meta-grid {
+.omr-candidate-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  font-size: 0.95rem;
-  margin-top: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  border: 1px solid #000;
+  padding: 10px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
 }
-
-.worksheet-q-block {
-  margin-bottom: 20px;
-  page-break-inside: avoid;
-  border-bottom: 1px dashed #e2e8f0;
-  padding-bottom: 14px;
+.omr-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
-
-.worksheet-q-title {
+.omr-col-block {
+  border: 1px solid #ccc;
+  padding: 6px 8px;
+}
+.omr-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 0.85rem;
   font-weight: 700;
-  font-size: 1.05rem;
-  margin-bottom: 8px;
 }
-
-.worksheet-opts-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  font-size: 0.95rem;
-}
-
-.checkbox-bubble {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border: 1.5px solid #000000;
+.omr-bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid #000;
   border-radius: 50%;
-  margin-right: 6px;
-  vertical-align: middle;
+  font-size: 0.72rem;
+  font-weight: bold;
 }
 
-.marking-guide-section {
-  page-break-before: always;
-  margin-top: 40px;
-  border-top: 4px double #000000;
-  padding-top: 24px;
+/* ==========================================================================
+   NIGERIAN CBT EXAM HALL & COMPUTERIZED TESTING
+   ========================================================================== */
+
+.cbt-hall-card {
+  background: var(--paper);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow-lg);
 }
+.cbt-nav-palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+.cbt-palette-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 2px solid var(--line);
+  background: var(--cream);
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.cbt-palette-btn.current { border-color: var(--teal); background: var(--teal-soft); }
+.cbt-palette-btn.answered { background: var(--leaf); color: #fff; border-color: var(--leaf); }
+.cbt-palette-btn.flagged { background: var(--sun); color: #000; border-color: var(--sun); }
+
+/* Continuous Assessment Master Broadsheet */
+.grade-badge-a { background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-weight: 800; }
+.grade-badge-b { background: #e0f2fe; color: #075985; padding: 2px 8px; border-radius: 4px; font-weight: 800; }
+.grade-badge-c { background: #fef9c3; color: #854d0e; padding: 2px 8px; border-radius: 4px; font-weight: 800; }
+.grade-badge-d { background: #ffedd5; color: #9a3412; padding: 2px 8px; border-radius: 4px; font-weight: 800; }
+.grade-badge-f { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-weight: 800; }
 
 /* ==========================================================================
    PRINT STYLES FOR EXAMS, WORKSHEETS, CERTIFICATES & REPORTS
    ========================================================================== */
 
 @media print {
-  body { background: #ffffff !important; color: #000000 !important; font-size: 12pt !important; }
+  body { background: #ffffff !important; color: #000000 !important; font-size: 11pt !important; }
   .no-print, .topbar, .top-actions, .crumbs, .site-footer, .install-bar, .life, .btn, button, .toast { display: none !important; }
   .wrap { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
-  .q-card, .result, .report, .exam, .worksheet-paper { border: none !important; box-shadow: none !important; padding: 0 !important; }
-  .worksheet-q-block { page-break-inside: avoid; margin-bottom: 16px; }
+  .exam-paper-container, .omr-sheet-paper, .worksheet-paper, .report, .certificate {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .exam-2col-layout { column-gap: 18px !important; row-gap: 8px !important; }
+  .ng-q-item { page-break-inside: avoid; }
+  .ng-theory-item { page-break-inside: avoid; }
   .marking-guide-section { page-break-before: always; }
-  .certificate { border: 8px double #d4af37 !important; page-break-inside: avoid; }
+  .omr-sheet-paper { page-break-before: always; }
 }
 
 /* Toast Notifications */
@@ -1193,7 +1301,6 @@ body {
 @media (max-width: 768px) {
   .hero { grid-template-columns: 1fr; padding: 24px; }
   .home-grid { grid-template-columns: 1fr; }
-  .projector-opts { grid-template-columns: 1fr; }
-  .worksheet-opts-grid { grid-template-columns: 1fr; }
-  .worksheet-meta-grid { grid-template-columns: 1fr; }
+  .exam-2col-layout { grid-template-columns: 1fr; }
+  .omr-columns { grid-template-columns: 1fr 1fr; }
 }
