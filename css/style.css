@@ -1298,3 +1298,20 @@ html.calm, html.calm * {
 @media print {
   .answer-key { page-break-before: always; }
 }
+
+.subj-wrap { position: relative; }
+.fav-pin {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: var(--paper);
+  border: 2px solid var(--line);
+  font-size: 18px;
+  box-shadow: 0 3px 0 var(--line);
+}
+.fav-pin.on { background: var(--sun-soft); border-color: var(--sun); color: #8a5a00; }
+.life.on { background: var(--sun-soft); border-color: var(--sun); }

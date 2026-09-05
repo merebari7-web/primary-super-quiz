@@ -8,7 +8,7 @@
     xp: 0, streak: 0, lastDay: "", quizzes: 0, badges: [],
     best: {}, history: [], missed: {}, dailyDate: "", dailyBest: 0,
     weekKey: "", weekQuizzes: 0, lastRank: "hatchling", days: {},
-    studySec: 0, studyByDay: {}
+    studySec: 0, studyByDay: {}, favs: []
   };
 
   const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false, music: true, contrast: false, autoDark: false, focus: false, calm: false });
@@ -53,13 +53,16 @@
     hintText: "",
     lightning: false,
     quizStartedAt: 0,
-    elapsedSec: 0
+    elapsedSec: 0,
+    flagged: {},
+    renamingProfile: false
   };
 
   let audioCtx = null;
   let music = null;
   let confettiTimer = null;
   let tickTimer = null;
+  let clockTimer = null;
   let toastTimer = null;
   let reactTimer = null;
   let speakTimer = null;
@@ -830,6 +833,22 @@
     const n = state.name || (state.user && state.user.given_name) || "friend";
     return hi + ", " + n;
   }
+  function fmtClock(sec) {
+    sec = Math.max(0, Math.round(Number(sec) || 0));
+    const m = Math.floor(sec / 60);
+    const s = sec % 60;
+    return m + ":" + (s < 10 ? "0" : "") + s;
+  }
+  function isFav(k) {
+    return (progress.favs || []).indexOf(k) >= 0;
+  }
+  function toggleFav(k) {
+    const a = (progress.favs || []).slice();
+    const i = a.indexOf(k);
+    if (i >= 0) a.splice(i, 1); else a.push(k);
+    progress.favs = a;
+    saveProgress();
+  }
   function fmtDur(sec) {
     sec = Math.max(0, Math.round(Number(sec) || 0));
     const m = Math.floor(sec / 60);
@@ -980,7 +999,8 @@
       mode: state.mode, questions: state.questions, index: state.index, picked: state.picked,
       combo: state.combo, maxCombo: state.maxCombo, used5050: state.used5050,
       usedSkip: state.usedSkip, usedHint: state.usedHint, daily: state.daily,
-      lightning: state.lightning, hidden: state.hidden, quizStartedAt: state.quizStartedAt
+      lightning: state.lightning, hidden: state.hidden, quizStartedAt: state.quizStartedAt,
+      flagged: state.flagged || {}
     }));
   }
 
@@ -1075,7 +1095,7 @@
       <div class="onboard" role="dialog" aria-modal="true" aria-label="Help" data-action="close-help">
         <div class="onboard-card">
           <h2>Quick help</h2>
-          <p>A B C D — choose an answer<br>H — hint · P — pause · N or Enter — next<br>? — this help</p>
+          <p>A B C D — choose an answer<br>H — hint · F — flag · P — pause · N or Enter — next<br>? — this help</p>
           <p>Teachers: print an exam paper from the subject screen, and a progress report from My progress.</p>
           <button class="btn btn-primary" data-action="close-help">Close</button>
         </div>
@@ -1133,6 +1153,7 @@
     const chips = list.map(function (p) {
       return `<span class="profile-chip ${p.id === cur ? "on" : ""}">
         <button type="button" data-profile="${esc(p.id)}">${esc(p.name || "Pupil")}</button>
+        ${p.id === cur ? `<button type="button" class="chip-x" data-action="rename-profile" aria-label="Rename">✎</button>` : ""}
         ${list.length > 1 ? `<button type="button" class="chip-x" data-del-profile="${esc(p.id)}" aria-label="Remove ${esc(p.name)}">×</button>` : ""}
       </span>`;
     }).join("");
@@ -1141,6 +1162,7 @@
         ${chips}
         ${list.length < 6 ? `<button type="button" class="profile-chip add" data-action="add-profile">+ Sibling</button>` : ""}
         ${state.addingProfile ? `<span class="profile-add"><input id="new-pupil" type="text" maxlength="24" placeholder="Sibling’s name"><button class="btn btn-sun" data-action="save-profile">Add</button></span>` : ""}
+        ${state.renamingProfile ? `<span class="profile-add"><input id="rename-pupil" type="text" maxlength="24" value="${esc(state.name || "")}"><button class="btn btn-sun" data-action="save-rename">Save name</button></span>` : ""}
       </div>`;
   }
   function planCard() {
@@ -1627,6 +1649,7 @@
           <div class="ghost-row">
             ${state.combo >= 2 ? `<span class="combo">🔥 x${state.combo}</span>` : ""}
             ${timer}
+            <div class="progress-meta" id="sess-clock">🕒 ${fmtClock((Date.now() - (state.quizStartedAt || Date.now())) / 1000)}</div>
             <div class="progress-meta">${state.index + 1} / ${total}</div>
           </div>
         </div>
@@ -1643,12 +1666,13 @@
             <button class="life" data-action="hint" ${state.usedHint || exam || showMark ? "disabled" : ""}>Hint</button>
             <button class="life" data-action="fifty" ${state.used5050 || exam ? "disabled" : ""}>50 / 50</button>
             <button class="life" data-action="skip" ${state.usedSkip ? "disabled" : ""}>Skip</button>
+            <button class="life ${state.flagged[state.index] ? "on" : ""}" data-action="flag">${state.flagged[state.index] ? "★ Flagged" : "☆ Flag"}</button>
           </div>
           <div class="quiz-actions">
             ${canNext ? `<button class="btn btn-primary" data-action="next">${nextLabel}</button>` : ""}
             <button class="btn btn-ghost" data-action="quit-quiz">Quit</button>
           </div>
-          <p class="key-hint no-print">Tip: A–D to answer · H hint · P pause · 🔊 reads the question</p>
+          <p class="key-hint no-print">Tip: A–D to answer · H hint · F flag · P pause · 🔊 reads the question</p>
         </div>
         ${reactPopup()}
         ${toastEl()}
@@ -1709,7 +1733,7 @@
       const chosen = state.picked[i] == null || state.picked[i] < 0 ? "—" : q.options[state.picked[i]];
       return `
         <article class="review-item">
-          <span class="tag ${ok ? "ok" : "no"}">${ok ? "Correct" : "Missed"}</span>
+          <span class="tag ${ok ? "ok" : "no"}">${ok ? "Correct" : "Missed"}</span>${state.flagged[i] ? `<span class="tag">★ Flagged</span>` : ""}
           <h4>${i + 1}. ${esc(q.q)}</h4>
           <p>Your answer: <strong>${esc(chosen)}</strong></p>
           ${ok ? "" : `<p>Correct answer: <strong>${esc(q.options[q.answer])}</strong></p>`}
@@ -1726,6 +1750,7 @@
           <button class="filter-chip ${filter === "all" ? "on" : ""}" data-filter="all">All ${state.questions.length}</button>
           <button class="filter-chip ${filter === "missed" ? "on" : ""}" data-filter="missed">Missed ${missedN}</button>
           <button class="filter-chip ${filter === "correct" ? "on" : ""}" data-filter="correct">Correct ${state.questions.length - missedN}</button>
+          <button class="filter-chip ${filter === "flagged" ? "on" : ""}" data-filter="flagged">Flagged ${Object.keys(state.flagged || {}).length}</button>
         </div>
         ${items}
         <div class="actions" style="margin-top:8px">
@@ -2018,6 +2043,16 @@
   }
 
   function stopTick() { clearInterval(tickTimer); tickTimer = null; }
+  function stopClock() { clearInterval(clockTimer); clockTimer = null; }
+  function startClock() {
+    if (state.screen !== "quiz") return;
+    if (clockTimer) return;
+    clockTimer = setInterval(function () {
+      if (state.screen !== "quiz" || state.paused) return;
+      const el = document.getElementById("sess-clock");
+      if (el) el.textContent = "🕒 " + fmtClock((Date.now() - (state.quizStartedAt || Date.now())) / 1000);
+    }, 1000);
+  }
 
   function startTick() {
     if (state.mode !== "timed" || state.screen !== "quiz" || state.paused) return;
@@ -2112,6 +2147,17 @@
           }
         });
       }
+      const rp = document.getElementById("rename-pupil");
+      if (rp) {
+        rp.focus();
+        rp.select();
+        rp.addEventListener("keydown", function (e) {
+          if (e.key === "Enter") {
+            const btn = app.querySelector('[data-action="save-rename"]');
+            if (btn) btn.click();
+          }
+        });
+      }
     }
     if (state.screen === "review") {
       const rs = document.getElementById("review-search");
@@ -2172,6 +2218,7 @@
       }
     } else {
       stopTick();
+      stopClock();
       stopTtsWatch();
       try { if (window.speechSynthesis) window.speechSynthesis.cancel(); } catch (e) {}
     }
@@ -2222,6 +2269,7 @@
       state.usedSkip = false;
       state.usedHint = false;
       state.hintText = "";
+      state.flagged = {};
       state.combo = 0;
       state.maxCombo = 0;
       state.newBadges = [];
@@ -2393,7 +2441,7 @@
   }
 
   app.addEventListener("click", function (e) {
-    const t = e.target.closest("[data-go], [data-action], [data-grade], [data-pick-subject], [data-length], [data-opt], [data-mode], [data-group], [data-toggle], [data-filter], [data-profile], [data-del-profile]");
+    const t = e.target.closest("[data-go], [data-action], [data-grade], [data-pick-subject], [data-length], [data-opt], [data-mode], [data-group], [data-toggle], [data-filter], [data-profile], [data-del-profile], [data-fav]");
     if (!t) return;
     ensureAudio();
 
@@ -2458,6 +2506,11 @@
     }
     if (t.dataset.group) { state.group = t.dataset.group; render(); return; }
     if (t.dataset.filter) { state.reviewFilter = t.dataset.filter; render(); return; }
+    if (t.dataset.fav) {
+      toggleFav(t.dataset.fav);
+      render();
+      return;
+    }
     if (t.dataset.pickSubject) {
       state.subject = t.dataset.pickSubject;
       if (state.subject && state.subject !== "daily") localStorage.setItem("psq-subject", state.subject);
@@ -2636,6 +2689,24 @@
       render();
     }
     if (action === "dismiss-react") { hideReact(); return; }
+    if (action === "rename-profile") { state.renamingProfile = true; render(); }
+    if (action === "save-rename") {
+      const box = document.getElementById("rename-pupil");
+      const name = (box ? box.value : "").trim();
+      if (!name) { toast("Type a name."); return; }
+      state.name = name;
+      localStorage.setItem("psq-name", name);
+      state.renamingProfile = false;
+      touchProfile();
+      toast("Name saved.");
+      render();
+    }
+    if (action === "flag") {
+      if (state.flagged[state.index]) delete state.flagged[state.index];
+      else state.flagged[state.index] = true;
+      saveResume();
+      render();
+    }
     if (action === "add-profile") { state.addingProfile = true; render(); }
     if (action === "save-profile") {
       const box = document.getElementById("new-pupil");
