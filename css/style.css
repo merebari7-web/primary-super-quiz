@@ -893,6 +893,55 @@ body {
 .color-dot.active { box-shadow: 0 0 0 3px var(--teal); }
 
 /* ==========================================================================
+   CUSTOM QUESTION EDIT / ADD MODAL
+   ========================================================================== */
+
+.edit-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.edit-card {
+  background: var(--paper);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+  box-shadow: var(--shadow-lg);
+}
+
+.edit-card label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+.edit-input, .edit-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--cream);
+  color: var(--ink);
+}
+.edit-textarea { min-height: 80px; resize: vertical; }
+
+/* ==========================================================================
    SPACED REPETITION FLASHCARDS (LEITNER 3-BOX SYSTEM)
    ========================================================================== */
 
@@ -912,9 +961,7 @@ body {
   cursor: pointer;
 }
 
-.flashcard-card.flipped {
-  transform: rotateY(180deg);
-}
+.flashcard-card.flipped { transform: rotateY(180deg); }
 
 .flashcard-face {
   position: absolute;
@@ -1012,10 +1059,6 @@ body {
 }
 .calib-cell.mastered { border-color: var(--leaf); background: var(--leaf-soft); color: #064e3b; }
 .calib-cell.misconception { border-color: var(--coral); background: var(--coral-soft); color: #7f1d1d; }
-.calib-cell.fragile { border-color: var(--sun); background: var(--sun-soft); color: #78350f; }
-.calib-cell.growth { border-color: var(--sky); background: var(--sky-soft); color: #0369a1; }
-.calib-cell strong { display: block; font-size: 1.05rem; margin-bottom: 4px; }
-.calib-cell p { font-size: 0.85rem; line-height: 1.35; margin: 0; }
 
 /* ==========================================================================
    TEACHER / CLASSROOM DASHBOARD & TABLES
@@ -1160,6 +1203,37 @@ body {
 }
 
 /* ==========================================================================
+   INDIVIDUAL PUPIL TERMLY REPORT CARD STYLES
+   ========================================================================== */
+
+.report-card-paper {
+  background: #ffffff;
+  color: #000000;
+  padding: 40px;
+  border: 3px double #000;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 30px;
+}
+.pupil-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px;
+  border: 1px solid #000;
+  padding: 10px;
+  margin: 12px 0 18px;
+  font-size: 0.9rem;
+}
+.behavior-rating-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
    OMR BUBBLE SHADING SHEET STYLES (NCEE / SUBEB STANDARD)
    ========================================================================== */
 
@@ -1264,7 +1338,7 @@ body {
   body { background: #ffffff !important; color: #000000 !important; font-size: 11pt !important; }
   .no-print, .topbar, .top-actions, .crumbs, .site-footer, .install-bar, .life, .btn, button, .toast { display: none !important; }
   .wrap { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
-  .exam-paper-container, .omr-sheet-paper, .worksheet-paper, .report, .certificate {
+  .exam-paper-container, .omr-sheet-paper, .worksheet-paper, .report, .certificate, .report-card-paper {
     border: none !important;
     box-shadow: none !important;
     padding: 0 !important;

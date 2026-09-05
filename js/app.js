@@ -76,6 +76,10 @@
     flashcardDeck: "missed",
     flashcardIndex: 0,
     flashcardFlipped: false,
+    selectedPupilId: "c1",
+    editModalOpen: false,
+    editingQIndex: null, // null = new question, number = existing question index
+    editQData: { q: "", options: ["", "", "", ""], answer: 0, topic: "General", bloom: "Understand", explain: "" },
     classRoster: loadJSON("psq-class-roster-v2", [
       { id: "c1", name: "Chinedu Okafor", grade: 5, arm: "5 Gold", ca1: 18, ca2: 17, exam: 52 },
       { id: "c2", name: "Amina Bello", grade: 5, arm: "5 Gold", ca1: 19, ca2: 18, exam: 56 },
@@ -112,9 +116,8 @@
       instructions: "Answer ALL questions in Section A by choosing the correct option. For Section B, answer any THREE (3) questions. Show all your workings clearly.",
       questions: [],
       theoryQuestions: [],
-      paperType: "A", // Type A, Type B, Type C (Shuffled)
-      savedPapers: loadJSON("psq-saved-exams-v1", []),
-      editingQIndex: null
+      paperType: "A", // Type A, Type B, Type C
+      savedPapers: loadJSON("psq-saved-exams-v1", [])
     },
 
     // ==========================================
@@ -131,7 +134,7 @@
       answers: [],
       flagged: {},
       index: 0,
-      timeLeft: 3600, // in seconds
+      timeLeft: 3600,
       submitted: false,
       score: 0,
       total: 0,
@@ -292,9 +295,9 @@
   }
 
   function playCorrect() {
-    playTone(523.25, 0.12, "triangle", 0.08); // C5
-    setTimeout(function () { playTone(659.25, 0.12, "triangle", 0.08); }, 80); // E5
-    setTimeout(function () { playTone(783.99, 0.22, "triangle", 0.1); }, 160); // G5
+    playTone(523.25, 0.12, "triangle", 0.08);
+    setTimeout(function () { playTone(659.25, 0.12, "triangle", 0.08); }, 80);
+    setTimeout(function () { playTone(783.99, 0.22, "triangle", 0.1); }, 160);
   }
 
   function playWrong() { playTone(196.00, 0.25, "square", 0.04); }
@@ -664,7 +667,6 @@
       progress.missed[g].unshift(q);
       if (progress.missed[g].length > 100) progress.missed[g].pop();
     }
-    // Add to Leitner Flashcard Box 1
     if (!progress.flashcards.box1.some(function (item) { return item.q === q.q; })) {
       progress.flashcards.box1.unshift(q);
       if (progress.flashcards.box1.length > 60) progress.flashcards.box1.pop();
@@ -715,7 +717,6 @@
     if (!progress.studyByDay) progress.studyByDay = {};
     progress.studyByDay[todayStr] = (progress.studyByDay[todayStr] || 0) + (state.elapsedSec || 60);
 
-    // Update streak
     if (progress.lastDay !== todayStr) {
       const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
       if (progress.lastDay === yesterday) progress.streak += 1;
@@ -723,7 +724,6 @@
       progress.lastDay = todayStr;
     }
 
-    // Update history
     const histEntry = {
       date: todayStr,
       grade: state.grade,
@@ -738,13 +738,11 @@
     progress.history.unshift(histEntry);
     if (progress.history.length > 50) progress.history.pop();
 
-    // Update best record
     const bestKey = `${state.grade}/${state.subject || "mixed"}`;
     if (!progress.best[bestKey] || pct > progress.best[bestKey].pct) {
       progress.best[bestKey] = { pct: pct, score: correctCount, total: total, date: todayStr };
     }
 
-    // Metacognitive Calibration calculation
     for (let i = 0; i < total; i++) {
       const ok = state.picked[i] === state.questions[i].answer;
       const conf = state.confidence[i] || "thinking";
@@ -754,7 +752,6 @@
       else progress.confidenceStats.growth += 1;
     }
 
-    // Check Badges
     state.newBadges = checkBadges(pct, correctCount, total);
     state.xpGained = xpGained;
     state.screen = "result";
@@ -866,11 +863,9 @@
         pool = shuffle(filtered).map(q => Object.assign({}, q, { subject: es.subject }));
       }
 
-      // Deduplicate and slice
       const chosenQuestions = pool.slice(0, Math.min(es.count, pool.length));
       es.questions = chosenQuestions;
 
-      // Generate Section B Theory Questions
       const theorySubj = (es.nceeBundle && es.nceeBundle !== "none") ? "maths" : es.subject;
       const bankSecB = (window.NIGERIAN_THEORY_BANK[theorySubj] && window.NIGERIAN_THEORY_BANK[theorySubj][es.grade])
         ? window.NIGERIAN_THEORY_BANK[theorySubj][es.grade]
@@ -910,7 +905,6 @@
     const es = state.examSetter;
     es.paperType = typeLetter;
     es.questions = shuffle(es.questions).map(q => {
-      // shuffle options and update correct answer
       const correctText = q.options[q.answer];
       const newOpts = shuffle(q.options);
       const newAns = newOpts.indexOf(correctText);
@@ -939,7 +933,91 @@
   }
 
   /* ==========================================================================
-     CBT EXAM ROOM (COMPUTER-BASED TESTING ENGINE)
+     EXPORT TO MICROSOFT WORD (.DOC) ENGINE
+     ========================================================================== */
+
+  function exportExamAsWordDoc() {
+    const es = state.examSetter;
+    const typeObj = window.NIGERIAN_EXAM_TYPES.find(t => t.id === es.examType) || { name: "Term Examination" };
+    const sName = (es.nceeBundle !== "none") ? "NCEE MULTI-SUBJECT BUNDLE" : (window.SUBJECTS[es.subject] ? window.SUBJECTS[es.subject].name.toUpperCase() : "EXAM");
+
+    let docHtml = `
+      <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+      <head><title>${esc(es.schoolName)} - Exam Paper</title>
+      <style>
+        body { font-family: 'Times New Roman', serif; font-size: 12pt; line-height: 1.4; }
+        h1 { font-size: 18pt; text-align: center; text-transform: uppercase; margin-bottom: 2pt; }
+        h2 { font-size: 14pt; text-align: center; text-transform: uppercase; margin: 4pt 0; }
+        p { margin: 2pt 0; }
+        .details-table { width: 100%; border-collapse: collapse; margin: 10pt 0; font-size: 11pt; }
+        .details-table td { padding: 4pt; }
+        .instructions { border: 1pt solid #000; padding: 6pt; margin-bottom: 12pt; font-size: 10.5pt; }
+        .section-hdr { background-color: #000; color: #fff; font-weight: bold; text-align: center; padding: 4pt; margin: 12pt 0 8pt; font-size: 12pt; }
+        .q-item { margin-bottom: 8pt; page-break-inside: avoid; }
+        .q-stem { font-weight: bold; }
+        .opts { margin-left: 15pt; }
+      </style>
+      </head>
+      <body>
+        <h1>${esc(es.schoolName)}</h1>
+        <p style="text-align:center;font-style:italic;">${esc(es.schoolAddress)}</p>
+        <p style="text-align:center;font-weight:bold;">${esc(es.schoolMotto)}</p>
+        <h2>${esc(typeObj.name.toUpperCase())} — ${esc(es.session)} ACADEMIC SESSION</h2>
+        <p style="text-align:center;font-weight:bold;">SUBJECT: ${esc(sName)} · CLASS: PRIMARY ${es.grade} · TYPE ${es.paperType || "A"}</p>
+        
+        <table class="details-table">
+          <tr>
+            <td><strong>NAME:</strong> ____________________________________________</td>
+            <td><strong>CLASS/ARM:</strong> __________________</td>
+          </tr>
+          <tr>
+            <td><strong>EXAM NO:</strong> ________________________</td>
+            <td><strong>TIME ALLOWED:</strong> ${esc(es.timeAllowed)}</td>
+          </tr>
+        </table>
+
+        <div class="instructions">
+          <strong>INSTRUCTIONS:</strong> ${esc(es.instructions)}
+        </div>
+
+        <div class="section-hdr">SECTION A: OBJECTIVES (${es.questions.length} MARKS)</div>
+    `;
+
+    es.questions.forEach((q, i) => {
+      docHtml += `
+        <div class="q-item">
+          <div class="q-stem">${i + 1}. ${esc(q.q)}</div>
+          <div class="opts">
+            (a) ${esc(q.options[0])}&nbsp;&nbsp;&nbsp;&nbsp;(b) ${esc(q.options[1])}<br>
+            (c) ${esc(q.options[2])}&nbsp;&nbsp;&nbsp;&nbsp;(d) ${esc(q.options[3])}
+          </div>
+        </div>
+      `;
+    });
+
+    if (es.includeSecB && es.theoryQuestions && es.theoryQuestions.length) {
+      docHtml += `<div class="section-hdr">SECTION B: THEORY (ANSWER ANY THREE · 20 MARKS)</div>`;
+      es.theoryQuestions.forEach(t => {
+        docHtml += `<div style="margin-bottom:12pt;page-break-inside:avoid;"><strong>${esc(t.q).replace(/\n/g, "<br>")}</strong></div>`;
+      });
+    }
+
+    docHtml += `</body></html>`;
+
+    const blob = new Blob(["\ufeff", docHtml], { type: "application/msword" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${es.schoolName.replace(/[^a-zA-Z0-9]/g, "_")}_Primary_${es.grade}_${es.subject}_Exam.doc`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    toast("Exam exported as Microsoft Word (.doc) document!");
+  }
+
+  /* ==========================================================================
+     CBT EXAM ROOM ENGINE
      ========================================================================== */
 
   function launchCBTExam() {
@@ -954,7 +1032,7 @@
     cbt.answers = new Array(cbt.questions.length).fill(null);
     cbt.flagged = {};
     cbt.index = 0;
-    cbt.timeLeft = (es.count <= 20) ? 1800 : (es.count <= 40) ? 3600 : 5400; // 30, 60 or 90 mins
+    cbt.timeLeft = (es.count <= 20) ? 1800 : (es.count <= 40) ? 3600 : 5400;
     cbt.submitted = false;
     cbt.paperTitle = `Primary ${es.grade} ${window.SUBJECTS[es.subject] ? window.SUBJECTS[es.subject].name : "Exam"} · ${es.session}`;
 
@@ -1001,14 +1079,13 @@
     cbt.gradeLetter = ng.grade;
     cbt.remark = ng.remark;
 
-    // Record into class roster broadsheet if candidate name exists
     if (cbt.candidateName && cbt.candidateName.trim()) {
       const examMarks = Math.round((cbt.percentage / 100) * 60);
       const newPupil = {
         id: "c-" + Date.now(),
         name: cbt.candidateName.trim(),
         grade: state.examSetter.grade,
-        arm: cbt.candidateArm || "Primary 5",
+        arm: cbt.candidateArm || "Primary 5 Gold",
         ca1: Math.min(20, Math.round(examMarks * 0.33) + 3),
         ca2: Math.min(20, Math.round(examMarks * 0.33) + 2),
         exam: examMarks
@@ -1034,7 +1111,6 @@
      ========================================================================== */
 
   function renderTopBar(backTarget) {
-    const g = state.grade ? window.GRADE_INFO[state.grade].label : "Primary 1–6";
     const backBtn = backTarget
       ? `<button class="icon-btn" data-go="${backTarget}" aria-label="Go back">←</button>`
       : `<div class="brand" data-go="home"><img src="images/favicon.png" alt=""><span>Super Quiz</span></div>`;
@@ -1089,7 +1165,7 @@
             <div class="top-actions" style="margin-top:16px;">
               <button class="btn btn-primary" data-action="start">Start Practising →</button>
               <button class="btn btn-sun" data-go="exam_setter">🇳🇬 Set Nigerian Exam Paper</button>
-              <button class="btn btn-ghost" data-go="teachers">Teacher Broadsheet 📊</button>
+              <button class="btn btn-ghost" data-go="broadsheet">Teacher Broadsheet 📊</button>
             </div>
           </div>
           <div class="hero-art">
@@ -1107,7 +1183,7 @@
           <div class="stat-tile"><b>${fmtDur(progress.studySec || 0)}</b><span>Study Time</span></div>
         </div>
 
-        <h2 class="section-title" style="margin-top:28px;">Learning & Assessment Modes</h2>
+        <h2 class="section-title" style="margin-top:28px;">Learning &amp; Assessment Modes</h2>
         <p class="sub">Choose an active learning path designed by cognitive scientists and primary educators.</p>
 
         <div class="play-row">
@@ -1438,10 +1514,12 @@
           <button class="btn btn-ghost btn-sm" data-go="exam_setter">← Back to Exam Setter</button>
           <div style="display:flex;gap:8px;flex-wrap:wrap;">
             <button class="btn btn-sun btn-sm" data-action="save-exam-paper">💾 Save Paper</button>
-            <button class="btn btn-ghost btn-sm" data-action="shuffle-type" data-type="B">🔀 Generate Type B</button>
-            <button class="btn btn-ghost btn-sm" data-go="omr_sheet">📄 Print OMR Shading Sheet</button>
-            <button class="btn btn-ghost btn-sm" data-go="marking_scheme">🔑 Marking Scheme</button>
-            <button class="btn btn-ghost btn-sm" data-action="launch-cbt-exam">💻 Launch CBT Exam Hall</button>
+            <button class="btn btn-ghost btn-sm" data-action="shuffle-type" data-type="B">🔀 Type B</button>
+            <button class="btn btn-ghost btn-sm" data-action="open-add-q-modal">➕ Add Custom Q</button>
+            <button class="btn btn-ghost btn-sm" data-action="export-word-doc">📄 Export MS Word (.doc)</button>
+            <button class="btn btn-ghost btn-sm" data-go="omr_sheet">📄 OMR Shading Sheet</button>
+            <button class="btn btn-ghost btn-sm" data-go="marking_scheme">🔑 Marking Scheme &amp; TOS</button>
+            <button class="btn btn-ghost btn-sm" data-action="launch-cbt-exam">💻 Launch CBT Exam</button>
             <button class="btn btn-primary" data-action="print-page">🖨️ Print Exam Paper</button>
           </div>
         </div>
@@ -1492,7 +1570,9 @@
                     }).join("")}
                   </div>
                   <div class="no-print" style="margin-top:4px;display:flex;gap:6px;">
-                    <button class="chip" data-action="swap-q" data-idx="${i}" style="cursor:pointer;font-size:0.75rem;">🔄 Swap Q${i + 1}</button>
+                    <button class="chip" data-action="swap-q" data-idx="${i}" style="cursor:pointer;font-size:0.75rem;">🔄 Swap</button>
+                    <button class="chip" data-action="edit-q-modal" data-idx="${i}" style="cursor:pointer;font-size:0.75rem;">✏️ Edit</button>
+                    <button class="chip" data-action="delete-q" data-idx="${i}" style="cursor:pointer;font-size:0.75rem;color:#b91c1c;">🗑️</button>
                   </div>
                 </article>`;
             }).join("")}
@@ -1512,6 +1592,81 @@
               }).join("")}
             </section>
           ` : ""}
+        </div>
+
+        ${state.editModalOpen ? renderEditQuestionModal() : ""}
+      </div>`;
+  }
+
+  /* ==========================================================================
+     INTERACTIVE QUESTION EDITOR & ADD CUSTOM QUESTION MODAL
+     ========================================================================== */
+
+  function renderEditQuestionModal() {
+    const d = state.editQData;
+    const isNew = state.editingQIndex === null;
+
+    return `
+      <div class="edit-modal no-print">
+        <div class="edit-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--line);padding-bottom:10px;margin-bottom:12px;">
+            <h3>${isNew ? "➕ Add Custom School Question" : `✏️ Edit Question ${state.editingQIndex + 1}`}</h3>
+            <button class="btn btn-ghost btn-sm" data-action="close-edit-modal">✕ Close</button>
+          </div>
+
+          <label>Question Stem / Problem Text:</label>
+          <textarea id="edit-q-text" class="edit-textarea" placeholder="Type question text here...">${esc(d.q)}</textarea>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;">
+            <div>
+              <label>Option A:</label>
+              <input type="text" id="edit-opt-0" class="edit-input" value="${esc(d.options[0])}">
+            </div>
+            <div>
+              <label>Option B:</label>
+              <input type="text" id="edit-opt-1" class="edit-input" value="${esc(d.options[1])}">
+            </div>
+            <div>
+              <label>Option C:</label>
+              <input type="text" id="edit-opt-2" class="edit-input" value="${esc(d.options[2])}">
+            </div>
+            <div>
+              <label>Option D:</label>
+              <input type="text" id="edit-opt-3" class="edit-input" value="${esc(d.options[3])}">
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;">
+            <div>
+              <label>Correct Answer Option:</label>
+              <select id="edit-ans-idx" class="edit-input">
+                <option value="0" ${d.answer === 0 ? "selected" : ""}>Option A</option>
+                <option value="1" ${d.answer === 1 ? "selected" : ""}>Option B</option>
+                <option value="2" ${d.answer === 2 ? "selected" : ""}>Option C</option>
+                <option value="3" ${d.answer === 3 ? "selected" : ""}>Option D</option>
+              </select>
+            </div>
+            <div>
+              <label>Bloom's Taxonomy Domain:</label>
+              <select id="edit-bloom" class="edit-input">
+                <option value="Remember" ${d.bloom === "Remember" ? "selected" : ""}>Remember (Recall/Knowledge)</option>
+                <option value="Understand" ${d.bloom === "Understand" ? "selected" : ""}>Understand (Comprehension)</option>
+                <option value="Apply" ${d.bloom === "Apply" ? "selected" : ""}>Apply (Problem Solving)</option>
+                <option value="Analyze" ${d.bloom === "Analyze" ? "selected" : ""}>Analyze (Critical Analysis)</option>
+              </select>
+            </div>
+          </div>
+
+          <label>Curriculum Subtopic:</label>
+          <input type="text" id="edit-topic" class="edit-input" value="${esc(d.topic || "Core Curriculum")}">
+
+          <label>Explanation &amp; Working Steps (for Teacher Marking Key):</label>
+          <textarea id="edit-explain" class="edit-textarea" placeholder="Step-by-step solution...">${esc(d.explain || "")}</textarea>
+
+          <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:16px;">
+            <button class="btn btn-ghost btn-sm" data-action="close-edit-modal">Cancel</button>
+            <button class="btn btn-primary btn-sm" data-action="save-edit-q-data">Save to Exam Paper →</button>
+          </div>
         </div>
       </div>`;
   }
@@ -1583,16 +1738,33 @@
   }
 
   /* ==========================================================================
-     CONFIDENTIAL TEACHER MARKING SCHEME & TABLE OF SPECIFICATIONS
+     CONFIDENTIAL TEACHER MARKING SCHEME & TABLE OF SPECIFICATIONS (TOS)
      ========================================================================== */
 
   function renderMarkingScheme() {
     const es = state.examSetter;
+    const totalQ = es.questions.length || 1;
+
+    // Calculate Table of Specifications cognitive distribution
+    let recallCnt = 0, underCnt = 0, applyCnt = 0, analCnt = 0;
+    const topicMap = {};
+
+    es.questions.forEach(q => {
+      const b = (q.bloom || "Understand").toLowerCase();
+      if (b.indexOf("rem") >= 0 || b.indexOf("rec") >= 0) recallCnt += 1;
+      else if (b.indexOf("app") >= 0) applyCnt += 1;
+      else if (b.indexOf("ana") >= 0) analCnt += 1;
+      else underCnt += 1;
+
+      const t = q.topic || "Core Foundations";
+      topicMap[t] = (topicMap[t] || 0) + 1;
+    });
+
     return `
       <div class="wrap">
         <div class="topbar no-print">
           <button class="btn btn-ghost btn-sm" data-go="exam_preview">← Back to Exam Paper</button>
-          <button class="btn btn-primary" data-action="print-page">🖨️ Print Confidential Marking Scheme</button>
+          <button class="btn btn-primary" data-action="print-page">🖨️ Print Marking Scheme &amp; TOS</button>
         </div>
 
         <div class="worksheet-paper">
@@ -1602,6 +1774,36 @@
             <h3 style="font-size:1.25rem;">TEACHER MARKING GUIDE &amp; TABLE OF SPECIFICATIONS</h3>
             <p><strong>Primary ${es.grade} ${esc(es.subject.toUpperCase())} · ${esc(es.session)} Academic Session</strong></p>
           </header>
+
+          <h3 style="margin-bottom:8px;">📊 TABLE OF SPECIFICATIONS (TEST BLUEPRINT &amp; COGNITIVE GRID)</h3>
+          <p style="font-size:0.85rem;color:#444;margin-bottom:10px;">Curriculum topic coverage vs. Bloom's Taxonomy cognitive domain distribution.</p>
+
+          <div class="table-scroll" style="margin-bottom:24px;">
+            <table class="report-table" style="border:1px solid #000;font-size:0.88rem;text-align:center;">
+              <thead>
+                <tr style="background:#f1f5f9;border-bottom:2px solid #000;">
+                  <th style="text-align:left;">Curriculum Domain</th>
+                  <th>Recall (LOTS)</th>
+                  <th>Understanding</th>
+                  <th>Application (HOTS)</th>
+                  <th>Analysis</th>
+                  <th>Total Questions</th>
+                  <th>Weighting (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align:left;"><strong>Overall Exam Distribution</strong></td>
+                  <td>${recallCnt} (${Math.round((recallCnt / totalQ) * 100)}%)</td>
+                  <td>${underCnt} (${Math.round((underCnt / totalQ) * 100)}%)</td>
+                  <td>${applyCnt} (${Math.round((applyCnt / totalQ) * 100)}%)</td>
+                  <td>${analCnt} (${Math.round((analCnt / totalQ) * 100)}%)</td>
+                  <td><strong>${totalQ}</strong></td>
+                  <td><strong>100%</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <h3 style="margin-bottom:10px;">SECTION A: OBJECTIVE ANSWER KEY &amp; PEDAGOGICAL SOLUTIONS</h3>
           <div class="table-scroll">
@@ -1657,7 +1859,131 @@
   }
 
   /* ==========================================================================
-     NIGERIAN CBT EXAM HALL & COMPUTERIZED TESTING VIEW
+     INDIVIDUAL PUPIL TERMLY CONTINUOUS ASSESSMENT REPORT SHEET
+     ========================================================================== */
+
+  function renderPupilReportCard() {
+    const es = state.examSetter;
+    const roster = state.classRoster || [];
+    const p = roster.find(x => x.id === state.selectedPupilId) || roster[0] || { name: "Chinedu Okafor", arm: "5 Gold", ca1: 18, ca2: 17, exam: 52 };
+
+    const ca1 = p.ca1 || 18;
+    const ca2 = p.ca2 || 17;
+    const exam = p.exam || 52;
+    const total = ca1 + ca2 + exam;
+    const ng = getNigerianGrade(total);
+
+    const subjectsList = [
+      { name: "English Studies", ca1: ca1, ca2: ca2, exam: exam },
+      { name: "Mathematics", ca1: Math.min(20, ca1 + 1), ca2: Math.min(20, ca2 - 1), exam: Math.min(60, exam + 2) },
+      { name: "Basic Science", ca1: ca1, ca2: ca2, exam: exam },
+      { name: "Social Studies", ca1: ca1, ca2: ca2, exam: exam },
+      { name: "Civic Education", ca1: ca1, ca2: ca2, exam: exam },
+      { name: "Computer Studies (ICT)", ca1: ca1, ca2: ca2, exam: exam },
+      { name: "Agricultural Science", ca1: ca1, ca2: ca2, exam: exam },
+      { name: "Cultural & Creative Arts (CCA)", ca1: ca1, ca2: ca2, exam: exam },
+      { name: "Physical & Health Education", ca1: ca1, ca2: ca2, exam: exam },
+      { name: "Home Economics", ca1: ca1, ca2: ca2, exam: exam },
+      { name: "Verbal Reasoning", ca1: ca1, ca2: ca2, exam: exam },
+      { name: "Quantitative Reasoning", ca1: ca1, ca2: ca2, exam: exam }
+    ];
+
+    return `
+      <div class="wrap">
+        <div class="topbar no-print">
+          <button class="btn btn-ghost btn-sm" data-go="broadsheet">← Back to Master Broadsheet</button>
+          <button class="btn btn-primary" data-action="print-page">🖨️ Print Pupil Terminal Report Card</button>
+        </div>
+
+        <div class="report-card-paper">
+          <header style="text-align:center;border-bottom:3px double #000;padding-bottom:12px;margin-bottom:16px;">
+            <h1 style="font-size:1.7rem;text-transform:uppercase;">${esc(es.schoolName)}</h1>
+            <p style="font-style:italic;font-size:0.95rem;">${esc(es.schoolAddress)}</p>
+            <p style="font-weight:bold;font-size:0.85rem;">${esc(es.schoolMotto)}</p>
+            <h2 style="font-size:1.25rem;border-top:1px solid #000;border-bottom:1px solid #000;padding:4px 0;margin-top:8px;">
+              CONTINUOUS ASSESSMENT TERMINAL REPORT SHEET — ${esc(es.session)} SESSION
+            </h2>
+          </header>
+
+          <div class="pupil-info-grid">
+            <div><strong>PUPIL'S FULL NAME:</strong> ${esc(p.name)}</div>
+            <div><strong>CLASS / ARM:</strong> ${esc(p.arm || "Primary 5 Gold")}</div>
+            <div><strong>GENDER:</strong> M / F</div>
+            <div><strong>TIMES SCHOOL OPENED:</strong> 120</div>
+            <div><strong>TIMES PRESENT:</strong> 118</div>
+            <div><strong>TERM:</strong> 2nd Term</div>
+          </div>
+
+          <h3 style="font-size:1.05rem;margin-bottom:6px;">ACADEMIC PERFORMANCE BY SUBJECT (COGNITIVE DOMAIN)</h3>
+          <div class="table-scroll">
+            <table class="report-table" style="border:1px solid #000;font-size:0.86rem;">
+              <thead>
+                <tr style="background:#f1f5f9;border-bottom:2px solid #000;">
+                  <th style="text-align:left;">Subjects</th>
+                  <th style="width:65px;">1st CA (20)</th>
+                  <th style="width:65px;">2nd CA (20)</th>
+                  <th style="width:65px;">Exam (60)</th>
+                  <th style="width:75px;">Total (100)</th>
+                  <th style="width:55px;">Grade</th>
+                  <th>Teacher's Subject Remark</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${subjectsList.map(function (s) {
+                  const sTot = s.ca1 + s.ca2 + s.exam;
+                  const sG = getNigerianGrade(sTot);
+                  return `
+                    <tr style="border-bottom:1px solid #ddd;">
+                      <td style="text-align:left;"><strong>${esc(s.name)}</strong></td>
+                      <td>${s.ca1}</td>
+                      <td>${s.ca2}</td>
+                      <td>${s.exam}</td>
+                      <td><strong>${sTot}</strong></td>
+                      <td><span class="grade-badge-${sG.grade.toLowerCase()}">${sG.grade}</span></td>
+                      <td style="font-size:0.8rem;">${esc(sG.remark)}</td>
+                    </tr>`;
+                }).join("")}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="behavior-rating-grid">
+            <div style="border:1px solid #000;padding:10px;">
+              <strong>AFFECTIVE DOMAIN (BEHAVIOR)</strong>
+              <div style="margin-top:6px;display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+                <div>Punctuality: 5/5</div>
+                <div>Neatness: 5/5</div>
+                <div>Politeness: 4/5</div>
+                <div>Honesty: 5/5</div>
+                <div>Relationship with Peers: 5/5</div>
+              </div>
+            </div>
+            <div style="border:1px solid #000;padding:10px;">
+              <strong>PSYCHOMOTOR SKILLS (PRACTICAL)</strong>
+              <div style="margin-top:6px;display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+                <div>Handwriting: 4/5</div>
+                <div>Sports &amp; Athletics: 4/5</div>
+                <div>Verbal Fluency: 5/5</div>
+                <div>Drawing &amp; Crafts: 4/5</div>
+                <div>Musical Rhythm: 4/5</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="border:1px solid #000;padding:10px;margin-top:10px;font-size:0.9rem;">
+            <div><strong>FORM TEACHER'S GENERAL REMARK:</strong> ${esc(ng.remark)} An attentive and hardworking scholar.</div>
+            <div style="margin-top:6px;"><strong>HEADTEACHER'S ENDORSEMENT:</strong> A very commendable result. Keep up the high standard!</div>
+            <div style="margin-top:8px;display:flex;justify-content:space-between;border-top:1px dashed #000;padding-top:6px;">
+              <span><strong>NEXT TERM RESUMPTION DATE:</strong> 4th May, 2026</span>
+              <span><strong>HEADTEACHER'S SIGNATURE &amp; STAMP:</strong> _____________________</span>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  /* ==========================================================================
+     NIGERIAN CBT EXAM HALL VIEW
      ========================================================================== */
 
   function renderCBTHall() {
@@ -1752,7 +2078,6 @@
     const roster = state.classRoster || [];
     const es = state.examSetter;
 
-    // Calculate totals, grades and ranks
     const computedList = roster.map(function (p) {
       const ca1 = p.ca1 || 0;
       const ca2 = p.ca2 || 0;
@@ -1766,7 +2091,7 @@
       <div class="wrap">
         <div class="topbar no-print">
           <button class="icon-btn" data-go="exam_setter">←</button>
-          <div style="display:flex;gap:8px;">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
             <button class="btn btn-sun btn-sm" data-action="add-roster-pupil">+ Add Pupil Record</button>
             <button class="btn btn-ghost btn-sm" data-action="export-class-csv">📊 Export CSV</button>
             <button class="btn btn-primary btn-sm" data-action="print-page">🖨️ Print Master Broadsheet</button>
@@ -1793,6 +2118,7 @@
                   <th style="width:85px;">Total (100)</th>
                   <th style="width:65px;">Grade</th>
                   <th>Teacher's Remark</th>
+                  <th class="no-print">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -1808,6 +2134,9 @@
                       <td><strong style="color:var(--teal);">${p.total}</strong></td>
                       <td><span class="grade-badge-${p.gradeLetter.toLowerCase()}">${p.gradeLetter}</span></td>
                       <td style="font-size:0.82rem;">${esc(p.remark)}</td>
+                      <td class="no-print">
+                        <button class="btn btn-ghost btn-sm" data-action="view-pupil-report" data-pid="${p.id}">Report Card 📜</button>
+                      </td>
                     </tr>`;
                 }).join("")}
               </tbody>
@@ -2663,6 +2992,7 @@
       case "exam_preview": html = renderExamPreview(); break;
       case "omr_sheet": html = renderOMRSheet(); break;
       case "marking_scheme": html = renderMarkingScheme(); break;
+      case "pupil_report": html = renderPupilReportCard(); break;
       case "cbt_hall": html = renderCBTHall(); break;
       case "broadsheet": html = renderBroadsheet(); break;
       case "exam_library": html = renderExamLibrary(); break;
@@ -2960,6 +3290,91 @@
         swapExamQuestion(swapIdx);
         break;
 
+      case "delete-q":
+        const delQIdx = Number(target.dataset.idx);
+        if (confirm(`Delete Question ${delQIdx + 1}?`)) {
+          state.examSetter.questions.splice(delQIdx, 1);
+          render();
+          toast("Question removed from paper.");
+        }
+        break;
+
+      case "edit-q-modal":
+        const edIdx = Number(target.dataset.idx);
+        state.editingQIndex = edIdx;
+        const curEditQ = state.examSetter.questions[edIdx];
+        state.editQData = {
+          q: curEditQ.q,
+          options: curEditQ.options.slice(),
+          answer: curEditQ.answer,
+          topic: curEditQ.topic || "Core Curriculum",
+          bloom: curEditQ.bloom || "Understand",
+          explain: curEditQ.explain || ""
+        };
+        state.editModalOpen = true;
+        render();
+        break;
+
+      case "open-add-q-modal":
+        state.editingQIndex = null;
+        state.editQData = {
+          q: "",
+          options: ["", "", "", ""],
+          answer: 0,
+          topic: "Core Curriculum",
+          bloom: "Understand",
+          explain: ""
+        };
+        state.editModalOpen = true;
+        render();
+        break;
+
+      case "close-edit-modal":
+        state.editModalOpen = false;
+        render();
+        break;
+
+      case "save-edit-q-data":
+        const qTxt = (document.getElementById("edit-q-text").value || "").trim();
+        const o0 = (document.getElementById("edit-opt-0").value || "").trim();
+        const o1 = (document.getElementById("edit-opt-1").value || "").trim();
+        const o2 = (document.getElementById("edit-opt-2").value || "").trim();
+        const o3 = (document.getElementById("edit-opt-3").value || "").trim();
+        const aIdx = Number(document.getElementById("edit-ans-idx").value);
+        const bLm = document.getElementById("edit-bloom").value;
+        const tPc = (document.getElementById("edit-topic").value || "Core").trim();
+        const exp = (document.getElementById("edit-explain").value || "").trim();
+
+        if (!qTxt || !o0 || !o1 || !o2 || !o3) {
+          toast("Please enter the question text and all 4 options.");
+          return;
+        }
+
+        const savedQObj = {
+          q: qTxt,
+          options: [o0, o1, o2, o3],
+          answer: aIdx,
+          topic: tPc,
+          bloom: bLm,
+          explain: exp || `The correct answer is (${LETTERS[aIdx]}): ${[o0, o1, o2, o3][aIdx]}.`,
+          subject: state.examSetter.subject
+        };
+
+        if (state.editingQIndex === null) {
+          state.examSetter.questions.push(savedQObj);
+          toast("Custom question added to paper!");
+        } else {
+          state.examSetter.questions[state.editingQIndex] = savedQObj;
+          toast(`Question ${state.editingQIndex + 1} updated!`);
+        }
+        state.editModalOpen = false;
+        render();
+        break;
+
+      case "export-word-doc":
+        exportExamAsWordDoc();
+        break;
+
       case "shuffle-type":
         const typeLtr = target.dataset.type || "B";
         shufflePaperType(typeLtr);
@@ -2994,7 +3409,7 @@
       // CBT EXAM ROOM ACTIONS
       // ==========================================
       case "launch-cbt-exam":
-        const candName = prompt("Enter Candidate Name:", "Chinedu Okafor");
+        const candName = prompt("Enter Candidate Full Name:", "Chinedu Okafor");
         if (candName !== null) {
           state.cbt.candidateName = candName.trim();
           launchCBTExam();
@@ -3060,6 +3475,12 @@
           toast("Pupil record added to broadsheet.");
           render();
         }
+        break;
+
+      case "view-pupil-report":
+        state.selectedPupilId = target.dataset.pid;
+        state.screen = "pupil_report";
+        render();
         break;
 
       case "export-class-csv":
@@ -3196,6 +3617,10 @@
       else if (key === "ESCAPE") {
         if (state.scratchpadOpen) {
           state.scratchpadOpen = false;
+          render();
+        }
+        if (state.editModalOpen) {
+          state.editModalOpen = false;
           render();
         }
       }
