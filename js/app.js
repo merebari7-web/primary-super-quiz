@@ -1587,6 +1587,91 @@
   }
 
   /* ==========================================================================
+     CUSTOM PRINTABLE WORKSHEET & MARKING SCHEME VIEW
+     ========================================================================== */
+
+  function renderWorksheet() {
+    const s = window.SUBJECTS[state.subject] || { name: "Assessment", icon: "📄" };
+    const g = state.grade || 1;
+    const today = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+    const sch = schoolName() || "Academic Examination Board";
+
+    return `
+      <div class="wrap">
+        <div class="topbar no-print">
+          <button class="btn btn-ghost btn-sm" data-go="teachers">← Back to Teacher Hub</button>
+          <div style="display:flex;gap:10px;">
+            <button class="btn btn-primary" data-action="print-page">🖨️ Print Exam Paper & Marking Guide</button>
+          </div>
+        </div>
+
+        <!-- SECTION A: STUDENT WORKSHEET PAPER -->
+        <div class="worksheet-paper">
+          <header class="worksheet-header">
+            <div style="text-align:center;margin-bottom:12px;">
+              <h2 style="font-size:1.6rem;text-transform:uppercase;letter-spacing:0.05em;">${esc(sch)}</h2>
+              <h3 style="font-size:1.25rem;color:#334155;">${s.icon} ${esc(s.name)} · Primary ${g} Term Assessment</h3>
+            </div>
+            <div class="worksheet-meta-grid">
+              <div><strong>Student Name:</strong> ___________________________________</div>
+              <div><strong>Date:</strong> ${today}</div>
+              <div><strong>Class:</strong> Primary ${g}</div>
+              <div><strong>Time Allowed:</strong> 45 Minutes · <strong>Max Marks:</strong> ${state.questions.length}</div>
+            </div>
+            <div style="font-size:0.88rem;color:#475569;margin-top:12px;border-top:1px solid #ccc;padding-top:6px;">
+              <em>Instructions: Read each question carefully. Darken or mark the bubble corresponding to the single best answer.</em>
+            </div>
+          </header>
+
+          <main>
+            ${state.questions.map(function (q, i) {
+              return `
+                <div class="worksheet-q-block">
+                  <div class="worksheet-q-title">${i + 1}. ${esc(q.q)}</div>
+                  <div class="worksheet-opts-grid">
+                    ${q.options.map(function (opt, oi) {
+                      return `<div><span class="checkbox-bubble"></span><strong>(${LETTERS[oi]})</strong> ${esc(opt)}</div>`;
+                    }).join("")}
+                  </div>
+                </div>`;
+            }).join("")}
+          </main>
+
+          <!-- SECTION B: TEACHER MARKING GUIDE & ANSWER KEY -->
+          <section class="marking-guide-section">
+            <div style="text-align:center;margin-bottom:16px;">
+              <div class="kicker" style="color:#000;">Confidential · Teacher Marking Scheme</div>
+              <h2 style="font-size:1.4rem;text-transform:uppercase;">${esc(s.name)} (Primary ${g}) — Answer Key & Bloom's Notes</h2>
+            </div>
+            <table class="report-table" style="border:1px solid #000;font-size:0.9rem;">
+              <thead>
+                <tr style="border-bottom:2px solid #000;">
+                  <th style="width:45px;">Q#</th>
+                  <th style="width:65px;">Key</th>
+                  <th>Correct Answer Option</th>
+                  <th>Subtopic & Bloom's Domain</th>
+                  <th>Pedagogical Solution & Rational</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${state.questions.map(function (q, i) {
+                  return `
+                    <tr style="border-bottom:1px solid #ddd;">
+                      <td><strong>${i + 1}</strong></td>
+                      <td><strong>${LETTERS[q.answer]}</strong></td>
+                      <td>${esc(q.options[q.answer])}</td>
+                      <td>${esc(q.topic || "Core")} · <em>${esc(q.bloom || "Understand")}</em></td>
+                      <td>${esc(q.explain)}</td>
+                    </tr>`;
+                }).join("")}
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </div>`;
+  }
+
+  /* ==========================================================================
      TEACHER COMMAND CENTER & PRINTABLE WORKSHEET BUILDER
      ========================================================================== */
 
@@ -1997,6 +2082,7 @@
       case "privacy": html = renderPrivacy(); break;
       case "account": html = renderAccount(); break;
       case "teachers": html = renderTeachers(); break;
+      case "worksheet": html = renderWorksheet(); break;
       case "projector": html = renderProjector(); break;
       case "report": html = renderReport(); break;
       case "certificate": html = renderCertificate(); break;
@@ -2292,7 +2378,8 @@
           state.questions = shuffle(bank).slice(0, cntVal);
           state.grade = gVal;
           state.subject = sVal;
-          window.print();
+          state.screen = "worksheet";
+          render();
         });
         break;
       case "proj-next":

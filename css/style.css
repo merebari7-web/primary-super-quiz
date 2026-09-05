@@ -1092,15 +1092,80 @@ body {
 }
 
 /* ==========================================================================
+   WORKSHEET PAPER & PRINTABLE EXAM STYLES
+   ========================================================================== */
+
+.worksheet-paper {
+  background: #ffffff;
+  color: #000000;
+  padding: 32px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.worksheet-header {
+  border-bottom: 3px double #000000;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.worksheet-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  font-size: 0.95rem;
+  margin-top: 12px;
+}
+
+.worksheet-q-block {
+  margin-bottom: 20px;
+  page-break-inside: avoid;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 14px;
+}
+
+.worksheet-q-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.worksheet-opts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.checkbox-bubble {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #000000;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.marking-guide-section {
+  page-break-before: always;
+  margin-top: 40px;
+  border-top: 4px double #000000;
+  padding-top: 24px;
+}
+
+/* ==========================================================================
    PRINT STYLES FOR EXAMS, WORKSHEETS, CERTIFICATES & REPORTS
    ========================================================================== */
 
 @media print {
-  body { background: #ffffff !important; color: #000000 !important; font-size: 14pt !important; }
-  .no-print, .topbar, .top-actions, .crumbs, .site-footer, .install-bar, .life, .btn, button { display: none !important; }
+  body { background: #ffffff !important; color: #000000 !important; font-size: 12pt !important; }
+  .no-print, .topbar, .top-actions, .crumbs, .site-footer, .install-bar, .life, .btn, button, .toast { display: none !important; }
   .wrap { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
-  .q-card, .result, .report, .exam { border: none !important; box-shadow: none !important; padding: 0 !important; }
-  .exam-q { page-break-inside: avoid; margin-bottom: 18px; border-bottom: 1px solid #ccc; padding-bottom: 12px; }
+  .q-card, .result, .report, .exam, .worksheet-paper { border: none !important; box-shadow: none !important; padding: 0 !important; }
+  .worksheet-q-block { page-break-inside: avoid; margin-bottom: 16px; }
+  .marking-guide-section { page-break-before: always; }
   .certificate { border: 8px double #d4af37 !important; page-break-inside: avoid; }
 }
 
@@ -1129,4 +1194,6 @@ body {
   .hero { grid-template-columns: 1fr; padding: 24px; }
   .home-grid { grid-template-columns: 1fr; }
   .projector-opts { grid-template-columns: 1fr; }
+  .worksheet-opts-grid { grid-template-columns: 1fr; }
+  .worksheet-meta-grid { grid-template-columns: 1fr; }
 }
