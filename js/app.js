@@ -82,11 +82,11 @@
     wsGrade: 1,
     wsSubject: "maths",
     wsCount: 20,
-    wsLevel: "standard"
+    wsLevel: "standard",
+    availableTopics: []
   };
 
   let audioCtx = null;
-  let musicSource = null;
   let confettiTimer = null;
   let tickTimer = null;
   let clockTimer = null;
@@ -387,6 +387,30 @@
     } catch (err) {
       state.loading = false;
       state.error = err.message || "Failed to load paper.";
+      render();
+    }
+  }
+
+  async function openTopicDrill(subj) {
+    state.subject = subj;
+    state.loading = true;
+    render();
+    try {
+      const bank = await loadBank(state.grade || 1, subj);
+      const topicMap = {};
+      bank.forEach(function (q) {
+        const t = q.topic || "Core Foundations";
+        topicMap[t] = (topicMap[t] || 0) + 1;
+      });
+      state.availableTopics = Object.keys(topicMap).map(function (t) {
+        return { name: t, count: topicMap[t] };
+      });
+      state.loading = false;
+      state.screen = "topics";
+      render();
+    } catch (e) {
+      state.loading = false;
+      state.error = "Could not load topics.";
       render();
     }
   }
@@ -773,12 +797,13 @@
       <header class="topbar no-print">
         <div style="display:flex;align-items:center;gap:12px;">
           ${backBtn}
-          ${state.name ? `<span class="chip" data-go="account">👤 ${esc(state.name)} · P${state.grade || 1}</span>` : ""}
+          <span class="chip" data-go="account" style="cursor:pointer;">👤 ${esc(state.name || "Scholar")} · P${state.grade || 1}</span>
         </div>
         <div class="top-actions">
           <button class="icon-btn" data-action="toggle-sound" title="Toggle sound FX">${settings.sound ? "🔊" : "🔇"}</button>
           <button class="icon-btn" data-go="flashcards" title="Spaced Recall Flashcards">🗂️</button>
           <button class="icon-btn" data-go="teachers" title="Teacher & Classroom Hub">👨‍🏫</button>
+          <button class="icon-btn" data-go="account" title="Trophy Showcase & Badges">🏆</button>
           <button class="icon-btn" data-go="settings" title="Settings">⚙️</button>
         </div>
       </header>`;
@@ -951,6 +976,34 @@
           <input type="text" id="subj-search" class="btn btn-ghost" style="width:100%;max-width:400px;text-align:left;" placeholder="🔍 Search subjects or topics..." value="${esc(state.query)}">
         </div>
         <div class="grid-subjects">${subjCards || `<div class="empty-state">No subjects matched your filter.</div>`}</div>
+      </div>`;
+  }
+
+  function renderTopicDrill() {
+    const s = window.SUBJECTS[state.subject] || { name: "Subject Topics", icon: "📘" };
+    const g = state.grade || 1;
+
+    return `
+      <div class="wrap">
+        ${renderTopBar("subject")}
+        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: window.GRADE_INFO[g].label, go: "grade" }, { label: s.name, go: "subject" }, { label: "Subtopics" }])}
+        <div class="kicker">${s.icon} ${s.name} · Primary ${g}</div>
+        <h2 class="section-title">Focused Subtopic Mastery</h2>
+        <p class="sub">Select a targeted curriculum subtopic to practice specific learning objectives and skills.</p>
+
+        <div class="grid-grades" style="margin-top:20px;">
+          ${state.availableTopics.map(function (top) {
+            return `
+              <div class="card-btn">
+                <h4>🎯 ${esc(top.name)}</h4>
+                <p style="color:var(--muted);font-size:0.88rem;margin:8px 0 14px;">${top.count} questions available in bank</p>
+                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                  <button class="btn btn-primary btn-sm" data-start-topic-quiz="${esc(top.name)}" data-topic-len="10">10 Questions</button>
+                  <button class="btn btn-ghost btn-sm" data-start-topic-quiz="${esc(top.name)}" data-topic-len="20">20 Questions</button>
+                </div>
+              </div>`;
+          }).join("")}
+        </div>
       </div>`;
   }
 
@@ -1398,6 +1451,142 @@
   }
 
   /* ==========================================================================
+     WHY IT WORKS: LEARNING SCIENCE WHITE PAPER
+     ========================================================================== */
+
+  function renderWhy() {
+    return `
+      <div class="wrap">
+        ${renderTopBar("home")}
+        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Why It Works (Learning Science)" }])}
+        <div class="kicker">Cognitive Psychology &amp; Educational Evidence</div>
+        <h2 class="section-title">The Science of Active Retrieval</h2>
+        <p class="sub">Why professors, researchers, and primary educators worldwide recommend retrieval practice over passive studying.</p>
+
+        <div class="home-grid" style="margin-bottom:28px;">
+          <div class="card-btn">
+            <h3>🧠 1. The Testing Effect (Roediger &amp; Karpicke, 2006)</h3>
+            <p>Direct experimental evidence shows that actively retrieving a fact from memory creates stronger, more durable neural connections than re-reading notes multiple times.</p>
+          </div>
+          <div class="card-btn">
+            <h3>⏳ 2. Spaced Repetition (Bjork, 1994; Cepeda et al., 2006)</h3>
+            <p>Our Leitner 3-Box Flashcard system interrupts the natural Ebbinghaus forgetting curve just as a memory begins to decay, solidifying long-term synaptic retention.</p>
+          </div>
+          <div class="card-btn">
+            <h3>🌈 3. Interleaving Practice (Rohrer &amp; Taylor, 2007)</h3>
+            <p>The Champion Mix and multi-subject challenges interleave different topics, teaching children's brains to categorize problems and select the correct solution strategy dynamically.</p>
+          </div>
+          <div class="card-btn">
+            <h3>🎯 4. Metacognitive Calibration (Dunlosky et al., 2013)</h3>
+            <p>Prompting pupils to rate confidence before answering uncovers illusions of competence (the Dunning-Kruger effect) and guides focused revision to real areas of growth.</p>
+          </div>
+        </div>
+
+        <div class="q-card" style="margin-bottom:28px;">
+          <h3>✨ Key Principles Embedded in Primary Super Quiz</h3>
+          <ul style="padding-left:20px;margin-top:12px;line-height:1.7;">
+            <li><strong>Zero Extraneous Cognitive Load (Sweller, 1988):</strong> Clean, clutter-free, ad-free interface ensures 100% of working memory is devoted to thinking and solving.</li>
+            <li><strong>Immediate Formative Scaffolding:</strong> Hints and step-by-step solutions explain <em>why</em> a concept works, transforming mistakes into high-impact learning opportunities.</li>
+            <li><strong>Low-Stakes Psychological Safety:</strong> Practice modes celebrate effort, combos, and consistency without penalizing exploratory learning.</li>
+          </ul>
+        </div>
+      </div>`;
+  }
+
+  /* ==========================================================================
+     PRIVACY POLICY (COPPA & GDPR COMPLIANCE)
+     ========================================================================== */
+
+  function renderPrivacy() {
+    return `
+      <div class="wrap">
+        ${renderTopBar("home")}
+        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Privacy Policy & Child Safety" }])}
+        <div class="kicker">COPPA &amp; GDPR Compliant · Safe for Classrooms</div>
+        <h2 class="section-title">Privacy &amp; Child Safety Policy</h2>
+        <p class="sub">How Primary Super Quiz protects children's privacy and delivers safe, ad-free education.</p>
+
+        <div class="q-card" style="margin-bottom:20px;">
+          <h3>🔒 100% On-Device Local Storage</h3>
+          <p style="margin-top:8px;line-height:1.5;">All student profiles, XP progress, badge unlocks, quiz scores, and flashcard states are stored strictly on this device inside browser <code>localStorage</code>. No personal identifiable information is sent to external servers.</p>
+        </div>
+
+        <div class="q-card" style="margin-bottom:20px;">
+          <h3>🚫 Zero Advertisements &amp; No Commercial Trackers</h3>
+          <p style="margin-top:8px;line-height:1.5;">Primary Super Quiz contains zero advertising, zero marketing pixels, and zero third-party tracking scripts. The app is 100% free for schools, teachers, parents, and pupils.</p>
+        </div>
+
+        <div class="q-card">
+          <h3>📜 Full International Compliance</h3>
+          <p style="margin-top:8px;line-height:1.5;">Designed in compliance with the US Children's Online Privacy Protection Act (COPPA), the European Union General Data Protection Regulation (GDPR-K), and Nigeria Data Protection Regulation (NDPR).</p>
+        </div>
+      </div>`;
+  }
+
+  /* ==========================================================================
+     PUPIL ACCOUNT & TROPHY SHOWCASE
+     ========================================================================== */
+
+  function renderAccount() {
+    const r = rankFor(progress.xp);
+    const allBadges = window.BADGES || [];
+    const unlockedBadges = progress.badges || [];
+
+    return `
+      <div class="wrap">
+        ${renderTopBar("home")}
+        ${renderBreadcrumbs([{ label: "Home", go: "home" }, { label: "Student Profile & Trophy Cabinet" }])}
+        <div class="kicker">Academic Distinction &amp; Badges</div>
+        <h2 class="section-title">Trophy Cabinet &amp; Profile</h2>
+        <p class="sub">Track student achievements, unlock milestones, and switch learner profiles.</p>
+
+        <div class="hero" style="margin-bottom:28px;">
+          <div>
+            <div class="kicker">Current Academic Rank</div>
+            <h2 style="font-size:2rem;color:var(--teal);margin:8px 0;">${r.icon} ${r.name}</h2>
+            <p style="font-size:1.05rem;color:var(--muted);">${progress.xp} Total XP · ${progress.quizzes} Quizzes Completed</p>
+            <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;">
+              <button class="btn btn-primary btn-sm" data-action="add-student-modal">+ New Student Profile</button>
+              <button class="btn btn-ghost btn-sm" data-go="certificate">Print Diploma 📜</button>
+            </div>
+          </div>
+          <div class="hero-art">
+            <img src="images/trophy.png" alt="Trophy" style="max-width:180px;">
+          </div>
+        </div>
+
+        <div class="q-card" style="margin-bottom:28px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px;">
+            <h3>👥 Switch Active Profile</h3>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            ${listProfiles().map(function (p) {
+              const isCur = uid() === p.id;
+              return `
+                <button class="chip ${isCur ? "on" : ""}" data-switch-profile="${p.id}">
+                  👤 ${esc(p.name)} (P${p.grade || 1})
+                </button>`;
+            }).join("")}
+          </div>
+        </div>
+
+        <h3 style="margin-bottom:16px;">🏆 Academic Milestone Badges (${unlockedBadges.length} / ${allBadges.length} Unlocked)</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:14px;margin-bottom:32px;">
+          ${allBadges.map(function (b) {
+            const isUnlocked = unlockedBadges.indexOf(b.id) >= 0;
+            return `
+              <div class="stat-tile" style="text-align:left;padding:16px;opacity:${isUnlocked ? "1" : "0.55"};border-color:${isUnlocked ? "var(--sun)" : "var(--line)"};">
+                <div style="font-size:2rem;margin-bottom:6px;">${b.icon}</div>
+                <strong style="display:block;font-size:1.05rem;color:var(--ink);">${esc(b.name)}</strong>
+                <p style="font-size:0.82rem;color:var(--muted);margin-top:4px;">${esc(b.desc)}</p>
+                <span class="chip ${isUnlocked ? "on" : ""}" style="margin-top:8px;font-size:0.75rem;">${isUnlocked ? "✅ Unlocked" : "🔒 In Progress"}</span>
+              </div>`;
+          }).join("")}
+        </div>
+      </div>`;
+  }
+
+  /* ==========================================================================
      TEACHER COMMAND CENTER & PRINTABLE WORKSHEET BUILDER
      ========================================================================== */
 
@@ -1797,12 +1986,16 @@
       case "home": html = renderHome(); break;
       case "grade": html = renderGrades(); break;
       case "subject": html = renderSubjects(); break;
+      case "topics": html = renderTopicDrill(); break;
       case "length": html = renderLengthSetup(); break;
       case "quiz": html = renderQuiz(); break;
       case "result": html = renderResult(); break;
       case "review": html = renderReview(); break;
       case "flashcards": html = renderFlashcards(); break;
       case "curriculum": html = renderCurriculum(); break;
+      case "why": html = renderWhy(); break;
+      case "privacy": html = renderPrivacy(); break;
+      case "account": html = renderAccount(); break;
       case "teachers": html = renderTeachers(); break;
       case "projector": html = renderProjector(); break;
       case "report": html = renderReport(); break;
@@ -1819,7 +2012,7 @@
   }
 
   document.addEventListener("click", function (e) {
-    const target = e.target.closest("[data-action], [data-go], [data-set-grade], [data-pick-subj], [data-drill-subj], [data-set-group], [data-set-len], [data-set-mode], [data-opt], [data-set-conf], [data-set-stool], [data-set-scolor], [data-rate-card], [data-set-theme], [data-set-font], [data-set-fsize], [data-switch-profile], [data-set-rfilter]");
+    const target = e.target.closest("[data-action], [data-go], [data-set-grade], [data-pick-subj], [data-drill-subj], [data-start-topic-quiz], [data-set-group], [data-set-len], [data-set-mode], [data-opt], [data-set-conf], [data-set-stool], [data-set-scolor], [data-rate-card], [data-set-theme], [data-set-font], [data-set-fsize], [data-switch-profile], [data-set-rfilter]");
     if (!target) return;
 
     if (target.dataset.go) {
@@ -1845,10 +2038,14 @@
     }
 
     if (target.dataset.drillSubj) {
-      state.subject = target.dataset.drillSubj;
-      state.selectedTopic = null;
-      state.screen = "length";
-      render();
+      openTopicDrill(target.dataset.drillSubj);
+      return;
+    }
+
+    if (target.dataset.startTopicQuiz) {
+      const topName = target.dataset.startTopicQuiz;
+      const len = Number(target.dataset.topicLen || 10);
+      startQuiz(state.subject, len, "practice", topName);
       return;
     }
 
