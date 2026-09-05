@@ -1021,6 +1021,7 @@
       ? `<button class="icon-btn" data-go="${backScreen}" aria-label="Back">←</button>`
       : `<div class="brand"><img src="images/mascot.png" alt=""> Super Quiz</div>`;
     return `
+      ${netBanner()}
       <div class="topbar no-print">
         ${left}
         <div class="ghost-row">
@@ -1097,7 +1098,7 @@
     return (state.name || "Your child") + " practised on Primary Super Quiz. " +
       r.icon + " " + r.name + " · " + progress.xp + " XP · streak " + progress.streak +
       " days · " + progress.quizzes + " quizzes" +
-      (acc != null ? " · " + acc + "% accuracy" : "") +
+      (acc != null ? " · " + acc + "% accuracy (" + gradeLetter(acc).mark + ")" : "") +
       " · " + fmtDur(progress.studySec || 0) + " study time. " +
       location.href.split("#")[0];
   }
@@ -1107,7 +1108,7 @@
       <div class="onboard" role="dialog" aria-modal="true" aria-label="Help" data-action="close-help">
         <div class="onboard-card">
           <h2>Quick help</h2>
-          <p>A B C D — choose an answer<br>H — hint · F — flag · P — pause · N or Enter — next<br>? — this help</p>
+          <p>A B C D — choose an answer<br>H — hint · F — flag · P — pause · N or Enter — next<br>After an answer, swipe left for next<br>? — this help</p>
           <p>Teachers: print an exam paper from the subject screen, and a progress report from My progress.</p>
           <button class="btn btn-primary" data-action="close-help">Close</button>
         </div>
@@ -1248,6 +1249,8 @@
           <p>No. It is practice only — not an NERDC, ministry or common-entrance paper.</p>
           <h3>How do teachers print a paper?</h3>
           <p>Pick a class, then Print exam. You get an 80-question paper and an answer key. My progress has a printable report.</p>
+          <h3>Can I star a subject?</h3>
+          <p>Yes. Tap the star on a subject card. ★ Fav keeps those subjects at the top of the list on this device.</p>
           <div class="home-actions">
             <button class="btn btn-primary" data-go="home">Back to home</button>
             <button class="btn btn-ghost" data-action="open-help">Keyboard help</button>
@@ -1266,11 +1269,11 @@
           <h3>1. Pick your class</h3>
           <p>Primary 1 to Primary 6. Questions get harder as you go up.</p>
           <h3>2. Choose a subject</h3>
-          <p>English, Mathematics, Basic Science and 13 more — 100 questions in each class.</p>
+          <p>English, Mathematics, Basic Science and 13 more — 100 questions in each class. Star the ones you use often.</p>
           <h3>3. Pick a mode</h3>
-          <p><strong>Practice</strong> marks at once. <strong>Exam</strong> waits until the end. <strong>Timed</strong> gives you a clock. <strong>Lightning 5</strong> is a 12-second sprint.</p>
+          <p><strong>Practice</strong> marks at once. <strong>Exam</strong> waits until the end. <strong>Timed</strong> gives you a clock. <strong>Lightning 5</strong> is a 12-second sprint. Flag a hard question to review later.</p>
           <h3>4. Grow</h3>
-          <p>Earn XP, climb ranks, keep a streak and print a teacher report. Missed questions are saved so you can try them again.</p>
+          <p>Earn XP, climb ranks and a grade letter (A–E). Print a teacher report. Missed questions are saved so you can try them again.</p>
           <div class="home-actions">
             <button class="btn btn-primary" data-go="home">Back to home</button>
           </div>
@@ -1402,12 +1405,11 @@
     const nSub = Object.keys(window.SUBJECTS).length;
     const cont = resume && resume.questions && resume.questions.length
       ? `<div class="continue-banner">
-           <div><strong>Continue quiz</strong><p>${esc(subjectName(resume.subject))} · Q${(resume.index || 0) + 1}/${resume.questions.length}</p></div>
+           <div><strong>Continue quiz</strong><p>${esc(subjectName(resume.subject))} · ${esc(resume.mode || "practice")} · Q${(resume.index || 0) + 1}/${resume.questions.length}</p></div>
            <button class="btn btn-sun" data-action="resume">Resume</button>
          </div>` : "";
     return `
       <div class="wrap">
-        ${netBanner()}
         ${updateBanner()}
         ${installBanner()}
         ${topbar(null)}
@@ -1576,6 +1578,7 @@
     return `
       <div class="wrap">
         ${topbar("grade")}
+        ${crumbs([{ label: "Home", go: "home" }, { label: "Class", go: "grade" }, { label: window.GRADE_INFO[g].label }])}
         <p class="kicker">${window.GRADE_INFO[g].label}</p>
         <h2 class="section-title">Choose a subject</h2>
         <input class="search" id="subj-search" type="search" placeholder="Search subjects…" value="${esc(state.query)}">
@@ -1613,7 +1616,7 @@
     const buttons = window.QUIZ_LENGTHS.map(function (n) {
       const label = n === 10 ? "Quick" : n === 20 ? "Standard" : n === 50 ? "Long" : "Full paper";
       const cls = "btn length-btn " + (state.length === n ? "btn-primary" : "btn-ghost");
-      return `<button class="${cls}" data-length="${n}"><strong>${n}</strong><span>${label}</span></button>`;
+      return `<button class="${cls}" data-length="${n}"><strong>${n}</strong><span>${label}</span><em>~${etaMinutes(n)} min</em></button>`;
     }).join("");
     const modes = [
       { id: "practice", title: "Practice", desc: "Instant marking and a short explanation." },
@@ -1662,7 +1665,7 @@
         else cls += " dim";
       } else if (exam && state.picked[state.index] === i) cls += " correct";
       return `
-        <button class="${cls}" data-opt="${i}" ${state.revealed && !exam ? "disabled" : ""}>
+        <button class="${cls}" data-opt="${i}" ${state.revealed && !exam ? "disabled" : ""} ${exam && state.picked[state.index] === i ? "aria-pressed=\"true\"" : ""}>
           <span class="badge">${LETTERS[i]}</span>
           <span>${esc(opt)}</span>
         </button>`;
@@ -1670,7 +1673,7 @@
     let feedback = "";
     if (showMark) {
       const ok = state.picked[state.index] === q.answer;
-      feedback = `<div class="feedback ${ok ? "ok" : "no"}">${ok ? "Yes! " : "Not quite. The answer is <strong>" + esc(q.options[q.answer]) + "</strong>. "}${esc(q.explain)}</div>`;
+      feedback = `<div class="feedback ${ok ? "ok" : "no"}" role="status">${ok ? "Yes! " : "Not quite. The answer is <strong>" + esc(q.options[q.answer]) + "</strong>. "}${esc(q.explain)}</div>`;
     }
     const canNext = exam ? state.picked[state.index] != null || state.revealed : state.revealed;
     const nextLabel = state.index === total - 1 ? "See my score" : "Next →";
@@ -1679,7 +1682,6 @@
          <button class="life" data-action="${state.paused ? "resume-quiz" : "pause-quiz"}">${state.paused ? "▶ Resume" : "⏸ Pause"}</button>` : "";
     return `
       <div class="wrap${settings.focus ? " focus-quiz" : ""}">
-        ${netBanner()}
         ${topbar("length")}
         ${crumbs([{ label: "Home", go: "home" }, { label: subjectName(state.subject) }, { label: "Q" + (state.index + 1) }])}
         ${helpEl()}
@@ -1861,7 +1863,9 @@
       const s = window.SUBJECTS[k];
       const best = progress.best[g + "/" + k];
       const st = best ? starsFor(best.pct) : 0;
-      return `<div class="dash-cell" title="${s.name}"><span class="ico">${s.icon}</span>${s.short}<div class="stars-mini">${"★".repeat(st)}${"☆".repeat(3 - st)}</div></div>`;
+      const pick = state.grade ? `type="button" data-pick-subject="${k}" aria-label="Practise ${esc(s.name)}"` : "";
+      const tag = state.grade ? "button" : "div";
+      return `<${tag} class="dash-cell" ${pick} title="${esc(s.name)}"><span class="ico">${s.icon}</span>${s.short}<div class="stars-mini">${"★".repeat(st)}${"☆".repeat(3 - st)}</div></${tag}>`;
     }).join("");
     const badges = window.BADGES.map(function (b) {
       const on = progress.badges.indexOf(b.id) >= 0;
@@ -2073,6 +2077,11 @@
           <p>${esc(state.name || "Pupil")}${schoolName() ? " · " + esc(schoolName()) : ""} · ${window.GRADE_INFO[g].label}</p>
           <p>Retry these missed questions. Circle A, B, C or D.</p>
         </header>
+        <div class="exam-meta">
+          <span>Name: ${esc(state.name || "______________________________")}</span>
+          <span>Date: ______________</span>
+          <span>Score: ______ / ${missed.length}</span>
+        </div>
         ${body}
         <section class="answer-key">
           <h2>Answer key — for the teacher only</h2>
@@ -2520,8 +2529,9 @@
 
   function resultShareText() {
     const n = score(); const total = state.questions.length;
-    return (state.name || "I") + " scored " + n + "/" + total + " (" + Math.round((n / Math.max(1, total)) * 100) +
-      "%) in " + subjectName(state.subject) + " · Primary " + state.grade + " on Primary Super Quiz!";
+    const pct = Math.round((n / Math.max(1, total)) * 100);
+    return (state.name || "I") + " scored " + n + "/" + total + " (" + pct + "% · Grade " + gradeLetter(pct).mark +
+      ") in " + subjectName(state.subject) + " · Primary " + state.grade + " on Primary Super Quiz!";
   }
   async function shareResult() {
     const text = resultShareText();

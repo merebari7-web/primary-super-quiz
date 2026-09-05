@@ -355,6 +355,13 @@ input[type="text"]:focus { border-color: var(--teal); box-shadow: 0 0 0 4px var(
   gap: 4px;
 }
 .length-btn strong { font-size: 28px; font-family: var(--font-display); }
+.length-btn em {
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--muted);
+}
+.length-btn.btn-primary em { color: inherit; opacity: 0.85; }
 
 .card-btn {
   text-align: left;
@@ -981,7 +988,11 @@ html.large { font-size: 22px; }
   text-align: center;
   font-size: 11px;
   font-weight: 800;
+  width: 100%;
+  font-family: inherit;
+  color: inherit;
 }
+button.dash-cell:hover { border-color: var(--teal); transform: translateY(-2px); }
 .dash-cell .ico { font-size: 18px; display: block; }
 .stars-mini { color: var(--sun); letter-spacing: -1px; }
 
