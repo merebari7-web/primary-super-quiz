@@ -831,6 +831,22 @@
     if (pct >= 40) return { mark: "D", label: "Fair" };
     return { mark: "E", label: "Keep practising" };
   }
+  function gradeScaleNote() {
+    return "A 80%+ · B 70–79 · C 55–69 · D 40–54 · E below 40. Practice grades only — not an official examination.";
+  }
+  function nextLearnStep(pct, missedN) {
+    if (missedN) return "Next step: open Review, read each explanation, then try a short Practice paper on the same topic.";
+    if (pct >= 80) return "Next step: this set is secure. Stretch with a longer paper, or practise a weaker subject.";
+    if (pct >= 55) return "Next step: one more short Practice paper on the same subject will raise this.";
+    return "Next step: stay in Practice mode. Read the explanation after every miss before you go on.";
+  }
+  function masteryList(grade) {
+    return Object.keys(window.SUBJECTS).map(function (k) {
+      const s = window.SUBJECTS[k];
+      const b = progress.best[grade + "/" + k];
+      return { k: k, name: s.name, icon: s.icon, pct: b ? b.pct : null, score: b ? b.score : null, total: b ? b.total : null };
+    });
+  }
   function etaMinutes(n) {
     const per = state.mode === "timed" ? secondsFor() : (state.grade && state.grade <= 2 ? 28 : 22);
     return Math.max(1, Math.round((n || state.length || 10) * per / 60));
@@ -1121,20 +1137,24 @@
           <img src="images/mascot.png" alt="">
           <div>
             <strong>Primary Super Quiz</strong>
-            <p>Practice for Nigerian Primary 1–6. Free for pupils and teachers.</p>
+            <p>Free primary practice for classrooms and families. No ads. Works offline.</p>
           </div>
         </div>
         <nav class="foot-nav" aria-label="About this site">
+          <button type="button" data-go="teachers">For teachers</button>
+          <button type="button" data-go="parents">For families</button>
+          <button type="button" data-go="why">Why it works</button>
           <button type="button" data-go="how">How it works</button>
+          <button type="button" data-go="access">Accessibility</button>
           <button type="button" data-go="faq">FAQ</button>
-          <button type="button" data-go="news">What’s new</button>
           <button type="button" data-go="about">About</button>
           <button type="button" data-go="privacy">Privacy</button>
+          <button type="button" data-go="news">What’s new</button>
           <button type="button" data-action="open-help">Help</button>
           <button type="button" data-go="dashboard">Progress</button>
           <button type="button" data-go="settings">Settings</button>
         </nav>
-        <p class="site-foot">© merebari web 2026. All rights reserved. Practice only — not an official exam paper.</p>
+        <p class="site-foot">© merebari web 2026. All rights reserved. Independent practice — not an official exam paper.</p>
       </footer>`;
   }
   function renderNews() {
@@ -1146,11 +1166,11 @@
           <h2 class="section-title">What’s new</h2>
           <h3>September 2026</h3>
           <ul>
-            <li>Results now show a school-style grade (A–E), time, stars and combo.</li>
-            <li>Star favourite subjects. Flag questions in a quiz and review only those.</li>
-            <li>Rename a sibling, see a quiz clock, and get a today’s-plan card on home.</li>
-            <li>Settings grouped into Sound, Display, Classroom, Google and Data.</li>
-            <li>Layouts fit phones, tablets and landscape. Swipe left after an answer to go next.</li>
+            <li>For teachers, families, accessibility, and a plain-language “Why it works” page.</li>
+            <li>Teacher reports now show strengths, gaps and a recommended next step.</li>
+            <li>Results include a learning next step and the A–E practice scale.</li>
+            <li>Star subjects, flag questions, sibling rename, quiz clock and today’s plan.</li>
+            <li>Layouts fit phones, tablets and landscape. Works offline after the first visit.</li>
           </ul>
           <p>Hard-refresh (Ctrl+Shift+R) if a button looks old.</p>
           <div class="home-actions">
@@ -1240,17 +1260,19 @@
           <p class="kicker">FAQ</p>
           <h2 class="section-title">Common questions</h2>
           <h3>Is this free?</h3>
-          <p>Yes. Pupils and teachers may use the live quiz. Please do not copy or republish the questions or pictures.</p>
+          <p>Yes, for pupils, families and teachers. Please do not copy or republish the questions or pictures.</p>
+          <h3>Is this an official exam or NERDC paper?</h3>
+          <p>No. It is independent practice on typical Nigerian Primary 1–6 topics. Scores are for learning, not certification.</p>
+          <h3>Can teachers outside Nigeria use it?</h3>
+          <p>Yes, as English-medium primary practice (ages about 6–12) covering language, mathematics, science and related topics. It is designed around the Nigerian primary classroom, not a global syllabus.</p>
           <h3>Does it work without internet?</h3>
-          <p>After the first visit, the app and saved questions stay on the device. Open it once online so it can install.</p>
+          <p>After the first visit, the app and saved questions stay on the device. Open it once online so it can install. This matters in classrooms with weak connectivity.</p>
           <h3>Where is my score saved?</h3>
-          <p>On this device, in the browser. Sign in with Google if you want the name on this phone to stay labelled.</p>
-          <h3>Is this an official exam?</h3>
-          <p>No. It is practice only — not an NERDC, ministry or common-entrance paper.</p>
-          <h3>How do teachers print a paper?</h3>
-          <p>Pick a class, then Print exam. You get an 80-question paper and an answer key. My progress has a printable report.</p>
+          <p>On this device, in the browser. There is no pupil database on a server. Google Sign-In is optional and only labels progress on this phone.</p>
+          <h3>How should a teacher use it in a lesson?</h3>
+          <p>Ten questions as a starter, Practice mode for teaching, Exam mode for a mock, and Print homework from missed items. See <button type="button" data-go="teachers">For teachers</button>.</p>
           <h3>Can I star a subject?</h3>
-          <p>Yes. Tap the star on a subject card. ★ Fav keeps those subjects at the top of the list on this device.</p>
+          <p>Yes. Tap the star on a subject card. ★ Fav keeps those subjects on this device.</p>
           <div class="home-actions">
             <button class="btn btn-primary" data-go="home">Back to home</button>
             <button class="btn btn-ghost" data-action="open-help">Keyboard help</button>
@@ -1266,14 +1288,14 @@
         <article class="prose">
           <p class="kicker">Guide</p>
           <h2 class="section-title">How it works</h2>
-          <h3>1. Pick your class</h3>
-          <p>Primary 1 to Primary 6. Questions get harder as you go up.</p>
+          <h3>1. Pick the class</h3>
+          <p>Primary 1 to Primary 6 (about ages 6–12). Questions get harder as you go up.</p>
           <h3>2. Choose a subject</h3>
           <p>English, Mathematics, Basic Science and 13 more — 100 questions in each class. Star the ones you use often.</p>
-          <h3>3. Pick a mode</h3>
-          <p><strong>Practice</strong> marks at once. <strong>Exam</strong> waits until the end. <strong>Timed</strong> gives you a clock. <strong>Lightning 5</strong> is a 12-second sprint. Flag a hard question to review later.</p>
-          <h3>4. Grow</h3>
-          <p>Earn XP, climb ranks and a grade letter (A–E). Print a teacher report. Missed questions are saved so you can try them again.</p>
+          <h3>3. Choose a purpose</h3>
+          <p><strong>Practice</strong> is formative: mark and explain at once. <strong>Exam</strong> withholds hints until the end, like a paper. <strong>Timed</strong> builds pace. Flag a hard item to review later.</p>
+          <h3>4. Review and return</h3>
+          <p>Read why an answer is right. Missed items are saved. A short daily session beats a long cram. Print a teacher report when you need evidence for a parent or school.</p>
           <div class="home-actions">
             <button class="btn btn-primary" data-go="home">Back to home</button>
           </div>
@@ -1288,12 +1310,15 @@
         <article class="prose">
           <p class="kicker">merebari web</p>
           <h2 class="section-title">About Primary Super Quiz</h2>
-          <p>A free practice site for Nigerian primary pupils and their teachers. It covers Primary 1–6 across 16 subjects, with 100 questions in each class — 9,600 in total.</p>
-          <p>Play in the browser, install it on a phone, and keep going offline after the first visit. Progress, badges and missed questions stay on this device (or with your Google account on this device).</p>
-          <p>This is independent practice. It is not an official NERDC, ministry or common-entrance paper.</p>
+          <p>A free, classroom-ready practice room for English-medium primary learning. It is designed around Nigerian Primary 1–6 — 16 subjects, 100 questions in each class, 9,600 items — and is usable anywhere similar topics are taught to children about 6–12 years old.</p>
+          <p>The aim is low-stakes retrieval: short quizzes, explanations, missed-item review, and printable papers for rooms that share one printer more often than they share one tablet each.</p>
+          <div class="callout"><strong>What this is not.</strong> It is not an official NERDC, ministry, WAEC or common-entrance paper. It does not certify a pupil. Practice grades (A–E) are for learning conversations only.</div>
+          <p>Progress stays on this device. There are no adverts and no pupil database on a server. Install it on a phone and it works offline after the first visit.</p>
           <p>© merebari web 2026. All rights reserved. Teachers and pupils may use the live quiz. Please do not copy, edit or republish the questions or artwork without permission.</p>
           <div class="home-actions">
             <button class="btn btn-primary" data-go="home">Start practising</button>
+            <button class="btn btn-ghost" data-go="teachers">For teachers</button>
+            <button class="btn btn-ghost" data-go="why">Why it works</button>
           </div>
         </article>
         ${siteFooter()}${toastEl()}
@@ -1306,17 +1331,127 @@
         <article class="prose">
           <p class="kicker">Privacy</p>
           <h2 class="section-title">How we handle data</h2>
-          <p>Primary Super Quiz is built to work in your browser. We do not run a pupil database on a server.</p>
+          <p>This app is built for children. We do not run a pupil database on a server, and we do not show adverts.</p>
           <ul>
-            <li>Your name, XP, badges, streak and missed questions are saved in this browser (local storage).</li>
-            <li>Google Sign-In is optional. If you use it, Google shares your name, email and photo with this page so progress can be labelled on this device.</li>
-            <li>We do not sell information. There are no ad trackers in this app.</li>
-            <li>Reset progress in Settings clears the saved quiz data on this device.</li>
+            <li>Name, XP, badges, streak and missed questions are saved in this browser (local storage) only.</li>
+            <li>Google Sign-In is optional. If used, Google shares name, email and photo with this page so progress can be labelled on this device. Scores are not uploaded to us.</li>
+            <li>We do not sell information. There are no ad or analytics trackers in this app.</li>
+            <li>Sibling profiles stay on this phone. A downloaded backup is a file you keep.</li>
+            <li>Reset progress in Settings clears quiz data on this device.</li>
           </ul>
+          <p>Schools should follow their own device and safeguarding policy. Younger pupils can play as guests with only a first name.</p>
           <p>Questions and pictures are © merebari web 2026. All rights reserved.</p>
-          <p>Sibling profiles stay on this phone only. A downloaded backup is a file you keep.</p>
           <div class="home-actions">
             <button class="btn btn-primary" data-go="home">Back to home</button>
+          </div>
+        </article>
+        ${siteFooter()}${toastEl()}
+      </div>`;
+  }
+
+  function renderTeachers() {
+    return `
+      <div class="wrap">
+        ${topbar("home")}
+        <article class="prose">
+          <p class="kicker">Educators</p>
+          <h2 class="section-title">For teachers</h2>
+          <p>Use this as a 10-minute lesson starter, a homework sheet, or a mock paper — not as a high-stakes test. One shared phone or a printed page is enough.</p>
+          <div class="callout"><strong>Classroom recipe.</strong> Practice mode to teach. Exam mode to simulate a paper. Print homework from missed items. Focus mode on a projector.</div>
+          <h3>In a lesson</h3>
+          <ul>
+            <li>Pick the class, then 10 questions in Practice mode as a starter.</li>
+            <li>Read the explanation aloud after a miss. That is the teaching moment.</li>
+            <li>Flag items you want to revisit. Review them at the end.</li>
+            <li>Turn on Focus mode and Larger text in Settings for a shared screen.</li>
+          </ul>
+          <h3>On paper</h3>
+          <p>From the subject screen: <strong>Print exam</strong> gives an 80-question paper with an answer key. <strong>Print homework</strong> reprints recent misses. My progress has a printable report with strengths, gaps and a next step.</p>
+          <h3>Low connectivity</h3>
+          <p>Open the site once online. After that it works offline on that device. Sibling profiles keep more than one child on the same phone.</p>
+          <p class="cite">Independent practice only. Not an official NERDC or common-entrance paper.</p>
+          <div class="home-actions">
+            <button class="btn btn-primary" data-action="start">Open the class list</button>
+            <button class="btn btn-ghost" data-go="why">Why it works</button>
+            <button class="btn btn-ghost" data-go="access">Accessibility</button>
+          </div>
+        </article>
+        ${siteFooter()}${toastEl()}
+      </div>`;
+  }
+  function renderParents() {
+    return `
+      <div class="wrap">
+        ${topbar("home")}
+        <article class="prose">
+          <p class="kicker">Families</p>
+          <h2 class="section-title">For families</h2>
+          <p>Eight to ten quiet minutes most days is enough. Sit nearby for Primary 1–2. Let older children try first, then review the misses together.</p>
+          <h3>A simple routine</h3>
+          <ul>
+            <li>Use Practice mode until the child can explain a miss.</li>
+            <li>Try Today’s plan or Daily Challenge when you are short of time.</li>
+            <li>Open My progress to see which subjects need another look.</li>
+            <li>WhatsApp parent recap shares a short summary from this device — scores are not sent to a website.</li>
+          </ul>
+          <div class="callout"><strong>No account required.</strong> Type a first name and play as a guest. Progress stays on this phone. Google Sign-In is optional.</div>
+          <p>This is practice, not a school report card. A low score means “try this topic again”, not “you are behind.”</p>
+          <div class="home-actions">
+            <button class="btn btn-primary" data-go="home">Start at home</button>
+            <button class="btn btn-ghost" data-go="privacy">Privacy</button>
+          </div>
+        </article>
+        ${siteFooter()}${toastEl()}
+      </div>`;
+  }
+  function renderWhy() {
+    return `
+      <div class="wrap">
+        ${topbar("home")}
+        <article class="prose">
+          <p class="kicker">Learning science</p>
+          <h2 class="section-title">Why this works</h2>
+          <p>The design follows well-established findings in educational psychology. It is not a replacement for a teacher, and it has not been claimed as a randomised trial of this app.</p>
+          <h3>Retrieval practice</h3>
+          <p>Trying to answer a question — even when it is hard — strengthens memory more than re-reading notes. Practice and Daily Challenge are built for that.</p>
+          <p class="cite">Roediger, H. L., &amp; Karpicke, J. D. (2006). Test-enhanced learning. <em>Psychological Science</em>.</p>
+          <h3>Corrective feedback</h3>
+          <p>Practice mode marks at once and shows why. Exam mode withholds that until the end, which is closer to a real paper. Both have a place.</p>
+          <p class="cite">Black, P., &amp; Wiliam, D. (1998). Assessment and classroom learning. <em>Assessment in Education</em>.</p>
+          <h3>Spacing and return</h3>
+          <p>Short sessions across days beat one long cram. Missed items are saved so the same idea can be tried again later.</p>
+          <p class="cite">Dunlosky, J., et al. (2013). Improving students’ learning with effective learning techniques. <em>Psychological Science in the Public Interest</em>.</p>
+          <h3>Interleaving</h3>
+          <p>Champion Mix and Smart Practice mix topics. Switching subjects is harder in the moment and often better for later recall.</p>
+          <div class="callout"><strong>Use with a grown-up nearby for younger pupils.</strong> The explanation after a miss is the lesson — not the XP.</div>
+          <div class="home-actions">
+            <button class="btn btn-primary" data-go="teachers">For teachers</button>
+            <button class="btn btn-ghost" data-go="home">Start practising</button>
+          </div>
+        </article>
+        ${siteFooter()}${toastEl()}
+      </div>`;
+  }
+  function renderAccess() {
+    return `
+      <div class="wrap">
+        ${topbar("home")}
+        <article class="prose">
+          <p class="kicker">Inclusion</p>
+          <h2 class="section-title">Accessibility</h2>
+          <p>The quiz should be usable in a classroom, at home, and with a keyboard only. Settings stay on this device.</p>
+          <ul>
+            <li><strong>Keyboard:</strong> A–D or 1–4 to answer, H hint, F flag, P pause, N or Enter next, ? help, Esc closes help.</li>
+            <li><strong>Read aloud:</strong> tap 🔊 on a question. Auto-read is optional in Settings.</li>
+            <li><strong>Display:</strong> larger text, high contrast, dark mode, match the phone’s light/dark, reduce motion, focus mode.</li>
+            <li><strong>Touch:</strong> main buttons are at least 48px. After an answer, swipe left for next (not in Exam mode).</li>
+            <li><strong>Skip link:</strong> “Skip to content” appears when you tab from the top of the page.</li>
+            <li><strong>No account:</strong> guests can play with a first name. Google is optional.</li>
+          </ul>
+          <p>If something blocks a pupil in your class, use Practice mode, Larger text and Read aloud first. Print papers remain available when a screen is not the right tool.</p>
+          <div class="home-actions">
+            <button class="btn btn-primary" data-go="settings">Open settings</button>
+            <button class="btn btn-ghost" data-action="open-help">Keyboard help</button>
           </div>
         </article>
         ${siteFooter()}${toastEl()}
@@ -1423,9 +1558,9 @@
         ${profileRow()}
         <section class="hero">
           <div>
-            <div class="kicker">${esc(greeting())} · Nigeria · Offline ready</div>
+            <div class="kicker">${esc(greeting())} · Primary 1–6 · Offline ready</div>
             <h1>Primary Super Quiz</h1>
-            <p class="lead">The calm, complete practice room for Nigerian Primary 1–6 — every class, every subject, with instant help and teacher reports.</p>
+            <p class="lead">Calm, free practice for English-medium primary classrooms — designed around Nigerian Primary 1–6, with explanations, missed-item review and printable papers. No ads.</p>
             <div class="stats">
               <span class="chip">${nSub} subjects</span>
               <span class="chip">9,600 questions</span>
@@ -1434,7 +1569,7 @@
             </div>
             <div class="hero-cta">
               <button class="btn btn-primary" data-action="start">Start practising →</button>
-              <button class="btn btn-ghost" data-go="how">How it works</button>
+              <button class="btn btn-ghost" data-go="teachers">For teachers</button>
             </div>
           </div>
           <div class="hero-art">
@@ -1497,15 +1632,24 @@
           <article><span>2</span><h3>Choose a subject</h3><p>English, Maths, Science and 13 more — 100 each.</p></article>
           <article><span>3</span><h3>Play and rise</h3><p>Earn XP, badges and a printable report for school.</p></article>
         </div>
+        <section class="pedagogy" aria-label="How this helps learning">
+          <div><b>Retrieve</b><span>Answering beats re-reading notes.</span></div>
+          <div><b>Correct</b><span>Practice mode explains at once.</span></div>
+          <div><b>Return</b><span>Missed items are saved for another try.</span></div>
+        </section>
         <div class="audience">
           <div class="aud-card">
-            <h3>For pupils</h3>
-            <p>Practice with hints, Daily Challenge, Lightning 5 and Read aloud. Keep a streak on this device.</p>
+            <h3>Pupils</h3>
+            <p>Short quizzes, hints, Daily Challenge and Read aloud. A streak on this device — not a public leaderboard.</p>
           </div>
-          <div class="aud-card">
-            <h3>For teachers</h3>
-            <p>Print an exam paper with an answer key, and a progress report you can show a parent.</p>
-          </div>
+          <button class="aud-card" type="button" data-go="teachers">
+            <h3>Teachers</h3>
+            <p>Lesson starters, printable papers with an answer key, and a report of strengths and gaps.</p>
+          </button>
+          <button class="aud-card" type="button" data-go="parents">
+            <h3>Families</h3>
+            <p>Eight quiet minutes most days. No account required. Scores stay on this phone.</p>
+          </button>
         </div>
         ${siteFooter()}
         ${toastEl()}
@@ -1755,6 +1899,8 @@
           <p class="xp-pop">+${state.xpGained} XP · Total ${progress.xp}</p>
           ${state.rankedUp ? `<div class="rank-up">${state.rankedUp.icon} New rank: <strong>${esc(state.rankedUp.name)}</strong></div>` : ""}
           <p class="score-msg">${messageFor(pct)}</p>
+          <p class="learn-next">${nextLearnStep(pct, total - n)}</p>
+          <p class="scale-note">${gradeScaleNote()}</p>
           <div class="split-bar" aria-hidden="true"><i style="width:${pct}%"></i></div>
           <p class="sub" style="margin:8px 0 0">${n} correct · ${total - n} to review</p>
           ${badges ? `<div class="stats" style="justify-content:center">${badges}</div>` : ""}
@@ -1851,7 +1997,7 @@
             <p style="margin:8px 0;font-weight:800;font-size:20px">${n} / ${total} · ${pct}%</p>
             <p>${todayPretty()} · ${state.xpGained} XP earned</p>
             <p style="margin-top:18px;font-weight:800;color:var(--teal)">Well done — keep learning.</p>
-            <p class="cert-copy">© merebari web 2026</p>
+            <p class="cert-copy">Independent practice · not an official examination · © merebari web 2026</p>
           </div>
         </div>
       </div>`;
@@ -1915,10 +2061,17 @@
     ensureWeek();
     const r = rankFor(progress.xp);
     const g = state.grade || 1;
-    const weak = weakestList(g).slice(0, 4).map(function (k) {
-      const b = progress.best[g + "/" + k];
-      const s = window.SUBJECTS[k];
-      return `<tr><td>${s ? s.icon + " " + s.name : k}</td><td>${b ? b.pct + "%" : "Not yet"}</td><td>${b ? b.score + "/" + b.total : "—"}</td></tr>`;
+    const mastery = masteryList(g);
+    const tried = mastery.filter(function (r) { return r.pct != null; }).slice().sort(function (a, b) { return a.pct - b.pct; });
+    const gaps = tried.slice(0, 3);
+    const strengths = tried.slice().sort(function (a, b) { return b.pct - a.pct; }).slice(0, 3);
+    const allRows = mastery.slice().sort(function (a, b) {
+      const ap = a.pct == null ? -1 : a.pct;
+      const bp = b.pct == null ? -1 : b.pct;
+      return bp - ap;
+    }).map(function (r) {
+      const gl = r.pct == null ? "—" : gradeLetter(r.pct).mark;
+      return `<tr><td>${r.icon} ${esc(r.name)}</td><td>${r.pct == null ? "Not yet" : r.pct + "%"}</td><td>${r.pct == null ? "—" : r.score + "/" + r.total}</td><td>${gl}</td></tr>`;
     }).join("");
     const rows = (progress.history || []).slice(0, 20).map(function (h) {
       return `<tr><td>${esc(h.date)}</td><td>P${h.grade}</td><td>${esc(subjectName(h.subject))}</td><td>${h.mode}</td><td>${h.score}/${h.total}</td><td>${h.pct}% ${gradeLetter(h.pct).mark}</td></tr>`;
@@ -1926,6 +2079,11 @@
     const avg = (progress.history || []).length
       ? Math.round((progress.history.reduce(function (s, h) { return s + (h.pct || 0); }, 0) / progress.history.length))
       : 0;
+    const rec = !tried.length
+      ? "Begin with a 10-question Practice paper in English or Mathematics."
+      : (gaps.length
+        ? "Next: short Practice papers in " + gaps.map(function (r) { return r.name; }).join(", ") + "."
+        : "Coverage is even. Stretch with a longer paper or an exam-mode mock.");
     return `
       <div class="wrap report">
         <div class="topbar no-print">
@@ -1933,29 +2091,37 @@
           <button class="btn btn-primary" data-action="print">Print report</button>
         </div>
         <header class="exam-head">
-          <h2>Primary Super Quiz — Progress report</h2>
-          <p>${esc(state.name || "Pupil")}${schoolName() ? " · " + esc(schoolName()) : ""} · ${esc(r.icon + " " + r.name)} · ${progress.xp} XP</p>
-          <p>${todayPretty()} · © merebari web 2026</p>
+          <h2>Primary Super Quiz — Learning report</h2>
+          <p>${esc(state.name || "Pupil")}${schoolName() ? " · " + esc(schoolName()) : ""} · ${window.GRADE_INFO[g].label}</p>
+          <p>${esc(r.icon + " " + r.name)} · ${progress.xp} XP · ${todayPretty()}</p>
         </header>
         <div class="exam-meta">
           <span>Quizzes: ${progress.quizzes}</span>
           <span>Streak: ${progress.streak} days</span>
-          <span>Average: ${avg}%</span>
+          <span>Average: ${avg}%${avg ? " " + gradeLetter(avg).mark : ""}</span>
           <span>This week: ${progress.weekQuizzes || 0}/${window.WEEK_GOAL || 5}</span>
           <span>Study time: ${fmtDur(progress.studySec || 0)}</span>
         </div>
         ${!progress.quizzes ? `<div class="empty-state no-print"><strong>No quizzes yet</strong><p>Play a paper and this report will fill in for a parent or teacher.</p></div>` : ""}
-        <h3 class="exam-block">Focus subjects (Primary ${g})</h3>
+        <p class="callout"><strong>Recommended next step.</strong> ${esc(rec)}</p>
+        ${strengths.length ? `<h3 class="exam-block">Strengths</h3><p>${strengths.map(function (r) { return r.name + " " + r.pct + "% " + gradeLetter(r.pct).mark; }).join(" · ")}</p>` : ""}
+        ${gaps.length ? `<h3 class="exam-block">Gaps to revisit</h3><p>${gaps.map(function (r) { return r.name + " " + r.pct + "% " + gradeLetter(r.pct).mark; }).join(" · ")}</p>` : ""}
+        <h3 class="exam-block">Mastery by subject (Primary ${g})</h3>
+        <div class="table-scroll">
         <table class="report-table">
-          <thead><tr><th>Subject</th><th>Best</th><th>Score</th></tr></thead>
-          <tbody>${weak}</tbody>
+          <thead><tr><th>Subject</th><th>Best</th><th>Score</th><th>Grade</th></tr></thead>
+          <tbody>${allRows}</tbody>
         </table>
+        </div>
         <h3 class="exam-block">Recent quizzes</h3>
+        <div class="table-scroll">
         <table class="report-table">
           <thead><tr><th>Date</th><th>Class</th><th>Subject</th><th>Mode</th><th>Score</th><th>%</th></tr></thead>
           <tbody>${rows}</tbody>
         </table>
-        <p class="sub" style="margin-top:18px">Badges: ${progress.badges.length}/${window.BADGES.length} · Keep practising a little every day.</p>
+        </div>
+        <p class="note-box">Independent practice on this device. Not a standardised test or official school grade. ${gradeScaleNote()} Badges: ${progress.badges.length}/${window.BADGES.length}.</p>
+        <p class="site-foot">© merebari web 2026</p>
       </div>`;
   }
 
@@ -2191,12 +2357,13 @@
       home: renderHome, grade: renderGrades, subject: renderSubjects, length: renderLength,
       quiz: renderQuiz, result: renderResult, review: renderReview, certificate: renderCertificate,
       exam: renderExam, homework: renderHomework, dashboard: renderDashboard, settings: renderSettings, account: renderAccount, report: renderReport,
-      about: renderAbout, privacy: renderPrivacy, how: renderHow, faq: renderFaq, news: renderNews
+      about: renderAbout, privacy: renderPrivacy, how: renderHow, faq: renderFaq, news: renderNews,
+      teachers: renderTeachers, parents: renderParents, why: renderWhy, access: renderAccess
     };
     app.innerHTML = (map[state.screen] || renderHome)();
     document.documentElement.dataset.screen = state.screen || "home";
     const titles = {
-      home: "Primary Super Quiz · Nigerian Primary 1–6 practice",
+      home: "Primary Super Quiz · Primary 1–6 classroom practice",
       about: "About · Primary Super Quiz",
       privacy: "Privacy · Primary Super Quiz",
       how: "How it works · Primary Super Quiz",
@@ -2214,10 +2381,14 @@
       certificate: "Certificate · Primary Super Quiz",
       exam: "Exam paper · Primary Super Quiz",
       homework: "Homework · Primary Super Quiz",
-      report: "Teacher report · Primary Super Quiz"
+      report: "Learning report · Primary Super Quiz",
+      teachers: "For teachers · Primary Super Quiz",
+      parents: "For families · Primary Super Quiz",
+      why: "Why it works · Primary Super Quiz",
+      access: "Accessibility · Primary Super Quiz"
     };
     document.title = titles[state.screen] || "Primary Super Quiz";
-    const hashScreens = { home: 1, about: 1, privacy: 1, how: 1, faq: 1, news: 1, settings: 1, dashboard: 1, account: 1 };
+    const hashScreens = { home: 1, about: 1, privacy: 1, how: 1, faq: 1, news: 1, settings: 1, dashboard: 1, account: 1, teachers: 1, parents: 1, why: 1, access: 1 };
     if (hashScreens[state.screen]) {
       const h = "#" + state.screen;
       if (location.hash !== h) try { history.replaceState(null, "", h); } catch (e) {}
@@ -2955,7 +3126,7 @@
       if (settings.autoDark) applyChrome();
     });
   } catch (e) {}
-  var HASH_OK = { home: 1, about: 1, privacy: 1, how: 1, faq: 1, news: 1, settings: 1, dashboard: 1, account: 1 };
+  var HASH_OK = { home: 1, about: 1, privacy: 1, how: 1, faq: 1, news: 1, settings: 1, dashboard: 1, account: 1, teachers: 1, parents: 1, why: 1, access: 1 };
   window.addEventListener("hashchange", function () {
     const s = (location.hash || "").replace("#", "");
     if (HASH_OK[s] && state.screen !== s) { state.screen = s; render(); }

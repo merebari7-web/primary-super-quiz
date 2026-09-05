@@ -1607,3 +1607,118 @@ html, body {
 @media (hover: none) {
   .btn:hover, .card-btn:hover, .play-tile:hover, .opt:hover:not(:disabled) { transform: none; }
 }
+
+.prose { max-width: 68ch; }
+.prose h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  margin: 22px 0 8px;
+}
+.prose p, .prose li { color: var(--ink); font-weight: 700; }
+.prose p { margin: 0 0 12px; }
+.prose ul { margin: 0 0 14px 1.1em; }
+.prose li { margin: 0 0 6px; }
+.prose .cite { color: var(--muted); font-size: 14px; font-weight: 700; }
+
+.trust-row, .how-grid, .audience, .pedagogy {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 8px;
+}
+.trust-row { grid-template-columns: repeat(4, 1fr); }
+.how-grid { grid-template-columns: repeat(3, 1fr); }
+.audience { grid-template-columns: repeat(3, 1fr); }
+.pedagogy { grid-template-columns: repeat(3, 1fr); }
+.trust-row > div, .how-grid article, .aud-card, .pedagogy > div {
+  background: var(--card);
+  border: 3px solid var(--line);
+  border-radius: 20px;
+  padding: 16px;
+}
+.trust-row > div { text-align: center; }
+.trust-row b, .pedagogy b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--teal-dark);
+}
+.trust-row span, .pedagogy span, .aud-card p, .how-grid p {
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 14px;
+}
+.how-grid article span {
+  display: grid;
+  place-items: center;
+  width: 36px; height: 36px;
+  border-radius: 12px;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.how-grid h3, .aud-card h3 { font-family: var(--font-display); margin-bottom: 6px; }
+button.aud-card { width: 100%; text-align: left; color: inherit; cursor: pointer; }
+
+.site-footer {
+  margin-top: 36px;
+  padding-top: 22px;
+  border-top: 2px solid var(--line);
+}
+.foot-brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.foot-brand img { width: 48px; height: 48px; object-fit: contain; }
+.foot-brand p { color: var(--muted); font-weight: 700; font-size: 14px; }
+.foot-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-bottom: 12px;
+}
+.foot-nav button {
+  font-weight: 800;
+  color: var(--teal-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.callout {
+  background: var(--teal-soft);
+  border: 2px solid var(--teal);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin: 14px 0;
+  font-weight: 700;
+}
+.callout strong { color: var(--teal-dark); }
+.learn-next {
+  max-width: 46ch;
+  margin: 10px auto 8px;
+  font-weight: 800;
+  color: var(--teal-dark);
+}
+.scale-note {
+  max-width: 46ch;
+  margin: 0 auto 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.note-box {
+  background: var(--paper);
+  border: 2px dashed var(--line);
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin: 16px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+}
+@media (max-width: 800px) {
+  .trust-row, .pedagogy, .audience { grid-template-columns: 1fr 1fr; }
+  .how-grid { grid-template-columns: 1fr; }
+}
