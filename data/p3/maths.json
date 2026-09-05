@@ -1,1 +1,1502 @@
-[{"q":"What is 3 × 5?","options":["17","16","15","14"],"answer":2,"explain":"3 × 5 = 15."},{"q":"What is 16 ÷ 4?","options":["3","6","5","4"],"answer":3,"explain":"16 ÷ 4 = 4."},{"q":"¾ of 36 is ____.","options":["26","29","28","27"],"answer":3,"explain":"Three quarters of 36 is 27."},{"q":"A square has sides of 10 cm. Perimeter = ____ cm.","options":["42","41","39","40"],"answer":3,"explain":"Perimeter = 4 × 10 = 40 cm."},{"q":"Round 94 to the nearest ten.","options":["89","92","90","91"],"answer":2,"explain":"94 rounds to 90."},{"q":"Roman numeral IX stands for ____.","options":["10","11","9","8"],"answer":2,"explain":"IX = 9."},{"q":"How many hours are in 1 day?","options":["60","24","12","30"],"answer":1,"explain":"1 day = 24 hours."},{"q":"What is 11 × 6?","options":["65","68","67","66"],"answer":3,"explain":"11 × 6 = 66."},{"q":"What is 20 ÷ 10?","options":["3","1","2","4"],"answer":2,"explain":"20 ÷ 10 = 2."},{"q":"½ of 30 is ____.","options":["15","16","17","14"],"answer":0,"explain":"Half of 30 is 15."},{"q":"A square has sides of 5 cm. Perimeter = ____ cm.","options":["21","20","22","19"],"answer":1,"explain":"Perimeter = 4 × 5 = 20 cm."},{"q":"Round 11 to the nearest ten.","options":["11","12","9","10"],"answer":3,"explain":"11 rounds to 10."},{"q":"Roman numeral IV stands for ____.","options":["5","4","6","3"],"answer":1,"explain":"IV = 4."},{"q":"How many minutes are in 1 hour?","options":["60","100","24","30"],"answer":0,"explain":"1 hour = 60 minutes."},{"q":"What is 2 × 6?","options":["14","11","12","13"],"answer":2,"explain":"2 × 6 = 12."},{"q":"What is 15 ÷ 3?","options":["4","6","5","7"],"answer":2,"explain":"15 ÷ 3 = 5."},{"q":"½ of 40 is ____.","options":["21","22","20","19"],"answer":2,"explain":"Half of 40 is 20."},{"q":"A square has sides of 11 cm. Perimeter = ____ cm.","options":["46","44","43","45"],"answer":1,"explain":"Perimeter = 4 × 11 = 44 cm."},{"q":"Round 43 to the nearest ten.","options":["40","39","41","42"],"answer":0,"explain":"43 rounds to 40."},{"q":"Roman numeral I stands for ____.","options":["1","0","3","2"],"answer":0,"explain":"I = 1."},{"q":"What is 3 × 12?","options":["36","37","35","38"],"answer":0,"explain":"3 × 12 = 36."},{"q":"What is 20 ÷ 4?","options":["6","7","5","4"],"answer":2,"explain":"20 ÷ 4 = 5."},{"q":"¼ of 40 is ____.","options":["9","12","11","10"],"answer":3,"explain":"One quarter of 40 is 10."},{"q":"A square has sides of 3 cm. Perimeter = ____ cm.","options":["12","14","13","11"],"answer":0,"explain":"Perimeter = 4 × 3 = 12 cm."},{"q":"Round 23 to the nearest ten.","options":["22","19","20","21"],"answer":2,"explain":"23 rounds to 20."},{"q":"Roman numeral XX stands for ____.","options":["19","21","20","22"],"answer":2,"explain":"XX = 20."},{"q":"What is 11 × 12?","options":["133","131","134","132"],"answer":3,"explain":"11 × 12 = 132."},{"q":"What is 40 ÷ 8?","options":["4","6","7","5"],"answer":3,"explain":"40 ÷ 8 = 5."},{"q":"½ of 20 is ____.","options":["9","11","10","12"],"answer":2,"explain":"Half of 20 is 10."},{"q":"A square has sides of 7 cm. Perimeter = ____ cm.","options":["27","28","29","30"],"answer":1,"explain":"Perimeter = 4 × 7 = 28 cm."},{"q":"Round 29 to the nearest ten.","options":["29","32","31","30"],"answer":3,"explain":"29 rounds to 30."},{"q":"Roman numeral C stands for ____.","options":["99","101","100","102"],"answer":2,"explain":"C = 100."},{"q":"What is 10 × 4?","options":["41","39","40","42"],"answer":2,"explain":"10 × 4 = 40."},{"q":"What is 18 ÷ 6?","options":["5","2","4","3"],"answer":3,"explain":"18 ÷ 6 = 3."},{"q":"¼ of 24 is ____.","options":["8","7","6","5"],"answer":2,"explain":"One quarter of 24 is 6."},{"q":"A square has sides of 14 cm. Perimeter = ____ cm.","options":["57","58","55","56"],"answer":3,"explain":"Perimeter = 4 × 14 = 56 cm."},{"q":"Round 24 to the nearest ten.","options":["20","19","22","21"],"answer":0,"explain":"24 rounds to 20."},{"q":"Roman numeral V stands for ____.","options":["4","6","5","7"],"answer":2,"explain":"V = 5."},{"q":"What is 10 × 3?","options":["30","29","32","31"],"answer":0,"explain":"10 × 3 = 30."},{"q":"What is 48 ÷ 12?","options":["5","3","6","4"],"answer":3,"explain":"48 ÷ 12 = 4."},{"q":"¼ of 12 is ____.","options":["4","3","5","2"],"answer":1,"explain":"One quarter of 12 is 3."},{"q":"A square has sides of 6 cm. Perimeter = ____ cm.","options":["25","23","24","26"],"answer":2,"explain":"Perimeter = 4 × 6 = 24 cm."},{"q":"Round 99 to the nearest ten.","options":["102","99","101","100"],"answer":3,"explain":"99 rounds to 100."},{"q":"Roman numeral III stands for ____.","options":["3","2","5","4"],"answer":0,"explain":"III = 3."},{"q":"What is 12 × 5?","options":["62","61","59","60"],"answer":3,"explain":"12 × 5 = 60."},{"q":"What is 96 ÷ 8?","options":["13","11","12","14"],"answer":2,"explain":"96 ÷ 8 = 12."},{"q":"¾ of 12 is ____.","options":["8","11","9","10"],"answer":2,"explain":"Three quarters of 12 is 9."},{"q":"A square has sides of 4 cm. Perimeter = ____ cm.","options":["18","16","15","17"],"answer":1,"explain":"Perimeter = 4 × 4 = 16 cm."},{"q":"Round 37 to the nearest ten.","options":["41","39","40","42"],"answer":2,"explain":"37 rounds to 40."},{"q":"Roman numeral II stands for ____.","options":["2","4","1","3"],"answer":0,"explain":"II = 2."},{"q":"What is 12 × 12?","options":["145","146","143","144"],"answer":3,"explain":"12 × 12 = 144."},{"q":"What is 66 ÷ 6?","options":["11","10","12","13"],"answer":0,"explain":"66 ÷ 6 = 11."},{"q":"¼ of 16 is ____.","options":["6","4","3","5"],"answer":1,"explain":"One quarter of 16 is 4."},{"q":"A square has sides of 2 cm. Perimeter = ____ cm.","options":["10","7","8","9"],"answer":2,"explain":"Perimeter = 4 × 2 = 8 cm."},{"q":"Round 16 to the nearest ten.","options":["19","22","21","20"],"answer":3,"explain":"16 rounds to 20."},{"q":"Roman numeral X stands for ____.","options":["12","10","11","9"],"answer":1,"explain":"X = 10."},{"q":"What is 2 × 3?","options":["5","7","8","6"],"answer":3,"explain":"2 × 3 = 6."},{"q":"What is 70 ÷ 7?","options":["10","11","9","12"],"answer":0,"explain":"70 ÷ 7 = 10."},{"q":"¼ of 8 is ____.","options":["3","2","1","4"],"answer":1,"explain":"One quarter of 8 is 2."},{"q":"A square has sides of 15 cm. Perimeter = ____ cm.","options":["59","61","60","62"],"answer":2,"explain":"Perimeter = 4 × 15 = 60 cm."},{"q":"Round 89 to the nearest ten.","options":["91","89","90","92"],"answer":2,"explain":"89 rounds to 90."},{"q":"Roman numeral VI stands for ____.","options":["5","7","6","8"],"answer":2,"explain":"VI = 6."},{"q":"What is 2 × 5?","options":["9","12","10","11"],"answer":2,"explain":"2 × 5 = 10."},{"q":"What is 28 ÷ 7?","options":["6","3","4","5"],"answer":2,"explain":"28 ÷ 7 = 4."},{"q":"¼ of 36 is ____.","options":["9","10","11","8"],"answer":0,"explain":"One quarter of 36 is 9."},{"q":"A square has sides of 8 cm. Perimeter = ____ cm.","options":["34","31","32","33"],"answer":2,"explain":"Perimeter = 4 × 8 = 32 cm."},{"q":"Round 81 to the nearest ten.","options":["81","82","80","79"],"answer":2,"explain":"81 rounds to 80."},{"q":"Roman numeral L stands for ____.","options":["51","50","49","52"],"answer":1,"explain":"L = 50."},{"q":"What is 6 × 10?","options":["60","62","61","59"],"answer":0,"explain":"6 × 10 = 60."},{"q":"What is 110 ÷ 10?","options":["11","10","13","12"],"answer":0,"explain":"110 ÷ 10 = 11."},{"q":"¾ of 16 is ____.","options":["12","13","11","14"],"answer":0,"explain":"Three quarters of 16 is 12."},{"q":"A square has sides of 13 cm. Perimeter = ____ cm.","options":["51","54","52","53"],"answer":2,"explain":"Perimeter = 4 × 13 = 52 cm."},{"q":"Round 38 to the nearest ten.","options":["39","41","42","40"],"answer":3,"explain":"38 rounds to 40."},{"q":"What is 8 × 2?","options":["15","16","18","17"],"answer":1,"explain":"8 × 2 = 16."},{"q":"What is 18 ÷ 9?","options":["4","1","2","3"],"answer":2,"explain":"18 ÷ 9 = 2."},{"q":"¼ of 20 is ____.","options":["5","4","7","6"],"answer":0,"explain":"One quarter of 20 is 5."},{"q":"A square has sides of 12 cm. Perimeter = ____ cm.","options":["50","48","47","49"],"answer":1,"explain":"Perimeter = 4 × 12 = 48 cm."},{"q":"Round 53 to the nearest ten.","options":["51","52","49","50"],"answer":3,"explain":"53 rounds to 50."},{"q":"What is 5 × 9?","options":["44","46","45","47"],"answer":2,"explain":"5 × 9 = 45."},{"q":"What is 22 ÷ 11?","options":["1","4","3","2"],"answer":3,"explain":"22 ÷ 11 = 2."},{"q":"¾ of 20 is ____.","options":["15","16","14","17"],"answer":0,"explain":"Three quarters of 20 is 15."},{"q":"A square has sides of 9 cm. Perimeter = ____ cm.","options":["35","37","36","38"],"answer":2,"explain":"Perimeter = 4 × 9 = 36 cm."},{"q":"Round 35 to the nearest ten.","options":["39","42","41","40"],"answer":3,"explain":"35 rounds to 40."},{"q":"What is 10 × 6?","options":["61","62","60","59"],"answer":2,"explain":"10 × 6 = 60."},{"q":"What is 120 ÷ 12?","options":["10","9","11","12"],"answer":0,"explain":"120 ÷ 12 = 10."},{"q":"¾ of 24 is ____.","options":["19","17","18","20"],"answer":2,"explain":"Three quarters of 24 is 18."},{"q":"Round 32 to the nearest ten.","options":["29","30","31","32"],"answer":1,"explain":"32 rounds to 30."},{"q":"What is 2 × 9?","options":["20","17","18","19"],"answer":2,"explain":"2 × 9 = 18."},{"q":"What is 144 ÷ 12?","options":["11","13","12","14"],"answer":2,"explain":"144 ÷ 12 = 12."},{"q":"¾ of 8 is ____.","options":["6","7","5","8"],"answer":0,"explain":"Three quarters of 8 is 6."},{"q":"Round 86 to the nearest ten.","options":["89","90","92","91"],"answer":1,"explain":"86 rounds to 90."},{"q":"What is 6 × 6?","options":["35","36","38","37"],"answer":1,"explain":"6 × 6 = 36."},{"q":"What is 32 ÷ 8?","options":["5","4","3","6"],"answer":1,"explain":"32 ÷ 8 = 4."},{"q":"½ of 24 is ____.","options":["12","11","14","13"],"answer":0,"explain":"Half of 24 is 12."},{"q":"Round 28 to the nearest ten.","options":["30","29","31","32"],"answer":0,"explain":"28 rounds to 30."},{"q":"What is 10 × 10?","options":["102","100","99","101"],"answer":1,"explain":"10 × 10 = 100."},{"q":"What is 8 ÷ 4?","options":["1","2","4","3"],"answer":1,"explain":"8 ÷ 4 = 2."},{"q":"½ of 12 is ____.","options":["5","6","7","8"],"answer":1,"explain":"Half of 12 is 6."},{"q":"Round 54 to the nearest ten.","options":["52","50","51","49"],"answer":1,"explain":"54 rounds to 50."},{"q":"What is 7 × 8?","options":["56","58","57","55"],"answer":0,"explain":"7 × 8 = 56."}]
+[
+  {
+    "q": "Evaluate: 8 × 5 (P3)",
+    "options": [
+      "42",
+      "40",
+      "39",
+      "41"
+    ],
+    "answer": 1,
+    "explain": "8 × 5 = 40.",
+    "hint": "Use times tables or repeated addition of 8.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 12 × 10 (P3)",
+    "options": [
+      "120",
+      "122",
+      "121",
+      "119"
+    ],
+    "answer": 0,
+    "explain": "12 × 10 = 120.",
+    "hint": "Use times tables or repeated addition of 12.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 11 × 10 (P3)",
+    "options": [
+      "111",
+      "110",
+      "112",
+      "109"
+    ],
+    "answer": 1,
+    "explain": "11 × 10 = 110.",
+    "hint": "Use times tables or repeated addition of 11.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 10 × 4 (P3)",
+    "options": [
+      "39",
+      "42",
+      "40",
+      "41"
+    ],
+    "answer": 2,
+    "explain": "10 × 4 = 40.",
+    "hint": "Use times tables or repeated addition of 10.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 7 × 11 (P3)",
+    "options": [
+      "77",
+      "76",
+      "78",
+      "79"
+    ],
+    "answer": 0,
+    "explain": "7 × 11 = 77.",
+    "hint": "Use times tables or repeated addition of 7.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 9 × 9 (P3)",
+    "options": [
+      "81",
+      "82",
+      "80",
+      "83"
+    ],
+    "answer": 0,
+    "explain": "9 × 9 = 81.",
+    "hint": "Use times tables or repeated addition of 9.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 12 × 5 (P3)",
+    "options": [
+      "60",
+      "61",
+      "62",
+      "59"
+    ],
+    "answer": 0,
+    "explain": "12 × 5 = 60.",
+    "hint": "Use times tables or repeated addition of 12.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 8 × 11 (P3)",
+    "options": [
+      "87",
+      "89",
+      "90",
+      "88"
+    ],
+    "answer": 3,
+    "explain": "8 × 11 = 88.",
+    "hint": "Use times tables or repeated addition of 8.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 12 × 4 (P3)",
+    "options": [
+      "48",
+      "47",
+      "49",
+      "50"
+    ],
+    "answer": 0,
+    "explain": "12 × 4 = 48.",
+    "hint": "Use times tables or repeated addition of 12.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 7 × 7 (P3)",
+    "options": [
+      "51",
+      "48",
+      "50",
+      "49"
+    ],
+    "answer": 3,
+    "explain": "7 × 7 = 49.",
+    "hint": "Use times tables or repeated addition of 7.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 10 × 9 (P3)",
+    "options": [
+      "92",
+      "91",
+      "89",
+      "90"
+    ],
+    "answer": 3,
+    "explain": "10 × 9 = 90.",
+    "hint": "Use times tables or repeated addition of 10.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 8 × 7 (P3)",
+    "options": [
+      "55",
+      "56",
+      "57",
+      "58"
+    ],
+    "answer": 1,
+    "explain": "8 × 7 = 56.",
+    "hint": "Use times tables or repeated addition of 8.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 6 × 7 (P3)",
+    "options": [
+      "44",
+      "42",
+      "41",
+      "43"
+    ],
+    "answer": 1,
+    "explain": "6 × 7 = 42.",
+    "hint": "Use times tables or repeated addition of 6.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 7 × 5 (P3)",
+    "options": [
+      "36",
+      "35",
+      "37",
+      "34"
+    ],
+    "answer": 1,
+    "explain": "7 × 5 = 35.",
+    "hint": "Use times tables or repeated addition of 7.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 7 × 9 (P3)",
+    "options": [
+      "65",
+      "64",
+      "62",
+      "63"
+    ],
+    "answer": 3,
+    "explain": "7 × 9 = 63.",
+    "hint": "Use times tables or repeated addition of 7.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 11 × 4 (P3)",
+    "options": [
+      "46",
+      "44",
+      "45",
+      "43"
+    ],
+    "answer": 1,
+    "explain": "11 × 4 = 44.",
+    "hint": "Use times tables or repeated addition of 11.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 9 × 4 (P3)",
+    "options": [
+      "36",
+      "37",
+      "38",
+      "35"
+    ],
+    "answer": 0,
+    "explain": "9 × 4 = 36.",
+    "hint": "Use times tables or repeated addition of 9.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 6 × 5 (P3)",
+    "options": [
+      "32",
+      "31",
+      "30",
+      "29"
+    ],
+    "answer": 2,
+    "explain": "6 × 5 = 30.",
+    "hint": "Use times tables or repeated addition of 6.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 7 × 12 (P3)",
+    "options": [
+      "86",
+      "84",
+      "85",
+      "83"
+    ],
+    "answer": 1,
+    "explain": "7 × 12 = 84.",
+    "hint": "Use times tables or repeated addition of 7.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 10 × 8 (P3)",
+    "options": [
+      "82",
+      "81",
+      "79",
+      "80"
+    ],
+    "answer": 3,
+    "explain": "10 × 8 = 80.",
+    "hint": "Use times tables or repeated addition of 10.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Evaluate: 12 × 3 (P3)",
+    "options": [
+      "36",
+      "37",
+      "35",
+      "38"
+    ],
+    "answer": 0,
+    "explain": "12 × 3 = 36.",
+    "hint": "Use times tables or repeated addition of 12.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 64 by 5: (P3)",
+    "options": [
+      "12 remainder 4",
+      "12 remainder 5",
+      "13 remainder 4",
+      "11 remainder 4"
+    ],
+    "answer": 0,
+    "explain": "64 = (5 × 12) + 4, so 64 ÷ 5 = 12 R 4.",
+    "hint": "Find how many times 5 goes into 64 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 75 by 9: (P3)",
+    "options": [
+      "7 remainder 3",
+      "8 remainder 4",
+      "9 remainder 3",
+      "8 remainder 3"
+    ],
+    "answer": 3,
+    "explain": "75 = (9 × 8) + 3, so 75 ÷ 9 = 8 R 3.",
+    "hint": "Find how many times 9 goes into 75 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 86 by 7: (P3)",
+    "options": [
+      "13 remainder 2",
+      "12 remainder 2",
+      "11 remainder 2",
+      "12 remainder 3"
+    ],
+    "answer": 1,
+    "explain": "86 = (7 × 12) + 2, so 86 ÷ 7 = 12 R 2.",
+    "hint": "Find how many times 7 goes into 86 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 98 by 8: (P3)",
+    "options": [
+      "12 remainder 3",
+      "11 remainder 2",
+      "13 remainder 2",
+      "12 remainder 2"
+    ],
+    "answer": 3,
+    "explain": "98 = (8 × 12) + 2, so 98 ÷ 8 = 12 R 2.",
+    "hint": "Find how many times 8 goes into 98 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 27 by 4: (P3)",
+    "options": [
+      "6 remainder 3",
+      "6 remainder 4",
+      "7 remainder 3",
+      "5 remainder 3"
+    ],
+    "answer": 0,
+    "explain": "27 = (4 × 6) + 3, so 27 ÷ 4 = 6 R 3.",
+    "hint": "Find how many times 4 goes into 27 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 52 by 9: (P3)",
+    "options": [
+      "5 remainder 8",
+      "5 remainder 7",
+      "6 remainder 7",
+      "4 remainder 7"
+    ],
+    "answer": 1,
+    "explain": "52 = (9 × 5) + 7, so 52 ÷ 9 = 5 R 7.",
+    "hint": "Find how many times 9 goes into 52 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 28 by 3: (P3)",
+    "options": [
+      "8 remainder 1",
+      "9 remainder 1",
+      "9 remainder 2",
+      "10 remainder 1"
+    ],
+    "answer": 1,
+    "explain": "28 = (3 × 9) + 1, so 28 ÷ 3 = 9 R 1.",
+    "hint": "Find how many times 3 goes into 28 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 78 by 9: (P3)",
+    "options": [
+      "8 remainder 6",
+      "9 remainder 6",
+      "7 remainder 6",
+      "8 remainder 7"
+    ],
+    "answer": 0,
+    "explain": "78 = (9 × 8) + 6, so 78 ÷ 9 = 8 R 6.",
+    "hint": "Find how many times 9 goes into 78 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 68 by 7: (P3)",
+    "options": [
+      "8 remainder 5",
+      "9 remainder 5",
+      "10 remainder 5",
+      "9 remainder 6"
+    ],
+    "answer": 1,
+    "explain": "68 = (7 × 9) + 5, so 68 ÷ 7 = 9 R 5.",
+    "hint": "Find how many times 7 goes into 68 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 31 by 3: (P3)",
+    "options": [
+      "10 remainder 1",
+      "10 remainder 2",
+      "11 remainder 1",
+      "9 remainder 1"
+    ],
+    "answer": 0,
+    "explain": "31 = (3 × 10) + 1, so 31 ÷ 3 = 10 R 1.",
+    "hint": "Find how many times 3 goes into 31 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 79 by 9: (P3)",
+    "options": [
+      "7 remainder 7",
+      "8 remainder 8",
+      "9 remainder 7",
+      "8 remainder 7"
+    ],
+    "answer": 3,
+    "explain": "79 = (9 × 8) + 7, so 79 ÷ 9 = 8 R 7.",
+    "hint": "Find how many times 9 goes into 79 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 82 by 8: (P3)",
+    "options": [
+      "10 remainder 3",
+      "9 remainder 2",
+      "10 remainder 2",
+      "11 remainder 2"
+    ],
+    "answer": 2,
+    "explain": "82 = (8 × 10) + 2, so 82 ÷ 8 = 10 R 2.",
+    "hint": "Find how many times 8 goes into 82 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 13 by 3: (P3)",
+    "options": [
+      "4 remainder 1",
+      "4 remainder 2",
+      "3 remainder 1",
+      "5 remainder 1"
+    ],
+    "answer": 0,
+    "explain": "13 = (3 × 4) + 1, so 13 ÷ 3 = 4 R 1.",
+    "hint": "Find how many times 3 goes into 13 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 34 by 3: (P3)",
+    "options": [
+      "10 remainder 1",
+      "11 remainder 1",
+      "11 remainder 2",
+      "12 remainder 1"
+    ],
+    "answer": 1,
+    "explain": "34 = (3 × 11) + 1, so 34 ÷ 3 = 11 R 1.",
+    "hint": "Find how many times 3 goes into 34 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 29 by 5: (P3)",
+    "options": [
+      "5 remainder 5",
+      "6 remainder 4",
+      "4 remainder 4",
+      "5 remainder 4"
+    ],
+    "answer": 3,
+    "explain": "29 = (5 × 5) + 4, so 29 ÷ 5 = 5 R 4.",
+    "hint": "Find how many times 5 goes into 29 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 60 by 9: (P3)",
+    "options": [
+      "6 remainder 6",
+      "7 remainder 6",
+      "5 remainder 6",
+      "6 remainder 7"
+    ],
+    "answer": 0,
+    "explain": "60 = (9 × 6) + 6, so 60 ÷ 9 = 6 R 6.",
+    "hint": "Find how many times 9 goes into 60 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 58 by 5: (P3)",
+    "options": [
+      "11 remainder 4",
+      "10 remainder 3",
+      "12 remainder 3",
+      "11 remainder 3"
+    ],
+    "answer": 3,
+    "explain": "58 = (5 × 11) + 3, so 58 ÷ 5 = 11 R 3.",
+    "hint": "Find how many times 5 goes into 58 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 54 by 8: (P3)",
+    "options": [
+      "5 remainder 6",
+      "6 remainder 6",
+      "6 remainder 7",
+      "7 remainder 6"
+    ],
+    "answer": 1,
+    "explain": "54 = (8 × 6) + 6, so 54 ÷ 8 = 6 R 6.",
+    "hint": "Find how many times 8 goes into 54 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 90 by 8: (P3)",
+    "options": [
+      "12 remainder 2",
+      "11 remainder 2",
+      "11 remainder 3",
+      "10 remainder 2"
+    ],
+    "answer": 1,
+    "explain": "90 = (8 × 11) + 2, so 90 ÷ 8 = 11 R 2.",
+    "hint": "Find how many times 8 goes into 90 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Divide 71 by 6: (P3)",
+    "options": [
+      "11 remainder 5",
+      "11 remainder 6",
+      "10 remainder 5",
+      "12 remainder 5"
+    ],
+    "answer": 0,
+    "explain": "71 = (6 × 11) + 5, so 71 ÷ 6 = 11 R 5.",
+    "hint": "Find how many times 6 goes into 71 without exceeding.",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the perimeter of a rectangle with length 15 cm and width 9 cm: (P3)",
+    "options": [
+      "48 cm",
+      "135 cm",
+      "50 cm",
+      "44 cm"
+    ],
+    "answer": 0,
+    "explain": "Perimeter = 2 × (Length + Width) = 2 × (15 + 9) = 48 cm.",
+    "hint": "Add all four outer sides together: L + W + L + W.",
+    "topic": "Perimeter & Area",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the perimeter of a rectangle with length 15 cm and width 14 cm: (P3)",
+    "options": [
+      "58 cm",
+      "60 cm",
+      "210 cm",
+      "54 cm"
+    ],
+    "answer": 0,
+    "explain": "Perimeter = 2 × (Length + Width) = 2 × (15 + 14) = 58 cm.",
+    "hint": "Add all four outer sides together: L + W + L + W.",
+    "topic": "Perimeter & Area",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the perimeter of a rectangle with length 11 cm and width 6 cm: (P3)",
+    "options": [
+      "30 cm",
+      "36 cm",
+      "34 cm",
+      "66 cm"
+    ],
+    "answer": 2,
+    "explain": "Perimeter = 2 × (Length + Width) = 2 × (11 + 6) = 34 cm.",
+    "hint": "Add all four outer sides together: L + W + L + W.",
+    "topic": "Perimeter & Area",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the perimeter of a rectangle with length 11 cm and width 4 cm: (P3)",
+    "options": [
+      "30 cm",
+      "32 cm",
+      "26 cm",
+      "44 cm"
+    ],
+    "answer": 0,
+    "explain": "Perimeter = 2 × (Length + Width) = 2 × (11 + 4) = 30 cm.",
+    "hint": "Add all four outer sides together: L + W + L + W.",
+    "topic": "Perimeter & Area",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the perimeter of a rectangle with length 14 cm and width 8 cm: (P3)",
+    "options": [
+      "44 cm",
+      "40 cm",
+      "46 cm",
+      "112 cm"
+    ],
+    "answer": 0,
+    "explain": "Perimeter = 2 × (Length + Width) = 2 × (14 + 8) = 44 cm.",
+    "hint": "Add all four outer sides together: L + W + L + W.",
+    "topic": "Perimeter & Area",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the perimeter of a rectangle with length 9 cm and width 5 cm: (P3)",
+    "options": [
+      "45 cm",
+      "24 cm",
+      "28 cm",
+      "30 cm"
+    ],
+    "answer": 2,
+    "explain": "Perimeter = 2 × (Length + Width) = 2 × (9 + 5) = 28 cm.",
+    "hint": "Add all four outer sides together: L + W + L + W.",
+    "topic": "Perimeter & Area",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the perimeter of a rectangle with length 7 cm and width 4 cm: (P3)",
+    "options": [
+      "22 cm",
+      "18 cm",
+      "28 cm",
+      "24 cm"
+    ],
+    "answer": 0,
+    "explain": "Perimeter = 2 × (Length + Width) = 2 × (7 + 4) = 22 cm.",
+    "hint": "Add all four outer sides together: L + W + L + W.",
+    "topic": "Perimeter & Area",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the perimeter of a rectangle with length 12 cm and width 11 cm: (P3)",
+    "options": [
+      "48 cm",
+      "132 cm",
+      "42 cm",
+      "46 cm"
+    ],
+    "answer": 3,
+    "explain": "Perimeter = 2 × (Length + Width) = 2 × (12 + 11) = 46 cm.",
+    "hint": "Add all four outer sides together: L + W + L + W.",
+    "topic": "Perimeter & Area",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the perimeter of a rectangle with length 10 cm and width 8 cm: (P3)",
+    "options": [
+      "32 cm",
+      "38 cm",
+      "36 cm",
+      "80 cm"
+    ],
+    "answer": 2,
+    "explain": "Perimeter = 2 × (Length + Width) = 2 × (10 + 8) = 36 cm.",
+    "hint": "Add all four outer sides together: L + W + L + W.",
+    "topic": "Perimeter & Area",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the perimeter of a rectangle with length 8 cm and width 5 cm: (P3)",
+    "options": [
+      "26 cm",
+      "28 cm",
+      "40 cm",
+      "22 cm"
+    ],
+    "answer": 0,
+    "explain": "Perimeter = 2 × (Length + Width) = 2 × (8 + 5) = 26 cm.",
+    "hint": "Add all four outer sides together: L + W + L + W.",
+    "topic": "Perimeter & Area",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the perimeter of a rectangle with length 12 cm and width 5 cm: (P3)",
+    "options": [
+      "60 cm",
+      "34 cm",
+      "36 cm",
+      "30 cm"
+    ],
+    "answer": 1,
+    "explain": "Perimeter = 2 × (Length + Width) = 2 × (12 + 5) = 34 cm.",
+    "hint": "Add all four outer sides together: L + W + L + W.",
+    "topic": "Perimeter & Area",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the perimeter of a rectangle with length 6 cm and width 4 cm: (P3)",
+    "options": [
+      "24 cm",
+      "20 cm",
+      "16 cm",
+      "22 cm"
+    ],
+    "answer": 1,
+    "explain": "Perimeter = 2 × (Length + Width) = 2 × (6 + 4) = 20 cm.",
+    "hint": "Add all four outer sides together: L + W + L + W.",
+    "topic": "Perimeter & Area",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the perimeter of a rectangle with length 14 cm and width 3 cm: (P3)",
+    "options": [
+      "34 cm",
+      "42 cm",
+      "36 cm",
+      "30 cm"
+    ],
+    "answer": 0,
+    "explain": "Perimeter = 2 × (Length + Width) = 2 × (14 + 3) = 34 cm.",
+    "hint": "Add all four outer sides together: L + W + L + W.",
+    "topic": "Perimeter & Area",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which fraction is equivalent to 1/2? (P3)",
+    "options": [
+      "2/4",
+      "1/3",
+      "2/5",
+      "3/8"
+    ],
+    "answer": 0,
+    "explain": "Multiplying numerator and denominator by 2 gives 2/4.",
+    "hint": "Multiply both top and bottom by 2.",
+    "topic": "Fractions",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "How many grams (g) make 1 kilogram (kg)? (P3)",
+    "options": [
+      "10,000 g",
+      "1,000 g",
+      "100 g",
+      "500 g"
+    ],
+    "answer": 1,
+    "explain": "1 kilogram = 1,000 grams.",
+    "hint": "The prefix 'kilo' means 1,000.",
+    "topic": "Measurement",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "What is the place value of 7 in 3,745? (P3)",
+    "options": [
+      "Thousands",
+      "Tens",
+      "Units",
+      "Hundreds"
+    ],
+    "answer": 3,
+    "explain": "In 3,745, 7 is in the hundreds position (700).",
+    "hint": "From right to left: Units, Tens, Hundreds, Thousands.",
+    "topic": "Number Sense",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "How many seconds are in 3 minutes? (P3)",
+    "options": [
+      "300 seconds",
+      "240 seconds",
+      "180 seconds",
+      "120 seconds"
+    ],
+    "answer": 2,
+    "explain": "3 × 60 seconds = 180 seconds.",
+    "hint": "Multiply 3 minutes by 60 seconds.",
+    "topic": "Time",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What fraction of a day is 6 hours? (P3)",
+    "options": [
+      "1/2",
+      "1/4",
+      "1/3",
+      "1/6"
+    ],
+    "answer": 1,
+    "explain": "6 hours out of 24 hours = 6/24 = 1/4.",
+    "hint": "Divide 6 by 24 and simplify.",
+    "topic": "Fractions",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "If a square has side length 6 cm, what is its perimeter? (P3)",
+    "options": [
+      "18 cm",
+      "24 cm",
+      "36 cm",
+      "12 cm"
+    ],
+    "answer": 1,
+    "explain": "Perimeter of square = 4 × side = 4 × 6 = 24 cm.",
+    "hint": "Add the 4 equal sides: 6 + 6 + 6 + 6.",
+    "topic": "Perimeter & Area",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "How many milliliters (ml) are in 1 liter (l)? (P3)",
+    "options": [
+      "10,000 ml",
+      "500 ml",
+      "100 ml",
+      "1,000 ml"
+    ],
+    "answer": 3,
+    "explain": "1 liter equals 1,000 milliliters.",
+    "hint": "The prefix 'milli' means one-thousandth.",
+    "topic": "Measurement",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "A baker made 48 pies and packed them into boxes of 6. How many boxes did he fill? (P3)",
+    "options": [
+      "9 boxes",
+      "6 boxes",
+      "8 boxes",
+      "7 boxes"
+    ],
+    "answer": 2,
+    "explain": "48 ÷ 6 = 8 boxes.",
+    "hint": "Divide total pies by pies per box.",
+    "topic": "Word Problems",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which symbol correctly compares: 3/5 ____ 2/5? (P3)",
+    "options": [
+      "≤",
+      ">",
+      "<",
+      "="
+    ],
+    "answer": 1,
+    "explain": "3/5 is greater than 2/5 because 3 > 2.",
+    "hint": "Since denominators are equal, compare numerators.",
+    "topic": "Fractions",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Arithmetic problem #1 (P3): Calculate the exact sum of 40 and 22:",
+    "options": [
+      "62",
+      "63",
+      "64",
+      "61"
+    ],
+    "answer": 0,
+    "explain": "40 + 22 = 62.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #2 (P3): Calculate the exact sum of 43 and 24:",
+    "options": [
+      "67",
+      "69",
+      "68",
+      "66"
+    ],
+    "answer": 0,
+    "explain": "43 + 24 = 67.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #3 (P3): Calculate the exact sum of 46 and 26:",
+    "options": [
+      "72",
+      "73",
+      "71",
+      "74"
+    ],
+    "answer": 0,
+    "explain": "46 + 26 = 72.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #4 (P3): Calculate the exact sum of 49 and 28:",
+    "options": [
+      "78",
+      "77",
+      "79",
+      "76"
+    ],
+    "answer": 1,
+    "explain": "49 + 28 = 77.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #5 (P3): Calculate the exact sum of 52 and 30:",
+    "options": [
+      "84",
+      "83",
+      "81",
+      "82"
+    ],
+    "answer": 3,
+    "explain": "52 + 30 = 82.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #6 (P3): Calculate the exact sum of 55 and 32:",
+    "options": [
+      "86",
+      "88",
+      "89",
+      "87"
+    ],
+    "answer": 3,
+    "explain": "55 + 32 = 87.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #7 (P3): Calculate the exact sum of 58 and 34:",
+    "options": [
+      "94",
+      "91",
+      "93",
+      "92"
+    ],
+    "answer": 3,
+    "explain": "58 + 34 = 92.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #8 (P3): Calculate the exact sum of 61 and 36:",
+    "options": [
+      "99",
+      "97",
+      "96",
+      "98"
+    ],
+    "answer": 1,
+    "explain": "61 + 36 = 97.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #9 (P3): Calculate the exact sum of 64 and 38:",
+    "options": [
+      "104",
+      "101",
+      "103",
+      "102"
+    ],
+    "answer": 3,
+    "explain": "64 + 38 = 102.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #10 (P3): Calculate the exact sum of 67 and 40:",
+    "options": [
+      "106",
+      "109",
+      "108",
+      "107"
+    ],
+    "answer": 3,
+    "explain": "67 + 40 = 107.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #11 (P3): Calculate the exact sum of 70 and 42:",
+    "options": [
+      "114",
+      "111",
+      "113",
+      "112"
+    ],
+    "answer": 3,
+    "explain": "70 + 42 = 112.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #12 (P3): Calculate the exact sum of 73 and 44:",
+    "options": [
+      "116",
+      "118",
+      "119",
+      "117"
+    ],
+    "answer": 3,
+    "explain": "73 + 44 = 117.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #13 (P3): Calculate the exact sum of 76 and 46:",
+    "options": [
+      "124",
+      "123",
+      "121",
+      "122"
+    ],
+    "answer": 3,
+    "explain": "76 + 46 = 122.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #14 (P3): Calculate the exact sum of 79 and 48:",
+    "options": [
+      "126",
+      "129",
+      "128",
+      "127"
+    ],
+    "answer": 3,
+    "explain": "79 + 48 = 127.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #15 (P3): Calculate the exact sum of 82 and 50:",
+    "options": [
+      "131",
+      "133",
+      "132",
+      "134"
+    ],
+    "answer": 2,
+    "explain": "82 + 50 = 132.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #16 (P3): Calculate the exact sum of 85 and 52:",
+    "options": [
+      "138",
+      "137",
+      "139",
+      "136"
+    ],
+    "answer": 1,
+    "explain": "85 + 52 = 137.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #17 (P3): Calculate the exact sum of 88 and 54:",
+    "options": [
+      "142",
+      "141",
+      "144",
+      "143"
+    ],
+    "answer": 0,
+    "explain": "88 + 54 = 142.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #18 (P3): Calculate the exact sum of 91 and 56:",
+    "options": [
+      "149",
+      "148",
+      "147",
+      "146"
+    ],
+    "answer": 2,
+    "explain": "91 + 56 = 147.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #19 (P3): Calculate the exact sum of 94 and 58:",
+    "options": [
+      "154",
+      "153",
+      "152",
+      "151"
+    ],
+    "answer": 2,
+    "explain": "94 + 58 = 152.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #20 (P3): Calculate the exact sum of 97 and 60:",
+    "options": [
+      "159",
+      "157",
+      "158",
+      "156"
+    ],
+    "answer": 1,
+    "explain": "97 + 60 = 157.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #21 (P3): Calculate the exact sum of 100 and 62:",
+    "options": [
+      "164",
+      "162",
+      "163",
+      "161"
+    ],
+    "answer": 1,
+    "explain": "100 + 62 = 162.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #22 (P3): Calculate the exact sum of 103 and 64:",
+    "options": [
+      "166",
+      "168",
+      "169",
+      "167"
+    ],
+    "answer": 3,
+    "explain": "103 + 64 = 167.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #23 (P3): Calculate the exact sum of 106 and 66:",
+    "options": [
+      "171",
+      "172",
+      "174",
+      "173"
+    ],
+    "answer": 1,
+    "explain": "106 + 66 = 172.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #24 (P3): Calculate the exact sum of 109 and 68:",
+    "options": [
+      "176",
+      "177",
+      "179",
+      "178"
+    ],
+    "answer": 1,
+    "explain": "109 + 68 = 177.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #25 (P3): Calculate the exact sum of 112 and 70:",
+    "options": [
+      "184",
+      "181",
+      "182",
+      "183"
+    ],
+    "answer": 2,
+    "explain": "112 + 70 = 182.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #26 (P3): Calculate the exact sum of 115 and 72:",
+    "options": [
+      "189",
+      "186",
+      "187",
+      "188"
+    ],
+    "answer": 2,
+    "explain": "115 + 72 = 187.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #27 (P3): Calculate the exact sum of 118 and 74:",
+    "options": [
+      "192",
+      "194",
+      "193",
+      "191"
+    ],
+    "answer": 0,
+    "explain": "118 + 74 = 192.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #28 (P3): Calculate the exact sum of 121 and 76:",
+    "options": [
+      "199",
+      "198",
+      "197",
+      "196"
+    ],
+    "answer": 2,
+    "explain": "121 + 76 = 197.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #29 (P3): Calculate the exact sum of 124 and 78:",
+    "options": [
+      "201",
+      "202",
+      "203",
+      "204"
+    ],
+    "answer": 1,
+    "explain": "124 + 78 = 202.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #30 (P3): Calculate the exact sum of 127 and 80:",
+    "options": [
+      "208",
+      "206",
+      "209",
+      "207"
+    ],
+    "answer": 3,
+    "explain": "127 + 80 = 207.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #31 (P3): Calculate the exact sum of 130 and 82:",
+    "options": [
+      "211",
+      "213",
+      "214",
+      "212"
+    ],
+    "answer": 3,
+    "explain": "130 + 82 = 212.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #32 (P3): Calculate the exact sum of 133 and 84:",
+    "options": [
+      "217",
+      "218",
+      "219",
+      "216"
+    ],
+    "answer": 0,
+    "explain": "133 + 84 = 217.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #33 (P3): Calculate the exact sum of 136 and 86:",
+    "options": [
+      "221",
+      "223",
+      "222",
+      "224"
+    ],
+    "answer": 2,
+    "explain": "136 + 86 = 222.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #34 (P3): Calculate the exact sum of 139 and 88:",
+    "options": [
+      "226",
+      "229",
+      "227",
+      "228"
+    ],
+    "answer": 2,
+    "explain": "139 + 88 = 227.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #35 (P3): Calculate the exact sum of 142 and 90:",
+    "options": [
+      "232",
+      "233",
+      "231",
+      "234"
+    ],
+    "answer": 0,
+    "explain": "142 + 90 = 232.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #36 (P3): Calculate the exact sum of 145 and 92:",
+    "options": [
+      "239",
+      "236",
+      "238",
+      "237"
+    ],
+    "answer": 3,
+    "explain": "145 + 92 = 237.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #37 (P3): Calculate the exact sum of 148 and 94:",
+    "options": [
+      "242",
+      "241",
+      "243",
+      "244"
+    ],
+    "answer": 0,
+    "explain": "148 + 94 = 242.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  }
+]

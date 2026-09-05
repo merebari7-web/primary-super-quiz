@@ -1,1 +1,1502 @@
-[{"q":"Groundnut is a ____.","options":["crop","metal","planet","vehicle"],"answer":0,"explain":"Groundnut is grown on farms."},{"q":"A hen is a ____ animal.","options":["sea only always","wild jungle only always","space","farm"],"answer":3,"explain":"A hen is commonly reared."},{"q":"Soil that is good for many crops is ____ soil.","options":["pure metal","pure stone","pure plastic","loamy"],"answer":3,"explain":"Loam is a mix of sand, silt and clay."},{"q":"A fish gives us ____.","options":["plastic chairs","fish meat","computers","petrol"],"answer":1,"explain":"A fish produces fish meat."},{"q":"A place where crops are grown is a ____.","options":["farm","cinema","airport","bank"],"answer":0,"explain":"Crops are grown on a farm."},{"q":"Beans is mainly a ____ crop.","options":["food","mineral oil","metal","plastic"],"answer":0,"explain":"Beans is eaten as food."},{"q":"Cassava is mainly a ____ crop.","options":["food","metal","plastic","mineral oil"],"answer":0,"explain":"Cassava is eaten as food."},{"q":"A cutlass is used for ____.","options":["flying","typing emails","clearing bush","painting the sky"],"answer":2,"explain":"A cutlass is a farm tool."},{"q":"A watering can is used for ____.","options":["painting the sky","typing emails","flying","watering plants"],"answer":3,"explain":"A watering can is a farm tool."},{"q":"Yam is a ____.","options":["metal","vehicle","planet","crop"],"answer":3,"explain":"Yam is grown on farms."},{"q":"Groundnut is mainly a ____ crop.","options":["cash","planet","toy","gas"],"answer":0,"explain":"Groundnut is grown to sell."},{"q":"Cassava is a ____.","options":["planet","metal","crop","vehicle"],"answer":2,"explain":"Cassava is grown on farms."},{"q":"Plantain is mainly a ____ crop.","options":["mineral oil","metal","food","plastic"],"answer":2,"explain":"Plantain is eaten as food."},{"q":"Oil palm is a ____.","options":["crop","planet","metal","vehicle"],"answer":0,"explain":"Oil palm is grown on farms."},{"q":"A rabbit is a ____ animal.","options":["space","sea only always","farm","wild jungle only always"],"answer":2,"explain":"A rabbit is commonly reared."},{"q":"Sorghum is a ____.","options":["metal","planet","vehicle","crop"],"answer":3,"explain":"Sorghum is grown on farms."},{"q":"The young of a sheep is a ____.","options":["chick","calf","kid","lamb"],"answer":3,"explain":"A lamb is a young sheep."},{"q":"Tomato is a ____.","options":["metal","crop","vehicle","planet"],"answer":1,"explain":"Tomato is grown on farms."},{"q":"Maize is a ____.","options":["planet","crop","metal","vehicle"],"answer":1,"explain":"Maize is grown on farms."},{"q":"Oil palm is mainly a ____ crop.","options":["cash","toy","gas","planet"],"answer":0,"explain":"Oil palm is grown to sell."},{"q":"Agriculture is the growing of crops and the rearing of ____.","options":["songs","stars","animals","computers"],"answer":2,"explain":"Farming = crops + animals."},{"q":"A hoe is used for ____.","options":["digging","typing emails","flying","painting the sky"],"answer":0,"explain":"A hoe is a farm tool."},{"q":"Maize is mainly a ____ crop.","options":["mineral oil","plastic","metal","food"],"answer":3,"explain":"Maize is eaten as food."},{"q":"A cow gives us ____.","options":["petrol","plastic chairs","computers","milk"],"answer":3,"explain":"A cow produces milk."},{"q":"Poultry farming is the rearing of ____.","options":["birds such as hens","fish only","cocoa","goats only"],"answer":0,"explain":"Poultry = domestic birds."},{"q":"Fish are reared in a ____.","options":["pond","sky farm","desert dune only","classroom"],"answer":0,"explain":"Pisciculture uses ponds."},{"q":"Beans is a ____.","options":["planet","metal","crop","vehicle"],"answer":2,"explain":"Beans is grown on farms."},{"q":"Farmers add ____ to make soil richer.","options":["plastic","glass","petrol","manure or fertiliser"],"answer":3,"explain":"Manure adds nutrients."},{"q":"Millet is a ____.","options":["crop","metal","planet","vehicle"],"answer":0,"explain":"Millet is grown on farms."},{"q":"Irrigation means ____ crops.","options":["burning","hiding","singing to","watering"],"answer":3,"explain":"Irrigation supplies water."},{"q":"A cash crop is grown mainly to ____.","options":["burn","look at","hide","sell"],"answer":3,"explain":"Cocoa is a cash crop in Nigeria."},{"q":"Rice is a ____.","options":["crop","planet","vehicle","metal"],"answer":0,"explain":"Rice is grown on farms."},{"q":"Crop rotation helps to ____.","options":["kill all rain","keep soil fertile","remove the sun","stop planting forever"],"answer":1,"explain":"Different crops use different nutrients."},{"q":"Shifting cultivation means moving to a new ____ after some years.","options":["country always","ocean","piece of land","star"],"answer":2,"explain":"Land is left to rest (fallow)."},{"q":"A food crop is grown mainly to ____.","options":["export only always","eat","make plastic","build roads"],"answer":1,"explain":"Yam and cassava are food crops."},{"q":"A rake is used for ____.","options":["painting the sky","gathering leaves","flying","typing emails"],"answer":1,"explain":"A rake is a farm tool."},{"q":"Rice is mainly a ____ crop.","options":["food","plastic","mineral oil","metal"],"answer":0,"explain":"Rice is eaten as food."},{"q":"A goat is a ____ animal.","options":["farm","wild jungle only always","sea only always","space"],"answer":0,"explain":"A goat is commonly reared."},{"q":"A hen gives us ____.","options":["eggs","petrol","computers","plastic chairs"],"answer":0,"explain":"A hen produces eggs."},{"q":"A pig is a ____ animal.","options":["sea only always","wild jungle only always","space","farm"],"answer":3,"explain":"A pig is commonly reared."},{"q":"Plantain is a ____.","options":["planet","vehicle","crop","metal"],"answer":2,"explain":"Plantain is grown on farms."},{"q":"A sickle is used for ____.","options":["painting the sky","typing emails","harvesting grain","flying"],"answer":2,"explain":"A sickle is a farm tool."},{"q":"A wheelbarrow is used for ____.","options":["painting the sky","typing emails","flying","carrying loads"],"answer":3,"explain":"A wheelbarrow is a farm tool."},{"q":"A fish is a ____ animal.","options":["wild jungle only always","space","sea only always","farm"],"answer":3,"explain":"A fish is commonly reared."},{"q":"A bee gives us ____.","options":["honey","computers","plastic chairs","petrol"],"answer":0,"explain":"A bee produces honey."},{"q":"Cotton is mainly a ____ crop.","options":["cash","toy","planet","gas"],"answer":0,"explain":"Cotton is grown to sell."},{"q":"Cocoa is mainly a ____ crop.","options":["planet","toy","gas","cash"],"answer":3,"explain":"Cocoa is grown to sell."},{"q":"A cow is a ____ animal.","options":["farm","sea only always","space","wild jungle only always"],"answer":0,"explain":"A cow is commonly reared."},{"q":"The young of a goat is a ____.","options":["kid","calf","lamb","puppy"],"answer":0,"explain":"A kid is a young goat."},{"q":"A sheep is a ____ animal.","options":["space","wild jungle only always","sea only always","farm"],"answer":3,"explain":"A sheep is commonly reared."},{"q":"A sheep gives us ____.","options":["wool","plastic chairs","petrol","computers"],"answer":0,"explain":"A sheep produces wool."},{"q":"Harvesting is the ____ of mature crops.","options":["planting","ploughing only","weeding only","gathering"],"answer":3,"explain":"Harvest comes when crops are ready."},{"q":"A goat gives us ____.","options":["meat","petrol","computers","plastic chairs"],"answer":0,"explain":"A goat produces meat."},{"q":"Cocoa is a ____.","options":["vehicle","planet","crop","metal"],"answer":2,"explain":"Cocoa is grown on farms."},{"q":"Rubber is mainly a ____ crop.","options":["toy","planet","cash","gas"],"answer":2,"explain":"Rubber is grown to sell."},{"q":"Yam is mainly a ____ crop.","options":["metal","plastic","mineral oil","food"],"answer":3,"explain":"Yam is eaten as food."},{"q":"Which of these is a farm crop?","options":["granite block","yam","keyboard","lorry"],"answer":1,"explain":"It is grown on a farm."},{"q":"Which of these is a farm crop?","options":["cassava","granite block","keyboard","lorry"],"answer":0,"explain":"It is grown on a farm."},{"q":"Which of these is a farm crop?","options":["lorry","keyboard","maize","granite block"],"answer":2,"explain":"It is grown on a farm."},{"q":"Which of these is a farm crop?","options":["granite block","lorry","keyboard","rice"],"answer":3,"explain":"It is grown on a farm."},{"q":"Which of these is a farm crop?","options":["keyboard","cocoa","lorry","granite block"],"answer":1,"explain":"It is grown on a farm."},{"q":"Which of these is a farm crop?","options":["keyboard","lorry","millet","granite block"],"answer":2,"explain":"It is grown on a farm."},{"q":"Which of these is a farm crop?","options":["sorghum","keyboard","lorry","granite block"],"answer":0,"explain":"It is grown on a farm."},{"q":"Which of these is a farm crop?","options":["groundnut","granite block","keyboard","lorry"],"answer":0,"explain":"It is grown on a farm."},{"q":"Which of these is a farm crop?","options":["keyboard","granite block","beans","lorry"],"answer":2,"explain":"It is grown on a farm."},{"q":"Which of these is a farm crop?","options":["lorry","keyboard","plantain","granite block"],"answer":2,"explain":"It is grown on a farm."},{"q":"Which of these is a farm crop?","options":["keyboard","granite block","oil palm","lorry"],"answer":2,"explain":"It is grown on a farm."},{"q":"Which of these is a farm crop?","options":["keyboard","tomato","lorry","granite block"],"answer":1,"explain":"It is grown on a farm."},{"q":"Groundnut is a ____. [crop]","options":["crop","metal","vehicle","planet"],"answer":0,"explain":"Groundnut is grown on farms."},{"q":"A hen is a ____ animal. [farm]","options":["wild jungle only always","farm","sea only always","space"],"answer":1,"explain":"A hen is commonly reared."},{"q":"Soil that is good for many crops is ____ soil. [loamy]","options":["loamy","pure metal","pure stone","pure plastic"],"answer":0,"explain":"Loam is a mix of sand, silt and clay."},{"q":"A fish gives us ____. [fish meat]","options":["petrol","fish meat","computers","plastic chairs"],"answer":1,"explain":"A fish produces fish meat."},{"q":"A place where crops are grown is a ____. [farm]","options":["airport","cinema","farm","bank"],"answer":2,"explain":"Crops are grown on a farm."},{"q":"Beans is mainly a ____ crop.","options":["mineral oil","plastic","food","flying"],"answer":2,"explain":"Beans is eaten as food."},{"q":"Cassava is mainly a ____ crop.","options":["food","painting the sky","typing emails","toy"],"answer":0,"explain":"Cassava is eaten as food."},{"q":"A cutlass is used for ____.","options":["chick","gas","calf","clearing bush"],"answer":3,"explain":"A cutlass is a farm tool."},{"q":"A watering can is used for ____.","options":["kid","stars","watering plants","songs"],"answer":2,"explain":"A watering can is a farm tool."},{"q":"Yam is a ____.","options":["fish only","cocoa","crop","goats only"],"answer":2,"explain":"Yam is grown on farms."},{"q":"Groundnut is mainly a ____ crop.","options":["classroom","cash","sky farm","desert dune only"],"answer":1,"explain":"Groundnut is grown to sell."},{"q":"Cassava is a ____.","options":["glass","hiding","crop","burning"],"answer":2,"explain":"Cassava is grown on farms."},{"q":"Plantain is mainly a ____ crop.","options":["look at","burn","singing to","food"],"answer":3,"explain":"Plantain is eaten as food."},{"q":"Oil palm is a ____.","options":["crop","kill all rain","hide","remove the sun"],"answer":0,"explain":"Oil palm is grown on farms."},{"q":"A rabbit is a ____ animal.","options":["country always","ocean","stop planting forever","farm"],"answer":3,"explain":"A rabbit is commonly reared."},{"q":"Sorghum is a ____.","options":["crop","star","make plastic","export only always"],"answer":0,"explain":"Sorghum is grown on farms."},{"q":"The young of a sheep is a ____.","options":["build roads","planting","puppy","lamb"],"answer":3,"explain":"A lamb is a young sheep."},{"q":"Tomato is a ____.","options":["planting","crop","weeding only","ploughing only"],"answer":1,"explain":"Tomato is grown on farms."},{"q":"Maize is a ____.","options":["lorry","keyboard","granite block","crop"],"answer":3,"explain":"Maize is grown on farms."},{"q":"Oil palm is mainly a ____ crop.","options":["cash","Accra","Cairo","Nairobi"],"answer":0,"explain":"Oil palm is grown to sell."},{"q":"Agriculture is the growing of crops and the rearing of ____.","options":["London","animals","stone","Paris"],"answer":1,"explain":"Farming = crops + animals."},{"q":"A hoe is used for ____.","options":["rainbow","aeroplane","none of these names","digging"],"answer":3,"explain":"A hoe is a farm tool."},{"q":"Maize is mainly a ____ crop.","options":["Tuesday","zero","the moon","food"],"answer":3,"explain":"Maize is eaten as food."},{"q":"A cow gives us ____.","options":["planet","vehicle","milk","metal"],"answer":2,"explain":"A cow produces milk."},{"q":"Poultry farming is the rearing of ____.","options":["birds such as hens","wild jungle only always","sea only always","space"],"answer":0,"explain":"Poultry = domestic birds."},{"q":"Fish are reared in a ____.","options":["pure metal","pure plastic","pond","pure stone"],"answer":2,"explain":"Pisciculture uses ponds."},{"q":"Beans is a ____.","options":["crop","plastic chairs","petrol","computers"],"answer":0,"explain":"Beans is grown on farms."},{"q":"Farmers add ____ to make soil richer.","options":["manure or fertiliser","bank","airport","cinema"],"answer":0,"explain":"Manure adds nutrients."},{"q":"Millet is a ____.","options":["flying","crop","mineral oil","plastic"],"answer":1,"explain":"Millet is grown on farms."},{"q":"Irrigation means ____ crops.","options":["typing emails","painting the sky","watering","toy"],"answer":2,"explain":"Irrigation supplies water."},{"q":"A cash crop is grown mainly to ____.","options":["chick","sell","calf","gas"],"answer":1,"explain":"Cocoa is a cash crop in Nigeria."},{"q":"Rice is a ____.","options":["stars","kid","songs","crop"],"answer":3,"explain":"Rice is grown on farms."}]
+[
+  {
+    "q": "A modern, powerful farm vehicle used for pulling heavy implements like ploughs, harrows, and trailers is a ____. (P5)",
+    "options": [
+      "wheelbarrow",
+      "bicycle",
+      "tractor",
+      "sprayer"
+    ],
+    "answer": 2,
+    "explain": "Tractors mechanize heavy soil tillage, planting, and field haulage on modern farms.",
+    "hint": "Heavy farm engine vehicle.",
+    "topic": "Farm Machinery",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "The artificial application of controlled amounts of water to agricultural land to assist crop growth is ____. (P5)",
+    "options": [
+      "harvesting",
+      "irrigation",
+      "mulching",
+      "drainage"
+    ],
+    "answer": 1,
+    "explain": "Irrigation ensures reliable crop production during dry seasons and in semi-arid zones.",
+    "hint": "Supplying water to crops artificially.",
+    "topic": "Farm Practices",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "The branch of agriculture concerned with raising domesticated birds (chickens, turkeys, ducks) for meat and eggs is ____. (P5)",
+    "options": [
+      "aquaculture",
+      "sericulture",
+      "apiculture",
+      "poultry farming"
+    ],
+    "answer": 3,
+    "explain": "Poultry provides valuable dietary animal protein in meat and eggs at rapid reproductive rates.",
+    "hint": "Farming chickens and turkeys.",
+    "topic": "Animal Husbandry",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "The commercial farming and breeding of fish and other aquatic animals in managed ponds or tanks is ____. (P5)",
+    "options": [
+      "poultry",
+      "horticulture",
+      "forestry",
+      "fish farming (aquaculture)"
+    ],
+    "answer": 3,
+    "explain": "Aquaculture supplements wild fisheries with sustainably farmed tilapia, catfish, and carp.",
+    "hint": "Raising fish in ponds or tanks.",
+    "topic": "Animal Husbandry",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Large tall cylindrical metal or concrete structures used for bulk storage of dried grains (maize, wheat) are ____. (P5)",
+    "options": [
+      "barns",
+      "kennels",
+      "silos",
+      "sheds"
+    ],
+    "answer": 2,
+    "explain": "Silos protect grain from moisture, mold, rodents, and weevil infestation over long durations.",
+    "hint": "Tall grain storage towers.",
+    "topic": "Crop Storage",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Crop classification: Yam is scientifically grouped as a ____ (Primary 5).",
+    "options": [
+      "latex",
+      "tuber / root crop",
+      "fibre",
+      "cereal"
+    ],
+    "answer": 1,
+    "explain": "Yam is botanically classified as a tuber / root crop.",
+    "hint": "Botanical class of Yam.",
+    "topic": "Crop Types",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Crop classification: Cassava is scientifically grouped as a ____ (Primary 5).",
+    "options": [
+      "cereal",
+      "spice",
+      "fruit",
+      "tuber / root crop"
+    ],
+    "answer": 3,
+    "explain": "Cassava is botanically classified as a tuber / root crop.",
+    "hint": "Botanical class of Cassava.",
+    "topic": "Crop Types",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Crop classification: Rice is scientifically grouped as a ____ (Primary 5).",
+    "options": [
+      "cereal grain",
+      "fibre",
+      "tuber",
+      "legume"
+    ],
+    "answer": 0,
+    "explain": "Rice is botanically classified as a cereal grain.",
+    "hint": "Botanical class of Rice.",
+    "topic": "Crop Types",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Crop classification: Millet is scientifically grouped as a ____ (Primary 5).",
+    "options": [
+      "legume",
+      "cereal grain",
+      "oil crop",
+      "beverage"
+    ],
+    "answer": 1,
+    "explain": "Millet is botanically classified as a cereal grain.",
+    "hint": "Botanical class of Millet.",
+    "topic": "Crop Types",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Crop classification: Sorghum (Guinea corn) is scientifically grouped as a ____ (Primary 5).",
+    "options": [
+      "cereal grain",
+      "legume",
+      "fruit",
+      "fibre"
+    ],
+    "answer": 0,
+    "explain": "Sorghum (Guinea corn) is botanically classified as a cereal grain.",
+    "hint": "Botanical class of Sorghum (Guinea corn).",
+    "topic": "Crop Types",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Crop classification: Cowpea (Beans) is scientifically grouped as a ____ (Primary 5).",
+    "options": [
+      "cereal",
+      "legume",
+      "tuber",
+      "latex"
+    ],
+    "answer": 1,
+    "explain": "Cowpea (Beans) is botanically classified as a legume.",
+    "hint": "Botanical class of Cowpea (Beans).",
+    "topic": "Crop Types",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Crop classification: Groundnut (Peanut) is scientifically grouped as a ____ (Primary 5).",
+    "options": [
+      "cereal",
+      "timber",
+      "legume and oil crop",
+      "fibre"
+    ],
+    "answer": 2,
+    "explain": "Groundnut (Peanut) is botanically classified as a legume and oil crop.",
+    "hint": "Botanical class of Groundnut (Peanut).",
+    "topic": "Crop Types",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Crop classification: Oil Palm is scientifically grouped as a ____ (Primary 5).",
+    "options": [
+      "legume",
+      "vegetable",
+      "cereal",
+      "oil and cash crop"
+    ],
+    "answer": 3,
+    "explain": "Oil Palm is botanically classified as a oil and cash crop.",
+    "hint": "Botanical class of Oil Palm.",
+    "topic": "Crop Types",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Crop classification: Cotton is scientifically grouped as a ____ (Primary 5).",
+    "options": [
+      "fibre crop used for making textile clothing",
+      "beverage",
+      "tuber",
+      "cereal"
+    ],
+    "answer": 0,
+    "explain": "Cotton is botanically classified as a fibre crop used for making textile clothing.",
+    "hint": "Botanical class of Cotton.",
+    "topic": "Crop Types",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Crop classification: Coffee is scientifically grouped as a ____ (Primary 5).",
+    "options": [
+      "fibre",
+      "legume",
+      "beverage crop",
+      "tuber"
+    ],
+    "answer": 2,
+    "explain": "Coffee is botanically classified as a beverage crop.",
+    "hint": "Botanical class of Coffee.",
+    "topic": "Crop Types",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Crop classification: Tea is scientifically grouped as a ____ (Primary 5).",
+    "options": [
+      "beverage crop",
+      "tuber",
+      "latex",
+      "cereal"
+    ],
+    "answer": 0,
+    "explain": "Tea is botanically classified as a beverage crop.",
+    "hint": "Botanical class of Tea.",
+    "topic": "Crop Types",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Crop classification: Sugarcane is scientifically grouped as a ____ (Primary 5).",
+    "options": [
+      "oil crop",
+      "fibre",
+      "sugar crop",
+      "legume"
+    ],
+    "answer": 2,
+    "explain": "Sugarcane is botanically classified as a sugar crop.",
+    "hint": "Botanical class of Sugarcane.",
+    "topic": "Crop Types",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Animal husbandry: What major agricultural products do we obtain from Sheep? [P5]",
+    "options": [
+      "silk",
+      "wool and mutton",
+      "honey",
+      "pork and lard"
+    ],
+    "answer": 1,
+    "explain": "Sheep provide wool and mutton for human consumption and industrial use.",
+    "hint": "Yield from Sheep.",
+    "topic": "Animal Products",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Animal husbandry: What major agricultural products do we obtain from Bees (Apiculture)? [P5]",
+    "options": [
+      "wool",
+      "leather",
+      "milk and beef",
+      "honey and beeswax"
+    ],
+    "answer": 3,
+    "explain": "Bees (Apiculture) provide honey and beeswax for human consumption and industrial use.",
+    "hint": "Yield from Bees (Apiculture).",
+    "topic": "Animal Products",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Animal husbandry: What major agricultural products do we obtain from Silkworm? [P5]",
+    "options": [
+      "wool",
+      "honey",
+      "milk",
+      "silk fibre for textiles"
+    ],
+    "answer": 3,
+    "explain": "Silkworm provide silk fibre for textiles for human consumption and industrial use.",
+    "hint": "Yield from Silkworm.",
+    "topic": "Animal Products",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Animal husbandry: What major agricultural products do we obtain from Pigs (Swine)? [P5]",
+    "options": [
+      "pork and bacon",
+      "dairy milk",
+      "wool and mutton",
+      "honey"
+    ],
+    "answer": 0,
+    "explain": "Pigs (Swine) provide pork and bacon for human consumption and industrial use.",
+    "hint": "Yield from Pigs (Swine).",
+    "topic": "Animal Products",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Animal husbandry: What major agricultural products do we obtain from Goats? [P5]",
+    "options": [
+      "silk",
+      "honey",
+      "chevon meat, milk, and leather",
+      "pork"
+    ],
+    "answer": 2,
+    "explain": "Goats provide chevon meat, milk, and leather for human consumption and industrial use.",
+    "hint": "Yield from Goats.",
+    "topic": "Animal Products",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Agricultural science practice #1 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "moisture loss through evaporation",
+      "weed growth completely",
+      "soil warmth"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #2 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "weed growth completely",
+      "soil warmth",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #3 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "weed growth completely",
+      "soil warmth",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #4 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "weed growth completely",
+      "moisture loss through evaporation",
+      "root formation"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #5 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "root formation",
+      "soil warmth",
+      "weed growth completely"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #6 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "moisture loss through evaporation",
+      "soil warmth",
+      "root formation"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #7 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "soil warmth",
+      "moisture loss through evaporation",
+      "weed growth completely"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #8 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "moisture loss through evaporation",
+      "root formation",
+      "weed growth completely"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #9 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "weed growth completely",
+      "soil warmth",
+      "root formation"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #10 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "root formation",
+      "moisture loss through evaporation",
+      "weed growth completely"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #11 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "soil warmth",
+      "moisture loss through evaporation",
+      "weed growth completely"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #12 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "root formation",
+      "soil warmth",
+      "weed growth completely"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #13 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "soil warmth",
+      "weed growth completely",
+      "root formation"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #14 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "soil warmth",
+      "weed growth completely",
+      "root formation"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #15 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "soil warmth",
+      "root formation",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #16 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "moisture loss through evaporation",
+      "root formation",
+      "weed growth completely"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #17 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "moisture loss through evaporation",
+      "soil warmth",
+      "root formation"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #18 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "root formation",
+      "weed growth completely",
+      "soil warmth"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #19 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "soil warmth",
+      "moisture loss through evaporation",
+      "weed growth completely"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #20 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "moisture loss through evaporation",
+      "soil warmth",
+      "root formation"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #21 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "moisture loss through evaporation",
+      "weed growth completely",
+      "root formation"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #22 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "soil warmth",
+      "weed growth completely",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #23 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "weed growth completely",
+      "root formation",
+      "soil warmth"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #24 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "moisture loss through evaporation",
+      "root formation",
+      "weed growth completely"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #25 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "soil warmth",
+      "moisture loss through evaporation",
+      "weed growth completely"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #26 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "moisture loss through evaporation",
+      "soil warmth",
+      "root formation"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #27 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "root formation",
+      "weed growth completely",
+      "soil warmth"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #28 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "moisture loss through evaporation",
+      "weed growth completely",
+      "soil warmth"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #29 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "soil warmth",
+      "root formation",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #30 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "soil warmth",
+      "root formation",
+      "weed growth completely"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #31 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "root formation",
+      "soil warmth",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #32 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "soil warmth",
+      "moisture loss through evaporation",
+      "weed growth completely"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #33 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "moisture loss through evaporation",
+      "soil warmth",
+      "weed growth completely"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #34 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "soil warmth",
+      "root formation",
+      "weed growth completely"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #35 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "root formation",
+      "soil warmth",
+      "weed growth completely"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #36 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "root formation",
+      "weed growth completely",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #37 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "root formation",
+      "soil warmth",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #38 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "weed growth completely",
+      "soil warmth",
+      "root formation"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #39 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "soil warmth",
+      "root formation",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #40 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "root formation",
+      "moisture loss through evaporation",
+      "soil warmth"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #41 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "root formation",
+      "moisture loss through evaporation",
+      "soil warmth"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #42 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "weed growth completely",
+      "moisture loss through evaporation",
+      "root formation"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #43 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "moisture loss through evaporation",
+      "root formation",
+      "weed growth completely"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #44 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "root formation",
+      "moisture loss through evaporation",
+      "soil warmth"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #45 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "root formation",
+      "moisture loss through evaporation",
+      "soil warmth"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #46 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "soil warmth",
+      "root formation",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #47 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "weed growth completely",
+      "root formation",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #48 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "moisture loss through evaporation",
+      "weed growth completely",
+      "root formation"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #49 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "weed growth completely",
+      "soil warmth",
+      "root formation"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #50 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "moisture loss through evaporation",
+      "soil warmth",
+      "root formation"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #51 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "soil warmth",
+      "weed growth completely",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #52 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "soil warmth",
+      "moisture loss through evaporation",
+      "weed growth completely"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #53 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "weed growth completely",
+      "moisture loss through evaporation",
+      "root formation"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #54 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "moisture loss through evaporation",
+      "weed growth completely",
+      "root formation"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #55 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "root formation",
+      "moisture loss through evaporation",
+      "weed growth completely"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #56 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "root formation",
+      "soil warmth",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #57 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "root formation",
+      "soil warmth",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #58 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "moisture loss through evaporation",
+      "root formation",
+      "soil warmth"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #59 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "root formation",
+      "soil warmth",
+      "weed growth completely"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #60 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "soil warmth",
+      "moisture loss through evaporation",
+      "weed growth completely"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #61 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "soil warmth",
+      "root formation",
+      "weed growth completely"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #62 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "root formation",
+      "weed growth completely",
+      "soil warmth"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #63 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "root formation",
+      "soil warmth",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #64 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "moisture loss through evaporation",
+      "weed growth completely",
+      "root formation"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #65 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "weed growth completely",
+      "soil warmth",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #66 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "root formation",
+      "moisture loss through evaporation",
+      "soil warmth"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #67 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "weed growth completely",
+      "soil warmth",
+      "root formation"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #68 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "weed growth completely",
+      "root formation",
+      "soil warmth"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #69 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "weed growth completely",
+      "moisture loss through evaporation",
+      "root formation"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #70 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "soil warmth",
+      "root formation",
+      "weed growth completely"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #71 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "weed growth completely",
+      "root formation",
+      "soil warmth"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #72 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "root formation",
+      "weed growth completely",
+      "soil warmth"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #73 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "weed growth completely",
+      "root formation",
+      "moisture loss through evaporation",
+      "soil warmth"
+    ],
+    "answer": 2,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #74 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "moisture loss through evaporation",
+      "soil warmth",
+      "weed growth completely"
+    ],
+    "answer": 1,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #75 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "soil warmth",
+      "weed growth completely",
+      "root formation",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #76 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "root formation",
+      "weed growth completely",
+      "soil warmth",
+      "moisture loss through evaporation"
+    ],
+    "answer": 3,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #77 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "weed growth completely",
+      "root formation",
+      "soil warmth"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Agricultural science practice #78 [P5]: Adding decayed plant matter (mulch) over topsoil helps prevent ____.",
+    "options": [
+      "moisture loss through evaporation",
+      "weed growth completely",
+      "soil warmth",
+      "root formation"
+    ],
+    "answer": 0,
+    "explain": "Mulching conserves soil moisture and cools the root zone.",
+    "hint": "Conserves soil moisture.",
+    "topic": "Soil Management",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  }
+]

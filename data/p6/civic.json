@@ -1,1 +1,1502 @@
-[{"q":"Helping a lost child is being ____.","options":["selfish","rude","lawless","responsible"],"answer":3,"explain":"Good citizens help others."},{"q":"A right of a child is the right to ____.","options":["education","work in a factory","be neglected","steal"],"answer":0,"explain":"Children have a right to education."},{"q":"A patriot loves his or her ____.","options":["country","only foreign land","disorder","only money"],"answer":0,"explain":"Patriotism is love of country."},{"q":"We salute the flag to show ____.","options":["hunger","fear only","anger","loyalty"],"answer":3,"explain":"Respect for national symbols."},{"q":"The three arms of government are executive, legislature and ____.","options":["market","army","judiciary","police"],"answer":2,"explain":"Judiciary = courts."},{"q":"The executive ____ the law.","options":["deletes","hides","only sings","enforces / carries out"],"answer":3,"explain":"The executive implements laws."},{"q":"Saying “please” and “thank you” shows ____.","options":["pride","fear","weakness","good manners"],"answer":3,"explain":"Courtesy is civic."},{"q":"Public property belongs to ____.","options":["nobody to care for","a stranger","one pupil","everyone / the government"],"answer":3,"explain":"We must protect public property."},{"q":"Bribery is ____.","options":["a right","a festival","a civic duty","a crime"],"answer":3,"explain":"Do not give or take bribes."},{"q":"A good citizen should be ____.","options":["a cheat","a thief","a bully","honest"],"answer":3,"explain":"Honesty is a civic virtue."},{"q":"The head of Nigeria’s federal government is the ____.","options":["President","Councillor","Governor","Chief Judge only"],"answer":0,"explain":"The President heads the Federation."},{"q":"Civic education teaches us to be ____.","options":["silent forever","lawless","selfish","good citizens"],"answer":3,"explain":"It builds responsible citizens."},{"q":"The Nigerian pledge starts with “I pledge to Nigeria my ____”.","options":["school","football","country","food"],"answer":2,"explain":"The pledge is to Nigeria our country."},{"q":"We should not discriminate because of ____.","options":["homework","uniform colour only","tribe or religion","sports day"],"answer":2,"explain":"All citizens are equal before the law."},{"q":"Paying tax is a ____ of citizens.","options":["duty","song","punishment only","game"],"answer":0,"explain":"Taxes fund public services."},{"q":"INEC is in charge of ____.","options":["football only","elections","farming","hospitals only"],"answer":1,"explain":"Independent National Electoral Commission."},{"q":"We must obey the ____.","options":["bully","nobody","criminal","law"],"answer":3,"explain":"Laws protect everyone."},{"q":"The judiciary ____ the law.","options":["interprets","farms","prints money","dances"],"answer":0,"explain":"Courts interpret the law."},{"q":"We must respect our ____.","options":["parents and elders","only money","only strangers","nobody"],"answer":0,"explain":"Respect is a duty."},{"q":"Traffic lights: amber/yellow means ____.","options":["stop forever","play","park","get ready"],"answer":3,"explain":"Amber = get ready."},{"q":"Traffic lights: green means ____.","options":["stop","go","turn back always","sleep"],"answer":1,"explain":"Green = go."},{"q":"The legislature ____ the law.","options":["ignores","sings","makes","hides"],"answer":2,"explain":"Law-makers make the law."},{"q":"The national anthem (restored 2024) begins ____.","options":["Hail the army","God bless Nigeria","Arise, O compatriots","Nigeria, we hail thee"],"answer":3,"explain":"“Nigeria, We Hail Thee” was restored in May 2024."},{"q":"Freedom of worship is a ____.","options":["right","tax","game","punishment"],"answer":0,"explain":"Nigerians may practise their religion."},{"q":"We should queue up when we ____.","options":["wait our turn","jump the line","shout","fight"],"answer":0,"explain":"Queuing is civic order."},{"q":"Voting is done in a ____.","options":["market stall only","jungle","democracy","dictatorship only"],"answer":2,"explain":"Adults vote in a democracy."},{"q":"A constitution can be changed by ____.","options":["ignoring it","tearing it","amendment","one pupil"],"answer":2,"explain":"Amendments follow a legal process."},{"q":"Fundamental human rights include the right to ____.","options":["harm others","steal","break traffic lights","life"],"answer":3,"explain":"Rights come with respect for others."},{"q":"The rule of law means ____.","options":["laws are secret","leaders are above the law","only police have rights","nobody is above the law"],"answer":3,"explain":"Everyone is equal under the law."},{"q":"We should keep our environment ____.","options":["noisy always","dirty","unsafe","clean"],"answer":3,"explain":"A clean place is healthy."},{"q":"Throwing refuse in the gutter is ____.","options":["wrong","patriotic","a right","helpful"],"answer":0,"explain":"It causes flood and disease."},{"q":"Traffic lights: red means ____.","options":["wait only in school","go","stop","run"],"answer":2,"explain":"Red = stop."},{"q":"Which of these is a good civic value?","options":["honesty","cheating","bullying","vandalism"],"answer":0,"explain":"Honesty is a civic virtue."},{"q":"Which of these is a good civic value?","options":["cheating","vandalism","obedience","bullying"],"answer":2,"explain":"Obedience is a civic virtue."},{"q":"Which of these is a good civic value?","options":["cheating","bullying","tolerance","vandalism"],"answer":2,"explain":"Tolerance is a civic virtue."},{"q":"Which of these is a good civic value?","options":["bullying","punctuality","cheating","vandalism"],"answer":1,"explain":"Punctuality is a civic virtue."},{"q":"Which of these is a good civic value?","options":["bullying","cheating","self-control","vandalism"],"answer":2,"explain":"Self-control is a civic virtue."},{"q":"Which of these is a good civic value?","options":["cheating","contentment","bullying","vandalism"],"answer":1,"explain":"Contentment is a civic virtue."},{"q":"Which of these is a good civic value?","options":["vandalism","bullying","cheating","kindness"],"answer":3,"explain":"Kindness is a civic virtue."},{"q":"Which of these is a good civic value?","options":["vandalism","courage","bullying","cheating"],"answer":1,"explain":"Courage is a civic virtue."},{"q":"Helping a lost child is being ____. [responsible]","options":["selfish","responsible","lawless","rude"],"answer":1,"explain":"Good citizens help others."},{"q":"A right of a child is the right to ____. [education]","options":["education","be neglected","steal","work in a factory"],"answer":0,"explain":"Children have a right to education."},{"q":"A patriot loves his or her ____. [country]","options":["only money","only foreign land","disorder","country"],"answer":3,"explain":"Patriotism is love of country."},{"q":"We salute the flag to show ____. [loyalty]","options":["hunger","fear only","anger","loyalty"],"answer":3,"explain":"Respect for national symbols."},{"q":"The three arms of government are executive, legislature and ____. [judiciary]","options":["market","judiciary","army","police"],"answer":1,"explain":"Judiciary = courts."},{"q":"The executive ____ the law. [enforces / carries out]","options":["enforces / carries out","deletes","hides","only sings"],"answer":0,"explain":"The executive implements laws."},{"q":"Saying “please” and “thank you” shows ____. [good manners]","options":["fear","good manners","pride","weakness"],"answer":1,"explain":"Courtesy is civic."},{"q":"Public property belongs to ____. [everyone / the government]","options":["one pupil","a stranger","nobody to care for","everyone / the government"],"answer":3,"explain":"We must protect public property."},{"q":"Bribery is ____. [a crime]","options":["a festival","a civic duty","a crime","a right"],"answer":2,"explain":"Do not give or take bribes."},{"q":"A good citizen should be ____. [honest]","options":["a bully","a cheat","honest","a thief"],"answer":2,"explain":"Honesty is a civic virtue."},{"q":"The head of Nigeria’s federal government is the ____. [President]","options":["Councillor","President","Governor","Chief Judge only"],"answer":1,"explain":"The President heads the Federation."},{"q":"Civic education teaches us to be ____.","options":["silent forever","good citizens","football","school"],"answer":1,"explain":"It builds responsible citizens."},{"q":"The Nigerian pledge starts with “I pledge to Nigeria my ____”.","options":["country","uniform colour only","food","homework"],"answer":0,"explain":"The pledge is to Nigeria our country."},{"q":"We should not discriminate because of ____.","options":["song","tribe or religion","sports day","punishment only"],"answer":1,"explain":"All citizens are equal before the law."},{"q":"Paying tax is a ____ of citizens.","options":["football only","duty","game","farming"],"answer":1,"explain":"Taxes fund public services."},{"q":"INEC is in charge of ____.","options":["elections","bully","nobody","hospitals only"],"answer":0,"explain":"Independent National Electoral Commission."},{"q":"We must obey the ____.","options":["prints money","law","criminal","farms"],"answer":1,"explain":"Laws protect everyone."},{"q":"The judiciary ____ the law.","options":["only strangers","dances","stop forever","interprets"],"answer":3,"explain":"Courts interpret the law."},{"q":"We must respect our ____.","options":["park","stop","play","parents and elders"],"answer":3,"explain":"Respect is a duty."},{"q":"Traffic lights: amber/yellow means ____.","options":["get ready","sleep","turn back always","ignores"],"answer":0,"explain":"Amber = get ready."},{"q":"Traffic lights: green means ____.","options":["God bless Nigeria","Hail the army","sings","go"],"answer":3,"explain":"Green = go."},{"q":"The legislature ____ the law.","options":["punishment","makes","tax","Arise, O compatriots"],"answer":1,"explain":"Law-makers make the law."},{"q":"The national anthem (restored 2024) begins ____.","options":["shout","jump the line","Nigeria, we hail thee","fight"],"answer":2,"explain":"“Nigeria, We Hail Thee” was restored in May 2024."},{"q":"Freedom of worship is a ____.","options":["market stall only","right","dictatorship only","jungle"],"answer":1,"explain":"Nigerians may practise their religion."},{"q":"We should queue up when we ____.","options":["tearing it","wait our turn","ignoring it","harm others"],"answer":1,"explain":"Queuing is civic order."},{"q":"Voting is done in a ____.","options":["leaders are above the law","laws are secret","democracy","break traffic lights"],"answer":2,"explain":"Adults vote in a democracy."},{"q":"A constitution can be changed by ____.","options":["only police have rights","noisy always","amendment","dirty"],"answer":2,"explain":"Amendments follow a legal process."},{"q":"Fundamental human rights include the right to ____.","options":["life","unsafe","patriotic","helpful"],"answer":0,"explain":"Rights come with respect for others."},{"q":"The rule of law means ____.","options":["nobody is above the law","wait only in school","run","go"],"answer":0,"explain":"Everyone is equal under the law."},{"q":"We should keep our environment ____.","options":["clean","bullying","cheating","vandalism"],"answer":0,"explain":"A clean place is healthy."},{"q":"Throwing refuse in the gutter is ____.","options":["Cairo","Nairobi","wrong","Accra"],"answer":2,"explain":"It causes flood and disease."},{"q":"Traffic lights: red means ____.","options":["stone","plastic","stop","Paris"],"answer":2,"explain":"Red = stop."},{"q":"Which of these is a good civic value?","options":["plastic","honesty","aeroplane","none of these names"],"answer":1,"explain":"Honesty is a civic virtue."},{"q":"Which of these is a good civic value?","options":["Tuesday","obedience","rainbow","zero"],"answer":1,"explain":"Obedience is a civic virtue."},{"q":"Which of these is a good civic value?","options":["the moon","a cartoon","tolerance","a rumour"],"answer":2,"explain":"Tolerance is a civic virtue."},{"q":"Which of these is a good civic value?","options":["punctuality","be neglected","work in a factory","lawless"],"answer":0,"explain":"Punctuality is a civic virtue."},{"q":"Which of these is a good civic value?","options":["only foreign land","steal","self-control","disorder"],"answer":2,"explain":"Self-control is a civic virtue."},{"q":"Which of these is a good civic value?","options":["only money","fear only","contentment","hunger"],"answer":2,"explain":"Contentment is a civic virtue."},{"q":"Which of these is a good civic value?","options":["army","kindness","market","anger"],"answer":1,"explain":"Kindness is a civic virtue."},{"q":"Which of these is a good civic value?","options":["courage","deletes","police","hides"],"answer":0,"explain":"Courage is a civic virtue."},{"q":"Helping a lost child is being ____.","options":["fear","responsible","pride","only sings"],"answer":1,"explain":"Good citizens help others."},{"q":"A right of a child is the right to ____.","options":["education","nobody to care for","weakness","a stranger"],"answer":0,"explain":"Children have a right to education."},{"q":"A patriot loves his or her ____.","options":["one pupil","a festival","country","a right"],"answer":2,"explain":"Patriotism is love of country."},{"q":"We salute the flag to show ____.","options":["a cheat","loyalty","a thief","a civic duty"],"answer":1,"explain":"Respect for national symbols."},{"q":"The three arms of government are executive, legislature and ____.","options":["Councillor","judiciary","a bully","Governor"],"answer":1,"explain":"Judiciary = courts."},{"q":"The executive ____ the law.","options":["Chief Judge only","enforces / carries out","silent forever","school"],"answer":1,"explain":"The executive implements laws."},{"q":"Saying “please” and “thank you” shows ____.","options":["football","good manners","food","homework"],"answer":1,"explain":"Courtesy is civic."},{"q":"Public property belongs to ____.","options":["sports day","uniform colour only","song","everyone / the government"],"answer":3,"explain":"We must protect public property."},{"q":"Bribery is ____.","options":["a crime","punishment only","game","football only"],"answer":0,"explain":"Do not give or take bribes."},{"q":"A good citizen should be ____.","options":["honest","farming","bully","hospitals only"],"answer":0,"explain":"Honesty is a civic virtue."},{"q":"The head of Nigeria’s federal government is the ____.","options":["President","nobody","farms","criminal"],"answer":0,"explain":"The President heads the Federation."},{"q":"Civic education teaches us to be ____.","options":["dances","only strangers","good citizens","prints money"],"answer":2,"explain":"It builds responsible citizens."},{"q":"The Nigerian pledge starts with “I pledge to Nigeria my ____”.","options":["park","country","stop forever","play"],"answer":1,"explain":"The pledge is to Nigeria our country."},{"q":"We should not discriminate because of ____.","options":["stop","turn back always","tribe or religion","sleep"],"answer":2,"explain":"All citizens are equal before the law."},{"q":"Paying tax is a ____ of citizens.","options":["ignores","duty","Hail the army","sings"],"answer":1,"explain":"Taxes fund public services."},{"q":"INEC is in charge of ____.","options":["elections","God bless Nigeria","Arise, O compatriots","tax"],"answer":0,"explain":"Independent National Electoral Commission."},{"q":"We must obey the ____.","options":["law","jump the line","punishment","shout"],"answer":0,"explain":"Laws protect everyone."},{"q":"The judiciary ____ the law.","options":["jungle","market stall only","fight","interprets"],"answer":3,"explain":"Courts interpret the law."},{"q":"We must respect our ____.","options":["parents and elders","ignoring it","tearing it","dictatorship only"],"answer":0,"explain":"Respect is a duty."},{"q":"Traffic lights: amber/yellow means ____.","options":["harm others","laws are secret","break traffic lights","get ready"],"answer":3,"explain":"Amber = get ready."}]
+[
+  {
+    "q": "The agency responsible for fighting human trafficking and child abuse in Nigeria is ____. (P6)",
+    "options": [
+      "INEC",
+      "ICPC",
+      "NAPTIP",
+      "FRSC"
+    ],
+    "answer": 2,
+    "explain": "National Agency for the Prohibition of Trafficking in Persons safeguards vulnerable persons.",
+    "hint": "Protects against human trafficking.",
+    "topic": "Human Rights & Protection",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "The Federal Road Safety Corps (FRSC) is primarily responsible for ____. (P6)",
+    "options": [
+      "preventing road accidents and enforcing traffic laws",
+      "fighting fires",
+      "curbing drug abuse",
+      "defending borders"
+    ],
+    "answer": 0,
+    "explain": "FRSC promotes road safety and issues driver licenses.",
+    "hint": "Safety on national highways.",
+    "topic": "Civic Agencies",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "The Universal Declaration of Human Rights (UDHR) was adopted by the UN in the year ____. (P6)",
+    "options": [
+      "1999",
+      "1960",
+      "1948",
+      "1914"
+    ],
+    "answer": 2,
+    "explain": "The UN General Assembly proclaimed the UDHR on 10 December 1948 in Paris.",
+    "hint": "Post-World War II human rights charter.",
+    "topic": "Global Human Rights",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "The national motto written on Nigeria's Coat of Arms is '____'. (P6)",
+    "options": [
+      "Peace, Love and Joy",
+      "Unity and Faith, Peace and Progress",
+      "One Nation, One Destiny",
+      "Strength and Victory"
+    ],
+    "answer": 1,
+    "explain": "The official national motto of the Federal Republic of Nigeria.",
+    "hint": "Motto on the scroll.",
+    "topic": "National Symbols",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which agency enforces laws against illicit narcotics and drug trafficking in Nigeria? (P6)",
+    "options": [
+      "FRSC",
+      "NAPTIP",
+      "INEC",
+      "NDLEA"
+    ],
+    "answer": 3,
+    "explain": "The National Drug Law Enforcement Agency eliminates illicit narcotics trade.",
+    "hint": "National Drug Law Enforcement Agency.",
+    "topic": "Law Enforcement",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic duty (P6): Paying taxes promptly to the government is a civic ____.",
+    "options": [
+      "gift",
+      "crime",
+      "duty / obligation",
+      "punishment"
+    ],
+    "answer": 2,
+    "explain": "duty / obligation is the essential civic principle.",
+    "hint": "Recall civic duty/value.",
+    "topic": "Civic Principles",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Civic duty (P6): Protecting public utilities like streetlights and water pipes is the responsibility of ____.",
+    "options": [
+      "strangers",
+      "nobody",
+      "all citizens",
+      "the police only"
+    ],
+    "answer": 2,
+    "explain": "all citizens is the essential civic principle.",
+    "hint": "Recall civic duty/value.",
+    "topic": "Civic Principles",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Civic duty (P6): A citizen should always obey lawful orders from the ____.",
+    "options": [
+      "bullies",
+      "police and courts",
+      "armed robbers",
+      "fraudsters"
+    ],
+    "answer": 1,
+    "explain": "police and courts is the essential civic principle.",
+    "hint": "Recall civic duty/value.",
+    "topic": "Civic Principles",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Civic duty (P6): Treating people of different ethnic groups and religions with kindness is called ____.",
+    "options": [
+      "tribalism",
+      "discrimination",
+      "nepotism",
+      "tolerance and unity"
+    ],
+    "answer": 3,
+    "explain": "tolerance and unity is the essential civic principle.",
+    "hint": "Recall civic duty/value.",
+    "topic": "Civic Principles",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Civic duty (P6): Which of these is a civic responsibility of a student in school?",
+    "options": [
+      "Littering classrooms",
+      "Damaging desks",
+      "Keeping the school compound clean",
+      "Bullying younger pupils"
+    ],
+    "answer": 2,
+    "explain": "Keeping the school compound clean is the essential civic principle.",
+    "hint": "Recall civic duty/value.",
+    "topic": "Civic Principles",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Civic duty (P6): A child's right to life, healthcare, and education is protected by the ____ Act.",
+    "options": [
+      "Highway",
+      "Child Rights",
+      "Customs",
+      "Labour"
+    ],
+    "answer": 1,
+    "explain": "Child Rights is the essential civic principle.",
+    "hint": "Recall civic duty/value.",
+    "topic": "Civic Principles",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Civic duty (P6): When singing the National Anthem, citizens should ____.",
+    "options": [
+      "talk loudly",
+      "run around the field",
+      "stand upright and pay attention",
+      "eat snacks"
+    ],
+    "answer": 2,
+    "explain": "stand upright and pay attention is the essential civic principle.",
+    "hint": "Recall civic duty/value.",
+    "topic": "Civic Principles",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Civic duty (P6): The Independent Corrupt Practices Commission is abbreviated as ____.",
+    "options": [
+      "NEMA",
+      "INEC",
+      "ICPC",
+      "FRSC"
+    ],
+    "answer": 2,
+    "explain": "ICPC is the essential civic principle.",
+    "hint": "Recall civic duty/value.",
+    "topic": "Civic Principles",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Civic duty (P6): Refusing to join secret cults and violence in school demonstrates moral ____.",
+    "options": [
+      "fear",
+      "courage and discipline",
+      "laziness",
+      "cowardice"
+    ],
+    "answer": 1,
+    "explain": "courage and discipline is the essential civic principle.",
+    "hint": "Recall civic duty/value.",
+    "topic": "Civic Principles",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Civic duty (P6): The National Youth Service Corps (NYSC) was established in 1973 to promote national ____.",
+    "options": [
+      "sports only",
+      "unity and integration",
+      "division",
+      "taxation"
+    ],
+    "answer": 1,
+    "explain": "unity and integration is the essential civic principle.",
+    "hint": "Recall civic duty/value.",
+    "topic": "Civic Principles",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Civic education standard #1 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "violence",
+      "tax evasion",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #2 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "speeding",
+      "violence",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #3 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "expression",
+      "violence",
+      "tax evasion"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #4 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "tax evasion",
+      "expression",
+      "violence"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #5 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "expression",
+      "violence",
+      "speeding"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #6 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "tax evasion",
+      "violence",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #7 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "expression",
+      "speeding",
+      "tax evasion"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #8 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "tax evasion",
+      "speeding",
+      "violence"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #9 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "violence",
+      "speeding",
+      "tax evasion"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #10 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "violence",
+      "speeding",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #11 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "speeding",
+      "tax evasion",
+      "violence"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #12 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "speeding",
+      "violence",
+      "tax evasion"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #13 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "tax evasion",
+      "speeding",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #14 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "expression",
+      "tax evasion",
+      "speeding"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #15 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "expression",
+      "speeding",
+      "tax evasion"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #16 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "tax evasion",
+      "speeding",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #17 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "expression",
+      "speeding",
+      "tax evasion"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #18 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "violence",
+      "tax evasion",
+      "speeding"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #19 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "expression",
+      "speeding",
+      "tax evasion"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #20 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "speeding",
+      "expression",
+      "violence"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #21 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "violence",
+      "tax evasion",
+      "speeding"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #22 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "tax evasion",
+      "expression",
+      "violence"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #23 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "violence",
+      "expression",
+      "speeding"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #24 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "expression",
+      "tax evasion",
+      "speeding"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #25 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "violence",
+      "speeding",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #26 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "tax evasion",
+      "speeding",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #27 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "expression",
+      "violence",
+      "tax evasion"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #28 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "expression",
+      "speeding",
+      "violence"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #29 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "speeding",
+      "expression",
+      "tax evasion"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #30 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "speeding",
+      "expression",
+      "violence"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #31 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "violence",
+      "tax evasion",
+      "speeding"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #32 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "speeding",
+      "violence",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #33 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "violence",
+      "tax evasion",
+      "speeding"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #34 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "expression",
+      "tax evasion",
+      "violence"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #35 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "tax evasion",
+      "expression",
+      "speeding"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #36 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "tax evasion",
+      "violence",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #37 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "violence",
+      "expression",
+      "speeding"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #38 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "expression",
+      "violence",
+      "speeding"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #39 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "tax evasion",
+      "speeding",
+      "violence"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #40 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "expression",
+      "speeding",
+      "tax evasion"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #41 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "speeding",
+      "expression",
+      "tax evasion"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #42 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "expression",
+      "speeding",
+      "tax evasion"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #43 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "tax evasion",
+      "speeding",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #44 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "tax evasion",
+      "violence",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #45 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "violence",
+      "expression",
+      "speeding"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #46 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "violence",
+      "speeding",
+      "tax evasion"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #47 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "violence",
+      "speeding",
+      "tax evasion"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #48 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "expression",
+      "tax evasion",
+      "violence"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #49 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "speeding",
+      "expression",
+      "violence"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #50 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "violence",
+      "expression",
+      "speeding"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #51 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "speeding",
+      "tax evasion",
+      "violence"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #52 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "violence",
+      "expression",
+      "tax evasion"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #53 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "tax evasion",
+      "violence",
+      "speeding"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #54 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "tax evasion",
+      "speeding",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #55 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "expression",
+      "violence",
+      "tax evasion"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #56 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "speeding",
+      "violence",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #57 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "speeding",
+      "violence",
+      "tax evasion"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #58 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "tax evasion",
+      "speeding",
+      "violence"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #59 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "speeding",
+      "expression",
+      "violence"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #60 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "speeding",
+      "violence",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #61 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "speeding",
+      "violence",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #62 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "violence",
+      "tax evasion",
+      "speeding"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #63 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "speeding",
+      "violence",
+      "tax evasion"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #64 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "tax evasion",
+      "expression",
+      "speeding"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #65 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "expression",
+      "tax evasion",
+      "violence"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #66 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "tax evasion",
+      "expression",
+      "violence"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #67 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "violence",
+      "speeding",
+      "tax evasion"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #68 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "expression",
+      "speeding",
+      "violence"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #69 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "violence",
+      "speeding",
+      "tax evasion"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #70 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "tax evasion",
+      "speeding",
+      "expression",
+      "violence"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #71 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "speeding",
+      "violence",
+      "tax evasion"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #72 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "speeding",
+      "violence",
+      "tax evasion"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #73 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "expression",
+      "violence",
+      "tax evasion"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #74 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "tax evasion",
+      "speeding",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #75 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "tax evasion",
+      "speeding",
+      "violence"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #76 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "speeding",
+      "expression",
+      "tax evasion"
+    ],
+    "answer": 2,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #77 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "expression",
+      "tax evasion",
+      "speeding"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #78 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "speeding",
+      "violence",
+      "tax evasion"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #79 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "violence",
+      "speeding",
+      "tax evasion"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #80 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "violence",
+      "tax evasion",
+      "speeding",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #81 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "tax evasion",
+      "speeding",
+      "violence"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #82 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "tax evasion",
+      "violence",
+      "expression"
+    ],
+    "answer": 3,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #83 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "violence",
+      "tax evasion",
+      "speeding"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #84 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "speeding",
+      "expression",
+      "tax evasion",
+      "violence"
+    ],
+    "answer": 1,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Civic education standard #85 (P6): The constitutional right to hold personal opinions and speak peacefully is the right to freedom of ____.",
+    "options": [
+      "expression",
+      "tax evasion",
+      "violence",
+      "speeding"
+    ],
+    "answer": 0,
+    "explain": "Freedom of expression is a fundamental right.",
+    "hint": "Right to express opinions.",
+    "topic": "Fundamental Rights",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  }
+]

@@ -1,1 +1,1502 @@
-[{"q":"Which of these is computer hardware?","options":["air","a thought","Windows song","printer"],"answer":3,"explain":"The printer is a physical part."},{"q":"Hardware means ____.","options":["only the internet","only ideas","the physical parts","only songs"],"answer":2,"explain":"Hardware is the parts you can touch."},{"q":"Ctrl + S is commonly used to ____.","options":["shout","save","search only","sleep"],"answer":1,"explain":"Ctrl+S saves a file."},{"q":"Ctrl + C is used to ____.","options":["copy","close the school","crash","cut forever"],"answer":0,"explain":"Copy = Ctrl+C."},{"q":"A scanner is an ____ device.","options":["output only","cooking","input","storage only"],"answer":2,"explain":"Scanners send images in."},{"q":"We type letters using the ____.","options":["UPS","keyboard","printer","mouse"],"answer":1,"explain":"A keyboard is an input device."},{"q":"A computer is an ____ machine.","options":["electronic","wooden farming","animal","only paper"],"answer":0,"explain":"A computer is an electronic device."},{"q":"A search engine example is ____.","options":["Google","A kettle","A broom","A hoe"],"answer":0,"explain":"Google is a search engine."},{"q":"An email is a message sent ____.","options":["only by radio drum","only by postman bicycle","electronically","by smoke"],"answer":2,"explain":"Electronic mail."},{"q":"Ctrl + V is used to ____.","options":["vote","vacuum","vanish","paste"],"answer":3,"explain":"Paste = Ctrl+V."},{"q":"A flash drive is used for ____.","options":["cooking","lighting a room","sweeping","storage"],"answer":3,"explain":"USB flash drives store data."},{"q":"www stands for ____.","options":["World Wide Wait","World Wide Web","West West West","Wide Web World"],"answer":1,"explain":"WWW is the web."},{"q":"MS Word is used for ____.","options":["flying planes","cooking rice","typing documents","only drawing maps of stars"],"answer":2,"explain":"Word processors type text."},{"q":"RAM is a type of ____ memory.","options":["kitchen","paper","permanent ink","temporary"],"answer":3,"explain":"RAM loses data when power goes off."},{"q":"A printer is an ____ device.","options":["farming","cooking","output","input only"],"answer":2,"explain":"Printers produce hard copy."},{"q":"A network in one building is a ____.","options":["RAM","WAN only always","CPU","LAN"],"answer":3,"explain":"LAN = Local Area Network."},{"q":"We should not share our ____ online.","options":["favourite colour never","school name always as a secret","passwords","subject"],"answer":2,"explain":"Keep passwords private."},{"q":"A virus is a ____ program.","options":["monitor colour","healthy food","keyboard key","harmful"],"answer":3,"explain":"Viruses can damage files."},{"q":"Which of these is computer hardware?","options":["speaker","Windows song","a thought","air"],"answer":0,"explain":"The speaker is a physical part."},{"q":"The internet is a ____ of computers.","options":["single cable in one desk","type of food","worldwide network","game only"],"answer":2,"explain":"The internet links computers globally."},{"q":"ICT means Information and ____ Technology.","options":["Communication","Tailoring","Farming","Cooking"],"answer":0,"explain":"Information and Communication Technology."},{"q":"The screen of a computer is the ____.","options":["keyboard","mouse","monitor","speaker only"],"answer":2,"explain":"The monitor displays information."},{"q":"To start a computer is to ____ it.","options":["wash","fold","delete","boot"],"answer":3,"explain":"Booting starts the system."},{"q":"https in a web address shows the site is ____.","options":["a game","offline always","more secure","a virus always"],"answer":2,"explain":"The S stands for secure."},{"q":"The mouse is used to ____.","options":["point and click","print books only","wash","cook"],"answer":0,"explain":"The mouse is a pointing device."},{"q":"Speakers give out ____.","options":["heat only","sound","paper","light only"],"answer":1,"explain":"Speakers are output devices."},{"q":"Which of these is computer hardware?","options":["Windows song","a thought","air","monitor"],"answer":3,"explain":"The monitor is a physical part."},{"q":"Which of these is computer hardware?","options":["keyboard","a thought","Windows song","air"],"answer":0,"explain":"The keyboard is a physical part."},{"q":"Do not click unknown ____.","options":["links","books in the library","teachers","textbooks"],"answer":0,"explain":"Unknown links may be unsafe."},{"q":"Software means ____.","options":["programs","wires only","tables","the plastic box only"],"answer":0,"explain":"Software is a set of programs."},{"q":"Which of these is computer hardware?","options":["a thought","air","scanner","Windows song"],"answer":2,"explain":"The scanner is a physical part."},{"q":"Input devices send data ____ the computer.","options":["into","out of only","to the farm","around the moon"],"answer":0,"explain":"Keyboard and mouse are input devices."},{"q":"Which of these is computer hardware?","options":["flash drive","air","a thought","Windows song"],"answer":0,"explain":"The flash drive is a physical part."},{"q":"A byte is made of ____ bits.","options":["8","100","10","2"],"answer":0,"explain":"8 bits = 1 byte."},{"q":"A folder is used to ____ files.","options":["print the sky","hide the CPU","eat","organise"],"answer":3,"explain":"Folders store files."},{"q":"Output devices send data ____ the computer.","options":["out of","into only","through soil","under"],"answer":0,"explain":"Monitor and printer are output."},{"q":"Which of these is computer hardware?","options":["air","mouse","a thought","Windows song"],"answer":1,"explain":"The mouse is a physical part."},{"q":"A spreadsheet program example is ____.","options":["Paint only","Microsoft Excel","A radio","Notepad only never numbers"],"answer":1,"explain":"Excel handles numbers in tables."},{"q":"Which of these is computer hardware?","options":["air","CPU","a thought","Windows song"],"answer":1,"explain":"The CPU is a physical part."},{"q":"Shut down means to ____ the computer.","options":["wash","turn off properly","break","hide"],"answer":1,"explain":"Use Shut Down, don’t just unplug."},{"q":"The cursor is the ____ on the screen.","options":["fan","plug","speaker","pointer / blinking mark"],"answer":3,"explain":"It shows where you type or click."},{"q":"The brain of the computer is the ____.","options":["CPU","cable","speaker","monitor"],"answer":0,"explain":"CPU = Central Processing Unit."},{"q":"Cyberbullying is ____.","options":["a subject in farming","a civic duty","wrong and hurtful","a sport"],"answer":2,"explain":"Tell a trusted adult if it happens."},{"q":"Which is an input device?","options":["printer","monitor","keyboard","speaker"],"answer":2,"explain":"A keyboard sends data in."},{"q":"Which is an output device?","options":["keyboard","mouse","printer","scanner"],"answer":2,"explain":"A printer sends data out."},{"q":"Which of these is hardware?","options":["electricity only","Microsoft Word","monitor","a website idea"],"answer":2,"explain":"Hardware can be touched."},{"q":"Which of these is hardware?","options":["keyboard","electricity only","a website idea","Microsoft Word"],"answer":0,"explain":"Hardware can be touched."},{"q":"Which of these is hardware?","options":["mouse","electricity only","a website idea","Microsoft Word"],"answer":0,"explain":"Hardware can be touched."},{"q":"Which of these is hardware?","options":["CPU","a website idea","Microsoft Word","electricity only"],"answer":0,"explain":"Hardware can be touched."},{"q":"Which of these is hardware?","options":["a website idea","Microsoft Word","electricity only","printer"],"answer":3,"explain":"Hardware can be touched."},{"q":"Which of these is hardware?","options":["speaker","a website idea","Microsoft Word","electricity only"],"answer":0,"explain":"Hardware can be touched."},{"q":"Which of these is hardware?","options":["Microsoft Word","scanner","a website idea","electricity only"],"answer":1,"explain":"Hardware can be touched."},{"q":"Which of these is hardware?","options":["a website idea","electricity only","Microsoft Word","flash drive"],"answer":3,"explain":"Hardware can be touched."},{"q":"Which of these is computer hardware? [printer]","options":["air","a thought","Windows song","printer"],"answer":3,"explain":"The printer is a physical part."},{"q":"Hardware means ____. [the physical parts]","options":["only ideas","the physical parts","only the internet","only songs"],"answer":1,"explain":"Hardware is the parts you can touch."},{"q":"Ctrl + S is commonly used to ____. [save]","options":["save","sleep","search only","shout"],"answer":0,"explain":"Ctrl+S saves a file."},{"q":"Ctrl + C is used to ____. [copy]","options":["copy","cut forever","close the school","crash"],"answer":0,"explain":"Copy = Ctrl+C."},{"q":"A scanner is an ____ device. [input]","options":["input","storage only","cooking","output only"],"answer":0,"explain":"Scanners send images in."},{"q":"We type letters using the ____. [keyboard]","options":["printer","UPS","keyboard","mouse"],"answer":2,"explain":"A keyboard is an input device."},{"q":"A computer is an ____ machine. [electronic]","options":["animal","only paper","electronic","wooden farming"],"answer":2,"explain":"A computer is an electronic device."},{"q":"A search engine example is ____. [Google]","options":["A kettle","A broom","Google","A hoe"],"answer":2,"explain":"Google is a search engine."},{"q":"An email is a message sent ____. [electronically]","options":["electronically","only by radio drum","only by postman bicycle","by smoke"],"answer":0,"explain":"Electronic mail."},{"q":"Ctrl + V is used to ____. [paste]","options":["vacuum","vanish","vote","paste"],"answer":3,"explain":"Paste = Ctrl+V."},{"q":"A flash drive is used for ____.","options":["storage","lighting a room","sweeping","World Wide Wait"],"answer":0,"explain":"USB flash drives store data."},{"q":"www stands for ____.","options":["Wide Web World","West West West","flying planes","World Wide Web"],"answer":3,"explain":"WWW is the web."},{"q":"MS Word is used for ____.","options":["cooking rice","kitchen","typing documents","only drawing maps of stars"],"answer":2,"explain":"Word processors type text."},{"q":"RAM is a type of ____ memory.","options":["farming","temporary","permanent ink","paper"],"answer":1,"explain":"RAM loses data when power goes off."},{"q":"A printer is an ____ device.","options":["input only","RAM","output","WAN only always"],"answer":2,"explain":"Printers produce hard copy."},{"q":"A network in one building is a ____.","options":["CPU","school name always as a secret","LAN","favourite colour never"],"answer":2,"explain":"LAN = Local Area Network."},{"q":"We should not share our ____ online.","options":["healthy food","subject","passwords","monitor colour"],"answer":2,"explain":"Keep passwords private."},{"q":"A virus is a ____ program.","options":["harmful","keyboard key","type of food","single cable in one desk"],"answer":0,"explain":"Viruses can damage files."},{"q":"Which of these is computer hardware?","options":["game only","speaker","Farming","Tailoring"],"answer":1,"explain":"The speaker is a physical part."},{"q":"The internet is a ____ of computers.","options":["Cooking","speaker only","keyboard","worldwide network"],"answer":3,"explain":"The internet links computers globally."},{"q":"ICT means Information and ____ Technology.","options":["delete","Communication","wash","fold"],"answer":1,"explain":"Information and Communication Technology."},{"q":"The screen of a computer is the ____.","options":["monitor","a virus always","a game","offline always"],"answer":0,"explain":"The monitor displays information."},{"q":"To start a computer is to ____ it.","options":["cook","print books only","heat only","boot"],"answer":3,"explain":"Booting starts the system."},{"q":"https in a web address shows the site is ____.","options":["light only","teachers","more secure","books in the library"],"answer":2,"explain":"The S stands for secure."},{"q":"The mouse is used to ____.","options":["textbooks","point and click","tables","wires only"],"answer":1,"explain":"The mouse is a pointing device."},{"q":"Speakers give out ____.","options":["to the farm","sound","the plastic box only","out of only"],"answer":1,"explain":"Speakers are output devices."},{"q":"Which of these is computer hardware?","options":["around the moon","10","100","monitor"],"answer":3,"explain":"The monitor is a physical part."},{"q":"Which of these is computer hardware?","options":["eat","keyboard","hide the CPU","print the sky"],"answer":1,"explain":"The keyboard is a physical part."},{"q":"Do not click unknown ____.","options":["links","through soil","into only","eat"],"answer":0,"explain":"Unknown links may be unsafe."},{"q":"Software means ____.","options":["programs","A radio","Paint only","under"],"answer":0,"explain":"Software is a set of programs."},{"q":"Which of these is computer hardware?","options":["Notepad only never numbers","hide","scanner","break"],"answer":2,"explain":"The scanner is a physical part."},{"q":"Input devices send data ____ the computer.","options":["speaker","fan","into","plug"],"answer":2,"explain":"Keyboard and mouse are input devices."},{"q":"Which of these is computer hardware?","options":["cable","monitor","flash drive","a subject in farming"],"answer":2,"explain":"The flash drive is a physical part."},{"q":"A byte is made of ____ bits.","options":["8","a sport","a civic duty","scanner"],"answer":0,"explain":"8 bits = 1 byte."},{"q":"A folder is used to ____ files.","options":["organise","electricity only","Microsoft Word","a website idea"],"answer":0,"explain":"Folders store files."},{"q":"Output devices send data ____ the computer.","options":["Accra","out of","Cairo","Nairobi"],"answer":1,"explain":"Monitor and printer are output."},{"q":"Which of these is computer hardware?","options":["plastic","stone","Paris","mouse"],"answer":3,"explain":"The mouse is a physical part."},{"q":"A spreadsheet program example is ____.","options":["aeroplane","plastic","Microsoft Excel","none of these names"],"answer":2,"explain":"Excel handles numbers in tables."},{"q":"Which of these is computer hardware?","options":["Tuesday","zero","the moon","CPU"],"answer":3,"explain":"The CPU is a physical part."},{"q":"Shut down means to ____ the computer.","options":["turn off properly","a rumour","a cartoon","the moon"],"answer":0,"explain":"Use Shut Down, don’t just unplug."},{"q":"The cursor is the ____ on the screen.","options":["only ideas","Windows song","pointer / blinking mark","only the internet"],"answer":2,"explain":"It shows where you type or click."},{"q":"The brain of the computer is the ____.","options":["shout","sleep","CPU","search only"],"answer":2,"explain":"CPU = Central Processing Unit."},{"q":"Cyberbullying is ____.","options":["sleep","wrong and hurtful","close the school","crash"],"answer":1,"explain":"Tell a trusted adult if it happens."},{"q":"Which is an input device?","options":["keyboard","cooking","storage only","output only"],"answer":0,"explain":"A keyboard sends data in."},{"q":"Which is an output device?","options":["wooden farming","printer","UPS","mouse"],"answer":1,"explain":"A printer sends data out."},{"q":"Which of these is hardware?","options":["animal","monitor","only paper","wooden farming"],"answer":1,"explain":"Hardware can be touched."},{"q":"Which of these is hardware?","options":["A broom","A hoe","A kettle","keyboard"],"answer":3,"explain":"Hardware can be touched."}]
+[
+  {
+    "q": "A step-by-step set of precise instructions for solving a problem or performing a task is an ____. (P6)",
+    "options": [
+      "antivirus",
+      "algorithm",
+      "acronym",
+      "analogy"
+    ],
+    "answer": 1,
+    "explain": "Algorithms form the logical foundation of all computer code.",
+    "hint": "Step-by-step sequence of instructions.",
+    "topic": "Algorithms & Programming",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "A graphical diagram that represents the steps of an algorithm using standard shapes is a ____. (P6)",
+    "options": [
+      "bar chart",
+      "scatter plot",
+      "flowchart",
+      "pie chart"
+    ],
+    "answer": 2,
+    "explain": "Flowcharts use rectangles (process), diamonds (decision), and arrows.",
+    "hint": "Visual diagram of an algorithm.",
+    "topic": "Algorithms & Programming",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "In coding, a named storage container used to hold a value that can change is called a ____. (P6)",
+    "options": [
+      "loop",
+      "constant",
+      "syntax",
+      "variable"
+    ],
+    "answer": 3,
+    "explain": "Variables store data values in program memory.",
+    "hint": "Holds changeable data.",
+    "topic": "Programming Concepts",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "In programming, repeating a block of instructions multiple times until a condition is met is a ____. (P6)",
+    "options": [
+      "variable",
+      "loop",
+      "branch",
+      "comment"
+    ],
+    "answer": 1,
+    "explain": "Loops (for, while) automate repetitive computational tasks.",
+    "hint": "Repeats code instructions.",
+    "topic": "Programming Concepts",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Storing files and running programs on remote internet servers rather than a local hard drive is ____. (P6)",
+    "options": [
+      "local storage",
+      "offline computing",
+      "analog computing",
+      "cloud computing"
+    ],
+    "answer": 3,
+    "explain": "Cloud platforms (Google Cloud, OneDrive) enable remote computing access.",
+    "hint": "Internet-based remote storage and compute.",
+    "topic": "Emerging Tech",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "A secure, strong password should contain ____. (P6)",
+    "options": [
+      "only your first name",
+      "only your birth year",
+      "only 123456",
+      "a mix of uppercase, lowercase, numbers, and symbols"
+    ],
+    "answer": 3,
+    "explain": "Complex diverse character passwords prevent unauthorized brute-force access.",
+    "hint": "Combines diverse character types.",
+    "topic": "Cyber Security",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Keyboard shortcut (P6): What is the primary function of Ctrl + C (or Cmd + C)?",
+    "options": [
+      "Print page",
+      "Copy selected text or item",
+      "Paste item",
+      "Cut item"
+    ],
+    "answer": 1,
+    "explain": "Ctrl + C (or Cmd + C) triggers the Copy selected text or item command.",
+    "hint": "Shortcut command.",
+    "topic": "Shortcuts & Skills",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Keyboard shortcut (P6): What is the primary function of Ctrl + V (or Cmd + V)?",
+    "options": [
+      "Save file",
+      "Cut item",
+      "Paste copied text or item",
+      "Undo action"
+    ],
+    "answer": 2,
+    "explain": "Ctrl + V (or Cmd + V) triggers the Paste copied text or item command.",
+    "hint": "Shortcut command.",
+    "topic": "Shortcuts & Skills",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Keyboard shortcut (P6): What is the primary function of Ctrl + S (or Cmd + S)?",
+    "options": [
+      "Save the current document",
+      "Select all",
+      "Print page",
+      "Close window"
+    ],
+    "answer": 0,
+    "explain": "Ctrl + S (or Cmd + S) triggers the Save the current document command.",
+    "hint": "Shortcut command.",
+    "topic": "Shortcuts & Skills",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Keyboard shortcut (P6): What is the primary function of Ctrl + Z (or Cmd + Z)?",
+    "options": [
+      "Delete file",
+      "Redo action",
+      "Zoom in",
+      "Undo the last action"
+    ],
+    "answer": 3,
+    "explain": "Ctrl + Z (or Cmd + Z) triggers the Undo the last action command.",
+    "hint": "Shortcut command.",
+    "topic": "Shortcuts & Skills",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Keyboard shortcut (P6): What is the primary function of Ctrl + P (or Cmd + P)?",
+    "options": [
+      "Play sound",
+      "Open the Print dialog",
+      "Paste text",
+      "Power off"
+    ],
+    "answer": 1,
+    "explain": "Ctrl + P (or Cmd + P) triggers the Open the Print dialog command.",
+    "hint": "Shortcut command.",
+    "topic": "Shortcuts & Skills",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Keyboard shortcut (P6): What is the primary function of Ctrl + A (or Cmd + A)?",
+    "options": [
+      "Add new page",
+      "Select all items or text",
+      "Align center",
+      "Archive"
+    ],
+    "answer": 1,
+    "explain": "Ctrl + A (or Cmd + A) triggers the Select all items or text command.",
+    "hint": "Shortcut command.",
+    "topic": "Shortcuts & Skills",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Computer terminology (P6): What is a Modem?",
+    "options": [
+      "converts digital computer signals to analog and vice versa",
+      "cools the CPU fan",
+      "prints paper documents",
+      "types text"
+    ],
+    "answer": 0,
+    "explain": "A Modem is converts digital computer signals to analog and vice versa.",
+    "hint": "Definition of Modem.",
+    "topic": "Terminology",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Computer terminology (P6): What is a Router?",
+    "options": [
+      "scans photos",
+      "plays music through speakers",
+      "charges batteries",
+      "directs data packets between computer networks"
+    ],
+    "answer": 3,
+    "explain": "A Router is directs data packets between computer networks.",
+    "hint": "Definition of Router.",
+    "topic": "Terminology",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Computer terminology (P6): What is a Firewall?",
+    "options": [
+      "cleans keyboards",
+      "creates physical heat",
+      "prints photos",
+      "monitors and filters incoming/outgoing network traffic for security"
+    ],
+    "answer": 3,
+    "explain": "A Firewall is monitors and filters incoming/outgoing network traffic for security.",
+    "hint": "Definition of Firewall.",
+    "topic": "Terminology",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Computer terminology (P6): What is a Server?",
+    "options": [
+      "acts as a handheld mouse",
+      "is a monitor stand",
+      "is a type of headphone",
+      "provides data, resources, and services to client computers"
+    ],
+    "answer": 3,
+    "explain": "A Server is provides data, resources, and services to client computers.",
+    "hint": "Definition of Server.",
+    "topic": "Terminology",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Computer terminology (P6): What is a Database?",
+    "options": [
+      "a speaker wire",
+      "a physical drawing board",
+      "a single letter key",
+      "an organized collection of structured data stored electronically"
+    ],
+    "answer": 3,
+    "explain": "A Database is an organized collection of structured data stored electronically.",
+    "hint": "Definition of Database.",
+    "topic": "Terminology",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Computer terminology (P6): What is a Browser?",
+    "options": [
+      "a power cable",
+      "an app used to view pages on the World Wide Web",
+      "a hardware chip",
+      "a text-only printer"
+    ],
+    "answer": 1,
+    "explain": "A Browser is an app used to view pages on the World Wide Web.",
+    "hint": "Definition of Browser.",
+    "topic": "Terminology",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Computer terminology (P6): What is a URL?",
+    "options": [
+      "a computer screen cable",
+      "a type of printer ink",
+      "the unique web address used to locate a webpage on the internet",
+      "a computer virus"
+    ],
+    "answer": 2,
+    "explain": "A URL is the unique web address used to locate a webpage on the internet.",
+    "hint": "Definition of URL.",
+    "topic": "Terminology",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Computer terminology (P6): What is a Email?",
+    "options": [
+      "electronic mail messages exchanged across computer networks",
+      "a physical stamp",
+      "handwritten paper letters",
+      "a radio wave"
+    ],
+    "answer": 0,
+    "explain": "A Email is electronic mail messages exchanged across computer networks.",
+    "hint": "Definition of Email.",
+    "topic": "Terminology",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Computer terminology (P6): What is a Hyperlink?",
+    "options": [
+      "a computer mouse ball",
+      "a keyboard screw",
+      "a broken cable",
+      "a clickable link that navigates the user to another web resource"
+    ],
+    "answer": 3,
+    "explain": "A Hyperlink is a clickable link that navigates the user to another web resource.",
+    "hint": "Definition of Hyperlink.",
+    "topic": "Terminology",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Computer terminology (P6): What is a Pixel?",
+    "options": [
+      "a keyboard key",
+      "a long network cable",
+      "the smallest individual controllable picture element on a display screen",
+      "a computer case"
+    ],
+    "answer": 2,
+    "explain": "A Pixel is the smallest individual controllable picture element on a display screen.",
+    "hint": "Definition of Pixel.",
+    "topic": "Terminology",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Digital literacy skill #1 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "virus infection",
+      "monitor cracking",
+      "data loss during power outage",
+      "keyboard jamming"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #2 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "data loss during power outage",
+      "monitor cracking",
+      "virus infection"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #3 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "monitor cracking",
+      "virus infection",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #4 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "monitor cracking",
+      "data loss during power outage",
+      "keyboard jamming",
+      "virus infection"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #5 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "virus infection",
+      "data loss during power outage",
+      "keyboard jamming",
+      "monitor cracking"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #6 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "virus infection",
+      "monitor cracking",
+      "data loss during power outage",
+      "keyboard jamming"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #7 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "keyboard jamming",
+      "monitor cracking",
+      "virus infection"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #8 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "monitor cracking",
+      "virus infection",
+      "data loss during power outage",
+      "keyboard jamming"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #9 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "data loss during power outage",
+      "virus infection",
+      "monitor cracking"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #10 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "monitor cracking",
+      "virus infection",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #11 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "monitor cracking",
+      "virus infection",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #12 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "data loss during power outage",
+      "virus infection",
+      "monitor cracking"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #13 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "monitor cracking",
+      "virus infection",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #14 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "monitor cracking",
+      "virus infection",
+      "keyboard jamming",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #15 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "monitor cracking",
+      "virus infection",
+      "keyboard jamming"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #16 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "virus infection",
+      "data loss during power outage",
+      "monitor cracking",
+      "keyboard jamming"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #17 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "monitor cracking",
+      "data loss during power outage",
+      "keyboard jamming",
+      "virus infection"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #18 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "monitor cracking",
+      "virus infection",
+      "keyboard jamming"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #19 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "monitor cracking",
+      "keyboard jamming",
+      "data loss during power outage",
+      "virus infection"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #20 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "virus infection",
+      "data loss during power outage",
+      "monitor cracking"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #21 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "monitor cracking",
+      "keyboard jamming",
+      "data loss during power outage",
+      "virus infection"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #22 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "keyboard jamming",
+      "virus infection",
+      "monitor cracking"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #23 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "monitor cracking",
+      "virus infection",
+      "data loss during power outage",
+      "keyboard jamming"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #24 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "monitor cracking",
+      "virus infection",
+      "keyboard jamming"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #25 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "monitor cracking",
+      "data loss during power outage",
+      "virus infection"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #26 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "virus infection",
+      "monitor cracking",
+      "keyboard jamming"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #27 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "monitor cracking",
+      "keyboard jamming",
+      "data loss during power outage",
+      "virus infection"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #28 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "virus infection",
+      "keyboard jamming",
+      "monitor cracking"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #29 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "data loss during power outage",
+      "monitor cracking",
+      "virus infection"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #30 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "virus infection",
+      "monitor cracking",
+      "keyboard jamming",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #31 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "monitor cracking",
+      "virus infection",
+      "keyboard jamming"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #32 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "monitor cracking",
+      "keyboard jamming",
+      "virus infection"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #33 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "monitor cracking",
+      "data loss during power outage",
+      "keyboard jamming",
+      "virus infection"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #34 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "keyboard jamming",
+      "virus infection",
+      "monitor cracking"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #35 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "virus infection",
+      "keyboard jamming",
+      "data loss during power outage",
+      "monitor cracking"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #36 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "keyboard jamming",
+      "virus infection",
+      "monitor cracking"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #37 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "keyboard jamming",
+      "monitor cracking",
+      "virus infection"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #38 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "virus infection",
+      "monitor cracking",
+      "keyboard jamming",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #39 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "data loss during power outage",
+      "virus infection",
+      "monitor cracking"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #40 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "virus infection",
+      "keyboard jamming",
+      "monitor cracking",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #41 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "data loss during power outage",
+      "monitor cracking",
+      "virus infection"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #42 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "monitor cracking",
+      "virus infection",
+      "keyboard jamming"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #43 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "virus infection",
+      "keyboard jamming",
+      "monitor cracking",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #44 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "keyboard jamming",
+      "virus infection",
+      "monitor cracking"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #45 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "monitor cracking",
+      "keyboard jamming",
+      "data loss during power outage",
+      "virus infection"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #46 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "virus infection",
+      "keyboard jamming",
+      "monitor cracking"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #47 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "monitor cracking",
+      "virus infection",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #48 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "monitor cracking",
+      "virus infection",
+      "data loss during power outage",
+      "keyboard jamming"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #49 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "virus infection",
+      "monitor cracking",
+      "keyboard jamming",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #50 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "monitor cracking",
+      "data loss during power outage",
+      "keyboard jamming",
+      "virus infection"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #51 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "keyboard jamming",
+      "monitor cracking",
+      "virus infection"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #52 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "virus infection",
+      "data loss during power outage",
+      "monitor cracking"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #53 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "virus infection",
+      "monitor cracking",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #54 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "virus infection",
+      "monitor cracking",
+      "data loss during power outage",
+      "keyboard jamming"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #55 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "virus infection",
+      "monitor cracking",
+      "data loss during power outage",
+      "keyboard jamming"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #56 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "data loss during power outage",
+      "monitor cracking",
+      "virus infection"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #57 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "monitor cracking",
+      "data loss during power outage",
+      "virus infection"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #58 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "monitor cracking",
+      "data loss during power outage",
+      "virus infection",
+      "keyboard jamming"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #59 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "monitor cracking",
+      "keyboard jamming",
+      "virus infection",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #60 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "data loss during power outage",
+      "virus infection",
+      "monitor cracking"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #61 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "monitor cracking",
+      "virus infection",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #62 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "monitor cracking",
+      "virus infection",
+      "keyboard jamming"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #63 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "data loss during power outage",
+      "virus infection",
+      "monitor cracking"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #64 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "virus infection",
+      "keyboard jamming",
+      "monitor cracking"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #65 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "data loss during power outage",
+      "monitor cracking",
+      "virus infection"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #66 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "monitor cracking",
+      "keyboard jamming",
+      "data loss during power outage",
+      "virus infection"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #67 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "keyboard jamming",
+      "monitor cracking",
+      "virus infection"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #68 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "keyboard jamming",
+      "monitor cracking",
+      "virus infection"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #69 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "monitor cracking",
+      "virus infection",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #70 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "virus infection",
+      "monitor cracking",
+      "keyboard jamming"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #71 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "virus infection",
+      "keyboard jamming",
+      "monitor cracking"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #72 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "monitor cracking",
+      "keyboard jamming",
+      "virus infection",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #73 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "data loss during power outage",
+      "virus infection",
+      "keyboard jamming",
+      "monitor cracking"
+    ],
+    "answer": 0,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #74 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "virus infection",
+      "data loss during power outage",
+      "monitor cracking",
+      "keyboard jamming"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #75 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "virus infection",
+      "data loss during power outage",
+      "keyboard jamming",
+      "monitor cracking"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #76 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "virus infection",
+      "data loss during power outage",
+      "keyboard jamming",
+      "monitor cracking"
+    ],
+    "answer": 1,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #77 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "virus infection",
+      "data loss during power outage",
+      "monitor cracking"
+    ],
+    "answer": 2,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Digital literacy skill #78 (P6): Saving our work regularly to storage media prevents accidental ____.",
+    "options": [
+      "keyboard jamming",
+      "virus infection",
+      "monitor cracking",
+      "data loss during power outage"
+    ],
+    "answer": 3,
+    "explain": "Saving preserves current progress.",
+    "hint": "Prevents losing work.",
+    "topic": "File Management",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  }
+]

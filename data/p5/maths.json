@@ -1,1 +1,1502 @@
-[{"q":"50% of 100 is ____.","options":["51","49","52","50"],"answer":3,"explain":"50% of 100 = 50."},{"q":"The average of 4, 6, 8 is ____.","options":["7","5","8","6"],"answer":3,"explain":"Mean = sum ÷ count = 6."},{"q":"Area of a triangle base 12 cm height 3 cm is ____ cm².","options":["18","20","17","19"],"answer":0,"explain":"Area = ½ × 12 × 3 = 18 cm²."},{"q":"Volume of a cube of side 10 cm is ____ cm³.","options":["999","1000","1002","1001"],"answer":1,"explain":"Volume = 10×10×10 = 1000 cm³."},{"q":"The ratio 3:6 in lowest terms is ____.","options":["6:3","3:7","6:6","1:2"],"answer":3,"explain":"Divide both by 3."},{"q":"0.2 × 0.3 = ____.","options":["2.06","1.06","-0.94","0.06"],"answer":3,"explain":"0.2 × 0.3 = 0.06."},{"q":"The angles around a point add up to ____°.","options":["100","90","360","180"],"answer":2,"explain":"Around a point is 360°."},{"q":"10% of 80 is ____.","options":["8","7","10","9"],"answer":0,"explain":"10% of 80 = 8."},{"q":"The average of 5, 10, 15 is ____.","options":["9","10","11","12"],"answer":1,"explain":"Mean = sum ÷ count = 10."},{"q":"Area of a triangle base 14 cm height 9 cm is ____ cm².","options":["64","65","62","63"],"answer":3,"explain":"Area = ½ × 14 × 9 = 63 cm²."},{"q":"Volume of a cube of side 9 cm is ____ cm³.","options":["728","729","730","731"],"answer":1,"explain":"Volume = 9×9×9 = 729 cm³."},{"q":"The ratio 1:4 in lowest terms is ____.","options":["1:4","2:4","4:1","1:5"],"answer":0,"explain":"Divide both by 1."},{"q":"0.3 × 0.3 = ____.","options":["-0.91","0.09","2.09","1.09"],"answer":1,"explain":"0.3 × 0.3 = 0.09."},{"q":"The angles on a straight line add up to ____°.","options":["180","100","360","90"],"answer":0,"explain":"A straight line is 180°."},{"q":"20% of 200 is ____.","options":["42","41","39","40"],"answer":3,"explain":"20% of 200 = 40."},{"q":"The average of 2, 4, 6, 8 is ____.","options":["7","5","6","4"],"answer":1,"explain":"Mean = sum ÷ count = 5."},{"q":"Area of a triangle base 12 cm height 9 cm is ____ cm².","options":["56","55","54","53"],"answer":2,"explain":"Area = ½ × 12 × 9 = 54 cm²."},{"q":"Volume of a cube of side 4 cm is ____ cm³.","options":["66","63","64","65"],"answer":2,"explain":"Volume = 4×4×4 = 64 cm³."},{"q":"The ratio 3:5 in lowest terms is ____.","options":["3:6","6:5","5:3","3:5"],"answer":3,"explain":"Divide both by 1."},{"q":"1.5 × 0.3 = ____.","options":["1.45","2.45","0.45","-0.55"],"answer":2,"explain":"1.5 × 0.3 = 0.45."},{"q":"20% of 100 is ____.","options":["22","20","19","21"],"answer":1,"explain":"20% of 100 = 20."},{"q":"The average of 3, 6, 9 is ____.","options":["6","8","7","5"],"answer":0,"explain":"Mean = sum ÷ count = 6."},{"q":"Area of a triangle base 10 cm height 5 cm is ____ cm².","options":["25","26","24","27"],"answer":0,"explain":"Area = ½ × 10 × 5 = 25 cm²."},{"q":"Volume of a cube of side 2 cm is ____ cm³.","options":["7","10","8","9"],"answer":2,"explain":"Volume = 2×2×2 = 8 cm³."},{"q":"The ratio 4:6 in lowest terms is ____.","options":["8:6","2:3","6:4","4:7"],"answer":1,"explain":"Divide both by 2."},{"q":"2.5 × 2 = ____.","options":["6.0","7.0","4.0","5.0"],"answer":3,"explain":"2.5 × 2 = 5.0."},{"q":"50% of 50 is ____.","options":["27","25","24","26"],"answer":1,"explain":"50% of 50 = 25."},{"q":"The average of 10, 20, 30 is ____.","options":["19","20","22","21"],"answer":1,"explain":"Mean = sum ÷ count = 20."},{"q":"Area of a triangle base 4 cm height 5 cm is ____ cm².","options":["11","10","12","9"],"answer":1,"explain":"Area = ½ × 4 × 5 = 10 cm²."},{"q":"Volume of a cube of side 3 cm is ____ cm³.","options":["28","29","27","26"],"answer":2,"explain":"Volume = 3×3×3 = 27 cm³."},{"q":"The ratio 2:3 in lowest terms is ____.","options":["2:3","3:2","4:3","2:4"],"answer":0,"explain":"Divide both by 1."},{"q":"0.2 × 4 = ____.","options":["-0.19999999999999996","1.8","0.8","2.8"],"answer":2,"explain":"0.2 × 4 = 0.8."},{"q":"25% of 80 is ____.","options":["20","21","19","22"],"answer":0,"explain":"25% of 80 = 20."},{"q":"The average of 2, 4, 6 is ____.","options":["3","6","5","4"],"answer":3,"explain":"Mean = sum ÷ count = 4."},{"q":"Area of a triangle base 8 cm height 3 cm is ____ cm².","options":["13","14","11","12"],"answer":3,"explain":"Area = ½ × 8 × 3 = 12 cm²."},{"q":"Volume of a cube of side 6 cm is ____ cm³.","options":["215","218","216","217"],"answer":2,"explain":"Volume = 6×6×6 = 216 cm³."},{"q":"The ratio 5:10 in lowest terms is ____.","options":["10:5","10:10","5:11","1:2"],"answer":3,"explain":"Divide both by 5."},{"q":"0.3 × 4 = ____.","options":["2.2","0.19999999999999996","1.2","3.2"],"answer":2,"explain":"0.3 × 4 = 1.2."},{"q":"25% of 20 is ____.","options":["5","4","7","6"],"answer":0,"explain":"25% of 20 = 5."},{"q":"Area of a triangle base 12 cm height 11 cm is ____ cm².","options":["67","68","65","66"],"answer":3,"explain":"Area = ½ × 12 × 11 = 66 cm²."},{"q":"Volume of a cube of side 8 cm is ____ cm³.","options":["512","513","514","511"],"answer":0,"explain":"Volume = 8×8×8 = 512 cm³."},{"q":"The ratio 2:5 in lowest terms is ____.","options":["4:5","5:2","2:5","2:6"],"answer":2,"explain":"Divide both by 1."},{"q":"0.5 × 4 = ____.","options":["3.0","1.0","2.0","4.0"],"answer":2,"explain":"0.5 × 4 = 2.0."},{"q":"10% of 20 is ____.","options":["3","2","1","4"],"answer":1,"explain":"10% of 20 = 2."},{"q":"Area of a triangle base 4 cm height 9 cm is ____ cm².","options":["19","20","17","18"],"answer":3,"explain":"Area = ½ × 4 × 9 = 18 cm²."},{"q":"Volume of a cube of side 7 cm is ____ cm³.","options":["342","345","344","343"],"answer":3,"explain":"Volume = 7×7×7 = 343 cm³."},{"q":"0.3 × 2 = ____.","options":["-0.4","2.6","1.6","0.6"],"answer":3,"explain":"0.3 × 2 = 0.6."},{"q":"10% of 40 is ____.","options":["6","4","5","3"],"answer":1,"explain":"10% of 40 = 4."},{"q":"Area of a triangle base 12 cm height 5 cm is ____ cm².","options":["31","30","29","32"],"answer":1,"explain":"Area = ½ × 12 × 5 = 30 cm²."},{"q":"Volume of a cube of side 5 cm is ____ cm³.","options":["127","124","125","126"],"answer":2,"explain":"Volume = 5×5×5 = 125 cm³."},{"q":"1.5 × 0.2 = ____.","options":["0.3","1.3","-0.7","2.3"],"answer":0,"explain":"1.5 × 0.2 = 0.3."},{"q":"50% of 40 is ____.","options":["22","20","19","21"],"answer":1,"explain":"50% of 40 = 20."},{"q":"Area of a triangle base 6 cm height 7 cm is ____ cm².","options":["23","21","22","20"],"answer":1,"explain":"Area = ½ × 6 × 7 = 21 cm²."},{"q":"0.4 × 0.3 = ____.","options":["0.12","1.12","2.12","-0.88"],"answer":0,"explain":"0.4 × 0.3 = 0.12."},{"q":"50% of 80 is ____.","options":["40","41","42","39"],"answer":0,"explain":"50% of 80 = 40."},{"q":"Area of a triangle base 6 cm height 3 cm is ____ cm².","options":["11","9","10","8"],"answer":1,"explain":"Area = ½ × 6 × 3 = 9 cm²."},{"q":"1.5 × 4 = ____.","options":["6.0","5.0","8.0","7.0"],"answer":0,"explain":"1.5 × 4 = 6.0."},{"q":"20% of 80 is ____.","options":["18","16","15","17"],"answer":1,"explain":"20% of 80 = 16."},{"q":"Area of a triangle base 14 cm height 3 cm is ____ cm².","options":["22","20","23","21"],"answer":3,"explain":"Area = ½ × 14 × 3 = 21 cm²."},{"q":"1.5 × 2 = ____.","options":["4.0","5.0","3.0","2.0"],"answer":2,"explain":"1.5 × 2 = 3.0."},{"q":"25% of 100 is ____.","options":["26","25","24","27"],"answer":1,"explain":"25% of 100 = 25."},{"q":"Area of a triangle base 12 cm height 7 cm is ____ cm².","options":["42","44","43","41"],"answer":0,"explain":"Area = ½ × 12 × 7 = 42 cm²."},{"q":"0.3 × 0.2 = ____.","options":["0.06","-0.94","2.06","1.06"],"answer":0,"explain":"0.3 × 0.2 = 0.06."},{"q":"10% of 50 is ____.","options":["6","7","5","4"],"answer":2,"explain":"10% of 50 = 5."},{"q":"Area of a triangle base 4 cm height 3 cm is ____ cm².","options":["5","7","8","6"],"answer":3,"explain":"Area = ½ × 4 × 3 = 6 cm²."},{"q":"2.5 × 4 = ____.","options":["12.0","10.0","9.0","11.0"],"answer":1,"explain":"2.5 × 4 = 10.0."},{"q":"25% of 40 is ____.","options":["10","12","9","11"],"answer":0,"explain":"25% of 40 = 10."},{"q":"Area of a triangle base 10 cm height 3 cm is ____ cm².","options":["17","14","15","16"],"answer":2,"explain":"Area = ½ × 10 × 3 = 15 cm²."},{"q":"2.5 × 0.3 = ____.","options":["1.75","-0.25","2.75","0.75"],"answer":3,"explain":"2.5 × 0.3 = 0.75."},{"q":"20% of 20 is ____.","options":["5","4","6","3"],"answer":1,"explain":"20% of 20 = 4."},{"q":"Area of a triangle base 10 cm height 9 cm is ____ cm².","options":["44","46","47","45"],"answer":3,"explain":"Area = ½ × 10 × 9 = 45 cm²."},{"q":"0.4 × 0.2 = ____.","options":["-0.92","1.08","0.08","2.08"],"answer":2,"explain":"0.4 × 0.2 = 0.08."},{"q":"20% of 40 is ____.","options":["9","10","8","7"],"answer":2,"explain":"20% of 40 = 8."},{"q":"Area of a triangle base 6 cm height 11 cm is ____ cm².","options":["35","32","33","34"],"answer":2,"explain":"Area = ½ × 6 × 11 = 33 cm²."},{"q":"0.2 × 0.2 = ____.","options":["2.04","1.04","-0.96","0.04"],"answer":3,"explain":"0.2 × 0.2 = 0.04."},{"q":"20% of 50 is ____.","options":["10","9","11","12"],"answer":0,"explain":"20% of 50 = 10."},{"q":"Area of a triangle base 6 cm height 9 cm is ____ cm².","options":["27","26","29","28"],"answer":0,"explain":"Area = ½ × 6 × 9 = 27 cm²."},{"q":"0.2 × 2 = ____.","options":["2.4","0.4","1.4","-0.6"],"answer":1,"explain":"0.2 × 2 = 0.4."},{"q":"50% of 200 is ____.","options":["101","99","100","102"],"answer":2,"explain":"50% of 200 = 100."},{"q":"Area of a triangle base 14 cm height 7 cm is ____ cm².","options":["48","50","51","49"],"answer":3,"explain":"Area = ½ × 14 × 7 = 49 cm²."},{"q":"0.5 × 2 = ____.","options":["3.0","2.0","0.0","1.0"],"answer":3,"explain":"0.5 × 2 = 1.0."},{"q":"25% of 50 is ____.","options":["14","12","11","13"],"answer":1,"explain":"25% of 50 = 12."},{"q":"Area of a triangle base 8 cm height 11 cm is ____ cm².","options":["46","45","44","43"],"answer":2,"explain":"Area = ½ × 8 × 11 = 44 cm²."},{"q":"0.5 × 0.2 = ____.","options":["0.1","-0.9","1.1","2.1"],"answer":0,"explain":"0.5 × 0.2 = 0.1."},{"q":"10% of 100 is ____.","options":["10","11","9","12"],"answer":0,"explain":"10% of 100 = 10."},{"q":"Area of a triangle base 14 cm height 11 cm is ____ cm².","options":["79","76","77","78"],"answer":2,"explain":"Area = ½ × 14 × 11 = 77 cm²."},{"q":"0.5 × 0.3 = ____.","options":["2.15","-0.85","1.15","0.15"],"answer":3,"explain":"0.5 × 0.3 = 0.15."},{"q":"50% of 20 is ____.","options":["10","9","12","11"],"answer":0,"explain":"50% of 20 = 10."},{"q":"Area of a triangle base 10 cm height 11 cm is ____ cm².","options":["56","57","54","55"],"answer":3,"explain":"Area = ½ × 10 × 11 = 55 cm²."},{"q":"2.5 × 0.2 = ____.","options":["-0.5","1.5","2.5","0.5"],"answer":3,"explain":"2.5 × 0.2 = 0.5."},{"q":"10% of 200 is ____.","options":["21","22","20","19"],"answer":2,"explain":"10% of 200 = 20."},{"q":"Area of a triangle base 4 cm height 11 cm is ____ cm².","options":["22","21","24","23"],"answer":0,"explain":"Area = ½ × 4 × 11 = 22 cm²."},{"q":"0.4 × 2 = ____.","options":["-0.19999999999999996","2.8","1.8","0.8"],"answer":3,"explain":"0.4 × 2 = 0.8."},{"q":"25% of 200 is ____.","options":["52","49","50","51"],"answer":2,"explain":"25% of 200 = 50."},{"q":"Area of a triangle base 4 cm height 7 cm is ____ cm².","options":["16","15","14","13"],"answer":2,"explain":"Area = ½ × 4 × 7 = 14 cm²."},{"q":"0.4 × 4 = ____.","options":["0.6000000000000001","1.6","2.6","3.6"],"answer":1,"explain":"0.4 × 4 = 1.6."},{"q":"Area of a triangle base 8 cm height 7 cm is ____ cm².","options":["27","28","29","30"],"answer":1,"explain":"Area = ½ × 8 × 7 = 28 cm²."},{"q":"Area of a triangle base 6 cm height 5 cm is ____ cm².","options":["16","14","17","15"],"answer":3,"explain":"Area = ½ × 6 × 5 = 15 cm²."},{"q":"Area of a triangle base 10 cm height 7 cm is ____ cm².","options":["34","37","36","35"],"answer":3,"explain":"Area = ½ × 10 × 7 = 35 cm²."},{"q":"Area of a triangle base 8 cm height 5 cm is ____ cm².","options":["20","22","21","19"],"answer":0,"explain":"Area = ½ × 8 × 5 = 20 cm²."}]
+[
+  {
+    "q": "Find 75% of 120: (P5)",
+    "options": [
+      "90",
+      "92",
+      "91",
+      "89"
+    ],
+    "answer": 0,
+    "explain": "75% of 120 = (75/100) × 120 = 90.",
+    "hint": "Convert 75% to fraction (75/100) and multiply by 120.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 25% of 40: (P5)",
+    "options": [
+      "10",
+      "12",
+      "9",
+      "11"
+    ],
+    "answer": 0,
+    "explain": "25% of 40 = (25/100) × 40 = 10.",
+    "hint": "Convert 25% to fraction (25/100) and multiply by 40.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 75% of 80: (P5)",
+    "options": [
+      "59",
+      "61",
+      "62",
+      "60"
+    ],
+    "answer": 3,
+    "explain": "75% of 80 = (75/100) × 80 = 60.",
+    "hint": "Convert 75% to fraction (75/100) and multiply by 80.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 50% of 200: (P5)",
+    "options": [
+      "102",
+      "101",
+      "100",
+      "99"
+    ],
+    "answer": 2,
+    "explain": "50% of 200 = (50/100) × 200 = 100.",
+    "hint": "Convert 50% to fraction (50/100) and multiply by 200.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 25% of 100: (P5)",
+    "options": [
+      "25",
+      "27",
+      "24",
+      "26"
+    ],
+    "answer": 0,
+    "explain": "25% of 100 = (25/100) × 100 = 25.",
+    "hint": "Convert 25% to fraction (25/100) and multiply by 100.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 20% of 100: (P5)",
+    "options": [
+      "22",
+      "20",
+      "19",
+      "21"
+    ],
+    "answer": 1,
+    "explain": "20% of 100 = (20/100) × 100 = 20.",
+    "hint": "Convert 20% to fraction (20/100) and multiply by 100.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 20% of 400: (P5)",
+    "options": [
+      "82",
+      "81",
+      "80",
+      "79"
+    ],
+    "answer": 2,
+    "explain": "20% of 400 = (20/100) × 400 = 80.",
+    "hint": "Convert 20% to fraction (20/100) and multiply by 400.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 20% of 80: (P5)",
+    "options": [
+      "17",
+      "18",
+      "16",
+      "15"
+    ],
+    "answer": 2,
+    "explain": "20% of 80 = (20/100) × 80 = 16.",
+    "hint": "Convert 20% to fraction (20/100) and multiply by 80.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 25% of 120: (P5)",
+    "options": [
+      "30",
+      "32",
+      "29",
+      "31"
+    ],
+    "answer": 0,
+    "explain": "25% of 120 = (25/100) × 120 = 30.",
+    "hint": "Convert 25% to fraction (25/100) and multiply by 120.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 25% of 60: (P5)",
+    "options": [
+      "15",
+      "16",
+      "14",
+      "17"
+    ],
+    "answer": 0,
+    "explain": "25% of 60 = (25/100) × 60 = 15.",
+    "hint": "Convert 25% to fraction (25/100) and multiply by 60.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 75% of 400: (P5)",
+    "options": [
+      "299",
+      "301",
+      "302",
+      "300"
+    ],
+    "answer": 3,
+    "explain": "75% of 400 = (75/100) × 400 = 300.",
+    "hint": "Convert 75% to fraction (75/100) and multiply by 400.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 10% of 400: (P5)",
+    "options": [
+      "40",
+      "39",
+      "41",
+      "42"
+    ],
+    "answer": 0,
+    "explain": "10% of 400 = (10/100) × 400 = 40.",
+    "hint": "Convert 10% to fraction (10/100) and multiply by 400.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 10% of 200: (P5)",
+    "options": [
+      "19",
+      "22",
+      "20",
+      "21"
+    ],
+    "answer": 2,
+    "explain": "10% of 200 = (10/100) × 200 = 20.",
+    "hint": "Convert 10% to fraction (10/100) and multiply by 200.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 25% of 80: (P5)",
+    "options": [
+      "19",
+      "20",
+      "21",
+      "22"
+    ],
+    "answer": 1,
+    "explain": "25% of 80 = (25/100) × 80 = 20.",
+    "hint": "Convert 25% to fraction (25/100) and multiply by 80.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 50% of 100: (P5)",
+    "options": [
+      "49",
+      "50",
+      "52",
+      "51"
+    ],
+    "answer": 1,
+    "explain": "50% of 100 = (50/100) × 100 = 50.",
+    "hint": "Convert 50% to fraction (50/100) and multiply by 100.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 75% of 100: (P5)",
+    "options": [
+      "74",
+      "77",
+      "76",
+      "75"
+    ],
+    "answer": 3,
+    "explain": "75% of 100 = (75/100) × 100 = 75.",
+    "hint": "Convert 75% to fraction (75/100) and multiply by 100.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 20% of 40: (P5)",
+    "options": [
+      "10",
+      "9",
+      "7",
+      "8"
+    ],
+    "answer": 3,
+    "explain": "20% of 40 = (20/100) × 40 = 8.",
+    "hint": "Convert 20% to fraction (20/100) and multiply by 40.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 20% of 200: (P5)",
+    "options": [
+      "41",
+      "40",
+      "39",
+      "42"
+    ],
+    "answer": 1,
+    "explain": "20% of 200 = (20/100) × 200 = 40.",
+    "hint": "Convert 20% to fraction (20/100) and multiply by 200.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find 75% of 60: (P5)",
+    "options": [
+      "47",
+      "44",
+      "46",
+      "45"
+    ],
+    "answer": 3,
+    "explain": "75% of 60 = (75/100) × 60 = 45.",
+    "hint": "Convert 75% to fraction (75/100) and multiply by 60.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 5 cm, width 3 cm, and height 4 cm: (P5)",
+    "options": [
+      "60 cm³",
+      "94 cm³",
+      "70 cm³",
+      "52 cm³"
+    ],
+    "answer": 0,
+    "explain": "Volume = L × W × H = 5 × 3 × 4 = 60 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 5 cm, width 6 cm, and height 2 cm: (P5)",
+    "options": [
+      "60 cm³",
+      "104 cm³",
+      "70 cm³",
+      "52 cm³"
+    ],
+    "answer": 0,
+    "explain": "Volume = L × W × H = 5 × 6 × 2 = 60 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 4 cm, width 7 cm, and height 4 cm: (P5)",
+    "options": [
+      "112 cm³",
+      "104 cm³",
+      "144 cm³",
+      "122 cm³"
+    ],
+    "answer": 0,
+    "explain": "Volume = L × W × H = 4 × 7 × 4 = 112 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 5 cm, width 8 cm, and height 3 cm: (P5)",
+    "options": [
+      "158 cm³",
+      "112 cm³",
+      "120 cm³",
+      "130 cm³"
+    ],
+    "answer": 2,
+    "explain": "Volume = L × W × H = 5 × 8 × 3 = 120 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 8 cm, width 4 cm, and height 6 cm: (P5)",
+    "options": [
+      "184 cm³",
+      "192 cm³",
+      "202 cm³",
+      "208 cm³"
+    ],
+    "answer": 1,
+    "explain": "Volume = L × W × H = 8 × 4 × 6 = 192 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 6 cm, width 4 cm, and height 3 cm: (P5)",
+    "options": [
+      "82 cm³",
+      "72 cm³",
+      "108 cm³",
+      "64 cm³"
+    ],
+    "answer": 1,
+    "explain": "Volume = L × W × H = 6 × 4 × 3 = 72 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 4 cm, width 6 cm, and height 3 cm: (P5)",
+    "options": [
+      "108 cm³",
+      "82 cm³",
+      "64 cm³",
+      "72 cm³"
+    ],
+    "answer": 3,
+    "explain": "Volume = L × W × H = 4 × 6 × 3 = 72 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 4 cm, width 4 cm, and height 3 cm: (P5)",
+    "options": [
+      "48 cm³",
+      "58 cm³",
+      "40 cm³",
+      "80 cm³"
+    ],
+    "answer": 0,
+    "explain": "Volume = L × W × H = 4 × 4 × 3 = 48 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 9 cm, width 8 cm, and height 6 cm: (P5)",
+    "options": [
+      "424 cm³",
+      "442 cm³",
+      "348 cm³",
+      "432 cm³"
+    ],
+    "answer": 3,
+    "explain": "Volume = L × W × H = 9 × 8 × 6 = 432 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 10 cm, width 3 cm, and height 3 cm: (P5)",
+    "options": [
+      "90 cm³",
+      "100 cm³",
+      "82 cm³",
+      "138 cm³"
+    ],
+    "answer": 0,
+    "explain": "Volume = L × W × H = 10 × 3 × 3 = 90 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 10 cm, width 7 cm, and height 6 cm: (P5)",
+    "options": [
+      "344 cm³",
+      "412 cm³",
+      "420 cm³",
+      "430 cm³"
+    ],
+    "answer": 2,
+    "explain": "Volume = L × W × H = 10 × 7 × 6 = 420 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 7 cm, width 8 cm, and height 5 cm: (P5)",
+    "options": [
+      "290 cm³",
+      "280 cm³",
+      "262 cm³",
+      "272 cm³"
+    ],
+    "answer": 1,
+    "explain": "Volume = L × W × H = 7 × 8 × 5 = 280 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 10 cm, width 6 cm, and height 5 cm: (P5)",
+    "options": [
+      "310 cm³",
+      "300 cm³",
+      "292 cm³",
+      "280 cm³"
+    ],
+    "answer": 1,
+    "explain": "Volume = L × W × H = 10 × 6 × 5 = 300 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 9 cm, width 7 cm, and height 3 cm: (P5)",
+    "options": [
+      "222 cm³",
+      "199 cm³",
+      "181 cm³",
+      "189 cm³"
+    ],
+    "answer": 3,
+    "explain": "Volume = L × W × H = 9 × 7 × 3 = 189 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 5 cm, width 5 cm, and height 3 cm: (P5)",
+    "options": [
+      "67 cm³",
+      "85 cm³",
+      "75 cm³",
+      "110 cm³"
+    ],
+    "answer": 2,
+    "explain": "Volume = L × W × H = 5 × 5 × 3 = 75 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 6 cm, width 8 cm, and height 4 cm: (P5)",
+    "options": [
+      "192 cm³",
+      "184 cm³",
+      "202 cm³",
+      "208 cm³"
+    ],
+    "answer": 0,
+    "explain": "Volume = L × W × H = 6 × 8 × 4 = 192 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 5 cm, width 5 cm, and height 4 cm: (P5)",
+    "options": [
+      "130 cm³",
+      "100 cm³",
+      "92 cm³",
+      "110 cm³"
+    ],
+    "answer": 1,
+    "explain": "Volume = L × W × H = 5 × 5 × 4 = 100 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 4 cm, width 3 cm, and height 4 cm: (P5)",
+    "options": [
+      "58 cm³",
+      "48 cm³",
+      "80 cm³",
+      "40 cm³"
+    ],
+    "answer": 1,
+    "explain": "Volume = L × W × H = 4 × 3 × 4 = 48 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the volume of a cuboid with length 10 cm, width 6 cm, and height 3 cm: (P5)",
+    "options": [
+      "180 cm³",
+      "190 cm³",
+      "216 cm³",
+      "172 cm³"
+    ],
+    "answer": 0,
+    "explain": "Volume = L × W × H = 10 × 6 × 3 = 180 cm³.",
+    "hint": "Multiply length by width by height.",
+    "topic": "Volume & Capacity",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which of these numbers is a PRIME number? (P5)",
+    "options": [
+      "27",
+      "15",
+      "17",
+      "21"
+    ],
+    "answer": 2,
+    "explain": "17 has only two factors: 1 and 17 itself.",
+    "hint": "A prime number is only divisible by 1 and itself.",
+    "topic": "Number Sense",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is the sum of angles inside any triangle? (P5)",
+    "options": [
+      "270 degrees",
+      "360 degrees",
+      "180 degrees",
+      "90 degrees"
+    ],
+    "answer": 2,
+    "explain": "The interior angles of any triangle always add up to 180°.",
+    "hint": "Think: half of a rectangle's 360°.",
+    "topic": "Geometry",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "A triangle with all three sides equal in length is called an ____ triangle. (P5)",
+    "options": [
+      "Equilateral",
+      "Scalene",
+      "Right-angled",
+      "Isosceles"
+    ],
+    "answer": 0,
+    "explain": "An equilateral triangle has 3 equal sides and three 60° angles.",
+    "hint": "Prefix 'equi' means equal.",
+    "topic": "Geometry",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "A triangle with two equal sides is called an ____ triangle. (P5)",
+    "options": [
+      "Isosceles",
+      "Scalene",
+      "Equilateral",
+      "Obtuse"
+    ],
+    "answer": 0,
+    "explain": "An isosceles triangle has 2 equal sides and 2 equal base angles.",
+    "hint": "Look for two matching side lengths.",
+    "topic": "Geometry",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Angles on a straight line add up to ____ degrees. (P5)",
+    "options": [
+      "90°",
+      "270°",
+      "360°",
+      "180°"
+    ],
+    "answer": 3,
+    "explain": "Angles forming a straight line sum to 180°.",
+    "hint": "A straight line is a half-turn (180°).",
+    "topic": "Geometry",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Share ₦1,500 between Ada and Obi in the ratio 2:3. What is Obi's share? (P5)",
+    "options": [
+      "₦800",
+      "₦900",
+      "₦750",
+      "₦600"
+    ],
+    "answer": 1,
+    "explain": "Total parts = 2 + 3 = 5. Obi's share = (3/5) × ₦1,500 = ₦900.",
+    "hint": "Calculate Obi's 3 parts out of 5 total parts.",
+    "topic": "Ratio & Proportion",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "What is the Roman numeral for 1,000? (P5)",
+    "options": [
+      "M",
+      "D",
+      "C",
+      "L"
+    ],
+    "answer": 0,
+    "explain": "In Roman numerals, M = 1,000 (from mille).",
+    "hint": "Think of millennium (1,000 years).",
+    "topic": "Roman Numerals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Find the area of a triangle with base 10 cm and height 6 cm: (P5)",
+    "options": [
+      "60 cm²",
+      "16 cm²",
+      "30 cm²",
+      "20 cm²"
+    ],
+    "answer": 2,
+    "explain": "Area = 1/2 × base × height = 1/2 × 10 × 6 = 30 cm².",
+    "hint": "Take half of base multiplied by height.",
+    "topic": "Perimeter & Area",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Express 0.65 as a percentage: (P5)",
+    "options": [
+      "0.65%",
+      "65%",
+      "650%",
+      "6.5%"
+    ],
+    "answer": 1,
+    "explain": "0.65 × 100% = 65%.",
+    "hint": "Multiply by 100 and add % symbol.",
+    "topic": "Percentages",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Find the average (mean) of 4, 8, and 12: (P5)",
+    "options": [
+      "24",
+      "8",
+      "6",
+      "10"
+    ],
+    "answer": 1,
+    "explain": "Sum = 4 + 8 + 12 = 24. Average = 24 ÷ 3 = 8.",
+    "hint": "Add the values and divide by the count of numbers (3).",
+    "topic": "Statistics",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #1 (P5): Calculate the exact sum of 60 and 32:",
+    "options": [
+      "94",
+      "93",
+      "92",
+      "91"
+    ],
+    "answer": 2,
+    "explain": "60 + 32 = 92.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #2 (P5): Calculate the exact sum of 63 and 34:",
+    "options": [
+      "97",
+      "98",
+      "99",
+      "96"
+    ],
+    "answer": 0,
+    "explain": "63 + 34 = 97.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #3 (P5): Calculate the exact sum of 66 and 36:",
+    "options": [
+      "104",
+      "102",
+      "101",
+      "103"
+    ],
+    "answer": 1,
+    "explain": "66 + 36 = 102.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #4 (P5): Calculate the exact sum of 69 and 38:",
+    "options": [
+      "109",
+      "108",
+      "106",
+      "107"
+    ],
+    "answer": 3,
+    "explain": "69 + 38 = 107.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #5 (P5): Calculate the exact sum of 72 and 40:",
+    "options": [
+      "113",
+      "111",
+      "114",
+      "112"
+    ],
+    "answer": 3,
+    "explain": "72 + 40 = 112.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #6 (P5): Calculate the exact sum of 75 and 42:",
+    "options": [
+      "117",
+      "118",
+      "116",
+      "119"
+    ],
+    "answer": 0,
+    "explain": "75 + 42 = 117.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #7 (P5): Calculate the exact sum of 78 and 44:",
+    "options": [
+      "122",
+      "123",
+      "124",
+      "121"
+    ],
+    "answer": 0,
+    "explain": "78 + 44 = 122.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #8 (P5): Calculate the exact sum of 81 and 46:",
+    "options": [
+      "127",
+      "128",
+      "126",
+      "129"
+    ],
+    "answer": 0,
+    "explain": "81 + 46 = 127.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #9 (P5): Calculate the exact sum of 84 and 48:",
+    "options": [
+      "134",
+      "131",
+      "132",
+      "133"
+    ],
+    "answer": 2,
+    "explain": "84 + 48 = 132.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #10 (P5): Calculate the exact sum of 87 and 50:",
+    "options": [
+      "139",
+      "136",
+      "138",
+      "137"
+    ],
+    "answer": 3,
+    "explain": "87 + 50 = 137.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #11 (P5): Calculate the exact sum of 90 and 52:",
+    "options": [
+      "144",
+      "143",
+      "141",
+      "142"
+    ],
+    "answer": 3,
+    "explain": "90 + 52 = 142.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #12 (P5): Calculate the exact sum of 93 and 54:",
+    "options": [
+      "147",
+      "148",
+      "146",
+      "149"
+    ],
+    "answer": 0,
+    "explain": "93 + 54 = 147.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #13 (P5): Calculate the exact sum of 96 and 56:",
+    "options": [
+      "153",
+      "151",
+      "152",
+      "154"
+    ],
+    "answer": 2,
+    "explain": "96 + 56 = 152.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #14 (P5): Calculate the exact sum of 99 and 58:",
+    "options": [
+      "159",
+      "156",
+      "158",
+      "157"
+    ],
+    "answer": 3,
+    "explain": "99 + 58 = 157.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #15 (P5): Calculate the exact sum of 102 and 60:",
+    "options": [
+      "163",
+      "164",
+      "161",
+      "162"
+    ],
+    "answer": 3,
+    "explain": "102 + 60 = 162.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #16 (P5): Calculate the exact sum of 105 and 62:",
+    "options": [
+      "168",
+      "166",
+      "169",
+      "167"
+    ],
+    "answer": 3,
+    "explain": "105 + 62 = 167.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #17 (P5): Calculate the exact sum of 108 and 64:",
+    "options": [
+      "172",
+      "174",
+      "173",
+      "171"
+    ],
+    "answer": 0,
+    "explain": "108 + 64 = 172.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #18 (P5): Calculate the exact sum of 111 and 66:",
+    "options": [
+      "178",
+      "176",
+      "179",
+      "177"
+    ],
+    "answer": 3,
+    "explain": "111 + 66 = 177.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #19 (P5): Calculate the exact sum of 114 and 68:",
+    "options": [
+      "182",
+      "183",
+      "181",
+      "184"
+    ],
+    "answer": 0,
+    "explain": "114 + 68 = 182.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #20 (P5): Calculate the exact sum of 117 and 70:",
+    "options": [
+      "186",
+      "188",
+      "187",
+      "189"
+    ],
+    "answer": 2,
+    "explain": "117 + 70 = 187.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #21 (P5): Calculate the exact sum of 120 and 72:",
+    "options": [
+      "194",
+      "191",
+      "193",
+      "192"
+    ],
+    "answer": 3,
+    "explain": "120 + 72 = 192.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #22 (P5): Calculate the exact sum of 123 and 74:",
+    "options": [
+      "198",
+      "197",
+      "199",
+      "196"
+    ],
+    "answer": 1,
+    "explain": "123 + 74 = 197.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #23 (P5): Calculate the exact sum of 126 and 76:",
+    "options": [
+      "203",
+      "202",
+      "204",
+      "201"
+    ],
+    "answer": 1,
+    "explain": "126 + 76 = 202.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #24 (P5): Calculate the exact sum of 129 and 78:",
+    "options": [
+      "206",
+      "207",
+      "209",
+      "208"
+    ],
+    "answer": 1,
+    "explain": "129 + 78 = 207.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #25 (P5): Calculate the exact sum of 132 and 80:",
+    "options": [
+      "211",
+      "213",
+      "214",
+      "212"
+    ],
+    "answer": 3,
+    "explain": "132 + 80 = 212.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #26 (P5): Calculate the exact sum of 135 and 82:",
+    "options": [
+      "218",
+      "216",
+      "219",
+      "217"
+    ],
+    "answer": 3,
+    "explain": "135 + 82 = 217.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #27 (P5): Calculate the exact sum of 138 and 84:",
+    "options": [
+      "223",
+      "221",
+      "224",
+      "222"
+    ],
+    "answer": 3,
+    "explain": "138 + 84 = 222.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #28 (P5): Calculate the exact sum of 141 and 86:",
+    "options": [
+      "229",
+      "228",
+      "226",
+      "227"
+    ],
+    "answer": 3,
+    "explain": "141 + 86 = 227.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #29 (P5): Calculate the exact sum of 144 and 88:",
+    "options": [
+      "231",
+      "232",
+      "234",
+      "233"
+    ],
+    "answer": 1,
+    "explain": "144 + 88 = 232.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #30 (P5): Calculate the exact sum of 147 and 90:",
+    "options": [
+      "238",
+      "237",
+      "239",
+      "236"
+    ],
+    "answer": 1,
+    "explain": "147 + 90 = 237.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #31 (P5): Calculate the exact sum of 150 and 92:",
+    "options": [
+      "241",
+      "242",
+      "243",
+      "244"
+    ],
+    "answer": 1,
+    "explain": "150 + 92 = 242.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #32 (P5): Calculate the exact sum of 153 and 94:",
+    "options": [
+      "248",
+      "247",
+      "249",
+      "246"
+    ],
+    "answer": 1,
+    "explain": "153 + 94 = 247.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #33 (P5): Calculate the exact sum of 156 and 96:",
+    "options": [
+      "252",
+      "251",
+      "253",
+      "254"
+    ],
+    "answer": 0,
+    "explain": "156 + 96 = 252.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #34 (P5): Calculate the exact sum of 159 and 98:",
+    "options": [
+      "258",
+      "259",
+      "257",
+      "256"
+    ],
+    "answer": 2,
+    "explain": "159 + 98 = 257.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #35 (P5): Calculate the exact sum of 162 and 100:",
+    "options": [
+      "261",
+      "262",
+      "264",
+      "263"
+    ],
+    "answer": 1,
+    "explain": "162 + 100 = 262.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #36 (P5): Calculate the exact sum of 165 and 102:",
+    "options": [
+      "267",
+      "268",
+      "266",
+      "269"
+    ],
+    "answer": 0,
+    "explain": "165 + 102 = 267.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #37 (P5): Calculate the exact sum of 168 and 104:",
+    "options": [
+      "271",
+      "272",
+      "274",
+      "273"
+    ],
+    "answer": 1,
+    "explain": "168 + 104 = 272.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #38 (P5): Calculate the exact sum of 171 and 106:",
+    "options": [
+      "276",
+      "278",
+      "279",
+      "277"
+    ],
+    "answer": 3,
+    "explain": "171 + 106 = 277.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #39 (P5): Calculate the exact sum of 174 and 108:",
+    "options": [
+      "283",
+      "284",
+      "282",
+      "281"
+    ],
+    "answer": 2,
+    "explain": "174 + 108 = 282.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #40 (P5): Calculate the exact sum of 177 and 110:",
+    "options": [
+      "286",
+      "288",
+      "289",
+      "287"
+    ],
+    "answer": 3,
+    "explain": "177 + 110 = 287.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #41 (P5): Calculate the exact sum of 180 and 112:",
+    "options": [
+      "292",
+      "291",
+      "293",
+      "294"
+    ],
+    "answer": 0,
+    "explain": "180 + 112 = 292.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #42 (P5): Calculate the exact sum of 183 and 114:",
+    "options": [
+      "299",
+      "298",
+      "296",
+      "297"
+    ],
+    "answer": 3,
+    "explain": "183 + 114 = 297.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #43 (P5): Calculate the exact sum of 186 and 116:",
+    "options": [
+      "303",
+      "304",
+      "302",
+      "301"
+    ],
+    "answer": 2,
+    "explain": "186 + 116 = 302.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #44 (P5): Calculate the exact sum of 189 and 118:",
+    "options": [
+      "308",
+      "306",
+      "309",
+      "307"
+    ],
+    "answer": 3,
+    "explain": "189 + 118 = 307.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #45 (P5): Calculate the exact sum of 192 and 120:",
+    "options": [
+      "313",
+      "311",
+      "312",
+      "314"
+    ],
+    "answer": 2,
+    "explain": "192 + 120 = 312.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #46 (P5): Calculate the exact sum of 195 and 122:",
+    "options": [
+      "316",
+      "319",
+      "318",
+      "317"
+    ],
+    "answer": 3,
+    "explain": "195 + 122 = 317.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #47 (P5): Calculate the exact sum of 198 and 124:",
+    "options": [
+      "322",
+      "324",
+      "321",
+      "323"
+    ],
+    "answer": 0,
+    "explain": "198 + 124 = 322.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #48 (P5): Calculate the exact sum of 201 and 126:",
+    "options": [
+      "327",
+      "329",
+      "326",
+      "328"
+    ],
+    "answer": 0,
+    "explain": "201 + 126 = 327.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #49 (P5): Calculate the exact sum of 204 and 128:",
+    "options": [
+      "331",
+      "334",
+      "332",
+      "333"
+    ],
+    "answer": 2,
+    "explain": "204 + 128 = 332.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #50 (P5): Calculate the exact sum of 207 and 130:",
+    "options": [
+      "339",
+      "336",
+      "337",
+      "338"
+    ],
+    "answer": 2,
+    "explain": "207 + 130 = 337.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #51 (P5): Calculate the exact sum of 210 and 132:",
+    "options": [
+      "344",
+      "342",
+      "343",
+      "341"
+    ],
+    "answer": 1,
+    "explain": "210 + 132 = 342.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #52 (P5): Calculate the exact sum of 213 and 134:",
+    "options": [
+      "349",
+      "348",
+      "346",
+      "347"
+    ],
+    "answer": 3,
+    "explain": "213 + 134 = 347.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  }
+]

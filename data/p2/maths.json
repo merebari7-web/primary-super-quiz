@@ -1,1 +1,1502 @@
-[{"q":"What is 30 + 22?","options":["54","52","53","51"],"answer":1,"explain":"30 + 22 = 52."},{"q":"What is 6 − 1?","options":["4","6","5","7"],"answer":2,"explain":"6 − 1 = 5."},{"q":"What number comes before 33?","options":["33","34","31","32"],"answer":3,"explain":"Before 33 is 32."},{"q":"Which is greater: 32 or 35?","options":["32","35","33","31"],"answer":1,"explain":"35 is greater than 32."},{"q":"Half of 4 is ____.","options":["2","4","1","3"],"answer":0,"explain":"Half of 4 is 2."},{"q":"Double 1 is ____.","options":["1","4","2","3"],"answer":2,"explain":"Double 1 is 2."},{"q":"How many straight sides does a circle have?","options":["4","0","3","1"],"answer":1,"explain":"A circle has no straight sides."},{"q":"How many months are in a year?","options":["12","24","11","10"],"answer":0,"explain":"A year has 12 months."},{"q":"What is 4 × 9?","options":["35","36","38","37"],"answer":1,"explain":"4 groups of 9 make 36."},{"q":"How many kobo make 1 naira?","options":["50","1000","10","100"],"answer":3,"explain":"100 kobo = ₦1."},{"q":"In 79, the tens digit is ____.","options":["9","7","10","8"],"answer":1,"explain":"79 is 7 tens and 9 ones."},{"q":"Is 27 even or odd?","options":["prime","even","odd","zero"],"answer":2,"explain":"27 is odd."},{"q":"What is 15 + 4?","options":["19","20","21","18"],"answer":0,"explain":"15 + 4 = 19."},{"q":"What is 8 − 1?","options":["8","7","6","9"],"answer":1,"explain":"8 − 1 = 7."},{"q":"What number comes after 9?","options":["12","10","9","11"],"answer":1,"explain":"After 9 comes 10."},{"q":"Which is greater: 20 or 23?","options":["21","19","20","23"],"answer":3,"explain":"23 is greater than 20."},{"q":"Half of 10 is ____.","options":["7","4","6","5"],"answer":3,"explain":"Half of 10 is 5."},{"q":"Double 2 is ____.","options":["6","4","3","5"],"answer":1,"explain":"Double 2 is 4."},{"q":"How many straight sides does a triangle have?","options":["3","5","4","2"],"answer":0,"explain":"A triangle has 3 sides."},{"q":"How many days are in one week?","options":["6","10","7","5"],"answer":2,"explain":"A week has 7 days."},{"q":"What is 3 × 10?","options":["32","30","29","31"],"answer":1,"explain":"3 groups of 10 make 30."},{"q":"In 26, the tens digit is ____.","options":["7","2","6","3"],"answer":1,"explain":"26 is 2 tens and 6 ones."},{"q":"Is 4 even or odd?","options":["odd","even","zero","prime"],"answer":1,"explain":"4 is even."},{"q":"What is 30 + 12?","options":["42","44","41","43"],"answer":0,"explain":"30 + 12 = 42."},{"q":"What is 1 − 0?","options":["0","2","1","3"],"answer":2,"explain":"1 − 0 = 1."},{"q":"What number comes after 28?","options":["30","28","31","29"],"answer":3,"explain":"After 28 comes 29."},{"q":"Which is greater: 9 or 12?","options":["10","12","8","9"],"answer":1,"explain":"12 is greater than 9."},{"q":"Half of 6 is ____.","options":["4","5","2","3"],"answer":3,"explain":"Half of 6 is 3."},{"q":"Double 4 is ____.","options":["10","7","9","8"],"answer":3,"explain":"Double 4 is 8."},{"q":"How many straight sides does a square have?","options":["4","3","6","5"],"answer":0,"explain":"A square has 4 equal sides."},{"q":"What is 2 × 6?","options":["13","14","11","12"],"answer":3,"explain":"2 groups of 6 make 12."},{"q":"In 83, the tens digit is ____.","options":["9","8","3","4"],"answer":1,"explain":"83 is 8 tens and 3 ones."},{"q":"Is 3 even or odd?","options":["zero","even","odd","prime"],"answer":2,"explain":"3 is odd."},{"q":"What is 23 + 13?","options":["35","36","38","37"],"answer":1,"explain":"23 + 13 = 36."},{"q":"What is 28 − 8?","options":["19","20","21","22"],"answer":1,"explain":"28 − 8 = 20."},{"q":"What number comes before 23?","options":["24","22","21","23"],"answer":1,"explain":"Before 23 is 22."},{"q":"Which is greater: 10 or 13?","options":["9","11","10","13"],"answer":3,"explain":"13 is greater than 10."},{"q":"Half of 8 is ____.","options":["6","3","4","5"],"answer":2,"explain":"Half of 8 is 4."},{"q":"Double 3 is ____.","options":["6","8","5","7"],"answer":0,"explain":"Double 3 is 6."},{"q":"How many straight sides does a rectangle have?","options":["3","5","8","4"],"answer":3,"explain":"A rectangle has 4 sides."},{"q":"What is 5 × 7?","options":["34","35","37","36"],"answer":1,"explain":"5 groups of 7 make 35."},{"q":"In 53, the tens digit is ____.","options":["4","5","3","6"],"answer":1,"explain":"53 is 5 tens and 3 ones."},{"q":"Is 13 even or odd?","options":["prime","even","zero","odd"],"answer":3,"explain":"13 is odd."},{"q":"What is 0 + 29?","options":["28","30","31","29"],"answer":3,"explain":"0 + 29 = 29."},{"q":"What is 26 − 12?","options":["14","15","13","16"],"answer":0,"explain":"26 − 12 = 14."},{"q":"What number comes after 40?","options":["43","42","41","40"],"answer":2,"explain":"After 40 comes 41."},{"q":"Which is greater: 30 or 33?","options":["31","33","30","29"],"answer":1,"explain":"33 is greater than 30."},{"q":"Half of 12 is ____.","options":["8","5","7","6"],"answer":3,"explain":"Half of 12 is 6."},{"q":"Double 6 is ____.","options":["12","11","13","14"],"answer":0,"explain":"Double 6 is 12."},{"q":"What is 5 × 5?","options":["25","24","26","27"],"answer":0,"explain":"5 groups of 5 make 25."},{"q":"In 40, the tens digit is ____.","options":["0","4","1","5"],"answer":1,"explain":"40 is 4 tens and 0 ones."},{"q":"Is 16 even or odd?","options":["zero","prime","odd","even"],"answer":3,"explain":"16 is even."},{"q":"What is 6 + 13?","options":["20","18","19","21"],"answer":2,"explain":"6 + 13 = 19."},{"q":"What is 21 − 8?","options":["12","13","14","15"],"answer":1,"explain":"21 − 8 = 13."},{"q":"What number comes before 3?","options":["4","1","2","3"],"answer":2,"explain":"Before 3 is 2."},{"q":"Which is greater: 41 or 44?","options":["41","42","40","44"],"answer":3,"explain":"44 is greater than 41."},{"q":"Half of 2 is ____.","options":["1","3","0","2"],"answer":0,"explain":"Half of 2 is 1."},{"q":"Double 5 is ____.","options":["12","11","10","9"],"answer":2,"explain":"Double 5 is 10."},{"q":"What is 5 × 4?","options":["20","21","22","19"],"answer":0,"explain":"5 groups of 4 make 20."},{"q":"In 17, the tens digit is ____.","options":["1","2","8","7"],"answer":0,"explain":"17 is 1 tens and 7 ones."},{"q":"Is 5 even or odd?","options":["even","odd","prime","zero"],"answer":1,"explain":"5 is odd."},{"q":"What is 0 + 18?","options":["18","20","17","19"],"answer":0,"explain":"0 + 18 = 18."},{"q":"What is 24 − 8?","options":["18","17","16","15"],"answer":2,"explain":"24 − 8 = 16."},{"q":"What number comes before 24?","options":["25","22","24","23"],"answer":3,"explain":"Before 24 is 23."},{"q":"Which is greater: 33 or 36?","options":["36","32","34","33"],"answer":0,"explain":"36 is greater than 33."},{"q":"What is 5 × 8?","options":["39","41","40","42"],"answer":2,"explain":"5 groups of 8 make 40."},{"q":"In 64, the tens digit is ____.","options":["5","4","6","7"],"answer":2,"explain":"64 is 6 tens and 4 ones."},{"q":"Is 30 even or odd?","options":["prime","odd","even","zero"],"answer":2,"explain":"30 is even."},{"q":"What is 10 + 3?","options":["13","12","15","14"],"answer":0,"explain":"10 + 3 = 13."},{"q":"What is 16 − 10?","options":["7","6","8","5"],"answer":1,"explain":"16 − 10 = 6."},{"q":"What number comes before 49?","options":["50","47","48","49"],"answer":2,"explain":"Before 49 is 48."},{"q":"Which is greater: 31 or 34?","options":["34","31","30","32"],"answer":0,"explain":"34 is greater than 31."},{"q":"What is 4 × 7?","options":["27","30","29","28"],"answer":3,"explain":"4 groups of 7 make 28."},{"q":"In 25, the tens digit is ____.","options":["6","5","3","2"],"answer":3,"explain":"25 is 2 tens and 5 ones."},{"q":"Is 2 even or odd?","options":["prime","even","zero","odd"],"answer":1,"explain":"2 is even."},{"q":"What is 25 + 6?","options":["32","33","31","30"],"answer":2,"explain":"25 + 6 = 31."},{"q":"What is 27 − 1?","options":["25","28","26","27"],"answer":2,"explain":"27 − 1 = 26."},{"q":"What number comes after 19?","options":["19","22","21","20"],"answer":3,"explain":"After 19 comes 20."},{"q":"Which is greater: 38 or 41?","options":["38","39","41","37"],"answer":2,"explain":"41 is greater than 38."},{"q":"What is 4 × 5?","options":["20","21","19","22"],"answer":0,"explain":"4 groups of 5 make 20."},{"q":"In 60, the tens digit is ____.","options":["1","0","6","7"],"answer":2,"explain":"60 is 6 tens and 0 ones."},{"q":"Is 17 even or odd?","options":["zero","prime","even","odd"],"answer":3,"explain":"17 is odd."},{"q":"What is 3 + 11?","options":["16","14","13","15"],"answer":1,"explain":"3 + 11 = 14."},{"q":"What is 26 − 19?","options":["8","7","9","6"],"answer":1,"explain":"26 − 19 = 7."},{"q":"What number comes before 43?","options":["44","43","42","41"],"answer":2,"explain":"Before 43 is 42."},{"q":"Which is greater: 43 or 46?","options":["42","44","46","43"],"answer":2,"explain":"46 is greater than 43."},{"q":"What is 2 × 3?","options":["6","5","8","7"],"answer":0,"explain":"2 groups of 3 make 6."},{"q":"In 81, the tens digit is ____.","options":["9","1","2","8"],"answer":3,"explain":"81 is 8 tens and 1 ones."},{"q":"Is 24 even or odd?","options":["zero","odd","even","prime"],"answer":2,"explain":"24 is even."},{"q":"What is 1 + 2?","options":["3","4","2","5"],"answer":0,"explain":"1 + 2 = 3."},{"q":"What is 22 − 15?","options":["6","7","8","9"],"answer":1,"explain":"22 − 15 = 7."},{"q":"What number comes after 43?","options":["45","46","44","43"],"answer":2,"explain":"After 43 comes 44."},{"q":"Which is greater: 19 or 22?","options":["18","22","19","20"],"answer":1,"explain":"22 is greater than 19."},{"q":"What is 3 × 4?","options":["12","14","13","11"],"answer":0,"explain":"3 groups of 4 make 12."},{"q":"In 70, the tens digit is ____.","options":["1","8","7","0"],"answer":2,"explain":"70 is 7 tens and 0 ones."},{"q":"Is 8 even or odd?","options":["prime","odd","even","zero"],"answer":2,"explain":"8 is even."},{"q":"What is 15 + 30?","options":["47","44","46","45"],"answer":3,"explain":"15 + 30 = 45."},{"q":"What is 27 − 12?","options":["15","17","14","16"],"answer":0,"explain":"27 − 12 = 15."},{"q":"What number comes after 34?","options":["34","35","36","37"],"answer":1,"explain":"After 34 comes 35."},{"q":"Which is greater: 48 or 51?","options":["51","48","47","49"],"answer":0,"explain":"51 is greater than 48."}]
+[
+  {
+    "q": "Find the sum of 18 and 39: (P2)",
+    "options": [
+      "59",
+      "57",
+      "58",
+      "56"
+    ],
+    "answer": 1,
+    "explain": "18 + 39 = 57.",
+    "hint": "Add units then tens: (8+9) + (1+3)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 40 and 40: (P2)",
+    "options": [
+      "80",
+      "82",
+      "81",
+      "79"
+    ],
+    "answer": 0,
+    "explain": "40 + 40 = 80.",
+    "hint": "Add units then tens: (0+0) + (4+4)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 37 and 17: (P2)",
+    "options": [
+      "55",
+      "53",
+      "54",
+      "56"
+    ],
+    "answer": 2,
+    "explain": "37 + 17 = 54.",
+    "hint": "Add units then tens: (7+7) + (3+1)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 21 and 44: (P2)",
+    "options": [
+      "64",
+      "66",
+      "65",
+      "67"
+    ],
+    "answer": 2,
+    "explain": "21 + 44 = 65.",
+    "hint": "Add units then tens: (1+4) + (2+4)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 39 and 37: (P2)",
+    "options": [
+      "78",
+      "77",
+      "75",
+      "76"
+    ],
+    "answer": 3,
+    "explain": "39 + 37 = 76.",
+    "hint": "Add units then tens: (9+7) + (3+3)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 15 and 16: (P2)",
+    "options": [
+      "32",
+      "31",
+      "30",
+      "33"
+    ],
+    "answer": 1,
+    "explain": "15 + 16 = 31.",
+    "hint": "Add units then tens: (5+6) + (1+1)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 27 and 15: (P2)",
+    "options": [
+      "42",
+      "43",
+      "41",
+      "44"
+    ],
+    "answer": 0,
+    "explain": "27 + 15 = 42.",
+    "hint": "Add units then tens: (7+5) + (2+1)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 21 and 28: (P2)",
+    "options": [
+      "51",
+      "49",
+      "50",
+      "48"
+    ],
+    "answer": 1,
+    "explain": "21 + 28 = 49.",
+    "hint": "Add units then tens: (1+8) + (2+2)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 26 and 23: (P2)",
+    "options": [
+      "51",
+      "49",
+      "50",
+      "48"
+    ],
+    "answer": 1,
+    "explain": "26 + 23 = 49.",
+    "hint": "Add units then tens: (6+3) + (2+2)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 37 and 45: (P2)",
+    "options": [
+      "81",
+      "84",
+      "82",
+      "83"
+    ],
+    "answer": 2,
+    "explain": "37 + 45 = 82.",
+    "hint": "Add units then tens: (7+5) + (3+4)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 47 and 25: (P2)",
+    "options": [
+      "72",
+      "71",
+      "73",
+      "74"
+    ],
+    "answer": 0,
+    "explain": "47 + 25 = 72.",
+    "hint": "Add units then tens: (7+5) + (4+2)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 42 and 29: (P2)",
+    "options": [
+      "72",
+      "71",
+      "70",
+      "73"
+    ],
+    "answer": 1,
+    "explain": "42 + 29 = 71.",
+    "hint": "Add units then tens: (2+9) + (4+2)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 16 and 36: (P2)",
+    "options": [
+      "53",
+      "51",
+      "52",
+      "54"
+    ],
+    "answer": 2,
+    "explain": "16 + 36 = 52.",
+    "hint": "Add units then tens: (6+6) + (1+3)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 49 and 24: (P2)",
+    "options": [
+      "72",
+      "75",
+      "74",
+      "73"
+    ],
+    "answer": 3,
+    "explain": "49 + 24 = 73.",
+    "hint": "Add units then tens: (9+4) + (4+2)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 17 and 31: (P2)",
+    "options": [
+      "47",
+      "49",
+      "48",
+      "50"
+    ],
+    "answer": 2,
+    "explain": "17 + 31 = 48.",
+    "hint": "Add units then tens: (7+1) + (1+3)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 16 and 16: (P2)",
+    "options": [
+      "34",
+      "31",
+      "33",
+      "32"
+    ],
+    "answer": 3,
+    "explain": "16 + 16 = 32.",
+    "hint": "Add units then tens: (6+6) + (1+1)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 35 and 24: (P2)",
+    "options": [
+      "58",
+      "59",
+      "60",
+      "61"
+    ],
+    "answer": 1,
+    "explain": "35 + 24 = 59.",
+    "hint": "Add units then tens: (5+4) + (3+2)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 17 and 22: (P2)",
+    "options": [
+      "39",
+      "38",
+      "40",
+      "41"
+    ],
+    "answer": 0,
+    "explain": "17 + 22 = 39.",
+    "hint": "Add units then tens: (7+2) + (1+2)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 45 and 22: (P2)",
+    "options": [
+      "67",
+      "66",
+      "68",
+      "69"
+    ],
+    "answer": 0,
+    "explain": "45 + 22 = 67.",
+    "hint": "Add units then tens: (5+2) + (4+2)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 14 and 42: (P2)",
+    "options": [
+      "57",
+      "56",
+      "55",
+      "58"
+    ],
+    "answer": 1,
+    "explain": "14 + 42 = 56.",
+    "hint": "Add units then tens: (4+2) + (1+4)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 41 and 45: (P2)",
+    "options": [
+      "88",
+      "86",
+      "87",
+      "85"
+    ],
+    "answer": 1,
+    "explain": "41 + 45 = 86.",
+    "hint": "Add units then tens: (1+5) + (4+4)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 48 and 25: (P2)",
+    "options": [
+      "73",
+      "74",
+      "75",
+      "72"
+    ],
+    "answer": 0,
+    "explain": "48 + 25 = 73.",
+    "hint": "Add units then tens: (8+5) + (4+2)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 24 and 11: (P2)",
+    "options": [
+      "34",
+      "36",
+      "35",
+      "37"
+    ],
+    "answer": 2,
+    "explain": "24 + 11 = 35.",
+    "hint": "Add units then tens: (4+1) + (2+1)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 49 and 18: (P2)",
+    "options": [
+      "69",
+      "68",
+      "66",
+      "67"
+    ],
+    "answer": 3,
+    "explain": "49 + 18 = 67.",
+    "hint": "Add units then tens: (9+8) + (4+1)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 38 and 36: (P2)",
+    "options": [
+      "76",
+      "74",
+      "73",
+      "75"
+    ],
+    "answer": 1,
+    "explain": "38 + 36 = 74.",
+    "hint": "Add units then tens: (8+6) + (3+3)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 41 and 41: (P2)",
+    "options": [
+      "83",
+      "84",
+      "82",
+      "81"
+    ],
+    "answer": 2,
+    "explain": "41 + 41 = 82.",
+    "hint": "Add units then tens: (1+1) + (4+4)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 50 and 21: (P2)",
+    "options": [
+      "72",
+      "70",
+      "71",
+      "73"
+    ],
+    "answer": 2,
+    "explain": "50 + 21 = 71.",
+    "hint": "Add units then tens: (0+1) + (5+2)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 48 and 14: (P2)",
+    "options": [
+      "64",
+      "62",
+      "63",
+      "61"
+    ],
+    "answer": 1,
+    "explain": "48 + 14 = 62.",
+    "hint": "Add units then tens: (8+4) + (4+1)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 38 and 32: (P2)",
+    "options": [
+      "69",
+      "71",
+      "70",
+      "72"
+    ],
+    "answer": 2,
+    "explain": "38 + 32 = 70.",
+    "hint": "Add units then tens: (8+2) + (3+3)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the sum of 24 and 23: (P2)",
+    "options": [
+      "47",
+      "48",
+      "46",
+      "49"
+    ],
+    "answer": 0,
+    "explain": "24 + 23 = 47.",
+    "hint": "Add units then tens: (4+3) + (2+2)0.",
+    "topic": "Addition",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 84 - 68: (P2)",
+    "options": [
+      "18",
+      "16",
+      "17",
+      "15"
+    ],
+    "answer": 1,
+    "explain": "84 - 68 = 16.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 68 - 46: (P2)",
+    "options": [
+      "23",
+      "21",
+      "22",
+      "24"
+    ],
+    "answer": 2,
+    "explain": "68 - 46 = 22.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 71 - 45: (P2)",
+    "options": [
+      "28",
+      "27",
+      "26",
+      "25"
+    ],
+    "answer": 2,
+    "explain": "71 - 45 = 26.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 81 - 17: (P2)",
+    "options": [
+      "66",
+      "63",
+      "64",
+      "65"
+    ],
+    "answer": 2,
+    "explain": "81 - 17 = 64.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 79 - 53: (P2)",
+    "options": [
+      "27",
+      "25",
+      "28",
+      "26"
+    ],
+    "answer": 3,
+    "explain": "79 - 53 = 26.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 94 - 52: (P2)",
+    "options": [
+      "43",
+      "41",
+      "44",
+      "42"
+    ],
+    "answer": 3,
+    "explain": "94 - 52 = 42.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 73 - 28: (P2)",
+    "options": [
+      "45",
+      "46",
+      "44",
+      "47"
+    ],
+    "answer": 0,
+    "explain": "73 - 28 = 45.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 43 - 11: (P2)",
+    "options": [
+      "33",
+      "34",
+      "31",
+      "32"
+    ],
+    "answer": 3,
+    "explain": "43 - 11 = 32.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 44 - 38: (P2)",
+    "options": [
+      "6",
+      "7",
+      "5",
+      "8"
+    ],
+    "answer": 0,
+    "explain": "44 - 38 = 6.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 62 - 51: (P2)",
+    "options": [
+      "12",
+      "13",
+      "10",
+      "11"
+    ],
+    "answer": 3,
+    "explain": "62 - 51 = 11.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 71 - 59: (P2)",
+    "options": [
+      "12",
+      "11",
+      "14",
+      "13"
+    ],
+    "answer": 0,
+    "explain": "71 - 59 = 12.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 70 - 57: (P2)",
+    "options": [
+      "13",
+      "15",
+      "14",
+      "12"
+    ],
+    "answer": 0,
+    "explain": "70 - 57 = 13.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 34 - 21: (P2)",
+    "options": [
+      "13",
+      "15",
+      "14",
+      "12"
+    ],
+    "answer": 0,
+    "explain": "34 - 21 = 13.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 72 - 43: (P2)",
+    "options": [
+      "28",
+      "31",
+      "30",
+      "29"
+    ],
+    "answer": 3,
+    "explain": "72 - 43 = 29.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 69 - 34: (P2)",
+    "options": [
+      "37",
+      "34",
+      "36",
+      "35"
+    ],
+    "answer": 3,
+    "explain": "69 - 34 = 35.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 32 - 26: (P2)",
+    "options": [
+      "5",
+      "7",
+      "6",
+      "8"
+    ],
+    "answer": 2,
+    "explain": "32 - 26 = 6.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 60 - 54: (P2)",
+    "options": [
+      "8",
+      "6",
+      "7",
+      "5"
+    ],
+    "answer": 1,
+    "explain": "60 - 54 = 6.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 49 - 12: (P2)",
+    "options": [
+      "37",
+      "38",
+      "39",
+      "36"
+    ],
+    "answer": 0,
+    "explain": "49 - 12 = 37.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 66 - 57: (P2)",
+    "options": [
+      "8",
+      "9",
+      "11",
+      "10"
+    ],
+    "answer": 1,
+    "explain": "66 - 57 = 9.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 75 - 45: (P2)",
+    "options": [
+      "30",
+      "31",
+      "32",
+      "29"
+    ],
+    "answer": 0,
+    "explain": "75 - 45 = 30.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 98 - 69: (P2)",
+    "options": [
+      "28",
+      "30",
+      "31",
+      "29"
+    ],
+    "answer": 3,
+    "explain": "98 - 69 = 29.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 40 - 10: (P2)",
+    "options": [
+      "31",
+      "32",
+      "29",
+      "30"
+    ],
+    "answer": 3,
+    "explain": "40 - 10 = 30.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 92 - 64: (P2)",
+    "options": [
+      "30",
+      "29",
+      "28",
+      "27"
+    ],
+    "answer": 2,
+    "explain": "92 - 64 = 28.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 45 - 37: (P2)",
+    "options": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "answer": 1,
+    "explain": "45 - 37 = 8.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate 74 - 32: (P2)",
+    "options": [
+      "42",
+      "44",
+      "43",
+      "41"
+    ],
+    "answer": 0,
+    "explain": "74 - 32 = 42.",
+    "hint": "Subtract the ones first, then subtract the tens.",
+    "topic": "Subtraction",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 10 × 4? (P2)",
+    "options": [
+      "41",
+      "42",
+      "40",
+      "39"
+    ],
+    "answer": 2,
+    "explain": "10 multiplied by 4 is 40.",
+    "hint": "Think of 4 groups of 10.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 5 × 8? (P2)",
+    "options": [
+      "40",
+      "41",
+      "39",
+      "42"
+    ],
+    "answer": 0,
+    "explain": "5 multiplied by 8 is 40.",
+    "hint": "Think of 8 groups of 5.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 5 × 3? (P2)",
+    "options": [
+      "16",
+      "14",
+      "15",
+      "17"
+    ],
+    "answer": 2,
+    "explain": "5 multiplied by 3 is 15.",
+    "hint": "Think of 3 groups of 5.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 10 × 7? (P2)",
+    "options": [
+      "71",
+      "69",
+      "72",
+      "70"
+    ],
+    "answer": 3,
+    "explain": "10 multiplied by 7 is 70.",
+    "hint": "Think of 7 groups of 10.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 4 × 9? (P2)",
+    "options": [
+      "37",
+      "35",
+      "38",
+      "36"
+    ],
+    "answer": 3,
+    "explain": "4 multiplied by 9 is 36.",
+    "hint": "Think of 9 groups of 4.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 2 × 10? (P2)",
+    "options": [
+      "22",
+      "19",
+      "20",
+      "21"
+    ],
+    "answer": 2,
+    "explain": "2 multiplied by 10 is 20.",
+    "hint": "Think of 10 groups of 2.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 10 × 6? (P2)",
+    "options": [
+      "62",
+      "60",
+      "61",
+      "59"
+    ],
+    "answer": 1,
+    "explain": "10 multiplied by 6 is 60.",
+    "hint": "Think of 6 groups of 10.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 2 × 9? (P2)",
+    "options": [
+      "20",
+      "19",
+      "18",
+      "17"
+    ],
+    "answer": 2,
+    "explain": "2 multiplied by 9 is 18.",
+    "hint": "Think of 9 groups of 2.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 3 × 10? (P2)",
+    "options": [
+      "29",
+      "31",
+      "32",
+      "30"
+    ],
+    "answer": 3,
+    "explain": "3 multiplied by 10 is 30.",
+    "hint": "Think of 10 groups of 3.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 4 × 3? (P2)",
+    "options": [
+      "14",
+      "12",
+      "11",
+      "13"
+    ],
+    "answer": 1,
+    "explain": "4 multiplied by 3 is 12.",
+    "hint": "Think of 3 groups of 4.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 4 × 7? (P2)",
+    "options": [
+      "27",
+      "30",
+      "29",
+      "28"
+    ],
+    "answer": 3,
+    "explain": "4 multiplied by 7 is 28.",
+    "hint": "Think of 7 groups of 4.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 4 × 5? (P2)",
+    "options": [
+      "21",
+      "19",
+      "22",
+      "20"
+    ],
+    "answer": 3,
+    "explain": "4 multiplied by 5 is 20.",
+    "hint": "Think of 5 groups of 4.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 2 × 7? (P2)",
+    "options": [
+      "14",
+      "16",
+      "15",
+      "13"
+    ],
+    "answer": 0,
+    "explain": "2 multiplied by 7 is 14.",
+    "hint": "Think of 7 groups of 2.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 5 × 7? (P2)",
+    "options": [
+      "37",
+      "36",
+      "35",
+      "34"
+    ],
+    "answer": 2,
+    "explain": "5 multiplied by 7 is 35.",
+    "hint": "Think of 7 groups of 5.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 2 × 8? (P2)",
+    "options": [
+      "17",
+      "16",
+      "15",
+      "18"
+    ],
+    "answer": 1,
+    "explain": "2 multiplied by 8 is 16.",
+    "hint": "Think of 8 groups of 2.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 5 × 2? (P2)",
+    "options": [
+      "9",
+      "10",
+      "12",
+      "11"
+    ],
+    "answer": 1,
+    "explain": "5 multiplied by 2 is 10.",
+    "hint": "Think of 2 groups of 5.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 10 × 9? (P2)",
+    "options": [
+      "91",
+      "89",
+      "92",
+      "90"
+    ],
+    "answer": 3,
+    "explain": "10 multiplied by 9 is 90.",
+    "hint": "Think of 9 groups of 10.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 10 × 8? (P2)",
+    "options": [
+      "81",
+      "80",
+      "82",
+      "79"
+    ],
+    "answer": 1,
+    "explain": "10 multiplied by 8 is 80.",
+    "hint": "Think of 8 groups of 10.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is 3 × 7? (P2)",
+    "options": [
+      "21",
+      "20",
+      "23",
+      "22"
+    ],
+    "answer": 0,
+    "explain": "3 multiplied by 7 is 21.",
+    "hint": "Think of 7 groups of 3.",
+    "topic": "Multiplication",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is half (1/2) of 20? (P2)",
+    "options": [
+      "15",
+      "8",
+      "10",
+      "5"
+    ],
+    "answer": 2,
+    "explain": "Half of 20 means dividing 20 by 2 = 10.",
+    "hint": "Divide 20 into 2 equal parts.",
+    "topic": "Fractions",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "What is half (1/2) of 14? (P2)",
+    "options": [
+      "7",
+      "8",
+      "12",
+      "6"
+    ],
+    "answer": 0,
+    "explain": "14 divided by 2 = 7.",
+    "hint": "What number added to itself equals 14?",
+    "topic": "Fractions",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "How many centimeters (cm) are in 1 meter? (P2)",
+    "options": [
+      "100 cm",
+      "1000 cm",
+      "10 cm",
+      "50 cm"
+    ],
+    "answer": 0,
+    "explain": "There are 100 centimeters in one meter.",
+    "hint": "The prefix 'centi' means one-hundredth.",
+    "topic": "Measurement",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "What is 15 divided by 3? (P2)",
+    "options": [
+      "6",
+      "4",
+      "3",
+      "5"
+    ],
+    "answer": 3,
+    "explain": "15 ÷ 3 = 5 because 5 × 3 = 15.",
+    "hint": "How many 3s make 15?",
+    "topic": "Division",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "How many hours are in one complete day? (P2)",
+    "options": [
+      "18 hours",
+      "12 hours",
+      "24 hours",
+      "30 hours"
+    ],
+    "answer": 2,
+    "explain": "One full day consists of 24 hours.",
+    "hint": "12 hours of day + 12 hours of night.",
+    "topic": "Time",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Which 3D shape looks like a can of soft drink? (P2)",
+    "options": [
+      "Cylinder",
+      "Sphere",
+      "Cube",
+      "Cone"
+    ],
+    "answer": 0,
+    "explain": "A cylinder has circular flat ends and curved sides.",
+    "hint": "Notice the two round flat circular faces.",
+    "topic": "Geometry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "How many minutes are in one hour? (P2)",
+    "options": [
+      "100 minutes",
+      "45 minutes",
+      "60 minutes",
+      "30 minutes"
+    ],
+    "answer": 2,
+    "explain": "There are 60 minutes in an hour.",
+    "hint": "The minute hand completes a full 60-minute loop.",
+    "topic": "Time",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "If Mary buys 3 pencils at ₦20 each, how much does she pay in total? (P2)",
+    "options": [
+      "₦40",
+      "₦50",
+      "₦70",
+      "₦60"
+    ],
+    "answer": 3,
+    "explain": "3 × ₦20 = ₦60.",
+    "hint": "Multiply 3 by 20.",
+    "topic": "Money",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which number is an EVEN number? (P2)",
+    "options": [
+      "21",
+      "27",
+      "18",
+      "15"
+    ],
+    "answer": 2,
+    "explain": "Even numbers end in 0, 2, 4, 6, or 8.",
+    "hint": "Check the last digit for divisibility by 2.",
+    "topic": "Number Sense",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Which number is an ODD number? (P2)",
+    "options": [
+      "14",
+      "28",
+      "23",
+      "20"
+    ],
+    "answer": 2,
+    "explain": "Odd numbers end in 1, 3, 5, 7, or 9.",
+    "hint": "Check if it can be split evenly into pairs.",
+    "topic": "Number Sense",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "What is one quarter (1/4) of 16? (P2)",
+    "options": [
+      "4",
+      "2",
+      "6",
+      "8"
+    ],
+    "answer": 0,
+    "explain": "16 divided by 4 = 4.",
+    "hint": "Divide 16 into 4 equal shares.",
+    "topic": "Fractions",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #1 (P2): Calculate the exact sum of 30 and 17:",
+    "options": [
+      "47",
+      "48",
+      "49",
+      "46"
+    ],
+    "answer": 0,
+    "explain": "30 + 17 = 47.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #2 (P2): Calculate the exact sum of 33 and 19:",
+    "options": [
+      "51",
+      "54",
+      "52",
+      "53"
+    ],
+    "answer": 2,
+    "explain": "33 + 19 = 52.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #3 (P2): Calculate the exact sum of 36 and 21:",
+    "options": [
+      "59",
+      "57",
+      "58",
+      "56"
+    ],
+    "answer": 1,
+    "explain": "36 + 21 = 57.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #4 (P2): Calculate the exact sum of 39 and 23:",
+    "options": [
+      "62",
+      "64",
+      "61",
+      "63"
+    ],
+    "answer": 0,
+    "explain": "39 + 23 = 62.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #5 (P2): Calculate the exact sum of 42 and 25:",
+    "options": [
+      "66",
+      "69",
+      "67",
+      "68"
+    ],
+    "answer": 2,
+    "explain": "42 + 25 = 67.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #6 (P2): Calculate the exact sum of 45 and 27:",
+    "options": [
+      "74",
+      "72",
+      "73",
+      "71"
+    ],
+    "answer": 1,
+    "explain": "45 + 27 = 72.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #7 (P2): Calculate the exact sum of 48 and 29:",
+    "options": [
+      "77",
+      "79",
+      "76",
+      "78"
+    ],
+    "answer": 0,
+    "explain": "48 + 29 = 77.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #8 (P2): Calculate the exact sum of 51 and 31:",
+    "options": [
+      "83",
+      "82",
+      "81",
+      "84"
+    ],
+    "answer": 1,
+    "explain": "51 + 31 = 82.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #9 (P2): Calculate the exact sum of 54 and 33:",
+    "options": [
+      "86",
+      "87",
+      "88",
+      "89"
+    ],
+    "answer": 1,
+    "explain": "54 + 33 = 87.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #10 (P2): Calculate the exact sum of 57 and 35:",
+    "options": [
+      "93",
+      "92",
+      "94",
+      "91"
+    ],
+    "answer": 1,
+    "explain": "57 + 35 = 92.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #11 (P2): Calculate the exact sum of 60 and 37:",
+    "options": [
+      "99",
+      "98",
+      "97",
+      "96"
+    ],
+    "answer": 2,
+    "explain": "60 + 37 = 97.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #12 (P2): Calculate the exact sum of 63 and 39:",
+    "options": [
+      "104",
+      "103",
+      "102",
+      "101"
+    ],
+    "answer": 2,
+    "explain": "63 + 39 = 102.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #13 (P2): Calculate the exact sum of 66 and 41:",
+    "options": [
+      "106",
+      "109",
+      "108",
+      "107"
+    ],
+    "answer": 3,
+    "explain": "66 + 41 = 107.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #14 (P2): Calculate the exact sum of 69 and 43:",
+    "options": [
+      "112",
+      "113",
+      "114",
+      "111"
+    ],
+    "answer": 0,
+    "explain": "69 + 43 = 112.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #15 (P2): Calculate the exact sum of 72 and 45:",
+    "options": [
+      "118",
+      "119",
+      "116",
+      "117"
+    ],
+    "answer": 3,
+    "explain": "72 + 45 = 117.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  }
+]
