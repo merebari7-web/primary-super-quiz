@@ -201,7 +201,14 @@ h1 {
   min-height: 260px;
 }
 
-.home-panel { margin-top: 22px; }
+.home-panel {
+  margin-top: 18px;
+  background: var(--card);
+  border: 3px solid var(--line);
+  border-radius: 28px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
 
 label.field {
   display: block;
@@ -545,6 +552,81 @@ input[type="text"]:focus { border-color: var(--teal); box-shadow: 0 0 0 4px var(
   font-size: clamp(40px, 8vw, 72px);
   line-height: 1;
 }
+
+.letter-mark {
+  width: 72px;
+  height: 72px;
+  margin: 10px auto 4px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  background: var(--teal);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 36px;
+  line-height: 1;
+  box-shadow: 0 8px 0 var(--teal-dark);
+}
+.letter-label {
+  font-weight: 800;
+  color: var(--teal-dark);
+  margin-bottom: 8px;
+}
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 14px 0 10px;
+  text-align: center;
+}
+.metric-grid div {
+  background: var(--paper);
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  padding: 10px 6px;
+}
+.metric-grid b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 22px;
+}
+.metric-grid span {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--muted);
+}
+.setup-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.setup-meta span {
+  background: var(--teal-soft);
+  color: var(--teal-dark);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+.set-head {
+  margin: 28px 0 8px;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-dark);
+}
+.empty-state {
+  background: var(--card);
+  border: 2px dashed var(--line);
+  border-radius: 22px;
+  padding: 22px 18px;
+  text-align: center;
+  margin: 8px 0 18px;
+}
+.empty-state strong { display: block; font-size: 20px; margin-bottom: 6px; }
+.empty-state p { color: var(--muted); font-weight: 700; margin-bottom: 14px; }
 
 .score-msg { color: var(--muted); max-width: 40ch; margin: 8px auto 22px; }
 
@@ -1409,6 +1491,7 @@ html, body {
   .home-stats { grid-template-columns: 1fr 1fr; }
   .stat-tile b { font-size: 22px; }
   .length-grid { grid-template-columns: 1fr 1fr; }
+  .metric-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 380px) {

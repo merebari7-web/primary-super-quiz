@@ -823,6 +823,17 @@
     if (pct >= 50) return "Nice try. Review the ones you missed and have another go.";
     return "Keep going — every champion started as a learner. Try again!";
   }
+  function gradeLetter(pct) {
+    if (pct >= 80) return { mark: "A", label: "Excellent" };
+    if (pct >= 70) return { mark: "B", label: "Very good" };
+    if (pct >= 55) return { mark: "C", label: "Good" };
+    if (pct >= 40) return { mark: "D", label: "Fair" };
+    return { mark: "E", label: "Keep practising" };
+  }
+  function etaMinutes(n) {
+    const per = state.mode === "timed" ? secondsFor() : (state.grade && state.grade <= 2 ? 28 : 22);
+    return Math.max(1, Math.round((n || state.length || 10) * per / 60));
+  }
   function secondsFor() {
     if (state.lightning) return 12;
     return state.grade && state.grade <= 2 ? 45 : 30;
@@ -1024,7 +1035,7 @@
   }
 
   function toastEl() {
-    return `<div class="toast" id="toast" ${state.toast ? "" : "hidden"}>${esc(state.toast)}</div>`;
+    return `<div class="toast" id="toast" role="status" aria-live="polite" ${state.toast ? "" : "hidden"}>${esc(state.toast)}</div>`;
   }
   function netBanner() {
     if (navigator.onLine) return "";
@@ -1457,7 +1468,8 @@
           </button>
         </div>
         ${coachCard()}
-        <div class="home-panel panel-rel" style="margin-top:18px;background:var(--card);border:3px solid var(--line);border-radius:28px;padding:22px;box-shadow:var(--shadow);">
+        ${planCard()}
+        <div class="home-panel panel-rel">
           <img class="mascot-float" src="images/mascot.png" alt="">
           ${googleAuthBlock()}
           ${state.user ? "" : `
@@ -1594,13 +1606,18 @@
         ${crumbs([{ label: "Home", go: "home" }, { label: "Class", go: "grade" }, { label: "Subjects", go: "subject" }, { label: name }])}
         <p class="kicker">${window.GRADE_INFO[state.grade].label} · ${esc(name)}</p>
         <h2 class="section-title">Set up your quiz</h2>
-        <p class="sub">Choose a mode, then how many questions.</p>
+        <p class="sub">Choose a mode and length. About ${etaMinutes(state.length)} minutes.</p>
         <div class="mode-grid">${modes}</div>
         <div class="length-grid">${buttons}</div>
-        <div style="margin-top:16px">
-          <button class="btn btn-primary" data-action="begin">${state.loading ? "Loading…" : "Start quiz →"}</button>
+        <div class="setup-meta">
+          <span>${state.length} questions</span>
+          <span>${esc(state.mode)}</span>
+          <span>~${etaMinutes(state.length)} min</span>
         </div>
-        ${state.error ? `<p class="feedback no" style="margin-top:12px">${esc(state.error)}</p>` : ""}
+        <div style="margin-top:16px">
+          <button class="btn btn-primary" data-action="begin" ${state.loading ? "disabled" : ""}>${state.loading ? "Loading…" : "Start quiz →"}</button>
+        </div>
+        ${state.error ? `<div class="feedback no" style="margin-top:12px"><p>${esc(state.error)}</p><button class="btn btn-ghost" data-action="begin" style="margin-top:8px">Try again</button></div>` : ""}
         ${toastEl()}
       </div>`;
   }
@@ -1656,7 +1673,7 @@
         ${state.paused ? `<div class="pause-banner">Quiz paused. Timer is stopped.</div>` : ""}
         <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-label="Quiz progress"><span style="width:${pct}%"></span></div>
         <div class="q-card">
-          <div class="q-label">Question ${state.index + 1} · ${state.lightning ? "lightning" : state.mode}</div>
+          <div class="q-label">Question ${state.index + 1} of ${total} · ${state.lightning ? "lightning" : state.mode}</div>
           <h2 class="question">${esc(q.q)}</h2>
           <div class="options">${options}</div>
           ${state.hintText && !showMark ? `<div class="hint-box">💡 ${esc(state.hintText)}</div>` : ""}
@@ -1691,15 +1708,26 @@
       const b = window.BADGES.find(function (x) { return x.id === id; });
       return b ? `<span class="chip">${b.icon} ${b.name}</span>` : "";
     }).join("");
+    const gl = gradeLetter(pct);
+    const primaryNext = total - n
+      ? `<button class="btn btn-primary" data-action="practice-missed">Practice missed</button>`
+      : `<button class="btn btn-primary" data-action="coach-play">Next practice</button>`;
     return `
       <div class="wrap">
         ${topbar("subject")}
         <div class="result">
           ${img}
-          <p class="kicker">${window.GRADE_INFO[state.grade].label} · ${esc(subjectName(state.subject))} · ${state.mode}</p>
+          <p class="kicker">${window.GRADE_INFO[state.grade].label} · ${esc(subjectName(state.subject))} · ${state.lightning ? "lightning" : state.mode}</p>
           <h2 class="section-title">${esc(state.name || "Well done")}</h2>
+          <div class="letter-mark" aria-label="Grade ${gl.mark}, ${gl.label}">${gl.mark}</div>
+          <p class="letter-label">${esc(gl.label)}</p>
           <div class="score-num">${n}<span style="font-size:.45em;color:var(--muted)"> / ${total}</span></div>
-          <p style="font-weight:800;margin-top:4px">${pct}% · ${stars} star${stars === 1 ? "" : "s"} · Best combo x${state.maxCombo}</p>
+          <div class="metric-grid">
+            <div><b>${pct}%</b><span>Score</span></div>
+            <div><b>${stars}★</b><span>Stars</span></div>
+            <div><b>x${state.maxCombo || 0}</b><span>Best combo</span></div>
+            <div><b>${state.elapsedSec ? fmtClock(state.elapsedSec) : "—"}</b><span>Time</span></div>
+          </div>
           <p class="xp-pop">+${state.xpGained} XP · Total ${progress.xp}</p>
           ${state.rankedUp ? `<div class="rank-up">${state.rankedUp.icon} New rank: <strong>${esc(state.rankedUp.name)}</strong></div>` : ""}
           <p class="score-msg">${messageFor(pct)}</p>
@@ -1707,10 +1735,10 @@
           <p class="sub" style="margin:8px 0 0">${n} correct · ${total - n} to review</p>
           ${badges ? `<div class="stats" style="justify-content:center">${badges}</div>` : ""}
           <div class="actions">
-            <button class="btn btn-primary" data-action="review">Review answers</button>
-            ${total - n ? `<button class="btn btn-sun" data-action="practice-missed">Practice missed</button>` : ""}
-            <button class="btn btn-ghost" data-action="speak">🔊 Read score</button>
+            ${primaryNext}
+            <button class="btn btn-ghost" data-action="review">Review answers</button>
             <button class="btn btn-sun" data-action="whatsapp">WhatsApp</button>
+            <button class="btn btn-ghost" data-action="speak">🔊 Read score</button>
             <button class="btn btn-ghost" data-action="certificate">Certificate</button>
             <button class="btn btn-ghost" data-action="share">Share</button>
             <button class="btn btn-ghost" data-action="again">Play again</button>
@@ -1811,12 +1839,20 @@
     }).join("");
     const recent = (progress.history || []).slice(0, 8).map(function (h) {
       return `<li>${h.date} · P${h.grade} ${esc(subjectName(h.subject))} · ${h.score}/${h.total} (${h.pct}%)</li>`;
-    }).join("") || "<li>No quizzes yet.</li>";
+    }).join("");
+    const empty = !progress.quizzes
+      ? `<div class="empty-state">
+           <strong>Your first star is waiting</strong>
+           <p>Take a short practice quiz. Scores, badges and this week’s chart will appear here.</p>
+           <button class="btn btn-primary" data-action="start">Start practising →</button>
+         </div>`
+      : "";
     return `
       <div class="wrap">
         ${topbar("home")}
         <p class="kicker">${esc(state.name || "Pupil")}</p>
         <h2 class="section-title">My progress</h2>
+        ${empty}
         <div class="home-stats">
           <div class="stat-tile"><b>${progress.xp}</b><span>XP</span></div>
           <div class="stat-tile"><b>${progress.streak}</b><span>Streak</span></div>
@@ -1831,11 +1867,10 @@
         <h3 class="section-title" style="font-size:24px;margin-top:28px">This week</h3>
         ${weekActivity()}
         <h3 class="section-title" style="font-size:24px;margin-top:28px">Recent</h3>
-        <ul class="sub">${recent}</ul>
+        ${recent ? `<ul class="sub">${recent}</ul>` : `<p class="sub">No quizzes yet — start one and it will show here.</p>`}
         <div class="actions" style="margin-top:16px">
           <button class="btn btn-primary" data-go="report">Teacher report</button>
           <button class="btn btn-sun" data-action="parent-recap">WhatsApp parent</button>
-          ${!progress.quizzes ? `<button class="btn btn-ghost" data-action="start">Start a quiz</button>` : ""}
         </div>
         ${siteFooter()}
         ${toastEl()}
@@ -1928,10 +1963,14 @@
         ${topbar("home")}
         <h2 class="section-title">Settings</h2>
         <p class="sub">These stay on this device.</p>
+        <p class="set-head">Sound</p>
         <div class="settings-list">
           ${row("sound", "Sound effects")}
           ${row("music", "Soft background music")}
           ${row("tts", "Auto-read each question")}
+        </div>
+        <p class="set-head">Display</p>
+        <div class="settings-list">
           ${row("dark", "Dark mode")}
           ${row("autoDark", "Match phone light / dark")}
           ${row("large", "Larger text")}
@@ -1939,22 +1978,23 @@
           ${row("focus", "Focus mode in quizzes")}
           ${row("calm", "Reduce motion")}
         </div>
-        <p class="sub" style="margin-top:16px"><button type="button" data-go="privacy">Privacy</button> · <button type="button" data-go="about">About</button></p>
-        <h3 class="section-title" style="font-size:24px;margin-top:28px">Google Sign-In</h3>
+        <p class="set-head">Classroom</p>
+        <label class="field" for="school">School name (optional, on certificates)</label>
+        <input id="school" class="search" type="text" maxlength="80" placeholder="e.g. St Mary’s Primary School" value="${esc(schoolName())}">
+        <button class="btn btn-ghost" data-action="save-school" style="margin-top:8px">Save school</button>
+        <p class="set-head">Google</p>
         <p class="sub">Teachers: create an OAuth Client ID, then paste it here. Origins to allow: <code>https://merebari7-web.github.io</code> and <code>http://localhost:8080</code>.</p>
         <label class="field" for="cid">Google Client ID</label>
         <input id="cid" class="search" type="text" placeholder="123456789-abc.apps.googleusercontent.com" value="${esc(cid)}">
         <button class="btn btn-primary" data-action="save-cid" style="margin-top:8px">Save Client ID</button>
-        <label class="field" for="school">School name (optional, on certificates)</label>
-        <input id="school" class="search" type="text" maxlength="80" placeholder="e.g. St Mary’s Primary School" value="${esc(schoolName())}">
-        <button class="btn btn-ghost" data-action="save-school" style="margin-top:8px">Save school</button>
-        <h3 class="section-title" style="font-size:24px;margin-top:28px">Backup</h3>
+        <p class="set-head">Data</p>
         <p class="sub">Save a copy before you change phones. Import restores this pupil’s scores on this device.</p>
         <div class="ghost-row" style="flex-wrap:wrap;margin-bottom:12px">
           <button class="btn btn-ghost" data-action="export-backup">Download backup</button>
           <label class="btn btn-ghost" for="backup-file">Import backup</label>
           <input id="backup-file" type="file" accept="application/json" hidden>
         </div>
+        <p class="sub" style="margin-top:16px"><button type="button" data-go="privacy">Privacy</button> · <button type="button" data-go="about">About</button></p>
         <p class="sub" style="margin-top:22px">Install this quiz on your phone from the browser menu → Add to Home Screen. It works offline after the first visit.</p>
         <button class="btn btn-ghost" data-action="reset-progress">Reset progress</button>
         ${siteFooter()}
