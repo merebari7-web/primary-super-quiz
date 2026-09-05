@@ -246,7 +246,7 @@
         logo_alignment: "left",
         width: Math.min(320, el.clientWidth || 280)
       });
-      try { google.accounts.id.prompt(); } catch (e) {}
+      /* One Tap off: it duplicates the button and is too pushy in a classroom. */
     });
   }
   function signOutGoogle() {
@@ -1512,9 +1512,9 @@
   function onboardEl() {
     if (localStorage.getItem("psq-onboard-v1")) return "";
     const steps = [
-      { title: "Hello, champion!", body: "9,600 questions for Nigerian Primary 1–6. Earn XP, climb ranks and collect badges.", img: "images/mascot.png" },
-      { title: "How to play", body: "Practice for instant help. Exam is like a real test. Timed makes you think fast. Tap 🔊 Read aloud any time.", img: "images/owl-yes.jpg" },
-      { title: "You’re ready", body: "Type your name to start. Teachers can print papers and a progress report. Younger pupils can play as guests.", img: "images/trophy.png" }
+      { title: "Welcome", body: "Free practice for Primary 1–6. Short quizzes, explanations and printable papers. No ads.", img: "images/mascot.png" },
+      { title: "How we learn", body: "Practice marks at once. Exam waits until the end. Tap 🔊 to hear a question. Missed items are saved to try again.", img: "images/owl-yes.jpg" },
+      { title: "You’re ready", body: "Type a first name, or play as a guest. Teachers can print papers and a learning report from the class screen.", img: "images/trophy.png" }
     ];
     const i = state.onboardStep || 0;
     const s = steps[i];
@@ -1630,7 +1630,7 @@
         <div class="how-grid">
           <article><span>1</span><h3>Pick your class</h3><p>Primary 1 to 6. The questions match the year.</p></article>
           <article><span>2</span><h3>Choose a subject</h3><p>English, Maths, Science and 13 more — 100 each.</p></article>
-          <article><span>3</span><h3>Play and rise</h3><p>Earn XP, badges and a printable report for school.</p></article>
+          <article><span>3</span><h3>Review and return</h3><p>Read why, retry misses, print a learning report.</p></article>
         </div>
         <section class="pedagogy" aria-label="How this helps learning">
           <div><b>Retrieve</b><span>Answering beats re-reading notes.</span></div>
@@ -1763,9 +1763,9 @@
       return `<button class="${cls}" data-length="${n}"><strong>${n}</strong><span>${label}</span><em>~${etaMinutes(n)} min</em></button>`;
     }).join("");
     const modes = [
-      { id: "practice", title: "Practice", desc: "Instant marking and a short explanation." },
-      { id: "exam", title: "Exam", desc: "No hints until the end. Like a real test." },
-      { id: "timed", title: "Timed", desc: secondsFor() + " seconds per question. Think fast." }
+      { id: "practice", title: "Practice", desc: "Formative: mark and explain at once. Best for teaching." },
+      { id: "exam", title: "Exam", desc: "No hints until the end. Use for a mock paper." },
+      { id: "timed", title: "Timed", desc: secondsFor() + " seconds each. Builds pace, not a race." }
     ].map(function (m) {
       return `<button class="mode-card ${state.mode === m.id ? "on" : ""}" data-mode="${m.id}"><h4>${m.title}</h4><p>${m.desc}</p></button>`;
     }).join("");
@@ -1775,7 +1775,7 @@
         ${crumbs([{ label: "Home", go: "home" }, { label: "Class", go: "grade" }, { label: "Subjects", go: "subject" }, { label: name }])}
         <p class="kicker">${window.GRADE_INFO[state.grade].label} · ${esc(name)}</p>
         <h2 class="section-title">Set up your quiz</h2>
-        <p class="sub">Choose a mode and length. About ${etaMinutes(state.length)} minutes.</p>
+        <p class="sub">Choose a purpose and length. About ${etaMinutes(state.length)} minutes. Practice grades are for learning, not a school report.</p>
         <div class="mode-grid">${modes}</div>
         <div class="length-grid">${buttons}</div>
         <div class="setup-meta">
@@ -2187,6 +2187,7 @@
           ${row("calm", "Reduce motion")}
         </div>
         <p class="set-head">Classroom</p>
+        <p class="sub">Focus mode and larger text help on a shared screen. School name appears on certificates and reports.</p>
         <label class="field" for="school">School name (optional, on certificates)</label>
         <input id="school" class="search" type="text" maxlength="80" placeholder="e.g. St Mary’s Primary School" value="${esc(schoolName())}">
         <button class="btn btn-ghost" data-action="save-school" style="margin-top:8px">Save school</button>
@@ -2202,7 +2203,7 @@
           <label class="btn btn-ghost" for="backup-file">Import backup</label>
           <input id="backup-file" type="file" accept="application/json" hidden>
         </div>
-        <p class="sub" style="margin-top:16px"><button type="button" data-go="privacy">Privacy</button> · <button type="button" data-go="about">About</button></p>
+        <p class="sub" style="margin-top:16px"><button type="button" data-go="teachers">Teachers</button> · <button type="button" data-go="access">Accessibility</button> · <button type="button" data-go="privacy">Privacy</button> · <button type="button" data-go="about">About</button></p>
         <p class="sub" style="margin-top:22px">Install this quiz on your phone from the browser menu → Add to Home Screen. It works offline after the first visit.</p>
         <button class="btn btn-ghost" data-action="reset-progress">Reset progress</button>
         ${siteFooter()}
