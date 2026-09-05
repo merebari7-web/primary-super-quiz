@@ -164,6 +164,7 @@
     if (!progress.best) progress.best = {};
     if (!progress.history) progress.history = [];
     if (!progress.badges) progress.badges = [];
+    if (!Array.isArray(progress.favs)) progress.favs = [];
   }
   function googleClientId() {
     return (localStorage.getItem("psq-google-client-id") || window.GOOGLE_CLIENT_ID || "").trim();
@@ -1144,10 +1145,11 @@
           <h2 class="section-title">What’s new</h2>
           <h3>September 2026</h3>
           <ul>
-            <li>Lightning 5, Hint, pause, WhatsApp share and parent recap.</li>
-            <li>Ranks, Smart Practice, teacher report and study time.</li>
-            <li>About, Privacy, FAQ, How it works, and Add to Home Screen.</li>
-            <li>The site remembers your class and can match your phone’s dark mode.</li>
+            <li>Results now show a school-style grade (A–E), time, stars and combo.</li>
+            <li>Star favourite subjects. Flag questions in a quiz and review only those.</li>
+            <li>Rename a sibling, see a quiz clock, and get a today’s-plan card on home.</li>
+            <li>Settings grouped into Sound, Display, Classroom, Google and Data.</li>
+            <li>Layouts fit phones, tablets and landscape. Swipe left after an answer to go next.</li>
           </ul>
           <p>Hard-refresh (Ctrl+Shift+R) if a button looks old.</p>
           <div class="home-actions">
@@ -1535,22 +1537,28 @@
     const q = (state.query || "").toLowerCase();
     const chips = window.SUBJECT_GROUPS.map(function (gr) {
       return `<button class="filter-chip ${state.group === gr.id ? "on" : ""}" data-group="${gr.id}">${gr.label}</button>`;
-    }).join("");
+    }).join("") + `<button class="filter-chip ${state.group === "fav" ? "on" : ""}" data-group="fav">★ Fav</button>`;
     const cards = Object.keys(window.SUBJECTS).filter(function (k) {
       const s = window.SUBJECTS[k];
-      if (state.group !== "all" && s.group !== state.group) return false;
+      if (state.group === "fav") { if (!isFav(k)) return false; }
+      else if (state.group !== "all" && s.group !== state.group) return false;
       if (q && (s.name + s.short).toLowerCase().indexOf(q) < 0) return false;
       return true;
     }).map(function (k) {
       const s = window.SUBJECTS[k];
       const best = progress.best[g + "/" + k];
       const star = best ? "★".repeat(starsFor(best.pct)) + "☆".repeat(3 - starsFor(best.pct)) : "☆☆☆";
+      const fav = isFav(k);
       return `
-        <button class="card-btn subject-card" style="--accent:hsl(${s.hue},55%,38%)" data-pick-subject="${k}">
-          <div class="subj-icon">${s.icon}</div>
-          <h3>${s.name}</h3>
-          <p>100 questions · <span class="stars-mini">${star}</span>${best ? " " + best.pct + "%" : ""}</p>
-        </button>`;
+        <div class="subj-wrap">
+          <button type="button" class="fav-pin ${fav ? "on" : ""}" data-fav="${k}" aria-pressed="${fav}" aria-label="${fav ? "Unstar" : "Star"} ${s.name}">${fav ? "★" : "☆"}</button>
+          <button class="card-btn subject-card" style="--accent:hsl(${s.hue},55%,38%)" data-pick-subject="${k}">
+            <div class="subj-icon">${s.icon}</div>
+            <h3>${s.name}</h3>
+            <p>100 questions · <span class="stars-mini">${star}</span>${best ? " " + best.pct + "%" : ""}</p>
+            ${best ? `<div class="mastery" aria-hidden="true"><i style="width:${Math.max(6, best.pct)}%"></i></div>` : ""}
+          </button>
+        </div>`;
     }).join("");
     const missedN = (progress.missed[g] || []).length;
     return `
@@ -1561,15 +1569,17 @@
         <input class="search" id="subj-search" type="search" placeholder="Search subjects…" value="${esc(state.query)}">
         <div class="filter-row">${chips}</div>
         <div class="grid-subjects">
-          ${cards || "<p class='sub'>No subjects match.</p>"}
-          <button class="card-btn mix-card" data-pick-subject="mix">
+          ${cards || (state.group === "fav"
+            ? `<div class="empty-state" style="grid-column:1/-1"><strong>No favourites yet</strong><p>Tap the star on a subject you use often. It will stay on this device.</p></div>`
+            : "<p class='sub'>No subjects match.</p>")}
+          ${state.group === "fav" || q ? "" : `<button class="card-btn mix-card" data-pick-subject="mix">
             <div><h3>Champion Mix 🏆</h3><p>A mixed paper from every subject in this class.</p></div>
             <span class="btn btn-sun" style="pointer-events:none">Play mix</span>
           </button>
           <button class="card-btn smart-card" data-pick-subject="smart">
             <div><h3>Smart Practice 🧠</h3><p>Missed questions plus your weakest subjects.</p></div>
             <span class="btn btn-primary" style="pointer-events:none">Coach pick</span>
-          </button>
+          </button>`}
         </div>
         <div class="teacher-row no-print">
           <div>
@@ -1757,17 +1767,22 @@
       const ok = state.picked[i] === q.answer;
       if (filter === "missed" && ok) return "";
       if (filter === "correct" && !ok) return "";
+      if (filter === "flagged" && !state.flagged[i]) return "";
       if (qy && (q.q + " " + q.options.join(" ") + " " + (q.explain || "")).toLowerCase().indexOf(qy) < 0) return "";
-      const chosen = state.picked[i] == null || state.picked[i] < 0 ? "—" : q.options[state.picked[i]];
+      const opts = q.options.map(function (opt, oi) {
+        let cls = "rev-opt";
+        if (oi === q.answer) cls += " good";
+        else if (oi === state.picked[i]) cls += " bad";
+        return `<div class="${cls}"><b>${LETTERS[oi]}</b> ${esc(opt)}</div>`;
+      }).join("");
       return `
         <article class="review-item">
           <span class="tag ${ok ? "ok" : "no"}">${ok ? "Correct" : "Missed"}</span>${state.flagged[i] ? `<span class="tag">★ Flagged</span>` : ""}
           <h4>${i + 1}. ${esc(q.q)}</h4>
-          <p>Your answer: <strong>${esc(chosen)}</strong></p>
-          ${ok ? "" : `<p>Correct answer: <strong>${esc(q.options[q.answer])}</strong></p>`}
-          <p style="color:var(--muted);margin-top:6px">${esc(q.explain)}</p>
+          <div class="review-opts">${opts}</div>
+          <p style="color:var(--muted);margin-top:8px">${esc(q.explain)}</p>
         </article>`;
-    }).join("") || "<p class='sub'>Nothing in this filter.</p>";
+    }).join("") || `<div class="empty-state"><strong>Nothing in this filter</strong><p>Try All, or search a word from the question.</p></div>`;
     return `
       <div class="wrap">
         ${topbar("result")}
@@ -1798,6 +1813,7 @@
     const total = state.questions.length;
     const n = score();
     const pct = Math.round((n / total) * 100);
+    const gl = gradeLetter(pct);
     return `
       <div class="wrap">
         <div class="topbar no-print">
@@ -1816,7 +1832,9 @@
             <p class="script-name">${esc(state.name || "A brilliant pupil")}</p>
             ${schoolName() ? `<p>${esc(schoolName())}</p>` : ""}
             <p>has completed the <strong>${esc(subjectName(state.subject))}</strong> quiz<br>for <strong>${window.GRADE_INFO[state.grade].label}</strong></p>
-            <p style="margin:14px 0;font-weight:800;font-size:22px">Score: ${n} / ${total} (${pct}%)</p>
+            <div class="cert-grade" aria-label="Grade ${gl.mark}">${gl.mark}</div>
+            <p class="letter-label">${esc(gl.label)}</p>
+            <p style="margin:8px 0;font-weight:800;font-size:20px">${n} / ${total} · ${pct}%</p>
             <p>${todayPretty()} · ${state.xpGained} XP earned</p>
             <p style="margin-top:18px;font-weight:800;color:var(--teal)">Well done — keep learning.</p>
             <p class="cert-copy">© merebari web 2026</p>
@@ -1887,7 +1905,7 @@
       return `<tr><td>${s ? s.icon + " " + s.name : k}</td><td>${b ? b.pct + "%" : "Not yet"}</td><td>${b ? b.score + "/" + b.total : "—"}</td></tr>`;
     }).join("");
     const rows = (progress.history || []).slice(0, 20).map(function (h) {
-      return `<tr><td>${esc(h.date)}</td><td>P${h.grade}</td><td>${esc(subjectName(h.subject))}</td><td>${h.mode}</td><td>${h.score}/${h.total}</td><td>${h.pct}%</td></tr>`;
+      return `<tr><td>${esc(h.date)}</td><td>P${h.grade}</td><td>${esc(subjectName(h.subject))}</td><td>${h.mode}</td><td>${h.score}/${h.total}</td><td>${h.pct}% ${gradeLetter(h.pct).mark}</td></tr>`;
     }).join("") || `<tr><td colspan="6">No quizzes yet.</td></tr>`;
     const avg = (progress.history || []).length
       ? Math.round((progress.history.reduce(function (s, h) { return s + (h.pct || 0); }, 0) / progress.history.length))
@@ -2006,7 +2024,13 @@
     const g = state.grade || 1;
     const missed = (progress.missed[g] || []).slice(-20);
     if (!missed.length) {
-      return `<div class="wrap">${topbar("subject")}<p class="sub">No missed questions saved for this class yet.</p></div>`;
+      return `<div class="wrap">${topbar("subject")}
+        <div class="empty-state">
+          <strong>No homework yet</strong>
+          <p>Missed questions from this class will appear here as a printable retry sheet.</p>
+          <button class="btn btn-primary" data-go="subject">Choose a subject</button>
+        </div>
+      </div>`;
     }
     const body = missed.map(function (q, i) {
       const opts = (q.options || []).map(function (o, n) {
@@ -2146,8 +2170,15 @@
       dashboard: "My progress · Primary Super Quiz",
       settings: "Settings · Primary Super Quiz",
       account: "Account · Primary Super Quiz",
+      grade: "Choose class · Primary Super Quiz",
+      subject: "Subjects · Primary Super Quiz",
+      length: "Set up quiz · Primary Super Quiz",
       quiz: "Quiz · Primary Super Quiz",
       result: "Results · Primary Super Quiz",
+      review: "Answer review · Primary Super Quiz",
+      certificate: "Certificate · Primary Super Quiz",
+      exam: "Exam paper · Primary Super Quiz",
+      homework: "Homework · Primary Super Quiz",
       report: "Teacher report · Primary Super Quiz"
     };
     document.title = titles[state.screen] || "Primary Super Quiz";
