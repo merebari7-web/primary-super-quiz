@@ -377,6 +377,12 @@ input[type="text"]:focus { border-color: var(--teal); box-shadow: 0 0 0 4px var(
   line-height: 1;
   margin-bottom: 6px;
 }
+.grade-meta {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--teal-dark);
+  margin-top: 8px;
+}
 
 .card-btn h3 {
   font-family: var(--font-display);
@@ -750,6 +756,11 @@ input[type="text"]:focus { border-color: var(--teal); box-shadow: 0 0 0 4px var(
   padding: 8px;
 }
 .exam-head { text-align: center; margin-bottom: 16px; border-bottom: 2px solid #111; padding-bottom: 10px; }
+.exam-block {
+  margin: 18px 0 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
+}
 .exam h2 { font-family: var(--font-display); }
 .exam-q { margin: 0 0 16px; page-break-inside: avoid; }
 .exam-q p { font-weight: 700; margin-bottom: 6px; }
@@ -789,10 +800,34 @@ input[type="text"]:focus { border-color: var(--teal); box-shadow: 0 0 0 4px var(
 
 @media print {
   body { background: white; }
-  body::before, #confetti, .no-print { display: none !important; }
+  body::before, #confetti, .no-print, .loading-overlay, .fav-pin { display: none !important; }
   .wrap { width: 100%; padding: 0; }
   .certificate { box-shadow: none; }
 }
+
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 12px;
+  background: color-mix(in srgb, var(--cream) 82%, transparent);
+  backdrop-filter: blur(8px);
+  font-weight: 800;
+  color: var(--teal-dark);
+}
+.spinner {
+  width: 42px;
+  height: 42px;
+  border: 4px solid var(--line);
+  border-top-color: var(--teal);
+  border-radius: 50%;
+  animation: psq-spin .7s linear infinite;
+}
+@keyframes psq-spin { to { transform: rotate(360deg); } }
+html.calm .spinner { animation: none; opacity: 0.7; }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
@@ -828,6 +863,9 @@ html[data-theme="dark"] .opt { background: #121820; color: var(--ink); }
 html[data-theme="dark"] .opt.correct { background: #143326; }
 html[data-theme="dark"] .opt.wrong { background: #3a1c18; }
 html[data-theme="dark"] .certificate { background: #18222e; }
+html[data-theme="dark"] .rev-opt.good { background: #143326; }
+html[data-theme="dark"] .rev-opt.bad { background: #3a1c18; }
+html[data-theme="dark"] .fav-pin.on { color: var(--sun); }
 
 html.large { font-size: 22px; }
 

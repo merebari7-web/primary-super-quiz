@@ -1511,13 +1511,25 @@
   }
 
   function renderGrades() {
+    const stats = {};
+    (progress.history || []).forEach(function (h) {
+      const gg = h.grade;
+      if (!stats[gg]) stats[gg] = { n: 0, best: 0 };
+      stats[gg].n += 1;
+      if ((h.pct || 0) > stats[gg].best) stats[gg].best = h.pct;
+    });
     const cards = [1, 2, 3, 4, 5, 6].map(function (g) {
       const info = window.GRADE_INFO[g];
+      const st = stats[g];
+      const meta = st
+        ? st.n + " quiz" + (st.n === 1 ? "" : "zes") + " · best " + st.best + "% " + gradeLetter(st.best).mark
+        : "Not started yet";
       return `
         <button class="card-btn g${g}${state.grade === g ? " on" : ""}" data-grade="${g}">
           <div class="grade-no">${g}</div>
           <h3>${info.label}</h3>
           <p>${info.ages} · ${info.blurb}</p>
+          <p class="grade-meta">${state.grade === g ? "Your class · " : ""}${meta}</p>
         </button>`;
     }).join("");
     return `
@@ -1634,7 +1646,7 @@
 
   function renderQuiz() {
     const q = state.questions[state.index];
-    if (!q) return `<div class="wrap">${topbar("length")}<p>No questions.</p></div>`;
+    if (!q) return `<div class="wrap">${topbar("length")}<div class="empty-state"><strong>No questions</strong><p>This paper did not load. Go back and try again.</p><button class="btn btn-primary" data-go="length">Back to setup</button></div></div>`;
     const total = state.questions.length;
     const pct = Math.round((state.index / total) * 100);
     const subj = window.SUBJECTS[q.subject] || window.SUBJECTS[state.subject];
@@ -1856,7 +1868,7 @@
       return `<div class="badge-card ${on ? "" : "off"}"><div class="bi">${b.icon}</div><h4>${b.name}</h4><p>${b.desc}</p></div>`;
     }).join("");
     const recent = (progress.history || []).slice(0, 8).map(function (h) {
-      return `<li>${h.date} · P${h.grade} ${esc(subjectName(h.subject))} · ${h.score}/${h.total} (${h.pct}%)</li>`;
+      return `<li>${h.date} · P${h.grade} ${esc(subjectName(h.subject))} · ${h.score}/${h.total} (${h.pct}% ${gradeLetter(h.pct).mark})</li>`;
     }).join("");
     const empty = !progress.quizzes
       ? `<div class="empty-state">
@@ -1918,7 +1930,7 @@
         </div>
         <header class="exam-head">
           <h2>Primary Super Quiz — Progress report</h2>
-          <p>${esc(state.name || "Pupil")} · ${esc(r.icon + " " + r.name)} · ${progress.xp} XP</p>
+          <p>${esc(state.name || "Pupil")}${schoolName() ? " · " + esc(schoolName()) : ""} · ${esc(r.icon + " " + r.name)} · ${progress.xp} XP</p>
           <p>${todayPretty()} · © merebari web 2026</p>
         </header>
         <div class="exam-meta">
@@ -1928,12 +1940,13 @@
           <span>This week: ${progress.weekQuizzes || 0}/${window.WEEK_GOAL || 5}</span>
           <span>Study time: ${fmtDur(progress.studySec || 0)}</span>
         </div>
-        <h3 style="margin:16px 0 8px">Focus subjects (Primary ${g})</h3>
+        ${!progress.quizzes ? `<div class="empty-state no-print"><strong>No quizzes yet</strong><p>Play a paper and this report will fill in for a parent or teacher.</p></div>` : ""}
+        <h3 class="exam-block">Focus subjects (Primary ${g})</h3>
         <table class="report-table">
           <thead><tr><th>Subject</th><th>Best</th><th>Score</th></tr></thead>
           <tbody>${weak}</tbody>
         </table>
-        <h3 style="margin:18px 0 8px">Recent quizzes</h3>
+        <h3 class="exam-block">Recent quizzes</h3>
         <table class="report-table">
           <thead><tr><th>Date</th><th>Class</th><th>Subject</th><th>Mode</th><th>Score</th><th>%</th></tr></thead>
           <tbody>${rows}</tbody>
@@ -1948,6 +1961,7 @@
       <div class="wrap">
         ${topbar("home")}
         <h2 class="section-title">Account</h2>
+        <p class="sub">Progress stays on this device. Google is optional.</p>
         ${u ? `
           <div class="signed-box" style="margin:16px 0">
             <img class="signed-pic" referrerpolicy="no-referrer" src="${esc(u.picture || "images/icon-192.png")}" alt="">
@@ -1956,10 +1970,16 @@
               <p class="sub" style="margin:0">${esc(u.email)}</p>
             </div>
           </div>
-          <p class="sub">Your XP, badges and missed questions are saved for this Google account on this device.</p>
+          <p class="sub">${progress.xp} XP · ${progress.quizzes} quizzes on this phone.</p>
           <button class="btn btn-coral" data-action="signout">Sign out</button>
         ` : `
-          <p class="sub">Sign in with Google to keep your name and progress on this device. Younger pupils can skip this and play as a guest.</p>
+          <div class="signed-box" style="margin:16px 0">
+            <div>
+              <strong>${esc(state.name || "Guest")}</strong>
+              <p class="sub" style="margin:0">${progress.xp} XP · saved on this device</p>
+            </div>
+          </div>
+          <p class="sub">Sign in with Google to label this phone’s scores. Younger pupils can skip this and keep playing as a guest.</p>
           <div id="google-btn" class="google-slot"></div>
           ${googleClientId() ? "" : `<button class="google-fake" data-action="need-google" type="button">
             <span class="g-icon" aria-hidden="true"></span> Sign in with Google
@@ -2064,12 +2084,18 @@
   function renderExam() {
     const paper = state.examPaper;
     if (!paper) {
-      return `<div class="wrap">${topbar("subject")}<p class="sub">${state.loading ? "Preparing the exam paper…" : esc(state.error || "No paper loaded.")}</p></div>`;
+      return `<div class="wrap">${topbar("subject")}
+        <div class="empty-state">
+          <strong>${state.loading ? "Preparing the paper…" : "No paper yet"}</strong>
+          <p>${state.loading ? "Five questions from each subject — about a minute." : esc(state.error || "Print an exam from the subject screen.")}</p>
+          ${state.loading ? "" : `<button class="btn btn-primary" data-action="print-exam">Try again</button>`}
+        </div>
+      </div>`;
     }
     const g = state.grade;
     let body = "", key = "", total = 0;
     paper.forEach(function (block) {
-      body += `<h3 style="margin:18px 0 10px;border-bottom:1px solid #ccc;padding-bottom:4px">${esc(block.name)}</h3>`;
+      body += `<h3 class="exam-block">${esc(block.name)}</h3>`;
       key += `<h3 style="margin-top:14px">${esc(block.name)}</h3><div class="key-grid">`;
       block.questions.forEach(function (q, i) {
         total += 1;
@@ -2089,7 +2115,7 @@
         </div>
         <header class="exam-head">
           <h2>Primary Super Quiz — Examination Paper</h2>
-          <p>${window.GRADE_INFO[g].label}</p>
+          <p>${window.GRADE_INFO[g].label}${schoolName() ? " · " + esc(schoolName()) : ""}</p>
           <p>Time: 1½ hours · Answer all questions. Circle A, B, C or D.</p>
         </header>
         <div class="exam-meta">
@@ -2194,7 +2220,8 @@
       const ov = document.createElement("div");
       ov.className = "loading-overlay";
       ov.setAttribute("role", "status");
-      ov.innerHTML = "<div class=\"spinner\"></div><p>Loading questions…</p>";
+      ov.setAttribute("aria-live", "polite");
+      ov.innerHTML = "<div class=\"spinner\" aria-hidden=\"true\"></div><p>" + (state.screen === "exam" ? "Preparing the exam paper…" : "Loading questions…") + "</p>";
       app.appendChild(ov);
     }
     if (state.helpOpen && !app.querySelector('[aria-label="Help"]')) {
