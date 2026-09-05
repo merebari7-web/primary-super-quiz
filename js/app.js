@@ -2095,6 +2095,7 @@
       about: renderAbout, privacy: renderPrivacy, how: renderHow, faq: renderFaq, news: renderNews
     };
     app.innerHTML = (map[state.screen] || renderHome)();
+    document.documentElement.dataset.screen = state.screen || "home";
     const titles = {
       home: "Primary Super Quiz · Nigerian Primary 1–6 practice",
       about: "About · Primary Super Quiz",
@@ -2439,6 +2440,20 @@
     const url = location.href.split("#")[0];
     window.open("https://wa.me/?text=" + encodeURIComponent(resultShareText() + " " + url), "_blank");
   }
+
+  let swipeX = 0;
+  app.addEventListener("touchstart", function (e) {
+    if (state.screen !== "quiz" || !e.changedTouches || !e.changedTouches[0]) return;
+    swipeX = e.changedTouches[0].clientX;
+  }, { passive: true });
+  app.addEventListener("touchend", function (e) {
+    if (state.screen !== "quiz" || !e.changedTouches || !e.changedTouches[0]) return;
+    const dx = e.changedTouches[0].clientX - swipeX;
+    if (dx < -72 && state.revealed && state.mode !== "exam") {
+      const btn = app.querySelector('[data-action="next"]');
+      if (btn) btn.click();
+    }
+  }, { passive: true });
 
   app.addEventListener("click", function (e) {
     const t = e.target.closest("[data-go], [data-action], [data-grade], [data-pick-subject], [data-length], [data-opt], [data-mode], [data-group], [data-toggle], [data-filter], [data-profile], [data-del-profile], [data-fav]");

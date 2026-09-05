@@ -1315,3 +1315,114 @@ html.calm, html.calm * {
 }
 .fav-pin.on { background: var(--sun-soft); border-color: var(--sun); color: #8a5a00; }
 .life.on { background: var(--sun-soft); border-color: var(--sun); }
+
+html, body {
+  overflow-x: clip;
+  min-height: 100dvh;
+}
+#app { min-height: 100dvh; }
+.btn, .opt, .play-tile, .card-btn, .life, .icon-btn, .filter-chip, .length-btn, .mode-card {
+  touch-action: manipulation;
+}
+.btn, .opt { min-height: 48px; }
+.quiz-actions { flex-wrap: wrap; gap: 8px; }
+.quiz-head { flex-wrap: wrap; }
+.filter-row { scrollbar-width: none; }
+.filter-row::-webkit-scrollbar { display: none; }
+.report-table { width: 100%; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 900px) {
+  .home-stats { grid-template-columns: repeat(3, 1fr); }
+  .how-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 700px) {
+  html, body { font-size: 16px; }
+  html.large { font-size: 19px; }
+  .wrap {
+    width: min(1120px, calc(100% - 20px));
+    padding: max(12px, env(safe-area-inset-top)) 0 max(28px, env(safe-area-inset-bottom));
+  }
+  .topbar { gap: 8px; margin-bottom: 14px; padding: 8px 0; }
+  .icon-btn { width: 40px; height: 40px; border-radius: 12px; font-size: 16px; }
+  .ghost-row {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    max-width: 62vw;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2px;
+  }
+  .ghost-row > * { flex: 0 0 auto; }
+  .hero { padding: 16px; border-radius: 22px; gap: 16px; }
+  .hero-art, .hero-art img { min-height: 180px; }
+  h1 { font-size: clamp(28px, 8vw, 42px); }
+  .lead { font-size: 16px; }
+  .q-card { padding: 16px 14px 18px; border-radius: 20px; }
+  .opt { font-size: 16px; padding: 14px 12px; min-height: 52px; }
+  .badge { width: 32px; height: 32px; flex-basis: 32px; border-radius: 10px; }
+  .quiz-actions {
+    position: sticky;
+    bottom: 0;
+    z-index: 25;
+    margin: 12px -14px -18px;
+    padding: 10px 14px max(10px, env(safe-area-inset-bottom));
+    background: color-mix(in srgb, var(--card) 92%, transparent);
+    backdrop-filter: blur(10px);
+    justify-content: stretch;
+  }
+  .quiz-actions .btn { flex: 1; }
+  .key-hint { display: none; }
+  .mascot-float { display: none; }
+  .filter-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+    margin-right: -10px;
+  }
+  .filter-chip { flex: 0 0 auto; min-height: 40px; }
+  .trust-row, .how-grid, .audience, .home-stats { grid-template-columns: 1fr 1fr; }
+  .coach-card, .install-bar, .continue-banner, .teacher-row {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+  }
+  .continue-banner .btn, .coach-card .btn, .install-bar .btn { width: 100%; }
+  .result .actions, .home-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .result .actions .btn, .home-actions .btn { width: 100%; }
+  .certificate { padding: 18px 12px; }
+  .script-name { font-size: clamp(22px, 7vw, 36px); word-break: break-word; }
+  .report-table { font-size: 12px; }
+  .exam-meta { flex-direction: column; }
+  .smart-card, .mix-card { flex-direction: column; align-items: flex-start; }
+  .profile-row { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; padding-bottom: 4px; }
+  .profile-chip { flex: 0 0 auto; }
+  .foot-nav { gap: 10px 12px; }
+  .onboard { padding: 12px; padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+}
+
+@media (max-width: 520px) {
+  .grid-subjects { grid-template-columns: 1fr; }
+  .trust-row, .how-grid, .audience { grid-template-columns: 1fr; }
+  .result .actions, .home-actions { grid-template-columns: 1fr; }
+  .home-stats { grid-template-columns: 1fr 1fr; }
+  .stat-tile b { font-size: 22px; }
+  .length-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 380px) {
+  .play-tile strong { font-size: 16px; }
+  .brand { font-size: 15px; }
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+  .hero-art { display: none; }
+  .topbar { position: static; }
+  .onboard-card img { width: 64px; height: 64px; }
+  h1 { font-size: 28px; }
+}
+
+@media (hover: none) {
+  .btn:hover, .card-btn:hover, .play-tile:hover, .opt:hover:not(:disabled) { transform: none; }
+}
