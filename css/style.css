@@ -1,3 +1,32 @@
+@font-face {
+  font-family: "Fredoka";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/fredoka-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Fredoka";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/fredoka-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/nunito-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../fonts/nunito-800.woff2") format("woff2");
+}
+
 :root {
   --cream: #f7efe0;
   --paper: #fffaf1;
@@ -1762,4 +1791,122 @@ button.aud-card { width: 100%; text-align: left; color: inherit; cursor: pointer
 @media (max-width: 800px) {
   .trust-row, .pedagogy, .audience { grid-template-columns: 1fr 1fr; }
   .how-grid { grid-template-columns: 1fr; }
+}
+
+/* First-class product polish */
+#app.enter { animation: psq-in 0.32s ease; }
+@keyframes psq-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+html.calm #app.enter { animation: none; }
+
+button.brand {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+button.brand:hover { transform: none; }
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+.hero-name { display: grid; gap: 6px; width: min(320px, 100%); }
+.hero-name .field { margin: 0; }
+.hero-cta input[type="text"] { max-width: none; width: 100%; }
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero h1 { letter-spacing: -0.04em; }
+.lead { line-height: 1.5; }
+
+.opt {
+  min-height: 56px;
+  padding: 14px 16px;
+}
+.opt.picked {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+  box-shadow: 0 4px 0 var(--teal);
+}
+.opt.picked .badge {
+  background: var(--teal);
+  color: #fff;
+}
+html[data-theme="dark"] .opt.picked { background: #163a3a; }
+
+.quiz-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 25;
+  padding: 4px 0 8px;
+  background: color-mix(in srgb, var(--cream) 92%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.q-card { padding: 28px 26px 24px; }
+.question { letter-spacing: -0.02em; }
+
+.feedback { font-size: 16px; line-height: 1.45; }
+.feedback .explain-label { font-weight: 700; }
+.feedback .explain-label .kicker {
+  display: inline-flex;
+  margin: 0 8px 0 0;
+  padding: 3px 8px;
+  font-size: 11px;
+}
+
+.home-account {
+  margin: 18px 0 8px;
+  padding: 16px 18px;
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: 20px;
+}
+.home-account .field { margin-top: 10px; }
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 28px 0 12px;
+}
+.section-head .section-title { margin: 0; }
+
+.foot-brand img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.page-404 {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+.page-404 img {
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 700px) {
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta .btn { width: 100%; }
+  .hero-cta input[type="text"] { max-width: none; }
+  .quiz-sticky { top: 0; }
 }

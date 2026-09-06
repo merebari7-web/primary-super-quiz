@@ -1048,7 +1048,7 @@
   function topbar(backScreen) {
     const left = backScreen
       ? `<button class="icon-btn" data-go="${backScreen}" aria-label="Back">${svgIco("back")}</button>`
-      : `<div class="brand"><img src="images/icon-192.png" alt=""> Super Quiz</div>`;
+      : `<button type="button" class="brand" data-go="home" aria-label="Home"><img src="images/icon-192.png" alt=""> Super Quiz</button>`;
     return `
       ${netBanner()}
       <div class="topbar no-print">
@@ -1179,6 +1179,9 @@
           <h2 class="section-title">What’s new</h2>
           <h3>September 2026</h3>
           <ul>
+            <li>Boot splash, classroom app icons, and a cleaner home with the name field in the hero.</li>
+            <li>Exam mode now shows a selected answer without marking it green until the paper is scored.</li>
+            <li>Fonts load from this site, so type still looks right offline.</li>
             <li>For teachers, families, accessibility, and a plain-language “Why it works” page.</li>
             <li>Teacher reports now show strengths, gaps and a recommended next step.</li>
             <li>Results include a learning next step and the A–E practice scale.</li>
@@ -1583,7 +1586,11 @@
               <span class="chip">Works offline</span>
             </div>
             <div class="hero-cta">
-              <button class="btn btn-primary" data-action="start">Start practising →</button>
+              ${state.user ? "" : `<div class="hero-name">
+                <label class="field" for="pupil-name">First name</label>
+                <input id="pupil-name" type="text" maxlength="40" placeholder="e.g. Ada" value="${esc(state.name)}" autocomplete="given-name" enterkeyhint="go">
+              </div>`}
+              <button class="btn btn-primary" data-action="start">Start practising</button>
               <button class="btn btn-ghost" data-go="teachers">For teachers</button>
             </div>
           </div>
@@ -1623,25 +1630,12 @@
         </div>
         ${coachCard()}
         ${planCard()}
-        <div class="home-panel panel-rel">
-          <img class="mascot-float" src="images/mascot.png" alt="">
+        <div class="home-account">
           ${googleAuthBlock()}
-          ${state.user ? "" : `
-            <label class="field" for="pupil-name">What is your name?</label>
-            <input id="pupil-name" type="text" maxlength="40" placeholder="Type your name" value="${esc(state.name)}" autocomplete="name">
-          `}
-          <div class="home-actions">
-            <button class="btn btn-primary" data-action="start">Let’s go! →</button>
-            <button class="btn btn-ghost" data-go="dashboard">My progress</button>
-          </div>
         </div>
-        <section class="trust-row" aria-label="Highlights">
-          <div><b>16</b><span>subjects</span></div>
-          <div><b>9,600</b><span>questions</span></div>
-          <div><b>P1–P6</b><span>every class</span></div>
-          <div><b>Offline</b><span>after first visit</span></div>
-        </section>
-        <h2 class="section-title" style="margin-top:28px">How it works</h2>
+        <div class="section-head">
+          <h2 class="section-title">How it works</h2>
+        </div>
         <div class="how-grid">
           <article><span>1</span><h3>Pick your class</h3><p>Primary 1 to 6. The questions match the year.</p></article>
           <article><span>2</span><h3>Choose a subject</h3><p>English, Maths, Science and 13 more — 100 each.</p></article>
@@ -1822,9 +1816,9 @@
         if (i === q.answer) cls += " correct";
         else if (i === state.picked[state.index]) cls += " wrong";
         else cls += " dim";
-      } else if (exam && state.picked[state.index] === i) cls += " correct";
+      } else if (state.picked[state.index] === i) cls += " picked";
       return `
-        <button class="${cls}" data-opt="${i}" ${state.revealed && !exam ? "disabled" : ""} ${exam && state.picked[state.index] === i ? "aria-pressed=\"true\"" : ""}>
+        <button class="${cls}" data-opt="${i}" ${state.revealed && !exam ? "disabled" : ""} aria-pressed="${state.picked[state.index] === i}">
           <span class="badge">${LETTERS[i]}</span>
           <span>${esc(opt)}</span>
         </button>`;
@@ -1844,6 +1838,7 @@
         ${topbar("length")}
         ${crumbs([{ label: "Home", go: "home" }, { label: subjectName(state.subject) }, { label: "Q" + (state.index + 1) }])}
         ${helpEl()}
+        <div class="quiz-sticky">
         <div class="quiz-head">
           <div class="progress-meta">${iconFor(q.subject || state.subject)} ${esc(subj ? subj.name : subjectName(state.subject))} · P${state.grade}</div>
           <div class="ghost-row">
@@ -1855,6 +1850,7 @@
         </div>
         ${state.paused ? `<div class="pause-banner">Quiz paused. Timer is stopped.</div>` : ""}
         <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-label="Quiz progress"><span style="width:${pct}%"></span></div>
+        </div>
         <div class="q-card">
           <div class="q-label">Question ${state.index + 1} of ${total} · ${state.lightning ? "lightning" : state.mode}</div>
           <h2 class="question">${esc(q.q)}</h2>

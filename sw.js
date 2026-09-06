@@ -1,4 +1,4 @@
-const VERSION = "psq-v35";
+const VERSION = "psq-v36";
 const SHELL = [
   "./",
   "./index.html",
@@ -6,6 +6,10 @@ const SHELL = [
   "./js/config.js",
   "./js/app.js",
   "./manifest.json",
+  "./fonts/fredoka-600.woff2",
+  "./fonts/fredoka-700.woff2",
+  "./fonts/nunito-700.woff2",
+  "./fonts/nunito-800.woff2",
   "./images/mascot.png",
   "./images/hero-kids.jpg",
   "./images/trophy.png",

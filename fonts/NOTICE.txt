@@ -1,0 +1,3 @@
+Fredoka and Nunito are licensed under the SIL Open Font License, Version 1.1.
+https://scripts.sil.org/OFL
+Self-hosted so the quiz can use them offline after the first visit.
