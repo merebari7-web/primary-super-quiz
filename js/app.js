@@ -314,10 +314,11 @@
     };
   }
 
-  function todayKey() {
-    const d = new Date();
-    return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+  function todayKeyFrom(d) {
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+    return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
   }
+  function todayKey() { return todayKeyFrom(new Date()); }
   function weekKey() {
     const d = new Date();
     const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
@@ -365,7 +366,7 @@
     for (let i = 6; i >= 0; i--) {
       const d = new Date();
       d.setDate(d.getDate() - i);
-      const k = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+      const k = todayKeyFrom(d);
       const label = ["S", "M", "T", "W", "T", "F", "S"][d.getDay()];
       items.push(`<span class="dot ${days[k] ? "on" : ""}" title="${k}">${label}</span>`);
     }
@@ -823,6 +824,7 @@
   function iconFor(key) {
     if (key === "mix" || key === "daily") return "🏆";
     if (key === "missed") return "🎯";
+    if (key === "smart") return "🧠";
     return window.SUBJECTS[key] ? window.SUBJECTS[key].icon : "⭐";
   }
   function starsFor(pct) {
@@ -963,7 +965,7 @@
     if (progress.lastDay === day) return;
     const y = new Date();
     y.setDate(y.getDate() - 1);
-    const yk = y.getFullYear() + "-" + (y.getMonth() + 1) + "-" + y.getDate();
+    const yk = todayKeyFrom(y);
     progress.streak = progress.lastDay === yk ? progress.streak + 1 : 1;
     progress.lastDay = day;
     if (!progress.days) progress.days = {};
@@ -1042,7 +1044,8 @@
       combo: state.combo, maxCombo: state.maxCombo, used5050: state.used5050,
       usedSkip: state.usedSkip, usedHint: state.usedHint, daily: state.daily,
       lightning: state.lightning, hidden: state.hidden, quizStartedAt: state.quizStartedAt,
-      flagged: state.flagged || {}
+      flagged: state.flagged || {}, revealed: !!state.revealed, timer: state.timer,
+      paused: !!state.paused, hintText: state.hintText || ""
     }));
   }
 
@@ -1271,7 +1274,7 @@
     for (let i = 6; i >= 0; i--) {
       const d = new Date();
       d.setDate(d.getDate() - i);
-      const k = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+      const k = todayKeyFrom(d);
       const v = days[k] || 0;
       if (v > max) max = v;
       vals.push({ k: k, v: v, label: ["S", "M", "T", "W", "T", "F", "S"][d.getDay()] });
@@ -1874,7 +1877,7 @@
             <button class="life life-speak" data-action="speak">🔊 Read aloud</button>
             <button class="life" data-action="hint" ${state.usedHint || exam || showMark ? "disabled" : ""}>Hint</button>
             <button class="life" data-action="fifty" ${state.used5050 || exam ? "disabled" : ""}>50 / 50</button>
-            <button class="life" data-action="skip" ${state.usedSkip ? "disabled" : ""}>Skip</button>
+            <button class="life" data-action="skip" ${state.usedSkip || exam ? "disabled" : ""}>Skip</button>
             <button class="life ${state.flagged[state.index] ? "on" : ""}" data-action="flag">${state.flagged[state.index] ? "★ Flagged" : "☆ Flag"}</button>
           </div>
           <div class="quiz-actions">
@@ -2362,24 +2365,30 @@
       }
       if (state.timer <= 0) {
         stopTick();
+        if (state.mode === "exam") {
+          if (state.picked[state.index] == null) state.picked[state.index] = -1;
+          goNext(true);
+          return;
+        }
         if (!state.revealed) {
           if (state.picked[state.index] == null) state.picked[state.index] = -1;
           state.revealed = true;
           state.combo = 0;
           playWrong();
-          if (state.mode === "timed") {
-            showReact(false, true);
-            render();
-            reactTimer = setTimeout(function () { goNext(true); }, 1400);
-            return;
-          }
+          showReact(false, true);
+          render();
+          reactTimer = setTimeout(function () { goNext(true); }, 1400);
+          return;
         }
         render();
       }
     }, 1000);
   }
 
+  var lastScreen = null;
   function render() {
+    const screenChanged = lastScreen !== state.screen;
+    lastScreen = state.screen;
     const map = {
       home: renderHome, grade: renderGrades, subject: renderSubjects, length: renderLength,
       quiz: renderQuiz, result: renderResult, review: renderReview, certificate: renderCertificate,
@@ -2420,6 +2429,8 @@
     if (hashScreens[state.screen]) {
       const h = "#" + state.screen;
       if (location.hash !== h) try { history.replaceState(null, "", h); } catch (e) {}
+    } else if (location.hash && location.hash !== "#") {
+      try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {}
     }
     app.classList.remove("enter");
     try { void app.offsetWidth; } catch (e) {}
@@ -2516,6 +2527,7 @@
     }
     if (state.screen === "quiz") {
       startTick();
+      startClock();
       if (settings.tts) {
         const q = state.questions[state.index];
         if (q && !state.revealed && state.spokenFor !== state.index) {
@@ -2533,7 +2545,7 @@
       const pct = Math.round((score() / Math.max(1, state.questions.length)) * 100);
       if (pct >= 70 || state.rankedUp) launchConfetti();
     } else stopConfetti();
-    if (state.screen !== "subject") window.scrollTo(0, 0);
+    if (screenChanged && state.screen !== "subject" && state.screen !== "review") window.scrollTo(0, 0);
   }
 
   function startFromHome() {
@@ -2560,6 +2572,17 @@
 
   async function beginQuiz(opts) {
     opts = opts || {};
+    state.daily = !!opts.daily;
+    state.lightning = !!opts.lightning;
+    if (state.lightning) {
+      state.length = 5;
+      state.mode = "timed";
+      if (!state.subject || state.subject === "daily") state.subject = "mix";
+    }
+    if (state.daily) {
+      state.length = 10;
+      state.mode = "practice";
+    }
     state.loading = true;
     state.error = "";
     render();
@@ -2580,13 +2603,6 @@
       state.combo = 0;
       state.maxCombo = 0;
       state.newBadges = [];
-      state.daily = !!opts.daily;
-      state.lightning = !!opts.lightning;
-      if (state.lightning) {
-        state.length = 5;
-        state.mode = "timed";
-        if (!state.subject || state.subject === "daily") state.subject = "mix";
-      }
       state.paused = false;
       state.timer = secondsFor();
       state.reviewFilter = "all";
@@ -2763,6 +2779,7 @@
   }, { passive: true });
 
   app.addEventListener("click", function (e) {
+    if (e.target.closest(".onboard-card") && !e.target.closest(".onboard-card [data-action], .onboard-card .btn")) return;
     const t = e.target.closest("[data-go], [data-action], [data-grade], [data-pick-subject], [data-length], [data-opt], [data-mode], [data-group], [data-toggle], [data-filter], [data-profile], [data-del-profile], [data-fav]");
     if (!t) return;
     ensureAudio();
@@ -2992,7 +3009,7 @@
       state.used5050 = true;
       render();
     }
-    if (action === "skip" && !state.usedSkip) {
+    if (action === "skip" && !state.usedSkip && state.mode !== "exam") {
       state.usedSkip = true;
       state.picked[state.index] = state.picked[state.index] == null ? -1 : state.picked[state.index];
       goNext();
@@ -3081,6 +3098,7 @@
       render();
       return;
     }
+    if (state.helpOpen) return;
     if (state.screen !== "quiz") return;
     if (e.key === "h" || e.key === "H") {
       const btn = app.querySelector('[data-action="hint"]');
