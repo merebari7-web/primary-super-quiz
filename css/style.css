@@ -1997,3 +1997,59 @@ html[data-theme="dark"] .subj-icon {
 @media print {
   .score-ring { color: #0a5a56; }
 }
+
+.timer-bar {
+  display: inline-block;
+  width: 72px;
+  height: 8px;
+  border-radius: 99px;
+  background: var(--line);
+  overflow: hidden;
+  vertical-align: middle;
+}
+.timer-bar > i {
+  display: block;
+  height: 100%;
+  background: var(--teal);
+  border-radius: inherit;
+  transition: width 0.9s linear;
+}
+.timer-wrap.warn .timer-bar > i { background: var(--coral); }
+.timer-num { font-variant-numeric: tabular-nums; }
+
+.dash-hero {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--card);
+  border: 3px solid var(--line);
+  border-radius: 24px;
+  padding: 16px 18px;
+  margin: 12px 0 16px;
+}
+.dash-hero .score-ring { width: 112px; height: 112px; }
+
+.exam-q { break-inside: avoid; page-break-inside: avoid; }
+.exam-head { border-bottom: 3px solid var(--teal); padding-bottom: 10px; margin-bottom: 16px; }
+
+html[data-theme="dark"] .timer-bar { background: #2c3a4a; }
+html[data-theme="dark"] .dash-cell { background: #1b2430; }
+html[data-theme="dark"] .week-card,
+html[data-theme="dark"] .coach-card,
+html[data-theme="dark"] .dash-hero,
+html[data-theme="dark"] .empty-state {
+  background: #1b2430;
+  border-color: #2c3a4a;
+}
+html[data-theme="dark"] .search { background: #121820; color: var(--ink); }
+html[data-theme="dark"] .q-card {
+  background: linear-gradient(180deg, #163a3a, var(--card) 48px);
+}
+html[data-theme="dark"] .play-tile { background: #1b2430; }
+html[data-theme="dark"] .opt.picked { background: #163a3a; }
+
+@media print {
+  .exam-q { page-break-inside: avoid; }
+  .exam-head { border-color: #0e7c76; }
+  .timer-bar, .score-ring-arc { transition: none; }
+}

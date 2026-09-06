@@ -1860,7 +1860,10 @@
     const canNext = exam ? state.picked[state.index] != null || state.revealed : state.revealed;
     const nextLabel = state.index === total - 1 ? "See my score" : "Next →";
     const timer = state.mode === "timed"
-      ? `<div class="timer-wrap ${state.timer <= 8 ? "warn" : ""}">⏱ ${state.paused ? "Paused" : state.timer + "s"}</div>
+      ? `<div class="timer-wrap ${state.timer <= 8 ? "warn" : ""}">
+            <span class="timer-num">${state.paused ? "Paused" : state.timer + "s"}</span>
+            <span class="timer-bar" aria-hidden="true"><i style="width:${Math.max(0, Math.round((state.timer / Math.max(1, secondsFor())) * 100))}%"></i></span>
+          </div>
          <button class="life" data-action="${state.paused ? "resume-quiz" : "pause-quiz"}">${state.paused ? "▶ Resume" : "⏸ Pause"}</button>` : "";
     return `
       <div class="wrap${settings.focus ? " focus-quiz" : ""}">
@@ -1874,7 +1877,7 @@
             ${state.combo >= 2 ? `<span class="combo">🔥 x${state.combo}</span>` : ""}
             ${timer}
             <div class="progress-meta" id="sess-clock">🕒 ${fmtClock((Date.now() - (state.quizStartedAt || Date.now())) / 1000)}</div>
-            <div class="progress-meta">${state.index + 1} / ${total}</div>
+            <div class="progress-meta">${state.index + 1} / ${total}${state.lightning || total - state.index <= 1 ? "" : " · ~" + etaMinutes(total - state.index) + " min left"}</div>
           </div>
         </div>
         ${state.paused ? `<div class="pause-banner">Quiz paused. Timer is stopped.</div>` : ""}
@@ -2081,6 +2084,7 @@
         <p class="kicker">${esc(state.name || "Pupil")}</p>
         <h2 class="section-title">My progress</h2>
         ${empty}
+        ${accuracyPct() != null ? `<div class="dash-hero">${scoreRing(accuracyPct())}<div><p class="kicker">Overall accuracy</p><p class="sub" style="margin:0">Practice grades only · ${progress.quizzes} quiz${progress.quizzes === 1 ? "" : "zes"}</p></div></div>` : ""}
         <div class="home-stats">
           <div class="stat-tile"><b>${progress.xp}</b><span>XP</span></div>
           <div class="stat-tile"><b>${progress.streak}</b><span>Streak</span></div>
@@ -2339,9 +2343,9 @@
           <button class="btn btn-primary" data-action="print">Print paper</button>
         </div>
         <header class="exam-head">
-          <h2>Primary Super Quiz — Examination Paper</h2>
+          <h2>Primary Super Quiz — Practice paper</h2>
           <p>${window.GRADE_INFO[g].label}${schoolName() ? " · " + esc(schoolName()) : ""}</p>
-          <p>Time: 1½ hours · Answer all questions. Circle A, B, C or D.</p>
+          <p>Independent practice · not an official exam. Time: about 1½ hours. Circle A, B, C or D.</p>
         </header>
         <div class="exam-meta">
           <span>Name: ______________________________</span>
@@ -2377,8 +2381,15 @@
       state.timer -= 1;
       const el = document.querySelector(".timer-wrap");
       if (el) {
-        el.textContent = "⏱ " + state.timer + "s";
         el.classList.toggle("warn", state.timer <= 8);
+        const num = el.querySelector(".timer-num");
+        const bar = el.querySelector(".timer-bar > i");
+        if (num) num.textContent = state.timer + "s";
+        else el.textContent = "⏱ " + state.timer + "s";
+        if (bar) {
+          const tot = Math.max(1, secondsFor());
+          bar.style.width = Math.max(0, Math.min(100, Math.round((state.timer / tot) * 100))) + "%";
+        }
       }
       if (settings.sound && (state.timer === 8 || state.timer === 5 || (state.timer <= 3 && state.timer > 0))) {
         tone(state.timer <= 3 ? 920 : 740, 0.05, "sine", 0.028);
