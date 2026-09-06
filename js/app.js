@@ -3232,12 +3232,54 @@
   }
 
   /* ==========================================================================
+     IN-APP LOADING OVERLAY & EDUCATIONAL TIPS
+     ========================================================================== */
+
+  function renderLoadingOverlay(msg) {
+    const tips = [
+      "Active retrieval practice strengthens neural pathways and memory consolidation.",
+      "Desirable difficulty: solving challenging problems accelerates durable learning.",
+      "Take your time to eliminate unlikely options using the 50:50 tool.",
+      "Nigeria comprises 36 States and the Federal Capital Territory (FCT Abuja).",
+      "Using the interactive Whiteboard Scratchpad improves problem-solving accuracy.",
+      "Spacing your study sessions across the week prevents the forgetting curve.",
+      "Dual-coding: pairing visual representations with equations deepens schema construction."
+    ];
+    const tip = tips[Math.floor(Math.random() * tips.length)];
+    return `
+      <div class="in-app-loading-overlay">
+        <div class="in-app-loading-card">
+          <div class="in-app-spinner-box">
+            <div class="in-app-spinner"></div>
+            <div class="in-app-spinner-icon">🦉</div>
+          </div>
+          <h3 class="text-xl font-black text-gray-900 mt-4">${esc(msg || "Loading Questions & Resources...")}</h3>
+          <p class="text-xs text-gray-500 mt-1">Calibrating questions and psychometric parameters...</p>
+          <div class="mt-4 p-3.5 rounded-xl bg-teal-50 border border-teal-100 text-xs text-teal-900 text-left flex items-start gap-2.5">
+            <span class="text-base">💡</span>
+            <div>
+              <span class="font-bold">Pedagogical Tip:</span>
+              <span>${esc(tip)}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  /* ==========================================================================
      MAIN ROUTING RENDERER
      ========================================================================== */
 
   function render() {
     if (!app) return;
     let html = "";
+    if (state.loading) {
+      html = renderTopBar("home") + renderLoadingOverlay(state.loadingMsg || "Loading Questions & Resources...");
+      app.innerHTML = html;
+      window.scrollTo(0, 0);
+      return;
+    }
     switch (state.screen) {
       case "home": html = renderHome(); break;
       case "grade": html = renderGrades(); break;
@@ -4062,7 +4104,17 @@
     navigator.serviceWorker.register("sw.js").catch(function () {});
   }
 
-  // Initial Boot Render
+  // Initial Boot Render & Loader Dismissal
   render();
+
+  const initLoader = document.getElementById("initial-loader");
+  if (initLoader) {
+    setTimeout(function () {
+      initLoader.classList.add("loaded");
+      setTimeout(function () {
+        if (initLoader.parentNode) initLoader.parentNode.removeChild(initLoader);
+      }, 500);
+    }, 350);
+  }
 
 })();
