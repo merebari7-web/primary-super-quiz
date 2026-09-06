@@ -1633,7 +1633,7 @@ html, body {
   }
   .filter-chip { flex: 0 0 auto; min-height: 40px; }
   .trust-row, .how-grid, .audience, .home-stats { grid-template-columns: 1fr 1fr; }
-  .coach-card, .install-bar, .continue-banner, .teacher-row {
+  .coach-card, .install-bar, .continue-banner, .teacher-row, .last-quiz {
     flex-direction: column;
     align-items: stretch;
     text-align: left;
@@ -2032,11 +2032,51 @@ html[data-theme="dark"] .subj-icon {
 .exam-q { break-inside: avoid; page-break-inside: avoid; }
 .exam-head { border-bottom: 3px solid var(--teal); padding-bottom: 10px; margin-bottom: 16px; }
 
+.last-quiz {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--card);
+  border: 3px solid var(--line);
+  border-radius: 20px;
+  padding: 14px 16px;
+  margin: 12px 0 4px;
+}
+.last-quiz p { margin: 4px 0 0; color: var(--muted); font-weight: 700; }
+.hist-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.hist-card {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  background: var(--card);
+  border: 3px solid var(--line);
+  border-radius: 16px;
+  padding: 10px 12px;
+}
+.hist-card b {
+  grid-row: 1 / span 2;
+  align-self: center;
+  font-size: 22px;
+  color: var(--teal);
+}
+.hist-card span { font-weight: 800; }
+.hist-card em { color: var(--muted); font-style: normal; font-weight: 700; }
+
 html[data-theme="dark"] .timer-bar { background: #2c3a4a; }
 html[data-theme="dark"] .dash-cell { background: #1b2430; }
 html[data-theme="dark"] .week-card,
 html[data-theme="dark"] .coach-card,
 html[data-theme="dark"] .dash-hero,
+html[data-theme="dark"] .last-quiz,
+html[data-theme="dark"] .hist-card,
 html[data-theme="dark"] .empty-state {
   background: #1b2430;
   border-color: #2c3a4a;

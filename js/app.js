@@ -1207,6 +1207,7 @@
           <h2 class="section-title">What’s new</h2>
           <h3>September 2026</h3>
           <ul>
+            <li>Home shows your last paper. Review can filter skipped items. My progress lists recent quizzes as cards. Banks prefetch if a class is already saved.</li>
             <li>Results now show a score ring plus correct / missed / skipped. Papers prefetch in the background after you pick a class.</li>
             <li>Boot splash, classroom app icons, and a cleaner home with the name field in the hero.</li>
             <li>Exam mode now shows a selected answer without marking it green until the paper is scored.</li>
@@ -1659,6 +1660,10 @@
         </div>
         ${coachCard()}
         ${planCard()}
+        ${(progress.history || [])[0] ? `<div class="last-quiz">
+          <div><strong>Last paper</strong><p>P${progress.history[0].grade} ${esc(subjectName(progress.history[0].subject))} · ${progress.history[0].score}/${progress.history[0].total} (${progress.history[0].pct}% ${gradeLetter(progress.history[0].pct).mark})</p></div>
+          <button type="button" class="btn btn-ghost" data-go="dashboard">See progress</button>
+        </div>` : ""}
         <div class="home-account">
           ${googleAuthBlock()}
         </div>
@@ -1973,10 +1978,13 @@
   function renderReview() {
     const filter = state.reviewFilter || "all";
     const qy = (state.reviewQuery || "").toLowerCase();
+    const skippedN = state.questions.filter(function (q, i) { return state.picked[i] == null || state.picked[i] < 0; }).length;
     const missedN = state.questions.filter(function (q, i) { return state.picked[i] !== q.answer; }).length;
     const items = state.questions.map(function (q, i) {
       const ok = state.picked[i] === q.answer;
-      if (filter === "missed" && ok) return "";
+      const skipped = state.picked[i] == null || state.picked[i] < 0;
+      if (filter === "missed" && (ok || skipped)) return "";
+      if (filter === "skipped" && !skipped) return "";
       if (filter === "correct" && !ok) return "";
       if (filter === "flagged" && !state.flagged[i]) return "";
       if (qy && (q.q + " " + q.options.join(" ") + " " + (q.explain || "")).toLowerCase().indexOf(qy) < 0) return "";
@@ -1988,7 +1996,7 @@
       }).join("");
       return `
         <article class="review-item">
-          <span class="tag ${ok ? "ok" : "no"}">${ok ? "Correct" : "Missed"}</span>${state.flagged[i] ? `<span class="tag">★ Flagged</span>` : ""}
+          <span class="tag ${ok ? "ok" : "no"}">${ok ? "Correct" : skipped ? "Skipped" : "Missed"}</span>${state.flagged[i] ? `<span class="tag">★ Flagged</span>` : ""}
           <h4>${i + 1}. ${esc(q.q)}</h4>
           <div class="review-opts">${opts}</div>
           <p class="explain-label" style="color:var(--muted);margin-top:8px"><span class="kicker">Explanation</span> ${esc(q.explain)}</p>
@@ -2002,7 +2010,8 @@
         <input class="search" id="review-search" type="search" placeholder="Search this paper…" value="${esc(state.reviewQuery || "")}">
         <div class="filter-row">
           <button class="filter-chip ${filter === "all" ? "on" : ""}" data-filter="all">All ${state.questions.length}</button>
-          <button class="filter-chip ${filter === "missed" ? "on" : ""}" data-filter="missed">Missed ${missedN}</button>
+          <button class="filter-chip ${filter === "missed" ? "on" : ""}" data-filter="missed">Missed ${missedN - skippedN}</button>
+          <button class="filter-chip ${filter === "skipped" ? "on" : ""}" data-filter="skipped">Skipped ${skippedN}</button>
           <button class="filter-chip ${filter === "correct" ? "on" : ""}" data-filter="correct">Correct ${state.questions.length - missedN}</button>
           <button class="filter-chip ${filter === "flagged" ? "on" : ""}" data-filter="flagged">Flagged ${Object.keys(state.flagged || {}).length}</button>
         </div>
@@ -2069,7 +2078,7 @@
       return `<div class="badge-card ${on ? "" : "off"}"><div class="bi">${b.icon}</div><h4>${b.name}</h4><p>${b.desc}</p></div>`;
     }).join("");
     const recent = (progress.history || []).slice(0, 8).map(function (h) {
-      return `<li>${h.date} · P${h.grade} ${esc(subjectName(h.subject))} · ${h.score}/${h.total} (${h.pct}% ${gradeLetter(h.pct).mark})</li>`;
+      return `<li class="hist-card"><b>${h.pct}%</b><span>P${h.grade} ${esc(subjectName(h.subject))}</span><em>${esc(h.date)} · ${h.score}/${h.total} · ${gradeLetter(h.pct).mark}</em></li>`;
     }).join("");
     const empty = !progress.quizzes
       ? `<div class="empty-state">
@@ -2099,7 +2108,7 @@
         <h3 class="section-title" style="font-size:24px;margin-top:28px">This week</h3>
         ${weekActivity()}
         <h3 class="section-title" style="font-size:24px;margin-top:28px">Recent</h3>
-        ${recent ? `<ul class="sub">${recent}</ul>` : `<p class="sub">No quizzes yet — start one and it will show here.</p>`}
+        ${recent ? `<ul class="hist-list">${recent}</ul>` : `<p class="sub">No quizzes yet — start one and it will show here.</p>`}
         <div class="actions" style="margin-top:16px">
           <button class="btn btn-primary" data-go="report">Teacher report</button>
           <button class="btn btn-sun" data-action="parent-recap">WhatsApp parent</button>
@@ -3242,6 +3251,7 @@
   });
   var boot = (location.hash || "").replace("#", "");
   if (HASH_OK[boot]) state.screen = boot;
+  if (state.grade) prefetchGrade(state.grade);
 
   render();
 })();
