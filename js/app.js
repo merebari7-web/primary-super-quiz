@@ -78,7 +78,6 @@
   let clockTimer = null;
   let toastTimer = null;
   let reactTimer = null;
-  let autoNextTimer = null;
   let speakTimer = null;
   let ttsWatch = null;
   let gsiInited = false;
@@ -948,7 +947,6 @@
     return false;
   }
   function jumpTo(i) {
-    stopAutoNext();
     if (i < 0 || i >= state.questions.length) return;
     if (i !== state.index && !canJump(i) && !(state.mode === "exam")) return;
     state.maxIndex = Math.max(state.maxIndex || 0, state.index, i);
@@ -1190,10 +1188,6 @@
     clearTimeout(reactTimer);
     reactTimer = setTimeout(hideReact, ok ? 1700 : 1900);
   }
-  function stopAutoNext() {
-    clearTimeout(autoNextTimer);
-    autoNextTimer = null;
-  }
   function hideReact() {
     clearTimeout(reactTimer);
     if (!state.react) return;
@@ -1284,7 +1278,6 @@
           <h2 class="section-title">What’s new</h2>
           <h3>September 2026</h3>
           <ul>
-            <li>A right answer now moves on to the next question by itself. A miss stays on screen so you can read why.</li>
             <li>Question map, Back, and a finish check if items are still skipped. Replay last paper from home. Today’s plan tracks your 10-question goal. Mixed papers show a subject split on the score screen.</li>
             <li>Home shows your last paper. Review can filter skipped items. My progress lists recent quizzes as cards. Banks prefetch if a class is already saved.</li>
             <li>Results now show a score ring plus correct / missed / skipped. Papers prefetch in the background after you pick a class.</li>
@@ -2002,7 +1995,7 @@
             ${canNext ? `<button class="btn btn-primary" data-action="next">${nextLabel}</button>` : ""}
             <button class="btn btn-ghost" data-action="quit-quiz">Quit</button>
           </div>
-          <p class="key-hint no-print">Tip: A–D to answer · right answers move on · ← → map · H hint · F flag · P pause</p>
+          <p class="key-hint no-print">Tip: A–D to answer · ← → map · H hint · F flag · P pause · 🔊 reads the question</p>
         </div>
         ${reactPopup()}
         ${toastEl()}
@@ -2770,7 +2763,6 @@
   }
 
   function finishQuiz() {
-    stopAutoNext();
     stopTick();
     hideReact();
     recordResult();
@@ -2779,7 +2771,6 @@
   }
 
   function goNext(fromTimer) {
-    stopAutoNext();
     state.maxIndex = Math.max(state.maxIndex || 0, state.index);
     if (state.index >= state.questions.length - 1) {
       if (unansweredCount() && !state.forceFinish) {
@@ -2828,16 +2819,6 @@
     showReact(ok, false);
     saveResume();
     render();
-    if (ok) {
-      stopTick();
-      stopAutoNext();
-      const calm = settings.calm || (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-      autoNextTimer = setTimeout(function () {
-        autoNextTimer = null;
-        if (state.screen !== "quiz" || !state.revealed) return;
-        goNext();
-      }, calm ? 400 : 1050);
-    }
   }
 
   async function buildExam() {
@@ -3103,7 +3084,6 @@
     }
     if (action === "quit-quiz") {
       if (!confirm("Leave this quiz? You can resume from home.")) return;
-      stopAutoNext();
       stopTick();
       saveResume();
       state.screen = "subject";
@@ -3189,7 +3169,7 @@
     if (action === "save-cert") saveCertPng();
     if (action === "share") shareResult();
     if (action === "whatsapp") shareWhatsApp();
-    if (action === "pause-quiz") { state.paused = true; stopAutoNext(); stopTick(); render(); }
+    if (action === "pause-quiz") { state.paused = true; stopTick(); render(); }
     if (action === "resume-quiz") { state.paused = false; startTick(); render(); }
     if (action === "practice-missed") {
       if (!state.grade) { state.screen = "grade"; render(); return; }
@@ -3224,12 +3204,7 @@
       toast("Paste your Google Client ID here, then return home to sign in.");
       render();
     }
-    if (action === "dismiss-react") {
-      const ok = state.react && state.react.ok;
-      hideReact();
-      if (ok && state.screen === "quiz" && state.revealed) goNext();
-      return;
-    }
+    if (action === "dismiss-react") { hideReact(); return; }
     if (action === "rename-profile") { state.renamingProfile = true; render(); }
     if (action === "save-rename") {
       const box = document.getElementById("rename-pupil");
