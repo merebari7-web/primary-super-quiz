@@ -99,7 +99,10 @@
     // LEARNING LAB & MANIPULATIVES STATE
     // ==========================================
     lab: {
-      tab: "frac", // "frac", "abacus", "times", "sieve", "clock", "unit", "states", "naira", "solar", "body"
+      tab: "frac",
+      shapeFilter: "all",
+      elementSearch: "",
+      timelineSearch: "", // "frac", "abacus", "times", "sieve", "clock", "unit", "states", "naira", "solar", "body"
       fracNum: 3,
       fracDen: 4,
       abacusTh: 2,
@@ -192,6 +195,32 @@
       paperType: "A",
       savedPapers: loadJSON("psq-saved-exams-v1", [])
     },
+
+    // ==========================================
+    // 5E LESSON PLAN STUDIO STATE
+    // ==========================================
+    lessonPlans: {
+      activeTemplate: "maths_p5_percentages",
+      customSubject: "maths",
+      customGrade: 5,
+      customTopic: "Fractions & Decimals",
+      customDuration: "45 Minutes"
+    },
+
+    // ==========================================
+    // PSYCHOMETRIC ITEM ANALYSIS STATE
+    // ==========================================
+    itemAnalysis: {
+      selectedSubject: "maths",
+      selectedGrade: 5,
+      sampleSize: 120,
+      activeItemIndex: 0
+    },
+
+    curriculumTab: "nerdc",
+    curriculumCrosswalkA: "nerdc",
+    curriculumCrosswalkB: "cambridge",
+    whyTab: "compendium",
 
     // ==========================================
     // CBT EXAM ROOM STATE
@@ -3224,6 +3253,8 @@
       case "privacy": html = renderPrivacy(); break;
       case "account": html = renderAccount(); break;
       case "teachers": html = renderTeachers(); break;
+      case "lesson_plans": html = renderLessonPlans(); break;
+      case "item_analysis": html = renderItemAnalysis(); break;
       case "exam_setter": html = renderExamSetter(); break;
       case "exam_preview": html = renderExamPreview(); break;
       case "omr_sheet": html = renderOMRSheet(); break;
@@ -3262,7 +3293,7 @@
      ========================================================================== */
 
   document.addEventListener("click", function (e) {
-    const target = e.target.closest("[data-action], [data-go], [data-set-grade], [data-pick-subj], [data-drill-subj], [data-start-topic-quiz], [data-set-group], [data-set-len], [data-set-mode], [data-opt], [data-set-conf], [data-set-stool], [data-set-scolor], [data-rate-card], [data-set-theme], [data-set-font], [data-set-cur-tab], [data-switch-profile], [data-set-rfilter], [data-set-lab-tab], [data-set-unit-cat], [data-set-state-zone]");
+    const target = e.target.closest("[data-action], [data-go], [data-set-grade], [data-pick-subj], [data-drill-subj], [data-start-topic-quiz], [data-set-group], [data-set-len], [data-set-mode], [data-opt], [data-set-conf], [data-set-stool], [data-set-scolor], [data-rate-card], [data-set-theme], [data-set-font], [data-set-cur-tab], [data-set-why-tab], [data-switch-profile], [data-set-rfilter], [data-set-lab-tab], [data-set-unit-cat], [data-set-state-zone], [data-set-shape-filter], [data-select-lesson-template]");
     if (!target) return;
 
     if (target.dataset.go) {
@@ -3339,6 +3370,24 @@
 
     if (target.dataset.setStateZone) {
       state.lab.stateZone = target.dataset.setStateZone;
+      render();
+      return;
+    }
+
+    if (target.dataset.setShapeFilter) {
+      state.lab.shapeFilter = target.dataset.setShapeFilter;
+      render();
+      return;
+    }
+
+    if (target.dataset.selectLessonTemplate) {
+      state.lessonPlans.activeTemplate = target.dataset.selectLessonTemplate;
+      render();
+      return;
+    }
+
+    if (target.dataset.setWhyTab) {
+      state.whyTab = target.dataset.setWhyTab;
       render();
       return;
     }
