@@ -479,14 +479,19 @@ def gen_english(grade, rng):
         for w in AN_WORDS:
             add("art", f"We say “an {w}”. Which article is correct?", "an", ["a", "the an", "some"],
                 f"“{w}” starts with a vowel sound, so we use an.")
-    for a, b in OPPOSITES:
-        add("ant", f"The opposite of {a} is ____.", b, pick_others([x[1] for x in OPPOSITES], b, 3, rng),
-            f"{a} and {b} are antonyms.")
-    for a, b in (SYNONYMS if grade >= 2 else SYNONYMS[:8]):
-        add("syn", f"A synonym of {a} is ____.", b, pick_others([x[1] for x in SYNONYMS], b, 3, rng),
-            f"{a} and {b} mean almost the same.")
+    if grade <= 3:
+        for a, b in OPPOSITES:
+            add("ant", f"The opposite of {a} is ____.", b, pick_others([x[1] for x in OPPOSITES], b, 3, rng),
+                f"{a} and {b} are antonyms.")
+    if grade <= 4:
+        for a, b in (SYNONYMS if grade >= 2 else SYNONYMS[:8]):
+            add("syn", f"A synonym of {a} is ____.", b, pick_others([x[1] for x in SYNONYMS], b, 3, rng),
+                f"{a} and {b} mean almost the same.")
     for s, p in PLURALS:
-        if grade == 1 and p not in (s + "s", s + "es"):
+        regular = p in (s + "s", s + "es")
+        if grade == 1 and not regular:
+            continue
+        if grade >= 4 and regular:
             continue
         add("pl", f"The plural of {s} is ____.", p, [s + "s", s + "es", s + "'s", s],
             f"One {s}, many {p}.")
@@ -545,11 +550,31 @@ def gen_english(grade, rng):
         add("punct", "Choose the correctly punctuated sentence.", "Let's eat, Grandma.",
             ["Lets eat Grandma.", "Lets eat, grandma.", "Let's eat Grandma."],
             "Let’s = let us. The comma shows we are speaking to Grandma.")
+        add("speech", "He said, “We are ready.” Reported: He said that they ____ ready.", "were",
+            ["are", "is", "am"], "are → were in reported speech.")
+        add("rel", "The girl ____ won the prize is my sister.", "who", ["which", "whose only", "whom’s"],
+            "Who refers to people.")
+        add("rel", "The book ____ I borrowed is new.", "which / that", ["who", "whom", "whose person"],
+            "Which or that refers to things.")
+        add("cond", "If it rains, we ____ indoors.", "will stay", ["stayed yesterday", "are stay", "staying always"],
+            "First conditional: if + present, will + verb.")
+        add("art2", "____ honest man keeps his word.", "An", ["A", "The a", "Some a"],
+            "Honest begins with a vowel sound.")
+        add("voice", "Passive of “They built the school”: The school ____.", "was built",
+            ["built", "is build", "were building"], "Object becomes subject; verb uses be + past participle.")
+        add("mod", "You ____ wash your hands before meals (obligation).", "must / should",
+            ["might never", "cannot ever", "used to never"], "Must/should express duty.")
+        add("idiom", "“Spill the beans” means ____.", "reveal a secret", ["cook dinner", "plant maize", "wash plates"],
+            "It is an idiom, not literal.")
+        add("para", "A group of sentences about one idea is a ____.", "paragraph", ["comma", "vowel", "syllable"],
+            "Paragraphs organise writing.")
+        add("direct", "Quotation marks are used for ____.", "direct speech", ["only plurals", "only commas", "only titles of Nigeria"],
+            "They show the exact words spoken.")
     items = round_robin(pools, rng)
     extra = Bank()
     extra.extend(items)
     i = 0
-    while len(extra.items) < N:
+    while len(extra.items) < N and grade <= 3:
         a, b = OPPOSITES[i % len(OPPOSITES)]
         extra.add(shuffle_q(make_q(f"Which word is the antonym of {a}?", b,
                                    pick_others([x[1] for x in OPPOSITES], b, 3, rng),
@@ -604,19 +629,37 @@ def gen_verbal(grade, rng):
         add("odd", f"Odd one out: {', '.join(items)}", odd, [x for x in items if x != odd],
             f"{odd} is the odd one out ({why}).")
     letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    for i, ch in enumerate(letters[: 10 + grade]):
-        add("alpha", f"If A=1, B=2, C=3, what is {ch}?", i + 1, near(i + 1), f"{ch} is letter {i + 1}.")
-    for w, r, d in RHYMES:
-        add("rhyme", f"Which word rhymes with {w}?", r, d, f"{w} rhymes with {r}.")
-    for a, b in OPPOSITES[: 12 + grade * 3]:
-        add("ant", f"{a} is the opposite of ____.", b, pick_others([x[1] for x in OPPOSITES], b, 3, rng),
-            f"{a} ↔ {b}.")
+    if grade <= 3:
+        for i, ch in enumerate(letters[: 10 + grade]):
+            add("alpha", f"If A=1, B=2, C=3, what is {ch}?", i + 1, near(i + 1), f"{ch} is letter {i + 1}.")
+        for w, r, d in RHYMES:
+            add("rhyme", f"Which word rhymes with {w}?", r, d, f"{w} rhymes with {r}.")
+        for a, b in OPPOSITES[: 12 + grade * 3]:
+            add("ant", f"{a} is the opposite of ____.", b, pick_others([x[1] for x in OPPOSITES], b, 3, rng),
+                f"{a} ↔ {b}.")
+    else:
+        for i, ch in enumerate(letters[10: 10 + grade + 6]):
+            add("alpha", f"If A=1, B=2, C=3, what is {ch}?", 11 + i, near(11 + i), f"{ch} is letter {11 + i}.")
     if grade >= 3:
         add("code", "If CAT = 24 (C=3,A=1,T=20), then BAT = ____.", 23, ["24", "21", "26"],
             "B=2, A=1, T=20 → 23.")
         add("jumble", "Unscramble: HOCSOL", "SCHOOL", ["CHOLOS", "LOCHOS", "SHCOOL"], "The letters make SCHOOL.")
         add("jumble", "Unscramble: RETCAHE", "TEACHER", ["CHEATER", "RETEACH", "HECTARE"], "The letters make TEACHER.")
         add("jumble", "Unscramble: NIRAIGE", "NIGERIA", ["GRAINIE", "REGAINI", "ANGIRIE"], "The letters make NIGERIA.")
+    if grade >= 4:
+        add("code", "If A=1 … Z=26, the value of BED is ____.", 11, ["9", "12", "26"], "B=2, E=5, D=4 → 11.")
+        add("seq", "AZ, BY, CX, the next pair is ____.", "DW", ["EV", "DU", "CX"], "First letter +1, second −1.")
+        add("odd2", "Odd one out: square, rectangle, triangle, litre", "litre",
+            ["square", "rectangle", "triangle"], "Litre is a unit, the others are shapes.")
+        add("ana2", "Author is to book as composer is to ____.", "music / song", ["pen", "school", "kitchen"],
+            "A composer creates music as an author creates a book.")
+        add("mean", "A word with the same meaning as begin is ____.", "start", ["end", "stop", "finish only"],
+            "Begin and start are synonyms.")
+    if grade >= 6:
+        add("code2", "If PAPER is coded as QBQFS, then PEN is ____.", "QFO", ["QEN", "OEM", "QFN"],
+            "Each letter moves one step forward.")
+        add("logic", "All birds lay eggs. A hen is a bird. Therefore a hen ____.", "lays eggs",
+            ["cannot fly", "is a mammal", "has no wings"], "Apply the general rule to the particular case.")
     items = round_robin(pools, rng)
     extra = Bank()
     extra.extend(items)
@@ -664,43 +707,51 @@ def gen_science(grade, rng):
         ("eyes", "see", "sight"), ("ears", "hear", "hearing"), ("nose", "smell", "smell"),
         ("tongue", "taste", "taste"), ("skin", "feel", "touch"),
     ]
-    for org, act, name in senses:
-        pools["sense"].append(make_q(f"We {act} with our ____.", org, [x[0] for x in senses if x[0] != org],
-                                     f"The {org} are for {name}."))
-        pools["sense"].append(make_q(f"The sense organ for {name} is the ____.", org,
-                                     [x[0] for x in senses if x[0] != org], f"{name} → {org}."))
-    for c in living:
-        pools["liv"].append(make_q("Which one is a living thing?", c, pick_others(non, "", 3, rng),
-                                   "Living things grow, feed and reproduce."))
-    for c in non:
-        pools["liv"].append(make_q("Which one is a non-living thing?", c, pick_others(living, "", 3, rng),
-                                   "Non-living things do not grow or breathe."))
-    for c in water_an:
-        pools["hab"].append(make_q("Which animal lives in water?", c, pick_others(land_an, "", 3, rng),
-                                   f"A {c} lives in or around water."))
-    for c in fly:
-        pools["hab"].append(make_q("Which animal can fly?", c, pick_others(land_an, "", 3, rng),
-                                   f"A {c} can fly."))
-    pools["plant"].extend([
-        make_q("Plants need water, air and ____ to make food.", "sunlight", ["stones", "plastic", "noise"],
-               "Photosynthesis needs sunlight."),
-        make_q("The part of a plant under the ground is the ____.", "root", ["leaf", "flower", "fruit"],
-               "Roots take in water."),
-        make_q("The green colouring in leaves is ____.", "chlorophyll", ["blood", "soil", "oxygen"],
-               "Chlorophyll traps sunlight."),
-        make_q("A tadpole grows into a ____.", "frog", ["hen", "goat", "fish"], "A tadpole is a young frog."),
-        make_q("A baby cat is called a ____.", "kitten", ["puppy", "calf", "chick"], "A kitten is a young cat."),
-        make_q("A baby dog is called a ____.", "puppy", ["kitten", "calf", "lamb"], "A puppy is a young dog."),
-        make_q("A baby cow is called a ____.", "calf", ["puppy", "kid", "chick"], "A calf is a young cow."),
-        make_q("We should wash our hands ____ eating.", "before", ["never", "during only", "yearly"],
-               "Clean hands prevent disease."),
-        make_q("The sun gives us light and ____.", "heat", ["ice", "soil", "noise"], "The sun is a source of heat and light."),
-        make_q("Rain comes from the ____.", "clouds", ["moon", "stones", "ground only"], "Rain falls from clouds."),
-        make_q("Air is all around us but we cannot ____ it.", "see", ["need", "breathe", "feel wind"],
-               "Air is invisible."),
-        make_q("Ice is water in the ____ state.", "solid", ["liquid", "gas", "mixed"], "Ice is solid water."),
-        make_q("Steam is water in the ____ state.", "gas", ["solid", "stone", "metal"], "Steam is water vapour."),
-    ])
+    if grade <= 3:
+        for org, act, name in senses:
+            pools["sense"].append(make_q(f"We {act} with our ____.", org, [x[0] for x in senses if x[0] != org],
+                                         f"The {org} are for {name}."))
+            pools["sense"].append(make_q(f"The sense organ for {name} is the ____.", org,
+                                         [x[0] for x in senses if x[0] != org], f"{name} → {org}."))
+        for c in living:
+            pools["liv"].append(make_q("Which one is a living thing?", c, pick_others(non, "", 3, rng),
+                                       "Living things grow, feed and reproduce."))
+        for c in non:
+            pools["liv"].append(make_q("Which one is a non-living thing?", c, pick_others(living, "", 3, rng),
+                                       "Non-living things do not grow or breathe."))
+        for c in water_an:
+            pools["hab"].append(make_q("Which animal lives in water?", c, pick_others(land_an, "", 3, rng),
+                                       f"A {c} lives in or around water."))
+        for c in fly:
+            pools["hab"].append(make_q("Which animal can fly?", c, pick_others(land_an, "", 3, rng),
+                                       f"A {c} can fly."))
+    if grade <= 3:
+        pools["plant"].extend([
+            make_q("The part of a plant under the ground is the ____.", "root", ["leaf", "flower", "fruit"],
+                   "Roots take in water."),
+            make_q("A baby cat is called a ____.", "kitten", ["puppy", "calf", "chick"], "A kitten is a young cat."),
+            make_q("A baby dog is called a ____.", "puppy", ["kitten", "calf", "lamb"], "A puppy is a young dog."),
+            make_q("A baby cow is called a ____.", "calf", ["puppy", "kid", "chick"], "A calf is a young cow."),
+            make_q("We should wash our hands ____ eating.", "before", ["never", "during only", "yearly"],
+                   "Clean hands prevent disease."),
+            make_q("The sun gives us light and ____.", "heat", ["ice", "soil", "noise"], "The sun is a source of heat and light."),
+            make_q("Rain comes from the ____.", "clouds", ["moon", "stones", "ground only"], "Rain falls from clouds."),
+            make_q("Air is all around us but we cannot ____ it.", "see", ["need", "breathe", "feel wind"],
+                   "Air is invisible."),
+            make_q("Ice is water in the ____ state.", "solid", ["liquid", "gas", "mixed"], "Ice is solid water."),
+            make_q("Steam is water in the ____ state.", "gas", ["solid", "stone", "metal"], "Steam is water vapour."),
+        ])
+    if 2 <= grade <= 5:
+        pools["plant"].extend([
+            make_q("Plants need water, air and ____ to make food.", "sunlight", ["stones", "plastic", "noise"],
+                   "Photosynthesis needs sunlight."),
+            make_q("The green colouring in leaves is ____.", "chlorophyll", ["blood", "soil", "oxygen"],
+                   "Chlorophyll traps sunlight."),
+        ])
+    if 2 <= grade <= 4:
+        pools["plant"].extend([
+            make_q("A tadpole grows into a ____.", "frog", ["hen", "goat", "fish"], "A tadpole is a young frog."),
+        ])
     if grade >= 3:
         pools["mat"].extend([
             make_q("The three states of matter are solid, liquid and ____.", "gas", ["stone", "heat", "soil"],
@@ -740,6 +791,34 @@ def gen_science(grade, rng):
             make_q("Spiders have ____ legs.", "8", ["6", "4", "10"], "Spiders are arachnids with 8 legs."),
             make_q("Cutting down too many trees is ____.", "deforestation", ["irrigation", "pollination", "erosion only"],
                    "Deforestation destroys forests."),
+            make_q("A food chain always starts with a ____.", "producer (plant)", ["carnivore only", "decomposer only", "hunter"],
+                   "Green plants make food; others depend on them."),
+            make_q("Animals with a backbone are called ____.", "vertebrates", ["invertebrates", "only insects", "only bacteria"],
+                   "Fish, birds, mammals and amphibians are vertebrates."),
+            make_q("Animals without a backbone are ____.", "invertebrates", ["vertebrates", "only mammals", "only birds"],
+                   "Insects, worms and snails are invertebrates."),
+            make_q("Sound travels fastest through a ____.", "solid", ["vacuum", "empty space", "shadow"],
+                   "Particles are closest in solids, so sound travels faster."),
+            make_q("We cannot hear sound in a ____.", "vacuum", ["classroom", "water always", "metal always"],
+                   "Sound needs a medium; space is almost a vacuum."),
+            make_q("The seed of a plant grows after ____.", "germination", ["evaporation", "rotation", "eclipse"],
+                   "Germination is when a seed starts to grow."),
+            make_q("Sandy soil feels ____.", "gritty", ["sticky like clay", "invisible", "metallic"],
+                   "Sand particles are large and feel rough."),
+            make_q("Loamy soil is good for farming because it ____.", "holds water and air well", ["is only stones", "has no minerals", "cannot drain"],
+                   "Loam is a mix of sand, silt and clay."),
+            make_q("A thermometer measures ____.", "temperature", ["mass", "length", "time"],
+                   "Temperature is how hot or cold something is."),
+            make_q("The unit of temperature we use in class is ____.", "degree Celsius", ["kilogram", "metre", "litre"],
+                   "Water freezes at 0°C and boils at 100°C."),
+            make_q("Light travels in ____ lines.", "straight", ["zigzag only", "circles only", "random always"],
+                   "Shadows and beams show that light travels in straight lines."),
+            make_q("An opaque object ____ light.", "blocks", ["makes louder", "eats", "freezes"],
+                   "Wood and stone are opaque."),
+            make_q("A transparent material ____ light to pass.", "allows", ["stops all", "eats", "melts"],
+                   "Clear glass is transparent."),
+            make_q("Mammals feed their young with ____.", "milk", ["only nectar", "only blood", "only soil"],
+                   "Humans, goats and cats are mammals."),
         ])
     if grade >= 5:
         pools["sys"].extend([
@@ -763,6 +842,30 @@ def gen_science(grade, rng):
                    "Sunlight helps the body make vitamin D."),
             make_q("A lever and a pulley are ____.", "simple machines", ["planets", "diseases", "clouds"],
                    "Simple machines make work easier."),
+            make_q("The kidney’s main job is to ____.", "filter waste from blood", ["pump air only", "make sunlight", "store only fat"],
+                   "Kidneys help make urine."),
+            make_q("The brain is part of the ____ system.", "nervous", ["digestive", "skeletal only", "only blood"],
+                   "The brain and nerves control the body."),
+            make_q("White blood cells help the body to ____.", "fight germs", ["only store fat", "make shadows", "pump only air"],
+                   "They are part of the immune system."),
+            make_q("Red blood cells carry ____.", "oxygen", ["only sand", "only sound", "only light"],
+                   "Haemoglobin in red cells carries oxygen."),
+            make_q("An inclined plane is a ____.", "simple machine", ["planet", "vitamin", "cloud"],
+                   "A ramp is an inclined plane."),
+            make_q("Renewable energy examples include solar and ____.", "wind", ["petrol only", "coal only", "kerosene only"],
+                   "Sun and wind can be replenished."),
+            make_q("Non-renewable fuels include coal and ____.", "petroleum", ["wind", "sunlight", "flowing water"],
+                   "Fossil fuels take millions of years to form."),
+            make_q("Air pollution can be caused by ____.", "smoke from cars and factories", ["planting trees", "clean water", "reading books"],
+                   "Dirty air harms lungs and the environment."),
+            make_q("The green plant gas given out in sunlight is mainly ____.", "oxygen", ["smoke", "only nitrogen waste", "ozone only"],
+                   "Photosynthesis releases oxygen."),
+            make_q("Carbon dioxide is used by plants in ____.", "photosynthesis", ["only rusting", "only friction", "only rotation"],
+                   "Plants take in CO₂ and give out oxygen in light."),
+            make_q("A habitat is a place where an organism ____.", "lives", ["only shops", "only votes", "only reads"],
+                   "Pond, forest and desert are habitats."),
+            make_q("Decomposers such as fungi help to ____.", "break down dead matter", ["make the moon", "stop gravity", "create planets"],
+                   "They return nutrients to the soil."),
         ])
     if grade >= 6:
         pools["adv"].extend([
@@ -784,12 +887,44 @@ def gen_science(grade, rng):
                    "Friction acts against movement."),
             make_q("Metals generally ____ heat.", "conduct", ["block always", "destroy", "freeze"],
                    "Most metals are good conductors of heat."),
+            make_q("Rusting of iron needs air and ____.", "water", ["darkness only", "plastic", "sound"],
+                   "Iron rusts when oxygen and water are present."),
+            make_q("An eclipse of the sun happens when the ____ is between sun and Earth.", "moon", ["Mars", "Jupiter", "a cloud only"],
+                   "The moon can block sunlight in a solar eclipse."),
+            make_q("Microorganisms that cause disease are called ____.", "pathogens / germs", ["vitamins", "minerals", "fibres"],
+                   "Some bacteria and viruses make us ill."),
+            make_q("The smallest particle of an element that still is that element is an ____.", "atom", ["rock", "organ", "shadow"],
+                   "Atoms make up elements."),
+            make_q("A compound is made when two or more ____ combine chemically.", "elements", ["shadows", "echoes", "colours only"],
+                   "Water is a compound of hydrogen and oxygen."),
+            make_q("Work is done when a force moves an object through a ____.", "distance", ["colour", "rumour", "planet name"],
+                   "Work = force × distance."),
+            make_q("Energy cannot be created or ____, only changed.", "destroyed", ["measured ever", "stored ever", "used ever"],
+                   "This is conservation of energy (in simple form)."),
+            make_q("A reflex action is ____.", "automatic and quick", ["always planned in writing", "only a dream", "only a song"],
+                   "Blinking and pulling a hand from heat are reflexes."),
+            make_q("Puberty is the time when a child ____.", "begins to become an adult", ["stops growing forever", "loses all bones", "stops needing food"],
+                   "Hormones cause body changes at puberty."),
+            make_q("The female sex cell in humans is the ____.", "ovum (egg)", ["sperm", "tooth", "hair"],
+                   "Fertilisation joins sperm and ovum."),
+            make_q("The male sex cell in humans is the ____.", "sperm", ["ovum", "bone", "leaf"],
+                   "Sperm is produced in the testes."),
+            make_q("A solution is formed when a solute dissolves in a ____.", "solvent", ["shadow", "planet", "rumour"],
+                   "Salt in water is a solution."),
+            make_q("The solvent in most classroom solutions is ____.", "water", ["iron", "wood", "plastic"],
+                   "Water is called a universal solvent."),
+            make_q("A lunar eclipse happens when Earth is between the sun and the ____.", "moon", ["Mars", "Jupiter", "a kite"],
+                   "Earth’s shadow can fall on the moon."),
+            make_q("Mass is the amount of ____ in an object.", "matter", ["colour", "sound", "rumour"],
+                   "Mass is measured in kilograms."),
+            make_q("Weight is the force of ____ on a mass.", "gravity", ["colour", "sound", "taste"],
+                   "Weight can change with gravity; mass does not."),
         ])
     items = round_robin(pools, rng)
     extra = Bank()
     extra.extend(items)
     i = 0
-    while len(extra.items) < N:
+    while len(extra.items) < N and grade <= 3:
         c = living[i % len(living)]
         extra.add(shuffle_q(make_q(f"Which of these is living?", c, pick_others(non, "", 3, rng),
                                    "Living things grow and respire."), rng))

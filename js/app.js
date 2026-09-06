@@ -11,7 +11,7 @@
     studySec: 0, studyByDay: {}, favs: []
   };
 
-  const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false, music: true, contrast: false, autoDark: false, focus: false, calm: false });
+  const settings = loadJSON(SK, { sound: true, tts: false, dark: false, large: false, music: true, contrast: false, autoDark: false, focus: false, calm: false, readable: false });
   let progress = EMPTY_PROGRESS;
 
   const state = {
@@ -274,6 +274,7 @@
     document.documentElement.classList.toggle("contrast", !!settings.contrast);
     document.documentElement.classList.toggle("focus-ui", !!settings.focus);
     document.documentElement.classList.toggle("calm", !!settings.calm);
+    document.documentElement.classList.toggle("readable", !!settings.readable);
   }
 
   function esc(s) {
@@ -1291,7 +1292,7 @@
           <h3>1. Pick the class</h3>
           <p>Primary 1 to Primary 6 (about ages 6–12). Questions get harder as you go up.</p>
           <h3>2. Choose a subject</h3>
-          <p>English, Mathematics, Basic Science and 13 more — 100 questions in each class. Star the ones you use often.</p>
+          <p>English, Mathematics, Basic Science and 13 more — 100 questions in each class. Stems get harder as the class goes up. Star the ones you use often.</p>
           <h3>3. Choose a purpose</h3>
           <p><strong>Practice</strong> is formative: mark and explain at once. <strong>Exam</strong> withholds hints until the end, like a paper. <strong>Timed</strong> builds pace. Flag a hard item to review later.</p>
           <h3>4. Review and return</h3>
@@ -1360,7 +1361,7 @@
           <div class="callout"><strong>Classroom recipe.</strong> Practice mode to teach. Exam mode to simulate a paper. Print homework from missed items. Focus mode on a projector.</div>
           <h3>In a lesson</h3>
           <ul>
-            <li>Pick the class, then 10 questions in Practice mode as a starter.</li>
+            <li>Pick the class, then 10 questions in Practice mode as a starter. Treat that score as a snapshot, not a term grade.</li>
             <li>Read the explanation aloud after a miss. That is the teaching moment.</li>
             <li>Flag items you want to revisit. Review them at the end.</li>
             <li>Turn on Focus mode and Larger text in Settings for a shared screen.</li>
@@ -1369,6 +1370,7 @@
           <p>From the subject screen: <strong>Print exam</strong> gives an 80-question paper with an answer key. <strong>Print homework</strong> reprints recent misses. My progress has a printable report with strengths, gaps and a next step.</p>
           <h3>Low connectivity</h3>
           <p>Open the site once online. After that it works offline on that device. Sibling profiles keep more than one child on the same phone.</p>
+          <p>Questions are written to rise with the class — Primary 6 is not a reprint of Primary 1 stems. They are original practice items, not past papers.</p>
           <p class="cite">Independent practice only. Not an official NERDC or common-entrance paper.</p>
           <div class="home-actions">
             <button class="btn btn-primary" data-action="start">Open the class list</button>
@@ -1412,6 +1414,7 @@
           <p class="kicker">Learning science</p>
           <h2 class="section-title">Why this works</h2>
           <p>The design follows well-established findings in educational psychology. It is not a replacement for a teacher, and it has not been claimed as a randomised trial of this app.</p>
+          <p>Items are original practice MCQs that get harder from Primary 1 to Primary 6. They are not past questions from NERDC, WAEC or any ministry paper.</p>
           <h3>Retrieval practice</h3>
           <p>Trying to answer a question — even when it is hard — strengthens memory more than re-reading notes. Practice and Daily Challenge are built for that.</p>
           <p class="cite">Roediger, H. L., &amp; Karpicke, J. D. (2006). Test-enhanced learning. <em>Psychological Science</em>.</p>
@@ -1443,7 +1446,7 @@
           <ul>
             <li><strong>Keyboard:</strong> A–D or 1–4 to answer, H hint, F flag, P pause, N or Enter next, ? help, Esc closes help.</li>
             <li><strong>Read aloud:</strong> tap 🔊 on a question. Auto-read is optional in Settings.</li>
-            <li><strong>Display:</strong> larger text, high contrast, dark mode, match the phone’s light/dark, reduce motion, focus mode.</li>
+            <li><strong>Display:</strong> larger text, more line spacing, high contrast, dark mode, match the phone’s light/dark, reduce motion, focus mode.</li>
             <li><strong>Touch:</strong> main buttons are at least 48px. After an answer, swipe left for next (not in Exam mode).</li>
             <li><strong>Skip link:</strong> “Skip to content” appears when you tab from the top of the page.</li>
             <li><strong>No account:</strong> guests can play with a first name. Google is optional.</li>
@@ -1817,7 +1820,7 @@
     let feedback = "";
     if (showMark) {
       const ok = state.picked[state.index] === q.answer;
-      feedback = `<div class="feedback ${ok ? "ok" : "no"}" role="status">${ok ? "Yes! " : "Not quite. The answer is <strong>" + esc(q.options[q.answer]) + "</strong>. "}${esc(q.explain)}</div>`;
+      feedback = `<div class="feedback ${ok ? "ok" : "no"}" role="status">${ok ? "Yes! " : "Not quite. The answer is <strong>" + esc(q.options[q.answer]) + "</strong>. "}${q.explain ? `<p class="explain-label"><span class="kicker">Explanation</span> ${esc(q.explain)}</p>` : ""}</div>`;
     }
     const canNext = exam ? state.picked[state.index] != null || state.revealed : state.revealed;
     const nextLabel = state.index === total - 1 ? "See my score" : "Next →";
@@ -1901,6 +1904,7 @@
           <p class="score-msg">${messageFor(pct)}</p>
           <p class="learn-next">${nextLearnStep(pct, total - n)}</p>
           <p class="scale-note">${gradeScaleNote()}</p>
+          ${total < 20 ? `<p class="scale-note">A ${total}-question paper is a snapshot. Use Review and a longer paper before judging mastery.</p>` : total < 40 ? `<p class="scale-note">This is a short paper. A longer set gives a steadier picture of what is secure.</p>` : ""}
           <div class="split-bar" aria-hidden="true"><i style="width:${pct}%"></i></div>
           <p class="sub" style="margin:8px 0 0">${n} correct · ${total - n} to review</p>
           ${badges ? `<div class="stats" style="justify-content:center">${badges}</div>` : ""}
@@ -1940,7 +1944,7 @@
           <span class="tag ${ok ? "ok" : "no"}">${ok ? "Correct" : "Missed"}</span>${state.flagged[i] ? `<span class="tag">★ Flagged</span>` : ""}
           <h4>${i + 1}. ${esc(q.q)}</h4>
           <div class="review-opts">${opts}</div>
-          <p style="color:var(--muted);margin-top:8px">${esc(q.explain)}</p>
+          <p class="explain-label" style="color:var(--muted);margin-top:8px"><span class="kicker">Explanation</span> ${esc(q.explain)}</p>
         </article>`;
     }).join("") || `<div class="empty-state"><strong>Nothing in this filter</strong><p>Try All, or search a word from the question.</p></div>`;
     return `
@@ -2185,9 +2189,10 @@
           ${row("contrast", "High contrast")}
           ${row("focus", "Focus mode in quizzes")}
           ${row("calm", "Reduce motion")}
+          ${row("readable", "More line spacing")}
         </div>
         <p class="set-head">Classroom</p>
-        <p class="sub">Focus mode and larger text help on a shared screen. School name appears on certificates and reports.</p>
+        <p class="sub">Focus mode, larger text and extra line spacing help on a shared screen. School name appears on certificates and reports.</p>
         <label class="field" for="school">School name (optional, on certificates)</label>
         <input id="school" class="search" type="text" maxlength="80" placeholder="e.g. St Mary’s Primary School" value="${esc(schoolName())}">
         <button class="btn btn-ghost" data-action="save-school" style="margin-top:8px">Save school</button>
@@ -3037,8 +3042,40 @@
   });
 
   document.addEventListener("keydown", function (e) {
+    const tag = (e.target && e.target.tagName) || "";
+    if (tag === "INPUT" || tag === "TEXTAREA" || (e.target && e.target.isContentEditable)) return;
+    if (e.key === "Escape") {
+      if (state.helpOpen) { state.helpOpen = false; render(); return; }
+      if (!localStorage.getItem("psq-onboard-v1")) {
+        localStorage.setItem("psq-onboard-v1", "1");
+        render();
+        return;
+      }
+      return;
+    }
+    if (e.key === "?" || (e.shiftKey && e.key === "/")) {
+      e.preventDefault();
+      state.helpOpen = !state.helpOpen;
+      render();
+      return;
+    }
     if (state.screen !== "quiz") return;
-    if (state.revealed && state.mode !== "exam" && (e.key === "Enter" || e.key === " ")) {
+    if (e.key === "h" || e.key === "H") {
+      const btn = app.querySelector('[data-action="hint"]');
+      if (btn && !btn.disabled) btn.click();
+      return;
+    }
+    if (e.key === "f" || e.key === "F") {
+      const btn = app.querySelector('[data-action="flag"]');
+      if (btn) btn.click();
+      return;
+    }
+    if (e.key === "p" || e.key === "P") {
+      const btn = app.querySelector('[data-action="pause-quiz"], [data-action="resume-quiz"]');
+      if (btn) btn.click();
+      return;
+    }
+    if (state.revealed && state.mode !== "exam" && (e.key === "Enter" || e.key === " " || e.key === "n" || e.key === "N")) {
       e.preventDefault();
       const btn = app.querySelector('[data-action="next"]');
       if (btn) btn.click();

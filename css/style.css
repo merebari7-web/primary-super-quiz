@@ -875,6 +875,11 @@ html[data-theme="dark"] .rev-opt.bad { background: #3a1c18; }
 html[data-theme="dark"] .fav-pin.on { color: var(--sun); }
 
 html.large { font-size: 22px; }
+html.readable, html.readable body { letter-spacing: 0.02em; line-height: 1.7; }
+html.readable .question, html.readable .prose, html.readable .feedback { line-height: 1.65; }
+html.readable .opt { line-height: 1.5; }
+.explain-label { margin: 8px 0 0; }
+.explain-label .kicker { display: block; margin-bottom: 4px; }
 
 .home-stats {
   display: grid;
