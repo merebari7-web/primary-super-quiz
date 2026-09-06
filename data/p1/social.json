@@ -1,1 +1,1502 @@
-[{"q":"A trader often works at/in a ____.","options":["cloud","market","moon","rainbow"],"answer":1,"explain":"A trader works at the market."},{"q":"Green on the flag stands for ____.","options":["agriculture","night","war","the sky"],"answer":0,"explain":"Green stands for agriculture."},{"q":"The currency of Nigeria is the ____.","options":["rand","dollar","cedi","naira"],"answer":3,"explain":"Naira and kobo."},{"q":"Ibadan is a city in ____.","options":["Kenya","Ghana","Nigeria","Egypt"],"answer":2,"explain":"Ibadan is in Nigeria."},{"q":"A nurse works in a ____.","options":["stadium only","farm only","airport only","hospital"],"answer":3,"explain":"Nurses care for the sick."},{"q":"The Nigerian flag is green, white and ____.","options":["red","green","yellow","blue"],"answer":1,"explain":"The flag is green–white–green."},{"q":"A farmer often works at/in a ____.","options":["moon","farm","rainbow","cloud"],"answer":1,"explain":"A farmer works at the farm."},{"q":"A doctor often works at/in a ____.","options":["hospital","moon","cloud","rainbow"],"answer":0,"explain":"A doctor works at the hospital."},{"q":"A sailor often works at/in a ____.","options":["sea","cloud","moon","rainbow"],"answer":0,"explain":"A sailor works at the sea."},{"q":"The two main rivers are the Niger and the ____.","options":["Amazon","Congo","Benue","Nile"],"answer":2,"explain":"They meet at Lokoja."},{"q":"The name of our country is ____.","options":["Kenya","Egypt","Ghana","Nigeria"],"answer":3,"explain":"We live in Nigeria."},{"q":"Nigeria has ____ states.","options":["19","12","50","36"],"answer":3,"explain":"36 states plus the FCT."},{"q":"The capital city of Nigeria is ____.","options":["Lagos","Abuja","Ibadan","Kano"],"answer":1,"explain":"Abuja is the capital."},{"q":"A pilot often works at/in a ____.","options":["rainbow","moon","cloud","airport"],"answer":3,"explain":"A pilot works at the airport."},{"q":"A teacher often works at/in a ____.","options":["cloud","moon","school","rainbow"],"answer":2,"explain":"A teacher works at the school."},{"q":"A person who flies an aeroplane is a ____.","options":["driver","cook","pilot","mason"],"answer":2,"explain":"A pilot flies aircraft."},{"q":"North, South, East and West are ____.","options":["rivers","seasons","cardinal points","foods"],"answer":2,"explain":"They show direction."},{"q":"The three major ethnic groups are Hausa, Yoruba and ____.","options":["Maasai","Igbo","Berber","Zulu"],"answer":1,"explain":"Hausa, Igbo and Yoruba are the largest groups."},{"q":"Nigeria is in the continent of ____.","options":["Asia","Europe","Africa","America"],"answer":2,"explain":"Nigeria is in West Africa."},{"q":"Calabar is a city in ____.","options":["Egypt","Ghana","Kenya","Nigeria"],"answer":3,"explain":"Calabar is in Nigeria."},{"q":"We cross the road at a ____.","options":["zebra crossing","a roundabout only","any dark corner","the middle of cars"],"answer":0,"explain":"Use a zebra crossing or traffic light."},{"q":"Enugu is a city in ____.","options":["Egypt","Ghana","Kenya","Nigeria"],"answer":3,"explain":"Enugu is in Nigeria."},{"q":"Abeokuta is a city in ____.","options":["Kenya","Ghana","Egypt","Nigeria"],"answer":3,"explain":"Abeokuta is in Nigeria."},{"q":"River Niger and Benue meet at ____.","options":["Lokoja","Enugu","Lagos","Kano"],"answer":0,"explain":"Lokoja is the confluence town."},{"q":"A person who grows crops is a ____.","options":["nurse","pilot","sailor","farmer"],"answer":3,"explain":"Farmers grow food."},{"q":"Maiduguri is a city in ____.","options":["Egypt","Kenya","Nigeria","Ghana"],"answer":2,"explain":"Maiduguri is in Nigeria."},{"q":"Kano is a city in ____.","options":["Kenya","Egypt","Ghana","Nigeria"],"answer":3,"explain":"Kano is in Nigeria."},{"q":"The head of a local government is the ____.","options":["judge","president","senator","chairman"],"answer":3,"explain":"An LGA is headed by a chairman/chairperson."},{"q":"A driver often works at/in a ____.","options":["cloud","rainbow","road","moon"],"answer":2,"explain":"A driver works at the road."},{"q":"A Yoruba king is often called an ____.","options":["President","Emir","Oba","Governor"],"answer":2,"explain":"Yoruba: Oba. Hausa: Emir."},{"q":"People who live near us are our ____.","options":["flags","rivers","enemies","neighbours"],"answer":3,"explain":"Neighbours live nearby."},{"q":"A map is a ____ of a place.","options":["song","drawing","meal","uniform"],"answer":1,"explain":"Maps show features of a place."},{"q":"Culture includes language, food, dress and ____.","options":["only rain","only oil","customs","only cars"],"answer":2,"explain":"Culture is a people’s way of life."},{"q":"Port Harcourt is a city in ____.","options":["Ghana","Nigeria","Egypt","Kenya"],"answer":1,"explain":"Port Harcourt is in Nigeria."},{"q":"A Hausa/Fulani traditional ruler may be called an ____.","options":["Oba","Obi","Emir","Pharaoh"],"answer":2,"explain":"Emir is used in many northern cities."},{"q":"Lagos is a city in ____.","options":["Kenya","Nigeria","Egypt","Ghana"],"answer":1,"explain":"Lagos is in Nigeria."},{"q":"We celebrate Independence Day on ____.","options":["27 May","25 December","1 January","1 October"],"answer":3,"explain":"Independence: 1 Oct 1960."},{"q":"Kaduna is a city in ____.","options":["Ghana","Kenya","Egypt","Nigeria"],"answer":3,"explain":"Kaduna is in Nigeria."},{"q":"A carpenter often works at/in a ____.","options":["wood workshop","moon","cloud","rainbow"],"answer":0,"explain":"A carpenter works at the wood workshop."},{"q":"Jos is a city in ____.","options":["Egypt","Ghana","Nigeria","Kenya"],"answer":2,"explain":"Jos is in Nigeria."},{"q":"We buy and sell at the ____.","options":["flag","river only","market","cloud"],"answer":2,"explain":"A market is for trade."},{"q":"White on the flag stands for ____.","options":["peace","farming","the sea","war"],"answer":0,"explain":"White stands for peace."},{"q":"Which of these is a Nigerian city?","options":["Lagos","Nairobi","Cairo","Accra"],"answer":0,"explain":"It is a city in Nigeria."},{"q":"Which of these is a Nigerian city?","options":["Nairobi","Accra","Cairo","Kano"],"answer":3,"explain":"It is a city in Nigeria."},{"q":"Which of these is a Nigerian city?","options":["Nairobi","Accra","Cairo","Ibadan"],"answer":3,"explain":"It is a city in Nigeria."},{"q":"Which of these is a Nigerian city?","options":["Accra","Nairobi","Cairo","Port Harcourt"],"answer":3,"explain":"It is a city in Nigeria."},{"q":"Which of these is a Nigerian city?","options":["Enugu","Cairo","Nairobi","Accra"],"answer":0,"explain":"It is a city in Nigeria."},{"q":"Which of these is a Nigerian city?","options":["Nairobi","Accra","Kaduna","Cairo"],"answer":2,"explain":"It is a city in Nigeria."},{"q":"Which of these is a Nigerian city?","options":["Cairo","Accra","Nairobi","Jos"],"answer":3,"explain":"It is a city in Nigeria."},{"q":"Which of these is a Nigerian city?","options":["Cairo","Nairobi","Maiduguri","Accra"],"answer":2,"explain":"It is a city in Nigeria."},{"q":"Which of these is a Nigerian city?","options":["Accra","Calabar","Nairobi","Cairo"],"answer":1,"explain":"It is a city in Nigeria."},{"q":"Which of these is a Nigerian city?","options":["Cairo","Nairobi","Accra","Abeokuta"],"answer":3,"explain":"It is a city in Nigeria."},{"q":"A trader often works at/in a ____. [market]","options":["moon","cloud","market","rainbow"],"answer":2,"explain":"A trader works at the market."},{"q":"Green on the flag stands for ____. [agriculture]","options":["war","night","the sky","agriculture"],"answer":3,"explain":"Green stands for agriculture."},{"q":"The currency of Nigeria is the ____. [naira]","options":["naira","dollar","rand","cedi"],"answer":0,"explain":"Naira and kobo."},{"q":"Ibadan is a city in ____. [Nigeria]","options":["Kenya","Ghana","Egypt","Nigeria"],"answer":3,"explain":"Ibadan is in Nigeria."},{"q":"A nurse works in a ____. [hospital]","options":["farm only","airport only","hospital","stadium only"],"answer":2,"explain":"Nurses care for the sick."},{"q":"The Nigerian flag is green, white and ____. [green]","options":["red","green","yellow","blue"],"answer":1,"explain":"The flag is green–white–green."},{"q":"A farmer often works at/in a ____.","options":["Amazon","farm","Nile","Congo"],"answer":1,"explain":"A farmer works at the farm."},{"q":"A doctor often works at/in a ____.","options":["19","50","12","hospital"],"answer":3,"explain":"A doctor works at the hospital."},{"q":"A sailor often works at/in a ____.","options":["Lagos","Ibadan","sea","Kano"],"answer":2,"explain":"A sailor works at the sea."},{"q":"The two main rivers are the Niger and the ____.","options":["Benue","driver","mason","cook"],"answer":0,"explain":"They meet at Lokoja."},{"q":"The name of our country is ____.","options":["foods","seasons","Nigeria","rivers"],"answer":2,"explain":"We live in Nigeria."},{"q":"Nigeria has ____ states.","options":["Zulu","36","Maasai","Berber"],"answer":1,"explain":"36 states plus the FCT."},{"q":"The capital city of Nigeria is ____.","options":["Europe","Asia","America","Abuja"],"answer":3,"explain":"Abuja is the capital."},{"q":"A pilot often works at/in a ____.","options":["airport","a roundabout only","the middle of cars","any dark corner"],"answer":0,"explain":"A pilot works at the airport."},{"q":"A teacher often works at/in a ____.","options":["school","Enugu","pilot","nurse"],"answer":0,"explain":"A teacher works at the school."},{"q":"A person who flies an aeroplane is a ____.","options":["judge","president","pilot","senator"],"answer":2,"explain":"A pilot flies aircraft."},{"q":"North, South, East and West are ____.","options":["senator","Emir","President","cardinal points"],"answer":3,"explain":"They show direction."},{"q":"The three major ethnic groups are Hausa, Yoruba and ____.","options":["enemies","flags","Igbo","Governor"],"answer":2,"explain":"Hausa, Igbo and Yoruba are the largest groups."},{"q":"Nigeria is in the continent of ____.","options":["uniform","song","Africa","meal"],"answer":2,"explain":"Nigeria is in West Africa."},{"q":"Calabar is a city in ____.","options":["only cars","only rain","only oil","Nigeria"],"answer":3,"explain":"Calabar is in Nigeria."},{"q":"We cross the road at a ____.","options":["Oba","zebra crossing","Obi","Pharaoh"],"answer":1,"explain":"Use a zebra crossing or traffic light."},{"q":"Enugu is a city in ____.","options":["27 May","25 December","Nigeria","1 January"],"answer":2,"explain":"Enugu is in Nigeria."},{"q":"Abeokuta is a city in ____.","options":["river only","farming","flag","Nigeria"],"answer":3,"explain":"Abeokuta is in Nigeria."},{"q":"River Niger and Benue meet at ____.","options":["Lokoja","Nairobi","the sea","Cairo"],"answer":0,"explain":"Lokoja is the confluence town."},{"q":"A person who grows crops is a ____.","options":["London","farmer","Paris","Accra"],"answer":1,"explain":"Farmers grow food."},{"q":"Maiduguri is a city in ____.","options":["none of these names","Nigeria","stone","plastic"],"answer":1,"explain":"Maiduguri is in Nigeria."},{"q":"Kano is a city in ____.","options":["Tuesday","zero","aeroplane","Nigeria"],"answer":3,"explain":"Kano is in Nigeria."},{"q":"The head of a local government is the ____.","options":["chairman","a cartoon","a rumour","the moon"],"answer":0,"explain":"An LGA is headed by a chairman/chairperson."},{"q":"A driver often works at/in a ____.","options":["war","rainbow","night","road"],"answer":3,"explain":"A driver works at the road."},{"q":"A Yoruba king is often called an ____.","options":["rand","cedi","Oba","dollar"],"answer":2,"explain":"Yoruba: Oba. Hausa: Emir."},{"q":"People who live near us are our ____.","options":["Kenya","neighbours","cedi","Ghana"],"answer":1,"explain":"Neighbours live nearby."},{"q":"A map is a ____ of a place.","options":["stadium only","Egypt","drawing","farm only"],"answer":2,"explain":"Maps show features of a place."},{"q":"Culture includes language, food, dress and ____.","options":["yellow","airport only","customs","red"],"answer":2,"explain":"Culture is a people’s way of life."},{"q":"Port Harcourt is a city in ____.","options":["blue","Amazon","Congo","Nigeria"],"answer":3,"explain":"Port Harcourt is in Nigeria."},{"q":"A Hausa/Fulani traditional ruler may be called an ____.","options":["19","50","Emir","12"],"answer":2,"explain":"Emir is used in many northern cities."},{"q":"Lagos is a city in ____.","options":["Ibadan","Nigeria","50","Lagos"],"answer":1,"explain":"Lagos is in Nigeria."},{"q":"We celebrate Independence Day on ____.","options":["driver","cook","1 October","Kano"],"answer":2,"explain":"Independence: 1 Oct 1960."},{"q":"Kaduna is a city in ____.","options":["Nigeria","rivers","mason","seasons"],"answer":0,"explain":"Kaduna is in Nigeria."},{"q":"A carpenter often works at/in a ____.","options":["Berber","Maasai","foods","wood workshop"],"answer":3,"explain":"A carpenter works at the wood workshop."},{"q":"Jos is a city in ____.","options":["Europe","Asia","Nigeria","Zulu"],"answer":2,"explain":"Jos is in Nigeria."},{"q":"We buy and sell at the ____.","options":["America","market","any dark corner","a roundabout only"],"answer":1,"explain":"A market is for trade."},{"q":"White on the flag stands for ____.","options":["nurse","peace","the middle of cars","Enugu"],"answer":1,"explain":"White stands for peace."},{"q":"Which of these is a Nigerian city?","options":["senator","judge","president","Lagos"],"answer":3,"explain":"It is a city in Nigeria."},{"q":"Which of these is a Nigerian city?","options":["President","Kano","Governor","Emir"],"answer":1,"explain":"It is a city in Nigeria."},{"q":"Which of these is a Nigerian city?","options":["flags","song","enemies","Ibadan"],"answer":3,"explain":"It is a city in Nigeria."},{"q":"Which of these is a Nigerian city?","options":["song","enemies","meal","Port Harcourt"],"answer":3,"explain":"It is a city in Nigeria."},{"q":"Which of these is a Nigerian city?","options":["Enugu","Oba","only oil","only cars"],"answer":0,"explain":"It is a city in Nigeria."},{"q":"Which of these is a Nigerian city?","options":["only cars","Obi","Kaduna","Oba"],"answer":2,"explain":"It is a city in Nigeria."}]
+[
+  {
+    "q": "A family consisting of father, mother, and their children is called a ____ family. (P1)",
+    "options": [
+      "nuclear",
+      "royal",
+      "extended",
+      "compound"
+    ],
+    "answer": 0,
+    "explain": "A nuclear family is the basic domestic unit made of parents and offspring.",
+    "hint": "Parents and children living together.",
+    "topic": "Family & Community",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Your father's brother is your ____. (P1)",
+    "options": [
+      "uncle",
+      "nephew",
+      "cousin",
+      "aunt"
+    ],
+    "answer": 0,
+    "explain": "An uncle is the brother of your mother or father.",
+    "hint": "Brother of your father or mother.",
+    "topic": "Family & Relationships",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Your mother's sister is your ____. (P1)",
+    "options": [
+      "niece",
+      "sister",
+      "aunt",
+      "uncle"
+    ],
+    "answer": 2,
+    "explain": "An aunt is the sister of either parent.",
+    "hint": "Sister of your father or mother.",
+    "topic": "Family & Relationships",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "The child of your aunt or uncle is your ____. (P1)",
+    "options": [
+      "nephew",
+      "niece",
+      "cousin",
+      "sibling"
+    ],
+    "answer": 2,
+    "explain": "A cousin is the child of your uncle or aunt.",
+    "hint": "Aunt's or uncle's child.",
+    "topic": "Family & Relationships",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Which of these is a place where we buy and sell food and household goods? (P1)",
+    "options": [
+      "Hospital",
+      "Post office",
+      "Market",
+      "Police station"
+    ],
+    "answer": 2,
+    "explain": "A market is a central place of trade.",
+    "hint": "Where goods are traded.",
+    "topic": "Community & Economy",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Where do sick people go to receive medical care from doctors and nurses? (P1)",
+    "options": [
+      "Bank",
+      "Hospital",
+      "Stadium",
+      "Cinema"
+    ],
+    "answer": 1,
+    "explain": "Hospitals provide medical diagnosis, treatment, and nursing care.",
+    "hint": "Medical treatment center.",
+    "topic": "Community Services",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Lagos State?",
+    "options": [
+      "Awka",
+      "Ikeja",
+      "Kano",
+      "Ibadan"
+    ],
+    "answer": 1,
+    "explain": "The administrative capital of Lagos State is Ikeja.",
+    "hint": "Administrative seat of Lagos State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Oyo State?",
+    "options": [
+      "Ibadan",
+      "Kano",
+      "Yola",
+      "Jos"
+    ],
+    "answer": 0,
+    "explain": "The administrative capital of Oyo State is Ibadan.",
+    "hint": "Administrative seat of Oyo State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Kano State?",
+    "options": [
+      "Dutse",
+      "Kano",
+      "Bauchi",
+      "Uyo"
+    ],
+    "answer": 1,
+    "explain": "The administrative capital of Kano State is Kano.",
+    "hint": "Administrative seat of Kano State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Rivers State?",
+    "options": [
+      "Ilorin",
+      "Kaduna",
+      "Port Harcourt",
+      "Katsina"
+    ],
+    "answer": 2,
+    "explain": "The administrative capital of Rivers State is Port Harcourt.",
+    "hint": "Administrative seat of Rivers State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Enugu State?",
+    "options": [
+      "Katsina",
+      "Calabar",
+      "Enugu",
+      "Owerri"
+    ],
+    "answer": 2,
+    "explain": "The administrative capital of Enugu State is Enugu.",
+    "hint": "Administrative seat of Enugu State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Kaduna State?",
+    "options": [
+      "Maiduguri",
+      "Lafia",
+      "Kaduna",
+      "Kano"
+    ],
+    "answer": 2,
+    "explain": "The administrative capital of Kaduna State is Kaduna.",
+    "hint": "Administrative seat of Kaduna State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Borno State?",
+    "options": [
+      "Gusau",
+      "Maiduguri",
+      "Owerri",
+      "Benin City"
+    ],
+    "answer": 1,
+    "explain": "The administrative capital of Borno State is Maiduguri.",
+    "hint": "Administrative seat of Borno State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Delta State?",
+    "options": [
+      "Asaba",
+      "Owerri",
+      "Katsina",
+      "Jos"
+    ],
+    "answer": 0,
+    "explain": "The administrative capital of Delta State is Asaba.",
+    "hint": "Administrative seat of Delta State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Cross River State?",
+    "options": [
+      "Owerri",
+      "Ikeja",
+      "Calabar",
+      "Ibadan"
+    ],
+    "answer": 2,
+    "explain": "The administrative capital of Cross River State is Calabar.",
+    "hint": "Administrative seat of Cross River State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Edo State?",
+    "options": [
+      "Akure",
+      "Benin City",
+      "Katsina",
+      "Awka"
+    ],
+    "answer": 1,
+    "explain": "The administrative capital of Edo State is Benin City.",
+    "hint": "Administrative seat of Edo State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Plateau State?",
+    "options": [
+      "Dutse",
+      "Ibadan",
+      "Akure",
+      "Jos"
+    ],
+    "answer": 3,
+    "explain": "The administrative capital of Plateau State is Jos.",
+    "hint": "Administrative seat of Plateau State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Ogun State?",
+    "options": [
+      "Gusau",
+      "Bauchi",
+      "Abeokuta",
+      "Lokoja"
+    ],
+    "answer": 2,
+    "explain": "The administrative capital of Ogun State is Abeokuta.",
+    "hint": "Administrative seat of Ogun State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Ondo State?",
+    "options": [
+      "Damaturu",
+      "Akure",
+      "Umuahia",
+      "Ibadan"
+    ],
+    "answer": 1,
+    "explain": "The administrative capital of Ondo State is Akure.",
+    "hint": "Administrative seat of Ondo State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Kwara State?",
+    "options": [
+      "Abakaliki",
+      "Dutse",
+      "Birnin Kebbi",
+      "Ilorin"
+    ],
+    "answer": 3,
+    "explain": "The administrative capital of Kwara State is Ilorin.",
+    "hint": "Administrative seat of Kwara State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Benue State?",
+    "options": [
+      "Owerri",
+      "Makurdi",
+      "Ikeja",
+      "Yola"
+    ],
+    "answer": 1,
+    "explain": "The administrative capital of Benue State is Makurdi.",
+    "hint": "Administrative seat of Benue State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Anambra State?",
+    "options": [
+      "Lafia",
+      "Awka",
+      "Jalingo",
+      "Kano"
+    ],
+    "answer": 1,
+    "explain": "The administrative capital of Anambra State is Awka.",
+    "hint": "Administrative seat of Anambra State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Imo State?",
+    "options": [
+      "Gusau",
+      "Osogbo",
+      "Lokoja",
+      "Owerri"
+    ],
+    "answer": 3,
+    "explain": "The administrative capital of Imo State is Owerri.",
+    "hint": "Administrative seat of Imo State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Abia State?",
+    "options": [
+      "Akure",
+      "Bauchi",
+      "Umuahia",
+      "Yenagoa"
+    ],
+    "answer": 2,
+    "explain": "The administrative capital of Abia State is Umuahia.",
+    "hint": "Administrative seat of Abia State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Sokoto State?",
+    "options": [
+      "Sokoto",
+      "Lafia",
+      "Ado-Ekiti",
+      "Kano"
+    ],
+    "answer": 0,
+    "explain": "The administrative capital of Sokoto State is Sokoto.",
+    "hint": "Administrative seat of Sokoto State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Katsina State?",
+    "options": [
+      "Katsina",
+      "Benin City",
+      "Gombe",
+      "Dutse"
+    ],
+    "answer": 0,
+    "explain": "The administrative capital of Katsina State is Katsina.",
+    "hint": "Administrative seat of Katsina State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Bauchi State?",
+    "options": [
+      "Abeokuta",
+      "Ikeja",
+      "Bauchi",
+      "Asaba"
+    ],
+    "answer": 2,
+    "explain": "The administrative capital of Bauchi State is Bauchi.",
+    "hint": "Administrative seat of Bauchi State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Adamawa State?",
+    "options": [
+      "Awka",
+      "Yola",
+      "Lafia",
+      "Kaduna"
+    ],
+    "answer": 1,
+    "explain": "The administrative capital of Adamawa State is Yola.",
+    "hint": "Administrative seat of Adamawa State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Akwa Ibom State?",
+    "options": [
+      "Uyo",
+      "Enugu",
+      "Yenagoa",
+      "Damaturu"
+    ],
+    "answer": 0,
+    "explain": "The administrative capital of Akwa Ibom State is Uyo.",
+    "hint": "Administrative seat of Akwa Ibom State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Bayelsa State?",
+    "options": [
+      "Gombe",
+      "Awka",
+      "Minna",
+      "Yenagoa"
+    ],
+    "answer": 3,
+    "explain": "The administrative capital of Bayelsa State is Yenagoa.",
+    "hint": "Administrative seat of Bayelsa State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Ebonyi State?",
+    "options": [
+      "Port Harcourt",
+      "Sokoto",
+      "Lafia",
+      "Abakaliki"
+    ],
+    "answer": 3,
+    "explain": "The administrative capital of Ebonyi State is Abakaliki.",
+    "hint": "Administrative seat of Ebonyi State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Ekiti State?",
+    "options": [
+      "Ado-Ekiti",
+      "Ilorin",
+      "Kano",
+      "Calabar"
+    ],
+    "answer": 0,
+    "explain": "The administrative capital of Ekiti State is Ado-Ekiti.",
+    "hint": "Administrative seat of Ekiti State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Gombe State?",
+    "options": [
+      "Gombe",
+      "Asaba",
+      "Benin City",
+      "Jos"
+    ],
+    "answer": 0,
+    "explain": "The administrative capital of Gombe State is Gombe.",
+    "hint": "Administrative seat of Gombe State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Jigawa State?",
+    "options": [
+      "Gombe",
+      "Dutse",
+      "Calabar",
+      "Minna"
+    ],
+    "answer": 1,
+    "explain": "The administrative capital of Jigawa State is Dutse.",
+    "hint": "Administrative seat of Jigawa State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Kebbi State?",
+    "options": [
+      "Asaba",
+      "Birnin Kebbi",
+      "Yenagoa",
+      "Calabar"
+    ],
+    "answer": 1,
+    "explain": "The administrative capital of Kebbi State is Birnin Kebbi.",
+    "hint": "Administrative seat of Kebbi State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Kogi State?",
+    "options": [
+      "Ikeja",
+      "Lokoja",
+      "Birnin Kebbi",
+      "Ado-Ekiti"
+    ],
+    "answer": 1,
+    "explain": "The administrative capital of Kogi State is Lokoja.",
+    "hint": "Administrative seat of Kogi State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Nasarawa State?",
+    "options": [
+      "Umuahia",
+      "Yola",
+      "Katsina",
+      "Lafia"
+    ],
+    "answer": 3,
+    "explain": "The administrative capital of Nasarawa State is Lafia.",
+    "hint": "Administrative seat of Nasarawa State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Niger State?",
+    "options": [
+      "Asaba",
+      "Osogbo",
+      "Uyo",
+      "Minna"
+    ],
+    "answer": 3,
+    "explain": "The administrative capital of Niger State is Minna.",
+    "hint": "Administrative seat of Niger State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Osun State?",
+    "options": [
+      "Jos",
+      "Abakaliki",
+      "Dutse",
+      "Osogbo"
+    ],
+    "answer": 3,
+    "explain": "The administrative capital of Osun State is Osogbo.",
+    "hint": "Administrative seat of Osun State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Taraba State?",
+    "options": [
+      "Lokoja",
+      "Jalingo",
+      "Kano",
+      "Abeokuta"
+    ],
+    "answer": 1,
+    "explain": "The administrative capital of Taraba State is Jalingo.",
+    "hint": "Administrative seat of Taraba State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Yobe State?",
+    "options": [
+      "Gombe",
+      "Kano",
+      "Port Harcourt",
+      "Damaturu"
+    ],
+    "answer": 3,
+    "explain": "The administrative capital of Yobe State is Damaturu.",
+    "hint": "Administrative seat of Yobe State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "State geography (P1): What is the administrative capital of Zamfara State?",
+    "options": [
+      "Minna",
+      "Gusau",
+      "Katsina",
+      "Lafia"
+    ],
+    "answer": 1,
+    "explain": "The administrative capital of Zamfara State is Gusau.",
+    "hint": "Administrative seat of Zamfara State.",
+    "topic": "States & Capitals",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "World geography (P1): What is the official capital city of Ghana?",
+    "options": [
+      "Washington, D.C.",
+      "Accra",
+      "Brasília",
+      "Pretoria"
+    ],
+    "answer": 1,
+    "explain": "Accra is the capital of Ghana.",
+    "hint": "Capital city of Ghana.",
+    "topic": "World Geography",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "World geography (P1): What is the official capital city of Kenya?",
+    "options": [
+      "Washington, D.C.",
+      "Brasília",
+      "Nairobi",
+      "Cairo"
+    ],
+    "answer": 2,
+    "explain": "Nairobi is the capital of Kenya.",
+    "hint": "Capital city of Kenya.",
+    "topic": "World Geography",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "World geography (P1): What is the official capital city of South Africa?",
+    "options": [
+      "Beijing",
+      "Canberra",
+      "New Delhi",
+      "Pretoria"
+    ],
+    "answer": 3,
+    "explain": "Pretoria is the capital of South Africa.",
+    "hint": "Capital city of South Africa.",
+    "topic": "World Geography",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "World geography (P1): What is the official capital city of Egypt?",
+    "options": [
+      "Beijing",
+      "Washington, D.C.",
+      "London",
+      "Cairo"
+    ],
+    "answer": 3,
+    "explain": "Cairo is the capital of Egypt.",
+    "hint": "Capital city of Egypt.",
+    "topic": "World Geography",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "World geography (P1): What is the official capital city of United Kingdom?",
+    "options": [
+      "Pretoria",
+      "London",
+      "New Delhi",
+      "Accra"
+    ],
+    "answer": 1,
+    "explain": "London is the capital of United Kingdom.",
+    "hint": "Capital city of United Kingdom.",
+    "topic": "World Geography",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "World geography (P1): What is the official capital city of United States?",
+    "options": [
+      "London",
+      "Ottawa",
+      "Washington, D.C.",
+      "Nairobi"
+    ],
+    "answer": 2,
+    "explain": "Washington, D.C. is the capital of United States.",
+    "hint": "Capital city of United States.",
+    "topic": "World Geography",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "World geography (P1): What is the official capital city of France?",
+    "options": [
+      "Nairobi",
+      "Paris",
+      "Brasília",
+      "Pretoria"
+    ],
+    "answer": 1,
+    "explain": "Paris is the capital of France.",
+    "hint": "Capital city of France.",
+    "topic": "World Geography",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "World geography (P1): What is the official capital city of Japan?",
+    "options": [
+      "Pretoria",
+      "Berlin",
+      "London",
+      "Tokyo"
+    ],
+    "answer": 3,
+    "explain": "Tokyo is the capital of Japan.",
+    "hint": "Capital city of Japan.",
+    "topic": "World Geography",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "World geography (P1): What is the official capital city of Canada?",
+    "options": [
+      "Ottawa",
+      "Pretoria",
+      "Tokyo",
+      "Brasília"
+    ],
+    "answer": 0,
+    "explain": "Ottawa is the capital of Canada.",
+    "hint": "Capital city of Canada.",
+    "topic": "World Geography",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "World geography (P1): What is the official capital city of China?",
+    "options": [
+      "Tokyo",
+      "Beijing",
+      "Nairobi",
+      "Ottawa"
+    ],
+    "answer": 1,
+    "explain": "Beijing is the capital of China.",
+    "hint": "Capital city of China.",
+    "topic": "World Geography",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "World geography (P1): What is the official capital city of Germany?",
+    "options": [
+      "Paris",
+      "Berlin",
+      "Ottawa",
+      "Canberra"
+    ],
+    "answer": 1,
+    "explain": "Berlin is the capital of Germany.",
+    "hint": "Capital city of Germany.",
+    "topic": "World Geography",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "World geography (P1): What is the official capital city of Brazil?",
+    "options": [
+      "Cairo",
+      "New Delhi",
+      "Brasília",
+      "Tokyo"
+    ],
+    "answer": 2,
+    "explain": "Brasília is the capital of Brazil.",
+    "hint": "Capital city of Brazil.",
+    "topic": "World Geography",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "World geography (P1): What is the official capital city of India?",
+    "options": [
+      "Tokyo",
+      "Nairobi",
+      "New Delhi",
+      "Pretoria"
+    ],
+    "answer": 2,
+    "explain": "New Delhi is the capital of India.",
+    "hint": "Capital city of India.",
+    "topic": "World Geography",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "World geography (P1): What is the official capital city of Australia?",
+    "options": [
+      "Tokyo",
+      "Canberra",
+      "Ottawa",
+      "Paris"
+    ],
+    "answer": 1,
+    "explain": "Canberra is the capital of Australia.",
+    "hint": "Capital city of Australia.",
+    "topic": "World Geography",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #1 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "climate",
+      "culture",
+      "currency",
+      "altitude"
+    ],
+    "answer": 1,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #2 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "currency",
+      "climate",
+      "altitude",
+      "culture"
+    ],
+    "answer": 3,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #3 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "altitude",
+      "culture",
+      "currency",
+      "climate"
+    ],
+    "answer": 1,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #4 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "climate",
+      "altitude",
+      "culture",
+      "currency"
+    ],
+    "answer": 2,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #5 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "currency",
+      "altitude",
+      "climate",
+      "culture"
+    ],
+    "answer": 3,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #6 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "altitude",
+      "currency",
+      "culture",
+      "climate"
+    ],
+    "answer": 2,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #7 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "climate",
+      "currency",
+      "culture",
+      "altitude"
+    ],
+    "answer": 2,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #8 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "altitude",
+      "climate",
+      "culture",
+      "currency"
+    ],
+    "answer": 2,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #9 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "altitude",
+      "climate",
+      "culture",
+      "currency"
+    ],
+    "answer": 2,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #10 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "climate",
+      "currency",
+      "culture",
+      "altitude"
+    ],
+    "answer": 2,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #11 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "currency",
+      "culture",
+      "altitude",
+      "climate"
+    ],
+    "answer": 1,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #12 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "culture",
+      "climate",
+      "currency",
+      "altitude"
+    ],
+    "answer": 0,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #13 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "currency",
+      "climate",
+      "culture",
+      "altitude"
+    ],
+    "answer": 2,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #14 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "currency",
+      "altitude",
+      "climate",
+      "culture"
+    ],
+    "answer": 3,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #15 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "climate",
+      "altitude",
+      "culture",
+      "currency"
+    ],
+    "answer": 2,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #16 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "culture",
+      "currency",
+      "altitude",
+      "climate"
+    ],
+    "answer": 0,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #17 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "climate",
+      "currency",
+      "altitude",
+      "culture"
+    ],
+    "answer": 3,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #18 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "climate",
+      "currency",
+      "culture",
+      "altitude"
+    ],
+    "answer": 2,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #19 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "altitude",
+      "climate",
+      "currency",
+      "culture"
+    ],
+    "answer": 3,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #20 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "currency",
+      "culture",
+      "climate",
+      "altitude"
+    ],
+    "answer": 1,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #21 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "culture",
+      "altitude",
+      "climate",
+      "currency"
+    ],
+    "answer": 0,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #22 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "climate",
+      "currency",
+      "altitude",
+      "culture"
+    ],
+    "answer": 3,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #23 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "culture",
+      "climate",
+      "currency",
+      "altitude"
+    ],
+    "answer": 0,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #24 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "culture",
+      "climate",
+      "currency",
+      "altitude"
+    ],
+    "answer": 0,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #25 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "altitude",
+      "culture",
+      "currency",
+      "climate"
+    ],
+    "answer": 1,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #26 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "culture",
+      "climate",
+      "currency",
+      "altitude"
+    ],
+    "answer": 0,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #27 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "altitude",
+      "currency",
+      "climate",
+      "culture"
+    ],
+    "answer": 3,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #28 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "culture",
+      "currency",
+      "climate",
+      "altitude"
+    ],
+    "answer": 0,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #29 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "climate",
+      "altitude",
+      "culture",
+      "currency"
+    ],
+    "answer": 2,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #30 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "altitude",
+      "climate",
+      "culture",
+      "currency"
+    ],
+    "answer": 2,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #31 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "culture",
+      "altitude",
+      "climate",
+      "currency"
+    ],
+    "answer": 0,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #32 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "currency",
+      "climate",
+      "culture",
+      "altitude"
+    ],
+    "answer": 2,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #33 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "currency",
+      "altitude",
+      "culture",
+      "climate"
+    ],
+    "answer": 2,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #34 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "currency",
+      "climate",
+      "altitude",
+      "culture"
+    ],
+    "answer": 3,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #35 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "culture",
+      "climate",
+      "altitude",
+      "currency"
+    ],
+    "answer": 0,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #36 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "culture",
+      "climate",
+      "altitude",
+      "currency"
+    ],
+    "answer": 0,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #37 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "climate",
+      "altitude",
+      "culture",
+      "currency"
+    ],
+    "answer": 2,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #38 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "altitude",
+      "culture",
+      "climate",
+      "currency"
+    ],
+    "answer": 1,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #39 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "culture",
+      "currency",
+      "altitude",
+      "climate"
+    ],
+    "answer": 0,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #40 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "culture",
+      "climate",
+      "altitude",
+      "currency"
+    ],
+    "answer": 0,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #41 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "altitude",
+      "climate",
+      "culture",
+      "currency"
+    ],
+    "answer": 2,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #42 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "altitude",
+      "culture",
+      "climate",
+      "currency"
+    ],
+    "answer": 1,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #43 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "culture",
+      "currency",
+      "altitude",
+      "climate"
+    ],
+    "answer": 0,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Social studies concept #44 (P1): The total way of life of a group of people, including their language, food, and dress, is their ____.",
+    "options": [
+      "currency",
+      "climate",
+      "altitude",
+      "culture"
+    ],
+    "answer": 3,
+    "explain": "Culture encompasses social behaviors, arts, and customs.",
+    "hint": "Way of life of a people.",
+    "topic": "Culture & Society",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  }
+]

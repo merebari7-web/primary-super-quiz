@@ -1,1 +1,1502 @@
-[{"q":"A referee is an official in a ____.","options":["kitchen only","game or match","farm only","church choir only"],"answer":1,"explain":"The referee enforces rules."},{"q":"Drinking clean water prevents many ____.","options":["colours","games","songs","diseases"],"answer":3,"explain":"Unsafe water spreads germs."},{"q":"Fair play means ____.","options":["playing by the rules","cheating","insulting","fighting"],"answer":0,"explain":"Sportsmanship is fair play."},{"q":"We should bathe ____.","options":["only at Christmas","once a year","every day","never"],"answer":2,"explain":"Daily bathing is hygiene."},{"q":"Obesity can result from too little exercise and too much ____.","options":["water","reading","unhealthy food","sleep at night"],"answer":2,"explain":"Balance food and activity."},{"q":"Basketball is a ____.","options":["crop","state","language","sport"],"answer":3,"explain":"Basketball is a physical activity/sport."},{"q":"Swimming is done in ____.","options":["a tree","the sky","sand only","water"],"answer":3,"explain":"Swim in safe water with supervision."},{"q":"We should brush our teeth ____ a day.","options":["once a year","twice","never","once a month"],"answer":1,"explain":"Morning and night."},{"q":"Nails should be kept ____.","options":["bitten always","short and clean","long and dirty","painted with mud"],"answer":1,"explain":"Dirty nails hide germs."},{"q":"Handball is a ____.","options":["crop","language","state","sport"],"answer":3,"explain":"Handball is a physical activity/sport."},{"q":"Protective foods are rich in ____.","options":["only sugar","only sand","vitamins and minerals","only salt always"],"answer":2,"explain":"Fruits and vegetables."},{"q":"PHE stands for Physical and ____ Education.","options":["Health","Hausa","Home","History"],"answer":0,"explain":"Physical and Health Education."},{"q":"Athletics includes running, jumping and ____.","options":["sewing","cooking","throwing","coding only"],"answer":2,"explain":"Track and field events."},{"q":"The Olympic Games are a world ____ festival.","options":["cooking only","farming only","sports","spelling only"],"answer":2,"explain":"Athletes from many countries compete."},{"q":"Football is a ____.","options":["crop","state","sport","language"],"answer":2,"explain":"Football is a physical activity/sport."},{"q":"Athletics is a ____.","options":["crop","sport","language","state"],"answer":1,"explain":"Athletics is a physical activity/sport."},{"q":"Wash fruit before ____.","options":["hiding","planting always","eating","throwing always"],"answer":2,"explain":"To remove dirt and germs."},{"q":"We exercise to keep our body ____.","options":["dirty","asleep always","fit and strong","weak always"],"answer":2,"explain":"Exercise improves health."},{"q":"Energy-giving foods are mainly ____.","options":["stones","plastic","carbohydrates","metal"],"answer":2,"explain":"Yam, rice, bread."},{"q":"Table tennis is a ____.","options":["crop","language","sport","state"],"answer":2,"explain":"Table tennis is a physical activity/sport."},{"q":"Team sports teach us ____.","options":["cheating","selfishness","cooperation","anger only"],"answer":2,"explain":"We play together."},{"q":"The heart beats faster when we ____.","options":["sleep deeply only","sit still only","exercise","close our eyes only"],"answer":2,"explain":"Muscles need more blood during exercise."},{"q":"Tennis is a ____.","options":["sport","state","crop","language"],"answer":0,"explain":"Tennis is a physical activity/sport."},{"q":"A shuttlecock is used in ____.","options":["boxing","football","badminton","swimming"],"answer":2,"explain":"Badminton uses a racket and shuttlecock."},{"q":"Rest and sleep help the body to ____.","options":["recover","stop growing forever","forget water","get dirtier"],"answer":0,"explain":"Children need enough sleep."},{"q":"First aid is help given ____ a doctor comes.","options":["after many years","instead of never","to punish","before"],"answer":3,"explain":"First aid is immediate care."},{"q":"Volleyball is a ____.","options":["sport","language","crop","state"],"answer":0,"explain":"Volleyball is a physical activity/sport."},{"q":"Football is played with a ____.","options":["ball","bat only","shuttlecock","stick only"],"answer":0,"explain":"Football uses a round ball."},{"q":"Cover your mouth when you ____.","options":["smile","cough or sneeze","pray quietly","read"],"answer":1,"explain":"This stops germs spreading."},{"q":"A sprain is an injury to a ____.","options":["whistle","hair style","shoelace","ligament / joint"],"answer":3,"explain":"Rest, ice, compress, elevate (RICE)."},{"q":"A cut should be ____.","options":["rubbed with soil","ignored always","licked with dirty hands","cleaned and covered"],"answer":3,"explain":"Clean wounds to prevent infection."},{"q":"Body-building foods are mainly ____.","options":["proteins","sweets only","air","oil only"],"answer":0,"explain":"Fish, beans, eggs, meat."},{"q":"Personal hygiene means keeping ____ clean.","options":["only books","only the road","only the flag","our body"],"answer":3,"explain":"Wash, brush, bathe, wear clean clothes."},{"q":"A balanced diet contains ____.","options":["only sweets","only water","all food groups in the right amounts","only oil"],"answer":2,"explain":"Go, grow and glow foods."},{"q":"We warm up before exercise to prevent ____.","options":["happiness","injury","learning","friendship"],"answer":1,"explain":"Warming up prepares muscles."},{"q":"We should not swim in ____ water.","options":["safe beaches with guards","a supervised clean pool","unknown or dirty","clear marked areas"],"answer":2,"explain":"Unknown water can be dangerous."},{"q":"In a race, the starter may say “On your marks, get set, ____”.","options":["sleep","stop","go","eat"],"answer":2,"explain":"Go begins the race."},{"q":"Swimming is a ____.","options":["sport","crop","language","state"],"answer":0,"explain":"Swimming is a physical activity/sport."},{"q":"Which of these is a healthy habit?","options":["washing hands","eating dirt","sharing used tissue","skipping baths"],"answer":0,"explain":"Washing hands is good hygiene."},{"q":"Which of these is a sport?","options":["fighting","football","sleeping all day","littering"],"answer":1,"explain":"It is a sporting activity."},{"q":"Which of these is a sport?","options":["sleeping all day","fighting","basketball","littering"],"answer":2,"explain":"It is a sporting activity."},{"q":"Which of these is a sport?","options":["volleyball","sleeping all day","littering","fighting"],"answer":0,"explain":"It is a sporting activity."},{"q":"Which of these is a sport?","options":["sleeping all day","littering","fighting","tennis"],"answer":3,"explain":"It is a sporting activity."},{"q":"Which of these is a sport?","options":["fighting","table tennis","littering","sleeping all day"],"answer":1,"explain":"It is a sporting activity."},{"q":"Which of these is a sport?","options":["fighting","littering","sleeping all day","athletics"],"answer":3,"explain":"It is a sporting activity."},{"q":"Which of these is a sport?","options":["fighting","littering","swimming","sleeping all day"],"answer":2,"explain":"It is a sporting activity."},{"q":"Which of these is a sport?","options":["sleeping all day","handball","littering","fighting"],"answer":1,"explain":"It is a sporting activity."},{"q":"A referee is an official in a ____. [game or match]","options":["kitchen only","game or match","church choir only","farm only"],"answer":1,"explain":"The referee enforces rules."},{"q":"Drinking clean water prevents many ____. [diseases]","options":["colours","songs","games","diseases"],"answer":3,"explain":"Unsafe water spreads germs."},{"q":"Fair play means ____. [playing by the rules]","options":["cheating","fighting","playing by the rules","insulting"],"answer":2,"explain":"Sportsmanship is fair play."},{"q":"We should bathe ____. [every day]","options":["never","once a year","only at Christmas","every day"],"answer":3,"explain":"Daily bathing is hygiene."},{"q":"Obesity can result from too little exercise and too much ____. [unhealthy food]","options":["water","sleep at night","reading","unhealthy food"],"answer":3,"explain":"Balance food and activity."},{"q":"Basketball is a ____. [sport]","options":["crop","language","sport","state"],"answer":2,"explain":"Basketball is a physical activity/sport."},{"q":"Swimming is done in ____.","options":["water","once a month","the sky","sand only"],"answer":0,"explain":"Swim in safe water with supervision."},{"q":"We should brush our teeth ____ a day.","options":["bitten always","once a month","twice","long and dirty"],"answer":2,"explain":"Morning and night."},{"q":"Nails should be kept ____.","options":["painted with mud","only sugar","only sand","short and clean"],"answer":3,"explain":"Dirty nails hide germs."},{"q":"Handball is a ____.","options":["Hausa","sport","only salt always","Home"],"answer":1,"explain":"Handball is a physical activity/sport."},{"q":"Protective foods are rich in ____.","options":["History","cooking","vitamins and minerals","sewing"],"answer":2,"explain":"Fruits and vegetables."},{"q":"PHE stands for Physical and ____ Education.","options":["coding only","Health","farming only","cooking only"],"answer":1,"explain":"Physical and Health Education."},{"q":"Athletics includes running, jumping and ____.","options":["throwing","planting always","spelling only","hiding"],"answer":0,"explain":"Track and field events."},{"q":"The Olympic Games are a world ____ festival.","options":["asleep always","dirty","throwing always","sports"],"answer":3,"explain":"Athletes from many countries compete."},{"q":"Football is a ____.","options":["sport","stones","weak always","plastic"],"answer":0,"explain":"Football is a physical activity/sport."},{"q":"Athletics is a ____.","options":["anger only","selfishness","sport","metal"],"answer":2,"explain":"Athletics is a physical activity/sport."},{"q":"Wash fruit before ____.","options":["eating","sleep deeply only","close our eyes only","sit still only"],"answer":0,"explain":"To remove dirt and germs."},{"q":"We exercise to keep our body ____.","options":["football","swimming","fit and strong","boxing"],"answer":2,"explain":"Exercise improves health."},{"q":"Energy-giving foods are mainly ____.","options":["carbohydrates","forget water","stop growing forever","get dirtier"],"answer":0,"explain":"Yam, rice, bread."},{"q":"Table tennis is a ____.","options":["sport","after many years","instead of never","to punish"],"answer":0,"explain":"Table tennis is a physical activity/sport."},{"q":"Team sports teach us ____.","options":["shuttlecock","stick only","cooperation","bat only"],"answer":2,"explain":"We play together."},{"q":"The heart beats faster when we ____.","options":["smile","read","pray quietly","exercise"],"answer":3,"explain":"Muscles need more blood during exercise."},{"q":"Tennis is a ____.","options":["whistle","hair style","shoelace","sport"],"answer":3,"explain":"Tennis is a physical activity/sport."},{"q":"A shuttlecock is used in ____.","options":["badminton","licked with dirty hands","ignored always","rubbed with soil"],"answer":0,"explain":"Badminton uses a racket and shuttlecock."},{"q":"Rest and sleep help the body to ____.","options":["recover","air","oil only","sweets only"],"answer":0,"explain":"Children need enough sleep."},{"q":"First aid is help given ____ a doctor comes.","options":["only the flag","only the road","only books","before"],"answer":3,"explain":"First aid is immediate care."},{"q":"Volleyball is a ____.","options":["only water","sport","only sweets","only oil"],"answer":1,"explain":"Volleyball is a physical activity/sport."},{"q":"Football is played with a ____.","options":["friendship","ball","happiness","learning"],"answer":1,"explain":"Football uses a round ball."},{"q":"Cover your mouth when you ____.","options":["clear marked areas","a supervised clean pool","safe beaches with guards","cough or sneeze"],"answer":3,"explain":"This stops germs spreading."},{"q":"A sprain is an injury to a ____.","options":["eat","stop","ligament / joint","sleep"],"answer":2,"explain":"Rest, ice, compress, elevate (RICE)."},{"q":"A cut should be ____.","options":["sharing used tissue","cleaned and covered","eating dirt","skipping baths"],"answer":1,"explain":"Clean wounds to prevent infection."},{"q":"Body-building foods are mainly ____.","options":["sleeping all day","proteins","Accra","littering"],"answer":1,"explain":"Fish, beans, eggs, meat."},{"q":"Personal hygiene means keeping ____ clean.","options":["our body","London","Nairobi","Cairo"],"answer":0,"explain":"Wash, brush, bathe, wear clean clothes."},{"q":"A balanced diet contains ____.","options":["all food groups in the right amounts","stone","none of these names","Paris"],"answer":0,"explain":"Go, grow and glow foods."},{"q":"We warm up before exercise to prevent ____.","options":["rainbow","injury","aeroplane","Tuesday"],"answer":1,"explain":"Warming up prepares muscles."},{"q":"We should not swim in ____ water.","options":["a rumour","the moon","unknown or dirty","zero"],"answer":2,"explain":"Unknown water can be dangerous."},{"q":"In a race, the starter may say “On your marks, get set, ____”.","options":["church choir only","farm only","colours","go"],"answer":3,"explain":"Go begins the race."},{"q":"Swimming is a ____.","options":["songs","sport","cheating","games"],"answer":1,"explain":"Swimming is a physical activity/sport."},{"q":"Which of these is a healthy habit?","options":["only at Christmas","washing hands","insulting","fighting"],"answer":1,"explain":"Washing hands is good hygiene."},{"q":"Which of these is a sport?","options":["never","football","reading","water"],"answer":1,"explain":"It is a sporting activity."},{"q":"Which of these is a sport?","options":["reading","sleep at night","crop","basketball"],"answer":3,"explain":"It is a sporting activity."},{"q":"Which of these is a sport?","options":["volleyball","state","a tree","language"],"answer":0,"explain":"It is a sporting activity."},{"q":"Which of these is a sport?","options":["sand only","once a month","tennis","the sky"],"answer":2,"explain":"It is a sporting activity."},{"q":"Which of these is a sport?","options":["table tennis","long and dirty","bitten always","painted with mud"],"answer":0,"explain":"It is a sporting activity."},{"q":"Which of these is a sport?","options":["only sand","only sugar","athletics","only salt always"],"answer":2,"explain":"It is a sporting activity."},{"q":"Which of these is a sport?","options":["Home","swimming","sewing","History"],"answer":1,"explain":"It is a sporting activity."},{"q":"Which of these is a sport?","options":["cooking","coding only","handball","sewing"],"answer":2,"explain":"It is a sporting activity."},{"q":"A referee is an official in a ____.","options":["farming only","cooking only","game or match","spelling only"],"answer":2,"explain":"The referee enforces rules."},{"q":"Drinking clean water prevents many ____.","options":["diseases","throwing always","hiding","planting always"],"answer":0,"explain":"Unsafe water spreads germs."},{"q":"Fair play means ____.","options":["playing by the rules","asleep always","dirty","weak always"],"answer":0,"explain":"Sportsmanship is fair play."},{"q":"We should bathe ____.","options":["stones","every day","plastic","metal"],"answer":1,"explain":"Daily bathing is hygiene."},{"q":"Obesity can result from too little exercise and too much ____.","options":["unhealthy food","sleep deeply only","selfishness","anger only"],"answer":0,"explain":"Balance food and activity."},{"q":"Basketball is a ____.","options":["sport","boxing","sit still only","close our eyes only"],"answer":0,"explain":"Basketball is a physical activity/sport."}]
+[
+  {
+    "q": "The immediate care and assistance given to an injured person before professional medical help arrives is ____. (P3)",
+    "options": [
+      "Prescription",
+      "First Aid",
+      "Hospitalization",
+      "Major Surgery"
+    ],
+    "answer": 1,
+    "explain": "First aid stabilizes injuries, relieves pain, and saves lives.",
+    "hint": "Immediate initial emergency care.",
+    "topic": "First Aid",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "A clean portable box containing emergency bandages, antiseptic, plaster, and cotton wool is a ____ box. (P3)",
+    "options": [
+      "Pencil",
+      "Shoe",
+      "First Aid",
+      "Tool"
+    ],
+    "answer": 2,
+    "explain": "First Aid kits are essential in classrooms, homes, and sports fields.",
+    "hint": "Emergency medical supply box.",
+    "topic": "First Aid",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "In standard athletics track events, the circular baton is passed between runners during a ____ race. (P3)",
+    "options": [
+      "marathon",
+      "hurdle",
+      "relay (e.g. 4x100m)",
+      "high jump"
+    ],
+    "answer": 2,
+    "explain": "Relay runners pass the baton smoothly within the exchange zone.",
+    "hint": "Team race passing a baton.",
+    "topic": "Athletics & Track",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Athletic field events include the high jump, long jump, shot put, and ____ throw. (P3)",
+    "options": [
+      "table tennis",
+      "football",
+      "javelin",
+      "swimming"
+    ],
+    "answer": 2,
+    "explain": "Javelin involves throwing a light spear for maximum distance.",
+    "hint": "Field throwing event with a spear.",
+    "topic": "Athletics & Field",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Sports injury (P3): What is a Fracture?",
+    "options": [
+      "a muscle stretch",
+      "a broken or cracked bone requiring immediate splinting and radiography",
+      "a shallow cut",
+      "a minor skin scratch"
+    ],
+    "answer": 1,
+    "explain": "A Fracture is a broken or cracked bone requiring immediate splinting and radiography.",
+    "hint": "Definition of Fracture.",
+    "topic": "Sports Injuries",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Sports injury (P3): What is a Sprain?",
+    "options": [
+      "a tooth cavity",
+      "a broken bone",
+      "a headache",
+      "a painful wrenching or tearing of ligaments around a joint (e.g. ankle)"
+    ],
+    "answer": 3,
+    "explain": "A Sprain is a painful wrenching or tearing of ligaments around a joint (e.g. ankle).",
+    "hint": "Definition of Sprain.",
+    "topic": "Sports Injuries",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Sports injury (P3): What is a Dislocation?",
+    "options": [
+      "a bruised toenail",
+      "a muscle cramp",
+      "a mild fever",
+      "the displacement of a bone end from its normal joint socket"
+    ],
+    "answer": 3,
+    "explain": "A Dislocation is the displacement of a bone end from its normal joint socket.",
+    "hint": "Definition of Dislocation.",
+    "topic": "Sports Injuries",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Sports injury (P3): What is a Cramp?",
+    "options": [
+      "a cut on the skin",
+      "a broken collarbone",
+      "a joint dislocation",
+      "a sudden, involuntary, painful contraction of a muscle"
+    ],
+    "answer": 3,
+    "explain": "A Cramp is a sudden, involuntary, painful contraction of a muscle.",
+    "hint": "Definition of Cramp.",
+    "topic": "Sports Injuries",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Physical education principle #1 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "weak and tired",
+      "crooked",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #2 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "twisted",
+      "properly aligned and prevents back strain",
+      "crooked"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #3 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "weak and tired",
+      "properly aligned and prevents back strain",
+      "crooked"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #4 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "crooked",
+      "properly aligned and prevents back strain",
+      "twisted"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #5 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "weak and tired",
+      "crooked",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #6 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "properly aligned and prevents back strain",
+      "crooked",
+      "weak and tired"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #7 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "crooked",
+      "twisted",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #8 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "weak and tired",
+      "crooked",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #9 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "crooked",
+      "properly aligned and prevents back strain",
+      "weak and tired"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #10 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "weak and tired",
+      "properly aligned and prevents back strain",
+      "twisted"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #11 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "properly aligned and prevents back strain",
+      "crooked",
+      "weak and tired",
+      "twisted"
+    ],
+    "answer": 0,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #12 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "weak and tired",
+      "properly aligned and prevents back strain",
+      "twisted"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #13 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "properly aligned and prevents back strain",
+      "weak and tired",
+      "twisted",
+      "crooked"
+    ],
+    "answer": 0,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #14 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "properly aligned and prevents back strain",
+      "weak and tired",
+      "crooked",
+      "twisted"
+    ],
+    "answer": 0,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #15 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "crooked",
+      "twisted",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #16 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "properly aligned and prevents back strain",
+      "weak and tired",
+      "crooked"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #17 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "twisted",
+      "weak and tired",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #18 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "properly aligned and prevents back strain",
+      "crooked",
+      "twisted",
+      "weak and tired"
+    ],
+    "answer": 0,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #19 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "properly aligned and prevents back strain",
+      "twisted",
+      "weak and tired",
+      "crooked"
+    ],
+    "answer": 0,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #20 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "twisted",
+      "crooked",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #21 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "twisted",
+      "properly aligned and prevents back strain",
+      "crooked"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #22 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "weak and tired",
+      "crooked",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #23 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "properly aligned and prevents back strain",
+      "crooked",
+      "twisted"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #24 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "twisted",
+      "crooked",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #25 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "twisted",
+      "properly aligned and prevents back strain",
+      "weak and tired"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #26 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "properly aligned and prevents back strain",
+      "twisted",
+      "weak and tired"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #27 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "properly aligned and prevents back strain",
+      "weak and tired",
+      "twisted"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #28 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "crooked",
+      "properly aligned and prevents back strain",
+      "twisted"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #29 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "properly aligned and prevents back strain",
+      "crooked",
+      "twisted"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #30 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "properly aligned and prevents back strain",
+      "twisted",
+      "crooked",
+      "weak and tired"
+    ],
+    "answer": 0,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #31 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "weak and tired",
+      "twisted",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #32 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "properly aligned and prevents back strain",
+      "twisted",
+      "weak and tired"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #33 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "twisted",
+      "properly aligned and prevents back strain",
+      "crooked"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #34 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "properly aligned and prevents back strain",
+      "weak and tired",
+      "twisted",
+      "crooked"
+    ],
+    "answer": 0,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #35 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "properly aligned and prevents back strain",
+      "crooked",
+      "weak and tired"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #36 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "twisted",
+      "properly aligned and prevents back strain",
+      "crooked"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #37 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "crooked",
+      "properly aligned and prevents back strain",
+      "weak and tired"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #38 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "weak and tired",
+      "twisted",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #39 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "crooked",
+      "weak and tired",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #40 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "weak and tired",
+      "twisted",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #41 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "twisted",
+      "weak and tired",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #42 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "properly aligned and prevents back strain",
+      "weak and tired",
+      "crooked"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #43 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "crooked",
+      "twisted",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #44 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "properly aligned and prevents back strain",
+      "twisted",
+      "weak and tired"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #45 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "properly aligned and prevents back strain",
+      "crooked",
+      "twisted"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #46 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "weak and tired",
+      "twisted",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #47 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "properly aligned and prevents back strain",
+      "twisted",
+      "weak and tired"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #48 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "weak and tired",
+      "crooked",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #49 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "properly aligned and prevents back strain",
+      "crooked",
+      "weak and tired"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #50 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "properly aligned and prevents back strain",
+      "weak and tired",
+      "crooked"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #51 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "properly aligned and prevents back strain",
+      "crooked",
+      "twisted",
+      "weak and tired"
+    ],
+    "answer": 0,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #52 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "properly aligned and prevents back strain",
+      "twisted",
+      "crooked"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #53 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "weak and tired",
+      "properly aligned and prevents back strain",
+      "crooked"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #54 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "weak and tired",
+      "properly aligned and prevents back strain",
+      "crooked"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #55 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "properly aligned and prevents back strain",
+      "weak and tired",
+      "twisted"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #56 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "properly aligned and prevents back strain",
+      "weak and tired",
+      "twisted",
+      "crooked"
+    ],
+    "answer": 0,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #57 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "crooked",
+      "properly aligned and prevents back strain",
+      "twisted"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #58 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "crooked",
+      "properly aligned and prevents back strain",
+      "weak and tired"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #59 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "properly aligned and prevents back strain",
+      "twisted",
+      "weak and tired"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #60 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "crooked",
+      "properly aligned and prevents back strain",
+      "twisted"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #61 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "properly aligned and prevents back strain",
+      "weak and tired",
+      "twisted"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #62 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "twisted",
+      "crooked",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #63 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "properly aligned and prevents back strain",
+      "crooked",
+      "twisted",
+      "weak and tired"
+    ],
+    "answer": 0,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #64 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "crooked",
+      "twisted",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #65 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "properly aligned and prevents back strain",
+      "twisted",
+      "crooked",
+      "weak and tired"
+    ],
+    "answer": 0,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #66 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "twisted",
+      "crooked",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #67 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "crooked",
+      "properly aligned and prevents back strain",
+      "weak and tired"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #68 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "twisted",
+      "crooked",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #69 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "crooked",
+      "properly aligned and prevents back strain",
+      "weak and tired"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #70 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "crooked",
+      "properly aligned and prevents back strain",
+      "weak and tired"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #71 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "twisted",
+      "weak and tired",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #72 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "weak and tired",
+      "twisted",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #73 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "crooked",
+      "weak and tired",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #74 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "twisted",
+      "crooked",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #75 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "properly aligned and prevents back strain",
+      "crooked",
+      "weak and tired",
+      "twisted"
+    ],
+    "answer": 0,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #76 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "crooked",
+      "properly aligned and prevents back strain",
+      "twisted"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #77 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "properly aligned and prevents back strain",
+      "twisted",
+      "weak and tired"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #78 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "weak and tired",
+      "twisted",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #79 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "properly aligned and prevents back strain",
+      "twisted",
+      "weak and tired",
+      "crooked"
+    ],
+    "answer": 0,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #80 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "properly aligned and prevents back strain",
+      "crooked",
+      "weak and tired"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #81 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "properly aligned and prevents back strain",
+      "twisted",
+      "crooked"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #82 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "properly aligned and prevents back strain",
+      "crooked",
+      "weak and tired"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #83 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "properly aligned and prevents back strain",
+      "weak and tired",
+      "crooked",
+      "twisted"
+    ],
+    "answer": 0,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #84 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "properly aligned and prevents back strain",
+      "weak and tired",
+      "twisted",
+      "crooked"
+    ],
+    "answer": 0,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #85 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "twisted",
+      "properly aligned and prevents back strain",
+      "crooked"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #86 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "properly aligned and prevents back strain",
+      "weak and tired",
+      "twisted"
+    ],
+    "answer": 1,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #87 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "crooked",
+      "twisted",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #88 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "crooked",
+      "twisted",
+      "weak and tired",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #89 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "crooked",
+      "properly aligned and prevents back strain",
+      "twisted"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #90 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "twisted",
+      "crooked",
+      "properly aligned and prevents back strain",
+      "weak and tired"
+    ],
+    "answer": 2,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #91 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "properly aligned and prevents back strain",
+      "twisted",
+      "weak and tired",
+      "crooked"
+    ],
+    "answer": 0,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Physical education principle #92 (P3): Practicing good posture while sitting, standing, and walking keeps the spine ____.",
+    "options": [
+      "weak and tired",
+      "twisted",
+      "crooked",
+      "properly aligned and prevents back strain"
+    ],
+    "answer": 3,
+    "explain": "Proper posture protects spinal vertebrae and organs.",
+    "hint": "Benefits of good posture.",
+    "topic": "Posture & Health",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  }
+]

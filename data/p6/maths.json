@@ -1,1 +1,1502 @@
-[{"q":"Simplify: (3 + 4) × 2","options":["7","12","14","11"],"answer":2,"explain":"Brackets first: 3+4=7, ×2 = 14."},{"q":"Using π = 22/7, area of a circle radius 14 cm is ____ cm².","options":["310","307","309","308"],"answer":3,"explain":"Area = πr² = 22/7 × 14 × 14."},{"q":"4³ = ____.","options":["64","66","63","65"],"answer":0,"explain":"4³ = 4×4×4 = 64."},{"q":"If a = 1 and b = 7, then 3a + b = ____.","options":["12","9","11","10"],"answer":3,"explain":"3(1) + 7 = 10."},{"q":"Probability of rolling a 6 on a fair die is ____.","options":["1/2","1","6","1/6"],"answer":3,"explain":"A die has 6 faces."},{"q":"Share 24 in the ratio 1:3. The smaller share is ____.","options":["6","5","7","8"],"answer":0,"explain":"Parts = 4. One part = 6. Smaller = 6."},{"q":"Convert 1/2 to a percentage.","options":["10%","50%","2%","1%"],"answer":1,"explain":"1/2 = 50%."},{"q":"A cube has ____ vertices.","options":["8","6","12","4"],"answer":0,"explain":"A cube has 8 corners (vertices)."},{"q":"4/2 ÷ 1/2 = ____.","options":["4/4","1/4","1/2","4"],"answer":3,"explain":"Multiply by the reciprocal: 4/2 × 2/1."},{"q":"Simplify: 2 + 3 × 2","options":["7","10","8","12"],"answer":2,"explain":"Multiply first: 3×2=6, then 2+6=8."},{"q":"Using π = 22/7, circumference of a circle radius 7 cm is ____ cm.","options":["22","154","14","44"],"answer":3,"explain":"C = 2πr = 2 × 22/7 × 7 = 44."},{"q":"6² = ____.","options":["38","37","36","35"],"answer":2,"explain":"6² = 36."},{"q":"If a = 5 and b = 2, then 6a + b = ____.","options":["32","31","33","34"],"answer":0,"explain":"6(5) + 2 = 32."},{"q":"Probability of a head on a fair coin is ____.","options":["1","1/2","0","1/6"],"answer":1,"explain":"Two equally likely outcomes."},{"q":"Share 40 in the ratio 3:5. The smaller share is ____.","options":["15","17","14","16"],"answer":0,"explain":"Parts = 8. One part = 5. Smaller = 15."},{"q":"Convert 4/5 to a percentage.","options":["4%","80%","40%","5%"],"answer":1,"explain":"4/5 = 80%."},{"q":"A cube has ____ edges.","options":["8","12","4","6"],"answer":1,"explain":"A cube has 12 edges."},{"q":"8/2 ÷ 1/2 = ____.","options":["1/4","1/2","8","8/4"],"answer":2,"explain":"Multiply by the reciprocal: 8/2 × 2/1."},{"q":"Simplify: 7 + 4 × 2","options":["13","56","22","15"],"answer":3,"explain":"Multiply first: 4×2=8, then 7+8=15."},{"q":"Using π = 22/7, area of a circle radius 7 cm is ____ cm².","options":["153","155","156","147"],"answer":3,"explain":"Area = πr² = 22/7 × 7 × 7."},{"q":"3³ = ____.","options":["27","29","28","26"],"answer":0,"explain":"3³ = 3×3×3 = 27."},{"q":"If a = 4 and b = 1, then 8a + b = ____.","options":["35","33","34","32"],"answer":1,"explain":"8(4) + 1 = 33."},{"q":"Share 18 in the ratio 1:2. The smaller share is ____.","options":["5","7","6","8"],"answer":2,"explain":"Parts = 3. One part = 6. Smaller = 6."},{"q":"Convert 1/8 to a percentage.","options":["10%","1%","8%","12%"],"answer":3,"explain":"1/8 = 12%."},{"q":"A cube has ____ faces.","options":["8","6","4","12"],"answer":1,"explain":"A cube has 6 square faces."},{"q":"5/4 ÷ 1/2 = ____.","options":["1/2","5/2","1/4","5/8"],"answer":1,"explain":"Multiply by the reciprocal: 5/4 × 2/1."},{"q":"Simplify: 3 + 8 × 2","options":["19","22","48","13"],"answer":0,"explain":"Multiply first: 8×2=16, then 3+16=19."},{"q":"Using π = 22/7, area of a circle radius 7 cm is ____ cm².","options":["49","154","22","44"],"answer":1,"explain":"22/7 × 7 × 7 = 154."},{"q":"2² = ____.","options":["3","4","5","6"],"answer":1,"explain":"2² = 4."},{"q":"If a = 2 and b = 3, then 4a + b = ____.","options":["13","12","10","11"],"answer":3,"explain":"4(2) + 3 = 11."},{"q":"Share 35 in the ratio 2:5. The smaller share is ____.","options":["9","12","10","11"],"answer":2,"explain":"Parts = 7. One part = 5. Smaller = 10."},{"q":"Convert 3/5 to a percentage.","options":["5%","60%","30%","3%"],"answer":1,"explain":"3/5 = 60%."},{"q":"4/4 ÷ 1/2 = ____.","options":["1/2","1/4","4/8","2"],"answer":3,"explain":"Multiply by the reciprocal: 4/4 × 2/1."},{"q":"Simplify: 2 + 6 × 2","options":["10","14","16","24"],"answer":1,"explain":"Multiply first: 6×2=12, then 2+12=14."},{"q":"7² = ____.","options":["49","51","48","50"],"answer":0,"explain":"7² = 49."},{"q":"If a = 3 and b = 4, then 5a + b = ____.","options":["20","19","18","21"],"answer":1,"explain":"5(3) + 4 = 19."},{"q":"Share 45 in the ratio 2:7. The smaller share is ____.","options":["11","12","9","10"],"answer":3,"explain":"Parts = 9. One part = 5. Smaller = 10."},{"q":"Convert 3/4 to a percentage.","options":["3%","30%","4%","75%"],"answer":3,"explain":"3/4 = 75%."},{"q":"9/4 ÷ 1/2 = ____.","options":["1/2","1/4","9/8","9/2"],"answer":3,"explain":"Multiply by the reciprocal: 9/4 × 2/1."},{"q":"Simplify: (6 + 7) × 2","options":["20","26","42","13"],"answer":1,"explain":"Brackets first: 6+7=13, ×2 = 26."},{"q":"4² = ____.","options":["18","15","16","17"],"answer":2,"explain":"4² = 16."},{"q":"Convert 2/5 to a percentage.","options":["2%","40%","20%","5%"],"answer":1,"explain":"2/5 = 40%."},{"q":"3/2 ÷ 1/2 = ____.","options":["3","3/4","1/2","1/4"],"answer":0,"explain":"Multiply by the reciprocal: 3/2 × 2/1."},{"q":"Simplify: (5 + 2) × 2","options":["10","14","7","9"],"answer":1,"explain":"Brackets first: 5+2=7, ×2 = 14."},{"q":"3² = ____.","options":["9","8","10","11"],"answer":0,"explain":"3² = 9."},{"q":"Convert 1/4 to a percentage.","options":["25%","4%","1%","10%"],"answer":0,"explain":"1/4 = 25%."},{"q":"7/2 ÷ 1/2 = ____.","options":["7","7/4","1/2","1/4"],"answer":0,"explain":"Multiply by the reciprocal: 7/2 × 2/1."},{"q":"Simplify: 5 + 7 × 2","options":["24","19","14","70"],"answer":1,"explain":"Multiply first: 7×2=14, then 5+14=19."},{"q":"5³ = ____.","options":["127","124","125","126"],"answer":2,"explain":"5³ = 5×5×5 = 125."},{"q":"2/4 ÷ 1/2 = ____.","options":["1","1/4","1/2","2/8"],"answer":0,"explain":"Multiply by the reciprocal: 2/4 × 2/1."},{"q":"Simplify: 7 + 7 × 2","options":["21","16","98","28"],"answer":0,"explain":"Multiply first: 7×2=14, then 7+14=21."},{"q":"2³ = ____.","options":["9","10","7","8"],"answer":3,"explain":"2³ = 2×2×2 = 8."},{"q":"8/4 ÷ 1/2 = ____.","options":["8/8","1/4","4","1/2"],"answer":2,"explain":"Multiply by the reciprocal: 8/4 × 2/1."},{"q":"Simplify: 8 + 6 × 2","options":["96","20","16","28"],"answer":1,"explain":"Multiply first: 6×2=12, then 8+12=20."},{"q":"7³ = ____.","options":["342","345","343","344"],"answer":2,"explain":"7³ = 7×7×7 = 343."},{"q":"3/4 ÷ 1/2 = ____.","options":["3/2","3/8","1/4","1/2"],"answer":0,"explain":"Multiply by the reciprocal: 3/4 × 2/1."},{"q":"Simplify: (6 + 6) × 2","options":["18","24","36","12"],"answer":1,"explain":"Brackets first: 6+6=12, ×2 = 24."},{"q":"6³ = ____.","options":["215","218","216","217"],"answer":2,"explain":"6³ = 6×6×6 = 216."},{"q":"6/2 ÷ 1/2 = ____.","options":["6","1/4","1/2","6/4"],"answer":0,"explain":"Multiply by the reciprocal: 6/2 × 2/1."},{"q":"Simplify: (4 + 6) × 2","options":["24","16","10","20"],"answer":3,"explain":"Brackets first: 4+6=10, ×2 = 20."},{"q":"5² = ____.","options":["26","27","25","24"],"answer":2,"explain":"5² = 25."},{"q":"2/2 ÷ 1/2 = ____.","options":["2","1/2","1/4","2/4"],"answer":0,"explain":"Multiply by the reciprocal: 2/2 × 2/1."},{"q":"Simplify: 6 + 7 × 2","options":["15","20","84","26"],"answer":1,"explain":"Multiply first: 7×2=14, then 6+14=20."},{"q":"7/4 ÷ 1/2 = ____.","options":["7/8","1/4","7/2","1/2"],"answer":2,"explain":"Multiply by the reciprocal: 7/4 × 2/1."},{"q":"Simplify: 5 + 5 × 2","options":["20","12","15","50"],"answer":2,"explain":"Multiply first: 5×2=10, then 5+10=15."},{"q":"6/4 ÷ 1/2 = ____.","options":["1/2","1/4","3","6/8"],"answer":2,"explain":"Multiply by the reciprocal: 6/4 × 2/1."},{"q":"Simplify: (4 + 8) × 2","options":["32","12","20","24"],"answer":3,"explain":"Brackets first: 4+8=12, ×2 = 24."},{"q":"5/2 ÷ 1/2 = ____.","options":["1/2","1/4","5","5/4"],"answer":2,"explain":"Multiply by the reciprocal: 5/2 × 2/1."},{"q":"Simplify: (2 + 3) × 2","options":["5","10","6","8"],"answer":1,"explain":"Brackets first: 2+3=5, ×2 = 10."},{"q":"9/2 ÷ 1/2 = ____.","options":["1/4","1/2","9","9/4"],"answer":2,"explain":"Multiply by the reciprocal: 9/2 × 2/1."},{"q":"Simplify: 6 + 4 × 2","options":["14","12","48","20"],"answer":0,"explain":"Multiply first: 4×2=8, then 6+8=14."},{"q":"Simplify: (8 + 3) × 2","options":["22","24","11","14"],"answer":0,"explain":"Brackets first: 8+3=11, ×2 = 22."},{"q":"Simplify: (2 + 7) × 2","options":["9","16","18","14"],"answer":2,"explain":"Brackets first: 2+7=9, ×2 = 18."},{"q":"Simplify: 4 + 8 × 2","options":["20","64","24","14"],"answer":0,"explain":"Multiply first: 8×2=16, then 4+16=20."},{"q":"Simplify: 7 + 6 × 2","options":["15","26","19","84"],"answer":2,"explain":"Multiply first: 6×2=12, then 7+12=19."},{"q":"Simplify: 3 + 7 × 2","options":["42","17","20","12"],"answer":1,"explain":"Multiply first: 7×2=14, then 3+14=17."},{"q":"Simplify: 8 + 7 × 2","options":["112","17","22","30"],"answer":2,"explain":"Multiply first: 7×2=14, then 8+14=22."},{"q":"Simplify: (3 + 7) × 2","options":["10","20","21","17"],"answer":1,"explain":"Brackets first: 3+7=10, ×2 = 20."},{"q":"Simplify: 4 + 5 × 2","options":["11","14","18","40"],"answer":1,"explain":"Multiply first: 5×2=10, then 4+10=14."},{"q":"Simplify: (8 + 2) × 2","options":["12","10","16","20"],"answer":3,"explain":"Brackets first: 8+2=10, ×2 = 20."},{"q":"Simplify: (5 + 7) × 2","options":["35","12","24","19"],"answer":2,"explain":"Brackets first: 5+7=12, ×2 = 24."},{"q":"Simplify: (2 + 6) × 2","options":["12","8","14","16"],"answer":3,"explain":"Brackets first: 2+6=8, ×2 = 16."},{"q":"Simplify: 4 + 4 × 2","options":["16","12","10","32"],"answer":1,"explain":"Multiply first: 4×2=8, then 4+8=12."},{"q":"Simplify: 4 + 6 × 2","options":["16","20","48","12"],"answer":0,"explain":"Multiply first: 6×2=12, then 4+12=16."},{"q":"Simplify: 8 + 5 × 2","options":["26","15","80","18"],"answer":3,"explain":"Multiply first: 5×2=10, then 8+10=18."},{"q":"Simplify: (3 + 5) × 2","options":["15","8","16","13"],"answer":2,"explain":"Brackets first: 3+5=8, ×2 = 16."},{"q":"Simplify: 4 + 3 × 2","options":["9","24","10","14"],"answer":2,"explain":"Multiply first: 3×2=6, then 4+6=10."},{"q":"Simplify: (2 + 5) × 2","options":["7","12","14","10"],"answer":2,"explain":"Brackets first: 2+5=7, ×2 = 14."},{"q":"Simplify: (7 + 3) × 2","options":["13","20","21","10"],"answer":1,"explain":"Brackets first: 7+3=10, ×2 = 20."},{"q":"Simplify: (7 + 7) × 2","options":["28","49","14","21"],"answer":0,"explain":"Brackets first: 7+7=14, ×2 = 28."},{"q":"Simplify: (5 + 3) × 2","options":["15","8","11","16"],"answer":3,"explain":"Brackets first: 5+3=8, ×2 = 16."},{"q":"Simplify: 5 + 6 × 2","options":["60","17","13","22"],"answer":1,"explain":"Multiply first: 6×2=12, then 5+12=17."},{"q":"Simplify: (2 + 4) × 2","options":["12","10","6","8"],"answer":0,"explain":"Brackets first: 2+4=6, ×2 = 12."},{"q":"Simplify: 7 + 8 × 2","options":["17","23","30","112"],"answer":1,"explain":"Multiply first: 8×2=16, then 7+16=23."},{"q":"Simplify: (6 + 8) × 2","options":["22","48","28","14"],"answer":2,"explain":"Brackets first: 6+8=14, ×2 = 28."},{"q":"Simplify: 6 + 6 × 2","options":["24","72","14","18"],"answer":3,"explain":"Multiply first: 6×2=12, then 6+12=18."},{"q":"Simplify: 3 + 4 × 2","options":["14","11","9","24"],"answer":1,"explain":"Multiply first: 4×2=8, then 3+8=11."},{"q":"Simplify: (4 + 7) × 2","options":["28","18","11","22"],"answer":3,"explain":"Brackets first: 4+7=11, ×2 = 22."},{"q":"Simplify: 8 + 4 × 2","options":["64","16","14","24"],"answer":1,"explain":"Multiply first: 4×2=8, then 8+8=16."},{"q":"Simplify: (8 + 4) × 2","options":["16","24","12","32"],"answer":1,"explain":"Brackets first: 8+4=12, ×2 = 24."}]
+[
+  {
+    "q": "Solve for x: 6x + 4 = 22 (P6)",
+    "options": [
+      "3",
+      "5",
+      "4",
+      "2"
+    ],
+    "answer": 0,
+    "explain": "6x = 22 - 4 = 18, so x = 18 ÷ 6 = 3.",
+    "hint": "Subtract 4 from 22, then divide by 6.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 5x + 4 = 19 (P6)",
+    "options": [
+      "2",
+      "4",
+      "5",
+      "3"
+    ],
+    "answer": 3,
+    "explain": "5x = 19 - 4 = 15, so x = 15 ÷ 5 = 3.",
+    "hint": "Subtract 4 from 19, then divide by 5.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 5x + 2 = 17 (P6)",
+    "options": [
+      "3",
+      "2",
+      "5",
+      "4"
+    ],
+    "answer": 0,
+    "explain": "5x = 17 - 2 = 15, so x = 15 ÷ 5 = 3.",
+    "hint": "Subtract 2 from 17, then divide by 5.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 4x + 13 = 45 (P6)",
+    "options": [
+      "8",
+      "10",
+      "9",
+      "7"
+    ],
+    "answer": 0,
+    "explain": "4x = 45 - 13 = 32, so x = 32 ÷ 4 = 8.",
+    "hint": "Subtract 13 from 45, then divide by 4.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 3x + 1 = 10 (P6)",
+    "options": [
+      "3",
+      "2",
+      "5",
+      "4"
+    ],
+    "answer": 0,
+    "explain": "3x = 10 - 1 = 9, so x = 9 ÷ 3 = 3.",
+    "hint": "Subtract 1 from 10, then divide by 3.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 6x + 2 = 50 (P6)",
+    "options": [
+      "9",
+      "10",
+      "8",
+      "7"
+    ],
+    "answer": 2,
+    "explain": "6x = 50 - 2 = 48, so x = 48 ÷ 6 = 8.",
+    "hint": "Subtract 2 from 50, then divide by 6.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 6x + 11 = 59 (P6)",
+    "options": [
+      "7",
+      "9",
+      "10",
+      "8"
+    ],
+    "answer": 3,
+    "explain": "6x = 59 - 11 = 48, so x = 48 ÷ 6 = 8.",
+    "hint": "Subtract 11 from 59, then divide by 6.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 4x + 8 = 28 (P6)",
+    "options": [
+      "4",
+      "6",
+      "7",
+      "5"
+    ],
+    "answer": 3,
+    "explain": "4x = 28 - 8 = 20, so x = 20 ÷ 4 = 5.",
+    "hint": "Subtract 8 from 28, then divide by 4.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 5x + 3 = 33 (P6)",
+    "options": [
+      "5",
+      "8",
+      "6",
+      "7"
+    ],
+    "answer": 2,
+    "explain": "5x = 33 - 3 = 30, so x = 30 ÷ 5 = 6.",
+    "hint": "Subtract 3 from 33, then divide by 5.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 6x + 6 = 48 (P6)",
+    "options": [
+      "8",
+      "9",
+      "6",
+      "7"
+    ],
+    "answer": 3,
+    "explain": "6x = 48 - 6 = 42, so x = 42 ÷ 6 = 7.",
+    "hint": "Subtract 6 from 48, then divide by 6.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 5x + 4 = 24 (P6)",
+    "options": [
+      "5",
+      "3",
+      "6",
+      "4"
+    ],
+    "answer": 3,
+    "explain": "5x = 24 - 4 = 20, so x = 20 ÷ 5 = 4.",
+    "hint": "Subtract 4 from 24, then divide by 5.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 4x + 12 = 32 (P6)",
+    "options": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "answer": 0,
+    "explain": "4x = 32 - 12 = 20, so x = 20 ÷ 4 = 5.",
+    "hint": "Subtract 12 from 32, then divide by 4.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 3x + 15 = 30 (P6)",
+    "options": [
+      "6",
+      "4",
+      "5",
+      "7"
+    ],
+    "answer": 2,
+    "explain": "3x = 30 - 15 = 15, so x = 15 ÷ 3 = 5.",
+    "hint": "Subtract 15 from 30, then divide by 3.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 3x + 3 = 24 (P6)",
+    "options": [
+      "6",
+      "9",
+      "8",
+      "7"
+    ],
+    "answer": 3,
+    "explain": "3x = 24 - 3 = 21, so x = 21 ÷ 3 = 7.",
+    "hint": "Subtract 3 from 24, then divide by 3.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 5x + 2 = 37 (P6)",
+    "options": [
+      "6",
+      "8",
+      "7",
+      "9"
+    ],
+    "answer": 2,
+    "explain": "5x = 37 - 2 = 35, so x = 35 ÷ 5 = 7.",
+    "hint": "Subtract 2 from 37, then divide by 5.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 5x + 3 = 53 (P6)",
+    "options": [
+      "11",
+      "12",
+      "9",
+      "10"
+    ],
+    "answer": 3,
+    "explain": "5x = 53 - 3 = 50, so x = 50 ÷ 5 = 10.",
+    "hint": "Subtract 3 from 53, then divide by 5.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 2x + 12 = 24 (P6)",
+    "options": [
+      "5",
+      "6",
+      "8",
+      "7"
+    ],
+    "answer": 1,
+    "explain": "2x = 24 - 12 = 12, so x = 12 ÷ 2 = 6.",
+    "hint": "Subtract 12 from 24, then divide by 2.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 5x + 11 = 46 (P6)",
+    "options": [
+      "7",
+      "9",
+      "6",
+      "8"
+    ],
+    "answer": 0,
+    "explain": "5x = 46 - 11 = 35, so x = 35 ÷ 5 = 7.",
+    "hint": "Subtract 11 from 46, then divide by 5.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 3x + 11 = 38 (P6)",
+    "options": [
+      "11",
+      "10",
+      "9",
+      "8"
+    ],
+    "answer": 2,
+    "explain": "3x = 38 - 11 = 27, so x = 27 ÷ 3 = 9.",
+    "hint": "Subtract 11 from 38, then divide by 3.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 3x + 12 = 39 (P6)",
+    "options": [
+      "9",
+      "10",
+      "11",
+      "8"
+    ],
+    "answer": 0,
+    "explain": "3x = 39 - 12 = 27, so x = 27 ÷ 3 = 9.",
+    "hint": "Subtract 12 from 39, then divide by 3.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 2x + 15 = 27 (P6)",
+    "options": [
+      "8",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 2,
+    "explain": "2x = 27 - 15 = 12, so x = 12 ÷ 2 = 6.",
+    "hint": "Subtract 15 from 27, then divide by 2.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 2x + 7 = 27 (P6)",
+    "options": [
+      "11",
+      "9",
+      "10",
+      "12"
+    ],
+    "answer": 2,
+    "explain": "2x = 27 - 7 = 20, so x = 20 ÷ 2 = 10.",
+    "hint": "Subtract 7 from 27, then divide by 2.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 3x + 2 = 11 (P6)",
+    "options": [
+      "2",
+      "5",
+      "3",
+      "4"
+    ],
+    "answer": 2,
+    "explain": "3x = 11 - 2 = 9, so x = 9 ÷ 3 = 3.",
+    "hint": "Subtract 2 from 11, then divide by 3.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 6x + 7 = 25 (P6)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "2"
+    ],
+    "answer": 0,
+    "explain": "6x = 25 - 7 = 18, so x = 18 ÷ 6 = 3.",
+    "hint": "Subtract 7 from 25, then divide by 6.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Solve for x: 5x + 7 = 52 (P6)",
+    "options": [
+      "8",
+      "10",
+      "11",
+      "9"
+    ],
+    "answer": 3,
+    "explain": "5x = 52 - 7 = 45, so x = 45 ÷ 5 = 9.",
+    "hint": "Subtract 7 from 52, then divide by 5.",
+    "topic": "Algebra",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "A car travels at 60 km/h for 3 hours. What distance does it cover? (P6)",
+    "options": [
+      "63 km",
+      "150 km",
+      "180 km",
+      "200 km"
+    ],
+    "answer": 2,
+    "explain": "Distance = Speed × Time = 60 × 3 = 180 km.",
+    "hint": "Multiply speed by time.",
+    "topic": "Speed, Distance & Time",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "A car travels at 60 km/h for 4 hours. What distance does it cover? (P6)",
+    "options": [
+      "64 km",
+      "210 km",
+      "240 km",
+      "260 km"
+    ],
+    "answer": 2,
+    "explain": "Distance = Speed × Time = 60 × 4 = 240 km.",
+    "hint": "Multiply speed by time.",
+    "topic": "Speed, Distance & Time",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "A car travels at 70 km/h for 3 hours. What distance does it cover? (P6)",
+    "options": [
+      "230 km",
+      "180 km",
+      "73 km",
+      "210 km"
+    ],
+    "answer": 3,
+    "explain": "Distance = Speed × Time = 70 × 3 = 210 km.",
+    "hint": "Multiply speed by time.",
+    "topic": "Speed, Distance & Time",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "A car travels at 50 km/h for 2 hours. What distance does it cover? (P6)",
+    "options": [
+      "120 km",
+      "70 km",
+      "52 km",
+      "100 km"
+    ],
+    "answer": 3,
+    "explain": "Distance = Speed × Time = 50 × 2 = 100 km.",
+    "hint": "Multiply speed by time.",
+    "topic": "Speed, Distance & Time",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "A car travels at 40 km/h for 2 hours. What distance does it cover? (P6)",
+    "options": [
+      "42 km",
+      "100 km",
+      "80 km",
+      "50 km"
+    ],
+    "answer": 2,
+    "explain": "Distance = Speed × Time = 40 × 2 = 80 km.",
+    "hint": "Multiply speed by time.",
+    "topic": "Speed, Distance & Time",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "A car travels at 80 km/h for 2 hours. What distance does it cover? (P6)",
+    "options": [
+      "180 km",
+      "160 km",
+      "82 km",
+      "130 km"
+    ],
+    "answer": 1,
+    "explain": "Distance = Speed × Time = 80 × 2 = 160 km.",
+    "hint": "Multiply speed by time.",
+    "topic": "Speed, Distance & Time",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "A car travels at 70 km/h for 5 hours. What distance does it cover? (P6)",
+    "options": [
+      "350 km",
+      "75 km",
+      "370 km",
+      "320 km"
+    ],
+    "answer": 0,
+    "explain": "Distance = Speed × Time = 70 × 5 = 350 km.",
+    "hint": "Multiply speed by time.",
+    "topic": "Speed, Distance & Time",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "A car travels at 50 km/h for 5 hours. What distance does it cover? (P6)",
+    "options": [
+      "250 km",
+      "270 km",
+      "55 km",
+      "220 km"
+    ],
+    "answer": 0,
+    "explain": "Distance = Speed × Time = 50 × 5 = 250 km.",
+    "hint": "Multiply speed by time.",
+    "topic": "Speed, Distance & Time",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "A car travels at 60 km/h for 2 hours. What distance does it cover? (P6)",
+    "options": [
+      "62 km",
+      "90 km",
+      "120 km",
+      "140 km"
+    ],
+    "answer": 2,
+    "explain": "Distance = Speed × Time = 60 × 2 = 120 km.",
+    "hint": "Multiply speed by time.",
+    "topic": "Speed, Distance & Time",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "A car travels at 80 km/h for 3 hours. What distance does it cover? (P6)",
+    "options": [
+      "240 km",
+      "260 km",
+      "210 km",
+      "83 km"
+    ],
+    "answer": 0,
+    "explain": "Distance = Speed × Time = 80 × 3 = 240 km.",
+    "hint": "Multiply speed by time.",
+    "topic": "Speed, Distance & Time",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "A car travels at 40 km/h for 3 hours. What distance does it cover? (P6)",
+    "options": [
+      "120 km",
+      "43 km",
+      "140 km",
+      "90 km"
+    ],
+    "answer": 0,
+    "explain": "Distance = Speed × Time = 40 × 3 = 120 km.",
+    "hint": "Multiply speed by time.",
+    "topic": "Speed, Distance & Time",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Calculate the circumference of a circle with radius 7 cm (Use π = 22/7): (P6)",
+    "options": [
+      "44 cm",
+      "22 cm",
+      "88 cm",
+      "154 cm"
+    ],
+    "answer": 0,
+    "explain": "Circumference = 2 × π × r = 2 × (22/7) × 7 = 44 cm.",
+    "hint": "Use formula C = 2 × π × r.",
+    "topic": "Circle Geometry",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Calculate the area of a circle with radius 7 cm (Use π = 22/7): (P6)",
+    "options": [
+      "308 cm²",
+      "44 cm²",
+      "77 cm²",
+      "154 cm²"
+    ],
+    "answer": 3,
+    "explain": "Area = π × r² = (22/7) × 7 × 7 = 154 cm².",
+    "hint": "Use formula Area = π × r².",
+    "topic": "Circle Geometry",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Calculate the simple interest on ₦10,000 at 5% per annum for 3 years: (P6)",
+    "options": [
+      "₦2,000",
+      "₦1,500",
+      "₦1,000",
+      "₦500"
+    ],
+    "answer": 1,
+    "explain": "Interest = (P × R × T) / 100 = (10000 × 5 × 3) / 100 = ₦1,500.",
+    "hint": "Use formula I = (P × R × T) / 100.",
+    "topic": "Commercial Arithmetic",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Find the median of the data set: 3, 5, 7, 9, 11 (P6)",
+    "options": [
+      "7",
+      "5",
+      "35",
+      "9"
+    ],
+    "answer": 0,
+    "explain": "The median is the middle value in an ordered set: 7.",
+    "hint": "Identify the middle number in order.",
+    "topic": "Statistics",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "What is the mode of this set of numbers: 4, 6, 4, 8, 4, 9, 7? (P6)",
+    "options": [
+      "4",
+      "6",
+      "7",
+      "8"
+    ],
+    "answer": 0,
+    "explain": "The mode is the most frequently occurring value: 4 appears 3 times.",
+    "hint": "Find the number that appears most often.",
+    "topic": "Statistics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "If a standard fair six-sided die is rolled, what is the probability of rolling a 4? (P6)",
+    "options": [
+      "1/4",
+      "4/6",
+      "1/6",
+      "1/2"
+    ],
+    "answer": 2,
+    "explain": "There is 1 favorable outcome out of 6 possible outcomes = 1/6.",
+    "hint": "One specific face out of 6 total faces.",
+    "topic": "Probability",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "A trader bought a bag for ₦4,000 and sold it for ₦5,000. What is his percentage profit? (P6)",
+    "options": [
+      "30%",
+      "15%",
+      "25%",
+      "20%"
+    ],
+    "answer": 2,
+    "explain": "Profit = ₦1,000. Percentage profit = (1000 / 4000) × 100% = 25%.",
+    "hint": "Profit over Cost Price multiplied by 100%.",
+    "topic": "Commercial Arithmetic",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "What is the value of 5³ (5 cubed)? (P6)",
+    "options": [
+      "125",
+      "75",
+      "25",
+      "15"
+    ],
+    "answer": 0,
+    "explain": "5³ = 5 × 5 × 5 = 125.",
+    "hint": "Multiply 5 by itself three times.",
+    "topic": "Exponents & Powers",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "The sum of angles in any four-sided polygon (quadrilateral) is ____ degrees. (P6)",
+    "options": [
+      "270°",
+      "180°",
+      "360°",
+      "540°"
+    ],
+    "answer": 2,
+    "explain": "All quadrilaterals have interior angle sum equal to 360°.",
+    "hint": "Divide it into 2 triangles: 2 × 180° = 360°.",
+    "topic": "Geometry",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Express 3/8 as a percentage: (P6)",
+    "options": [
+      "32.5%",
+      "37.5%",
+      "35%",
+      "38%"
+    ],
+    "answer": 1,
+    "explain": "3/8 = 0.375 = 37.5%.",
+    "hint": "Divide 3 by 8 and multiply by 100%.",
+    "topic": "Percentages",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #1 (P6): Calculate the exact sum of 70 and 37:",
+    "options": [
+      "109",
+      "107",
+      "106",
+      "108"
+    ],
+    "answer": 1,
+    "explain": "70 + 37 = 107.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #2 (P6): Calculate the exact sum of 73 and 39:",
+    "options": [
+      "113",
+      "111",
+      "112",
+      "114"
+    ],
+    "answer": 2,
+    "explain": "73 + 39 = 112.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #3 (P6): Calculate the exact sum of 76 and 41:",
+    "options": [
+      "117",
+      "119",
+      "116",
+      "118"
+    ],
+    "answer": 0,
+    "explain": "76 + 41 = 117.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #4 (P6): Calculate the exact sum of 79 and 43:",
+    "options": [
+      "121",
+      "124",
+      "122",
+      "123"
+    ],
+    "answer": 2,
+    "explain": "79 + 43 = 122.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #5 (P6): Calculate the exact sum of 82 and 45:",
+    "options": [
+      "129",
+      "127",
+      "128",
+      "126"
+    ],
+    "answer": 1,
+    "explain": "82 + 45 = 127.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #6 (P6): Calculate the exact sum of 85 and 47:",
+    "options": [
+      "134",
+      "133",
+      "132",
+      "131"
+    ],
+    "answer": 2,
+    "explain": "85 + 47 = 132.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #7 (P6): Calculate the exact sum of 88 and 49:",
+    "options": [
+      "139",
+      "137",
+      "136",
+      "138"
+    ],
+    "answer": 1,
+    "explain": "88 + 49 = 137.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #8 (P6): Calculate the exact sum of 91 and 51:",
+    "options": [
+      "144",
+      "141",
+      "142",
+      "143"
+    ],
+    "answer": 2,
+    "explain": "91 + 51 = 142.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #9 (P6): Calculate the exact sum of 94 and 53:",
+    "options": [
+      "148",
+      "149",
+      "146",
+      "147"
+    ],
+    "answer": 3,
+    "explain": "94 + 53 = 147.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #10 (P6): Calculate the exact sum of 97 and 55:",
+    "options": [
+      "153",
+      "152",
+      "154",
+      "151"
+    ],
+    "answer": 1,
+    "explain": "97 + 55 = 152.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #11 (P6): Calculate the exact sum of 100 and 57:",
+    "options": [
+      "157",
+      "159",
+      "156",
+      "158"
+    ],
+    "answer": 0,
+    "explain": "100 + 57 = 157.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #12 (P6): Calculate the exact sum of 103 and 59:",
+    "options": [
+      "161",
+      "164",
+      "163",
+      "162"
+    ],
+    "answer": 3,
+    "explain": "103 + 59 = 162.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #13 (P6): Calculate the exact sum of 106 and 61:",
+    "options": [
+      "167",
+      "169",
+      "166",
+      "168"
+    ],
+    "answer": 0,
+    "explain": "106 + 61 = 167.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #14 (P6): Calculate the exact sum of 109 and 63:",
+    "options": [
+      "171",
+      "174",
+      "172",
+      "173"
+    ],
+    "answer": 2,
+    "explain": "109 + 63 = 172.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #15 (P6): Calculate the exact sum of 112 and 65:",
+    "options": [
+      "177",
+      "179",
+      "178",
+      "176"
+    ],
+    "answer": 0,
+    "explain": "112 + 65 = 177.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #16 (P6): Calculate the exact sum of 115 and 67:",
+    "options": [
+      "182",
+      "184",
+      "183",
+      "181"
+    ],
+    "answer": 0,
+    "explain": "115 + 67 = 182.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #17 (P6): Calculate the exact sum of 118 and 69:",
+    "options": [
+      "189",
+      "186",
+      "187",
+      "188"
+    ],
+    "answer": 2,
+    "explain": "118 + 69 = 187.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #18 (P6): Calculate the exact sum of 121 and 71:",
+    "options": [
+      "192",
+      "193",
+      "194",
+      "191"
+    ],
+    "answer": 0,
+    "explain": "121 + 71 = 192.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #19 (P6): Calculate the exact sum of 124 and 73:",
+    "options": [
+      "196",
+      "197",
+      "199",
+      "198"
+    ],
+    "answer": 1,
+    "explain": "124 + 73 = 197.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #20 (P6): Calculate the exact sum of 127 and 75:",
+    "options": [
+      "202",
+      "201",
+      "203",
+      "204"
+    ],
+    "answer": 0,
+    "explain": "127 + 75 = 202.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #21 (P6): Calculate the exact sum of 130 and 77:",
+    "options": [
+      "209",
+      "208",
+      "206",
+      "207"
+    ],
+    "answer": 3,
+    "explain": "130 + 77 = 207.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #22 (P6): Calculate the exact sum of 133 and 79:",
+    "options": [
+      "211",
+      "213",
+      "214",
+      "212"
+    ],
+    "answer": 3,
+    "explain": "133 + 79 = 212.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #23 (P6): Calculate the exact sum of 136 and 81:",
+    "options": [
+      "216",
+      "217",
+      "218",
+      "219"
+    ],
+    "answer": 1,
+    "explain": "136 + 81 = 217.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #24 (P6): Calculate the exact sum of 139 and 83:",
+    "options": [
+      "221",
+      "222",
+      "224",
+      "223"
+    ],
+    "answer": 1,
+    "explain": "139 + 83 = 222.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #25 (P6): Calculate the exact sum of 142 and 85:",
+    "options": [
+      "226",
+      "229",
+      "227",
+      "228"
+    ],
+    "answer": 2,
+    "explain": "142 + 85 = 227.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #26 (P6): Calculate the exact sum of 145 and 87:",
+    "options": [
+      "233",
+      "231",
+      "232",
+      "234"
+    ],
+    "answer": 2,
+    "explain": "145 + 87 = 232.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #27 (P6): Calculate the exact sum of 148 and 89:",
+    "options": [
+      "238",
+      "236",
+      "239",
+      "237"
+    ],
+    "answer": 3,
+    "explain": "148 + 89 = 237.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #28 (P6): Calculate the exact sum of 151 and 91:",
+    "options": [
+      "243",
+      "242",
+      "244",
+      "241"
+    ],
+    "answer": 1,
+    "explain": "151 + 91 = 242.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #29 (P6): Calculate the exact sum of 154 and 93:",
+    "options": [
+      "249",
+      "246",
+      "248",
+      "247"
+    ],
+    "answer": 3,
+    "explain": "154 + 93 = 247.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #30 (P6): Calculate the exact sum of 157 and 95:",
+    "options": [
+      "253",
+      "251",
+      "254",
+      "252"
+    ],
+    "answer": 3,
+    "explain": "157 + 95 = 252.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #31 (P6): Calculate the exact sum of 160 and 97:",
+    "options": [
+      "257",
+      "256",
+      "259",
+      "258"
+    ],
+    "answer": 0,
+    "explain": "160 + 97 = 257.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #32 (P6): Calculate the exact sum of 163 and 99:",
+    "options": [
+      "262",
+      "263",
+      "261",
+      "264"
+    ],
+    "answer": 0,
+    "explain": "163 + 99 = 262.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #33 (P6): Calculate the exact sum of 166 and 101:",
+    "options": [
+      "266",
+      "268",
+      "269",
+      "267"
+    ],
+    "answer": 3,
+    "explain": "166 + 101 = 267.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #34 (P6): Calculate the exact sum of 169 and 103:",
+    "options": [
+      "273",
+      "274",
+      "271",
+      "272"
+    ],
+    "answer": 3,
+    "explain": "169 + 103 = 272.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #35 (P6): Calculate the exact sum of 172 and 105:",
+    "options": [
+      "276",
+      "277",
+      "278",
+      "279"
+    ],
+    "answer": 1,
+    "explain": "172 + 105 = 277.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #36 (P6): Calculate the exact sum of 175 and 107:",
+    "options": [
+      "283",
+      "282",
+      "284",
+      "281"
+    ],
+    "answer": 1,
+    "explain": "175 + 107 = 282.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #37 (P6): Calculate the exact sum of 178 and 109:",
+    "options": [
+      "286",
+      "287",
+      "288",
+      "289"
+    ],
+    "answer": 1,
+    "explain": "178 + 109 = 287.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #38 (P6): Calculate the exact sum of 181 and 111:",
+    "options": [
+      "291",
+      "292",
+      "293",
+      "294"
+    ],
+    "answer": 1,
+    "explain": "181 + 111 = 292.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #39 (P6): Calculate the exact sum of 184 and 113:",
+    "options": [
+      "299",
+      "298",
+      "296",
+      "297"
+    ],
+    "answer": 3,
+    "explain": "184 + 113 = 297.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #40 (P6): Calculate the exact sum of 187 and 115:",
+    "options": [
+      "304",
+      "303",
+      "302",
+      "301"
+    ],
+    "answer": 2,
+    "explain": "187 + 115 = 302.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #41 (P6): Calculate the exact sum of 190 and 117:",
+    "options": [
+      "306",
+      "307",
+      "309",
+      "308"
+    ],
+    "answer": 1,
+    "explain": "190 + 117 = 307.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #42 (P6): Calculate the exact sum of 193 and 119:",
+    "options": [
+      "311",
+      "312",
+      "314",
+      "313"
+    ],
+    "answer": 1,
+    "explain": "193 + 119 = 312.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #43 (P6): Calculate the exact sum of 196 and 121:",
+    "options": [
+      "319",
+      "317",
+      "318",
+      "316"
+    ],
+    "answer": 1,
+    "explain": "196 + 121 = 317.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #44 (P6): Calculate the exact sum of 199 and 123:",
+    "options": [
+      "324",
+      "323",
+      "322",
+      "321"
+    ],
+    "answer": 2,
+    "explain": "199 + 123 = 322.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #45 (P6): Calculate the exact sum of 202 and 125:",
+    "options": [
+      "326",
+      "329",
+      "328",
+      "327"
+    ],
+    "answer": 3,
+    "explain": "202 + 125 = 327.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #46 (P6): Calculate the exact sum of 205 and 127:",
+    "options": [
+      "331",
+      "334",
+      "332",
+      "333"
+    ],
+    "answer": 2,
+    "explain": "205 + 127 = 332.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #47 (P6): Calculate the exact sum of 208 and 129:",
+    "options": [
+      "336",
+      "338",
+      "339",
+      "337"
+    ],
+    "answer": 3,
+    "explain": "208 + 129 = 337.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #48 (P6): Calculate the exact sum of 211 and 131:",
+    "options": [
+      "343",
+      "342",
+      "341",
+      "344"
+    ],
+    "answer": 1,
+    "explain": "211 + 131 = 342.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #49 (P6): Calculate the exact sum of 214 and 133:",
+    "options": [
+      "348",
+      "346",
+      "347",
+      "349"
+    ],
+    "answer": 2,
+    "explain": "214 + 133 = 347.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #50 (P6): Calculate the exact sum of 217 and 135:",
+    "options": [
+      "354",
+      "352",
+      "353",
+      "351"
+    ],
+    "answer": 1,
+    "explain": "217 + 135 = 352.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #51 (P6): Calculate the exact sum of 220 and 137:",
+    "options": [
+      "359",
+      "357",
+      "356",
+      "358"
+    ],
+    "answer": 1,
+    "explain": "220 + 137 = 357.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #52 (P6): Calculate the exact sum of 223 and 139:",
+    "options": [
+      "362",
+      "364",
+      "361",
+      "363"
+    ],
+    "answer": 0,
+    "explain": "223 + 139 = 362.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #53 (P6): Calculate the exact sum of 226 and 141:",
+    "options": [
+      "366",
+      "367",
+      "369",
+      "368"
+    ],
+    "answer": 1,
+    "explain": "226 + 141 = 367.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Arithmetic problem #54 (P6): Calculate the exact sum of 229 and 143:",
+    "options": [
+      "371",
+      "372",
+      "373",
+      "374"
+    ],
+    "answer": 1,
+    "explain": "229 + 143 = 372.",
+    "hint": "Add the numbers carefully.",
+    "topic": "Arithmetic Operations",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  }
+]

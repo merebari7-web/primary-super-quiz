@@ -1,1 +1,1502 @@
-[{"q":"Obafemi Awolowo is an important person in Nigerian ____.","options":["Antarctic farming","space travel on Mars","ice hockey","history"],"answer":3,"explain":"Obafemi Awolowo is part of Nigeria’s story."},{"q":"Our grandparents can tell us about the ____.","options":["CPU they invented","planets they built","past","future they measured with a ruler"],"answer":2,"explain":"Elders are a source of history."},{"q":"Tafawa Balewa is an important person in Nigerian ____.","options":["ice hockey","Antarctic farming","history","space travel on Mars"],"answer":2,"explain":"Tafawa Balewa is part of Nigeria’s story."},{"q":"A hero of the past is remembered in ____.","options":["history","only spelling","only weather","only maths tables"],"answer":0,"explain":"History remembers important people."},{"q":"Herbert Macaulay is an important person in Nigerian ____.","options":["Antarctic farming","ice hockey","space travel on Mars","history"],"answer":3,"explain":"Herbert Macaulay is part of Nigeria’s story."},{"q":"The capital was moved from Lagos to Abuja in ____.","options":["1914","2014","1991","1960"],"answer":2,"explain":"Abuja became capital in 1991."},{"q":"Nigeria gained independence in ____.","options":["1963","1999","1960","1914"],"answer":2,"explain":"1 October 1960."},{"q":"Ahmadu Bello is an important person in Nigerian ____.","options":["ice hockey","Antarctic farming","space travel on Mars","history"],"answer":3,"explain":"Ahmadu Bello is part of Nigeria’s story."},{"q":"Nnamdi Azikiwe is an important person in Nigerian ____.","options":["space travel on Mars","Antarctic farming","ice hockey","history"],"answer":3,"explain":"Nnamdi Azikiwe is part of Nigeria’s story."},{"q":"The designer of the Nigerian flag was ____.","options":["Taiwo Akinkunmi","Lugard","Azikiwe","Macaulay"],"answer":0,"explain":"Michael Taiwo Akinkunmi."},{"q":"Taiwo Akinkunmi is an important person in Nigerian ____.","options":["ice hockey","Antarctic farming","history","space travel on Mars"],"answer":2,"explain":"Taiwo Akinkunmi is part of Nigeria’s story."},{"q":"Long ago, people told stories about the past. This is ____.","options":["weather only","cooking oil","football","history"],"answer":3,"explain":"History is about the past."},{"q":"The Nigerian flag was first used around independence in ____.","options":["1960","1914","1800","2000"],"answer":0,"explain":"The flag is an independence symbol."},{"q":"History is the study of the ____.","options":["future weather only","stars only","past","only animals"],"answer":2,"explain":"History studies past events."},{"q":"Abuja is the ____ capital of Nigeria.","options":["present","first ever in 1800","Kenyan","Ghanaian"],"answer":0,"explain":"Abuja replaced Lagos as capital."},{"q":"1 October is remembered as ____ Day.","options":["Children’s only","Democracy only","Workers’ only","Independence"],"answer":3,"explain":"Independence Day."},{"q":"Which year is linked with Nigeria’s independence?","options":["1745","1500","1960","2099"],"answer":2,"explain":"Independence — 1960."},{"q":"Which of these people is important in Nigerian history?","options":["Santa of the North Pole only","a Martian king","an invented pirate of space","Nnamdi Azikiwe"],"answer":3,"explain":"This person is part of Nigeria’s history."},{"q":"Which year is linked with Nigeria’s amalgamation?","options":["2099","1500","1914","1745"],"answer":2,"explain":"Amalgamation — 1914."},{"q":"Which of these people is important in Nigerian history?","options":["an invented pirate of space","a Martian king","Obafemi Awolowo","Santa of the North Pole only"],"answer":2,"explain":"This person is part of Nigeria’s history."},{"q":"Which year is linked with Nigeria’s republic?","options":["1745","1500","2099","1963"],"answer":3,"explain":"Republic — 1963."},{"q":"Which of these people is important in Nigerian history?","options":["Santa of the North Pole only","an invented pirate of space","a Martian king","Ahmadu Bello"],"answer":3,"explain":"This person is part of Nigeria’s history."},{"q":"Which year is linked with Nigeria’s Abuja capital?","options":["2099","1745","1991","1500"],"answer":2,"explain":"Abuja capital — 1991."},{"q":"Which of these people is important in Nigerian history?","options":["a Martian king","an invented pirate of space","Tafawa Balewa","Santa of the North Pole only"],"answer":2,"explain":"This person is part of Nigeria’s history."},{"q":"Which year is linked with Nigeria’s end of civil war?","options":["1970","1745","2099","1500"],"answer":0,"explain":"End of civil war — 1970."},{"q":"Which of these people is important in Nigerian history?","options":["Herbert Macaulay","a Martian king","Santa of the North Pole only","an invented pirate of space"],"answer":0,"explain":"This person is part of Nigeria’s history."},{"q":"Which of these people is important in Nigerian history?","options":["a Martian king","Taiwo Akinkunmi","an invented pirate of space","Santa of the North Pole only"],"answer":1,"explain":"This person is part of Nigeria’s history."},{"q":"Obafemi Awolowo is an important person in Nigerian ____. [history]","options":["space travel on Mars","ice hockey","history","Antarctic farming"],"answer":2,"explain":"Obafemi Awolowo is part of Nigeria’s story."},{"q":"Our grandparents can tell us about the ____. [past]","options":["future they measured with a ruler","CPU they invented","past","planets they built"],"answer":2,"explain":"Elders are a source of history."},{"q":"Tafawa Balewa is an important person in Nigerian ____.","options":["only weather","only maths tables","history","only spelling"],"answer":2,"explain":"Tafawa Balewa is part of Nigeria’s story."},{"q":"A hero of the past is remembered in ____.","options":["1914","1960","history","2014"],"answer":2,"explain":"History remembers important people."},{"q":"Herbert Macaulay is an important person in Nigerian ____.","options":["history","Lugard","1963","1999"],"answer":0,"explain":"Herbert Macaulay is part of Nigeria’s story."},{"q":"The capital was moved from Lagos to Abuja in ____.","options":["1991","weather only","Macaulay","Azikiwe"],"answer":0,"explain":"Abuja became capital in 1991."},{"q":"Nigeria gained independence in ____.","options":["1960","2000","football","1800"],"answer":0,"explain":"1 October 1960."},{"q":"Ahmadu Bello is an important person in Nigerian ____.","options":["stars only","future weather only","history","2000"],"answer":2,"explain":"Ahmadu Bello is part of Nigeria’s story."},{"q":"Nnamdi Azikiwe is an important person in Nigerian ____.","options":["first ever in 1800","only animals","Kenyan","history"],"answer":3,"explain":"Nnamdi Azikiwe is part of Nigeria’s story."},{"q":"The designer of the Nigerian flag was ____.","options":["Democracy only","Taiwo Akinkunmi","Children’s only","Ghanaian"],"answer":1,"explain":"Michael Taiwo Akinkunmi."},{"q":"Taiwo Akinkunmi is an important person in Nigerian ____.","options":["history","Workers’ only","1500","1745"],"answer":0,"explain":"Taiwo Akinkunmi is part of Nigeria’s story."},{"q":"Long ago, people told stories about the past. This is ____.","options":["Santa of the North Pole only","a Martian king","2099","history"],"answer":3,"explain":"History is about the past."},{"q":"The Nigerian flag was first used around independence in ____.","options":["Cairo","Accra","1960","Nairobi"],"answer":2,"explain":"The flag is an independence symbol."},{"q":"History is the study of the ____.","options":["London","Cairo","past","Paris"],"answer":2,"explain":"History studies past events."},{"q":"Abuja is the ____ capital of Nigeria.","options":["none of these names","stone","present","plastic"],"answer":2,"explain":"Abuja replaced Lagos as capital."},{"q":"1 October is remembered as ____ Day.","options":["rainbow","Independence","aeroplane","Tuesday"],"answer":1,"explain":"Independence Day."},{"q":"Which year is linked with Nigeria’s independence?","options":["the moon","a rumour","a cartoon","1960"],"answer":3,"explain":"Independence — 1960."},{"q":"Which of these people is important in Nigerian history?","options":["Nnamdi Azikiwe","CPU they invented","space travel on Mars","ice hockey"],"answer":0,"explain":"This person is part of Nigeria’s history."},{"q":"Which year is linked with Nigeria’s amalgamation?","options":["only spelling","future they measured with a ruler","1914","only weather"],"answer":2,"explain":"Amalgamation — 1914."},{"q":"Which of these people is important in Nigerian history?","options":["1914","only weather","only maths tables","Obafemi Awolowo"],"answer":3,"explain":"This person is part of Nigeria’s history."},{"q":"Which year is linked with Nigeria’s republic?","options":["1999","1960","Lugard","1963"],"answer":3,"explain":"Republic — 1963."},{"q":"Which of these people is important in Nigerian history?","options":["Ahmadu Bello","1999","Azikiwe","Lugard"],"answer":0,"explain":"This person is part of Nigeria’s history."},{"q":"Which year is linked with Nigeria’s Abuja capital?","options":["1991","weather only","cooking oil","Macaulay"],"answer":0,"explain":"Abuja capital — 1991."},{"q":"Which of these people is important in Nigerian history?","options":["football","Tafawa Balewa","1800","2000"],"answer":1,"explain":"This person is part of Nigeria’s history."},{"q":"Which year is linked with Nigeria’s end of civil war?","options":["future weather only","stars only","1970","only animals"],"answer":2,"explain":"End of civil war — 1970."},{"q":"Which of these people is important in Nigerian history?","options":["Ghanaian","Herbert Macaulay","first ever in 1800","Kenyan"],"answer":1,"explain":"This person is part of Nigeria’s history."},{"q":"Which of these people is important in Nigerian history?","options":["Taiwo Akinkunmi","Democracy only","Children’s only","Workers’ only"],"answer":0,"explain":"This person is part of Nigeria’s history."},{"q":"Obafemi Awolowo is an important person in Nigerian ____.","options":["history","1500","1745","2099"],"answer":0,"explain":"Obafemi Awolowo is part of Nigeria’s story."},{"q":"Our grandparents can tell us about the ____.","options":["past","a Martian king","an invented pirate of space","Santa of the North Pole only"],"answer":0,"explain":"Elders are a source of history."},{"q":"Tafawa Balewa is an important person in Nigerian ____.","options":["history","Accra","Cairo","Nairobi"],"answer":0,"explain":"Tafawa Balewa is part of Nigeria’s story."},{"q":"A hero of the past is remembered in ____.","options":["London","stone","history","Paris"],"answer":2,"explain":"History remembers important people."},{"q":"Herbert Macaulay is an important person in Nigerian ____.","options":["history","none of these names","plastic","aeroplane"],"answer":0,"explain":"Herbert Macaulay is part of Nigeria’s story."},{"q":"The capital was moved from Lagos to Abuja in ____.","options":["1991","rainbow","zero","Tuesday"],"answer":0,"explain":"Abuja became capital in 1991."},{"q":"Nigeria gained independence in ____.","options":["CPU they invented","1960","ice hockey","space travel on Mars"],"answer":1,"explain":"1 October 1960."},{"q":"Ahmadu Bello is an important person in Nigerian ____.","options":["CPU they invented","ice hockey","history","planets they built"],"answer":2,"explain":"Ahmadu Bello is part of Nigeria’s story."},{"q":"Nnamdi Azikiwe is an important person in Nigerian ____.","options":["only spelling","only weather","future they measured with a ruler","history"],"answer":3,"explain":"Nnamdi Azikiwe is part of Nigeria’s story."},{"q":"The designer of the Nigerian flag was ____.","options":["1914","only maths tables","2014","Taiwo Akinkunmi"],"answer":3,"explain":"Michael Taiwo Akinkunmi."},{"q":"Taiwo Akinkunmi is an important person in Nigerian ____.","options":["1999","1963","history","1960"],"answer":2,"explain":"Taiwo Akinkunmi is part of Nigeria’s story."},{"q":"Long ago, people told stories about the past. This is ____.","options":["Macaulay","Azikiwe","Lugard","history"],"answer":3,"explain":"History is about the past."},{"q":"The Nigerian flag was first used around independence in ____.","options":["1800","future weather only","2000","1960"],"answer":3,"explain":"The flag is an independence symbol."},{"q":"History is the study of the ____.","options":["2000","1800","past","future weather only"],"answer":2,"explain":"History studies past events."},{"q":"Abuja is the ____ capital of Nigeria.","options":["present","first ever in 1800","stars only","only animals"],"answer":0,"explain":"Abuja replaced Lagos as capital."},{"q":"1 October is remembered as ____ Day.","options":["Ghanaian","Children’s only","Kenyan","Independence"],"answer":3,"explain":"Independence Day."},{"q":"Which year is linked with Nigeria’s independence?","options":["2099","1960","1500","Santa of the North Pole only"],"answer":1,"explain":"Independence — 1960."},{"q":"Which of these people is important in Nigerian history?","options":["Santa of the North Pole only","Nnamdi Azikiwe","1500","2099"],"answer":1,"explain":"This person is part of Nigeria’s history."},{"q":"Which year is linked with Nigeria’s amalgamation?","options":["Nairobi","Cairo","1914","London"],"answer":2,"explain":"Amalgamation — 1914."},{"q":"Which of these people is important in Nigerian history?","options":["Nairobi","London","Obafemi Awolowo","Cairo"],"answer":2,"explain":"This person is part of Nigeria’s history."},{"q":"Which year is linked with Nigeria’s republic?","options":["1963","rainbow","none of these names","aeroplane"],"answer":0,"explain":"Republic — 1963."},{"q":"Which of these people is important in Nigerian history?","options":["aeroplane","none of these names","rainbow","Ahmadu Bello"],"answer":3,"explain":"This person is part of Nigeria’s history."},{"q":"Which year is linked with Nigeria’s Abuja capital?","options":["zero","1991","Tuesday","the moon"],"answer":1,"explain":"Abuja capital — 1991."},{"q":"Which of these people is important in Nigerian history?","options":["Tafawa Balewa","Antarctic farming","ice hockey","space travel on Mars"],"answer":0,"explain":"This person is part of Nigeria’s history."},{"q":"Which year is linked with Nigeria’s end of civil war?","options":["future they measured with a ruler","1970","planets they built","CPU they invented"],"answer":1,"explain":"End of civil war — 1970."},{"q":"Which of these people is important in Nigerian history?","options":["only spelling","only maths tables","Herbert Macaulay","only weather"],"answer":2,"explain":"This person is part of Nigeria’s history."},{"q":"Which of these people is important in Nigerian history?","options":["2014","1960","1914","Taiwo Akinkunmi"],"answer":3,"explain":"This person is part of Nigeria’s history."},{"q":"Obafemi Awolowo is an important person in Nigerian ____.","options":["history","1963","Lugard","1999"],"answer":0,"explain":"Obafemi Awolowo is part of Nigeria’s story."},{"q":"Our grandparents can tell us about the ____.","options":["Macaulay","Azikiwe","past","weather only"],"answer":2,"explain":"Elders are a source of history."},{"q":"Tafawa Balewa is an important person in Nigerian ____.","options":["1800","history","football","cooking oil"],"answer":1,"explain":"Tafawa Balewa is part of Nigeria’s story."},{"q":"A hero of the past is remembered in ____.","options":["history","stars only","2000","future weather only"],"answer":0,"explain":"History remembers important people."},{"q":"Herbert Macaulay is an important person in Nigerian ____.","options":["Kenyan","history","first ever in 1800","only animals"],"answer":1,"explain":"Herbert Macaulay is part of Nigeria’s story."},{"q":"The capital was moved from Lagos to Abuja in ____.","options":["Children’s only","1991","Democracy only","Ghanaian"],"answer":1,"explain":"Abuja became capital in 1991."},{"q":"Nigeria gained independence in ____.","options":["1960","a Martian king","an invented pirate of space","Santa of the North Pole only"],"answer":0,"explain":"1 October 1960."},{"q":"Ahmadu Bello is an important person in Nigerian ____.","options":["Santa of the North Pole only","2099","history","a Martian king"],"answer":2,"explain":"Ahmadu Bello is part of Nigeria’s story."},{"q":"Nnamdi Azikiwe is an important person in Nigerian ____.","options":["Nairobi","Accra","history","an invented pirate of space"],"answer":2,"explain":"Nnamdi Azikiwe is part of Nigeria’s story."},{"q":"The designer of the Nigerian flag was ____.","options":["Paris","Taiwo Akinkunmi","Cairo","London"],"answer":1,"explain":"Michael Taiwo Akinkunmi."},{"q":"Taiwo Akinkunmi is an important person in Nigerian ____.","options":["history","plastic","none of these names","stone"],"answer":0,"explain":"Taiwo Akinkunmi is part of Nigeria’s story."},{"q":"Long ago, people told stories about the past. This is ____.","options":["rainbow","aeroplane","history","Tuesday"],"answer":2,"explain":"History is about the past."},{"q":"The Nigerian flag was first used around independence in ____.","options":["planets they built","ice hockey","CPU they invented","1960"],"answer":3,"explain":"The flag is an independence symbol."},{"q":"History is the study of the ____.","options":["ice hockey","space travel on Mars","CPU they invented","past"],"answer":3,"explain":"History studies past events."},{"q":"Abuja is the ____ capital of Nigeria.","options":["planets they built","only spelling","present","future they measured with a ruler"],"answer":2,"explain":"Abuja replaced Lagos as capital."},{"q":"1 October is remembered as ____ Day.","options":["only maths tables","Independence","1914","only weather"],"answer":1,"explain":"Independence Day."},{"q":"Which year is linked with Nigeria’s independence?","options":["Azikiwe","1960","weather only","Macaulay"],"answer":1,"explain":"Independence — 1960."},{"q":"Which of these people is important in Nigerian history?","options":["Lugard","Nnamdi Azikiwe","1999","Azikiwe"],"answer":1,"explain":"This person is part of Nigeria’s history."},{"q":"Which year is linked with Nigeria’s amalgamation?","options":["2000","future weather only","1914","stars only"],"answer":2,"explain":"Amalgamation — 1914."}]
+[
+  {
+    "q": "A person's father and mother are called their ____. (P1)",
+    "options": [
+      "parents",
+      "uncles",
+      "neighbors",
+      "cousins"
+    ],
+    "answer": 0,
+    "explain": "Parents provide love, care, guidance, and sustenance in a nuclear family.",
+    "hint": "Mother and father.",
+    "topic": "Family History",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "The father of your father or mother is your ____. (P1)",
+    "options": [
+      "grandfather",
+      "uncle",
+      "nephew",
+      "brother"
+    ],
+    "answer": 0,
+    "explain": "A grandfather is the father of one's parent.",
+    "hint": "Parent's father.",
+    "topic": "Family History",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "The mother of your father or mother is your ____. (P1)",
+    "options": [
+      "aunt",
+      "sister",
+      "niece",
+      "grandmother"
+    ],
+    "answer": 3,
+    "explain": "A grandmother is the maternal or paternal female elder.",
+    "hint": "Parent's mother.",
+    "topic": "Family History",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Stories passed down through spoken words from generation to generation are called ____ history.",
+    "options": [
+      "archaeological",
+      "digital",
+      "oral",
+      "written"
+    ],
+    "answer": 2,
+    "explain": "Oral history preserves cultural heritage through memory and spoken storytelling.",
+    "hint": "Spoken storytelling tradition.",
+    "topic": "Historical Sources",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical landmark (P1): What is Zuma Rock?",
+    "options": [
+      "a man-made brick fortress",
+      "an ancient mud pyramid",
+      "a colonial clock tower",
+      "a giant natural monolith near Abuja rising 725 metres above its surroundings"
+    ],
+    "answer": 3,
+    "explain": "Zuma Rock is a giant natural monolith near Abuja rising 725 metres above its surroundings.",
+    "hint": "Description of Zuma Rock.",
+    "topic": "Landmarks & Heritage",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical landmark (P1): What is Aso Rock?",
+    "options": [
+      "a volcanic crater lake",
+      "a sandy desert dune",
+      "a coral reef",
+      "a large granitic rock outcrop in Abuja overlooking the Presidential Complex"
+    ],
+    "answer": 3,
+    "explain": "Aso Rock is a large granitic rock outcrop in Abuja overlooking the Presidential Complex.",
+    "hint": "Description of Aso Rock.",
+    "topic": "Landmarks & Heritage",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical landmark (P1): What is Kano Ancient City Walls?",
+    "options": [
+      "a wooden palace",
+      "historic defensive mud fortifications built between 1095 and 1134 CE",
+      "a modern glass skyscraper",
+      "a steel suspension bridge"
+    ],
+    "answer": 1,
+    "explain": "Kano Ancient City Walls is historic defensive mud fortifications built between 1095 and 1134 CE.",
+    "hint": "Description of Kano Ancient City Walls.",
+    "topic": "Landmarks & Heritage",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical landmark (P1): What is Osun-Osogbo Sacred Grove?",
+    "options": [
+      "a modern shopping mall",
+      "a seaport harbor",
+      "a preserved sacred rainforest along the Osun River containing shrines and sculptures",
+      "an oil refinery"
+    ],
+    "answer": 2,
+    "explain": "Osun-Osogbo Sacred Grove is a preserved sacred rainforest along the Osun River containing shrines and sculptures.",
+    "hint": "Description of Osun-Osogbo Sacred Grove.",
+    "topic": "Landmarks & Heritage",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical landmark (P1): What is Sungbo's Eredo?",
+    "options": [
+      "a stone lighthouse",
+      "a metal radio mast",
+      "a wooden sailing ship",
+      "a massive system of defensive earthen ramparts and ditches surrounding ancient Ijebu"
+    ],
+    "answer": 3,
+    "explain": "Sungbo's Eredo is a massive system of defensive earthen ramparts and ditches surrounding ancient Ijebu.",
+    "hint": "Description of Sungbo's Eredo.",
+    "topic": "Landmarks & Heritage",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical landmark (P1): What is National Theatre, Iganmu?",
+    "options": [
+      "a hospital ship",
+      "a sports stadium",
+      "a landmark arts complex in Lagos shaped like a military general's peaked cap",
+      "a mountain observatory"
+    ],
+    "answer": 2,
+    "explain": "National Theatre, Iganmu is a landmark arts complex in Lagos shaped like a military general's peaked cap.",
+    "hint": "Description of National Theatre, Iganmu.",
+    "topic": "Landmarks & Heritage",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #1 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "heritage, national identity, and cultural roots",
+      "future wealth",
+      "vehicle driving"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #2 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "weather forecast",
+      "heritage, national identity, and cultural roots",
+      "future wealth"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #3 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "heritage, national identity, and cultural roots",
+      "weather forecast",
+      "vehicle driving"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #4 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "weather forecast",
+      "future wealth"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #5 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "future wealth",
+      "vehicle driving",
+      "weather forecast"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #6 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "weather forecast"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #7 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "vehicle driving",
+      "future wealth",
+      "weather forecast"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #8 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "future wealth",
+      "heritage, national identity, and cultural roots",
+      "vehicle driving"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #9 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "future wealth",
+      "heritage, national identity, and cultural roots",
+      "vehicle driving"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #10 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "weather forecast",
+      "heritage, national identity, and cultural roots",
+      "vehicle driving"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #11 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "vehicle driving",
+      "future wealth",
+      "weather forecast"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #12 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "vehicle driving",
+      "weather forecast",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #13 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "weather forecast",
+      "future wealth"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #14 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "weather forecast"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #15 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "future wealth",
+      "vehicle driving",
+      "weather forecast"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #16 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "weather forecast",
+      "future wealth",
+      "vehicle driving"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #17 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "future wealth",
+      "vehicle driving",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #18 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "future wealth",
+      "weather forecast"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #19 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "weather forecast",
+      "future wealth",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #20 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "future wealth",
+      "heritage, national identity, and cultural roots",
+      "weather forecast"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #21 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "future wealth",
+      "vehicle driving",
+      "weather forecast"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #22 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "vehicle driving",
+      "future wealth",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #23 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "weather forecast",
+      "vehicle driving",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #24 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "heritage, national identity, and cultural roots",
+      "vehicle driving",
+      "weather forecast"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #25 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "future wealth",
+      "weather forecast",
+      "vehicle driving"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #26 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "weather forecast",
+      "future wealth"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #27 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "heritage, national identity, and cultural roots",
+      "vehicle driving",
+      "weather forecast"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #28 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "vehicle driving",
+      "weather forecast",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #29 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "weather forecast",
+      "heritage, national identity, and cultural roots",
+      "future wealth"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #30 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "future wealth",
+      "vehicle driving",
+      "weather forecast"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #31 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "vehicle driving",
+      "future wealth",
+      "weather forecast"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #32 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "heritage, national identity, and cultural roots",
+      "weather forecast",
+      "vehicle driving"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #33 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "weather forecast",
+      "future wealth"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #34 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "weather forecast",
+      "future wealth",
+      "vehicle driving"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #35 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "vehicle driving",
+      "future wealth",
+      "weather forecast"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #36 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "weather forecast",
+      "future wealth"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #37 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "weather forecast",
+      "vehicle driving",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #38 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "vehicle driving",
+      "weather forecast",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #39 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "vehicle driving",
+      "weather forecast",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #40 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "weather forecast",
+      "future wealth"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #41 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "future wealth",
+      "weather forecast",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #42 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "heritage, national identity, and cultural roots",
+      "vehicle driving",
+      "future wealth"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #43 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "weather forecast",
+      "future wealth",
+      "vehicle driving"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #44 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "weather forecast",
+      "future wealth",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #45 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "heritage, national identity, and cultural roots",
+      "vehicle driving",
+      "future wealth"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #46 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "future wealth",
+      "weather forecast",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #47 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "heritage, national identity, and cultural roots",
+      "vehicle driving",
+      "weather forecast"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #48 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "weather forecast",
+      "heritage, national identity, and cultural roots",
+      "future wealth"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #49 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "heritage, national identity, and cultural roots",
+      "future wealth",
+      "vehicle driving"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #50 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "future wealth"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #51 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "vehicle driving",
+      "future wealth",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #52 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "future wealth",
+      "weather forecast"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #53 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "future wealth",
+      "weather forecast",
+      "vehicle driving"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #54 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "future wealth",
+      "heritage, national identity, and cultural roots",
+      "weather forecast"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #55 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "future wealth",
+      "weather forecast",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #56 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "future wealth"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #57 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "vehicle driving",
+      "future wealth",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #58 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "future wealth"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #59 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "vehicle driving",
+      "future wealth",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #60 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "future wealth",
+      "weather forecast"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #61 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "weather forecast",
+      "heritage, national identity, and cultural roots",
+      "vehicle driving"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #62 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "weather forecast",
+      "heritage, national identity, and cultural roots",
+      "vehicle driving"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #63 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "future wealth",
+      "heritage, national identity, and cultural roots",
+      "vehicle driving"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #64 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "heritage, national identity, and cultural roots",
+      "vehicle driving",
+      "future wealth"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #65 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "future wealth",
+      "vehicle driving",
+      "weather forecast"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #66 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "weather forecast",
+      "heritage, national identity, and cultural roots",
+      "future wealth"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #67 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "weather forecast",
+      "future wealth"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #68 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "vehicle driving",
+      "future wealth",
+      "weather forecast"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #69 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "weather forecast",
+      "future wealth",
+      "vehicle driving"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #70 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "vehicle driving",
+      "future wealth",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #71 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "future wealth",
+      "heritage, national identity, and cultural roots",
+      "weather forecast"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #72 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "future wealth",
+      "weather forecast",
+      "heritage, national identity, and cultural roots",
+      "vehicle driving"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #73 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "future wealth",
+      "vehicle driving",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #74 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "future wealth",
+      "vehicle driving",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #75 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "heritage, national identity, and cultural roots",
+      "vehicle driving",
+      "future wealth"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #76 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "future wealth",
+      "vehicle driving",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #77 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "vehicle driving",
+      "future wealth",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #78 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "future wealth",
+      "vehicle driving",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #79 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "heritage, national identity, and cultural roots",
+      "future wealth",
+      "vehicle driving"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #80 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "vehicle driving",
+      "future wealth",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #81 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "vehicle driving",
+      "future wealth",
+      "heritage, national identity, and cultural roots"
+    ],
+    "answer": 3,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #82 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "future wealth",
+      "vehicle driving",
+      "weather forecast"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #83 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "weather forecast",
+      "future wealth",
+      "vehicle driving"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #84 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "future wealth"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #85 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "future wealth"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #86 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "future wealth",
+      "heritage, national identity, and cultural roots",
+      "vehicle driving"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #87 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "weather forecast",
+      "heritage, national identity, and cultural roots",
+      "future wealth"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #88 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "heritage, national identity, and cultural roots",
+      "future wealth",
+      "weather forecast",
+      "vehicle driving"
+    ],
+    "answer": 0,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #89 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "future wealth",
+      "weather forecast"
+    ],
+    "answer": 1,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Historical analysis inquiry #90 (P1): Learning the history of our country helps young pupils understand their ____.",
+    "options": [
+      "weather forecast",
+      "vehicle driving",
+      "heritage, national identity, and cultural roots",
+      "future wealth"
+    ],
+    "answer": 2,
+    "explain": "History provides identity, civic wisdom, and cultural continuity.",
+    "hint": "Importance of learning history.",
+    "topic": "Historical Inquiry",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  }
+]

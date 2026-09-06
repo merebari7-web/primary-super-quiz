@@ -1,1 +1,1502 @@
-[{"q":"Blue is a ____.","options":["tool for digging only","state","planet","colour"],"answer":3,"explain":"Blue is a colour used in art."},{"q":"Tie and dye is a method of ____ cloth.","options":["burying","eating","colouring","cooking"],"answer":2,"explain":"Adire is a famous Nigerian dyed cloth."},{"q":"Primary colours cannot be made by ____ other colours.","options":["seeing","naming","mixing","buying"],"answer":2,"explain":"They are the starting colours."},{"q":"A gong is a ____.","options":["crop","state","river","musical instrument"],"answer":3,"explain":"A gong is used to make music."},{"q":"A mask is worn on the ____.","options":["back only","knee","face","foot only"],"answer":2,"explain":"Masks are used in some traditional dances."},{"q":"A shekere is a ____.","options":["state","musical instrument","river","crop"],"answer":1,"explain":"A shekere is used to make music."},{"q":"Red + yellow = ____.","options":["black","purple","green","orange"],"answer":3,"explain":"Orange is a secondary colour."},{"q":"A pattern is a ____ that repeats.","options":["accident only","law","design","noise only"],"answer":2,"explain":"Patterns repeat shapes or colours."},{"q":"Green is a ____.","options":["state","colour","planet","tool for digging only"],"answer":1,"explain":"Green is a colour used in art."},{"q":"Black is a ____.","options":["colour","state","planet","tool for digging only"],"answer":0,"explain":"Black is a colour used in art."},{"q":"The three primary colours are red, blue and ____.","options":["yellow","green","black","brown"],"answer":0,"explain":"Primary colours: red, blue, yellow."},{"q":"Sculpture is art in ____ dimensions.","options":["one only always","zero","three","ten"],"answer":2,"explain":"Sculpture is 3D."},{"q":"A trumpet is a ____.","options":["state","crop","musical instrument","river"],"answer":2,"explain":"A trumpet is used to make music."},{"q":"Blue + yellow = ____.","options":["brown","purple","green","orange"],"answer":2,"explain":"Green is a secondary colour."},{"q":"The Nigerian national colours used in art are ____.","options":["green and white","blue and yellow only","red and gold only","black and gold only"],"answer":0,"explain":"Green–white–green."},{"q":"Still life is a drawing of ____ objects.","options":["running animals only","unmoving","planets only","clouds only"],"answer":1,"explain":"E.g. a bowl of fruit."},{"q":"A person who acts in a play is an ____.","options":["actor/actress","miner only","umpire only","pilot only"],"answer":0,"explain":"Actors perform roles."},{"q":"A choir is a group of ____.","options":["judges only","drivers only","farmers only","singers"],"answer":3,"explain":"A choir sings together."},{"q":"Red is a ____.","options":["planet","state","tool for digging only","colour"],"answer":3,"explain":"Red is a colour used in art."},{"q":"Yellow is a ____.","options":["tool for digging only","state","colour","planet"],"answer":2,"explain":"Yellow is a colour used in art."},{"q":"Purple is a ____.","options":["colour","state","planet","tool for digging only"],"answer":0,"explain":"Purple is a colour used in art."},{"q":"Weaving produces ____.","options":["electricity","cloth or baskets","cement only","petrol"],"answer":1,"explain":"Weaving interlaces threads or fibres."},{"q":"A xylophone is a ____.","options":["musical instrument","river","state","crop"],"answer":0,"explain":"A xylophone is used to make music."},{"q":"Drama is a story told through ____.","options":["farming only","acting","only silent sums","sleeping"],"answer":1,"explain":"Actors perform a play."},{"q":"A drum is a ____.","options":["crop","musical instrument","state","river"],"answer":1,"explain":"A drum is used to make music."},{"q":"White is a ____.","options":["colour","state","planet","tool for digging only"],"answer":0,"explain":"White is a colour used in art."},{"q":"Shading makes a drawing look ____.","options":["wet","edible","more solid / 3D","invisible"],"answer":2,"explain":"Light and dark show form."},{"q":"A song has ____.","options":["only engines","only roots","only gravel","melody and words (lyrics)"],"answer":3,"explain":"Music combines sound and often words."},{"q":"A drawing of land and sky is a ____.","options":["portrait","sum","landscape","diary"],"answer":2,"explain":"Landscape = scenery."},{"q":"A piano is a ____.","options":["crop","musical instrument","state","river"],"answer":1,"explain":"A piano is used to make music."},{"q":"Costume means the ____ worn in a play or dance.","options":["soil","clothes","food","money"],"answer":1,"explain":"Costumes show a character."},{"q":"Brown is a ____.","options":["planet","tool for digging only","colour","state"],"answer":2,"explain":"Brown is a colour used in art."},{"q":"A drawing of a person is a ____.","options":["recipe","portrait","landscape only","map only"],"answer":1,"explain":"A portrait shows a person."},{"q":"Pencil, crayon and paint are ____ materials.","options":["art","traffic","farm only","medical only"],"answer":0,"explain":"They are used to make art."},{"q":"Red + blue = ____.","options":["white","orange","purple","green"],"answer":2,"explain":"Purple is a secondary colour."},{"q":"A talking drum is a Nigerian ____.","options":["crop","state","musical instrument","river"],"answer":2,"explain":"It can mimic speech tones."},{"q":"A flute is a ____.","options":["musical instrument","crop","state","river"],"answer":0,"explain":"A flute is used to make music."},{"q":"Beating a drum keeps the ____.","options":["rhythm","spelling","rainfall","capital city"],"answer":0,"explain":"Rhythm is the beat."},{"q":"Pottery is the art of making things from ____.","options":["water only","clay","air","light"],"answer":1,"explain":"Clay is shaped and fired."},{"q":"A shekere is made from a ____.","options":["gourd","glass bottle only","plastic bag","iron rod only"],"answer":0,"explain":"Shekere is a beaded gourd rattle."},{"q":"The stage is where ____ happens.","options":["a performance","farming always","sleeping always","cooking always"],"answer":0,"explain":"Plays are performed on stage."},{"q":"Collage is art made by ____ materials.","options":["melting only gold","burying","sticking","boiling"],"answer":2,"explain":"Paper and cloth can be collaged."},{"q":"Orange is a ____.","options":["tool for digging only","colour","planet","state"],"answer":1,"explain":"Orange is a colour used in art."},{"q":"A guitar is a ____.","options":["musical instrument","river","crop","state"],"answer":0,"explain":"A guitar is used to make music."},{"q":"Folk tales are ____ stories.","options":["traditional","foreign news only","maths sums","computer only"],"answer":0,"explain":"They are passed down in culture."},{"q":"Which of these is used in art?","options":["paint","hoe only","spanner only","syringe only"],"answer":0,"explain":"Paint is an art material."},{"q":"Which is a performing art?","options":["paving","welding only","dance","mining"],"answer":2,"explain":"Dance is a performing art."},{"q":"Blue is a ____. [colour]","options":["tool for digging only","colour","planet","state"],"answer":1,"explain":"Blue is a colour used in art."},{"q":"Tie and dye is a method of ____ cloth. [colouring]","options":["eating","colouring","cooking","burying"],"answer":1,"explain":"Adire is a famous Nigerian dyed cloth."},{"q":"Primary colours cannot be made by ____ other colours. [mixing]","options":["mixing","naming","buying","seeing"],"answer":0,"explain":"They are the starting colours."},{"q":"A gong is a ____.","options":["river","back only","crop","musical instrument"],"answer":3,"explain":"A gong is used to make music."},{"q":"A mask is worn on the ____.","options":["black","knee","foot only","face"],"answer":3,"explain":"Masks are used in some traditional dances."},{"q":"A shekere is a ____.","options":["musical instrument","green","purple","accident only"],"answer":0,"explain":"A shekere is used to make music."},{"q":"Red + yellow = ____.","options":["orange","brown","noise only","law"],"answer":0,"explain":"Orange is a secondary colour."},{"q":"A pattern is a ____ that repeats.","options":["ten","zero","design","one only always"],"answer":2,"explain":"Patterns repeat shapes or colours."},{"q":"Green is a ____.","options":["red and gold only","colour","orange","blue and yellow only"],"answer":1,"explain":"Green is a colour used in art."},{"q":"Black is a ____.","options":["planets only","colour","running animals only","black and gold only"],"answer":1,"explain":"Black is a colour used in art."},{"q":"The three primary colours are red, blue and ____.","options":["miner only","clouds only","umpire only","yellow"],"answer":3,"explain":"Primary colours: red, blue, yellow."},{"q":"Sculpture is art in ____ dimensions.","options":["pilot only","three","judges only","drivers only"],"answer":1,"explain":"Sculpture is 3D."},{"q":"A trumpet is a ____.","options":["musical instrument","farmers only","cement only","electricity"],"answer":0,"explain":"A trumpet is used to make music."},{"q":"Blue + yellow = ____.","options":["only silent sums","farming only","sleeping","green"],"answer":3,"explain":"Green is a secondary colour."},{"q":"The Nigerian national colours used in art are ____.","options":["edible","wet","sleeping","green and white"],"answer":3,"explain":"Green–white–green."},{"q":"Still life is a drawing of ____ objects.","options":["only roots","unmoving","only engines","invisible"],"answer":1,"explain":"E.g. a bowl of fruit."},{"q":"A person who acts in a play is an ____.","options":["portrait","only gravel","actor/actress","sum"],"answer":2,"explain":"Actors perform roles."},{"q":"A choir is a group of ____.","options":["diary","soil","singers","food"],"answer":2,"explain":"A choir sings together."},{"q":"Red is a ____.","options":["money","colour","recipe","landscape only"],"answer":1,"explain":"Red is a colour used in art."},{"q":"Yellow is a ____.","options":["colour","traffic","map only","farm only"],"answer":0,"explain":"Yellow is a colour used in art."},{"q":"Purple is a ____.","options":["medical only","colour","white","spelling"],"answer":1,"explain":"Purple is a colour used in art."},{"q":"Weaving produces ____.","options":["rainfall","cloth or baskets","water only","capital city"],"answer":1,"explain":"Weaving interlaces threads or fibres."},{"q":"A xylophone is a ____.","options":["glass bottle only","air","musical instrument","light"],"answer":2,"explain":"A xylophone is used to make music."},{"q":"Drama is a story told through ____.","options":["acting","iron rod only","plastic bag","farming always"],"answer":0,"explain":"Actors perform a play."},{"q":"A drum is a ____.","options":["cooking always","melting only gold","sleeping always","musical instrument"],"answer":3,"explain":"A drum is used to make music."},{"q":"White is a ____.","options":["foreign news only","colour","boiling","maths sums"],"answer":1,"explain":"White is a colour used in art."},{"q":"Shading makes a drawing look ____.","options":["hoe only","computer only","spanner only","more solid / 3D"],"answer":3,"explain":"Light and dark show form."},{"q":"A song has ____.","options":["melody and words (lyrics)","paving","welding only","syringe only"],"answer":0,"explain":"Music combines sound and often words."},{"q":"A drawing of land and sky is a ____.","options":["Accra","Nairobi","landscape","mining"],"answer":2,"explain":"Landscape = scenery."},{"q":"A piano is a ____.","options":["Cairo","Paris","musical instrument","London"],"answer":2,"explain":"A piano is used to make music."},{"q":"Costume means the ____ worn in a play or dance.","options":["plastic","clothes","stone","none of these names"],"answer":1,"explain":"Costumes show a character."},{"q":"Brown is a ____.","options":["Tuesday","colour","rainbow","aeroplane"],"answer":1,"explain":"Brown is a colour used in art."},{"q":"A drawing of a person is a ____.","options":["portrait","state","tool for digging only","planet"],"answer":0,"explain":"A portrait shows a person."},{"q":"Pencil, crayon and paint are ____ materials.","options":["burying","planet","art","eating"],"answer":2,"explain":"They are used to make art."},{"q":"Red + blue = ____.","options":["buying","seeing","naming","purple"],"answer":3,"explain":"Purple is a secondary colour."},{"q":"A talking drum is a Nigerian ____.","options":["crop","river","buying","musical instrument"],"answer":3,"explain":"It can mimic speech tones."},{"q":"A flute is a ____.","options":["musical instrument","knee","back only","foot only"],"answer":0,"explain":"A flute is used to make music."},{"q":"Beating a drum keeps the ____.","options":["rhythm","black","green","purple"],"answer":0,"explain":"Rhythm is the beat."},{"q":"Pottery is the art of making things from ____.","options":["accident only","noise only","clay","law"],"answer":2,"explain":"Clay is shaped and fired."},{"q":"A shekere is made from a ____.","options":["gourd","brown","one only always","zero"],"answer":0,"explain":"Shekere is a beaded gourd rattle."},{"q":"The stage is where ____ happens.","options":["orange","ten","blue and yellow only","a performance"],"answer":3,"explain":"Plays are performed on stage."},{"q":"Collage is art made by ____ materials.","options":["sticking","red and gold only","black and gold only","running animals only"],"answer":0,"explain":"Paper and cloth can be collaged."},{"q":"Orange is a ____.","options":["miner only","planets only","clouds only","colour"],"answer":3,"explain":"Orange is a colour used in art."},{"q":"A guitar is a ____.","options":["judges only","musical instrument","umpire only","pilot only"],"answer":1,"explain":"A guitar is used to make music."},{"q":"Folk tales are ____ stories.","options":["electricity","drivers only","farmers only","traditional"],"answer":3,"explain":"They are passed down in culture."},{"q":"Which of these is used in art?","options":["paint","farming only","cement only","petrol"],"answer":0,"explain":"Paint is an art material."},{"q":"Which is a performing art?","options":["wet","sleeping","only silent sums","dance"],"answer":3,"explain":"Dance is a performing art."},{"q":"Blue is a ____.","options":["colour","only engines","edible","invisible"],"answer":0,"explain":"Blue is a colour used in art."},{"q":"Tie and dye is a method of ____ cloth.","options":["only roots","only gravel","portrait","colouring"],"answer":3,"explain":"Adire is a famous Nigerian dyed cloth."},{"q":"Primary colours cannot be made by ____ other colours.","options":["soil","mixing","diary","sum"],"answer":1,"explain":"They are the starting colours."},{"q":"A gong is a ____.","options":["money","recipe","food","musical instrument"],"answer":3,"explain":"A gong is used to make music."},{"q":"A mask is worn on the ____.","options":["map only","landscape only","traffic","face"],"answer":3,"explain":"Masks are used in some traditional dances."},{"q":"A shekere is a ____.","options":["musical instrument","farm only","white","medical only"],"answer":0,"explain":"A shekere is used to make music."}]
+[
+  {
+    "q": "The traditional Nigerian resist-dyeing cloth art technique (famous in Abeokuta) is called ____. (P4)",
+    "options": [
+      "Tie and Dye (Adire)",
+      "Mosaic",
+      "Knitting",
+      "Embroidery"
+    ],
+    "answer": 0,
+    "explain": "Adire fabrics use raffia ties or starch resist to create patterns with indigo dye.",
+    "hint": "Resist-dyeing method for patterns.",
+    "topic": "Textile Arts",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Famous ancient bronze and terracotta sculptures dating back over 2,000 years in Nigeria originated from the ____ culture. (P4)",
+    "options": [
+      "Nok",
+      "Viking",
+      "Maya",
+      "Roman"
+    ],
+    "answer": 0,
+    "explain": "Nok culture (Kaduna/Plateau) produced ancient terra-cotta sculptures.",
+    "hint": "Ancient Nigerian terra-cotta culture.",
+    "topic": "Art History & Heritage",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "The world-renowned bronze head casting and ivory carvings originated from the historic Kingdom of ____. (P4)",
+    "options": [
+      "Benin",
+      "Ghana",
+      "Mali",
+      "Songhai"
+    ],
+    "answer": 0,
+    "explain": "Benin Court bronze castings are celebrated worldwide for masterly metallurgy.",
+    "hint": "Ancient kingdom famous for bronze heads.",
+    "topic": "Art History & Heritage",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "In drama and theatre, the person who writes the script or play is called a ____. (P4)",
+    "options": [
+      "conductor",
+      "choreographer",
+      "playwright",
+      "sculptor"
+    ],
+    "answer": 2,
+    "explain": "A playwright crafts dramatic dialogues and stage directions.",
+    "hint": "Writer of stage plays.",
+    "topic": "Theatre & Drama",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Traditional instrument (P4): What is a Talking drum (Gangan / Kalangu)?",
+    "options": [
+      "an hourglass-shaped drum whose pitch changes by squeezing leather cords",
+      "a brass horn",
+      "a single string",
+      "a wooden keyboard"
+    ],
+    "answer": 0,
+    "explain": "The Talking drum (Gangan / Kalangu) is an hourglass-shaped drum whose pitch changes by squeezing leather cords.",
+    "hint": "Description of Talking drum (Gangan / Kalangu).",
+    "topic": "Traditional Music",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Traditional instrument (P4): What is a Kakaki?",
+    "options": [
+      "a stone drum",
+      "a clay rattle",
+      "a very long metal royal trumpet used in Northern Nigerian ceremonies",
+      "a thumb piano"
+    ],
+    "answer": 2,
+    "explain": "The Kakaki is a very long metal royal trumpet used in Northern Nigerian ceremonies.",
+    "hint": "Description of Kakaki.",
+    "topic": "Traditional Music",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Traditional instrument (P4): What is a Shekere?",
+    "options": [
+      "a flute",
+      "a bowed fiddle",
+      "a dried gourd covered with a woven bead net shaken for rhythm",
+      "a brass bell"
+    ],
+    "answer": 2,
+    "explain": "The Shekere is a dried gourd covered with a woven bead net shaken for rhythm.",
+    "hint": "Description of Shekere.",
+    "topic": "Traditional Music",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Traditional instrument (P4): What is a Ogene?",
+    "options": [
+      "a string harp",
+      "a traditional forged iron double-bell gong played in Igbo music",
+      "a wooden flute",
+      "a skin drum"
+    ],
+    "answer": 1,
+    "explain": "The Ogene is a traditional forged iron double-bell gong played in Igbo music.",
+    "hint": "Description of Ogene.",
+    "topic": "Traditional Music",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Traditional instrument (P4): What is a Goje?",
+    "options": [
+      "a brass horn",
+      "an iron bell",
+      "a large drum",
+      "a traditional one- or two-stringed bowed fiddle with a gourd resonator"
+    ],
+    "answer": 3,
+    "explain": "The Goje is a traditional one- or two-stringed bowed fiddle with a gourd resonator.",
+    "hint": "Description of Goje.",
+    "topic": "Traditional Music",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Traditional instrument (P4): What is a Udu?",
+    "options": [
+      "a guitar",
+      "a water jug clay vessel drum tapped to produce deep bass tones",
+      "a brass trumpet",
+      "a wooden whistle"
+    ],
+    "answer": 1,
+    "explain": "The Udu is a water jug clay vessel drum tapped to produce deep bass tones.",
+    "hint": "Description of Udu.",
+    "topic": "Traditional Music",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Art and design principle #1 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "melody",
+      "tempo",
+      "volume"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #2 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "tempo",
+      "melody",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #3 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "melody",
+      "tempo",
+      "volume"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #4 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "texture",
+      "volume",
+      "tempo"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #5 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "melody",
+      "texture",
+      "volume"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #6 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "volume",
+      "texture",
+      "melody"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #7 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "tempo",
+      "melody",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #8 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "melody",
+      "tempo",
+      "volume"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #9 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "volume",
+      "texture",
+      "melody"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #10 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "texture",
+      "melody",
+      "tempo"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #11 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "tempo",
+      "melody",
+      "volume"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #12 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "melody",
+      "texture",
+      "volume"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #13 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "volume",
+      "melody",
+      "tempo"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #14 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "melody",
+      "volume",
+      "tempo"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #15 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "volume",
+      "tempo",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #16 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "tempo",
+      "melody",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #17 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "tempo",
+      "melody",
+      "volume"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #18 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "texture",
+      "melody",
+      "volume"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #19 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "volume",
+      "texture",
+      "melody"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #20 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "melody",
+      "tempo",
+      "volume"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #21 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "volume",
+      "melody",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #22 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "tempo",
+      "texture",
+      "volume"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #23 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "volume",
+      "tempo",
+      "melody"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #24 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "melody",
+      "texture",
+      "tempo"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #25 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "tempo",
+      "texture",
+      "melody"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #26 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "melody",
+      "tempo",
+      "volume"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #27 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "melody",
+      "volume",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #28 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "volume",
+      "tempo",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #29 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "tempo",
+      "volume",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #30 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "volume",
+      "texture",
+      "melody"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #31 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "texture",
+      "volume",
+      "melody"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #32 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "volume",
+      "melody",
+      "tempo"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #33 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "tempo",
+      "volume",
+      "melody"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #34 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "texture",
+      "melody",
+      "volume"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #35 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "melody",
+      "tempo",
+      "volume"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #36 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "volume",
+      "melody",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #37 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "tempo",
+      "texture",
+      "melody"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #38 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "texture",
+      "tempo",
+      "volume"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #39 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "volume",
+      "texture",
+      "melody"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #40 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "tempo",
+      "volume",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #41 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "melody",
+      "texture",
+      "tempo"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #42 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "melody",
+      "tempo",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #43 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "volume",
+      "tempo",
+      "melody"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #44 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "volume",
+      "melody",
+      "tempo"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #45 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "tempo",
+      "texture",
+      "volume"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #46 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "volume",
+      "texture",
+      "tempo"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #47 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "tempo",
+      "volume",
+      "melody"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #48 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "texture",
+      "melody",
+      "tempo"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #49 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "melody",
+      "texture",
+      "volume"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #50 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "tempo",
+      "melody",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #51 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "volume",
+      "texture",
+      "melody"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #52 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "volume",
+      "texture",
+      "melody"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #53 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "texture",
+      "tempo",
+      "volume"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #54 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "melody",
+      "volume",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #55 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "tempo",
+      "volume",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #56 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "texture",
+      "volume",
+      "tempo"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #57 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "melody",
+      "texture",
+      "volume"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #58 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "melody",
+      "volume",
+      "tempo"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #59 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "melody",
+      "tempo",
+      "volume"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #60 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "melody",
+      "volume",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #61 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "volume",
+      "texture",
+      "melody"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #62 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "texture",
+      "volume",
+      "tempo"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #63 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "tempo",
+      "texture",
+      "melody"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #64 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "melody",
+      "texture",
+      "volume"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #65 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "volume",
+      "texture",
+      "tempo"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #66 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "texture",
+      "tempo",
+      "volume"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #67 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "volume",
+      "melody",
+      "tempo"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #68 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "melody",
+      "volume",
+      "tempo"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #69 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "volume",
+      "tempo",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #70 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "tempo",
+      "texture",
+      "melody"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #71 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "tempo",
+      "texture",
+      "volume"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #72 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "texture",
+      "volume",
+      "tempo"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #73 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "melody",
+      "volume",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #74 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "texture",
+      "tempo",
+      "volume"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #75 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "texture",
+      "melody",
+      "volume"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #76 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "melody",
+      "tempo",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #77 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "texture",
+      "volume",
+      "melody"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #78 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "tempo",
+      "texture",
+      "melody"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #79 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "tempo",
+      "melody",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #80 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "melody",
+      "tempo",
+      "volume"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #81 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "melody",
+      "tempo",
+      "volume"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #82 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "tempo",
+      "texture",
+      "melody"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #83 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "texture",
+      "tempo",
+      "melody"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #84 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "volume",
+      "melody",
+      "tempo",
+      "texture"
+    ],
+    "answer": 3,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #85 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "melody",
+      "texture",
+      "tempo",
+      "volume"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #86 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "texture",
+      "melody",
+      "volume"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #87 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "texture",
+      "volume",
+      "melody"
+    ],
+    "answer": 1,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #88 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "volume",
+      "texture",
+      "melody"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #89 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "tempo",
+      "volume",
+      "texture",
+      "melody"
+    ],
+    "answer": 2,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Art and design principle #90 (P4): The visual element of art concerned with the surface quality (smooth, rough, bumpy) is called ____.",
+    "options": [
+      "texture",
+      "tempo",
+      "melody",
+      "volume"
+    ],
+    "answer": 0,
+    "explain": "Texture describes the tactile surface feel of an artwork.",
+    "hint": "Surface feel of an object.",
+    "topic": "Elements of Art",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  }
+]

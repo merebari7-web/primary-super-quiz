@@ -1,1 +1,1502 @@
-[{"q":"What comes next? 3, 10, 17, 24, ____","options":["33","32","30","31"],"answer":3,"explain":"The numbers increase by 7."},{"q":"What comes next? 3, 6, 12, 24, ____","options":["50","49","47","48"],"answer":3,"explain":"Each term is multiplied by 2."},{"q":"The next square number after 36 is ____.","options":["49","64","48","42"],"answer":0,"explain":"6²=36, 7²=49."},{"q":"Which number is the odd one out: 14, 16, 18, 21?","options":["14","18","16","21"],"answer":3,"explain":"14, 16 and 18 go up by 2. 21 does not."},{"q":"If 6 * 7 = 13, then 6 * 7 means ____.","options":["6 − 7","7 − 6","6 × 7","6 + 7"],"answer":3,"explain":"6 + 7 = 13."},{"q":"Find the missing number: 17, ____, 21, 23","options":["20","21","19","18"],"answer":2,"explain":"The numbers increase by 2."},{"q":"If 1 packet holds 2 sweets, 3 packets hold ____ sweets.","options":["6","8","7","5"],"answer":0,"explain":"3 × 2 = 6."},{"q":"If 2 books cost ₦300, 1 book costs ₦____.","options":["150","149","152","151"],"answer":0,"explain":"Unit cost = 300 ÷ 2."},{"q":"What comes next? 4, 9, 14, 19, ____","options":["24","26","23","25"],"answer":0,"explain":"The numbers increase by 5."},{"q":"What comes next? 2, 4, 8, 16, ____","options":["31","34","33","32"],"answer":3,"explain":"Each term is multiplied by 2."},{"q":"What comes next? 1, 4, 9, 16, ____","options":["30","24","20","25"],"answer":3,"explain":"These are square numbers: 1, 4, 9, 16, 25."},{"q":"Which number is the odd one out: 28, 30, 32, 35?","options":["30","35","28","32"],"answer":1,"explain":"28, 30 and 32 go up by 2. 35 does not."},{"q":"If 10 * 2 = 12, then 10 * 2 means ____.","options":["2 − 10","10 − 2","10 + 2","10 × 2"],"answer":2,"explain":"10 + 2 = 12."},{"q":"Find the missing number: 13, ____, 17, 19","options":["15","14","16","17"],"answer":0,"explain":"The numbers increase by 2."},{"q":"If 1 packet holds 6 sweets, 3 packets hold ____ sweets.","options":["20","17","18","19"],"answer":2,"explain":"3 × 6 = 18."},{"q":"If 5 books cost ₦1500, 1 book costs ₦____.","options":["299","300","301","302"],"answer":1,"explain":"Unit cost = 1500 ÷ 5."},{"q":"What comes next? 7, 13, 19, 25, ____","options":["30","33","31","32"],"answer":2,"explain":"The numbers increase by 6."},{"q":"What comes next? 2, 6, 18, 54, ____","options":["163","162","164","161"],"answer":1,"explain":"Each term is multiplied by 3."},{"q":"Which number is the odd one out: 8, 10, 12, 15?","options":["10","12","15","8"],"answer":2,"explain":"8, 10 and 12 go up by 2. 15 does not."},{"q":"If 4 * 5 = 9, then 4 * 5 means ____.","options":["5 − 4","4 − 5","4 × 5","4 + 5"],"answer":3,"explain":"4 + 5 = 9."},{"q":"Find the missing number: 14, ____, 18, 20","options":["18","16","15","17"],"answer":1,"explain":"The numbers increase by 2."},{"q":"If 1 packet holds 5 sweets, 3 packets hold ____ sweets.","options":["14","17","16","15"],"answer":3,"explain":"3 × 5 = 15."},{"q":"If 4 books cost ₦1000, 1 book costs ₦____.","options":["252","251","250","249"],"answer":2,"explain":"Unit cost = 1000 ÷ 4."},{"q":"What comes next? 8, 15, 22, 29, ____","options":["37","38","35","36"],"answer":3,"explain":"The numbers increase by 7."},{"q":"What comes next? 1, 2, 4, 8, ____","options":["15","18","16","17"],"answer":2,"explain":"Each term is multiplied by 2."},{"q":"Which number is the odd one out: 21, 23, 25, 28?","options":["25","23","21","28"],"answer":3,"explain":"21, 23 and 25 go up by 2. 28 does not."},{"q":"If 2 * 3 = 5, then 2 * 3 means ____.","options":["3 − 2","2 + 3","2 − 3","2 × 3"],"answer":1,"explain":"2 + 3 = 5."},{"q":"Find the missing number: 15, ____, 19, 21","options":["17","18","16","19"],"answer":0,"explain":"The numbers increase by 2."},{"q":"If 1 packet holds 4 sweets, 3 packets hold ____ sweets.","options":["12","11","13","14"],"answer":0,"explain":"3 × 4 = 12."},{"q":"If 3 books cost ₦600, 1 book costs ₦____.","options":["199","201","200","202"],"answer":2,"explain":"Unit cost = 600 ÷ 3."},{"q":"What comes next? 6, 9, 12, 15, ____","options":["17","19","20","18"],"answer":3,"explain":"The numbers increase by 3."},{"q":"What comes next? 3, 9, 27, 81, ____","options":["245","244","242","243"],"answer":3,"explain":"Each term is multiplied by 3."},{"q":"Which number is the odd one out: 18, 20, 22, 25?","options":["25","18","20","22"],"answer":0,"explain":"18, 20 and 22 go up by 2. 25 does not."},{"q":"If 8 * 1 = 9, then 8 * 1 means ____.","options":["8 + 1","8 − 1","8 × 1","1 − 8"],"answer":0,"explain":"8 + 1 = 9."},{"q":"Find the missing number: 10, ____, 14, 16","options":["14","13","12","11"],"answer":2,"explain":"The numbers increase by 2."},{"q":"If 1 packet holds 9 sweets, 3 packets hold ____ sweets.","options":["26","29","27","28"],"answer":2,"explain":"3 × 9 = 27."},{"q":"What comes next? 3, 9, 15, 21, ____","options":["28","26","27","29"],"answer":2,"explain":"The numbers increase by 6."},{"q":"What comes next? 1, 3, 9, 27, ____","options":["83","81","80","82"],"answer":1,"explain":"Each term is multiplied by 3."},{"q":"Which number is the odd one out: 13, 15, 17, 20?","options":["13","17","20","15"],"answer":2,"explain":"13, 15 and 17 go up by 2. 20 does not."},{"q":"Find the missing number: 18, ____, 22, 24","options":["20","22","19","21"],"answer":0,"explain":"The numbers increase by 2."},{"q":"If 1 packet holds 7 sweets, 3 packets hold ____ sweets.","options":["20","21","23","22"],"answer":1,"explain":"3 × 7 = 21."},{"q":"What comes next? 8, 10, 12, 14, ____","options":["15","17","18","16"],"answer":3,"explain":"The numbers increase by 2."},{"q":"Which number is the odd one out: 30, 32, 34, 37?","options":["32","30","37","34"],"answer":2,"explain":"30, 32 and 34 go up by 2. 37 does not."},{"q":"Find the missing number: 7, ____, 11, 13","options":["11","9","8","10"],"answer":1,"explain":"The numbers increase by 2."},{"q":"If 1 packet holds 3 sweets, 3 packets hold ____ sweets.","options":["11","9","10","8"],"answer":1,"explain":"3 × 3 = 9."},{"q":"What comes next? 7, 12, 17, 22, ____","options":["29","27","28","26"],"answer":1,"explain":"The numbers increase by 5."},{"q":"Which number is the odd one out: 22, 24, 26, 29?","options":["24","26","29","22"],"answer":2,"explain":"22, 24 and 26 go up by 2. 29 does not."},{"q":"Find the missing number: 5, ____, 9, 11","options":["8","9","6","7"],"answer":3,"explain":"The numbers increase by 2."},{"q":"If 1 packet holds 8 sweets, 3 packets hold ____ sweets.","options":["26","24","25","23"],"answer":1,"explain":"3 × 8 = 24."},{"q":"What comes next? 5, 9, 13, 17, ____","options":["23","22","20","21"],"answer":3,"explain":"The numbers increase by 4."},{"q":"Which number is the odd one out: 27, 29, 31, 34?","options":["29","31","34","27"],"answer":2,"explain":"27, 29 and 31 go up by 2. 34 does not."},{"q":"Find the missing number: 12, ____, 16, 18","options":["14","13","16","15"],"answer":0,"explain":"The numbers increase by 2."},{"q":"What comes next? 1, 6, 11, 16, ____","options":["22","23","20","21"],"answer":3,"explain":"The numbers increase by 5."},{"q":"Which number is the odd one out: 7, 9, 11, 14?","options":["11","9","7","14"],"answer":3,"explain":"7, 9 and 11 go up by 2. 14 does not."},{"q":"Find the missing number: 16, ____, 20, 22","options":["18","17","19","20"],"answer":0,"explain":"The numbers increase by 2."},{"q":"What comes next? 7, 9, 11, 13, ____","options":["14","16","15","17"],"answer":2,"explain":"The numbers increase by 2."},{"q":"Which number is the odd one out: 10, 12, 14, 17?","options":["17","12","10","14"],"answer":0,"explain":"10, 12 and 14 go up by 2. 17 does not."},{"q":"Find the missing number: 6, ____, 10, 12","options":["8","10","7","9"],"answer":0,"explain":"The numbers increase by 2."},{"q":"What comes next? 2, 6, 10, 14, ____","options":["17","20","19","18"],"answer":3,"explain":"The numbers increase by 4."},{"q":"Which number is the odd one out: 29, 31, 33, 36?","options":["33","29","31","36"],"answer":3,"explain":"29, 31 and 33 go up by 2. 36 does not."},{"q":"Find the missing number: 11, ____, 15, 17","options":["14","12","15","13"],"answer":3,"explain":"The numbers increase by 2."},{"q":"What comes next? 4, 6, 8, 10, ____","options":["13","12","14","11"],"answer":1,"explain":"The numbers increase by 2."},{"q":"Which number is the odd one out: 26, 28, 30, 33?","options":["26","28","30","33"],"answer":3,"explain":"26, 28 and 30 go up by 2. 33 does not."},{"q":"Find the missing number: 9, ____, 13, 15","options":["11","13","10","12"],"answer":0,"explain":"The numbers increase by 2."},{"q":"What comes next? 4, 10, 16, 22, ____","options":["29","30","27","28"],"answer":3,"explain":"The numbers increase by 6."},{"q":"Which number is the odd one out: 24, 26, 28, 31?","options":["31","26","24","28"],"answer":0,"explain":"24, 26 and 28 go up by 2. 31 does not."},{"q":"Find the missing number: 19, ____, 23, 25","options":["22","20","23","21"],"answer":3,"explain":"The numbers increase by 2."},{"q":"What comes next? 5, 11, 17, 23, ____","options":["30","29","31","28"],"answer":1,"explain":"The numbers increase by 6."},{"q":"Which number is the odd one out: 4, 6, 8, 11?","options":["4","11","8","6"],"answer":1,"explain":"4, 6 and 8 go up by 2. 11 does not."},{"q":"Find the missing number: 8, ____, 12, 14","options":["9","11","10","12"],"answer":2,"explain":"The numbers increase by 2."},{"q":"What comes next? 2, 9, 16, 23, ____","options":["31","30","29","32"],"answer":1,"explain":"The numbers increase by 7."},{"q":"Which number is the odd one out: 3, 5, 7, 10?","options":["3","5","10","7"],"answer":2,"explain":"3, 5 and 7 go up by 2. 10 does not."},{"q":"What comes next? 6, 7, 8, 9, ____","options":["10","9","11","12"],"answer":0,"explain":"The numbers increase by 1."},{"q":"Which number is the odd one out: 25, 27, 29, 32?","options":["32","25","27","29"],"answer":0,"explain":"25, 27 and 29 go up by 2. 32 does not."},{"q":"What comes next? 3, 5, 7, 9, ____","options":["11","10","12","13"],"answer":0,"explain":"The numbers increase by 2."},{"q":"Which number is the odd one out: 6, 8, 10, 13?","options":["10","8","6","13"],"answer":3,"explain":"6, 8 and 10 go up by 2. 13 does not."},{"q":"What comes next? 3, 4, 5, 6, ____","options":["7","9","6","8"],"answer":0,"explain":"The numbers increase by 1."},{"q":"Which number is the odd one out: 12, 14, 16, 19?","options":["19","16","14","12"],"answer":0,"explain":"12, 14 and 16 go up by 2. 19 does not."},{"q":"What comes next? 6, 10, 14, 18, ____","options":["21","22","24","23"],"answer":1,"explain":"The numbers increase by 4."},{"q":"Which number is the odd one out: 17, 19, 21, 24?","options":["19","21","17","24"],"answer":3,"explain":"17, 19 and 21 go up by 2. 24 does not."},{"q":"What comes next? 2, 5, 8, 11, ____","options":["15","13","16","14"],"answer":3,"explain":"The numbers increase by 3."},{"q":"Which number is the odd one out: 20, 22, 24, 27?","options":["20","22","24","27"],"answer":3,"explain":"20, 22 and 24 go up by 2. 27 does not."},{"q":"What comes next? 5, 6, 7, 8, ____","options":["9","10","8","11"],"answer":0,"explain":"The numbers increase by 1."},{"q":"Which number is the odd one out: 9, 11, 13, 16?","options":["16","11","9","13"],"answer":0,"explain":"9, 11 and 13 go up by 2. 16 does not."},{"q":"What comes next? 5, 7, 9, 11, ____","options":["12","14","13","15"],"answer":2,"explain":"The numbers increase by 2."},{"q":"Which number is the odd one out: 23, 25, 27, 30?","options":["27","30","25","23"],"answer":1,"explain":"23, 25 and 27 go up by 2. 30 does not."},{"q":"What comes next? 7, 15, 23, 31, ____","options":["38","39","40","41"],"answer":1,"explain":"The numbers increase by 8."},{"q":"Which number is the odd one out: 11, 13, 15, 18?","options":["18","13","15","11"],"answer":0,"explain":"11, 13 and 15 go up by 2. 18 does not."},{"q":"What comes next? 3, 7, 11, 15, ____","options":["19","20","18","21"],"answer":0,"explain":"The numbers increase by 4."},{"q":"Which number is the odd one out: 32, 34, 36, 39?","options":["34","32","39","36"],"answer":2,"explain":"32, 34 and 36 go up by 2. 39 does not."},{"q":"What comes next? 6, 14, 22, 30, ____","options":["40","37","39","38"],"answer":3,"explain":"The numbers increase by 8."},{"q":"Which number is the odd one out: 16, 18, 20, 23?","options":["23","18","16","20"],"answer":0,"explain":"16, 18 and 20 go up by 2. 23 does not."},{"q":"What comes next? 2, 7, 12, 17, ____","options":["21","23","24","22"],"answer":3,"explain":"The numbers increase by 5."},{"q":"Which number is the odd one out: 31, 33, 35, 38?","options":["35","38","33","31"],"answer":1,"explain":"31, 33 and 35 go up by 2. 38 does not."},{"q":"What comes next? 1, 8, 15, 22, ____","options":["30","28","31","29"],"answer":3,"explain":"The numbers increase by 7."},{"q":"Which number is the odd one out: 15, 17, 19, 22?","options":["22","15","17","19"],"answer":0,"explain":"15, 17 and 19 go up by 2. 22 does not."},{"q":"What comes next? 2, 10, 18, 26, ____","options":["34","35","33","36"],"answer":0,"explain":"The numbers increase by 8."},{"q":"Which number is the odd one out: 5, 7, 9, 12?","options":["9","7","12","5"],"answer":2,"explain":"5, 7 and 9 go up by 2. 12 does not."},{"q":"What comes next? 4, 11, 18, 25, ____","options":["33","32","31","34"],"answer":1,"explain":"The numbers increase by 7."},{"q":"Which number is the odd one out: 19, 21, 23, 26?","options":["23","21","26","19"],"answer":2,"explain":"19, 21 and 23 go up by 2. 26 does not."}]
+[
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 3 ⊖ 2: (P6)",
+    "options": [
+      "5",
+      "4",
+      "7",
+      "6"
+    ],
+    "answer": 0,
+    "explain": "3² - 2² = 9 - 4 = 5.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 3 ⊕ 3: (P6)",
+    "options": [
+      "18",
+      "19",
+      "17",
+      "20"
+    ],
+    "answer": 0,
+    "explain": "3² + 3² = 9 + 9 = 18.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 3 ⊕ 4: (P6)",
+    "options": [
+      "26",
+      "27",
+      "24",
+      "25"
+    ],
+    "answer": 3,
+    "explain": "3² + 4² = 9 + 16 = 25.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 3 ⊕ 5: (P6)",
+    "options": [
+      "36",
+      "35",
+      "34",
+      "33"
+    ],
+    "answer": 2,
+    "explain": "3² + 5² = 9 + 25 = 34.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 3 ⊕ 6: (P6)",
+    "options": [
+      "45",
+      "47",
+      "44",
+      "46"
+    ],
+    "answer": 0,
+    "explain": "3² + 6² = 9 + 36 = 45.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 3 ⊕ 7: (P6)",
+    "options": [
+      "58",
+      "57",
+      "59",
+      "60"
+    ],
+    "answer": 0,
+    "explain": "3² + 7² = 9 + 49 = 58.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 3 ⊕ 8: (P6)",
+    "options": [
+      "74",
+      "75",
+      "73",
+      "72"
+    ],
+    "answer": 2,
+    "explain": "3² + 8² = 9 + 64 = 73.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 3 ⊕ 9: (P6)",
+    "options": [
+      "90",
+      "92",
+      "89",
+      "91"
+    ],
+    "answer": 0,
+    "explain": "3² + 9² = 9 + 81 = 90.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 4 ⊖ 2: (P6)",
+    "options": [
+      "11",
+      "13",
+      "14",
+      "12"
+    ],
+    "answer": 3,
+    "explain": "4² - 2² = 16 - 4 = 12.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 4 ⊖ 3: (P6)",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "answer": 1,
+    "explain": "4² - 3² = 16 - 9 = 7.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 4 ⊕ 4: (P6)",
+    "options": [
+      "32",
+      "31",
+      "33",
+      "34"
+    ],
+    "answer": 0,
+    "explain": "4² + 4² = 16 + 16 = 32.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 4 ⊕ 5: (P6)",
+    "options": [
+      "43",
+      "42",
+      "40",
+      "41"
+    ],
+    "answer": 3,
+    "explain": "4² + 5² = 16 + 25 = 41.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 4 ⊕ 6: (P6)",
+    "options": [
+      "51",
+      "54",
+      "52",
+      "53"
+    ],
+    "answer": 2,
+    "explain": "4² + 6² = 16 + 36 = 52.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 4 ⊕ 7: (P6)",
+    "options": [
+      "65",
+      "66",
+      "64",
+      "67"
+    ],
+    "answer": 0,
+    "explain": "4² + 7² = 16 + 49 = 65.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 4 ⊕ 8: (P6)",
+    "options": [
+      "82",
+      "79",
+      "80",
+      "81"
+    ],
+    "answer": 2,
+    "explain": "4² + 8² = 16 + 64 = 80.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 4 ⊕ 9: (P6)",
+    "options": [
+      "98",
+      "96",
+      "99",
+      "97"
+    ],
+    "answer": 3,
+    "explain": "4² + 9² = 16 + 81 = 97.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 5 ⊖ 2: (P6)",
+    "options": [
+      "22",
+      "20",
+      "23",
+      "21"
+    ],
+    "answer": 3,
+    "explain": "5² - 2² = 25 - 4 = 21.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 5 ⊖ 3: (P6)",
+    "options": [
+      "15",
+      "18",
+      "16",
+      "17"
+    ],
+    "answer": 2,
+    "explain": "5² - 3² = 25 - 9 = 16.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 5 ⊖ 4: (P6)",
+    "options": [
+      "11",
+      "8",
+      "10",
+      "9"
+    ],
+    "answer": 3,
+    "explain": "5² - 4² = 25 - 16 = 9.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 5 ⊕ 5: (P6)",
+    "options": [
+      "52",
+      "51",
+      "49",
+      "50"
+    ],
+    "answer": 3,
+    "explain": "5² + 5² = 25 + 25 = 50.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 5 ⊕ 6: (P6)",
+    "options": [
+      "60",
+      "63",
+      "61",
+      "62"
+    ],
+    "answer": 2,
+    "explain": "5² + 6² = 25 + 36 = 61.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 5 ⊕ 7: (P6)",
+    "options": [
+      "76",
+      "75",
+      "74",
+      "73"
+    ],
+    "answer": 2,
+    "explain": "5² + 7² = 25 + 49 = 74.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 5 ⊕ 8: (P6)",
+    "options": [
+      "91",
+      "90",
+      "88",
+      "89"
+    ],
+    "answer": 3,
+    "explain": "5² + 8² = 25 + 64 = 89.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 5 ⊕ 9: (P6)",
+    "options": [
+      "108",
+      "106",
+      "107",
+      "105"
+    ],
+    "answer": 1,
+    "explain": "5² + 9² = 25 + 81 = 106.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 6 ⊖ 2: (P6)",
+    "options": [
+      "32",
+      "33",
+      "31",
+      "34"
+    ],
+    "answer": 0,
+    "explain": "6² - 2² = 36 - 4 = 32.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 6 ⊖ 3: (P6)",
+    "options": [
+      "26",
+      "29",
+      "27",
+      "28"
+    ],
+    "answer": 2,
+    "explain": "6² - 3² = 36 - 9 = 27.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 6 ⊖ 4: (P6)",
+    "options": [
+      "19",
+      "21",
+      "22",
+      "20"
+    ],
+    "answer": 3,
+    "explain": "6² - 4² = 36 - 16 = 20.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 6 ⊖ 5: (P6)",
+    "options": [
+      "11",
+      "13",
+      "10",
+      "12"
+    ],
+    "answer": 0,
+    "explain": "6² - 5² = 36 - 25 = 11.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 6 ⊕ 6: (P6)",
+    "options": [
+      "71",
+      "73",
+      "72",
+      "74"
+    ],
+    "answer": 2,
+    "explain": "6² + 6² = 36 + 36 = 72.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 6 ⊕ 7: (P6)",
+    "options": [
+      "85",
+      "86",
+      "87",
+      "84"
+    ],
+    "answer": 0,
+    "explain": "6² + 7² = 36 + 49 = 85.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 6 ⊕ 8: (P6)",
+    "options": [
+      "101",
+      "100",
+      "102",
+      "99"
+    ],
+    "answer": 1,
+    "explain": "6² + 8² = 36 + 64 = 100.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 6 ⊕ 9: (P6)",
+    "options": [
+      "117",
+      "118",
+      "119",
+      "116"
+    ],
+    "answer": 0,
+    "explain": "6² + 9² = 36 + 81 = 117.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 7 ⊖ 2: (P6)",
+    "options": [
+      "44",
+      "47",
+      "45",
+      "46"
+    ],
+    "answer": 2,
+    "explain": "7² - 2² = 49 - 4 = 45.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 7 ⊖ 3: (P6)",
+    "options": [
+      "39",
+      "40",
+      "42",
+      "41"
+    ],
+    "answer": 1,
+    "explain": "7² - 3² = 49 - 9 = 40.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 7 ⊖ 4: (P6)",
+    "options": [
+      "33",
+      "35",
+      "34",
+      "32"
+    ],
+    "answer": 0,
+    "explain": "7² - 4² = 49 - 16 = 33.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 7 ⊖ 5: (P6)",
+    "options": [
+      "24",
+      "26",
+      "23",
+      "25"
+    ],
+    "answer": 0,
+    "explain": "7² - 5² = 49 - 25 = 24.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 7 ⊖ 6: (P6)",
+    "options": [
+      "12",
+      "13",
+      "15",
+      "14"
+    ],
+    "answer": 1,
+    "explain": "7² - 6² = 49 - 36 = 13.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 7 ⊕ 7: (P6)",
+    "options": [
+      "97",
+      "98",
+      "100",
+      "99"
+    ],
+    "answer": 1,
+    "explain": "7² + 7² = 49 + 49 = 98.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 7 ⊕ 8: (P6)",
+    "options": [
+      "114",
+      "112",
+      "115",
+      "113"
+    ],
+    "answer": 3,
+    "explain": "7² + 8² = 49 + 64 = 113.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 7 ⊕ 9: (P6)",
+    "options": [
+      "132",
+      "130",
+      "129",
+      "131"
+    ],
+    "answer": 1,
+    "explain": "7² + 9² = 49 + 81 = 130.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 8 ⊖ 2: (P6)",
+    "options": [
+      "62",
+      "61",
+      "60",
+      "59"
+    ],
+    "answer": 2,
+    "explain": "8² - 2² = 64 - 4 = 60.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 8 ⊖ 3: (P6)",
+    "options": [
+      "57",
+      "55",
+      "56",
+      "54"
+    ],
+    "answer": 1,
+    "explain": "8² - 3² = 64 - 9 = 55.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 8 ⊖ 4: (P6)",
+    "options": [
+      "48",
+      "50",
+      "47",
+      "49"
+    ],
+    "answer": 0,
+    "explain": "8² - 4² = 64 - 16 = 48.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 8 ⊖ 5: (P6)",
+    "options": [
+      "38",
+      "40",
+      "39",
+      "41"
+    ],
+    "answer": 2,
+    "explain": "8² - 5² = 64 - 25 = 39.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 8 ⊖ 6: (P6)",
+    "options": [
+      "30",
+      "29",
+      "28",
+      "27"
+    ],
+    "answer": 2,
+    "explain": "8² - 6² = 64 - 36 = 28.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 8 ⊖ 7: (P6)",
+    "options": [
+      "14",
+      "17",
+      "15",
+      "16"
+    ],
+    "answer": 2,
+    "explain": "8² - 7² = 64 - 49 = 15.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 8 ⊕ 8: (P6)",
+    "options": [
+      "127",
+      "130",
+      "128",
+      "129"
+    ],
+    "answer": 2,
+    "explain": "8² + 8² = 64 + 64 = 128.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 8 ⊕ 9: (P6)",
+    "options": [
+      "145",
+      "144",
+      "146",
+      "147"
+    ],
+    "answer": 0,
+    "explain": "8² + 9² = 64 + 81 = 145.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 9 ⊖ 2: (P6)",
+    "options": [
+      "77",
+      "76",
+      "79",
+      "78"
+    ],
+    "answer": 0,
+    "explain": "9² - 2² = 81 - 4 = 77.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 9 ⊖ 3: (P6)",
+    "options": [
+      "72",
+      "73",
+      "71",
+      "74"
+    ],
+    "answer": 0,
+    "explain": "9² - 3² = 81 - 9 = 72.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 9 ⊖ 4: (P6)",
+    "options": [
+      "67",
+      "66",
+      "64",
+      "65"
+    ],
+    "answer": 3,
+    "explain": "9² - 4² = 81 - 16 = 65.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 9 ⊖ 5: (P6)",
+    "options": [
+      "57",
+      "56",
+      "58",
+      "55"
+    ],
+    "answer": 1,
+    "explain": "9² - 5² = 81 - 25 = 56.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 9 ⊖ 6: (P6)",
+    "options": [
+      "47",
+      "44",
+      "45",
+      "46"
+    ],
+    "answer": 2,
+    "explain": "9² - 6² = 81 - 36 = 45.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 9 ⊖ 7: (P6)",
+    "options": [
+      "32",
+      "33",
+      "31",
+      "34"
+    ],
+    "answer": 0,
+    "explain": "9² - 7² = 81 - 49 = 32.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 9 ⊖ 8: (P6)",
+    "options": [
+      "17",
+      "18",
+      "16",
+      "19"
+    ],
+    "answer": 0,
+    "explain": "9² - 8² = 81 - 64 = 17.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊕ B = A² + B², evaluate 9 ⊕ 9: (P6)",
+    "options": [
+      "164",
+      "163",
+      "162",
+      "161"
+    ],
+    "answer": 2,
+    "explain": "9² + 9² = 81 + 81 = 162.",
+    "hint": "Square both numbers then add.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 10 ⊖ 2: (P6)",
+    "options": [
+      "97",
+      "98",
+      "96",
+      "95"
+    ],
+    "answer": 2,
+    "explain": "10² - 2² = 100 - 4 = 96.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 10 ⊖ 3: (P6)",
+    "options": [
+      "91",
+      "92",
+      "93",
+      "90"
+    ],
+    "answer": 0,
+    "explain": "10² - 3² = 100 - 9 = 91.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 10 ⊖ 4: (P6)",
+    "options": [
+      "84",
+      "85",
+      "86",
+      "83"
+    ],
+    "answer": 0,
+    "explain": "10² - 4² = 100 - 16 = 84.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 10 ⊖ 5: (P6)",
+    "options": [
+      "75",
+      "76",
+      "77",
+      "74"
+    ],
+    "answer": 0,
+    "explain": "10² - 5² = 100 - 25 = 75.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 10 ⊖ 6: (P6)",
+    "options": [
+      "66",
+      "63",
+      "64",
+      "65"
+    ],
+    "answer": 2,
+    "explain": "10² - 6² = 100 - 36 = 64.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 10 ⊖ 7: (P6)",
+    "options": [
+      "50",
+      "52",
+      "51",
+      "53"
+    ],
+    "answer": 2,
+    "explain": "10² - 7² = 100 - 49 = 51.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 10 ⊖ 8: (P6)",
+    "options": [
+      "35",
+      "37",
+      "36",
+      "38"
+    ],
+    "answer": 2,
+    "explain": "10² - 8² = 100 - 64 = 36.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 10 ⊖ 9: (P6)",
+    "options": [
+      "21",
+      "19",
+      "18",
+      "20"
+    ],
+    "answer": 1,
+    "explain": "10² - 9² = 100 - 81 = 19.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 11 ⊖ 2: (P6)",
+    "options": [
+      "118",
+      "117",
+      "116",
+      "119"
+    ],
+    "answer": 1,
+    "explain": "11² - 2² = 121 - 4 = 117.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 11 ⊖ 3: (P6)",
+    "options": [
+      "112",
+      "113",
+      "111",
+      "114"
+    ],
+    "answer": 0,
+    "explain": "11² - 3² = 121 - 9 = 112.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 11 ⊖ 4: (P6)",
+    "options": [
+      "104",
+      "106",
+      "105",
+      "107"
+    ],
+    "answer": 2,
+    "explain": "11² - 4² = 121 - 16 = 105.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 11 ⊖ 5: (P6)",
+    "options": [
+      "96",
+      "98",
+      "95",
+      "97"
+    ],
+    "answer": 0,
+    "explain": "11² - 5² = 121 - 25 = 96.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 11 ⊖ 6: (P6)",
+    "options": [
+      "86",
+      "84",
+      "87",
+      "85"
+    ],
+    "answer": 3,
+    "explain": "11² - 6² = 121 - 36 = 85.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 11 ⊖ 7: (P6)",
+    "options": [
+      "72",
+      "73",
+      "74",
+      "71"
+    ],
+    "answer": 0,
+    "explain": "11² - 7² = 121 - 49 = 72.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 11 ⊖ 8: (P6)",
+    "options": [
+      "59",
+      "56",
+      "58",
+      "57"
+    ],
+    "answer": 3,
+    "explain": "11² - 8² = 121 - 64 = 57.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "If A ⊖ B = A² - B², evaluate 11 ⊖ 9: (P6)",
+    "options": [
+      "42",
+      "40",
+      "39",
+      "41"
+    ],
+    "answer": 1,
+    "explain": "11² - 9² = 121 - 81 = 40.",
+    "hint": "Square both numbers then subtract.",
+    "topic": "Higher Order Reasoning",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 2? (P6)",
+    "options": [
+      "20",
+      "18",
+      "19",
+      "17"
+    ],
+    "answer": 1,
+    "explain": "4(2) + 10 = 8 + 10 = 18.",
+    "hint": "Multiply 2 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 3? (P6)",
+    "options": [
+      "23",
+      "24",
+      "21",
+      "22"
+    ],
+    "answer": 3,
+    "explain": "4(3) + 10 = 12 + 10 = 22.",
+    "hint": "Multiply 3 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 4? (P6)",
+    "options": [
+      "28",
+      "25",
+      "27",
+      "26"
+    ],
+    "answer": 3,
+    "explain": "4(4) + 10 = 16 + 10 = 26.",
+    "hint": "Multiply 4 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 5? (P6)",
+    "options": [
+      "30",
+      "31",
+      "32",
+      "29"
+    ],
+    "answer": 0,
+    "explain": "4(5) + 10 = 20 + 10 = 30.",
+    "hint": "Multiply 5 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 6? (P6)",
+    "options": [
+      "34",
+      "36",
+      "35",
+      "33"
+    ],
+    "answer": 0,
+    "explain": "4(6) + 10 = 24 + 10 = 34.",
+    "hint": "Multiply 6 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 7? (P6)",
+    "options": [
+      "37",
+      "38",
+      "40",
+      "39"
+    ],
+    "answer": 1,
+    "explain": "4(7) + 10 = 28 + 10 = 38.",
+    "hint": "Multiply 7 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 8? (P6)",
+    "options": [
+      "44",
+      "42",
+      "41",
+      "43"
+    ],
+    "answer": 1,
+    "explain": "4(8) + 10 = 32 + 10 = 42.",
+    "hint": "Multiply 8 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 9? (P6)",
+    "options": [
+      "46",
+      "45",
+      "48",
+      "47"
+    ],
+    "answer": 0,
+    "explain": "4(9) + 10 = 36 + 10 = 46.",
+    "hint": "Multiply 9 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 10? (P6)",
+    "options": [
+      "52",
+      "51",
+      "49",
+      "50"
+    ],
+    "answer": 3,
+    "explain": "4(10) + 10 = 40 + 10 = 50.",
+    "hint": "Multiply 10 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 11? (P6)",
+    "options": [
+      "56",
+      "54",
+      "53",
+      "55"
+    ],
+    "answer": 1,
+    "explain": "4(11) + 10 = 44 + 10 = 54.",
+    "hint": "Multiply 11 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 12? (P6)",
+    "options": [
+      "59",
+      "57",
+      "58",
+      "60"
+    ],
+    "answer": 2,
+    "explain": "4(12) + 10 = 48 + 10 = 58.",
+    "hint": "Multiply 12 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 13? (P6)",
+    "options": [
+      "62",
+      "63",
+      "64",
+      "61"
+    ],
+    "answer": 0,
+    "explain": "4(13) + 10 = 52 + 10 = 62.",
+    "hint": "Multiply 13 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 14? (P6)",
+    "options": [
+      "65",
+      "68",
+      "66",
+      "67"
+    ],
+    "answer": 2,
+    "explain": "4(14) + 10 = 56 + 10 = 66.",
+    "hint": "Multiply 14 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 15? (P6)",
+    "options": [
+      "72",
+      "69",
+      "70",
+      "71"
+    ],
+    "answer": 2,
+    "explain": "4(15) + 10 = 60 + 10 = 70.",
+    "hint": "Multiply 15 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 16? (P6)",
+    "options": [
+      "74",
+      "73",
+      "75",
+      "76"
+    ],
+    "answer": 0,
+    "explain": "4(16) + 10 = 64 + 10 = 74.",
+    "hint": "Multiply 16 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 17? (P6)",
+    "options": [
+      "78",
+      "79",
+      "77",
+      "80"
+    ],
+    "answer": 0,
+    "explain": "4(17) + 10 = 68 + 10 = 78.",
+    "hint": "Multiply 17 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 18? (P6)",
+    "options": [
+      "82",
+      "84",
+      "81",
+      "83"
+    ],
+    "answer": 0,
+    "explain": "4(18) + 10 = 72 + 10 = 82.",
+    "hint": "Multiply 18 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "In a number machine, input N outputs (4N + 10). What is output for N = 19? (P6)",
+    "options": [
+      "88",
+      "85",
+      "86",
+      "87"
+    ],
+    "answer": 2,
+    "explain": "4(19) + 10 = 76 + 10 = 86.",
+    "hint": "Multiply 19 by 4, then add 10.",
+    "topic": "Function Machines",
+    "bloom": "Apply",
+    "difficulty": "Hard"
+  },
+  {
+    "q": "Find the value of [ 2 ⨀ 3 ] case #1 if A ⨀ B = (A × B) + 1 (P6):",
+    "options": [
+      "8",
+      "9",
+      "7",
+      "6"
+    ],
+    "answer": 2,
+    "explain": "(2 × 3) + 1 = 7.",
+    "hint": "Multiply and add.",
+    "topic": "Symbolic Logic",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the value of [ 3 ⨀ 4 ] case #2 if A ⨀ B = (A × B) + 2 (P6):",
+    "options": [
+      "13",
+      "16",
+      "15",
+      "14"
+    ],
+    "answer": 3,
+    "explain": "(3 × 4) + 2 = 14.",
+    "hint": "Multiply and add.",
+    "topic": "Symbolic Logic",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the value of [ 4 ⨀ 5 ] case #3 if A ⨀ B = (A × B) + 3 (P6):",
+    "options": [
+      "24",
+      "22",
+      "23",
+      "25"
+    ],
+    "answer": 2,
+    "explain": "(4 × 5) + 3 = 23.",
+    "hint": "Multiply and add.",
+    "topic": "Symbolic Logic",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the value of [ 5 ⨀ 6 ] case #4 if A ⨀ B = (A × B) + 4 (P6):",
+    "options": [
+      "36",
+      "35",
+      "34",
+      "33"
+    ],
+    "answer": 2,
+    "explain": "(5 × 6) + 4 = 34.",
+    "hint": "Multiply and add.",
+    "topic": "Symbolic Logic",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the value of [ 6 ⨀ 7 ] case #5 if A ⨀ B = (A × B) + 5 (P6):",
+    "options": [
+      "49",
+      "47",
+      "46",
+      "48"
+    ],
+    "answer": 1,
+    "explain": "(6 × 7) + 5 = 47.",
+    "hint": "Multiply and add.",
+    "topic": "Symbolic Logic",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the value of [ 7 ⨀ 8 ] case #6 if A ⨀ B = (A × B) + 6 (P6):",
+    "options": [
+      "61",
+      "62",
+      "63",
+      "64"
+    ],
+    "answer": 1,
+    "explain": "(7 × 8) + 6 = 62.",
+    "hint": "Multiply and add.",
+    "topic": "Symbolic Logic",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the value of [ 8 ⨀ 2 ] case #7 if A ⨀ B = (A × B) + 7 (P6):",
+    "options": [
+      "23",
+      "22",
+      "25",
+      "24"
+    ],
+    "answer": 0,
+    "explain": "(8 × 2) + 7 = 23.",
+    "hint": "Multiply and add.",
+    "topic": "Symbolic Logic",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the value of [ 9 ⨀ 3 ] case #8 if A ⨀ B = (A × B) + 8 (P6):",
+    "options": [
+      "35",
+      "34",
+      "36",
+      "37"
+    ],
+    "answer": 0,
+    "explain": "(9 × 3) + 8 = 35.",
+    "hint": "Multiply and add.",
+    "topic": "Symbolic Logic",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the value of [ 10 ⨀ 4 ] case #9 if A ⨀ B = (A × B) + 9 (P6):",
+    "options": [
+      "48",
+      "51",
+      "49",
+      "50"
+    ],
+    "answer": 2,
+    "explain": "(10 × 4) + 9 = 49.",
+    "hint": "Multiply and add.",
+    "topic": "Symbolic Logic",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Find the value of [ 11 ⨀ 5 ] case #10 if A ⨀ B = (A × B) + 10 (P6):",
+    "options": [
+      "66",
+      "67",
+      "65",
+      "64"
+    ],
+    "answer": 2,
+    "explain": "(11 × 5) + 10 = 65.",
+    "hint": "Multiply and add.",
+    "topic": "Symbolic Logic",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  }
+]

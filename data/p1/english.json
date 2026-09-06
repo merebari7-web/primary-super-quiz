@@ -1,1 +1,1502 @@
-[{"q":"Which letter comes after J?","options":["I","L","j","K"],"answer":3,"explain":"The alphabet goes … J, K …"},{"q":"Which word rhymes with hen?","options":["sun","hat","pen","box"],"answer":2,"explain":"hen and pen rhyme."},{"q":"We say “an apple”. Which article is correct?","options":["a","an","the an","some"],"answer":1,"explain":"“apple” starts with a vowel sound, so we use an."},{"q":"The opposite of safe is ____.","options":["down","sell","dangerous","full"],"answer":2,"explain":"safe and dangerous are antonyms."},{"q":"A synonym of sad is ____.","options":["tiny","tutor","unhappy","start"],"answer":2,"explain":"sad and unhappy mean almost the same."},{"q":"The plural of class is ____.","options":["classes","class","classs","class's"],"answer":0,"explain":"One class, many classes."},{"q":"Which letter comes after W?","options":["V","w","X","Y"],"answer":2,"explain":"The alphabet goes … W, X …"},{"q":"Which word rhymes with rain?","options":["run","ring","road","train"],"answer":3,"explain":"rain and train rhyme."},{"q":"We say “an umbrella”. Which article is correct?","options":["the an","some","a","an"],"answer":3,"explain":"“umbrella” starts with a vowel sound, so we use an."},{"q":"The opposite of question is ____.","options":["no","short","answer","south"],"answer":2,"explain":"question and answer are antonyms."},{"q":"A synonym of begin is ____.","options":["unhappy","house","clever","start"],"answer":3,"explain":"begin and start mean almost the same."},{"q":"The plural of watch is ____.","options":["watch","watchs","watches","watch's"],"answer":2,"explain":"One watch, many watches."},{"q":"Which letter comes after F?","options":["H","f","G","E"],"answer":2,"explain":"The alphabet goes … F, G …"},{"q":"Which word rhymes with light?","options":["late","night","long","lamp"],"answer":1,"explain":"light and night rhyme."},{"q":"We say “a cat”. Which article is correct?","options":["the a","a","an","some a"],"answer":1,"explain":"“cat” starts with a consonant sound, so we use a."},{"q":"The opposite of strong is ____.","options":["light","enemy","weak","poor"],"answer":2,"explain":"strong and weak are antonyms."},{"q":"A synonym of end is ____.","options":["tiny","quiet","finish","unhappy"],"answer":2,"explain":"end and finish mean almost the same."},{"q":"The plural of boy is ____.","options":["boys","boy","boy's","boyes"],"answer":0,"explain":"One boy, many boys."},{"q":"Which letter comes after S?","options":["R","U","s","T"],"answer":3,"explain":"The alphabet goes … S, T …"},{"q":"Which word rhymes with cake?","options":["rug","cot","pin","bake"],"answer":3,"explain":"cake and bake rhyme."},{"q":"We say “an ice cream”. Which article is correct?","options":["some","the an","a","an"],"answer":3,"explain":"“ice cream” starts with a vowel sound, so we use an."},{"q":"The opposite of friend is ____.","options":["enemy","west","close","dangerous"],"answer":0,"explain":"friend and enemy are antonyms."},{"q":"A synonym of smart is ____.","options":["tiny","house","beautiful","clever"],"answer":3,"explain":"smart and clever mean almost the same."},{"q":"The plural of dog is ____.","options":["doges","dogs","dog's","dog"],"answer":1,"explain":"One dog, many dogs."},{"q":"Which letter comes after R?","options":["r","S","T","Q"],"answer":1,"explain":"The alphabet goes … R, S …"},{"q":"Which word rhymes with king?","options":["keep","ring","kind","kite"],"answer":1,"explain":"king and ring rhyme."},{"q":"We say “a dog”. Which article is correct?","options":["some a","a","an","the a"],"answer":1,"explain":"“dog” starts with a consonant sound, so we use a."},{"q":"The opposite of wet is ____.","options":["well","out","slow","dry"],"answer":3,"explain":"wet and dry are antonyms."},{"q":"A synonym of big is ____.","options":["quiet","large","start","see"],"answer":1,"explain":"big and large mean almost the same."},{"q":"The plural of dish is ____.","options":["dish","dish's","dishs","dishes"],"answer":3,"explain":"One dish, many dishes."},{"q":"Which letter comes after A?","options":["C","B","a","Z"],"answer":1,"explain":"The alphabet goes … A, B …"},{"q":"Which word rhymes with hop?","options":["hid","top","hen","hat"],"answer":1,"explain":"hop and top rhyme."},{"q":"We say “an elephant”. Which article is correct?","options":["some","a","the an","an"],"answer":3,"explain":"“elephant” starts with a vowel sound, so we use an."},{"q":"The opposite of long is ____.","options":["narrow","soft","sad","short"],"answer":3,"explain":"long and short are antonyms."},{"q":"A synonym of quick is ____.","options":["speak","fast","rock","start"],"answer":1,"explain":"quick and fast mean almost the same."},{"q":"The plural of tomato is ____.","options":["tomatoes","tomatos","tomato's","tomato"],"answer":0,"explain":"One tomato, many tomatoes."},{"q":"Which letter comes after X?","options":["Z","x","Y","W"],"answer":2,"explain":"The alphabet goes … X, Y …"},{"q":"Which word rhymes with cat?","options":["hat","cup","pen","dog"],"answer":0,"explain":"cat and hat rhyme."},{"q":"We say “a ball”. Which article is correct?","options":["a","an","some a","the a"],"answer":0,"explain":"“ball” starts with a consonant sound, so we use a."},{"q":"The opposite of clean is ____.","options":["new","take","dirty","end"],"answer":2,"explain":"clean and dirty are antonyms."},{"q":"A synonym of happy is ____.","options":["student","see","glad","rock"],"answer":2,"explain":"happy and glad mean almost the same."},{"q":"The plural of book is ____.","options":["book's","books","bookes","book"],"answer":1,"explain":"One book, many books."},{"q":"Which letter comes after E?","options":["F","e","D","G"],"answer":0,"explain":"The alphabet goes … E, F …"},{"q":"Which word rhymes with sun?","options":["sat","pen","log","run"],"answer":3,"explain":"sun and run rhyme."},{"q":"We say “an egg”. Which article is correct?","options":["an","the an","some","a"],"answer":0,"explain":"“egg” starts with a vowel sound, so we use an."},{"q":"The opposite of give is ____.","options":["take","dangerous","south","no"],"answer":0,"explain":"give and take are antonyms."},{"q":"A synonym of small is ____.","options":["speak","glad","start","tiny"],"answer":3,"explain":"small and tiny mean almost the same."},{"q":"The plural of cat is ____.","options":["cat's","cat","cates","cats"],"answer":3,"explain":"One cat, many cats."},{"q":"Which letter comes after T?","options":["V","U","S","t"],"answer":1,"explain":"The alphabet goes … T, U …"},{"q":"Which word rhymes with ball?","options":["bed","tall","cup","net"],"answer":1,"explain":"ball and tall rhyme."},{"q":"We say “a table”. Which article is correct?","options":["some a","the a","an","a"],"answer":3,"explain":"“table” starts with a consonant sound, so we use a."},{"q":"The opposite of hard is ____.","options":["dry","outside","soft","lose"],"answer":2,"explain":"hard and soft are antonyms."},{"q":"The plural of bus is ____.","options":["buses","bus","bus's","buss"],"answer":0,"explain":"One bus, many buses."},{"q":"Which letter comes after U?","options":["V","u","W","T"],"answer":0,"explain":"The alphabet goes … U, V …"},{"q":"Which word rhymes with blue?","options":["ball","blow","bell","true"],"answer":3,"explain":"blue and true rhyme."},{"q":"We say “an hour”. Which article is correct?","options":["a","an","the an","some"],"answer":1,"explain":"“hour” starts with a vowel sound, so we use an."},{"q":"The opposite of high is ____.","options":["answer","no","close","low"],"answer":3,"explain":"high and low are antonyms."},{"q":"The plural of box is ____.","options":["boxes","boxs","box","box's"],"answer":0,"explain":"One box, many boxes."},{"q":"Which letter comes after B?","options":["C","b","D","A"],"answer":0,"explain":"The alphabet goes … B, C …"},{"q":"We say “a house”. Which article is correct?","options":["the a","a","an","some a"],"answer":1,"explain":"“house” starts with a consonant sound, so we use a."},{"q":"The opposite of fast is ____.","options":["slow","well","go","thin"],"answer":0,"explain":"fast and slow are antonyms."},{"q":"The plural of potato is ____.","options":["potatos","potato","potato's","potatoes"],"answer":3,"explain":"One potato, many potatoes."},{"q":"Which letter comes after D?","options":["C","d","E","F"],"answer":2,"explain":"The alphabet goes … D, E …"},{"q":"We say “a zebra”. Which article is correct?","options":["a","some a","an","the a"],"answer":0,"explain":"“zebra” starts with a consonant sound, so we use a."},{"q":"The opposite of old is ____.","options":["down","new","end","west"],"answer":1,"explain":"old and new are antonyms."},{"q":"The plural of girl is ____.","options":["girles","girls","girl","girl's"],"answer":1,"explain":"One girl, many girls."},{"q":"Which letter comes after I?","options":["H","i","J","K"],"answer":2,"explain":"The alphabet goes … I, J …"},{"q":"We say “a mango”. Which article is correct?","options":["a","the a","an","some a"],"answer":0,"explain":"“mango” starts with a consonant sound, so we use a."},{"q":"The opposite of tall is ____.","options":["short","no","sad","outside"],"answer":0,"explain":"tall and short are antonyms."},{"q":"Which letter comes after O?","options":["o","Q","N","P"],"answer":3,"explain":"The alphabet goes … O, P …"},{"q":"We say “an onion”. Which article is correct?","options":["a","an","some","the an"],"answer":1,"explain":"“onion” starts with a vowel sound, so we use an."},{"q":"The opposite of dark is ____.","options":["night","close","dirty","light"],"answer":3,"explain":"dark and light are antonyms."},{"q":"Which letter comes after N?","options":["n","P","M","O"],"answer":3,"explain":"The alphabet goes … N, O …"},{"q":"We say “a pen”. Which article is correct?","options":["the a","a","an","some a"],"answer":1,"explain":"“pen” starts with a consonant sound, so we use a."},{"q":"The opposite of early is ____.","options":["late","no","well","false"],"answer":0,"explain":"early and late are antonyms."},{"q":"Which letter comes after L?","options":["l","N","M","K"],"answer":2,"explain":"The alphabet goes … L, M …"},{"q":"We say “an orange”. Which article is correct?","options":["a","the an","an","some"],"answer":2,"explain":"“orange” starts with a vowel sound, so we use an."},{"q":"The opposite of east is ____.","options":["narrow","dry","west","enemy"],"answer":2,"explain":"east and west are antonyms."},{"q":"Which letter comes after P?","options":["Q","R","p","O"],"answer":0,"explain":"The alphabet goes … P, Q …"},{"q":"We say “a school”. Which article is correct?","options":["the a","an","a","some a"],"answer":2,"explain":"“school” starts with a consonant sound, so we use a."},{"q":"The opposite of wide is ____.","options":["down","poor","night","narrow"],"answer":3,"explain":"wide and narrow are antonyms."},{"q":"Which letter comes after K?","options":["L","M","k","J"],"answer":0,"explain":"The alphabet goes … K, L …"},{"q":"We say “an igloo”. Which article is correct?","options":["an","some","a","the an"],"answer":0,"explain":"“igloo” starts with a vowel sound, so we use an."},{"q":"The opposite of up is ____.","options":["down","lose","sell","late"],"answer":0,"explain":"up and down are antonyms."},{"q":"Which letter comes after V?","options":["X","v","W","U"],"answer":2,"explain":"The alphabet goes … V, W …"},{"q":"We say “an aunt”. Which article is correct?","options":["a","the an","an","some"],"answer":2,"explain":"“aunt” starts with a vowel sound, so we use an."},{"q":"The opposite of heavy is ____.","options":["down","sell","outside","light"],"answer":3,"explain":"heavy and light are antonyms."},{"q":"Which letter comes after G?","options":["g","I","F","H"],"answer":3,"explain":"The alphabet goes … G, H …"},{"q":"We say “a uniform”. Which article is correct?","options":["a","some a","the a","an"],"answer":0,"explain":"“uniform” starts with a consonant sound, so we use a."},{"q":"The opposite of day is ____.","options":["poor","slow","last","night"],"answer":3,"explain":"day and night are antonyms."},{"q":"Which letter comes after Y?","options":["Z","A","X","y"],"answer":0,"explain":"The alphabet goes … Y, Z …"},{"q":"The opposite of love is ____.","options":["narrow","sell","last","hate"],"answer":3,"explain":"love and hate are antonyms."},{"q":"Which letter comes after Q?","options":["P","q","S","R"],"answer":3,"explain":"The alphabet goes … Q, R …"},{"q":"The opposite of come is ____.","options":["go","small","answer","light"],"answer":0,"explain":"come and go are antonyms."},{"q":"Which letter comes after M?","options":["O","L","N","m"],"answer":2,"explain":"The alphabet goes … M, N …"},{"q":"The opposite of empty is ____.","options":["full","take","dry","sell"],"answer":0,"explain":"empty and full are antonyms."},{"q":"Which letter comes after C?","options":["E","c","D","B"],"answer":2,"explain":"The alphabet goes … C, D …"},{"q":"The opposite of rich is ____.","options":["light","poor","new","no"],"answer":1,"explain":"rich and poor are antonyms."},{"q":"Which letter comes after H?","options":["h","G","J","I"],"answer":3,"explain":"The alphabet goes … H, I …"},{"q":"The opposite of open is ____.","options":["last","weak","sell","close"],"answer":3,"explain":"open and close are antonyms."}]
+[
+  {
+    "q": "Which letter is a VOWEL? (P1)",
+    "options": [
+      "D",
+      "C",
+      "E",
+      "B"
+    ],
+    "answer": 2,
+    "explain": "The five vowels in the English alphabet are A, E, I, O, U.",
+    "hint": "Remember the 5 vowel letters: A, E, I, O, U.",
+    "topic": "Phonics & Letters",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Which letter is a CONSONANT? (P1)",
+    "options": [
+      "M",
+      "A",
+      "E",
+      "O"
+    ],
+    "answer": 0,
+    "explain": "Consonants are all letters that are not vowels (A, E, I, O, U).",
+    "hint": "Look for the letter that is not A, E, I, O, U.",
+    "topic": "Phonics & Letters",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Which word rhymes with 'CAT'? (P1)",
+    "options": [
+      "Hat",
+      "Pen",
+      "Dog",
+      "Sun"
+    ],
+    "answer": 0,
+    "explain": "'Cat' and 'Hat' end with the exact same '-at' sound.",
+    "hint": "Listen to the ending sound '-at'.",
+    "topic": "Phonics & Rhymes",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Which word rhymes with 'PIN'? (P1)",
+    "options": [
+      "Pot",
+      "Pan",
+      "Win",
+      "Pet"
+    ],
+    "answer": 2,
+    "explain": "'Pin' and 'Win' share the '-in' ending sound.",
+    "hint": "Listen to the ending sound '-in'.",
+    "topic": "Phonics & Rhymes",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Which word rhymes with 'SUN'? (P1)",
+    "options": [
+      "Sing",
+      "Sad",
+      "Run",
+      "Sit"
+    ],
+    "answer": 2,
+    "explain": "'Sun' and 'Run' both end with the '-un' sound.",
+    "hint": "Look for the '-un' word family.",
+    "topic": "Phonics & Rhymes",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "A sentence must always begin with a ____ letter. (P1)",
+    "options": [
+      "Small",
+      "Tiny",
+      "Numbers",
+      "Capital"
+    ],
+    "answer": 3,
+    "explain": "Every proper sentence begins with a capital letter (e.g. The dog ran).",
+    "hint": "Think of uppercase letters like 'A', 'B', 'C'.",
+    "topic": "Punctuation & Mechanics",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "What punctuation mark comes at the end of a telling sentence? (P1)",
+    "options": [
+      "Question mark (?)",
+      "Full stop (.)",
+      "Exclamation mark (!)",
+      "Comma (,)"
+    ],
+    "answer": 1,
+    "explain": "Statements end with a full stop (period).",
+    "hint": "A small dot that ends a complete sentence.",
+    "topic": "Punctuation & Mechanics",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Choose the correct plural: One book, two ____. (P1)",
+    "options": [
+      "booking",
+      "books",
+      "bookies",
+      "bookes"
+    ],
+    "answer": 1,
+    "explain": "Add '-s' to form regular plurals: book → books.",
+    "hint": "Add 's' to book.",
+    "topic": "Nouns & Plurals",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Choose the correct plural: One cat, three ____. (P1)",
+    "options": [
+      "catss",
+      "cats",
+      "cating",
+      "cates"
+    ],
+    "answer": 1,
+    "explain": "Regular nouns form plurals with '-s': cat → cats.",
+    "hint": "Add 's' to the end.",
+    "topic": "Nouns & Plurals",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Which pronoun replaces 'Obi' (a boy)? (P1)",
+    "options": [
+      "It",
+      "He",
+      "They",
+      "She"
+    ],
+    "answer": 1,
+    "explain": "'He' is the singular subject pronoun for males.",
+    "hint": "Pronoun for a boy or man.",
+    "topic": "Pronouns",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Which pronoun replaces 'Amina' (a girl)? (P1)",
+    "options": [
+      "He",
+      "It",
+      "She",
+      "They"
+    ],
+    "answer": 2,
+    "explain": "'She' is the singular subject pronoun for females.",
+    "hint": "Pronoun for a girl or woman.",
+    "topic": "Pronouns",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Choose the correct word: The cat ____ on the mat. (P1)",
+    "options": [
+      "sat",
+      "sitted",
+      "sitting",
+      "sitsed"
+    ],
+    "answer": 0,
+    "explain": "'Sat' is the simple past tense of sit.",
+    "hint": "Simple past tense of sit.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Which word is an action word (verb)? (P1)",
+    "options": [
+      "Table",
+      "Jump",
+      "Green",
+      "Soft"
+    ],
+    "answer": 1,
+    "explain": "'Jump' expresses a physical action.",
+    "hint": "Something you can do with your body.",
+    "topic": "Parts of Speech",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Which word describes a color? (P1)",
+    "options": [
+      "Quickly",
+      "Run",
+      "Blue",
+      "Chair"
+    ],
+    "answer": 2,
+    "explain": "'Blue' is an adjective describing color.",
+    "hint": "A color of the clear sky.",
+    "topic": "Vocabulary",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "What is the opposite of 'HOT'? (P1)",
+    "options": [
+      "Dark",
+      "Bright",
+      "Cold",
+      "Warm"
+    ],
+    "answer": 2,
+    "explain": "Cold is the antonym of hot.",
+    "hint": "Think of ice or snow.",
+    "topic": "Vocabulary & Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "What is the opposite of 'BIG'? (P1)",
+    "options": [
+      "Small",
+      "Tall",
+      "Heavy",
+      "Long"
+    ],
+    "answer": 0,
+    "explain": "Small is the antonym of big.",
+    "hint": "Think of a tiny mouse.",
+    "topic": "Vocabulary & Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "What is the opposite of 'UP'? (P1)",
+    "options": [
+      "Inside",
+      "Over",
+      "Down",
+      "Under"
+    ],
+    "answer": 2,
+    "explain": "Down is the exact opposite direction of up.",
+    "hint": "Direction towards the floor.",
+    "topic": "Vocabulary & Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Fill in the blank: An ____ (apple / orange / umbrella). (P1)",
+    "options": [
+      "dog",
+      "apple",
+      "book",
+      "car"
+    ],
+    "answer": 1,
+    "explain": "Use 'an' before words beginning with a vowel sound.",
+    "hint": "'An' comes before a vowel sound (a, e, i, o, u).",
+    "topic": "Articles",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Fill in the blank: A ____. (P1)",
+    "options": [
+      "egg",
+      "ball",
+      "apple",
+      "orange"
+    ],
+    "answer": 1,
+    "explain": "Use 'a' before words starting with a consonant sound.",
+    "hint": "'A' is used before consonant sounds.",
+    "topic": "Articles",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Which word is a NOUN (naming word)? (P1)",
+    "options": [
+      "Pencil",
+      "Slowly",
+      "Happy",
+      "Run"
+    ],
+    "answer": 0,
+    "explain": "A noun is a person, place, animal, or thing.",
+    "hint": "A tool you use to write.",
+    "topic": "Parts of Speech",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Ancient'?",
+    "options": [
+      "tiny",
+      "very old and historical",
+      "shiny and modern",
+      "brand new"
+    ],
+    "answer": 1,
+    "explain": "'Ancient' means very old and historical.",
+    "hint": "Core definition of Ancient.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Ancient'?",
+    "options": [
+      "tiny",
+      "very old and historical",
+      "shiny and modern",
+      "brand new"
+    ],
+    "answer": 3,
+    "explain": "The opposite of Ancient is brand new.",
+    "hint": "Opposite of Ancient.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Abundant'?",
+    "options": [
+      "extremely scarce",
+      "existing in large, plentiful quantities",
+      "completely empty",
+      "broken"
+    ],
+    "answer": 1,
+    "explain": "'Abundant' means existing in large, plentiful quantities.",
+    "hint": "Core definition of Abundant.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Abundant'?",
+    "options": [
+      "broken",
+      "extremely scarce",
+      "existing in large, plentiful quantities",
+      "completely empty"
+    ],
+    "answer": 1,
+    "explain": "The opposite of Abundant is extremely scarce.",
+    "hint": "Opposite of Abundant.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Cautious'?",
+    "options": [
+      "rude",
+      "careful to avoid danger or mistakes",
+      "lazy",
+      "reckless and careless"
+    ],
+    "answer": 1,
+    "explain": "'Cautious' means careful to avoid danger or mistakes.",
+    "hint": "Core definition of Cautious.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Cautious'?",
+    "options": [
+      "careful to avoid danger or mistakes",
+      "rude",
+      "lazy",
+      "reckless and careless"
+    ],
+    "answer": 3,
+    "explain": "The opposite of Cautious is reckless and careless.",
+    "hint": "Opposite of Cautious.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Fragile'?",
+    "options": [
+      "easily broken or damaged",
+      "loud",
+      "unbreakable and solid",
+      "heavy"
+    ],
+    "answer": 0,
+    "explain": "'Fragile' means easily broken or damaged.",
+    "hint": "Core definition of Fragile.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Fragile'?",
+    "options": [
+      "easily broken or damaged",
+      "heavy",
+      "loud",
+      "unbreakable and solid"
+    ],
+    "answer": 3,
+    "explain": "The opposite of Fragile is unbreakable and solid.",
+    "hint": "Opposite of Fragile.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Diligent'?",
+    "options": [
+      "lazy and idle",
+      "noisy",
+      "hardworking and showing steady effort",
+      "slow"
+    ],
+    "answer": 2,
+    "explain": "'Diligent' means hardworking and showing steady effort.",
+    "hint": "Core definition of Diligent.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Diligent'?",
+    "options": [
+      "hardworking and showing steady effort",
+      "noisy",
+      "slow",
+      "lazy and idle"
+    ],
+    "answer": 3,
+    "explain": "The opposite of Diligent is lazy and idle.",
+    "hint": "Opposite of Diligent.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Brief'?",
+    "options": [
+      "lasting only a short period of time",
+      "heavy",
+      "wide",
+      "lasting for many years"
+    ],
+    "answer": 0,
+    "explain": "'Brief' means lasting only a short period of time.",
+    "hint": "Core definition of Brief.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Brief'?",
+    "options": [
+      "lasting only a short period of time",
+      "lasting for many years",
+      "wide",
+      "heavy"
+    ],
+    "answer": 1,
+    "explain": "The opposite of Brief is lasting for many years.",
+    "hint": "Opposite of Brief.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Hazardous'?",
+    "options": [
+      "easy",
+      "dangerous and risky to health",
+      "completely safe",
+      "pleasant"
+    ],
+    "answer": 1,
+    "explain": "'Hazardous' means dangerous and risky to health.",
+    "hint": "Core definition of Hazardous.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Hazardous'?",
+    "options": [
+      "completely safe",
+      "dangerous and risky to health",
+      "pleasant",
+      "easy"
+    ],
+    "answer": 0,
+    "explain": "The opposite of Hazardous is completely safe.",
+    "hint": "Opposite of Hazardous.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Impartial'?",
+    "options": [
+      "unfair",
+      "angry",
+      "fair and unbiased toward all parties",
+      "heavily biased"
+    ],
+    "answer": 2,
+    "explain": "'Impartial' means fair and unbiased toward all parties.",
+    "hint": "Core definition of Impartial.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Impartial'?",
+    "options": [
+      "unfair",
+      "fair and unbiased toward all parties",
+      "heavily biased",
+      "angry"
+    ],
+    "answer": 2,
+    "explain": "The opposite of Impartial is heavily biased.",
+    "hint": "Opposite of Impartial.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Vanish'?",
+    "options": [
+      "appear brightly",
+      "shine",
+      "grow taller",
+      "disappear suddenly from sight"
+    ],
+    "answer": 3,
+    "explain": "'Vanish' means disappear suddenly from sight.",
+    "hint": "Core definition of Vanish.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Vanish'?",
+    "options": [
+      "shine",
+      "appear brightly",
+      "grow taller",
+      "disappear suddenly from sight"
+    ],
+    "answer": 1,
+    "explain": "The opposite of Vanish is appear brightly.",
+    "hint": "Opposite of Vanish.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Genuine'?",
+    "options": [
+      "broken",
+      "authentic and real, not fake",
+      "counterfeit and imitation",
+      "plastic"
+    ],
+    "answer": 1,
+    "explain": "'Genuine' means authentic and real, not fake.",
+    "hint": "Core definition of Genuine.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Genuine'?",
+    "options": [
+      "authentic and real, not fake",
+      "plastic",
+      "broken",
+      "counterfeit and imitation"
+    ],
+    "answer": 3,
+    "explain": "The opposite of Genuine is counterfeit and imitation.",
+    "hint": "Opposite of Genuine.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Courage'?",
+    "options": [
+      "jealousy",
+      "greed",
+      "bravery in facing danger or difficulty",
+      "cowardice and fear"
+    ],
+    "answer": 2,
+    "explain": "'Courage' means bravery in facing danger or difficulty.",
+    "hint": "Core definition of Courage.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Courage'?",
+    "options": [
+      "bravery in facing danger or difficulty",
+      "greed",
+      "cowardice and fear",
+      "jealousy"
+    ],
+    "answer": 2,
+    "explain": "The opposite of Courage is cowardice and fear.",
+    "hint": "Opposite of Courage.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Humble'?",
+    "options": [
+      "wealthy",
+      "modest and not proud or arrogant",
+      "boastful and proud",
+      "harsh"
+    ],
+    "answer": 1,
+    "explain": "'Humble' means modest and not proud or arrogant.",
+    "hint": "Core definition of Humble.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Humble'?",
+    "options": [
+      "boastful and proud",
+      "harsh",
+      "modest and not proud or arrogant",
+      "wealthy"
+    ],
+    "answer": 0,
+    "explain": "The opposite of Humble is boastful and proud.",
+    "hint": "Opposite of Humble.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Generous'?",
+    "options": [
+      "willing to share and give freely",
+      "cruel",
+      "stingy and greedy",
+      "mean"
+    ],
+    "answer": 0,
+    "explain": "'Generous' means willing to share and give freely.",
+    "hint": "Core definition of Generous.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Generous'?",
+    "options": [
+      "mean",
+      "stingy and greedy",
+      "willing to share and give freely",
+      "cruel"
+    ],
+    "answer": 1,
+    "explain": "The opposite of Generous is stingy and greedy.",
+    "hint": "Opposite of Generous.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Honest'?",
+    "options": [
+      "truthful and free of deceit",
+      "proud",
+      "noisy",
+      "dishonest and lying"
+    ],
+    "answer": 0,
+    "explain": "'Honest' means truthful and free of deceit.",
+    "hint": "Core definition of Honest.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Honest'?",
+    "options": [
+      "noisy",
+      "dishonest and lying",
+      "truthful and free of deceit",
+      "proud"
+    ],
+    "answer": 1,
+    "explain": "The opposite of Honest is dishonest and lying.",
+    "hint": "Opposite of Honest.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Patient'?",
+    "options": [
+      "able to wait calmly without getting annoyed",
+      "cold",
+      "lazy",
+      "impatient and hasty"
+    ],
+    "answer": 0,
+    "explain": "'Patient' means able to wait calmly without getting annoyed.",
+    "hint": "Core definition of Patient.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Patient'?",
+    "options": [
+      "cold",
+      "able to wait calmly without getting annoyed",
+      "lazy",
+      "impatient and hasty"
+    ],
+    "answer": 3,
+    "explain": "The opposite of Patient is impatient and hasty.",
+    "hint": "Opposite of Patient.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Swift'?",
+    "options": [
+      "heavy",
+      "sluggish and slow",
+      "moving very fast and quickly",
+      "tall"
+    ],
+    "answer": 2,
+    "explain": "'Swift' means moving very fast and quickly.",
+    "hint": "Core definition of Swift.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Swift'?",
+    "options": [
+      "moving very fast and quickly",
+      "heavy",
+      "tall",
+      "sluggish and slow"
+    ],
+    "answer": 3,
+    "explain": "The opposite of Swift is sluggish and slow.",
+    "hint": "Opposite of Swift.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Broad'?",
+    "options": [
+      "wide from side to side",
+      "short",
+      "narrow and thin",
+      "steep"
+    ],
+    "answer": 0,
+    "explain": "'Broad' means wide from side to side.",
+    "hint": "Core definition of Broad.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Broad'?",
+    "options": [
+      "short",
+      "steep",
+      "wide from side to side",
+      "narrow and thin"
+    ],
+    "answer": 3,
+    "explain": "The opposite of Broad is narrow and thin.",
+    "hint": "Opposite of Broad.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Gloomy'?",
+    "options": [
+      "hot",
+      "bright and sunny",
+      "loud",
+      "dark, dim, or poorly lit"
+    ],
+    "answer": 3,
+    "explain": "'Gloomy' means dark, dim, or poorly lit.",
+    "hint": "Core definition of Gloomy.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Gloomy'?",
+    "options": [
+      "hot",
+      "dark, dim, or poorly lit",
+      "loud",
+      "bright and sunny"
+    ],
+    "answer": 3,
+    "explain": "The opposite of Gloomy is bright and sunny.",
+    "hint": "Opposite of Gloomy.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Fierce'?",
+    "options": [
+      "tiny",
+      "gentle and tame",
+      "soft",
+      "wild, aggressive, and menacing"
+    ],
+    "answer": 3,
+    "explain": "'Fierce' means wild, aggressive, and menacing.",
+    "hint": "Core definition of Fierce.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Fierce'?",
+    "options": [
+      "gentle and tame",
+      "soft",
+      "tiny",
+      "wild, aggressive, and menacing"
+    ],
+    "answer": 0,
+    "explain": "The opposite of Fierce is gentle and tame.",
+    "hint": "Opposite of Fierce.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Peculiar'?",
+    "options": [
+      "simple",
+      "popular",
+      "strange, unusual, or distinctive",
+      "common and ordinary"
+    ],
+    "answer": 2,
+    "explain": "'Peculiar' means strange, unusual, or distinctive.",
+    "hint": "Core definition of Peculiar.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Peculiar'?",
+    "options": [
+      "simple",
+      "common and ordinary",
+      "popular",
+      "strange, unusual, or distinctive"
+    ],
+    "answer": 1,
+    "explain": "The opposite of Peculiar is common and ordinary.",
+    "hint": "Opposite of Peculiar.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Splendid'?",
+    "options": [
+      "small",
+      "poor",
+      "magnificent, grand, and impressive",
+      "dull and ugly"
+    ],
+    "answer": 2,
+    "explain": "'Splendid' means magnificent, grand, and impressive.",
+    "hint": "Core definition of Splendid.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Splendid'?",
+    "options": [
+      "small",
+      "poor",
+      "magnificent, grand, and impressive",
+      "dull and ugly"
+    ],
+    "answer": 3,
+    "explain": "The opposite of Splendid is dull and ugly.",
+    "hint": "Opposite of Splendid.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Victory'?",
+    "options": [
+      "draw",
+      "defeat and loss",
+      "penalty",
+      "triumph and winning in a contest"
+    ],
+    "answer": 3,
+    "explain": "'Victory' means triumph and winning in a contest.",
+    "hint": "Core definition of Victory.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Victory'?",
+    "options": [
+      "draw",
+      "triumph and winning in a contest",
+      "defeat and loss",
+      "penalty"
+    ],
+    "answer": 2,
+    "explain": "The opposite of Victory is defeat and loss.",
+    "hint": "Opposite of Victory.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Prosper'?",
+    "options": [
+      "freeze",
+      "flourish, succeed, and do well",
+      "fail and decline",
+      "stop"
+    ],
+    "answer": 1,
+    "explain": "'Prosper' means flourish, succeed, and do well.",
+    "hint": "Core definition of Prosper.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Prosper'?",
+    "options": [
+      "stop",
+      "fail and decline",
+      "freeze",
+      "flourish, succeed, and do well"
+    ],
+    "answer": 1,
+    "explain": "The opposite of Prosper is fail and decline.",
+    "hint": "Opposite of Prosper.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Banish'?",
+    "options": [
+      "welcome warmly",
+      "invite",
+      "promote",
+      "send away from a country as punishment"
+    ],
+    "answer": 3,
+    "explain": "'Banish' means send away from a country as punishment.",
+    "hint": "Core definition of Banish.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Banish'?",
+    "options": [
+      "promote",
+      "send away from a country as punishment",
+      "invite",
+      "welcome warmly"
+    ],
+    "answer": 3,
+    "explain": "The opposite of Banish is welcome warmly.",
+    "hint": "Opposite of Banish.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Vocabulary (P1): What is the primary definition of 'Construct'?",
+    "options": [
+      "build or make something physical",
+      "paint",
+      "demolish and destroy",
+      "buy"
+    ],
+    "answer": 0,
+    "explain": "'Construct' means build or make something physical.",
+    "hint": "Core definition of Construct.",
+    "topic": "Vocabulary",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Antonyms (P1): Which word is the direct opposite of 'Construct'?",
+    "options": [
+      "build or make something physical",
+      "buy",
+      "demolish and destroy",
+      "paint"
+    ],
+    "answer": 2,
+    "explain": "The opposite of Construct is demolish and destroy.",
+    "hint": "Opposite of Construct.",
+    "topic": "Antonyms",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'swim'?",
+    "options": [
+      "swam",
+      "swims",
+      "swimming",
+      "swimmed"
+    ],
+    "answer": 0,
+    "explain": "The past tense of 'swim' is 'swam'.",
+    "hint": "Past tense of 'swim'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'sing'?",
+    "options": [
+      "sings",
+      "sunged",
+      "sang",
+      "singed"
+    ],
+    "answer": 2,
+    "explain": "The past tense of 'sing' is 'sang'.",
+    "hint": "Past tense of 'sing'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'write'?",
+    "options": [
+      "writed",
+      "wrote",
+      "writing",
+      "written"
+    ],
+    "answer": 1,
+    "explain": "The past tense of 'write' is 'wrote'.",
+    "hint": "Past tense of 'write'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'speak'?",
+    "options": [
+      "spokened",
+      "speaked",
+      "spoke",
+      "speaks"
+    ],
+    "answer": 2,
+    "explain": "The past tense of 'speak' is 'spoke'.",
+    "hint": "Past tense of 'speak'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'drive'?",
+    "options": [
+      "driving",
+      "drove",
+      "driven",
+      "drived"
+    ],
+    "answer": 1,
+    "explain": "The past tense of 'drive' is 'drove'.",
+    "hint": "Past tense of 'drive'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'take'?",
+    "options": [
+      "took",
+      "takes",
+      "taken",
+      "taked"
+    ],
+    "answer": 0,
+    "explain": "The past tense of 'take' is 'took'.",
+    "hint": "Past tense of 'take'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'bring'?",
+    "options": [
+      "bringed",
+      "brings",
+      "broughted",
+      "brought"
+    ],
+    "answer": 3,
+    "explain": "The past tense of 'bring' is 'brought'.",
+    "hint": "Past tense of 'bring'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'teach'?",
+    "options": [
+      "teached",
+      "teaching",
+      "taught",
+      "taughten"
+    ],
+    "answer": 2,
+    "explain": "The past tense of 'teach' is 'taught'.",
+    "hint": "Past tense of 'teach'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'think'?",
+    "options": [
+      "thinking",
+      "thoughted",
+      "thinked",
+      "thought"
+    ],
+    "answer": 3,
+    "explain": "The past tense of 'think' is 'thought'.",
+    "hint": "Past tense of 'think'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'catch'?",
+    "options": [
+      "catching",
+      "caughted",
+      "catched",
+      "caught"
+    ],
+    "answer": 3,
+    "explain": "The past tense of 'catch' is 'caught'.",
+    "hint": "Past tense of 'catch'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'eat'?",
+    "options": [
+      "eating",
+      "eaten",
+      "ate",
+      "eated"
+    ],
+    "answer": 2,
+    "explain": "The past tense of 'eat' is 'ate'.",
+    "hint": "Past tense of 'eat'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'freeze'?",
+    "options": [
+      "freezed",
+      "frozen",
+      "froze",
+      "freezing"
+    ],
+    "answer": 2,
+    "explain": "The past tense of 'freeze' is 'froze'.",
+    "hint": "Past tense of 'freeze'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'break'?",
+    "options": [
+      "breaked",
+      "breaking",
+      "broken",
+      "broke"
+    ],
+    "answer": 3,
+    "explain": "The past tense of 'break' is 'broke'.",
+    "hint": "Past tense of 'break'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'choose'?",
+    "options": [
+      "chose",
+      "choosed",
+      "chosen",
+      "choosing"
+    ],
+    "answer": 0,
+    "explain": "The past tense of 'choose' is 'chose'.",
+    "hint": "Past tense of 'choose'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'fly'?",
+    "options": [
+      "flew",
+      "flied",
+      "flying",
+      "flown"
+    ],
+    "answer": 0,
+    "explain": "The past tense of 'fly' is 'flew'.",
+    "hint": "Past tense of 'fly'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'grow'?",
+    "options": [
+      "grew",
+      "growing",
+      "growed",
+      "grown"
+    ],
+    "answer": 0,
+    "explain": "The past tense of 'grow' is 'grew'.",
+    "hint": "Past tense of 'grow'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'know'?",
+    "options": [
+      "knowing",
+      "knowed",
+      "knew",
+      "known"
+    ],
+    "answer": 2,
+    "explain": "The past tense of 'know' is 'knew'.",
+    "hint": "Past tense of 'know'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'see'?",
+    "options": [
+      "seed",
+      "saw",
+      "seen",
+      "seeing"
+    ],
+    "answer": 1,
+    "explain": "The past tense of 'see' is 'saw'.",
+    "hint": "Past tense of 'see'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'throw'?",
+    "options": [
+      "throwed",
+      "thrown",
+      "throwing",
+      "threw"
+    ],
+    "answer": 3,
+    "explain": "The past tense of 'throw' is 'threw'.",
+    "hint": "Past tense of 'throw'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Grammar (P1): What is the irregular past tense of the verb 'wear'?",
+    "options": [
+      "worn",
+      "wearing",
+      "weared",
+      "wore"
+    ],
+    "answer": 3,
+    "explain": "The past tense of 'wear' is 'wore'.",
+    "hint": "Past tense of 'wear'.",
+    "topic": "Verbs & Tenses",
+    "bloom": "Remember",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Reading comprehension concept #1 (P1): A word that describes a person, place, or thing is a ____.",
+    "options": [
+      "verb",
+      "adverb",
+      "noun",
+      "conjunction"
+    ],
+    "answer": 2,
+    "explain": "Nouns name entities.",
+    "hint": "Part of speech that names.",
+    "topic": "Parts of Speech",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Reading comprehension concept #2 (P1): A word that describes a person, place, or thing is a ____.",
+    "options": [
+      "adverb",
+      "noun",
+      "verb",
+      "conjunction"
+    ],
+    "answer": 1,
+    "explain": "Nouns name entities.",
+    "hint": "Part of speech that names.",
+    "topic": "Parts of Speech",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Reading comprehension concept #3 (P1): A word that describes a person, place, or thing is a ____.",
+    "options": [
+      "verb",
+      "noun",
+      "conjunction",
+      "adverb"
+    ],
+    "answer": 1,
+    "explain": "Nouns name entities.",
+    "hint": "Part of speech that names.",
+    "topic": "Parts of Speech",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Reading comprehension concept #4 (P1): A word that describes a person, place, or thing is a ____.",
+    "options": [
+      "conjunction",
+      "noun",
+      "adverb",
+      "verb"
+    ],
+    "answer": 1,
+    "explain": "Nouns name entities.",
+    "hint": "Part of speech that names.",
+    "topic": "Parts of Speech",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Reading comprehension concept #5 (P1): A word that describes a person, place, or thing is a ____.",
+    "options": [
+      "noun",
+      "verb",
+      "conjunction",
+      "adverb"
+    ],
+    "answer": 0,
+    "explain": "Nouns name entities.",
+    "hint": "Part of speech that names.",
+    "topic": "Parts of Speech",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Reading comprehension concept #6 (P1): A word that describes a person, place, or thing is a ____.",
+    "options": [
+      "noun",
+      "verb",
+      "adverb",
+      "conjunction"
+    ],
+    "answer": 0,
+    "explain": "Nouns name entities.",
+    "hint": "Part of speech that names.",
+    "topic": "Parts of Speech",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Reading comprehension concept #7 (P1): A word that describes a person, place, or thing is a ____.",
+    "options": [
+      "verb",
+      "adverb",
+      "noun",
+      "conjunction"
+    ],
+    "answer": 2,
+    "explain": "Nouns name entities.",
+    "hint": "Part of speech that names.",
+    "topic": "Parts of Speech",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Reading comprehension concept #8 (P1): A word that describes a person, place, or thing is a ____.",
+    "options": [
+      "adverb",
+      "noun",
+      "verb",
+      "conjunction"
+    ],
+    "answer": 1,
+    "explain": "Nouns name entities.",
+    "hint": "Part of speech that names.",
+    "topic": "Parts of Speech",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Reading comprehension concept #9 (P1): A word that describes a person, place, or thing is a ____.",
+    "options": [
+      "verb",
+      "conjunction",
+      "noun",
+      "adverb"
+    ],
+    "answer": 2,
+    "explain": "Nouns name entities.",
+    "hint": "Part of speech that names.",
+    "topic": "Parts of Speech",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Reading comprehension concept #10 (P1): A word that describes a person, place, or thing is a ____.",
+    "options": [
+      "conjunction",
+      "verb",
+      "noun",
+      "adverb"
+    ],
+    "answer": 2,
+    "explain": "Nouns name entities.",
+    "hint": "Part of speech that names.",
+    "topic": "Parts of Speech",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  }
+]

@@ -1,1 +1,1502 @@
-[{"q":"The Islamic greeting is ____.","options":["bye","Assalamu alaikum","hello only as the only greeting","how far only"],"answer":1,"explain":"It means “peace be upon you”."},{"q":"Ramadan is the month of ____.","options":["only travel","only weddings","fasting","planting only"],"answer":2,"explain":"The 9th month of the Islamic calendar."},{"q":"The Prophet of Islam is ____ (peace be upon him).","options":["Musa only","Adam only","Muhammad","Isa only as the only prophet"],"answer":2,"explain":"Muslims honour Prophet Muhammad (PBUH)."},{"q":"Angels in Islam include Jibril, who brought ____.","options":["revelation","rain only","gold","football"],"answer":0,"explain":"Angel Jibril (Gabriel) conveyed the Qur’an."},{"q":"A person who leads prayer in the mosque is the ____.","options":["imam","governor","pilot","referee"],"answer":0,"explain":"The imam leads salat."},{"q":"Zakat is ____.","options":["a river","a type of food","a dance","almsgiving / charity"],"answer":3,"explain":"Zakat is a pillar of charity."},{"q":"The prophet Isa is known in English as ____.","options":["David","Jesus","Moses","Joseph"],"answer":1,"explain":"Muslims revere Isa (AS)."},{"q":"The first mosque was in ____.","options":["Madinah (Medina)","Abuja","London","Accra"],"answer":0,"explain":"The Prophet (PBUH) established a mosque in Madinah."},{"q":"Haram means ____.","options":["compulsory always as food","forbidden","a mosque room","a type of prayer"],"answer":1,"explain":"Muslims avoid what is haram."},{"q":"Zakat is one of the ____ of Islam.","options":["five pillars","seven continents","twelve disciples","ten commandments only"],"answer":0,"explain":"Zakat is a pillar of Islam."},{"q":"Sawm is one of the ____ of Islam.","options":["ten commandments only","seven continents","five pillars","twelve disciples"],"answer":2,"explain":"Sawm is a pillar of Islam."},{"q":"Hajj is one of the ____ of Islam.","options":["twelve disciples","seven continents","five pillars","ten commandments only"],"answer":2,"explain":"Hajj is a pillar of Islam."},{"q":"Hajj is pilgrimage to ____.","options":["Jerusalem only as Hajj","Lagos","Makkah (Mecca)","Rome"],"answer":2,"explain":"Hajj is the pilgrimage to Makkah."},{"q":"Shahada is one of the ____ of Islam.","options":["ten commandments only","twelve disciples","seven continents","five pillars"],"answer":3,"explain":"Shahada is a pillar of Islam."},{"q":"Muslims believe in one God, called ____ in Arabic.","options":["many gods","the moon as God","Allah","a statue"],"answer":2,"explain":"Islam is monotheistic: Allah."},{"q":"Muslims believe in the Day of ____.","options":["Judgement","Independence only","Sports","Rain"],"answer":0,"explain":"Accountability before God."},{"q":"There are ____ pillars of Islam.","options":["two","seven","ten","five"],"answer":3,"explain":"Five pillars."},{"q":"Muslims face ____ when they pray.","options":["the nearest river","any tree","the rising moon only","the Ka’bah in Makkah"],"answer":3,"explain":"The qiblah is towards the Ka’bah."},{"q":"Jumu’ah is the ____ congregational prayer.","options":["Saturday","Monday","Friday","Thursday"],"answer":2,"explain":"Friday is special for Jumu’ah."},{"q":"The first surah is Al-____.","options":["Ikhlas as the first","Nas as the first","Fatihah","Baqarah as the first"],"answer":2,"explain":"Al-Fatihah opens the Qur’an."},{"q":"Wudu is ____ before prayer.","options":["eating","sleeping","running","ablution / washing"],"answer":3,"explain":"Ritual washing for purity."},{"q":"Eid-el-Kabir (Eid-el-Adha) remembers Prophet ____’s obedience.","options":["Yusuf only","Nuh only","Ibrahim (Abraham)","Yunus only"],"answer":2,"explain":"The festival of sacrifice."},{"q":"A Muslim place of worship is a ____.","options":["stadium only","palace only","mosque (masjid)","church only"],"answer":2,"explain":"Muslims pray in a mosque."},{"q":"Halal means ____.","options":["expensive","permitted","forbidden","foreign"],"answer":1,"explain":"Halal food is allowed."},{"q":"The prophet Musa is known in English as ____.","options":["Noah","Abraham","Jesus","Moses"],"answer":3,"explain":"Musa (AS) is Moses."},{"q":"Sawm is ____ in Ramadan.","options":["sleeping all day","fasting","feasting only","travelling only"],"answer":1,"explain":"Muslims fast in Ramadan."},{"q":"The five daily prayers include Fajr, Dhuhr, Asr, Maghrib and ____.","options":["Easter","Isha","Sunday only","Christmas"],"answer":1,"explain":"Isha is the night prayer."},{"q":"Eid-el-Fitr is celebrated after ____.","options":["Hajj only","planting yams","Ramadan","the rainy season only"],"answer":2,"explain":"Festival at the end of the fast."},{"q":"The Qur’an is divided into chapters called ____.","options":["proverbs only","gospels","psalms only","surahs"],"answer":3,"explain":"114 surahs."},{"q":"Salat means daily ____.","options":["sleeping","prayer","trading","farming"],"answer":1,"explain":"Muslims pray five times a day."},{"q":"Salat is one of the ____ of Islam.","options":["seven continents","five pillars","twelve disciples","ten commandments only"],"answer":1,"explain":"Salat is a pillar of Islam."},{"q":"Kindness to parents is ____ in Islam.","options":["strongly required","forbidden","optional always","a joke"],"answer":0,"explain":"The Qur’an commands kindness to parents."},{"q":"The holy book of Islam is the ____.","options":["Qur’an (Quran)","hymn book","Bible","dictionary"],"answer":0,"explain":"The Qur’an is the scripture of Islam."},{"q":"The first pillar, Shahada, is the ____ of faith.","options":["pilgrimage","declaration","fast","tax"],"answer":1,"explain":"There is no god but Allah, and Muhammad is His messenger."},{"q":"Telling the truth is an Islamic ____.","options":["option only for teachers","game","crime","virtue"],"answer":3,"explain":"The Prophet (PBUH) was called Al-Amin (the trustworthy)."},{"q":"Which of these is an Islamic practice?","options":["praying five times a day","disobeying parents","telling lies","worshipping idols"],"answer":0,"explain":"Salat is a pillar of Islam."},{"q":"Which is a pillar of Islam?","options":["Algebra","Democracy Day","Olympics","Shahada"],"answer":3,"explain":"It is one of the five pillars."},{"q":"Which is a pillar of Islam?","options":["Algebra","Democracy Day","Salat","Olympics"],"answer":2,"explain":"It is one of the five pillars."},{"q":"Which is a pillar of Islam?","options":["Algebra","Democracy Day","Olympics","Zakat"],"answer":3,"explain":"It is one of the five pillars."},{"q":"Which is a pillar of Islam?","options":["Sawm","Olympics","Algebra","Democracy Day"],"answer":0,"explain":"It is one of the five pillars."},{"q":"Which is a pillar of Islam?","options":["Democracy Day","Algebra","Hajj","Olympics"],"answer":2,"explain":"It is one of the five pillars."},{"q":"The Islamic greeting is ____. [Assalamu alaikum]","options":["Assalamu alaikum","hello only as the only greeting","bye","how far only"],"answer":0,"explain":"It means “peace be upon you”."},{"q":"Ramadan is the month of ____. [fasting]","options":["planting only","only weddings","fasting","only travel"],"answer":2,"explain":"The 9th month of the Islamic calendar."},{"q":"The Prophet of Islam is ____ (peace be upon him). [Muhammad]","options":["Muhammad","Isa only as the only prophet","Adam only","Musa only"],"answer":0,"explain":"Muslims honour Prophet Muhammad (PBUH)."},{"q":"Angels in Islam include Jibril, who brought ____. [revelation]","options":["rain only","gold","revelation","football"],"answer":2,"explain":"Angel Jibril (Gabriel) conveyed the Qur’an."},{"q":"A person who leads prayer in the mosque is the ____. [imam]","options":["pilot","imam","referee","governor"],"answer":1,"explain":"The imam leads salat."},{"q":"Zakat is ____. [almsgiving / charity]","options":["a dance","a river","a type of food","almsgiving / charity"],"answer":3,"explain":"Zakat is a pillar of charity."},{"q":"The prophet Isa is known in English as ____. [Jesus]","options":["Joseph","David","Moses","Jesus"],"answer":3,"explain":"Muslims revere Isa (AS)."},{"q":"The first mosque was in ____. [Madinah (Medina)]","options":["Madinah (Medina)","Accra","Abuja","London"],"answer":0,"explain":"The Prophet (PBUH) established a mosque in Madinah."},{"q":"Haram means ____. [forbidden]","options":["forbidden","a mosque room","compulsory always as food","a type of prayer"],"answer":0,"explain":"Muslims avoid what is haram."},{"q":"Zakat is one of the ____ of Islam. [five pillars]","options":["twelve disciples","seven continents","five pillars","ten commandments only"],"answer":2,"explain":"Zakat is a pillar of Islam."},{"q":"Sawm is one of the ____ of Islam.","options":["Lagos","Jerusalem only as Hajj","five pillars","Rome"],"answer":2,"explain":"Sawm is a pillar of Islam."},{"q":"Hajj is one of the ____ of Islam.","options":["many gods","five pillars","the moon as God","a statue"],"answer":1,"explain":"Hajj is a pillar of Islam."},{"q":"Hajj is pilgrimage to ____.","options":["Sports","Makkah (Mecca)","Independence only","Rain"],"answer":1,"explain":"Hajj is the pilgrimage to Makkah."},{"q":"Shahada is one of the ____ of Islam.","options":["ten","seven","two","five pillars"],"answer":3,"explain":"Shahada is a pillar of Islam."},{"q":"Muslims believe in one God, called ____ in Arabic.","options":["any tree","the rising moon only","the nearest river","Allah"],"answer":3,"explain":"Islam is monotheistic: Allah."},{"q":"Muslims believe in the Day of ____.","options":["Judgement","Monday","Saturday","Thursday"],"answer":0,"explain":"Accountability before God."},{"q":"There are ____ pillars of Islam.","options":["Baqarah as the first","Nas as the first","five","Ikhlas as the first"],"answer":2,"explain":"Five pillars."},{"q":"Muslims face ____ when they pray.","options":["eating","sleeping","running","the Ka’bah in Makkah"],"answer":3,"explain":"The qiblah is towards the Ka’bah."},{"q":"Jumu’ah is the ____ congregational prayer.","options":["Yunus only","Friday","Yusuf only","Nuh only"],"answer":1,"explain":"Friday is special for Jumu’ah."},{"q":"The first surah is Al-____.","options":["stadium only","Fatihah","palace only","church only"],"answer":1,"explain":"Al-Fatihah opens the Qur’an."},{"q":"Wudu is ____ before prayer.","options":["forbidden","expensive","ablution / washing","foreign"],"answer":2,"explain":"Ritual washing for purity."},{"q":"Eid-el-Kabir (Eid-el-Adha) remembers Prophet ____’s obedience.","options":["Abraham","Noah","Ibrahim (Abraham)","Jesus"],"answer":2,"explain":"The festival of sacrifice."},{"q":"A Muslim place of worship is a ____.","options":["mosque (masjid)","feasting only","travelling only","sleeping all day"],"answer":0,"explain":"Muslims pray in a mosque."},{"q":"Halal means ____.","options":["Easter","Christmas","permitted","Sunday only"],"answer":2,"explain":"Halal food is allowed."},{"q":"The prophet Musa is known in English as ____.","options":["proverbs only","the rainy season only","Moses","planting yams"],"answer":2,"explain":"Musa (AS) is Moses."},{"q":"Sawm is ____ in Ramadan.","options":["proverbs only","fasting","gospels","psalms only"],"answer":1,"explain":"Muslims fast in Ramadan."},{"q":"The five daily prayers include Fajr, Dhuhr, Asr, Maghrib and ____.","options":["trading","optional always","farming","Isha"],"answer":3,"explain":"Isha is the night prayer."},{"q":"Eid-el-Fitr is celebrated after ____.","options":["a joke","hymn book","Ramadan","Bible"],"answer":2,"explain":"Festival at the end of the fast."},{"q":"The Qur’an is divided into chapters called ____.","options":["fast","dictionary","surahs","pilgrimage"],"answer":2,"explain":"114 surahs."},{"q":"Salat means daily ____.","options":["game","tax","prayer","option only for teachers"],"answer":2,"explain":"Muslims pray five times a day."},{"q":"Salat is one of the ____ of Islam.","options":["telling lies","crime","five pillars","disobeying parents"],"answer":2,"explain":"Salat is a pillar of Islam."},{"q":"Kindness to parents is ____ in Islam.","options":["Democracy Day","Algebra","worshipping idols","strongly required"],"answer":3,"explain":"The Qur’an commands kindness to parents."},{"q":"The holy book of Islam is the ____.","options":["Nairobi","Qur’an (Quran)","Cairo","Olympics"],"answer":1,"explain":"The Qur’an is the scripture of Islam."},{"q":"The first pillar, Shahada, is the ____ of faith.","options":["plastic","declaration","stone","Paris"],"answer":1,"explain":"There is no god but Allah, and Muhammad is His messenger."},{"q":"Telling the truth is an Islamic ____.","options":["none of these names","rainbow","virtue","aeroplane"],"answer":2,"explain":"The Prophet (PBUH) was called Al-Amin (the trustworthy)."},{"q":"Which of these is an Islamic practice?","options":["the moon","zero","praying five times a day","Tuesday"],"answer":2,"explain":"Salat is a pillar of Islam."},{"q":"Which is a pillar of Islam?","options":["how far only","bye","Shahada","hello only as the only greeting"],"answer":2,"explain":"It is one of the five pillars."},{"q":"Which is a pillar of Islam?","options":["planting only","only travel","only weddings","Salat"],"answer":3,"explain":"It is one of the five pillars."},{"q":"Which is a pillar of Islam?","options":["Musa only","Isa only as the only prophet","Zakat","Adam only"],"answer":2,"explain":"It is one of the five pillars."},{"q":"Which is a pillar of Islam?","options":["gold","rain only","Sawm","football"],"answer":2,"explain":"It is one of the five pillars."},{"q":"Which is a pillar of Islam?","options":["governor","referee","pilot","Hajj"],"answer":3,"explain":"It is one of the five pillars."},{"q":"The Islamic greeting is ____.","options":["a type of food","a river","Assalamu alaikum","a dance"],"answer":2,"explain":"It means “peace be upon you”."},{"q":"Ramadan is the month of ____.","options":["David","Joseph","fasting","Moses"],"answer":2,"explain":"The 9th month of the Islamic calendar."},{"q":"The Prophet of Islam is ____ (peace be upon him).","options":["London","Accra","Abuja","Muhammad"],"answer":3,"explain":"Muslims honour Prophet Muhammad (PBUH)."},{"q":"Angels in Islam include Jibril, who brought ____.","options":["a mosque room","a type of prayer","revelation","compulsory always as food"],"answer":2,"explain":"Angel Jibril (Gabriel) conveyed the Qur’an."},{"q":"A person who leads prayer in the mosque is the ____.","options":["seven continents","imam","twelve disciples","ten commandments only"],"answer":1,"explain":"The imam leads salat."},{"q":"Zakat is ____.","options":["Rome","almsgiving / charity","Lagos","Jerusalem only as Hajj"],"answer":1,"explain":"Zakat is a pillar of charity."},{"q":"The prophet Isa is known in English as ____.","options":["Independence only","Jesus","the moon as God","a statue"],"answer":1,"explain":"Muslims revere Isa (AS)."},{"q":"The first mosque was in ____.","options":["Sports","Rain","Madinah (Medina)","Independence only"],"answer":2,"explain":"The Prophet (PBUH) established a mosque in Madinah."},{"q":"Haram means ____.","options":["seven","ten","the nearest river","forbidden"],"answer":3,"explain":"Muslims avoid what is haram."},{"q":"Zakat is one of the ____ of Islam.","options":["the rising moon only","five pillars","any tree","the nearest river"],"answer":1,"explain":"Zakat is a pillar of Islam."},{"q":"Sawm is one of the ____ of Islam.","options":["Thursday","Monday","Saturday","five pillars"],"answer":3,"explain":"Sawm is a pillar of Islam."},{"q":"Hajj is one of the ____ of Islam.","options":["Nas as the first","Baqarah as the first","five pillars","Ikhlas as the first"],"answer":2,"explain":"Hajj is a pillar of Islam."},{"q":"Hajj is pilgrimage to ____.","options":["running","Makkah (Mecca)","eating","sleeping"],"answer":1,"explain":"Hajj is the pilgrimage to Makkah."},{"q":"Shahada is one of the ____ of Islam.","options":["Nuh only","Yusuf only","Yunus only","five pillars"],"answer":3,"explain":"Shahada is a pillar of Islam."},{"q":"Muslims believe in one God, called ____ in Arabic.","options":["palace only","church only","Allah","stadium only"],"answer":2,"explain":"Islam is monotheistic: Allah."},{"q":"Muslims believe in the Day of ____.","options":["expensive","Judgement","forbidden","foreign"],"answer":1,"explain":"Accountability before God."},{"q":"There are ____ pillars of Islam.","options":["five","Abraham","Noah","Jesus"],"answer":0,"explain":"Five pillars."},{"q":"Muslims face ____ when they pray.","options":["feasting only","the Ka’bah in Makkah","travelling only","sleeping all day"],"answer":1,"explain":"The qiblah is towards the Ka’bah."}]
+[
+  {
+    "q": "The first and most fundamental Pillar of Islam declaring faith in Allah and His Messenger is the ____. (P1)",
+    "options": [
+      "Zakat",
+      "Salat",
+      "Sawm",
+      "Shahadah (Declaration of Faith)"
+    ],
+    "answer": 3,
+    "explain": "The Shahadah: 'La ilaha illa Allah, Muhammadur Rasulullah.'",
+    "hint": "Declaration of Tawhid and Prophethood.",
+    "topic": "Pillars of Islam",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Muslims worship the One Almighty God whose Arabic name is ____. (P1)",
+    "options": [
+      "Allah",
+      "Imam",
+      "Rasul",
+      "Malik"
+    ],
+    "answer": 0,
+    "explain": "Allah is the Unique, Absolute Creator of the universe with no partners.",
+    "hint": "The One True God.",
+    "topic": "Tawhid",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "The holy book revealed by Allah to Prophet Muhammad (peace be upon him) is the Holy ____. (P1)",
+    "options": [
+      "Tawrat",
+      "Qur'an",
+      "Zabur",
+      "Injil"
+    ],
+    "answer": 1,
+    "explain": "The Qur'an is the final, uncorrupted revelation for mankind.",
+    "hint": "Final holy scripture in Islam.",
+    "topic": "The Holy Qur'an",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Muslims perform obligatory daily prayers (Salat) ____ times each day. (P1)",
+    "options": [
+      "5",
+      "10",
+      "3",
+      "7"
+    ],
+    "answer": 0,
+    "explain": "The five daily prayers: Fajr, Dhuhr, Asr, Maghrib, and Isha.",
+    "hint": "Number of daily obligatory prayers.",
+    "topic": "Salat & Worship",
+    "bloom": "Remember",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Prophetic history (P1): Who was Prophet Adam (AS) in Islamic heritage?",
+    "options": [
+      "the builder of the Ka'bah",
+      "the first human being and first prophet created by Allah",
+      "the last prophet",
+      "the companion in the cave"
+    ],
+    "answer": 1,
+    "explain": "Prophet Adam (AS) was the first human being and first prophet created by Allah.",
+    "hint": "Description of Prophet Adam (AS).",
+    "topic": "Prophets in Islam",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Prophetic history (P1): Who was Prophet Ibrahim (AS) in Islamic heritage?",
+    "options": [
+      "the king of Egypt",
+      "the nephew of Lut",
+      "the Patriarch known as Khalilullah (Friend of Allah) who built the Ka'bah",
+      "the writer of Injil"
+    ],
+    "answer": 2,
+    "explain": "Prophet Ibrahim (AS) was the Patriarch known as Khalilullah (Friend of Allah) who built the Ka'bah.",
+    "hint": "Description of Prophet Ibrahim (AS).",
+    "topic": "Prophets in Islam",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Prophetic history (P1): Who was Prophet Musa (AS) in Islamic heritage?",
+    "options": [
+      "the companion of Abu Bakr",
+      "the son of Maryam",
+      "the father of Sulaiman",
+      "the prophet who spoke with Allah (Kalimullah) and received the Tawrat"
+    ],
+    "answer": 3,
+    "explain": "Prophet Musa (AS) was the prophet who spoke with Allah (Kalimullah) and received the Tawrat.",
+    "hint": "Description of Prophet Musa (AS).",
+    "topic": "Prophets in Islam",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Prophetic history (P1): Who was Prophet Isa (AS) in Islamic heritage?",
+    "options": [
+      "the first Caliph",
+      "the noble prophet born miraculously to Maryam who received the Injil",
+      "the brother of Harun",
+      "the king of Rome"
+    ],
+    "answer": 1,
+    "explain": "Prophet Isa (AS) was the noble prophet born miraculously to Maryam who received the Injil.",
+    "hint": "Description of Prophet Isa (AS).",
+    "topic": "Prophets in Islam",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Prophetic history (P1): Who was Prophet Nuh (AS) in Islamic heritage?",
+    "options": [
+      "the conqueror of Makkah",
+      "the prophet who built the Ark to save believers from the great deluge",
+      "the second Caliph",
+      "the cousin of Ali"
+    ],
+    "answer": 1,
+    "explain": "Prophet Nuh (AS) was the prophet who built the Ark to save believers from the great deluge.",
+    "hint": "Description of Prophet Nuh (AS).",
+    "topic": "Prophets in Islam",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Prophetic history (P1): Who was Prophet Dawud (AS) in Islamic heritage?",
+    "options": [
+      "the companion of Musa",
+      "the uncle of Muhammad",
+      "the prophet-king who received the holy Psalms (Zabur)",
+      "the builder of Rome"
+    ],
+    "answer": 2,
+    "explain": "Prophet Dawud (AS) was the prophet-king who received the holy Psalms (Zabur).",
+    "hint": "Description of Prophet Dawud (AS).",
+    "topic": "Prophets in Islam",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #1 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done to show off to people"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #2 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done with pride"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #3 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "consistent and regular, even if small",
+      "done to show off to people",
+      "done only once a year"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #4 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "done only once a year",
+      "consistent and regular, even if small",
+      "done with pride"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #5 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "done to show off to people",
+      "done only once a year",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #6 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done to show off to people",
+      "done with pride"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #7 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done to show off to people",
+      "done with pride",
+      "done only once a year"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #8 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "done to show off to people",
+      "done with pride",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #9 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done with pride",
+      "done to show off to people"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #10 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done with pride",
+      "done to show off to people",
+      "done only once a year"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #11 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "consistent and regular, even if small",
+      "done with pride",
+      "done to show off to people"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #12 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "done to show off to people",
+      "consistent and regular, even if small",
+      "done only once a year"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #13 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "done only once a year",
+      "consistent and regular, even if small",
+      "done to show off to people"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #14 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done with pride",
+      "done only once a year",
+      "done to show off to people"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #15 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "consistent and regular, even if small",
+      "done to show off to people",
+      "done with pride"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #16 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "done with pride",
+      "done to show off to people",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #17 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "consistent and regular, even if small",
+      "done with pride",
+      "done only once a year"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #18 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "done to show off to people",
+      "consistent and regular, even if small",
+      "done with pride"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #19 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "done to show off to people",
+      "consistent and regular, even if small",
+      "done only once a year"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #20 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done with pride",
+      "done to show off to people",
+      "done only once a year"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #21 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "done to show off to people",
+      "done with pride",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #22 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done to show off to people"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #23 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done with pride",
+      "done to show off to people",
+      "done only once a year"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #24 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "consistent and regular, even if small",
+      "done with pride",
+      "done only once a year"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #25 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done to show off to people",
+      "done only once a year",
+      "done with pride"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #26 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "done only once a year",
+      "consistent and regular, even if small",
+      "done with pride"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #27 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "done with pride",
+      "done only once a year",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #28 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done with pride",
+      "done to show off to people",
+      "done only once a year"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #29 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done to show off to people",
+      "done with pride"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #30 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "done with pride",
+      "done only once a year",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #31 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "consistent and regular, even if small",
+      "done to show off to people",
+      "done only once a year"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #32 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done to show off to people"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #33 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done with pride",
+      "done only once a year",
+      "done to show off to people"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #34 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "done with pride",
+      "consistent and regular, even if small",
+      "done only once a year"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #35 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "done to show off to people",
+      "done only once a year",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #36 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "done only once a year",
+      "done to show off to people",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #37 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "consistent and regular, even if small",
+      "done to show off to people",
+      "done with pride"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #38 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done to show off to people",
+      "done with pride"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #39 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "consistent and regular, even if small",
+      "done to show off to people",
+      "done with pride"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #40 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done to show off to people",
+      "done with pride",
+      "done only once a year"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #41 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "done to show off to people",
+      "consistent and regular, even if small",
+      "done only once a year"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #42 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done with pride",
+      "done to show off to people"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #43 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done with pride",
+      "done to show off to people"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #44 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "done with pride",
+      "done to show off to people",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #45 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done to show off to people"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #46 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "done with pride",
+      "consistent and regular, even if small",
+      "done only once a year"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #47 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "consistent and regular, even if small",
+      "done with pride",
+      "done only once a year"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #48 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "done with pride",
+      "consistent and regular, even if small",
+      "done only once a year"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #49 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "done only once a year",
+      "consistent and regular, even if small",
+      "done with pride"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #50 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done with pride",
+      "done to show off to people"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #51 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done with pride",
+      "done only once a year",
+      "done to show off to people"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #52 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done with pride"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #53 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "done with pride",
+      "done to show off to people",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #54 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "done to show off to people",
+      "done only once a year",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #55 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done with pride",
+      "done only once a year",
+      "done to show off to people"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #56 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "done only once a year",
+      "consistent and regular, even if small",
+      "done to show off to people"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #57 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done to show off to people"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #58 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done with pride",
+      "done to show off to people",
+      "done only once a year"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #59 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "done with pride",
+      "done to show off to people",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #60 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "done to show off to people",
+      "done only once a year",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #61 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "done to show off to people",
+      "done only once a year",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #62 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "consistent and regular, even if small",
+      "done to show off to people",
+      "done only once a year"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #63 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done with pride",
+      "done to show off to people"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #64 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "done with pride",
+      "done to show off to people",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #65 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "done with pride",
+      "done only once a year",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #66 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "done with pride",
+      "done to show off to people",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #67 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "done with pride",
+      "consistent and regular, even if small",
+      "done to show off to people"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #68 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done with pride",
+      "done to show off to people",
+      "done only once a year"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #69 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done to show off to people",
+      "done with pride",
+      "done only once a year"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #70 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "consistent and regular, even if small",
+      "done with pride",
+      "done to show off to people"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #71 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "done with pride",
+      "consistent and regular, even if small",
+      "done only once a year"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #72 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done to show off to people",
+      "done only once a year",
+      "done with pride"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #73 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done with pride",
+      "done to show off to people"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #74 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "done with pride",
+      "consistent and regular, even if small",
+      "done only once a year"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #75 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "done with pride",
+      "consistent and regular, even if small",
+      "done only once a year"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #76 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "done to show off to people",
+      "consistent and regular, even if small",
+      "done only once a year"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #77 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "done only once a year",
+      "done to show off to people",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #78 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "done only once a year",
+      "consistent and regular, even if small",
+      "done to show off to people"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #79 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "done with pride",
+      "consistent and regular, even if small",
+      "done only once a year"
+    ],
+    "answer": 2,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #80 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "done to show off to people",
+      "done with pride",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #81 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "done only once a year",
+      "done with pride",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #82 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done only once a year",
+      "consistent and regular, even if small",
+      "done with pride",
+      "done to show off to people"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #83 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "consistent and regular, even if small",
+      "done with pride",
+      "done only once a year"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #84 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done to show off to people",
+      "done with pride",
+      "done only once a year"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #85 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done with pride",
+      "done only once a year",
+      "done to show off to people"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #86 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "done only once a year",
+      "done with pride",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #87 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done to show off to people",
+      "consistent and regular, even if small",
+      "done only once a year",
+      "done with pride"
+    ],
+    "answer": 1,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #88 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done with pride",
+      "done only once a year",
+      "done to show off to people"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #89 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "done with pride",
+      "done to show off to people",
+      "done only once a year",
+      "consistent and regular, even if small"
+    ],
+    "answer": 3,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Islamic moral conduct #90 (P1): Prophet Muhammad (SAW) said: 'The most beloved deeds to Allah are those that are ____.'",
+    "options": [
+      "consistent and regular, even if small",
+      "done with pride",
+      "done only once a year",
+      "done to show off to people"
+    ],
+    "answer": 0,
+    "explain": "Consistency in virtuous deeds is prized in Islamic ethics.",
+    "hint": "Regular good habits.",
+    "topic": "Akhlaq & Ethics",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  }
+]

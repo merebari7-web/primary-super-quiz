@@ -1,1 +1,1502 @@
-[{"q":"kitten is to cat as puppy is to ____.","options":["tail","bark","bone","dog"],"answer":3,"explain":"Reverse analogy: puppy → dog."},{"q":"Odd one out: Abuja, Kano, Ibadan, Nile","options":["Nile","Abuja","Ibadan","Kano"],"answer":0,"explain":"Nile is the odd one out (Nigerian cities vs a river)."},{"q":"If A=1, B=2, C=3, what is N?","options":["13","16","14","15"],"answer":2,"explain":"N is letter 14."},{"q":"Which word rhymes with king?","options":["ring","kite","kind","keep"],"answer":0,"explain":"king rhymes with ring."},{"q":"empty is the opposite of ____.","options":["last","full","false","new"],"answer":1,"explain":"empty ↔ full."},{"q":"If CAT = 24 (C=3,A=1,T=20), then BAT = ____.","options":["21","24","23","26"],"answer":2,"explain":"B=2, A=1, T=20 → 23."},{"q":"Unscramble: HOCSOL","options":["SHCOOL","CHOLOS","LOCHOS","SCHOOL"],"answer":3,"explain":"The letters make SCHOOL."},{"q":"write is to pen as cut is to ____.","options":["metal","knife","sharp","kitchen"],"answer":1,"explain":"Reverse analogy: cut → knife."},{"q":"Odd one out: hammer, hoe, cutlass, song","options":["cutlass","song","hoe","hammer"],"answer":1,"explain":"song is the odd one out (tools vs song)."},{"q":"If A=1, B=2, C=3, what is M?","options":["13","14","12","15"],"answer":0,"explain":"M is letter 13."},{"q":"Which word rhymes with ball?","options":["cup","bed","tall","net"],"answer":2,"explain":"ball rhymes with tall."},{"q":"happy is the opposite of ____.","options":["lose","sad","last","answer"],"answer":1,"explain":"happy ↔ sad."},{"q":"Unscramble: RETCAHE","options":["RETEACH","HECTARE","CHEATER","TEACHER"],"answer":3,"explain":"The letters make TEACHER."},{"q":"finger is to hand as toe is to ____.","options":["shoe","nail","leg","foot"],"answer":3,"explain":"The relationship matches: toe → foot."},{"q":"Odd one out: goat, cow, hen, book","options":["hen","book","goat","cow"],"answer":1,"explain":"book is the odd one out (animals vs object)."},{"q":"If A=1, B=2, C=3, what is K?","options":["10","11","13","12"],"answer":1,"explain":"K is letter 11."},{"q":"Which word rhymes with cat?","options":["dog","cup","pen","hat"],"answer":3,"explain":"cat rhymes with hat."},{"q":"big is the opposite of ____.","options":["outside","new","small","light"],"answer":2,"explain":"big ↔ small."},{"q":"Unscramble: NIRAIGE","options":["ANGIRIE","NIGERIA","REGAINI","GRAINIE"],"answer":1,"explain":"The letters make NIGERIA."},{"q":"hot is to cold as wet is to ____.","options":["rain","ice","dry","sun"],"answer":2,"explain":"The relationship matches: wet → dry."},{"q":"Odd one out: apple, mango, orange, shoe","options":["shoe","apple","orange","mango"],"answer":0,"explain":"shoe is the odd one out (fruits vs shoe)."},{"q":"If A=1, B=2, C=3, what is J?","options":["11","9","10","12"],"answer":2,"explain":"J is letter 10."},{"q":"Which word rhymes with cake?","options":["cot","pin","bake","rug"],"answer":2,"explain":"cake rhymes with bake."},{"q":"open is the opposite of ____.","options":["close","short","sell","go"],"answer":0,"explain":"open ↔ close."},{"q":"up is to down as in is to ____.","options":["out","at","on","to"],"answer":0,"explain":"The relationship matches: in → out."},{"q":"Odd one out: eye, ear, nose, table","options":["table","nose","ear","eye"],"answer":0,"explain":"table is the odd one out (body parts vs furniture)."},{"q":"If A=1, B=2, C=3, what is L?","options":["13","14","12","11"],"answer":2,"explain":"L is letter 12."},{"q":"Which word rhymes with rain?","options":["train","road","run","ring"],"answer":0,"explain":"rain rhymes with train."},{"q":"old is the opposite of ____.","options":["answer","narrow","new","sell"],"answer":2,"explain":"old ↔ new."},{"q":"eye is to see as ear is to ____.","options":["head","hear","face","sound"],"answer":1,"explain":"The relationship matches: ear → hear."},{"q":"Odd one out: red, blue, green, chair","options":["green","red","chair","blue"],"answer":2,"explain":"chair is the odd one out (colours vs furniture)."},{"q":"If A=1, B=2, C=3, what is C?","options":["2","5","4","3"],"answer":3,"explain":"C is letter 3."},{"q":"Which word rhymes with light?","options":["lamp","long","late","night"],"answer":3,"explain":"light rhymes with night."},{"q":"clean is the opposite of ____.","options":["full","short","dirty","soft"],"answer":2,"explain":"clean ↔ dirty."},{"q":"sheep is to lamb as cow is to ____.","options":["calf","milk","farm","horn"],"answer":0,"explain":"The relationship matches: cow → calf."},{"q":"Odd one out: Monday, Friday, Sunday, Lagos","options":["Friday","Lagos","Sunday","Monday"],"answer":1,"explain":"Lagos is the odd one out (days vs city)."},{"q":"If A=1, B=2, C=3, what is D?","options":["4","5","3","6"],"answer":0,"explain":"D is letter 4."},{"q":"Which word rhymes with sun?","options":["pen","log","sat","run"],"answer":3,"explain":"sun rhymes with run."},{"q":"buy is the opposite of ____.","options":["south","night","light","sell"],"answer":3,"explain":"buy ↔ sell."},{"q":"hand is to glove as foot is to ____.","options":["shoe","toe","leg","sock only"],"answer":0,"explain":"The relationship matches: foot → shoe."},{"q":"Odd one out: yam, cassava, maize, pencil","options":["cassava","pencil","maize","yam"],"answer":1,"explain":"pencil is the odd one out (crops vs stationery)."},{"q":"If A=1, B=2, C=3, what is I?","options":["10","9","11","8"],"answer":1,"explain":"I is letter 9."},{"q":"Which word rhymes with blue?","options":["bell","ball","true","blow"],"answer":2,"explain":"blue rhymes with true."},{"q":"rich is the opposite of ____.","options":["poor","new","dry","hate"],"answer":0,"explain":"rich ↔ poor."},{"q":"book is to read as song is to ____.","options":["radio","music only","voice","sing"],"answer":3,"explain":"The relationship matches: song → sing."},{"q":"Odd one out: car, bus, train, rice","options":["rice","car","train","bus"],"answer":0,"explain":"rice is the odd one out (vehicles vs food)."},{"q":"If A=1, B=2, C=3, what is B?","options":["4","2","1","3"],"answer":1,"explain":"B is letter 2."},{"q":"Which word rhymes with hen?","options":["pen","sun","hat","box"],"answer":0,"explain":"hen rhymes with pen."},{"q":"love is the opposite of ____.","options":["sad","close","hate","night"],"answer":2,"explain":"love ↔ hate."},{"q":"sun is to day as moon is to ____.","options":["star","light","night","sky"],"answer":2,"explain":"The relationship matches: moon → night."},{"q":"Odd one out: circle, square, triangle, seven","options":["seven","square","circle","triangle"],"answer":0,"explain":"seven is the odd one out (shapes vs number)."},{"q":"If A=1, B=2, C=3, what is F?","options":["6","5","7","8"],"answer":0,"explain":"F is letter 6."},{"q":"Which word rhymes with hop?","options":["hid","hen","top","hat"],"answer":2,"explain":"hop rhymes with top."},{"q":"long is the opposite of ____.","options":["new","short","low","out"],"answer":1,"explain":"long ↔ short."},{"q":"glove is to hand as shoe is to ____.","options":["foot","leg","sock only","toe"],"answer":0,"explain":"Reverse analogy: shoe → foot."},{"q":"If A=1, B=2, C=3, what is G?","options":["9","6","7","8"],"answer":2,"explain":"G is letter 7."},{"q":"thick is the opposite of ____.","options":["thin","soft","no","well"],"answer":0,"explain":"thick ↔ thin."},{"q":"water is to drink as food is to ____.","options":["cook","rice","eat","plate"],"answer":2,"explain":"The relationship matches: food → eat."},{"q":"If A=1, B=2, C=3, what is A?","options":["1","3","2","0"],"answer":0,"explain":"A is letter 1."},{"q":"hard is the opposite of ____.","options":["soft","lose","enemy","small"],"answer":0,"explain":"hard ↔ soft."},{"q":"nest is to bird as hive is to ____.","options":["honey","bee","fly","wing"],"answer":1,"explain":"Reverse analogy: hive → bee."},{"q":"If A=1, B=2, C=3, what is E?","options":["5","6","7","4"],"answer":0,"explain":"E is letter 5."},{"q":"in is the opposite of ____.","options":["sell","sad","out","weak"],"answer":2,"explain":"in ↔ out."},{"q":"lamb is to sheep as calf is to ____.","options":["cow","farm","milk","horn"],"answer":0,"explain":"Reverse analogy: calf → cow."},{"q":"If A=1, B=2, C=3, what is H?","options":["8","7","9","10"],"answer":0,"explain":"H is letter 8."},{"q":"wide is the opposite of ____.","options":["hate","last","narrow","light"],"answer":2,"explain":"wide ↔ narrow."},{"q":"cold is to hot as dry is to ____.","options":["rain","sun","wet","ice"],"answer":2,"explain":"Reverse analogy: dry → wet."},{"q":"win is the opposite of ____.","options":["short","go","lose","dirty"],"answer":2,"explain":"win ↔ lose."},{"q":"drink is to water as eat is to ____.","options":["food","rice","cook","plate"],"answer":0,"explain":"Reverse analogy: eat → food."},{"q":"up is the opposite of ____.","options":["lose","down","out","sell"],"answer":1,"explain":"up ↔ down."},{"q":"pen is to write as knife is to ____.","options":["kitchen","metal","cut","sharp"],"answer":2,"explain":"The relationship matches: knife → cut."},{"q":"wet is the opposite of ____.","options":["night","full","dry","no"],"answer":2,"explain":"wet ↔ dry."},{"q":"queen is to king as woman is to ____.","options":["man","crown","boy","palace"],"answer":0,"explain":"Reverse analogy: woman → man."},{"q":"hot is the opposite of ____.","options":["cold","quiet","sell","late"],"answer":0,"explain":"hot ↔ cold."},{"q":"see is to eye as hear is to ____.","options":["sound","head","ear","face"],"answer":2,"explain":"Reverse analogy: hear → ear."},{"q":"strong is the opposite of ____.","options":["go","slow","weak","short"],"answer":2,"explain":"strong ↔ weak."},{"q":"king is to queen as man is to ____.","options":["woman","crown","palace","boy"],"answer":0,"explain":"The relationship matches: man → woman."},{"q":"fast is the opposite of ____.","options":["outside","night","slow","low"],"answer":2,"explain":"fast ↔ slow."},{"q":"hand is to finger as foot is to ____.","options":["leg","toe","nail","shoe"],"answer":1,"explain":"Reverse analogy: foot → toe."},{"q":"tall is the opposite of ____.","options":["low","south","late","short"],"answer":3,"explain":"tall ↔ short."},{"q":"water is to fish as air is to ____.","options":["bird","nest","tree","feather"],"answer":0,"explain":"Reverse analogy: air → bird."},{"q":"begin is the opposite of ____.","options":["out","dry","end","small"],"answer":2,"explain":"begin ↔ end."},{"q":"teacher is to school as doctor is to ____.","options":["pill","hospital","nurse","sick"],"answer":1,"explain":"The relationship matches: doctor → hospital."},{"q":"early is the opposite of ____.","options":["late","light","soft","enemy"],"answer":0,"explain":"early ↔ late."},{"q":"down is to up as out is to ____.","options":["at","to","on","in"],"answer":3,"explain":"Reverse analogy: out → in."},{"q":"day is the opposite of ____.","options":["night","dangerous","small","south"],"answer":0,"explain":"day ↔ night."},{"q":"school is to teacher as hospital is to ____.","options":["nurse","doctor","pill","sick"],"answer":1,"explain":"Reverse analogy: hospital → doctor."},{"q":"read is to book as sing is to ____.","options":["radio","song","voice","music only"],"answer":1,"explain":"Reverse analogy: sing → song."},{"q":"fish is to water as bird is to ____.","options":["nest","air","feather","tree"],"answer":1,"explain":"The relationship matches: bird → air."},{"q":"day is to sun as night is to ____.","options":["light","moon","sky","star"],"answer":1,"explain":"Reverse analogy: night → moon."},{"q":"bird is to nest as bee is to ____.","options":["honey","hive","fly","wing"],"answer":1,"explain":"The relationship matches: bee → hive."},{"q":"cat is to kitten as dog is to ____.","options":["tail","bone","bark","puppy"],"answer":3,"explain":"The relationship matches: dog → puppy."},{"q":"Which is the odd one? red, blue, green, chair","options":["blue","red","chair","green"],"answer":2,"explain":"colours vs furniture"},{"q":"Which is the odd one? goat, cow, hen, book","options":["cow","book","goat","hen"],"answer":1,"explain":"animals vs object"},{"q":"Which is the odd one? apple, mango, orange, shoe","options":["apple","mango","shoe","orange"],"answer":2,"explain":"fruits vs shoe"},{"q":"Which is the odd one? car, bus, train, rice","options":["bus","car","train","rice"],"answer":3,"explain":"vehicles vs food"},{"q":"Which is the odd one? circle, square, triangle, seven","options":["square","seven","circle","triangle"],"answer":1,"explain":"shapes vs number"},{"q":"Which is the odd one? Monday, Friday, Sunday, Lagos","options":["Monday","Lagos","Sunday","Friday"],"answer":1,"explain":"days vs city"},{"q":"Which is the odd one? hammer, hoe, cutlass, song","options":["hoe","hammer","cutlass","song"],"answer":3,"explain":"tools vs song"},{"q":"Which is the odd one? eye, ear, nose, table","options":["table","ear","nose","eye"],"answer":0,"explain":"body parts vs furniture"}]
+[
+  {
+    "q": "Analogy: Dog is to Puppy as Cat is to ____. (Grade 4)",
+    "options": [
+      "Chick",
+      "Calf",
+      "Cub",
+      "Kitten"
+    ],
+    "answer": 3,
+    "explain": "In this verbal relationship, Kitten completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Cow is to Calf as Sheep is to ____. (Grade 4)",
+    "options": [
+      "Foal",
+      "Lamb",
+      "Piglet",
+      "Kid"
+    ],
+    "answer": 1,
+    "explain": "In this verbal relationship, Lamb completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Bird is to Nest as Bee is to ____. (Grade 4)",
+    "options": [
+      "Hive",
+      "Burrow",
+      "Stable",
+      "Den"
+    ],
+    "answer": 0,
+    "explain": "In this verbal relationship, Hive completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Doctor is to Hospital as Teacher is to ____. (Grade 4)",
+    "options": [
+      "School",
+      "Farm",
+      "Market",
+      "Court"
+    ],
+    "answer": 0,
+    "explain": "In this verbal relationship, School completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Author is to Book as Sculptor is to ____. (Grade 4)",
+    "options": [
+      "Statue",
+      "Painting",
+      "Novel",
+      "Song"
+    ],
+    "answer": 0,
+    "explain": "In this verbal relationship, Statue completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Eye is to Sight as Ear is to ____. (Grade 4)",
+    "options": [
+      "Touch",
+      "Taste",
+      "Hearing",
+      "Smell"
+    ],
+    "answer": 2,
+    "explain": "In this verbal relationship, Hearing completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Pen is to Write as Scissors is to ____. (Grade 4)",
+    "options": [
+      "Stitch",
+      "Draw",
+      "Cut",
+      "Glue"
+    ],
+    "answer": 2,
+    "explain": "In this verbal relationship, Cut completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Fish is to Swim as Bird is to ____. (Grade 4)",
+    "options": [
+      "Walk",
+      "Fly",
+      "Crawl",
+      "Run"
+    ],
+    "answer": 1,
+    "explain": "In this verbal relationship, Fly completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Knife is to Cut as Spoon is to ____. (Grade 4)",
+    "options": [
+      "Peel",
+      "Scoop",
+      "Chop",
+      "Grate"
+    ],
+    "answer": 1,
+    "explain": "In this verbal relationship, Scoop completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Car is to Road as Train is to ____. (Grade 4)",
+    "options": [
+      "Water",
+      "Sky",
+      "Runway",
+      "Track"
+    ],
+    "answer": 3,
+    "explain": "In this verbal relationship, Track completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Carpenter is to Wood as Blacksmith is to ____. (Grade 4)",
+    "options": [
+      "Paper",
+      "Iron",
+      "Cloth",
+      "Clay"
+    ],
+    "answer": 1,
+    "explain": "In this verbal relationship, Iron completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Sun is to Day as Moon is to ____. (Grade 4)",
+    "options": [
+      "Afternoon",
+      "Night",
+      "Morning",
+      "Dusk"
+    ],
+    "answer": 1,
+    "explain": "In this verbal relationship, Night completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Foot is to Shoe as Hand is to ____. (Grade 4)",
+    "options": [
+      "Hat",
+      "Sock",
+      "Glove",
+      "Belt"
+    ],
+    "answer": 2,
+    "explain": "In this verbal relationship, Glove completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Head is to Cap as Finger is to ____. (Grade 4)",
+    "options": [
+      "Shoe",
+      "Bracelet",
+      "Necklace",
+      "Ring"
+    ],
+    "answer": 3,
+    "explain": "In this verbal relationship, Ring completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Clock is to Time as Thermometer is to ____. (Grade 4)",
+    "options": [
+      "Weight",
+      "Speed",
+      "Distance",
+      "Temperature"
+    ],
+    "answer": 3,
+    "explain": "In this verbal relationship, Temperature completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Oven is to Bake as Refrigerator is to ____. (Grade 4)",
+    "options": [
+      "Boil",
+      "Cool",
+      "Heat",
+      "Fry"
+    ],
+    "answer": 1,
+    "explain": "In this verbal relationship, Cool completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Pilot is to Aeroplane as Captain is to ____. (Grade 4)",
+    "options": [
+      "Car",
+      "Ship",
+      "Train",
+      "Bicycle"
+    ],
+    "answer": 1,
+    "explain": "In this verbal relationship, Ship completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Horse is to Foal as Duck is to ____. (Grade 4)",
+    "options": [
+      "Calf",
+      "Puppy",
+      "Duckling",
+      "Cub"
+    ],
+    "answer": 2,
+    "explain": "In this verbal relationship, Duckling completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Lion is to Pride as Wolf is to ____. (Grade 4)",
+    "options": [
+      "Herd",
+      "Swarm",
+      "Pack",
+      "Flock"
+    ],
+    "answer": 2,
+    "explain": "In this verbal relationship, Pack completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Artist is to Paintbrush as Writer is to ____. (Grade 4)",
+    "options": [
+      "Spanner",
+      "Hammer",
+      "Needle",
+      "Pen"
+    ],
+    "answer": 3,
+    "explain": "In this verbal relationship, Pen completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Spider is to Web as Bird is to ____. (Grade 4)",
+    "options": [
+      "Den",
+      "Kennel",
+      "Burrow",
+      "Nest"
+    ],
+    "answer": 3,
+    "explain": "In this verbal relationship, Nest completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Book is to Read as Song is to ____. (Grade 4)",
+    "options": [
+      "Cook",
+      "Sing",
+      "Drive",
+      "Paint"
+    ],
+    "answer": 1,
+    "explain": "In this verbal relationship, Sing completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: King is to Queen as Prince is to ____. (Grade 4)",
+    "options": [
+      "Baroness",
+      "Empress",
+      "Duchess",
+      "Princess"
+    ],
+    "answer": 3,
+    "explain": "In this verbal relationship, Princess completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Day is to Sun as Night is to ____. (Grade 4)",
+    "options": [
+      "Rain",
+      "Fog",
+      "Stars",
+      "Clouds"
+    ],
+    "answer": 2,
+    "explain": "In this verbal relationship, Stars completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Analogy: Bread is to Bakery as Medicine is to ____. (Grade 4)",
+    "options": [
+      "Garage",
+      "Airport",
+      "Bakery",
+      "Pharmacy"
+    ],
+    "answer": 3,
+    "explain": "In this verbal relationship, Pharmacy completes the pair correctly based on function or category.",
+    "hint": "Analyze the relationship in the first pair to find the corresponding match.",
+    "topic": "Analogies",
+    "bloom": "Understand",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 1? [P4]",
+    "options": [
+      "Chair",
+      "Banana",
+      "Orange",
+      "Apple"
+    ],
+    "answer": 0,
+    "explain": "'Chair' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 2? [P4]",
+    "options": [
+      "Fish",
+      "Goat",
+      "Dog",
+      "Cat"
+    ],
+    "answer": 0,
+    "explain": "'Fish' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 3? [P4]",
+    "options": [
+      "Carrot",
+      "Pawpaw",
+      "Mango",
+      "Pineapple"
+    ],
+    "answer": 0,
+    "explain": "'Carrot' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 4? [P4]",
+    "options": [
+      "Triangle",
+      "Square",
+      "Rectangle",
+      "Circle"
+    ],
+    "answer": 0,
+    "explain": "'Triangle' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 5? [P4]",
+    "options": [
+      "Pilot",
+      "Nurse",
+      "Pharmacist",
+      "Doctor"
+    ],
+    "answer": 3,
+    "explain": "'Doctor' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 6? [P4]",
+    "options": [
+      "London",
+      "Berlin",
+      "Paris",
+      "Lagos"
+    ],
+    "answer": 3,
+    "explain": "'Lagos' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 7? [P4]",
+    "options": [
+      "Gold",
+      "Silver",
+      "Plastic",
+      "Iron"
+    ],
+    "answer": 3,
+    "explain": "'Iron' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 8? [P4]",
+    "options": [
+      "Jumping",
+      "Hopping",
+      "Sleeping",
+      "Running"
+    ],
+    "answer": 3,
+    "explain": "'Running' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 9? [P4]",
+    "options": [
+      "Eagle",
+      "Crocodile",
+      "Hawk",
+      "Falcon"
+    ],
+    "answer": 0,
+    "explain": "'Eagle' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 10? [P4]",
+    "options": [
+      "Tulip",
+      "Rose",
+      "Lily",
+      "Cabbage"
+    ],
+    "answer": 1,
+    "explain": "'Rose' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 11? [P4]",
+    "options": [
+      "Cello",
+      "Drum",
+      "Guitar",
+      "Violin"
+    ],
+    "answer": 3,
+    "explain": "'Violin' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 12? [P4]",
+    "options": [
+      "Kerosene",
+      "Petrol",
+      "Water",
+      "Diesel"
+    ],
+    "answer": 0,
+    "explain": "'Kerosene' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 13? [P4]",
+    "options": [
+      "Fork",
+      "Knife",
+      "Spoon",
+      "Blanket"
+    ],
+    "answer": 0,
+    "explain": "'Fork' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 14? [P4]",
+    "options": [
+      "Potato",
+      "Apple",
+      "Yam",
+      "Cassava"
+    ],
+    "answer": 2,
+    "explain": "'Yam' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 15? [P4]",
+    "options": [
+      "Saw",
+      "Pillow",
+      "Hammer",
+      "Chisel"
+    ],
+    "answer": 2,
+    "explain": "'Hammer' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 16? [P4]",
+    "options": [
+      "Trousers",
+      "Dress",
+      "Television",
+      "Shirt"
+    ],
+    "answer": 3,
+    "explain": "'Shirt' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 17? [P4]",
+    "options": [
+      "January",
+      "March",
+      "July",
+      "Tuesday"
+    ],
+    "answer": 0,
+    "explain": "'January' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 18? [P4]",
+    "options": [
+      "Blue",
+      "Heavy",
+      "Yellow",
+      "Red"
+    ],
+    "answer": 3,
+    "explain": "'Red' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 19? [P4]",
+    "options": [
+      "England",
+      "Ghana",
+      "Kenya",
+      "Nigeria"
+    ],
+    "answer": 3,
+    "explain": "'Nigeria' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Which word is the ODD one out in Group 20? [P4]",
+    "options": [
+      "Laptop",
+      "Bicycle",
+      "Computer",
+      "Tablet"
+    ],
+    "answer": 2,
+    "explain": "'Computer' does not belong to the category shared by the other three items.",
+    "hint": "Find the item that does not share the common semantic category.",
+    "topic": "Classification",
+    "bloom": "Analyze",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'A'? (P4)",
+    "options": [
+      "21",
+      "1",
+      "10",
+      "7"
+    ],
+    "answer": 1,
+    "explain": "'A' is letter number 1 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter A starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'B'? (P4)",
+    "options": [
+      "14",
+      "9",
+      "6",
+      "2"
+    ],
+    "answer": 3,
+    "explain": "'B' is letter number 2 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter B starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'C'? (P4)",
+    "options": [
+      "1",
+      "6",
+      "3",
+      "17"
+    ],
+    "answer": 2,
+    "explain": "'C' is letter number 3 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter C starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'D'? (P4)",
+    "options": [
+      "4",
+      "22",
+      "21",
+      "7"
+    ],
+    "answer": 0,
+    "explain": "'D' is letter number 4 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter D starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'E'? (P4)",
+    "options": [
+      "5",
+      "24",
+      "20",
+      "6"
+    ],
+    "answer": 0,
+    "explain": "'E' is letter number 5 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter E starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'F'? (P4)",
+    "options": [
+      "24",
+      "15",
+      "3",
+      "6"
+    ],
+    "answer": 3,
+    "explain": "'F' is letter number 6 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter F starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'G'? (P4)",
+    "options": [
+      "8",
+      "10",
+      "20",
+      "7"
+    ],
+    "answer": 3,
+    "explain": "'G' is letter number 7 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter G starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'H'? (P4)",
+    "options": [
+      "18",
+      "8",
+      "19",
+      "2"
+    ],
+    "answer": 1,
+    "explain": "'H' is letter number 8 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter H starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'I'? (P4)",
+    "options": [
+      "4",
+      "5",
+      "10",
+      "9"
+    ],
+    "answer": 3,
+    "explain": "'I' is letter number 9 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter I starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'J'? (P4)",
+    "options": [
+      "24",
+      "10",
+      "15",
+      "1"
+    ],
+    "answer": 1,
+    "explain": "'J' is letter number 10 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter J starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'K'? (P4)",
+    "options": [
+      "17",
+      "11",
+      "22",
+      "19"
+    ],
+    "answer": 1,
+    "explain": "'K' is letter number 11 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter K starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'L'? (P4)",
+    "options": [
+      "9",
+      "8",
+      "1",
+      "12"
+    ],
+    "answer": 3,
+    "explain": "'L' is letter number 12 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter L starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'M'? (P4)",
+    "options": [
+      "15",
+      "13",
+      "6",
+      "1"
+    ],
+    "answer": 1,
+    "explain": "'M' is letter number 13 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter M starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'N'? (P4)",
+    "options": [
+      "4",
+      "9",
+      "6",
+      "14"
+    ],
+    "answer": 3,
+    "explain": "'N' is letter number 14 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter N starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'O'? (P4)",
+    "options": [
+      "16",
+      "15",
+      "11",
+      "6"
+    ],
+    "answer": 1,
+    "explain": "'O' is letter number 15 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter O starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'P'? (P4)",
+    "options": [
+      "16",
+      "11",
+      "5",
+      "7"
+    ],
+    "answer": 0,
+    "explain": "'P' is letter number 16 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter P starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'Q'? (P4)",
+    "options": [
+      "16",
+      "21",
+      "17",
+      "7"
+    ],
+    "answer": 2,
+    "explain": "'Q' is letter number 17 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter Q starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'R'? (P4)",
+    "options": [
+      "18",
+      "15",
+      "9",
+      "24"
+    ],
+    "answer": 0,
+    "explain": "'R' is letter number 18 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter R starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'S'? (P4)",
+    "options": [
+      "20",
+      "26",
+      "4",
+      "19"
+    ],
+    "answer": 3,
+    "explain": "'S' is letter number 19 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter S starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'T'? (P4)",
+    "options": [
+      "12",
+      "26",
+      "5",
+      "20"
+    ],
+    "answer": 3,
+    "explain": "'T' is letter number 20 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter T starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'U'? (P4)",
+    "options": [
+      "22",
+      "20",
+      "21",
+      "23"
+    ],
+    "answer": 2,
+    "explain": "'U' is letter number 21 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter U starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'V'? (P4)",
+    "options": [
+      "8",
+      "15",
+      "22",
+      "6"
+    ],
+    "answer": 2,
+    "explain": "'V' is letter number 22 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter V starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'W'? (P4)",
+    "options": [
+      "7",
+      "23",
+      "4",
+      "15"
+    ],
+    "answer": 1,
+    "explain": "'W' is letter number 23 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter W starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'X'? (P4)",
+    "options": [
+      "7",
+      "24",
+      "9",
+      "1"
+    ],
+    "answer": 1,
+    "explain": "'X' is letter number 24 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter X starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'Y'? (P4)",
+    "options": [
+      "15",
+      "25",
+      "2",
+      "24"
+    ],
+    "answer": 1,
+    "explain": "'Y' is letter number 25 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter Y starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Alphabet coding (A=1, B=2, C=3...): What is the numerical code for 'Z'? (P4)",
+    "options": [
+      "4",
+      "3",
+      "26",
+      "8"
+    ],
+    "answer": 2,
+    "explain": "'Z' is letter number 26 in alphabetical order from A to Z.",
+    "hint": "Count the position of letter Z starting with A as 1.",
+    "topic": "Letter Codes",
+    "bloom": "Apply",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Rearrange the scrambled letters into a domestic animal: T A C (Level 4)",
+    "options": [
+      "TAC",
+      "ACT",
+      "ATC",
+      "CAT"
+    ],
+    "answer": 3,
+    "explain": "The correctly unscrambled word matching the description is CAT.",
+    "hint": "Rearrange the given letters into a meaningful English word.",
+    "topic": "Anagrams",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Rearrange the scrambled letters into a large mammal: N O I L (Level 4)",
+    "options": [
+      "NOIL",
+      "OLIN",
+      "LION",
+      "LOIN"
+    ],
+    "answer": 2,
+    "explain": "The correctly unscrambled word matching the description is LION.",
+    "hint": "Rearrange the given letters into a meaningful English word.",
+    "topic": "Anagrams",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Rearrange the scrambled letters into a tropical fruit: G O M A N (Level 4)",
+    "options": [
+      "MANGO",
+      "GNOMA",
+      "MAGON",
+      "AMONG"
+    ],
+    "answer": 0,
+    "explain": "The correctly unscrambled word matching the description is MANGO.",
+    "hint": "Rearrange the given letters into a meaningful English word.",
+    "topic": "Anagrams",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Rearrange the scrambled letters into a learning place: O O L C H S (Level 4)",
+    "options": [
+      "LOOHCS",
+      "SOCHLO",
+      "SCHOOL",
+      "CHOLOS"
+    ],
+    "answer": 2,
+    "explain": "The correctly unscrambled word matching the description is SCHOOL.",
+    "hint": "Rearrange the given letters into a meaningful English word.",
+    "topic": "Anagrams",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Rearrange the scrambled letters into an organ of sight: E Y E (Level 4)",
+    "options": [
+      "EYE",
+      "YEY",
+      "YEE",
+      "EEY"
+    ],
+    "answer": 0,
+    "explain": "The correctly unscrambled word matching the description is EYE.",
+    "hint": "Rearrange the given letters into a meaningful English word.",
+    "topic": "Anagrams",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Rearrange the scrambled letters into an African country: A N G H A (Level 4)",
+    "options": [
+      "HANG",
+      "HAGAN",
+      "GHANA",
+      "AGNAH"
+    ],
+    "answer": 2,
+    "explain": "The correctly unscrambled word matching the description is GHANA.",
+    "hint": "Rearrange the given letters into a meaningful English word.",
+    "topic": "Anagrams",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Rearrange the scrambled letters into a celestial body: A R S T (Level 4)",
+    "options": [
+      "TSAR",
+      "STAR",
+      "RATS",
+      "TARS"
+    ],
+    "answer": 1,
+    "explain": "The correctly unscrambled word matching the description is STAR.",
+    "hint": "Rearrange the given letters into a meaningful English word.",
+    "topic": "Anagrams",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Rearrange the scrambled letters into a writing liquid: K N I (Level 4)",
+    "options": [
+      "KIN",
+      "IKN",
+      "INK",
+      "NIK"
+    ],
+    "answer": 2,
+    "explain": "The correctly unscrambled word matching the description is INK.",
+    "hint": "Rearrange the given letters into a meaningful English word.",
+    "topic": "Anagrams",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Rearrange the scrambled letters into a body part: H A N D (Level 4)",
+    "options": [
+      "NAHD",
+      "ANDH",
+      "DAHN",
+      "HAND"
+    ],
+    "answer": 3,
+    "explain": "The correctly unscrambled word matching the description is HAND.",
+    "hint": "Rearrange the given letters into a meaningful English word.",
+    "topic": "Anagrams",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Rearrange the scrambled letters into a time of day: T H G I N (Level 4)",
+    "options": [
+      "GHINT",
+      "NIGHT",
+      "THIGN",
+      "THING"
+    ],
+    "answer": 1,
+    "explain": "The correctly unscrambled word matching the description is NIGHT.",
+    "hint": "Rearrange the given letters into a meaningful English word.",
+    "topic": "Anagrams",
+    "bloom": "Apply",
+    "difficulty": "Medium"
+  },
+  {
+    "q": "Syllables: How many syllables (sound beats) are in the word 'ELEPHANT'? [Class 4]",
+    "options": [
+      "2 syllables",
+      "1 syllable",
+      "3 syllables",
+      "4 syllables"
+    ],
+    "answer": 2,
+    "explain": "The word 'ELEPHANT' contains 3 syllables when pronounced aloud.",
+    "hint": "Count the distinct vowel sound beats when saying the word slowly.",
+    "topic": "Syllables",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Syllables: How many syllables (sound beats) are in the word 'COMMUNICATION'? [Class 4]",
+    "options": [
+      "5 syllables",
+      "3 syllables",
+      "4 syllables",
+      "6 syllables"
+    ],
+    "answer": 0,
+    "explain": "The word 'COMMUNICATION' contains 5 syllables when pronounced aloud.",
+    "hint": "Count the distinct vowel sound beats when saying the word slowly.",
+    "topic": "Syllables",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Syllables: How many syllables (sound beats) are in the word 'WATER'? [Class 4]",
+    "options": [
+      "4 syllables",
+      "1 syllable",
+      "2 syllables",
+      "3 syllables"
+    ],
+    "answer": 2,
+    "explain": "The word 'WATER' contains 2 syllables when pronounced aloud.",
+    "hint": "Count the distinct vowel sound beats when saying the word slowly.",
+    "topic": "Syllables",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Syllables: How many syllables (sound beats) are in the word 'DICTIONARY'? [Class 4]",
+    "options": [
+      "4 syllables",
+      "2 syllables",
+      "5 syllables",
+      "3 syllables"
+    ],
+    "answer": 0,
+    "explain": "The word 'DICTIONARY' contains 4 syllables when pronounced aloud.",
+    "hint": "Count the distinct vowel sound beats when saying the word slowly.",
+    "topic": "Syllables",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Syllables: How many syllables (sound beats) are in the word 'HIPPOPOTAMUS'? [Class 4]",
+    "options": [
+      "6 syllables",
+      "3 syllables",
+      "5 syllables",
+      "4 syllables"
+    ],
+    "answer": 2,
+    "explain": "The word 'HIPPOPOTAMUS' contains 5 syllables when pronounced aloud.",
+    "hint": "Count the distinct vowel sound beats when saying the word slowly.",
+    "topic": "Syllables",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Syllables: How many syllables (sound beats) are in the word 'COMPUTER'? [Class 4]",
+    "options": [
+      "1 syllable",
+      "3 syllables",
+      "2 syllables",
+      "4 syllables"
+    ],
+    "answer": 1,
+    "explain": "The word 'COMPUTER' contains 3 syllables when pronounced aloud.",
+    "hint": "Count the distinct vowel sound beats when saying the word slowly.",
+    "topic": "Syllables",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Syllables: How many syllables (sound beats) are in the word 'SUN'? [Class 4]",
+    "options": [
+      "2 syllables",
+      "0 syllables",
+      "1 syllable",
+      "3 syllables"
+    ],
+    "answer": 2,
+    "explain": "The word 'SUN' contains 1 syllable when pronounced aloud.",
+    "hint": "Count the distinct vowel sound beats when saying the word slowly.",
+    "topic": "Syllables",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Syllables: How many syllables (sound beats) are in the word 'BEAUTIFUL'? [Class 4]",
+    "options": [
+      "3 syllables",
+      "4 syllables",
+      "1 syllable",
+      "2 syllables"
+    ],
+    "answer": 0,
+    "explain": "The word 'BEAUTIFUL' contains 3 syllables when pronounced aloud.",
+    "hint": "Count the distinct vowel sound beats when saying the word slowly.",
+    "topic": "Syllables",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Syllables: How many syllables (sound beats) are in the word 'EDUCATION'? [Class 4]",
+    "options": [
+      "4 syllables",
+      "5 syllables",
+      "2 syllables",
+      "3 syllables"
+    ],
+    "answer": 0,
+    "explain": "The word 'EDUCATION' contains 4 syllables when pronounced aloud.",
+    "hint": "Count the distinct vowel sound beats when saying the word slowly.",
+    "topic": "Syllables",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Syllables: How many syllables (sound beats) are in the word 'NIGERIA'? [Class 4]",
+    "options": [
+      "5 syllables",
+      "3 syllables",
+      "2 syllables",
+      "4 syllables"
+    ],
+    "answer": 3,
+    "explain": "The word 'NIGERIA' contains 4 syllables when pronounced aloud.",
+    "hint": "Count the distinct vowel sound beats when saying the word slowly.",
+    "topic": "Syllables",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Compound Words: Which word joins with 'SUN' to form a single compound word? (P4)",
+    "options": [
+      "BIRD",
+      "TREE",
+      "FLOWER (Sunflower)",
+      "RIVER"
+    ],
+    "answer": 2,
+    "explain": "Combining the two words forms the compound noun 'FLOWER (Sunflower)'.",
+    "hint": "Think of a single word that joins with the prompt word to make a valid compound noun.",
+    "topic": "Compound Words",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Compound Words: Which word joins with 'RAIN' to form a protective outdoor gear word? (P4)",
+    "options": [
+      "SHIRT",
+      "GLOVE",
+      "CAP",
+      "COAT (Raincoat)"
+    ],
+    "answer": 3,
+    "explain": "Combining the two words forms the compound noun 'COAT (Raincoat)'.",
+    "hint": "Think of a single word that joins with the prompt word to make a valid compound noun.",
+    "topic": "Compound Words",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Compound Words: Which word joins with 'TOOTH' to form a dental cleaning item? (P4)",
+    "options": [
+      "TOWEL",
+      "SOAP",
+      "BRUSH (Toothbrush)",
+      "COMB"
+    ],
+    "answer": 2,
+    "explain": "Combining the two words forms the compound noun 'BRUSH (Toothbrush)'.",
+    "hint": "Think of a single word that joins with the prompt word to make a valid compound noun.",
+    "topic": "Compound Words",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Compound Words: Which word joins with 'BUTTER' to form an insect name? (P4)",
+    "options": [
+      "ANT",
+      "WASP",
+      "BEE",
+      "FLY (Butterfly)"
+    ],
+    "answer": 3,
+    "explain": "Combining the two words forms the compound noun 'FLY (Butterfly)'.",
+    "hint": "Think of a single word that joins with the prompt word to make a valid compound noun.",
+    "topic": "Compound Words",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Compound Words: Which word joins with 'BED' to form a sleeping room word? (P4)",
+    "options": [
+      "WINDOW",
+      "DOOR",
+      "ROOM (Bedroom)",
+      "GARDEN"
+    ],
+    "answer": 2,
+    "explain": "Combining the two words forms the compound noun 'ROOM (Bedroom)'.",
+    "hint": "Think of a single word that joins with the prompt word to make a valid compound noun.",
+    "topic": "Compound Words",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Compound Words: Which word joins with 'BASKET' to form a popular team ball sport? (P4)",
+    "options": [
+      "SHOE",
+      "RING",
+      "BALL (Basketball)",
+      "NET"
+    ],
+    "answer": 2,
+    "explain": "Combining the two words forms the compound noun 'BALL (Basketball)'.",
+    "hint": "Think of a single word that joins with the prompt word to make a valid compound noun.",
+    "topic": "Compound Words",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Compound Words: Which word joins with 'FOOT' to form a global field sport game? (P4)",
+    "options": [
+      "BALL (Football)",
+      "HEAD",
+      "HAND",
+      "LEG"
+    ],
+    "answer": 0,
+    "explain": "Combining the two words forms the compound noun 'BALL (Football)'.",
+    "hint": "Think of a single word that joins with the prompt word to make a valid compound noun.",
+    "topic": "Compound Words",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Compound Words: Which word joins with 'FIRE' to form a brave emergency rescue worker? (P4)",
+    "options": [
+      "DRIVER",
+      "CLEANER",
+      "FIGHTER (Firefighter)",
+      "BAKER"
+    ],
+    "answer": 2,
+    "explain": "Combining the two words forms the compound noun 'FIGHTER (Firefighter)'.",
+    "hint": "Think of a single word that joins with the prompt word to make a valid compound noun.",
+    "topic": "Compound Words",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  },
+  {
+    "q": "Compound Words: Which word joins with 'NEWS' to form a daily printed publication? (P4)",
+    "options": [
+      "LETTER",
+      "BOOK",
+      "PAPER (Newspaper)",
+      "PEN"
+    ],
+    "answer": 2,
+    "explain": "Combining the two words forms the compound noun 'PAPER (Newspaper)'.",
+    "hint": "Think of a single word that joins with the prompt word to make a valid compound noun.",
+    "topic": "Compound Words",
+    "bloom": "Understand",
+    "difficulty": "Easy"
+  }
+]
