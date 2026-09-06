@@ -1,5 +1,18 @@
 (function () {
   const app = document.getElementById("app");
+  function hideBoot() {
+    const el = document.getElementById("boot");
+    if (!el || el.dataset.done) return;
+    el.dataset.done = "1";
+    const wait = Math.max(0, 700 - (Date.now() - (window.psqBootAt || Date.now())));
+    function out() {
+      el.classList.add("out");
+      el.setAttribute("aria-hidden", "true");
+      setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 420);
+    }
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) out();
+    else setTimeout(out, wait);
+  }
   const canvas = document.getElementById("confetti");
   const LETTERS = ["A", "B", "C", "D"];
   const bankCache = {};
@@ -2375,6 +2388,7 @@
       teachers: renderTeachers, parents: renderParents, why: renderWhy, access: renderAccess
     };
     app.innerHTML = (map[state.screen] || renderHome)();
+    hideBoot();
     document.documentElement.dataset.screen = state.screen || "home";
     const titles = {
       home: "Primary Super Quiz · Primary 1–6 classroom practice",

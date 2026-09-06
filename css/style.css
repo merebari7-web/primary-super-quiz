@@ -868,7 +868,7 @@ input[type="text"]:focus { border-color: var(--teal); box-shadow: 0 0 0 4px var(
 
 @media print {
   body { background: white; }
-  body::before, #confetti, .no-print, .loading-overlay, .boot-splash, .fav-pin { display: none !important; }
+  body::before, #confetti, .no-print, .loading-overlay, #boot, .boot-splash, .fav-pin { display: none !important; }
   .wrap { width: 100%; padding: 0; }
   .certificate { box-shadow: none; }
 }
