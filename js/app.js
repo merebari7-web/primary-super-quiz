@@ -1033,10 +1033,22 @@
     }));
   }
 
+  function svgIco(name) {
+    const d = {
+      back: '<path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6"/>',
+      user: '<circle cx="12" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M5.5 19c.8-3 3-4.5 6.5-4.5s5.7 1.5 6.5 4.5"/>',
+      chart: '<path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M5 19V10M12 19V5M19 19v-7"/>',
+      gear: '<circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 4.5v2.2M12 17.3v2.2M4.5 12h2.2M17.3 12h2.2M6.4 6.4l1.6 1.6M16 16l1.6 1.6M17.6 6.4L16 8M8 16l-1.6 1.6"/>',
+      music: '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 18V7l10-2v11"/><circle cx="7" cy="18" r="2.4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="16" r="2.4" fill="none" stroke="currentColor" stroke-width="2"/>',
+      sound: '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 10v4h3l4 3V7L8 10H5z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M16 9.5a4 4 0 010 5"/>',
+      mute: '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 10v4h3l4 3V7L8 10H5z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M16 10l4 4M20 10l-4 4"/>'
+    };
+    return '<svg class="ico-svg" viewBox="0 0 24 24" aria-hidden="true">' + (d[name] || "") + "</svg>";
+  }
   function topbar(backScreen) {
     const left = backScreen
-      ? `<button class="icon-btn" data-go="${backScreen}" aria-label="Back">←</button>`
-      : `<div class="brand"><img src="images/mascot.png" alt=""> Super Quiz</div>`;
+      ? `<button class="icon-btn" data-go="${backScreen}" aria-label="Back">${svgIco("back")}</button>`
+      : `<div class="brand"><img src="images/icon-192.png" alt=""> Super Quiz</div>`;
     return `
       ${netBanner()}
       <div class="topbar no-print">
@@ -1044,11 +1056,11 @@
         <div class="ghost-row">
           ${state.user && state.user.picture
             ? `<button class="avatar-btn" data-go="account" title="${esc(state.user.name)}" aria-label="Account"><img referrerpolicy="no-referrer" src="${esc(state.user.picture)}" alt=""></button>`
-            : `<button class="icon-btn" data-go="account" title="Sign in" aria-label="Account">👤</button>`}
-          <button class="icon-btn" data-go="dashboard" title="Progress" aria-label="Progress">📊</button>
-          <button class="icon-btn" data-go="settings" title="Settings" aria-label="Settings">⚙️</button>
-          <button class="icon-btn ${settings.music ? "" : "off"}" data-action="toggle-music" title="Music" aria-label="Music" aria-pressed="${settings.music}">🎵</button>
-          <button class="icon-btn" data-action="toggle-sound" aria-label="Sound">${settings.sound ? "🔊" : "🔇"}</button>
+            : `<button class="icon-btn" data-go="account" title="Sign in" aria-label="Account">${svgIco("user")}</button>`}
+          <button class="icon-btn" data-go="dashboard" title="Progress" aria-label="Progress">${svgIco("chart")}</button>
+          <button class="icon-btn" data-go="settings" title="Settings" aria-label="Settings">${svgIco("gear")}</button>
+          <button class="icon-btn ${settings.music ? "" : "off"}" data-action="toggle-music" title="Music" aria-label="Music" aria-pressed="${settings.music}">${svgIco("music")}</button>
+          <button class="icon-btn" data-action="toggle-sound" aria-label="Sound">${svgIco(settings.sound ? "sound" : "mute")}</button>
         </div>
       </div>`;
   }
@@ -1135,7 +1147,7 @@
     return `
       <footer class="site-footer">
         <div class="foot-brand">
-          <img src="images/mascot.png" alt="">
+          <img src="images/icon-192.png" alt="">
           <div>
             <strong>Primary Super Quiz</strong>
             <p>Free primary practice for classrooms and families. No ads. Works offline.</p>
@@ -1981,7 +1993,7 @@
     return `
       <div class="wrap">
         <div class="topbar no-print">
-          <button class="icon-btn" data-go="result" aria-label="Back">←</button>
+          <button class="icon-btn" data-go="result" aria-label="Back">${svgIco("back")}</button>
           <div class="ghost-row">
             <button class="btn btn-ghost" data-action="save-cert">Download PNG</button>
             <button class="btn btn-primary" data-action="print">Print</button>
@@ -2091,7 +2103,7 @@
     return `
       <div class="wrap report">
         <div class="topbar no-print">
-          <button class="icon-btn" data-go="dashboard" aria-label="Back">←</button>
+          <button class="icon-btn" data-go="dashboard" aria-label="Back">${svgIco("back")}</button>
           <button class="btn btn-primary" data-action="print">Print report</button>
         </div>
         <header class="exam-head">
@@ -2241,7 +2253,7 @@
     return `
       <div class="wrap">
         <div class="topbar no-print">
-          <button class="icon-btn" data-go="subject" aria-label="Back">←</button>
+          <button class="icon-btn" data-go="subject" aria-label="Back">${svgIco("back")}</button>
           <button class="btn btn-primary" data-action="print">Print homework</button>
         </div>
         <header class="exam-head">
@@ -2291,7 +2303,7 @@
     return `
       <div class="wrap exam">
         <div class="topbar no-print">
-          <button class="icon-btn" data-go="subject" aria-label="Back">←</button>
+          <button class="icon-btn" data-go="subject" aria-label="Back">${svgIco("back")}</button>
           <button class="btn btn-primary" data-action="print">Print paper</button>
         </div>
         <header class="exam-head">
@@ -2407,7 +2419,7 @@
       ov.className = "loading-overlay";
       ov.setAttribute("role", "status");
       ov.setAttribute("aria-live", "polite");
-      ov.innerHTML = "<div class=\"spinner\" aria-hidden=\"true\"></div><p>" + (state.screen === "exam" ? "Preparing the exam paper…" : "Loading questions…") + "</p>";
+      ov.innerHTML = "<img class=\"boot-mark\" src=\"images/icon-192.png\" alt=\"\"><div class=\"spinner\" aria-hidden=\"true\"></div><p>" + (state.screen === "exam" ? "Preparing the exam paper…" : "Loading questions…") + "</p>";
       app.appendChild(ov);
     }
     if (state.helpOpen && !app.querySelector('[aria-label="Help"]')) {

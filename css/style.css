@@ -69,6 +69,38 @@ body::before {
 
 #app { position: relative; z-index: 1; min-height: 100vh; }
 
+.boot-splash {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 32px 20px;
+}
+.boot-mark {
+  width: 112px;
+  height: 112px;
+  border-radius: 28px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+.boot-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--teal-dark);
+  font-weight: 700;
+}
+.boot-sub {
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 16px;
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .boot-title { color: #3ecfc6; }
+}
+
 button, input { font-family: inherit; }
 
 button {
@@ -121,13 +153,13 @@ img, canvas#confetti {
   color: var(--teal-dark);
 }
 
-.brand img,
 .mascot-float,
 .cert-owl,
 .result img {
   mix-blend-mode: multiply;
 }
-.brand img { width: 42px; height: 42px; object-fit: contain; }
+.brand img { width: 42px; height: 42px; object-fit: cover; border-radius: 12px; }
+.ico-svg { width: 22px; height: 22px; display: block; }
 
 .icon-btn {
   width: 44px;
@@ -807,7 +839,7 @@ input[type="text"]:focus { border-color: var(--teal); box-shadow: 0 0 0 4px var(
 
 @media print {
   body { background: white; }
-  body::before, #confetti, .no-print, .loading-overlay, .fav-pin { display: none !important; }
+  body::before, #confetti, .no-print, .loading-overlay, .boot-splash, .fav-pin { display: none !important; }
   .wrap { width: 100%; padding: 0; }
   .certificate { box-shadow: none; }
 }
@@ -819,12 +851,16 @@ input[type="text"]:focus { border-color: var(--teal); box-shadow: 0 0 0 4px var(
   display: grid;
   place-items: center;
   align-content: center;
-  gap: 12px;
-  background: color-mix(in srgb, var(--cream) 82%, transparent);
+  gap: 14px;
+  background: color-mix(in srgb, var(--cream) 88%, transparent);
   backdrop-filter: blur(8px);
   font-weight: 800;
   color: var(--teal-dark);
+  text-align: center;
+  padding: 24px;
 }
+.loading-overlay .boot-mark { width: 72px; height: 72px; border-radius: 20px; }
+.loading-overlay p { margin: 0; max-width: 22em; }
 .spinner {
   width: 42px;
   height: 42px;

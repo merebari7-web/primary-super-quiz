@@ -27,8 +27,10 @@
   <meta name="twitter:description" content="Free classroom practice: 9,600 questions, printable papers, no ads, works offline.">
   <meta name="twitter:image" content="https://merebari7-web.github.io/primary-super-quiz/images/og.jpg">
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="images/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="images/icon-192.png">
+  <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="images/favicon.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="images/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="images/apple-touch.png" sizes="180x180">
   <link rel="preconnect" href="https://accounts.google.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,7 +81,14 @@
 </head>
 <body>
   <a class="skip-link" href="#app">Skip to content</a>
-  <div id="app" tabindex="-1"></div>
+  <div id="app" tabindex="-1">
+    <div class="boot-splash" role="status" aria-live="polite" aria-label="Loading Primary Super Quiz">
+      <img class="boot-mark" src="images/icon-192.png" alt="">
+      <p class="boot-title">Primary Super Quiz</p>
+      <p class="boot-sub">Getting the classroom ready…</p>
+      <div class="spinner" aria-hidden="true"></div>
+    </div>
+  </div>
   <canvas id="confetti" aria-hidden="true"></canvas>
   <noscript>
     <main class="wrap">

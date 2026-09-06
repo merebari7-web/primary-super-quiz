@@ -1,4 +1,4 @@
-const VERSION = "psq-v34";
+const VERSION = "psq-v35";
 const SHELL = [
   "./",
   "./index.html",
@@ -11,6 +11,11 @@ const SHELL = [
   "./images/trophy.png",
   "./images/stars.png",
   "./images/icon-192.png",
+  "./images/icon-512.png",
+  "./images/icon-512-maskable.png",
+  "./images/apple-touch.png",
+  "./images/favicon.png",
+  "./images/favicon-32.png",
   "./images/owl-yes.jpg",
   "./images/owl-no.jpg"
 ];
