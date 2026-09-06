@@ -356,7 +356,8 @@
     return weakestList(grade)[0] || "maths";
   }
   function prefetchGrade(g) {
-    ["english", "maths", "science", "civic"].forEach(function (s) {
+    const keys = Object.keys(window.SUBJECTS);
+    keys.forEach(function (s) {
       fetchBank(g, s).catch(function () {});
     });
   }
@@ -827,6 +828,17 @@
     if (key === "smart") return "🧠";
     return window.SUBJECTS[key] ? window.SUBJECTS[key].icon : "⭐";
   }
+  function scoreRing(pct) {
+    const p = Math.max(0, Math.min(100, Number(pct) || 0));
+    const r = 54;
+    const c = 2 * Math.PI * r;
+    const off = c * (1 - p / 100);
+    return `<svg class="score-ring" viewBox="0 0 128 128" role="img" aria-label="${p} percent">
+      <circle cx="64" cy="64" r="${r}" fill="none" stroke="currentColor" stroke-opacity="0.15" stroke-width="10"/>
+      <circle class="score-ring-arc" cx="64" cy="64" r="${r}" fill="none" stroke="var(--teal)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}" transform="rotate(-90 64 64)"/>
+      <text x="64" y="72" text-anchor="middle" font-size="28" font-weight="800" fill="currentColor">${p}%</text>
+    </svg>`;
+  }
   function starsFor(pct) {
     if (pct >= 85) return 3;
     if (pct >= 60) return 2;
@@ -1195,6 +1207,7 @@
           <h2 class="section-title">What’s new</h2>
           <h3>September 2026</h3>
           <ul>
+            <li>Results now show a score ring plus correct / missed / skipped. Papers prefetch in the background after you pick a class.</li>
             <li>Boot splash, classroom app icons, and a cleaner home with the name field in the hero.</li>
             <li>Exam mode now shows a selected answer without marking it green until the paper is scored.</li>
             <li>Fonts load from this site, so type still looks right offline.</li>
@@ -1834,7 +1847,7 @@
         else cls += " dim";
       } else if (state.picked[state.index] === i) cls += " picked";
       return `
-        <button class="${cls}" data-opt="${i}" ${state.revealed && !exam ? "disabled" : ""} aria-pressed="${state.picked[state.index] === i}">
+        <button class="${cls}" data-opt="${i}" style="--i:${i}" ${state.revealed && !exam ? "disabled" : ""} aria-pressed="${state.picked[state.index] === i}">
           <span class="badge">${LETTERS[i]}</span>
           <span>${esc(opt)}</span>
         </button>`;
@@ -1904,7 +1917,9 @@
       return b ? `<span class="chip">${b.icon} ${b.name}</span>` : "";
     }).join("");
     const gl = gradeLetter(pct);
-    const primaryNext = total - n
+    const skipped = state.questions.filter(function (q, i) { return state.picked[i] == null || state.picked[i] < 0; }).length;
+    const missedN = total - n;
+    const primaryNext = missedN
       ? `<button class="btn btn-primary" data-action="practice-missed">Practice missed</button>`
       : `<button class="btn btn-primary" data-action="coach-play">Next practice</button>`;
     return `
@@ -1914,13 +1929,18 @@
           ${img}
           <p class="kicker">${window.GRADE_INFO[state.grade].label} · ${esc(subjectName(state.subject))} · ${state.lightning ? "lightning" : state.mode}</p>
           <h2 class="section-title">${esc(state.name || "Well done")}</h2>
-          <div class="letter-mark" aria-label="Grade ${gl.mark}, ${gl.label}">${gl.mark}</div>
-          <p class="letter-label">${esc(gl.label)}</p>
-          <div class="score-num">${n}<span style="font-size:.45em;color:var(--muted)"> / ${total}</span></div>
+          <div class="result-hero">
+            ${scoreRing(pct)}
+            <div>
+              <div class="letter-mark" aria-label="Grade ${gl.mark}, ${gl.label}">${gl.mark}</div>
+              <p class="letter-label">${esc(gl.label)}</p>
+              <div class="score-num">${n}<span style="font-size:.45em;color:var(--muted)"> / ${total}</span></div>
+            </div>
+          </div>
           <div class="metric-grid">
-            <div><b>${pct}%</b><span>Score</span></div>
-            <div><b>${stars}★</b><span>Stars</span></div>
-            <div><b>x${state.maxCombo || 0}</b><span>Best combo</span></div>
+            <div><b>${n}</b><span>Correct</span></div>
+            <div><b>${Math.max(0, missedN - skipped)}</b><span>Missed</span></div>
+            <div><b>${skipped}</b><span>Skipped</span></div>
             <div><b>${state.elapsedSec ? fmtClock(state.elapsedSec) : "—"}</b><span>Time</span></div>
           </div>
           <p class="xp-pop">+${state.xpGained} XP · Total ${progress.xp}</p>

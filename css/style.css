@@ -1910,3 +1910,90 @@ html[data-theme="dark"] .opt.picked { background: #163a3a; }
   .hero-cta input[type="text"] { max-width: none; }
   .quiz-sticky { top: 0; }
 }
+
+/* Classroom v2 */
+.art-badge {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  background: rgba(14, 124, 118, 0.92);
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+.grid-grades .card-btn {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: 0 10px 0 color-mix(in srgb, var(--accent) 35%, var(--line));
+}
+.grid-grades .card-btn.on {
+  background: color-mix(in srgb, var(--accent) 12%, var(--card));
+}
+.subj-icon {
+  box-shadow: inset 0 -3px 0 color-mix(in srgb, var(--accent) 22%, transparent);
+}
+.opt {
+  animation: opt-in 0.28s ease both;
+  animation-delay: calc(var(--i, 0) * 45ms);
+}
+@keyframes opt-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.opt.wrong { animation: opt-shake 0.4s ease; }
+@keyframes opt-shake {
+  0%, 100% { transform: none; }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+html.calm .opt, html.calm .opt.wrong { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  .opt, .opt.wrong, #app.enter, .score-ring-arc { animation: none !important; }
+}
+
+.result-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin: 8px 0 12px;
+}
+.score-ring {
+  width: 148px;
+  height: 148px;
+  color: var(--teal-dark);
+}
+.score-ring-arc {
+  transition: stroke-dashoffset 0.8s ease;
+}
+html[data-theme="dark"] .score-ring { color: var(--teal); }
+html[data-theme="dark"] .subj-icon {
+  background: color-mix(in srgb, var(--accent) 28%, #1b2430);
+}
+
+.q-card {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--teal-soft) 35%, var(--card)), var(--card) 48px);
+}
+.badge {
+  font-family: var(--font-display);
+}
+.opt.picked .badge, .opt.correct .badge { font-weight: 800; }
+
+.topbar {
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+}
+
+.play-tile {
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.continue-banner {
+  box-shadow: 0 14px 30px rgba(14, 124, 118, 0.22);
+}
+
+@media print {
+  .score-ring { color: #0a5a56; }
+}
