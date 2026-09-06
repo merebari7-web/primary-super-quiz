@@ -2088,8 +2088,96 @@ html[data-theme="dark"] .q-card {
 html[data-theme="dark"] .play-tile { background: #1b2430; }
 html[data-theme="dark"] .opt.picked { background: #163a3a; }
 
+.qnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 4px;
+  max-height: 92px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.qnav-i {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 6px;
+  border-radius: 10px;
+  border: 2px solid var(--line);
+  background: var(--card);
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--ink);
+}
+.qnav-i.on { border-color: var(--teal); background: var(--teal); color: #fff; }
+.qnav-i.done { background: var(--teal-soft); border-color: #b7e0db; }
+.qnav-i.good { background: #d9f3e3; border-color: #8dcfb0; }
+.qnav-i.bad { background: var(--coral-soft); border-color: #f0b8a8; }
+.qnav-i.empty { background: transparent; color: var(--muted); }
+.qnav-i.flag { box-shadow: inset 0 -3px 0 var(--sun); }
+.qnav-i:disabled { opacity: 0.45; cursor: default; }
+
+.finish-warn {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: var(--sun-soft);
+  border: 3px solid var(--sun);
+}
+.finish-warn p { margin: 6px 0 10px; font-weight: 700; color: var(--muted); }
+
+.mix-break {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+  margin: 14px 0 4px;
+  text-align: left;
+}
+.mix-break div {
+  background: var(--card);
+  border: 3px solid var(--line);
+  border-radius: 16px;
+  padding: 10px 12px;
+}
+.mix-break b { display: block; font-size: 22px; color: var(--teal); }
+.mix-break span { font-weight: 800; }
+.mix-break em { display: block; color: var(--muted); font-style: normal; font-weight: 700; }
+
+.goal-bar {
+  height: 8px;
+  border-radius: 99px;
+  background: var(--line);
+  margin-top: 10px;
+  overflow: hidden;
+}
+.goal-bar > i {
+  display: block;
+  height: 100%;
+  background: var(--teal);
+  border-radius: inherit;
+}
+
+.focus-next {
+  margin: 14px 0 8px;
+  padding: 12px 14px;
+  background: var(--card);
+  border: 3px solid var(--line);
+  border-radius: 18px;
+}
+.focus-next .ghost-row { margin-top: 8px; flex-wrap: wrap; }
+
+html[data-theme="dark"] .qnav-i { background: #1b2430; border-color: #2c3a4a; }
+html[data-theme="dark"] .qnav-i.on { background: var(--teal); color: #fff; }
+html[data-theme="dark"] .qnav-i.good { background: #163a28; }
+html[data-theme="dark"] .qnav-i.bad { background: #3a1c18; }
+html[data-theme="dark"] .finish-warn { background: #3a2e10; border-color: #c4921c; }
+html[data-theme="dark"] .mix-break div,
+html[data-theme="dark"] .focus-next { background: #1b2430; border-color: #2c3a4a; }
+html[data-theme="dark"] .goal-bar { background: #2c3a4a; }
+
 @media print {
   .exam-q { page-break-inside: avoid; }
   .exam-head { border-color: #0e7c76; }
   .timer-bar, .score-ring-arc { transition: none; }
+  .qnav, .quiz-actions, .lifelines, .finish-warn, .key-hint { display: none !important; }
+  .result .actions, .focus-next { display: none !important; }
 }

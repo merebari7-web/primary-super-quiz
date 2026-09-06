@@ -923,6 +923,77 @@
   function todayStudy() {
     return (progress.studyByDay && progress.studyByDay[todayKey()]) || 0;
   }
+  function todayQuestions() {
+    const k = todayKey();
+    return (progress.history || []).filter(function (h) { return h.date === k; }).reduce(function (n, h) { return n + (h.total || 0); }, 0);
+  }
+  function unansweredCount() {
+    return state.questions.filter(function (q, i) { return state.picked[i] == null || state.picked[i] < 0; }).length;
+  }
+  function answeredCount() {
+    return state.questions.filter(function (q, i) { return state.picked[i] != null && state.picked[i] >= 0; }).length;
+  }
+  function firstUnanswered() {
+    for (let i = 0; i < state.questions.length; i++) {
+      if (state.picked[i] == null || state.picked[i] < 0) return i;
+    }
+    return 0;
+  }
+  function canJump(i) {
+    if (i < 0 || i >= state.questions.length || i === state.index) return false;
+    if (state.mode === "exam") return true;
+    if (i <= (state.maxIndex || 0)) return true;
+    if (state.picked[i] != null) return true;
+    return false;
+  }
+  function jumpTo(i) {
+    if (i < 0 || i >= state.questions.length) return;
+    if (i !== state.index && !canJump(i) && !(state.mode === "exam")) return;
+    state.maxIndex = Math.max(state.maxIndex || 0, state.index, i);
+    state.index = i;
+    state.revealed = state.mode !== "exam" && state.picked[i] != null;
+    state.hintText = "";
+    state.confirmFinish = false;
+    state.paused = false;
+    state.timer = secondsFor();
+    state.spokenFor = -1;
+    saveResume();
+    render();
+  }
+  function mixBreakdown() {
+    const map = {};
+    state.questions.forEach(function (q, i) {
+      const k = q.subject || state.subject;
+      if (!k || k === "mix" || k === "daily" || k === "smart" || k === "missed") return;
+      if (!map[k]) map[k] = { n: 0, ok: 0 };
+      map[k].n += 1;
+      if (state.picked[i] === q.answer) map[k].ok += 1;
+    });
+    const keys = Object.keys(map);
+    if (keys.length < 2) return "";
+    return `<div class="mix-break" aria-label="By subject">${keys.map(function (k) {
+      const x = map[k];
+      const pct = Math.round((x.ok / x.n) * 100);
+      return `<div><b>${pct}%</b><span>${esc(subjectName(k))}</span><em>${x.ok}/${x.n}</em></div>`;
+    }).join("")}</div>`;
+  }
+  function qNav() {
+    const total = state.questions.length;
+    if (!total) return "";
+    const items = state.questions.map(function (q, i) {
+      let cls = "qnav-i";
+      if (i === state.index) cls += " on";
+      if (state.flagged[i]) cls += " flag";
+      const skipped = state.picked[i] == null || state.picked[i] < 0;
+      if (skipped) cls += " empty";
+      else if (state.mode === "exam") cls += " done";
+      else if (state.picked[i] === q.answer) cls += " good";
+      else cls += " bad";
+      const jump = (i === state.index || canJump(i) || state.mode === "exam") ? `data-jump="${i}"` : "disabled";
+      return `<button type="button" class="${cls}" ${jump} aria-current="${i === state.index ? "true" : "false"}" aria-label="Question ${i + 1}">${i + 1}</button>`;
+    }).join("");
+    return `<div class="qnav" role="navigation" aria-label="Question map">${items}</div>`;
+  }
   function hintFor(q) {
     if (!q) return "Look for the choice that matches what you learnt in class.";
     let e = String(q.explain || "");
@@ -1057,7 +1128,7 @@
       usedSkip: state.usedSkip, usedHint: state.usedHint, daily: state.daily,
       lightning: state.lightning, hidden: state.hidden, quizStartedAt: state.quizStartedAt,
       flagged: state.flagged || {}, revealed: !!state.revealed, timer: state.timer,
-      paused: !!state.paused, hintText: state.hintText || ""
+      paused: !!state.paused, hintText: state.hintText || "", maxIndex: state.maxIndex || 0
     }));
   }
 
@@ -1165,7 +1236,7 @@
       <div class="onboard" role="dialog" aria-modal="true" aria-label="Help" data-action="close-help">
         <div class="onboard-card">
           <h2>Quick help</h2>
-          <p>A B C D — choose an answer<br>H — hint · F — flag · P — pause · N or Enter — next<br>After an answer, swipe left for next<br>? — this help</p>
+          <p>A B C D — choose an answer<br>H — hint · F — flag · P — pause · N or Enter — next<br>← → jump questions · tap the number map<br>After an answer, swipe left for next<br>? — this help</p>
           <p>Teachers: print an exam paper from the subject screen, and a progress report from My progress.</p>
           <button class="btn btn-primary" data-action="close-help">Close</button>
         </div>
@@ -1207,6 +1278,7 @@
           <h2 class="section-title">What’s new</h2>
           <h3>September 2026</h3>
           <ul>
+            <li>Question map, Back, and a finish check if items are still skipped. Replay last paper from home. Today’s plan tracks your 10-question goal. Mixed papers show a subject split on the score screen.</li>
             <li>Home shows your last paper. Review can filter skipped items. My progress lists recent quizzes as cards. Banks prefetch if a class is already saved.</li>
             <li>Results now show a score ring plus correct / missed / skipped. Papers prefetch in the background after you pick a class.</li>
             <li>Boot splash, classroom app icons, and a cleaner home with the name field in the hero.</li>
@@ -1247,14 +1319,19 @@
   }
   function planCard() {
     if (!state.grade) return "";
+    const done = todayQuestions();
+    const goal = 10;
+    const pct = Math.min(100, Math.round((done / goal) * 100));
+    const met = done >= goal;
     return `
       <div class="coach-card plan">
         <div>
           <p class="kicker" style="margin:0">Today’s plan</p>
-          <strong>10 quiet questions</strong>
-          <p>About eight minutes. Starts with your weaker subject.</p>
+          <strong>${met ? "Goal met" : done + " / " + goal + " questions"}</strong>
+          <p>${met ? "Nice work. Another 10 if you still have energy." : "About eight minutes. Starts with your weaker subject."}</p>
+          <div class="goal-bar" aria-hidden="true"><i style="width:${pct}%"></i></div>
         </div>
-        <button class="btn btn-primary" data-action="plan-play">Start</button>
+        <button class="btn btn-primary" data-action="plan-play">${met ? "Another 10" : "Start"}</button>
       </div>`;
   }
   function coachCard() {
@@ -1489,7 +1566,7 @@
           <h2 class="section-title">Accessibility</h2>
           <p>The quiz should be usable in a classroom, at home, and with a keyboard only. Settings stay on this device.</p>
           <ul>
-            <li><strong>Keyboard:</strong> A–D or 1–4 to answer, H hint, F flag, P pause, N or Enter next, ? help, Esc closes help.</li>
+            <li><strong>Keyboard:</strong> A–D or 1–4 to answer, H hint, F flag, P pause, N or Enter next, arrow keys to move, ? help, Esc closes help.</li>
             <li><strong>Read aloud:</strong> tap 🔊 on a question. Auto-read is optional in Settings.</li>
             <li><strong>Display:</strong> larger text, more line spacing, high contrast, dark mode, match the phone’s light/dark, reduce motion, focus mode.</li>
             <li><strong>Touch:</strong> main buttons are at least 48px. After an answer, swipe left for next (not in Exam mode).</li>
@@ -1662,7 +1739,10 @@
         ${planCard()}
         ${(progress.history || [])[0] ? `<div class="last-quiz">
           <div><strong>Last paper</strong><p>P${progress.history[0].grade} ${esc(subjectName(progress.history[0].subject))} · ${progress.history[0].score}/${progress.history[0].total} (${progress.history[0].pct}% ${gradeLetter(progress.history[0].pct).mark})</p></div>
-          <button type="button" class="btn btn-ghost" data-go="dashboard">See progress</button>
+          <div class="ghost-row">
+            <button type="button" class="btn btn-sun" data-action="replay-last">Play again</button>
+            <button type="button" class="btn btn-ghost" data-go="dashboard">Progress</button>
+          </div>
         </div>` : ""}
         <div class="home-account">
           ${googleAuthBlock()}
@@ -1882,11 +1962,12 @@
             ${state.combo >= 2 ? `<span class="combo">🔥 x${state.combo}</span>` : ""}
             ${timer}
             <div class="progress-meta" id="sess-clock">🕒 ${fmtClock((Date.now() - (state.quizStartedAt || Date.now())) / 1000)}</div>
-            <div class="progress-meta">${state.index + 1} / ${total}${state.lightning || total - state.index <= 1 ? "" : " · ~" + etaMinutes(total - state.index) + " min left"}</div>
+            <div class="progress-meta">${state.index + 1} / ${total} · ${answeredCount()} answered${unansweredCount() ? " · " + unansweredCount() + " left" : ""}${state.lightning || total - state.index <= 1 ? "" : " · ~" + etaMinutes(total - state.index) + " min left"}</div>
           </div>
         </div>
         ${state.paused ? `<div class="pause-banner">Quiz paused. Timer is stopped.</div>` : ""}
         <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-label="Quiz progress"><span style="width:${pct}%"></span></div>
+        ${qNav()}
         </div>
         <div class="q-card">
           <div class="q-label">Question ${state.index + 1} of ${total} · ${state.lightning ? "lightning" : state.mode}</div>
@@ -1901,11 +1982,20 @@
             <button class="life" data-action="skip" ${state.usedSkip || exam ? "disabled" : ""}>Skip</button>
             <button class="life ${state.flagged[state.index] ? "on" : ""}" data-action="flag">${state.flagged[state.index] ? "★ Flagged" : "☆ Flag"}</button>
           </div>
+          ${state.confirmFinish ? `<div class="finish-warn" role="status">
+            <strong>${unansweredCount()} unanswered</strong>
+            <p>Skipped items count as missed. Jump back, or finish the paper as it is.</p>
+            <div class="actions">
+              <button type="button" class="btn btn-ghost" data-action="jump-unanswered">Review skipped</button>
+              <button type="button" class="btn btn-primary" data-action="finish-anyway">Finish anyway</button>
+            </div>
+          </div>` : ""}
           <div class="quiz-actions">
+            ${state.index ? `<button class="btn btn-ghost" data-action="prev">← Back</button>` : ""}
             ${canNext ? `<button class="btn btn-primary" data-action="next">${nextLabel}</button>` : ""}
             <button class="btn btn-ghost" data-action="quit-quiz">Quit</button>
           </div>
-          <p class="key-hint no-print">Tip: A–D to answer · H hint · F flag · P pause · 🔊 reads the question</p>
+          <p class="key-hint no-print">Tip: A–D to answer · ← → map · H hint · F flag · P pause · 🔊 reads the question</p>
         </div>
         ${reactPopup()}
         ${toastEl()}
@@ -1960,9 +2050,11 @@
           <div class="split-bar" aria-hidden="true"><i style="width:${pct}%"></i></div>
           <p class="sub" style="margin:8px 0 0">${n} correct · ${total - n} to review</p>
           ${badges ? `<div class="stats" style="justify-content:center">${badges}</div>` : ""}
+          ${mixBreakdown()}
           <div class="actions">
             ${primaryNext}
             <button class="btn btn-ghost" data-action="review">Review answers</button>
+            <button class="btn btn-ghost" data-action="print">Print score</button>
             <button class="btn btn-sun" data-action="whatsapp">WhatsApp</button>
             <button class="btn btn-ghost" data-action="speak">🔊 Read score</button>
             <button class="btn btn-ghost" data-action="certificate">Certificate</button>
@@ -2019,6 +2111,7 @@
         <div class="actions" style="margin-top:8px">
           <button class="btn btn-primary" data-go="result">Back to score</button>
           ${missedN ? `<button class="btn btn-sun" data-action="practice-missed">Practice missed</button>` : ""}
+          <button class="btn btn-ghost" data-action="print">Print review</button>
         </div>
       </div>`;
   }
@@ -2103,6 +2196,14 @@
         </div>
         <p class="sub" style="margin-top:18px">Mastery for Primary ${g} (pick a class first for other years).</p>
         <div class="dash-grid">${cells}</div>
+        ${progress.quizzes && state.grade ? `<div class="focus-next">
+          <p class="kicker" style="margin:0">Focus next</p>
+          <div class="ghost-row">${weakestList(g).slice(0, 3).map(function (k) {
+            const s = window.SUBJECTS[k];
+            const best = progress.best[g + "/" + k];
+            return `<button type="button" class="btn btn-ghost" data-pick-subject="${k}">${s ? s.icon + " " + s.short : k}${best ? " · " + best.pct + "%" : ""}</button>`;
+          }).join("")}</div>
+        </div>` : ""}
         <h3 class="section-title" style="font-size:24px;margin-top:28px">Badges</h3>
         <div class="badge-grid">${badges}</div>
         <h3 class="section-title" style="font-size:24px;margin-top:28px">This week</h3>
@@ -2648,6 +2749,9 @@
       state.reviewFilter = "all";
       state.quizStartedAt = Date.now();
       state.elapsedSec = 0;
+      state.maxIndex = 0;
+      state.confirmFinish = false;
+      state.forceFinish = false;
       state.screen = "quiz";
       saveResume();
     } catch (err) {
@@ -2667,11 +2771,19 @@
   }
 
   function goNext(fromTimer) {
+    state.maxIndex = Math.max(state.maxIndex || 0, state.index);
     if (state.index >= state.questions.length - 1) {
+      if (unansweredCount() && !state.forceFinish) {
+        state.confirmFinish = true;
+        render();
+        return;
+      }
       finishQuiz();
       return;
     }
+    state.confirmFinish = false;
     state.index += 1;
+    state.maxIndex = Math.max(state.maxIndex || 0, state.index);
     state.revealed = false;
     state.paused = false;
     state.hintText = "";
@@ -2686,11 +2798,14 @@
     if (state.paused) return;
     if (state.mode === "exam") {
       state.picked[state.index] = i;
+      state.maxIndex = Math.max(state.maxIndex || 0, state.index);
+      saveResume();
       render();
       return;
     }
     if (state.revealed) return;
     state.picked[state.index] = i;
+    state.maxIndex = Math.max(state.maxIndex || 0, state.index);
     state.revealed = true;
     const ok = i === state.questions[state.index].answer;
     if (ok) {
@@ -2812,15 +2927,19 @@
   app.addEventListener("touchend", function (e) {
     if (state.screen !== "quiz" || !e.changedTouches || !e.changedTouches[0]) return;
     const dx = e.changedTouches[0].clientX - swipeX;
-    if (dx < -72 && state.revealed && state.mode !== "exam") {
+    if (dx < -72 && (state.revealed || (state.mode === "exam" && state.picked[state.index] != null))) {
       const btn = app.querySelector('[data-action="next"]');
+      if (btn) btn.click();
+    }
+    if (dx > 72 && state.index > 0) {
+      const btn = app.querySelector('[data-action="prev"]');
       if (btn) btn.click();
     }
   }, { passive: true });
 
   app.addEventListener("click", function (e) {
     if (e.target.closest(".onboard-card") && !e.target.closest(".onboard-card [data-action], .onboard-card .btn")) return;
-    const t = e.target.closest("[data-go], [data-action], [data-grade], [data-pick-subject], [data-length], [data-opt], [data-mode], [data-group], [data-toggle], [data-filter], [data-profile], [data-del-profile], [data-fav]");
+    const t = e.target.closest("[data-go], [data-action], [data-grade], [data-pick-subject], [data-length], [data-opt], [data-mode], [data-group], [data-toggle], [data-filter], [data-profile], [data-del-profile], [data-fav], [data-jump]");
     if (!t) return;
     ensureAudio();
 
@@ -2901,6 +3020,7 @@
     }
     if (t.dataset.length) { state.length = Number(t.dataset.length); render(); return; }
     if (t.dataset.mode) { state.mode = t.dataset.mode; render(); return; }
+    if (t.dataset.jump != null) { jumpTo(Number(t.dataset.jump)); return; }
     if (t.dataset.opt != null) { pickOption(Number(t.dataset.opt)); return; }
     if (t.dataset.toggle) {
       settings[t.dataset.toggle] = !settings[t.dataset.toggle];
@@ -3019,11 +3139,28 @@
       if (r && r.questions) {
         Object.assign(state, r);
         state.screen = "quiz";
-        state.revealed = false;
+        state.maxIndex = Math.max(r.maxIndex || 0, r.index || 0);
+        state.revealed = state.mode !== "exam" && state.picked[state.index] != null;
         render();
       }
     }
     if (action === "next") goNext();
+    if (action === "prev") jumpTo(state.index - 1);
+    if (action === "jump-unanswered") { state.confirmFinish = false; jumpTo(firstUnanswered()); }
+    if (action === "finish-anyway") { state.forceFinish = true; state.confirmFinish = false; finishQuiz(); }
+    if (action === "replay-last") {
+      const last = (progress.history || [])[0];
+      if (!last) return;
+      state.grade = last.grade;
+      localStorage.setItem("psq-grade", String(state.grade));
+      state.subject = last.subject;
+      const tot = last.total || 20;
+      state.length = tot >= 100 ? 100 : tot >= 50 ? 50 : tot >= 20 ? 20 : tot === 5 ? 5 : 10;
+      state.mode = (last.mode === "timed" || last.mode === "exam") ? last.mode : "practice";
+      prefetchGrade(state.grade);
+      beginQuiz({ lightning: !!(last.mode === "timed" && tot === 5) });
+      return;
+    }
     if (action === "review") { state.screen = "review"; render(); }
     if (action === "certificate") { state.screen = "certificate"; render(); }
     if (action === "again") beginQuiz({ daily: state.daily, lightning: state.lightning });
@@ -3155,9 +3292,23 @@
       if (btn) btn.click();
       return;
     }
-    if (state.revealed && state.mode !== "exam" && (e.key === "Enter" || e.key === " " || e.key === "n" || e.key === "N")) {
+    if ((e.key === "ArrowLeft" || e.key === "ArrowUp") && state.index > 0) {
       e.preventDefault();
-      const btn = app.querySelector('[data-action="next"]');
+      jumpTo(state.index - 1);
+      return;
+    }
+    if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+      e.preventDefault();
+      if (state.revealed || state.mode === "exam" || state.confirmFinish) {
+        const btn = app.querySelector('[data-action="next"], [data-action="finish-anyway"]');
+        if (btn) btn.click();
+        else if (canJump(state.index + 1)) jumpTo(state.index + 1);
+      } else if (canJump(state.index + 1)) jumpTo(state.index + 1);
+      return;
+    }
+    if ((e.key === "Enter" || e.key === " " || e.key === "n" || e.key === "N") && (state.revealed || (state.mode === "exam" && (state.picked[state.index] != null || state.confirmFinish)))) {
+      e.preventDefault();
+      const btn = app.querySelector('[data-action="next"], [data-action="finish-anyway"]');
       if (btn) btn.click();
       return;
     }
